@@ -1,0 +1,112 @@
+#!C:\Users\fengh\pythonProject\noteDetection\venv\Scripts\python.exe
+__author__ = 'Ron'
+
+import sys
+import os
+import argparse
+from collections import defaultdict
+
+
+def plot_histogram(x_values, y_values, title=None, fn=None):
+    import pylab
+
+    x = range(len(x_values))
+    pylab.bar(x, y_values)
+    pylab.xticks(x, x_values, horizontalalignment='center', rotation='vertical')
+    pylab.subplots_adjust(bottom=0.2)
+    if title:
+        pylab.title(title)
+    if fn:
+        pylab.savefig(fn)
+    else:
+        pylab.show()
+
+def ioctl_GWINSZ(fd):
+    try:
+        import fcntl, termios, struct, os
+        cr = struct.unpack('hh', fcntl.ioctl(fd, termios.TIOCGWINSZ, '1234'))
+    except:
+        return
+    return cr
+
+
+def get_terminal_size():
+    env = os.environ
+
+    cr = ioctl_GWINSZ(0) or ioctl_GWINSZ(1) or ioctl_GWINSZ(2)
+    if not cr:
+        try:
+            fd = os.open(os.ctermid(), os.O_RDONLY)
+            cr = ioctl_GWINSZ(fd)
+            os.close(fd)
+        except:
+            pass
+    if not cr:
+        cr = (env.get('LINES', 25), env.get('COLUMNS', 80))
+    return int(cr[1]), int(cr[0])
+
+
+def calculate_histogram(fd=sys.stdin, verbose=True, max_buckets=20, screen_width=80):
+    hist = defaultdict(int)
+    for n in fd:
+        try:
+            num = round(float(n), 5)
+        except:
+            continue
+
+        hist[num] += 1
+
+    hist_keys = sorted(hist.keys())
+    hist_range_min = hist_keys[0]
+    hist_range_max = hist_keys[-1]
+    hist_range = hist_range_max - hist_range_min
+
+    total_keys = len(hist_keys)
+    num_buckets = min(max_buckets, total_keys)
+
+    step_size = (hist_range_max - hist_range_min) / num_buckets
+
+    y_values = [0.0] * num_buckets
+    x_values = [x * step_size + hist_range_min for x in xrange(num_buckets)]
+
+    total_size = 0.0
+
+    for key, val in hist.iteritems():
+        bucket = int(((key - hist_range_min) / hist_range) * num_buckets)
+        if bucket == num_buckets:
+            bucket = num_buckets - 1
+
+        y_values[bucket] += val
+        total_size += val
+
+    for i in xrange(len(y_values)):
+        chars = int(float(y_values[i]) / total_size * (screen_width - 50))
+
+        if verbose:
+            print '[%15.5f - %15.5f]: %10d %s' % (
+                x_values[i],
+                x_values[i+1] if i != (len(y_values)-1) else hist_range_max,
+                y_values[i], '#' * chars)
+
+    if verbose:
+        print 'total: %d' % total_size
+
+    return x_values, y_values
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--input', type=str, help='input file to read from', default='stdin')
+    parser.add_argument('-b', '--buckets', type=int, help='number of buckets', default=20)
+    parser.add_argument('-s', '--screen-width', type=int, help='maximum screen width', default=get_terminal_size()[0])
+    parser.add_argument('-t', '--title', type=str, help='title for plot', default=None)
+    parser.add_argument('-o', '--output-image', type=str, help='save image to file', default=None)
+    args = parser.parse_args()
+
+    plot_x, plot_y = calculate_histogram(
+        fd=sys.stdin if args.input == 'stdin' else open(args.input),
+        max_buckets=args.buckets,
+        screen_width=args.screen_width)
+    try:
+        plot_histogram(plot_x, plot_y, title=args.title, fn=args.output_image)
+    except Exception, e:
+        print >> sys.stderr, 'matplotlib not installed, skipping visual histogram generation.'

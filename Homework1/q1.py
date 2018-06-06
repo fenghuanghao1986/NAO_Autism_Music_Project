@@ -1,0 +1,11 @@
+print("Please enter your name: ")
+name1 = input()
+print("And also your age: ")
+age1 = input()
+print("Please enter your name: ")
+name2 = input()
+print("And also your age: ")
+age2 = input()
+ageSum = int(age1) + int(age2)
+
+print(name1 + " and " + name2 + ", the sum of your ages is " + str(ageSum))

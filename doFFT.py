@@ -51,7 +51,7 @@ def doFFT(fileName):
     maxpos = np.argmax(ampFreq)
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
-
-file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+# test code, different machine plz use different file location
+file = r'D:\Howard_Feng\noteDetection\xylo\high_c_akg.wav'
 sound = doFFT(file)
 

@@ -5,8 +5,9 @@ import scipy.fftpack
 from scipy import io
 import soundfile as sf
 
-fileName1 = r'C:\Users\fengh\pythonProject\noteDetection\guitar1.wav'  # get the file name from the hard drive
+fileName1 = r'C:\Users\fengh\pythonProject\noteDetection\xylophone.wav'  # get the file name from the hard drive
 fileName2 = r'C:\Users\fengh\pythonProject\noteDetection\guitar2.wav'  # get the file name from the hard drive
+# fileName1 = r'C:\Users\fengh\pythonProject\noteDetection\guitar1.wav'
 
 waveData1, Fs1 = sf.read(fileName1)
 waveData2, Fs2 = sf.read(fileName2)
@@ -66,7 +67,7 @@ plt.plot(f1/32, frequencyData1, "r")
 plt.xlabel('Frequency(Hz)')
 plt.ylabel('Count single-sided')
 plt.show()
-'''
+
 waveFile2 = wave.open(fileName2, 'rb')   # open the file, 'rb' for read the file to python
 # sampFreq, snd = wavefile.read('guitar1.wav')
 
@@ -119,4 +120,3 @@ plt.xlabel('Frequency(Hz)')
 plt.ylabel('Count single-sided')
 plt.show()
 
-'''

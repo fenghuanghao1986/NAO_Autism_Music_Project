@@ -12,7 +12,8 @@ import scipy.fftpack
 from scipy import io
 import soundfile as sf
 
-fileName1 = r'C:\Users\fengh\pythonProject\noteDetection\guitar1.wav'  # get the file name from the hard drive
+fileName1 = r'C:\Users\fengh\pythonProject\noteDetection\xylo\low_d_akg.wav'  # get the file name from the hard drive
+#fileName2 = r'C:\Users\fengh\pythonProject\noteDetection\xylo\xylophone_akg.wav'  # get the file name from the hard drive
 fileName2 = r'C:\Users\fengh\pythonProject\noteDetection\guitar2.wav'  # get the file name from the hard drive
 
 waveData1, Fs1 = sf.read(fileName1)
@@ -41,7 +42,6 @@ sampleNumber1 = len(t1)
 
 waveData1 = waveData1[range(0, sampleNumber1)]
 
-
 print("channel numbers = \n", C1)
 print("sample width = \n", sampwidth1)
 print("sampling frequence = \n", Fs1)
@@ -51,15 +51,15 @@ print("total length = \n", L1)
 #waveData1 = waveData[range(0, L, 1)]
 print("This is the original wave data\n", waveData1)
 # fftData = scipy.fft(waveData)
-fftData1 = abs(np.fft.rfft(waveData1)/L1)
+fftData1 = abs(np.fft.rfft(waveData1)/N1)
 print("This is the transformed data after fft\n", fftData1)
-fftDataHalf1 = fftData1[range(1, L1/2+1, 1)]
-frequencyData1 = 2 * fftDataHalf1[range(0, L1/2, 1)]
+fftDataHalf1 = fftData1[range(1, int(N1/2)+1, 1)]
+frequencyData1 = 2 * fftDataHalf1[range(0, int(N1/2), 1)]
 
 #freqs = scipy.fftpack.fftfreq(waveData.size, t[1]-t[0])
 #fftFreqs = np.array(freqs)
 #freqsHalf = freqs[range(N/2)]
-f1 = np.array(range(0, L1/2, 1)) * Fs1 / L1
+f1 = np.array(range(0, int(N1/2), 1)) * Fs1 / N1
 
 
 plt.figure(1)
@@ -69,12 +69,12 @@ plt.xlabel('Time')
 plt.ylabel('Amplitude')
 
 plt.subplot(2,1,2)
-plt.plot(f1/32, frequencyData1, "r")
+plt.plot(f1, frequencyData1, "r")
 plt.xlabel('Frequency(Hz)')
 plt.ylabel('Count single-sided')
-plt.show()
+#plt.show()
 
-'''
+
 waveFile2 = wave.open(fileName2, 'rb')   # open the file, 'rb' for read the file to python
 # sampFreq, snd = wavefile.read('guitar1.wav')
 
@@ -104,15 +104,15 @@ print("total length = \n", L2)
 #waveData1 = waveData[range(0, L, 1)]
 print("This is the original wave data\n", waveData2)
 # fftData = scipy.fft(waveData)
-fftData2 = abs(np.fft.rfft(waveData2)/L2)
+fftData2 = abs(np.fft.rfft(waveData2)/N2)
 print("This is the transformed data after fft\n", fftData2)
-fftDataHalf2 = fftData2[range(1, L2/2+1, 1)]
-frequencyData2 = 2 * fftDataHalf2[range(0, L2/2, 1)]
+fftDataHalf2 = fftData2[range(1, int(N2/2)+1, 1)]
+frequencyData2 = 2 * fftDataHalf2[range(0, int(N2/2), 1)]
 
 #freqs = scipy.fftpack.fftfreq(waveData.size, t[1]-t[0])
 #fftFreqs = np.array(freqs)
 #freqsHalf = freqs[range(N/2)]
-f2 = np.array(range(0, L2/2, 1)) * Fs2 / L2
+f2 = np.array(range(0, int(N2/2), 1)) * Fs2 / N2
 
 
 plt.figure(2)
@@ -122,8 +122,8 @@ plt.xlabel('Time')
 plt.ylabel('Amplitude')
 
 plt.subplot(2,1,2)
-plt.plot(f2/32, frequencyData2, "r")
+plt.plot(f2, frequencyData2, "r")
 plt.xlabel('Frequency(Hz)')
 plt.ylabel('Count single-sided')
 plt.show()
-'''
+

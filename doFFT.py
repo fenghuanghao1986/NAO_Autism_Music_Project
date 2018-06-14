@@ -10,7 +10,6 @@ def doFFT(fileName):
     
     # import libs for future usage
     import numpy as np
-    import matplotlib.pyplot as plt
     import soundfile as sf
     # import scipy as sp
     
@@ -32,7 +31,8 @@ def doFFT(fileName):
     ampFreq = 2 * halfFFT[range(0, int(N/2), 1)]
     # convert disFreq to actural frequency 
     freq = np.array(range(0, int(N/2), 1)) * Fs / N
-
+    '''
+    import matplotlib.pyplot as plt
     # plot the result
     # subplot for wave file
     plt.figure(1)
@@ -45,7 +45,7 @@ def doFFT(fileName):
     plt.plot(freq, ampFreq, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-
+    '''
     # return key values for future useage
     ampFreq = np.array([ampFreq])
     maxpos = np.argmax(ampFreq)

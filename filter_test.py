@@ -25,7 +25,7 @@ import soundfile as sf
 # import scipy as sp
 
 # read file
-file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+file = r'D:\Howard_Feng\noteDetection\xylo\low_c_akg.wav'
 waveData, fs = sf.read(file)
 # get the file/FFT length which means the total frames for the file
 N = len(waveData)

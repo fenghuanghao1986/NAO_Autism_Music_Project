@@ -31,7 +31,7 @@ def doFFT(fileName):
     ampFreq = 2 * halfFFT[range(0, int(N/2), 1)]
     # convert disFreq to actural frequency 
     freq = np.array(range(0, int(N/2), 1)) * Fs / N
-    '''
+
     import matplotlib.pyplot as plt
     # plot the result
     # subplot for wave file
@@ -45,13 +45,13 @@ def doFFT(fileName):
     plt.plot(freq, ampFreq, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-    '''
+
     # return key values for future useage
     ampFreq = np.array([ampFreq])
     maxpos = np.argmax(ampFreq)
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
 # test code, different machine plz use different file location
-file = r'D:\Howard_Feng\noteDetection\xylo\high_c_akg.wav'
+file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
 sound = doFFT(file)
 

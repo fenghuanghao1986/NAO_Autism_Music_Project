@@ -25,12 +25,12 @@ def run():
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy.signal import freqz
-    import numpy as np
     import soundfile as sf
     # import scipy as sp
     
     # read file
-    waveData, fs = sf.read(fileName)
+    file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+    waveData, fs = sf.read(file)
     # get the file/FFT length which means the total frames for the file
     N = len(waveData)
     # Sample rate and desired cutoff frequencies (in Hz).
@@ -53,21 +53,14 @@ def run():
     plt.legend(loc='best')
 
     # Filter a noisy signal.
-    T = 0.05
-    nsamples = T * fs
-    t = np.linspace(0, T, nsamples, endpoint=False)
-    a = 0.02
-    f0 = 600.0
-    x = 0.1 * np.sin(2 * np.pi * 1.2 * np.sqrt(t))
-    x += 0.01 * np.cos(2 * np.pi * 312 * t + 0.1)
-    x += a * np.cos(2 * np.pi * f0 * t + .11)
-    x += 0.03 * np.cos(2 * np.pi * 2000 * t)
+    T = N / fs
+    t = np.linspace(0, T, N, endpoint=False)
     plt.figure(2)
     plt.clf()
-    plt.plot(t, x, label='Noisy signal')
+    plt.plot(t, waveData, label='Sound wave')
 
-    y = butter_bandpass_filter(x, lowcut, highcut, fs, order=6)
-    plt.plot(t, y, label='Filtered signal (%g Hz)' % f0)
+    y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
+    plt.plot(t, y, label='Filtered signal (%g Hz)')
     plt.xlabel('time (seconds)')
     plt.hlines([-a, a], 0, T, linestyles='--')
     plt.grid(True)

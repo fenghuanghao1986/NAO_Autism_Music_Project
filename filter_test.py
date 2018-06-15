@@ -2,7 +2,7 @@
 """
 Created on Fri Jun 15 15:55:03 2018
 
-@author: CV_LAB_Howard
+@author: Howard Feng
 """
 from scipy.signal import butter, lfilter
 

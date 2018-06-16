@@ -15,15 +15,16 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
     filteredData = lfilter(b, a, data)
     return filteredData
 # define a function which reads the audio file and do the FFT
-def doFFT(filteredData):
+def doFFT(waveData, Fs):
     
     # import libs for future usage
     import numpy as np
     import soundfile as sf
+    # Fs = 44100.0
     # import scipy as sp
     
     # read file
-    waveData, Fs = sf.read(filteredData)
+    # waveData, Fs = sf.read(filteredData)
     # get the file/FFT length which means the total frames for the file
     N = len(waveData)
     # get duration of the waveData
@@ -46,6 +47,8 @@ def doFFT(filteredData):
     # subplot for wave file
     plt.figure(1)
     plt.subplot(2,1,1)
+    # need to figure out how to show the exact time at x axis
+    # now it is just showing the frames
     plt.plot(waveData, "g")
     plt.xlabel('Time')
     plt.ylabel('Wave Amplitude')
@@ -61,7 +64,7 @@ def doFFT(filteredData):
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
 
-# testing code
+# main testing code
 import soundfile as sf
 # import scipy as sp
 
@@ -73,4 +76,4 @@ lowcut = 2000.0
 highcut = 4000.0
 
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
-sound = doFFT(y)
+sound = doFFT(y, fs)

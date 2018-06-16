@@ -1,19 +1,26 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat Jun 16 12:22:45 2018
+
+@author: fengh
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Fri Jun 15 23:04:41 2018
 
 @author: fengh
 """
 
 # creating butter bandpass filter
-def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
+def butter_bandpass_filter(data, lowcut, highcut, fs, order=9):
     from scipy.signal import butter, lfilter
     nyq = 0.5 * fs
     low = lowcut / nyq
     high = highcut / nyq
     b, a = butter(order, [low, high], btype='band')
-    filteredData = lfilter(b, a, data)
-    return filteredData
+    cleanData = lfilter(b, a, data)
+    return cleanData
 # define a function which reads the audio file and do the FFT
 def doFFT(waveData, Fs):
     
@@ -56,13 +63,28 @@ def doFFT(waveData, Fs):
     plt.plot(freq, ampFreq, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-
+    ''' this part is for single note detection
     # return key values for future useage
     ampFreq = np.array([ampFreq])
     maxpos = np.argmax(ampFreq)
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
-
+    '''
+    from scipy import signal
+    import numpy as np
+    peakind = signal.find_peaks_cwt(freq, np.arange(1, 1000))
+    print(peakind)
+    print(freq[peakind])
+    return freq[peakind]
+    #return ampFreq
+'''
+def findPeaks(freq):
+    from scipy import signal
+    import numpy as np
+    peakind = signal.find_peaks_cwt(freq, np.arange(2000, 4000))
+    print(peakind)
+    return peakind
+'''
 # main testing code
 import soundfile as sf
 # import scipy as sp
@@ -73,6 +95,7 @@ waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 lowcut = 2000.0
 highcut = 4000.0
-
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
-sound = doFFT(y, fs)
+freq = doFFT(y, fs)
+#index = findPeaks(freq)
+# data[peakind]

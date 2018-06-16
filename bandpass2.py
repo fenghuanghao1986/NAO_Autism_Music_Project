@@ -1,12 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 14 11:01:09 2018
+Created on Fri Jun 15 23:04:41 2018
 
-@author: CV_LAB_Howard
+@author: fengh
 """
 
+# creating butter bandpass filter
+def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
+    from scipy.signal import butter, lfilter
+    nyq = 0.5 * fs
+    low = lowcut / nyq
+    high = highcut / nyq
+    b, a = butter(order, [low, high], btype='band')
+    filteredData = lfilter(b, a, data)
+    return filteredData
 # define a function which reads the audio file and do the FFT
-def doFFT(fileName):
+def doFFT(filteredData):
     
     # import libs for future usage
     import numpy as np
@@ -14,7 +23,7 @@ def doFFT(fileName):
     # import scipy as sp
     
     # read file
-    waveData, Fs = sf.read(fileName)
+    waveData, Fs = sf.read(filteredData)
     # get the file/FFT length which means the total frames for the file
     N = len(waveData)
     # get duration of the waveData
@@ -30,7 +39,7 @@ def doFFT(fileName):
     # creat the frequency energy
     ampFreq = 2 * halfFFT[range(0, int(N/2), 1)]
     # convert disFreq to actural frequency 
-    freq = np.array(range(0, int(N/2), 1)) * Fs / N
+    freq = abs(np.array(range(0, int(N/2), 1)) * Fs / N)
 
     import matplotlib.pyplot as plt
     # plot the result
@@ -51,7 +60,17 @@ def doFFT(fileName):
     maxpos = np.argmax(ampFreq)
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
-# test code, different machine plz use different file location
-file = r'C:\Users\fengh\pythonProject\noteDetection\xylo\xylophone_akg.wav'
-sound = doFFT(file)
 
+# testing code
+import soundfile as sf
+# import scipy as sp
+
+# read file
+file = r'C:\Users\fengh\pythonProject\noteDetection\xylo\xylophone_akg.wav'
+waveData, fs = sf.read(file)
+# Sample rate and desired cutoff frequencies (in Hz).
+lowcut = 2000.0
+highcut = 4000.0
+
+y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
+sound = doFFT(y)

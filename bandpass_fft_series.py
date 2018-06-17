@@ -63,12 +63,14 @@ def doFFT(waveData, Fs):
     plt.plot(freq, ampFreq, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
+    return freq
     ''' this part is for single note detection
     # return key values for future useage
     ampFreq = np.array([ampFreq])
     maxpos = np.argmax(ampFreq)
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
+    '''
     '''
     from scipy import signal
     import numpy as np
@@ -77,6 +79,7 @@ def doFFT(waveData, Fs):
     print(freq[peakind])
     return freq[peakind]
     #return ampFreq
+    '''
 '''
 def findPeaks(freq):
     from scipy import signal
@@ -85,6 +88,7 @@ def findPeaks(freq):
     print(peakind)
     return peakind
 '''
+
 # main testing code
 import soundfile as sf
 # import scipy as sp

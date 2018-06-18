@@ -63,7 +63,7 @@ def doFFT(waveData, Fs):
     plt.plot(freq, ampFreq, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-    return freq
+    return ampFreq
     ''' this part is for single note detection
     # return key values for future useage
     ampFreq = np.array([ampFreq])

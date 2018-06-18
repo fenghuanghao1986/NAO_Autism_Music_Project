@@ -40,14 +40,22 @@ def doFFT(waveData, Fs):
     # Tv = sp.arange(0.0, t/1000, Ts)
     # Tv = np.array([Tv])
     # do FFT
-    FFTData = abs(np.fft.rfft(waveData)/N)
+    # FFTData = abs(np.fft.rfft(waveData)/N)
+    FFTData = np.fft.rfft(waveData)
+    p2 = np.abs(FFTData / N)
+    p2 = np.array([p2])
+    gain = 2 * p2[0, 0:int(N / 2)]
+    Range = np.linspace(0, int(N / 2), int(N / 2))
+    Range.shape
+    freqRan = Fs*Range/N
+    '''
     # select half of the data
     halfFFT = FFTData[range(1, int(N/2)+1, 1)]
     # creat the frequency energy
     ampFreq = 2 * halfFFT[range(0, int(N/2), 1)]
     # convert disFreq to actural frequency 
     freq = abs(np.array(range(0, int(N/2), 1)) * Fs / N)
-
+    '''
     import matplotlib.pyplot as plt
     # plot the result
     # subplot for wave file
@@ -60,10 +68,11 @@ def doFFT(waveData, Fs):
     plt.ylabel('Wave Amplitude')
     # subplot for the frequency file
     plt.subplot(2,1,2)
-    plt.plot(freq, ampFreq, "r")
+    plt.plot(freqRan, gain, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-    return ampFreq
+    return gain, freqRan
+
     ''' this part is for single note detection
     # return key values for future useage
     ampFreq = np.array([ampFreq])
@@ -74,11 +83,11 @@ def doFFT(waveData, Fs):
     '''
     from scipy import signal
     import numpy as np
-    peakind = signal.find_peaks_cwt(freq, np.arange(1, 1000))
+    peakind = signal.find_peaks_cwt(gain, np.arange(1, 100))
     print(peakind)
-    print(freq[peakind])
-    return freq[peakind]
-    #return ampFreq
+    print(freqRan[peakind])
+    return freqRan[peakind]
+    
     '''
 '''
 def findPeaks(freq):
@@ -94,12 +103,13 @@ import soundfile as sf
 # import scipy as sp
 
 # read file
-file = r'D:\LabWork\ThesisProject\noteDetection\xylo\xylophone_akg.wav'
+file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 lowcut = 2000.0
 highcut = 4000.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
-freq = doFFT(y, fs)
+a = doFFT(y, fs)
 #index = findPeaks(freq)
 # data[peakind]

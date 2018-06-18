@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jun 16 12:22:45 2018
-
-@author: fengh
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Fri Jun 15 23:04:41 2018
 
 @author: fengh
@@ -33,14 +26,6 @@ def doFFT(waveData, Fs):
     # waveData, Fs = sf.read(filteredData)
     # get the file/FFT length which means the total frames for the file
     N = len(waveData)
-    # get duration of the waveData
-    # t = N / Fs
-    # create timevector
-    # Ts = 1.0 / Fs
-    # Tv = sp.arange(0.0, t/1000, Ts)
-    # Tv = np.array([Tv])
-    # do FFT
-    # FFTData = abs(np.fft.rfft(waveData)/N)
     FFTData = np.fft.rfft(waveData)
     p2 = np.abs(FFTData / N)
     p2 = np.array([p2])
@@ -71,7 +56,10 @@ def doFFT(waveData, Fs):
     plt.plot(freqRan, gain, "r")
     plt.xlabel('Frequency')
     plt.ylabel('Frequency Energy')
-    return gain, freqRan
+    dic = {'frequency' : freqRan, 'gain' : gain}
+    import pandas as pd
+    dic = pd.DataFrame(dic)
+    return dic
 
     ''' this part is for single note detection
     # return key values for future useage
@@ -80,31 +68,14 @@ def doFFT(waveData, Fs):
     maxFreq = freq[maxpos + 1]
     return Fs, FFTData, freq, ampFreq, maxFreq
     '''
-    '''
-    from scipy import signal
-    import numpy as np
-    peakind = signal.find_peaks_cwt(gain, np.arange(1, 100))
-    print(peakind)
-    print(freqRan[peakind])
-    return freqRan[peakind]
-    
-    '''
-'''
-def findPeaks(freq):
-    from scipy import signal
-    import numpy as np
-    peakind = signal.find_peaks_cwt(freq, np.arange(2000, 4000))
-    print(peakind)
-    return peakind
-'''
 
 # main testing code
 import soundfile as sf
 # import scipy as sp
 
 # read file
-file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
-file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+# file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+file = r'C:\Users\fengh\pythonProject\noteDetection\xylo\xylophone_akg.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 lowcut = 2000.0

@@ -75,6 +75,8 @@ import soundfile as sf
 
 # read file
 # file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+# testing new xylophone sound clip
+# signal not very clear to me, may need think more
 file = r'D:\Howard_Feng\noteDetection\new_xylo\C+E.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).

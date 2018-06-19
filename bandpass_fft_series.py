@@ -75,7 +75,7 @@ import soundfile as sf
 
 # read file
 # file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
-file = r'C:\Users\fengh\pythonProject\noteDetection\xylo\xylophone_akg.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\C+E.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 lowcut = 2000.0

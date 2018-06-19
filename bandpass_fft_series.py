@@ -78,6 +78,8 @@ import soundfile as sf
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
 file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
+# no difference between 48k and 44k hz as fs
+# file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before

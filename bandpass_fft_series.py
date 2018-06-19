@@ -6,7 +6,7 @@ Created on Fri Jun 15 23:04:41 2018
 """
 
 # creating butter bandpass filter
-def butter_bandpass_filter(data, lowcut, highcut, fs, order=9):
+def butter_bandpass_filter(data, lowcut, highcut, fs, order):
     from scipy.signal import butter, lfilter
     nyq = 0.5 * fs
     low = lowcut / nyq
@@ -77,11 +77,13 @@ import soundfile as sf
 # file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xylo\C+E.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
-lowcut = 2000.0
-highcut = 4000.0
+# need to change the cutoff frequency, new xylophone is different from before
+# that is one of the reason cannot get proper result
+lowcut = 1000.0
+highcut = 2500.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=6)
 a = doFFT(y, fs)
 #index = findPeaks(freq)

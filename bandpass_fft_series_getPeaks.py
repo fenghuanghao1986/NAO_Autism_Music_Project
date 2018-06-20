@@ -33,14 +33,7 @@ def doFFT(waveData, Fs):
     Range = np.linspace(0, int(N / 2), int(N / 2))
     Range.shape
     freqRan = Fs*Range/N
-    '''
-    # select half of the data
-    halfFFT = FFTData[range(1, int(N/2)+1, 1)]
-    # creat the frequency energy
-    ampFreq = 2 * halfFFT[range(0, int(N/2), 1)]
-    # convert disFreq to actural frequency 
-    freq = abs(np.array(range(0, int(N/2), 1)) * Fs / N)
-    '''
+
     import matplotlib.pyplot as plt
     # plot the result
     # subplot for wave file
@@ -58,15 +51,12 @@ def doFFT(waveData, Fs):
     plt.ylabel('Frequency Energy')
     dic = {'frequency' : freqRan, 'gain' : gain}
     import pandas as pd
-    dic = pd.DataFrame(dic)
-    # gain = np.array([gain])
-    # maxpos = np.argmax(gain)
-    # using -56 is to find the actural frequency for max gain
-    # which represents the truth, although it was not that actural
-    # for very acturrate instrument, we only need add 3 position to it
-    # to get the real frequency
-    # maxFreq = freqRan[maxpos + 3]
-    return dic
+    df = pd.DataFrame(dic)
+    # make sure change the frequency range when instrument changes
+    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 450)]
+    plt.figure(2)
+    plt.plot(df.frequency, df.gain)
+    return df
 
 # main testing code
 import soundfile as sf
@@ -87,5 +77,26 @@ lowcut = 20.0
 highcut = 500.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 a = doFFT(y, fs)
-#index = findPeaks(freq)
-# data[peakind]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -74,10 +74,10 @@ import soundfile as sf
 # import scipy as sp
 
 # read file
-# file = r'D:\Howard_Feng\noteDetection\xylo\xylophone_akg.wav'
+file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
+# file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
 waveData, fs = sf.read(file)

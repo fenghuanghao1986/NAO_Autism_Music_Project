@@ -59,7 +59,13 @@ def doFFT(waveData, Fs):
     dic = {'frequency' : freqRan, 'gain' : gain}
     import pandas as pd
     dic = pd.DataFrame(dic)
-    return dic
+    gain = np.array([gain])
+    maxpos = np.argmax(gain)
+    # using -56 is to find the actural frequency for max gain
+    # which represents the truth, although it was not that actural
+    maxFreq = freqRan[maxpos - 56]
+    return dic, maxFreq
+
 
     ''' this part is for single note detection
     # return key values for future useage
@@ -74,10 +80,10 @@ import soundfile as sf
 # import scipy as sp
 
 # read file
-file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
+# file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-# file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\D_Cord_44k.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
 waveData, fs = sf.read(file)

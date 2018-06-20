@@ -76,15 +76,15 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
+# file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 # no difference between 48k and 44k hz as fs
-# file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
 # that is one of the reason cannot get proper result
-lowcut = 20.0
-highcut = 500.0
+lowcut = 1000.0
+highcut = 2000.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 a = doFFT(y, fs)
 #index = findPeaks(freq)

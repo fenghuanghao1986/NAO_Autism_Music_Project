@@ -60,6 +60,8 @@ def doFFT(waveData, Fs):
     plt.plot(df.frequency, df.gain)
     import scipy
     #peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
+    # hot to get 380 this value:
+    # 50/(400-50) = x/total len(df)
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 380))
     notes = df.frequency[peakind + 3]
     return notes

@@ -59,14 +59,14 @@ def doFFT(waveData, Fs):
     dic = {'frequency' : freqRan, 'gain' : gain}
     import pandas as pd
     dic = pd.DataFrame(dic)
-    # gain = np.array([gain])
-    # maxpos = np.argmax(gain)
+    gain = np.array([gain])
+    maxpos = np.argmax(gain)
     # using -56 is to find the actural frequency for max gain
     # which represents the truth, although it was not that actural
     # for very acturrate instrument, we only need add 3 position to it
     # to get the real frequency
-    # maxFreq = freqRan[maxpos + 3]
-    return dic
+    maxFreq = freqRan[maxpos]
+    return maxFreq
 
 # main testing code
 import soundfile as sf
@@ -76,15 +76,15 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-# file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
+file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 # no difference between 48k and 44k hz as fs
-file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
+#file = r'D:\Howard_Feng\noteDetection\new_xylo\D Cord.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
 # that is one of the reason cannot get proper result
-lowcut = 1000.0
-highcut = 2000.0
+lowcut = 50.0
+highcut = 400.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 a = doFFT(y, fs)
 #index = findPeaks(freq)

@@ -43,16 +43,20 @@ def findPeak(freqData):
     import scipy
     import numpy as np
     df = pd.DataFrame(freqData)
+    low = 50
+    high = 350
     # make sure change the frequency range when instrument changes
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
-    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 350)]
+    
+    df = df[(df['frequency'] >= low) & (df['frequency'] <= high)]
     df = df.reset_index(drop=True)
     plt.figure(2)
     plt.plot(df.frequency, df.gain)
     # peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
     # hot to get 380 this value:
     # 50/(400-50) = x/total len(df)
-    peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 300))
+    window = 50 * len(df)/(high - low)
+    peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
 

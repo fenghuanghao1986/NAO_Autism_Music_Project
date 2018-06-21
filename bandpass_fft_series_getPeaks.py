@@ -16,12 +16,11 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order):
     return cleanData
 # define a function which reads the audio file and do the FFT
 def doFFT(waveData, Fs):
-    
     # import libs for future usage
     import numpy as np
+    # import matplotlib.pyplot as plt
     # Fs = 44100.0
     # import scipy as sp
-    
     # read file
     # waveData, Fs = sf.read(filteredData)
     # get the file/FFT length which means the total frames for the file
@@ -34,48 +33,37 @@ def doFFT(waveData, Fs):
     Range = np.linspace(0, int(N / 2), int(N / 2))
     Range.shape
     freqRan = Fs*Range/N
+    # combine freqRan and Gain to dictionary type file for future usage
+    freqData = {'frequency' : freqRan, 'gain' : gain}
+    return freqData
 
-    import matplotlib.pyplot as plt
-    # plot the result
-    # subplot for wave file
-    plt.figure(1)
-    plt.subplot(2,1,1)
-    # need to figure out how to show the exact time at x axis
-    # now it is just showing the frames
-    plt.plot(waveData, "g")
-    plt.xlabel('Time')
-    plt.ylabel('Wave Amplitude')
-    # subplot for the frequency file
-    plt.subplot(2,1,2)
-    plt.plot(freqRan, gain, "r")
-    plt.xlabel('Frequency')
-    plt.ylabel('Frequency Energy')
-    dic = {'frequency' : freqRan, 'gain' : gain}
+def findPeak(freqData):
     import pandas as pd
-    df = pd.DataFrame(dic)
+    import matplotlib.pyplot as plt
+    import scipy
+    import numpy as np
+    df = pd.DataFrame(freqData)
     # make sure change the frequency range when instrument changes
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
-    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 1200)]
+    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 350)]
     df = df.reset_index(drop=True)
     plt.figure(2)
     plt.plot(df.frequency, df.gain)
-    import scipy
-    #peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
+    # peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
     # hot to get 380 this value:
     # 50/(400-50) = x/total len(df)
-    peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 380))
+    peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 300))
     notes = df.frequency[peakind]
     return notes
 
 # main testing code
 import soundfile as sf
 # import scipy as sp
-
 # read file
-file = r'D:\LabWork\ThesisProject\noteDetection\c.wav'
+# file = r'D:\LabWork\ThesisProject\noteDetection\c.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-#file = r'D:\Howard_Feng\noteDetection\new_xylo\2 C.wav'
+file = r'D:\Howard_Feng\noteDetection\c.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 waveData, fs = sf.read(file)
@@ -83,31 +71,10 @@ waveData, fs = sf.read(file)
 # need to change the cutoff frequency, new xylophone is different from before
 # that is one of the reason cannot get proper result
 lowcut = 50.0
-highcut = 1200.0
+highcut = 500.0
 #lowcut = 1000.0
 #highcut = 2250.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
-a = doFFT(y, fs)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+freqData = doFFT(y, fs)
+# call find peak function return peak frequency
+peak = findPeak(freqData)

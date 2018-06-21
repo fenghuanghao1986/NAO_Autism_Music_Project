@@ -47,7 +47,6 @@ def findPeak(freqData):
     high = 350
     # make sure change the frequency range when instrument changes
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
-    
     df = df[(df['frequency'] >= low) & (df['frequency'] <= high)]
     df = df.reset_index(drop=True)
     plt.figure(2)

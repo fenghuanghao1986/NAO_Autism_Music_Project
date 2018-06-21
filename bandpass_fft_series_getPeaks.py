@@ -25,6 +25,7 @@ def doFFT(waveData, Fs):
     # read file
     # waveData, Fs = sf.read(filteredData)
     # get the file/FFT length which means the total frames for the file
+    waveData = waveData[:, 0]
     N = len(waveData)
     FFTData = np.fft.rfft(waveData)
     p2 = np.abs(FFTData / N)
@@ -54,7 +55,7 @@ def doFFT(waveData, Fs):
     df = pd.DataFrame(dic)
     # make sure change the frequency range when instrument changes
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
-    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 400)]
+    df = df[(df['frequency'] >= 50) & (df['frequency'] <= 1200)]
     df = df.reset_index(drop=True)
     plt.figure(2)
     plt.plot(df.frequency, df.gain)
@@ -63,7 +64,7 @@ def doFFT(waveData, Fs):
     # hot to get 380 this value:
     # 50/(400-50) = x/total len(df)
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 380))
-    notes = df.frequency[peakind + 3]
+    notes = df.frequency[peakind]
     return notes
 
 # main testing code
@@ -71,18 +72,18 @@ import soundfile as sf
 # import scipy as sp
 
 # read file
-# file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\Fast Octave + Hit Table.wav'
+file = r'D:\LabWork\ThesisProject\noteDetection\c.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
 #file = r'D:\Howard_Feng\noteDetection\new_xylo\2 C.wav'
 # no difference between 48k and 44k hz as fs
-file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
+# file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
 # that is one of the reason cannot get proper result
 lowcut = 50.0
-highcut = 700.0
+highcut = 1200.0
 #lowcut = 1000.0
 #highcut = 2250.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)

@@ -58,7 +58,7 @@ def findPeak(freqData):
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
-'''
+
 def compNote(peaks):
     import numpy as np
     import pandas as pd
@@ -79,7 +79,7 @@ def compNote(peaks):
     
     
     return
-'''
+
 # main testing code
 import soundfile as sf
 # import scipy as sp

@@ -43,8 +43,8 @@ def findPeak(freqData):
     import scipy
     import numpy as np
     df = pd.DataFrame(freqData)
-    low = 50
-    high = 350
+    low = 1000
+    high = 3000
     # make sure change the frequency range when instrument changes
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
     df = df[(df['frequency'] >= low) & (df['frequency'] <= high)]
@@ -54,11 +54,32 @@ def findPeak(freqData):
     # peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
     # hot to get 380 this value:
     # 50/(400-50) = x/total len(df)
-    window = 50 * len(df)/(high - low)
+    window = 100 * len(df)/(high - low)
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
-
+'''
+def compNote(peaks):
+    import numpy as np
+    import pandas as pd
+    ratio = 1.059463
+    # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
+    # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
+    # because of the accuracy problem, we can only compare the detected note 
+    # in a certain range using the basic ratio between notes
+    n = np.size(peak)
+    for i in range n:
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    return
+'''
 # main testing code
 import soundfile as sf
 # import scipy as sp
@@ -66,17 +87,16 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\c.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\c.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
 # that is one of the reason cannot get proper result
-lowcut = 50.0
-highcut = 500.0
-#lowcut = 1000.0
-#highcut = 2250.0
+lowcut = 1000.0
+highcut = 3000.0
+# for guitar use 50 and 500
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 freqData = doFFT(y, fs)
 # call find peak function return peak frequency

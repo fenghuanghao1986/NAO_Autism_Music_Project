@@ -58,7 +58,7 @@ def findPeak(freqData):
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
-
+'''
 def compNote(peaks):
     import numpy as np
     import pandas as pd
@@ -79,15 +79,15 @@ def compNote(peaks):
     
     
     return
-
+'''
 # main testing code
 import soundfile as sf
 # import scipy as sp
 # read file
-# file = r'D:\LabWork\ThesisProject\noteDetection\c.wav'
+file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
+# file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 waveData, fs = sf.read(file)

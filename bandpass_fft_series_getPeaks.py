@@ -58,10 +58,11 @@ def findPeak(freqData):
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
-'''
+
 def compNote(peaks):
     import numpy as np
     import pandas as pd
+    # since music scales is a 
     ratio = 1.059463
     # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
     # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
@@ -79,7 +80,7 @@ def compNote(peaks):
     
     
     return
-'''
+
 # main testing code
 import soundfile as sf
 # import scipy as sp

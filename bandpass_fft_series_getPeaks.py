@@ -36,8 +36,10 @@ def doFFT(waveData, Fs):
     # combine freqRan and Gain to dictionary type file for future usage
     freqData = {'frequency' : freqRan, 'gain' : gain}
     return freqData
-
-def findPeak(freqData):
+# Since the built-in function cwt cannot find peaks properly
+# This funiction will detect the raw peaks
+# later on, a refine function will be applied, to get real peaks
+def findRawPeak(freqData):
     import pandas as pd
     import matplotlib.pyplot as plt
     import scipy
@@ -58,37 +60,42 @@ def findPeak(freqData):
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
     notes = df.frequency[peakind]
     return notes
-
-def compNote(peaks):
+# this function is to get real peaks for future analysis
+def realPeak(peaks):
     import numpy as np
-    import pandas as pd
     # since music scales is a 
     ratio = 1.059463
     # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
     # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
     # because of the accuracy problem, we can only compare the detected note 
     # in a certain range using the basic ratio between notes
-    n = np.size(peak)
-    for i in range n:
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    return
+    notes = {'C6': 1046.5023, 'D6': 1174.6591, 'E6': 1318.5102,
+             'F6': 1396.9129, 'G6': 1567.9816, 'A6': 1760.0000,
+             'B6': 1975.5332, 'C7': 2093.0046, 'D7': 2349.3181,
+             'E7': 2637.0205, 'F7': 2793.8259}
+    peaks = np.array(peaks)
+    n = np.size(peaks)
+    newPeak = []
+    for key, note in notes.items():
+        # thinking about how to use deque so once I get one
+        # it will also delete the first one, make second one to first
+        for i in range (0, n):
+            if peaks[i] >= note / ratio and peaks[i] <= note * ratio:
+                newPeak.append(key)
+                break
+            else:
+                continue
+
+    return newPeak
 
 # main testing code
 import soundfile as sf
 # import scipy as sp
 # read file
-file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
+# file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-# file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 waveData, fs = sf.read(file)
@@ -101,4 +108,5 @@ highcut = 3000.0
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 freqData = doFFT(y, fs)
 # call find peak function return peak frequency
-peak = findPeak(freqData)
+rawPeak = findRawPeak(freqData)
+newPeak = realPeak(rawPeak)

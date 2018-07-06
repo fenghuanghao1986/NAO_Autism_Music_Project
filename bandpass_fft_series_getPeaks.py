@@ -58,8 +58,9 @@ def findRawPeak(freqData):
     # 50/(400-50) = x/total len(df)
     window = 100 * len(df)/(high - low)
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
-    notes = df.frequency[peakind]
+    notes = df.gain[peakind]
     return notes
+'''
 # this function is to get real peaks for future analysis
 def realPeak(peaks):
     import numpy as np
@@ -82,12 +83,12 @@ def realPeak(peaks):
         for i in range (0, n):
             if peaks[i] >= note / ratio and peaks[i] <= note * ratio:
                 newPeak.append(key)
-                break
-            else:
                 continue
+            else:
+                
 
     return newPeak
-
+'''
 # main testing code
 import soundfile as sf
 # import scipy as sp
@@ -95,9 +96,10 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
+# file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
+file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
@@ -109,4 +111,4 @@ y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 freqData = doFFT(y, fs)
 # call find peak function return peak frequency
 rawPeak = findRawPeak(freqData)
-newPeak = realPeak(rawPeak)
+# newPeak = realPeak(rawPeak)

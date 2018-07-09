@@ -58,10 +58,11 @@ def findRawPeak(freqData):
     # 50/(400-50) = x/total len(df)
     window = 100 * len(df)/(high - low)
     peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, window))
-    notes = df.frequency[peakind]
-    return notes
+    rawPeak = df.loc[peakind]
+    return rawPeak
+
 # this function is to get real peaks for future analysis
-def realPeak(peaks):
+def realPeak(rawPeak):
     import numpy as np
     # since music scales is a 
     ratio = 1.059463
@@ -73,7 +74,8 @@ def realPeak(peaks):
              'F6': 1396.9129, 'G6': 1567.9816, 'A6': 1760.0000,
              'B6': 1975.5332, 'C7': 2093.0046, 'D7': 2349.3181,
              'E7': 2637.0205, 'F7': 2793.8259}
-    peaks = np.array(peaks)
+    '''
+    rawPeak = np.array(peaks)
     n = np.size(peaks)
     newPeak = []
     for key, note in notes.items():
@@ -82,10 +84,12 @@ def realPeak(peaks):
         for i in range (0, n):
             if peaks[i] >= note / ratio and peaks[i] <= note * ratio:
                 newPeak.append(key)
-                break
-            else:
                 continue
-
+            else:
+                
+    '''
+    newPeak = []
+    
     return newPeak
 
 # main testing code
@@ -95,9 +99,10 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
+# file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
+file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
@@ -109,4 +114,4 @@ y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 freqData = doFFT(y, fs)
 # call find peak function return peak frequency
 rawPeak = findRawPeak(freqData)
-newPeak = realPeak(rawPeak)
+# newPeak = realPeak(rawPeak)

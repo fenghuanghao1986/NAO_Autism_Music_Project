@@ -74,35 +74,37 @@ def realPeak(rawPeak):
              'F6': 1396.9129, 'G6': 1567.9816, 'A6': 1760.0000,
              'B6': 1975.5332, 'C7': 2093.0046, 'D7': 2349.3181,
              'E7': 2637.0205, 'F7': 2793.8259}
-    '''
-    rawPeak = np.array(peaks)
+    
+    peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
+    peaks = np.array(peaks)
+    print(peaks)
     n = np.size(peaks)
     newPeak = []
     for key, note in notes.items():
+    # for key, note in notes.items():
         # thinking about how to use deque so once I get one
         # it will also delete the first one, make second one to first
         for i in range (0, n):
             if peaks[i] >= note / ratio and peaks[i] <= note * ratio:
                 newPeak.append(key)
-                continue
+                print(newPeak)
+                print(i)
+                break
             else:
-                
-    '''
-    newPeak = []
-    
-    return newPeak
+                continue
 
+    return newPeak
 # main testing code
 import soundfile as sf
 # import scipy as sp
 # read file
-# file = r'D:\LabWork\ThesisProject\noteDetection\new_xy.wav'
+# file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-# file = r'D:\Howard_Feng\noteDetection\new_xy.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\ace.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
-file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
+# file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before
@@ -114,4 +116,4 @@ y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
 freqData = doFFT(y, fs)
 # call find peak function return peak frequency
 rawPeak = findRawPeak(freqData)
-# newPeak = realPeak(rawPeak)
+newPeak = realPeak(rawPeak)

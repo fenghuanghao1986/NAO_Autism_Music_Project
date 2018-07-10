@@ -65,15 +65,15 @@ def findRawPeak(freqData):
 def realPeak(rawPeak):
     import numpy as np
     # since music scales is a 
-    ratio = 1.059463
+    # ratio = 1.059463
     # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
     # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
     # because of the accuracy problem, we can only compare the detected note 
     # in a certain range using the basic ratio between notes
-    notes = {'C6': 1046.5023, 'D6': 1174.6591, 'E6': 1318.5102,
-             'F6': 1396.9129, 'G6': 1567.9816, 'A6': 1760.0000,
-             'B6': 1975.5332, 'C7': 2093.0046, 'D7': 2349.3181,
-             'E7': 2637.0205, 'F7': 2793.8259}
+    notes = {'C6': 1038, 'D6': 1172, 'E6': 1316,
+             'F6': 1389, 'G6': 1561, 'A6': 1755,
+             'B6': 1975, 'C7': 2084, 'D7': 2343,
+             'E7': 2626, 'F7': 2785}
     
     peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
     peaks = np.array(peaks)
@@ -85,7 +85,7 @@ def realPeak(rawPeak):
         # thinking about how to use deque so once I get one
         # it will also delete the first one, make second one to first
         for i in range (0, n):
-            if peaks[i] >= note / ratio and peaks[i] <= note * ratio:
+            if peaks[i] >= note - 5 and peaks[i] <= note + 5:
                 newPeak.append(key)
                 print(newPeak)
                 print(i)
@@ -94,6 +94,7 @@ def realPeak(rawPeak):
                 continue
 
     return newPeak
+
 # main testing code
 import soundfile as sf
 # import scipy as sp
@@ -101,7 +102,7 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\new_xylo\ace.wav'
+file = r'D:\Howard_Feng\noteDetection\new_xylo\ca.wav'
 # no difference between 48k and 44k hz as fs
 # file = r'D:\Howard_Feng\noteDetection\guitar2.wav'
 # file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'

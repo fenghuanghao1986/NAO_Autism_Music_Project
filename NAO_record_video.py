@@ -10,7 +10,7 @@ import time
 from naoqi import ALProxy
 
 if __name__ == "__main__":
-    IP = "127.0.0.1"  # Replace here with your NaoQi's IP address.
+    IP = "192.168.0.101"  # Replace here with your NaoQi's IP address.
     PORT = 9559
 
      # Read IP address from first argument if any.

@@ -8,7 +8,7 @@ Created on Fri Jul 13 18:03:05 2018
 import sys
 import time
 from naoqi import ALProxy
-import ALVisionExtractor as AVE
+# import ALVisionExtractor as AVE
 
 
 if __name__ == "__main__":
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # /home/nao/recordings/cameras/ folder.
     videoInfo = videoRecorderProxy.stopRecording()
     
-    # may use getActive
+    
 
     print "Video was saved on the robot: ", videoInfo[1]
     print "Num frames: ", videoInfo[0]

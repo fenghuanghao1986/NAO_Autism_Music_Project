@@ -8,6 +8,8 @@ Created on Fri Jul 13 18:03:05 2018
 import sys
 import time
 from naoqi import ALProxy
+import ALVisionExtractor as AVE
+
 
 if __name__ == "__main__":
     # ip and port numbers are tricky
@@ -38,6 +40,8 @@ if __name__ == "__main__":
     # Video file is saved on the robot in the
     # /home/nao/recordings/cameras/ folder.
     videoInfo = videoRecorderProxy.stopRecording()
+    
+    # may use getActive
 
     print "Video was saved on the robot: ", videoInfo[1]
     print "Num frames: ", videoInfo[0]

@@ -10,6 +10,13 @@ import time
 from naoqi import ALProxy
 
 if __name__ == "__main__":
+    # ip and port numbers are tricky
+    # you may not be able to use router for this
+    # so far, I haven't successfully connect via router
+    # if connect with robot directily with computer,
+    # you should be able to run the code without problem
+    # need to figure out how to use router
+    # or maybe not
     IP = "192.168.0.101"  # Replace here with your NaoQi's IP address.
     PORT = 9559
 

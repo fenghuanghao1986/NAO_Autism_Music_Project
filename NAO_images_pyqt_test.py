@@ -13,14 +13,34 @@ Created on Mon Jul 16 23:26:41 2018
 
 import sys
 
-from PyQt5.QtGui import QImage, QPainter
+from PyQt5 import QtCore
+from PyQt5.QtGui import QImage, QPainter, QColor
 from PyQt5.QtWidgets import QWidget, QApplication
+
 
 from naoqi import ALProxy
 
 # To get the constants relative to the video.
 import vision_definitions
 
+import cv2
+import numpy as np
+    
+def QImageToMat(qimg):
+    """RGB888"""
+    #qimg = QImage()
+    #qimg.load("/home/auss/Pictures/test.png")
+    qimg = qimg.convertToFormat(QImage.Format_RGB888)
+    qimg = qimg.rgbSwapped()
+    #assert(qimg.byteCount() == qimg.width() * qimg.height() * 3)
+    
+    ptr = qimg.bits()
+    # ptr.setsize(qimg.byteCount())
+    arr = np.array(ptr)
+    arr = np.resize(arr, qimg.byteCount())
+    print(qimg.byteCount())
+    mat = arr.reshape(qimg.height(), qimg.width(), 3)  #  Copies the data
+    return mat 
 
 class ImageWidget(QWidget):
     """
@@ -101,6 +121,32 @@ class ImageWidget(QWidget):
         """
         self._updateImage()
         self.update()
+        
+        
+        # first to see the details of this Qimage file
+        # it should be a class type thing
+        # then find the image which saved in Qimage
+        img = QImageToMat(self._image)
+        # if it works then run the code next
+        
+        # img = cv2.imread(myWidget._image, 0)
+        # img = cv2.imread('opencv_logo.png',0)
+        Iimg = cv2.medianBlur(img,5)
+        cimg = cv2.cvtColor(Iimg,cv2.COLOR_GRAY2BGR)
+        
+        circles = cv2.HoughCircles(Iimg,cv2.HOUGH_GRADIENT,1,20,
+                                    param1=50,param2=30,minRadius=0,maxRadius=0)
+        
+        circles = np.uint16(np.around(circles))
+        for i in circles[0,:]:
+            # draw the outer circle
+            cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)
+            # draw the center of the circle
+            cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
+        
+        #cv2.imshow('detected circles',cimg)
+        #cv2.waitKey(0)
+        #cv2.destroyAllWindows()
 
 
     def __del__(self):
@@ -111,12 +157,11 @@ class ImageWidget(QWidget):
 
 
 
+
+
 if __name__ == '__main__':
-    
-    import cv2
-    import numpy as np
-    
-    IP = "192.168.0.1"  # Replace here with your NaoQi's IP address.
+        
+    IP = "169.254.254.250"  # Replace here with your NaoQi's IP address.
     PORT = 9559
     CameraID = 0
 
@@ -133,29 +178,10 @@ if __name__ == '__main__':
     myWidget = ImageWidget(IP, PORT, CameraID)
     myWidget.show()
     
-    # first to see the details of this Qimage file
-    # it should be a class type thing
-    # then find the image which saved in Qimage
-    img = myWidget._image
-    # if it works then run the code next
-    '''
-    img = cv2.imread(myWidget._image, 0)
-    # img = cv2.imread('opencv_logo.png',0)
-    img = cv2.medianBlur(img,5)
-    cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)
+    # img = myWidget._image
     
-    circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,1,20,
-                                param1=50,param2=30,minRadius=0,maxRadius=0)
-    
-    circles = np.uint16(np.around(circles))
-    for i in circles[0,:]:
-        # draw the outer circle
-        cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)
-        # draw the center of the circle
-        cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
-    
-    cv2.imshow('detected circles',cimg)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    '''
     sys.exit(app.exec_())
+
+
+
+

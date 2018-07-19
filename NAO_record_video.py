@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # you should be able to run the code without problem
     # need to figure out how to use router
     # or maybe not
-    IP = "192.168.0.101"  # Replace here with your NaoQi's IP address.
+    IP = "169.254.254.250"  # Replace here with your NaoQi's IP address.
     PORT = 9559
 
      # Read IP address from first argument if any.

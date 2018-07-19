@@ -132,7 +132,12 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWidget = ImageWidget(IP, PORT, CameraID)
     myWidget.show()
-
+    
+    # first to see the details of this Qimage file
+    # it should be a class type thing
+    # then find the image which saved in Qimage
+    img = myWidget._image
+    '''
     img = cv2.imread(myWidget._image, 0)
     # img = cv2.imread('opencv_logo.png',0)
     img = cv2.medianBlur(img,5)
@@ -151,5 +156,5 @@ if __name__ == '__main__':
     cv2.imshow('detected circles',cimg)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    
+    '''
     sys.exit(app.exec_())

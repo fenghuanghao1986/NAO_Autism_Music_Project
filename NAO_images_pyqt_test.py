@@ -137,6 +137,7 @@ if __name__ == '__main__':
     # it should be a class type thing
     # then find the image which saved in Qimage
     img = myWidget._image
+    # if it works then run the code next
     '''
     img = cv2.imread(myWidget._image, 0)
     # img = cv2.imread('opencv_logo.png',0)

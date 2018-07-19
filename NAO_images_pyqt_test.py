@@ -13,7 +13,9 @@ Created on Mon Jul 16 23:26:41 2018
 
 import sys
 
-from PyQt4.QtGui import QWidget, QImage, QApplication, QPainter
+from PyQt5.QtGui import QImage, QPainter
+from PyQt5.QtWidgets import QWidget, QApplication
+
 from naoqi import ALProxy
 
 # To get the constants relative to the video.

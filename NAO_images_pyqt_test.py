@@ -174,8 +174,8 @@ class ImageWidget(QWidget):
         Iimg = cv2.medianBlur(img,5)
         cimg = cv2.cvtColor(Iimg,cv2.COLOR_RGB2GRAY)
         
-        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,1.5,2000,
-                                    param1=50,param2=30,minRadius=0,maxRadius=0)
+        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,2,200,
+                                    param1=50,param2=300,minRadius=0,maxRadius=0)
         
         circles = np.uint16(np.around(circles))
         for i in circles[0,:]:

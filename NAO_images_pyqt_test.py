@@ -13,8 +13,8 @@ Created on Mon Jul 16 23:26:41 2018
 
 import sys
 
-from PyQt5 import QtCore
-from PyQt5.QtGui import QImage, QPainter, QColor
+# from PyQt5 import QtCore
+from PyQt5.QtGui import QImage, QPainter, QColor, qRed, qGreen, qBlue, qRgb, QPixmap
 from PyQt5.QtWidgets import QWidget, QApplication
 
 
@@ -25,7 +25,8 @@ import vision_definitions
 
 import cv2
 import numpy as np
-    
+
+'''    
 def QImageToMat(qimg):
     """RGB888"""
     #qimg = QImage()
@@ -41,6 +42,45 @@ def QImageToMat(qimg):
     print(qimg.byteCount())
     mat = arr.reshape(qimg.height(), qimg.width(), 3)  #  Copies the data
     return mat 
+'''
+
+def QImage2CV(qimg):
+    
+    tmp = qimg
+    
+    cv_image = np.zeros((tmp.height(), tmp.width(), 3), dtype=np.uint8)
+    
+    for row in range(0, tmp.height()):
+        for col in range(0, tmp.width()):
+            r = qRed(tmp.pixel(col, row))
+            g = qGreen(tmp.pixel(col, row))
+            b = qBlue(tmp.pixel(col, row))
+            cv_image[row,col,0] = r
+            cv_image[row,col,1] = g
+            cv_image[row,col,2] = b
+    
+    return cv_image
+
+def CV2QImage(cv_image):
+    
+    width = cv_image.shape[1] 
+    height = cv_image.shape[0]  
+    
+    pixmap = QPixmap(width, height) 
+    qimg = pixmap.toImage()  
+    
+   
+    for row in range(0, height):
+        for col in range(0,width):
+            r = cv_image[row,col,0]
+            g = cv_image[row,col,1]
+            b = cv_image[row,col,2]
+            
+            pix = qRgb(r, g, b)
+            qimg.setPixel(col, row, pix)
+    
+    return qimg 
+
 
 class ImageWidget(QWidget):
     """
@@ -120,43 +160,44 @@ class ImageWidget(QWidget):
         Called periodically. Retrieve a nao image, and update the widget.
         """
         self._updateImage()
-        self.update()
+        # self.update()
         
         
         # first to see the details of this Qimage file
         # it should be a class type thing
         # then find the image which saved in Qimage
-        img = QImageToMat(self._image)
+        img = QImage2CV(self._image)
         # if it works then run the code next
         
         # img = cv2.imread(myWidget._image, 0)
         # img = cv2.imread('opencv_logo.png',0)
         Iimg = cv2.medianBlur(img,5)
-        cimg = cv2.cvtColor(Iimg,cv2.COLOR_GRAY2BGR)
+        cimg = cv2.cvtColor(Iimg,cv2.COLOR_RGB2GRAY)
         
-        circles = cv2.HoughCircles(Iimg,cv2.HOUGH_GRADIENT,1,20,
+        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,1.5,2000,
                                     param1=50,param2=30,minRadius=0,maxRadius=0)
         
         circles = np.uint16(np.around(circles))
         for i in circles[0,:]:
             # draw the outer circle
-            cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)
+            cv2.circle(Iimg,(i[0],i[1]),i[2],(0,255,0),2)
             # draw the center of the circle
-            cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
+            cv2.circle(Iimg,(i[0],i[1]),2,(0,0,255),3)
         
         #cv2.imshow('detected circles',cimg)
         #cv2.waitKey(0)
         #cv2.destroyAllWindows()
-
+        qimg = CV2QImage(Iimg)
+        
+        self._image = qimg
+        
+        self.update()
 
     def __del__(self):
         """
         When the widget is deleted, we unregister our naoqi video module.
         """
         self._unregisterImageClient()
-
-
-
 
 
 if __name__ == '__main__':

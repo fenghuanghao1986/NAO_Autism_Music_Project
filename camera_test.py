@@ -21,7 +21,7 @@ while(True):
     
     cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)
 
-    circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,1,20,
+    circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,6,20000,
                             param1=50,param2=30,minRadius=0,maxRadius=0)
 
     circles = np.uint16(np.around(circles))
@@ -32,9 +32,9 @@ while(True):
         # draw the center of the circle
         cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
         # Display the resulting frame
-        cv2.imshow('cimg',gray)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+    cv2.imshow('cimg',cimg)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 # When everything done, release the capture
 cap.release()

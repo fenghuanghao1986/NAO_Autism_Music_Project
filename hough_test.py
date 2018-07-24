@@ -19,6 +19,11 @@ circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,6,2000,
 print("5")
 circles = np.uint16(np.around(circles))
 print("6")
+
+peri = cv2.arcLength(img, True)
+
+approx = cv2.approxPolyDP(img, 0.04 * peri, True)
+        
 for i in circles[0,:]:
     # draw the outer circle
     cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)

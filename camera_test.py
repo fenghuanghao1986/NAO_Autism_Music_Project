@@ -26,13 +26,17 @@ while(True):
 
     circles = np.uint16(np.around(circles))
     
+    peri = cv2.arcLength(img, True)
+    
+    approx = cv2.approxPolyDP(img, 0.04 * peri, True)
+    
     for i in circles[0,:]:
         # draw the outer circle
         cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)
         # draw the center of the circle
         cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
         # Display the resulting frame
-    cv2.imshow('cimg',cimg)
+    cv2.imshow('Xylophone and hammer',cimg)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

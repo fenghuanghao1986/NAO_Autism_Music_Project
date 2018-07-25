@@ -26,9 +26,9 @@ while(True):
 
     circles = np.uint16(np.around(circles))
     
-    peri = cv2.arcLength(img, True)
+    # peri = cv2.arcLength(img, True)
     
-    approx = cv2.approxPolyDP(img, 0.04 * peri, True)
+    # approx = cv2.approxPolyDP(img, 0.04 * peri, True)
     
     for i in circles[0,:]:
         # draw the outer circle

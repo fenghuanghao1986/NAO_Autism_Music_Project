@@ -174,24 +174,24 @@ class ImageWidget(QWidget):
         Iimg = cv2.medianBlur(img,5)
         cimg = cv2.cvtColor(Iimg,cv2.COLOR_RGB2GRAY)
         
-        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,2,200,
-                                    param1=50,param2=300,minRadius=0,maxRadius=0)
-        
-        circles = np.uint16(np.around(circles))
-        for i in circles[0,:]:
-            # draw the outer circle
-            cv2.circle(Iimg,(i[0],i[1]),i[2],(0,255,0),2)
-            # draw the center of the circle
-            cv2.circle(Iimg,(i[0],i[1]),2,(0,0,255),3)
-        
-        #cv2.imshow('detected circles',cimg)
-        #cv2.waitKey(0)
-        #cv2.destroyAllWindows()
-        qimg = CV2QImage(Iimg)
-        
-        self._image = qimg
-        
-        self.update()
+        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,6,20000,
+                                    param1=50,param2=30,minRadius=0,maxRadius=0)
+        if len(circles > 0):
+            circles = np.uint16(np.around(circles))
+            for i in circles[0,:]:
+                # draw the outer circle
+                cv2.circle(Iimg,(i[0],i[1]),i[2],(0,255,0),2)
+                # draw the center of the circle
+                cv2.circle(Iimg,(i[0],i[1]),2,(0,0,255),3)
+            
+            #cv2.imshow('detected circles',cimg)
+            #cv2.waitKey(0)
+            #cv2.destroyAllWindows()
+            qimg = CV2QImage(Iimg)
+            
+            self._image = qimg
+            
+            self.update()
 
     def __del__(self):
         """

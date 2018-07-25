@@ -111,7 +111,7 @@ class ImageWidget(QWidget):
         self._registerImageClient(IP, PORT)
 
         # Trigget 'timerEvent' every 100 ms.
-        self.startTimer(100)
+        self.startTimer(33)
 
 
     def _registerImageClient(self, IP, PORT):
@@ -160,7 +160,7 @@ class ImageWidget(QWidget):
         Called periodically. Retrieve a nao image, and update the widget.
         """
         self._updateImage()
-        # self.update()
+        self.update()
         
         
         # first to see the details of this Qimage file
@@ -174,7 +174,7 @@ class ImageWidget(QWidget):
         Iimg = cv2.medianBlur(img,5)
         cimg = cv2.cvtColor(Iimg,cv2.COLOR_RGB2GRAY)
         
-        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,6,20000,
+        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,6,2000,
                                     param1=50,param2=30,minRadius=0,maxRadius=0)
         if len(circles > 0):
             circles = np.uint16(np.around(circles))
@@ -192,6 +192,7 @@ class ImageWidget(QWidget):
             self._image = qimg
             
             self.update()
+            
 
     def __del__(self):
         """

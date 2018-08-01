@@ -174,7 +174,7 @@ class ImageWidget(QWidget):
         Iimg = cv2.medianBlur(img,5)
         cimg = cv2.cvtColor(Iimg,cv2.COLOR_RGB2GRAY)
         
-<<<<<<< HEAD
+
         circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,2,20000,
                                     param1=50,param2=300,minRadius=0,maxRadius=0)
         
@@ -193,7 +193,7 @@ class ImageWidget(QWidget):
         self._image = qimg
         
         self.update()
-=======
+
         circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,6,2000,
                                     param1=50,param2=30,minRadius=0,maxRadius=0)
         if len(circles > 0):
@@ -213,7 +213,7 @@ class ImageWidget(QWidget):
             
             self.update()
             
->>>>>>> 612813ab78ce4b5bddd017cb84f0e6b2f50c9e70
+
 
     def __del__(self):
         """

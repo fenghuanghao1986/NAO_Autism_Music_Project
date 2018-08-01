@@ -17,7 +17,7 @@ def main(robotIP, PORT=9559):
     '''
 
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
-    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
+    postureProxy = ALPro1xy("ALRobotPosture", robotIP, PORT)
 
     # Wake up robot
     motionProxy.wakeUp()

@@ -4,7 +4,7 @@ Created on Tue Jul 24 16:10:58 2018
 
 @author: fengh
 """
-'''
+
 import argparse
 import motion
 import almath
@@ -30,9 +30,9 @@ def main(robotIP, PORT=9559):
     path = []
     currentTf = motionProxy.getTransform(effector, frame, useSensorValues)
     targetTf  = almath.Transform(currentTf)
-    targetTf.r1_c4 -= 0.03 # x
-    targetTf.r2_c4 -= 0.03 # y
-    targetTf.r3_c4 -= 0.03
+    targetTf.r1_c4 -= 0 # x
+    targetTf.r2_c4 += 0 # y
+    targetTf.r3_c4 += 0.3
     
     path.append(list(targetTf.toVector()))
     path.append(currentTf)
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     main(args.ip, args.port)
 
-'''
+
 '''
 import argparse
 import motion
@@ -127,16 +127,13 @@ if __name__ == "__main__":
     main(args.ip, args.port)
     
 '''
+'''
 import argparse
 import motion
 import almath
 from naoqi import ALProxy
 
 def main(robotIP, PORT=9559):
-    ''' Simultaneously control three effectors:
-    the Torso, the Left Arm and the Right Arm
-    Warning: Needs a PoseInit before executing
-    '''
 
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
@@ -195,6 +192,7 @@ def main(robotIP, PORT=9559):
     targetTf  = almath.Transform(currentTf)
     print(targetTf)
     targetTf.r2_c4 -= 0.04 # y
+    print(targetTf)
     path.append(list(targetTf.toVector()))
     path.append(currentTf)
 
@@ -206,7 +204,9 @@ def main(robotIP, PORT=9559):
     path = []
     currentTf = motionProxy.getTransform(effector, frame, useSensorValues)
     targetTf  = almath.Transform(currentTf)
+    print(targetTf)
     targetTf.r2_c4 += 0.04 # y
+    print(targetTf)
     path.append(list(targetTf.toVector()))
     path.append(currentTf)
 
@@ -224,3 +224,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     main(args.ip, args.port)
+'''

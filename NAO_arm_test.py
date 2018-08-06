@@ -33,9 +33,10 @@ def main(robotIP, PORT=9559):
     path = []
     currentTf = motionProxy.getTransform(effector, frame, useSensorValues)
     targetTf  = almath.Transform(currentTf)
-    targetTf.r1_c4 += 0.03 # x
-    targetTf.r2_c4 += 0.03 # y
-
+    targetTf.r1_c4 -= 0.03 # x
+    targetTf.r2_c4 -= 0.03 # y
+    targetTf.r3_c4 -= 0.03
+    
     path.append(list(targetTf.toVector()))
     path.append(currentTf)
 

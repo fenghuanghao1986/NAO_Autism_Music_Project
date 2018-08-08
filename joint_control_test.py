@@ -21,13 +21,13 @@ def main(robotIP, PORT = 9559):
         hit = -0.3
         release = 0.3
         fractionMaxSpeed = 1
-        motionProxy.changeAngles(names, hit, fractionMaxSpeed)
+        motionProxy.changeAngles(names, hit, 0.1)
         
-        time.sleep(1)
+        time.sleep(0.2)
         
-        motionProxy.changeAngles(names, release, fractionMaxSpeed)
+        motionProxy.changeAngles(names, release, 1)
         
-        time.sleep(1)
+        time.sleep(0.5)
     
         # motionProxy.setStiffnesses("RArm", 0.0)
 

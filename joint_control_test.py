@@ -21,6 +21,7 @@ def main(robotIP, PORT = 9559):
         hit = -0.3
         release = 0.3
         fractionMaxSpeed = 1
+        
         motionProxy.changeAngles(names, hit, 0.1)
         
         time.sleep(0.2)

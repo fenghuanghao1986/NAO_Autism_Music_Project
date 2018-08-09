@@ -72,10 +72,11 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
 
     # Wake up robot
-    motionProxy.wakeUp()
+    # motionProxy.wakeUp()
 
     # Send robot to Stand Init
-    postureProxy.goToPosture("StandInit", 0.5)
+    #postureProxy.goToPosture("StandInit", 0.5)
+    postureProxy.goToPosture("Crouch", 1)
 
     # effector   = "LArm"
     frame      = motion.FRAME_TORSO
@@ -86,8 +87,8 @@ def main(robotIP, PORT=9559):
     currentTf = motionProxy.getTransform(armName, frame, useSensorValues)
     targetTf  = almath.Transform(currentTf)
     targetTf.r1_c4 -= 0 # x
-    targetTf.r2_c4 += 0 # y
-    targetTf.r3_c4 += 0.3
+    targetTf.r2_c4 += 0.1 # y
+    targetTf.r3_c4 += 0 # z
     
     path.append(list(targetTf.toVector()))
     path.append(currentTf)
@@ -98,7 +99,7 @@ def main(robotIP, PORT=9559):
     motionProxy.transformInterpolations(armName, frame, path, axisMask, times)
 
     # Go to rest position
-    motionProxy.rest()
+    # motionProxy.rest()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

@@ -36,7 +36,7 @@ def main(robotIP):
     motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)
 
     time.sleep(1.0)
-
+    print("Done first part")
     # Example showing multiple joints
     # Instead of listing each joint, you can use a chain name, which will
     # be expanded to contain all the joints in the chain. In this case,
@@ -46,7 +46,7 @@ def main(robotIP):
     targetAngles     = [0.5, 0.25]
     maxSpeedFraction = 0.2 # Using 20% of maximum joint speed
     motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)
-
+    
     motionProxy.setStiffnesses("Body", 1.0)
 
     # Example showing body zero position

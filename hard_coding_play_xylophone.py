@@ -15,26 +15,23 @@ import sys
 import time
 from naoqi import ALProxy
 
-lArm = "LArm"
-rArm = "RArm"
-maxSpeed   = 1.0
+maxSpeed = 1.0
 
 def initRobotPosition(motionProxy, postureProxy):
     ''' Inits NAO's position and stiffnesses'''
-    
-    global lArm
-    global rArm
-    
+
     motionProxy.wakeUp()
     postureProxy.goToPosture("Crouch", 1.0)
     
     time.sleep(1.0)
-    # Make left arm loose.
-    motionProxy.setAngles("LWristYaw", 0.0, 1.0)
+    # Make both arms stiff.
+    motionProxy.setStiffnesses("LArm", 1.0)
+    motionProxy.setStiffnesses("RArm", 1.0)
+    # motionProxy.setAngles("LWristYaw", 0.0, 1.0)
+    # Make head in the right position and keep stiff.
     motionProxy.setAngles("Head", [0.44, -0.44], 0.5)
-    motionProxy.setStiffnesses(lArm, 1.0)
-    motionProxy.setStiffnesses(rArm, 1.0)
-    motionProxy.setStiffnesses("LWristYaw", 0.2)
+    motionProxy.setAngles("RShoulderPitch", )
+
 
     # Disable arm moves while walking on left arm.
     motionProxy.setMoveArmsEnabled(False, True)

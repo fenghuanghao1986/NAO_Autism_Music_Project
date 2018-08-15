@@ -46,7 +46,27 @@ def initRobotPosition(motionProxy, postureProxy):
          
     time.sleep(1.0)
     
-
+def playHardMode(motionProxy, postureProxy):
+    
+        # while(True):
+        motionProxy = ALProxy("ALMotion", robotIP, PORT)
+    
+        motionProxy.setStiffnesses("RArm", 1.0)
+    
+        # Example showing a slow, relative move of "HeadYaw".
+        # Calling this multiple times will move the head further.
+        names = "RWristYaw"
+        hit = -0.3
+        release = 0.3
+        fractionMaxSpeed = 1
+        
+        motionProxy.changeAngles(names, hit, 0.1)
+        
+        time.sleep(0.2)
+        
+        motionProxy.changeAngles(names, release, 1)
+        
+        time.sleep(0.5)
     
 def main(robotIP, PORT=9559):
     

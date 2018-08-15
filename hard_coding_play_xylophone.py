@@ -25,14 +25,72 @@ def initRobotPosition(motionProxy, postureProxy):
     
     time.sleep(1.0)
     # Make both arms stiff.
+
     motionProxy.setStiffnesses("LArm", 1.0)
     motionProxy.setStiffnesses("RArm", 1.0)
-    # motionProxy.setAngles("LWristYaw", 0.0, 1.0)
     # Make head in the right position and keep stiff.
-    motionProxy.setAngles("Head", [0.44, -0.44], 0.5)
-    motionProxy.setAngles("RShoulderPitch", )
-
-
-    # Disable arm moves while walking on left arm.
-    motionProxy.setMoveArmsEnabled(False, True)
+    motionProxy.setAngles("HeadPitch", 0.4, 1.0)
+    # Make arm to initial position and ready for everything.
+    motionProxy.setAngles("RShoulderPitch", 0.5, 1.0)
+    motionProxy.setAngles("LShoulderPitch", 0.5, 1.0)
+    
     time.sleep(1.0)
+    
+    motionProxy.setAngles("RShoulderRoll", -0.8, 1.0)
+    motionProxy.setAngles("LShoulderRoll", 0.8, 1.0)
+    
+    time.sleep(1.0)
+    
+    motionProxy.setAngles("RWristYaw", -0.6, 1.0)
+    motionProxy.setAngles("LWristYaw", 0.6, 1.0)
+         
+    time.sleep(1.0)
+    
+
+    
+def main(robotIP, PORT=9559):
+    
+    motionProxy  = ALProxy("ALMotion", robotIP, PORT)
+    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
+
+    # Wake up robot
+    # motionProxy.wakeUp()
+
+    # Send robot to Stand Init
+    #postureProxy.goToPosture("StandInit", 0.5)
+    initRobotPosition(motionProxy, postureProxy)
+    '''
+    # effector   = "LArm"
+    frame      = motion.FRAME_TORSO
+    axisMask   = almath.AXIS_MASK_VEL # just control position
+    useSensorValues = False
+
+    path = []
+    currentTf = motionProxy.getTransform(armName, frame, useSensorValues)
+    targetTf  = almath.Transform(currentTf)
+    targetTf.r1_c4 -= 0 # x
+    targetTf.r2_c4 += 0.1 # y
+    targetTf.r3_c4 += 0 # z
+    
+    path.append(list(targetTf.toVector()))
+    path.append(currentTf)
+
+    # Go to the target and back again
+    times      = [2.0, 4.0] # seconds
+
+    motionProxy.transformInterpolations(armName, frame, path, axisMask, times)
+
+    # Go to rest position
+    # motionProxy.rest()
+    
+    '''
+    
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot ip address")
+    parser.add_argument("--port", type=int, default=9559,
+                        help="Robot port number")
+
+    args = parser.parse_args()
+    main(args.ip, args.port)

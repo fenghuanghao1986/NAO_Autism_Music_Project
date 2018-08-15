@@ -54,7 +54,7 @@ def playHardMode(motionProxy, postureProxy):
     for i in range(0,6):  
         
         motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-        time.sleep(0.2)
+        time.sleep(0.1)
         
         motionProxy.setAngles("RWristYaw", -0.6, 1.0)
         
@@ -62,7 +62,7 @@ def playHardMode(motionProxy, postureProxy):
         #motionProxy.changeAngles("RWristYaw", release, 1)        
         
         motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
-        time.sleep(0.2)
+        time.sleep(0.1)
         
         motionProxy.setAngles("LWristYaw", 0.6, 1.0)
         #motionProxy.changeAngles("LWristYaw", -release, 1)        

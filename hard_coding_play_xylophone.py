@@ -50,23 +50,21 @@ def playHardMode(motionProxy, postureProxy):
     
     hit = -0.6
     fractionMaxSpeed = 1
-    
-    for i in range(0,6):  
+          
+    motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
+    time.sleep(0.1)
         
-        motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-        time.sleep(0.1)
+    motionProxy.setAngles("RWristYaw", -0.6, 1.0)
         
-        motionProxy.setAngles("RWristYaw", -0.6, 1.0)
+    time.sleep(0.8)
+    # motionProxy.changeAngles("RWristYaw", release, 1)        
         
-        time.sleep(0.8)
-        #motionProxy.changeAngles("RWristYaw", release, 1)        
+    motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
+    time.sleep(0.1)
         
-        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
-        time.sleep(0.1)
-        
-        motionProxy.setAngles("LWristYaw", 0.6, 1.0)
-        #motionProxy.changeAngles("LWristYaw", -release, 1)        
-        time.sleep(0.8)
+    motionProxy.setAngles("LWristYaw", 0.6, 1.0)
+    # motionProxy.changeAngles("LWristYaw", -release, 1)        
+    time.sleep(0.8)
     
 def main(robotIP, PORT=9559):
     

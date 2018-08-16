@@ -113,8 +113,6 @@ def main(robotIP, PORT=9559):
     motionProxy.rest()
 '''
 def interpretJointsPose(motionProxy, memoryProxy):
-    ''' Translates the current left arm pose into a target position for NAO's
-        foot. '''
 
     # Retrieve current arm position.
     armPose = motionProxy.getAngles(armName, True)

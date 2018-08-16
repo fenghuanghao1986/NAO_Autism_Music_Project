@@ -11,6 +11,7 @@ Created on Sun Aug 12 14:40:45 2018
 import almath
 import argparse
 import motion
+import random
 import sys
 import time
 from naoqi import ALProxy
@@ -20,7 +21,7 @@ maxSpeed = 1.0
 def initRobotPosition(motionProxy, postureProxy):
     ''' Inits NAO's position and stiffnesses'''
 
-    motionProxy.wakeUp()
+    # motionProxy.wakeUp()
     postureProxy.goToPosture("Crouch", 1.0)
     
     time.sleep(1.0)
@@ -68,24 +69,27 @@ def hitBarWrist(motionProxy, postureProxy):
     
 def moveShoulder(motionProxy, postureProxy):
     
-    motionProxy.changeAngles("RShoulderRoll", -0.08, 1.0)
-    motionProxy.changeAngles("LShoulderRoll", 0.08, 1.0)
+    change = [-0.04, 0, 0.04]
+    
+    motionProxy.changeAngles("RShoulderRoll", random.choice(change), 1.0)
+    motionProxy.changeAngles("LShoulderRoll", -random.choice(change), 1.0)
     
     
 def main(robotIP, PORT=9559):
     
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
-
-    # Wake up robot
-    # motionProxy.wakeUp()
-
-    # Send robot to Stand Init
-    #postureProxy.goToPosture("StandInit", 0.5)
-    initRobotPosition(motionProxy, postureProxy)
-    hitBarWrist(motionProxy, postureProxy)
-    moveShoulder(motionProxy, postureProxy)
+        
+    initRobotPosition(motionProxy, postureProxy)    
     
+    for i in range(0, 6):
+                       
+        moveShoulder(motionProxy, postureProxy)
+        time.sleep(1)
+        
+        hitBarWrist(motionProxy, postureProxy)
+        #time.sleep(1)
+        
     '''
     # effector   = "LArm"
     frame      = motion.FRAME_TORSO
@@ -110,7 +114,7 @@ def main(robotIP, PORT=9559):
     
     '''
     # Go to rest position
-    motionProxy.rest()
+    # motionProxy.rest()
 '''
 def interpretJointsPose(motionProxy, memoryProxy):
 

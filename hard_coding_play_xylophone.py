@@ -82,7 +82,7 @@ def main(robotIP, PORT=9559):
         
     initRobotPosition(motionProxy, postureProxy)    
     
-    for i in range(0, 6):
+    for i in range(0, 8):
                        
         moveShoulder(motionProxy, postureProxy)
         time.sleep(1)

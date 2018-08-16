@@ -85,6 +85,7 @@ def main(robotIP, PORT=9559):
     initRobotPosition(motionProxy, postureProxy)
     hitBarWrist(motionProxy, postureProxy)
     moveShoulder(motionProxy, postureProxy)
+    
     '''
     # effector   = "LArm"
     frame      = motion.FRAME_TORSO
@@ -110,7 +111,34 @@ def main(robotIP, PORT=9559):
     '''
     # Go to rest position
     motionProxy.rest()
-    
+'''
+def interpretJointsPose(motionProxy, memoryProxy):
+    ''' Translates the current left arm pose into a target position for NAO's
+        foot. '''
+
+    # Retrieve current arm position.
+    armPose = motionProxy.getAngles(armName, True)
+
+    targetX     = 0.0
+    targetY     = 0.0
+    targetTheta = 0.0
+    gaitConfig = motionProxy.getMoveConfig("Default")
+
+    # Filter Shoulder Pitch.
+    if (armPose[0] > - 0.9 and armPose[0] < -0.20):
+        targetX = stepLength
+    elif (armPose[0] > -2.5 and armPose[0] < -1.5):
+        targetX = - stepLength - 0.02
+
+    # Filter Wrist Yaw.
+    if armPose[4] > 0.2:
+        targetTheta = gaitConfig[2][1]
+    elif armPose[4] < -0.2:
+        targetTheta = - gaitConfig[2][1]
+
+    # Return corresponding pose.
+    return almath.Pose2D(targetX, targetY, targetTheta)
+'''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="127.0.0.1",

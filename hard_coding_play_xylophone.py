@@ -46,7 +46,7 @@ def initRobotPosition(motionProxy, postureProxy):
          
     time.sleep(1.0)
     
-def playHardMode(motionProxy, postureProxy):
+def hitBarWrist(motionProxy, postureProxy):
     
     hit = -0.6
     fractionMaxSpeed = 1
@@ -66,6 +66,12 @@ def playHardMode(motionProxy, postureProxy):
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
     time.sleep(0.8)
     
+def moveShoulder(motionProxy, postureProxy):
+    
+    motionProxy.changeAngles("RShoulderRoll", -0.08, 1.0)
+    motionProxy.changeAngles("LShoulderRoll", 0.08, 1.0)
+    
+    
 def main(robotIP, PORT=9559):
     
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
@@ -77,7 +83,8 @@ def main(robotIP, PORT=9559):
     # Send robot to Stand Init
     #postureProxy.goToPosture("StandInit", 0.5)
     initRobotPosition(motionProxy, postureProxy)
-    playHardMode(motionProxy, postureProxy)
+    hitBarWrist(motionProxy, postureProxy)
+    moveShoulder(motionProxy, postureProxy)
     '''
     # effector   = "LArm"
     frame      = motion.FRAME_TORSO
@@ -99,10 +106,10 @@ def main(robotIP, PORT=9559):
 
     motionProxy.transformInterpolations(armName, frame, path, axisMask, times)
 
-    # Go to rest position
-    # motionProxy.rest()
     
     '''
+    # Go to rest position
+    motionProxy.rest()
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

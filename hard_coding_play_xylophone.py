@@ -47,6 +47,18 @@ def initRobotPosition(motionProxy, postureProxy):
          
     time.sleep(1.0)
     
+def handControl(motionProxy, postureProxy):
+    
+    
+    
+    motionProxy.openHand('LHand')
+    motionProxy.openHand('RHand')
+    
+    motionProxy.closeHand('LHand')
+    motionProxy.closeHand('Rhand')
+    
+    
+    
 def hitBarWrist(motionProxy, postureProxy):
     
     hit = -0.6

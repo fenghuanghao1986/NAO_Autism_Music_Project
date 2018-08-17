@@ -10,6 +10,7 @@ Created on Sun Aug 12 14:40:45 2018
 # import packages
 import almath
 import argparse
+import altouchproxy
 import motion
 import random
 import sys
@@ -47,16 +48,26 @@ def initRobotPosition(motionProxy, postureProxy):
          
     time.sleep(1.0)
     
-def handControl(motionProxy, postureProxy):
-    
-    
-    
-    motionProxy.openHand('LHand')
-    motionProxy.openHand('RHand')
-    
-    motionProxy.closeHand('LHand')
-    motionProxy.closeHand('Rhand')
-    
+def handControl(motionProxy, postureProxy, touchProxy):
+    while(1):
+            
+        RLHand = touchProxy.HandRightLeftTouched()
+        RRHand = touchProxy.HandRightRightTouched()
+        
+        if(RLHand and RRHand):        
+            motionProxy.openHand('RHand')
+            
+        else:
+            motionProxy.closeHand('RHand')
+            
+        LLHand = touchProxy.HandLeftLeftTouched()
+        LRHand = touchProxy.HandLeftRightTouched()
+        
+        if (LLHand and LRHand):       
+            motionProxy.openHand('LHand')
+            
+        else:
+            motionProxy.closeHand('LHand')
     
     
 def hitBarWrist(motionProxy, postureProxy):
@@ -91,8 +102,10 @@ def main(robotIP, PORT=9559):
     
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
+    touchProxy   = ALProxy("ALTouch", robotIP, PORT)
         
     initRobotPosition(motionProxy, postureProxy)    
+    handControl(motionProxy, postureProxy, touchProxy)
     
     for i in range(0, 8):
                        

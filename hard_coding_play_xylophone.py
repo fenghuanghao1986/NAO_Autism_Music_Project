@@ -22,7 +22,7 @@ def initRobotPosition(motionProxy, postureProxy):
     ''' Inits NAO's position and stiffnesses'''
 
     # motionProxy.wakeUp()
-    postureProxy.goToPosture("Crouch", 1.0)
+    #postureProxy.goToPosture("Crouch", 1.0)
     
     time.sleep(1.0)
     # Make both arms stiff.
@@ -32,8 +32,8 @@ def initRobotPosition(motionProxy, postureProxy):
     # Make head in the right position and keep stiff.
     motionProxy.setAngles("HeadPitch", 0.4, 1.0)
     # Make arm to initial position and ready for everything.
-    motionProxy.setAngles("RShoulderPitch", 0.5, 1.0)
-    motionProxy.setAngles("LShoulderPitch", 0.5, 1.0)
+    motionProxy.setAngles("RShoulderPitch", 0.7, 1.0)
+    motionProxy.setAngles("LShoulderPitch", 0.7, 1.0)
     
     time.sleep(1.0)
     
@@ -91,7 +91,7 @@ def hitBarWrist(motionProxy, postureProxy):
     
 def moveShoulder(motionProxy, postureProxy):
     
-    change = [-0.12, -0.08, -0.04, 0.04, 0.08, 0.12]
+    change = [-0.08, -0.04, 0.04, 0.08]
     
     motionProxy.changeAngles("RShoulderRoll", random.choice(change), 1.0)
     motionProxy.changeAngles("LShoulderRoll", -random.choice(change), 1.0)
@@ -167,7 +167,7 @@ def interpretJointsPose(motionProxy, memoryProxy):
 '''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="169.254.254.250",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

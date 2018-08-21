@@ -22,7 +22,7 @@ def initRobotPosition(motionProxy, postureProxy):
     ''' Inits NAO's position and stiffnesses'''
 
     # motionProxy.wakeUp()
-    postureProxy.goToPosture("Crouch", 1.0)
+    #postureProxy.goToPosture("Crouch", 1.0)
     
     time.sleep(1.0)
     # Make both arms stiff.
@@ -32,8 +32,8 @@ def initRobotPosition(motionProxy, postureProxy):
     # Make head in the right position and keep stiff.
     motionProxy.setAngles("HeadPitch", 0.4, 1.0)
     # Make arm to initial position and ready for everything.
-    motionProxy.setAngles("RShoulderPitch", 0.5, 1.0)
-    motionProxy.setAngles("LShoulderPitch", 0.5, 1.0)
+    motionProxy.setAngles("RShoulderPitch", 0.7, 1.0)
+    motionProxy.setAngles("LShoulderPitch", 0.7, 1.0)
     
     time.sleep(1.0)
     
@@ -46,7 +46,7 @@ def initRobotPosition(motionProxy, postureProxy):
     motionProxy.setAngles("LWristYaw", 0.6, 1.0)
          
     time.sleep(1.0)
-    
+'''    
 def handControl(motionProxy, postureProxy, touchProxy):
     
     LLHand = touchProxy.HandLeftLeftTouched()
@@ -68,7 +68,7 @@ def handControl(motionProxy, postureProxy, touchProxy):
         else:
             motionProxy.closeHand('LHand')
     
-    
+'''    
 def hitBarWrist(motionProxy, postureProxy):
     
     hit = -0.6
@@ -79,7 +79,7 @@ def hitBarWrist(motionProxy, postureProxy):
         
     motionProxy.setAngles("RWristYaw", -0.6, 1.0)
         
-    time.sleep(0.8)
+    time.sleep(0.65)
     # motionProxy.changeAngles("RWristYaw", release, 1)        
         
     motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
@@ -87,11 +87,11 @@ def hitBarWrist(motionProxy, postureProxy):
         
     motionProxy.setAngles("LWristYaw", 0.6, 1.0)
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
-    time.sleep(0.8)
+    time.sleep(0.65)
     
 def moveShoulder(motionProxy, postureProxy):
     
-    change = [-0.04, 0, 0.04]
+    change = [-0.08, -0.04, 0.04, 0.08]
     
     motionProxy.changeAngles("RShoulderRoll", random.choice(change), 1.0)
     motionProxy.changeAngles("LShoulderRoll", -random.choice(change), 1.0)
@@ -104,12 +104,12 @@ def main(robotIP, PORT=9559):
     touchProxy   = ALProxy("ALTouch", robotIP, PORT)
         
     initRobotPosition(motionProxy, postureProxy)    
-    handControl(motionProxy, postureProxy, touchProxy)
+    # handControl(motionProxy, postureProxy, touchProxy)
     
     for i in range(0, 8):
                        
         moveShoulder(motionProxy, postureProxy)
-        time.sleep(1)
+        time.sleep(0.25)
         
         hitBarWrist(motionProxy, postureProxy)
         #time.sleep(1)
@@ -167,7 +167,7 @@ def interpretJointsPose(motionProxy, memoryProxy):
 '''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="169.254.254.250",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

@@ -15,7 +15,7 @@ from matplotlib import pyplot as plt
 
 print 'Pixel Values Access'
 
-imgFile = 'ball5.jpg'
+imgFile = 'ball4.jpg'
 
 # load an original image
 img = cv2.imread(imgFile)

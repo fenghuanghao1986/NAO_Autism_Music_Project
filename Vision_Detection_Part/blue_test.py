@@ -8,7 +8,8 @@ Created on Tue Aug 21 12:15:03 2018
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
+cap = cv2.imread('ball5.jpg',0)
 
 # set blue thresh
 lower_blue=np.array([78,43,46])
@@ -29,7 +30,8 @@ while(1):
     # detect blue
     res = cv2.bitwise_and(frame, frame, mask=mask)
     cv2.imshow('Result', res)
-
+    
+    # press q to quit capture
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

@@ -64,7 +64,7 @@ def main(robotIP, PORT = 9559):
     # Make a list of the correct length. All angles are zero.
     targetAngles  = [0.0]*numJoints
     # Using 10% of maximum joint speed
-    maxSpeedFraction  = 1
+    maxSpeedFraction  = 0.2
     motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)
 
     # Go to rest position

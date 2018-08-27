@@ -88,6 +88,13 @@ def hitBarWrist(motionProxy, postureProxy):
     motionProxy.setAngles("LWristYaw", 0.6, 1.0)
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
     time.sleep(0.65)
+    '''
+    names  = "Head"
+    # We still need to specify the correct number of target angles
+    targetAngles     = [0.5, 0.25]
+    maxSpeedFraction = 1 # Using 20% of maximum joint speed
+    motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)
+    '''
     
 def moveShoulder(motionProxy, postureProxy):
     
@@ -101,7 +108,7 @@ def main(robotIP, PORT=9559):
     
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
-    touchProxy   = ALProxy("ALTouch", robotIP, PORT)
+    # touchProxy   = ALProxy("ALTouch", robotIP, PORT)
         
     initRobotPosition(motionProxy, postureProxy)    
     # handControl(motionProxy, postureProxy, touchProxy)

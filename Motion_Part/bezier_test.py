@@ -46,12 +46,12 @@ def main(robotIP, PORT = 9559):
     # Instead of listing each joint, you can use a chain name, which will
     # be expanded to contain all the joints in the chain. In this case,
     # "Head" will be interpreted as ["HeadYaw", "HeadPitch"]
-    names  = "Head"
+    names  = "RWristYaw"
     # We still need to specify the correct number of target angles
-    targetAngles     = [0.5, 0.25]
+    targetAngles     = 1
     maxSpeedFraction = 1 # Using 20% of maximum joint speed
     motionProxy.angleInterpolationWithSpeed(names, targetAngles, maxSpeedFraction)
-
+    '''
     # Example showing body zero position
     # Instead of listing each joint, you can use a the name "Body"
     names  = "Body"
@@ -69,7 +69,7 @@ def main(robotIP, PORT = 9559):
 
     # Go to rest position
     motionProxy.rest()
-
+    '''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="127.0.0.1",

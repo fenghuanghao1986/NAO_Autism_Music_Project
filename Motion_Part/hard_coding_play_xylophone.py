@@ -71,23 +71,23 @@ def handControl(motionProxy, postureProxy, touchProxy):
 '''    
 def hitBarWrist(motionProxy, postureProxy):
     
-    hit = -0.6
+    hit = -1
     fractionMaxSpeed = 1
           
     motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-    time.sleep(0.1)
+    time.sleep(0.05)
         
-    motionProxy.setAngles("RWristYaw", -0.6, 1.0)
+    motionProxy.setAngles("RWristYaw", -1, 1.0)
         
-    time.sleep(0.65)
+    time.sleep(0.5)
     # motionProxy.changeAngles("RWristYaw", release, 1)        
         
     motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
-    time.sleep(0.1)
+    time.sleep(0.05)
         
-    motionProxy.setAngles("LWristYaw", 0.6, 1.0)
+    motionProxy.setAngles("LWristYaw", 1, 1.0)
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
-    time.sleep(0.65)
+    time.sleep(0.5)
     '''
     names  = "Head"
     # We still need to specify the correct number of target angles
@@ -174,7 +174,11 @@ def interpretJointsPose(motionProxy, memoryProxy):
 '''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    '''
     parser.add_argument("--ip", type=str, default="169.254.254.250",
+                        help="Robot ip address")
+    '''
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

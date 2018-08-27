@@ -8,8 +8,8 @@ Created on Tue Aug 21 12:15:03 2018
 import cv2
 import numpy as np
 
-# cap = cv2.VideoCapture(0)
-cap = cv2.imread('ball5.jpg',0)
+cap = cv2.VideoCapture(0)
+#cap = cv2.imread('ball5.jpg',0)
 
 # set blue thresh
 lower_blue=np.array([78,43,46])

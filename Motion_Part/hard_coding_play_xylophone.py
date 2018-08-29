@@ -22,7 +22,7 @@ def initRobotPosition(motionProxy, postureProxy):
     ''' Inits NAO's position and stiffnesses'''
 
     # motionProxy.wakeUp()
-    #postureProxy.goToPosture("Crouch", 1.0)
+    # postureProxy.goToPosture("Crouch", 1.0)
     
     time.sleep(1.0)
     # Make both arms stiff.
@@ -42,8 +42,8 @@ def initRobotPosition(motionProxy, postureProxy):
     
     time.sleep(1.0)
     
-    motionProxy.setAngles("RWristYaw", -0.6, 1.0)
-    motionProxy.setAngles("LWristYaw", 0.6, 1.0)
+    motionProxy.setAngles("RWristYaw", -0.4, 1.0)
+    motionProxy.setAngles("LWristYaw", 0.37, 1.0)
          
     time.sleep(1.0)
 '''    
@@ -75,17 +75,17 @@ def hitBarWrist(motionProxy, postureProxy):
     fractionMaxSpeed = 1
           
     motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-    time.sleep(0.05)
+    time.sleep(0.04)
         
-    motionProxy.setAngles("RWristYaw", -1, 1.0)
+    motionProxy.setAngles("RWristYaw", -0.4, 1.0)
         
     time.sleep(0.5)
     # motionProxy.changeAngles("RWristYaw", release, 1)        
         
     motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
-    time.sleep(0.05)
+    time.sleep(0.04)
         
-    motionProxy.setAngles("LWristYaw", 1, 1.0)
+    motionProxy.setAngles("LWristYaw", 0.37, 1.0)
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
     time.sleep(0.5)
     '''
@@ -98,7 +98,8 @@ def hitBarWrist(motionProxy, postureProxy):
     
 def moveShoulder(motionProxy, postureProxy):
     
-    change = [-0.08, -0.04, 0.04, 0.08]
+    # change = [-0.08, -0.04, 0.04, 0.08]
+    change = [0, 0]
     
     motionProxy.changeAngles("RShoulderRoll", random.choice(change), 1.0)
     motionProxy.changeAngles("LShoulderRoll", -random.choice(change), 1.0)
@@ -113,7 +114,7 @@ def main(robotIP, PORT=9559):
     initRobotPosition(motionProxy, postureProxy)    
     # handControl(motionProxy, postureProxy, touchProxy)
     
-    for i in range(0, 8):
+    for i in range(0, 10):
                        
         moveShoulder(motionProxy, postureProxy)
         time.sleep(0.25)
@@ -174,12 +175,13 @@ def interpretJointsPose(motionProxy, memoryProxy):
 '''
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    '''
+    
     parser.add_argument("--ip", type=str, default="169.254.254.250",
                         help="Robot ip address")
     '''
     parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
+    '''
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

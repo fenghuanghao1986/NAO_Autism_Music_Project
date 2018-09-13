@@ -32,18 +32,18 @@ def initRobotPosition(motionProxy, postureProxy):
     # Make head in the right position and keep stiff.
     motionProxy.setAngles("HeadPitch", 0.4, 1.0)
     # Make arm to initial position and ready for everything.
-    motionProxy.setAngles("RShoulderPitch", 0.7, 1.0)
-    motionProxy.setAngles("LShoulderPitch", 0.7, 1.0)
+    motionProxy.setAngles("RShoulderPitch", 0.75, 1.0)
+    motionProxy.setAngles("LShoulderPitch", 0.75, 1.0)
     
     time.sleep(1.0)
     
-    motionProxy.setAngles("RShoulderRoll", -0.8, 1.0)
-    motionProxy.setAngles("LShoulderRoll", 0.8, 1.0)
+    motionProxy.setAngles("RShoulderRoll", -1.2, 1.0)
+    motionProxy.setAngles("LShoulderRoll", 1.2, 1.0)
     
     time.sleep(1.0)
     
     motionProxy.setAngles("RWristYaw", -0.4, 1.0)
-    motionProxy.setAngles("LWristYaw", 0.37, 1.0)
+    motionProxy.setAngles("LWristYaw", 0.4, 1.0)
          
     time.sleep(1.0)
 '''    
@@ -85,7 +85,7 @@ def hitBarWrist(motionProxy, postureProxy):
     motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
     time.sleep(0.04)
         
-    motionProxy.setAngles("LWristYaw", 0.37, 1.0)
+    motionProxy.setAngles("LWristYaw", 0.4, 1.0)
     # motionProxy.changeAngles("LWristYaw", -release, 1)        
     time.sleep(0.5)
     '''
@@ -114,7 +114,7 @@ def main(robotIP, PORT=9559):
     initRobotPosition(motionProxy, postureProxy)    
     # handControl(motionProxy, postureProxy, touchProxy)
     
-    for i in range(0, 10):
+    for i in range(0, 4):
                        
         moveShoulder(motionProxy, postureProxy)
         time.sleep(0.25)

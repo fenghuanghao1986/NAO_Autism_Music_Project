@@ -57,3 +57,10 @@ while True:
 
 capture.release()
 cv2.destroyAllWindows()
+
+
+
+
+
+#https://www.pyimagesearch.com/2017/08/28/fast-optimized-for-pixel-loops-with-opencv-and-python/
+#read this link

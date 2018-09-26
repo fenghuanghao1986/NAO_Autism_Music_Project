@@ -9,16 +9,16 @@ import cv2
 import numpy as np
 
 ## Read
-img = cv2.imread("xylophone_640_480.jpg")
+img = cv2.imread("xylophone_320_240_no_beater.jpg")
 
 ## convert to hsv
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-lower_green = np.array([90, 160, 90])
-upper_green = np.array([110, 175, 115])
+lower_green = np.array([36, 0, 0])
+upper_green = np.array([70, 255, 255])
 
-lower_brown = np.array([145, 90, 70])
-upper_brown = np.array([155, 95, 85])
+lower_brown = np.array([15, 0, 0])
+upper_brown = np.array([36, 255, 255])
 
 
 ## mask of green (36,0,0) ~ (70, 255,255)

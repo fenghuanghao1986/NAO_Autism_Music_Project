@@ -6,7 +6,7 @@ Created on Wed Sep 26 13:47:17 2018
 """
 # import the necessary packages
 import numpy as np
-import argparse
+
 import cv2
 
 # load the image

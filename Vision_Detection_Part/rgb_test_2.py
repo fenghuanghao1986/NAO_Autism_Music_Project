@@ -20,7 +20,7 @@ boundaries = [
     ([100, 165, 0], [150, 200, 150]),  # green not good
     ([180, 100, 180], [255, 180, 255]), # pink
     ([200, 100, 0], [255, 255, 155]),   # blue
-    ([210, 210, 210], [230, 230, 230])  # gray not good
+    ([205, 205, 205], [235, 235, 235])  # gray not good
 ]
 
 # loop over the boundaries

@@ -10,16 +10,16 @@ import numpy as np
 import cv2
 
 # load the image
-image = cv2.imread('xylophone_320_240_no_beater.jpg')
+image = cv2.imread('xylophone_640_480.jpg')
 
 # define the list of boundaries
 boundaries = [
-    ([40, 40, 200], [80, 110, 255]),     # red
-    ([70, 80, 130], [80, 90, 150]),     # brown
+    ([0, 0, 200], [100, 100, 255]),     # red
+    ([70, 80, 130], [120, 120, 190]),     # brown
     ([15, 230, 240], [70, 255, 255]),   # yellow
-    ([100, 165, 90], [120, 180, 110]),  # green
+    ([100, 165, 0], [150, 200, 150]),  # green
     ([200, 160, 240], [220, 180, 250]), # pink
-    ([250, 195, 75], [255, 255, 95]),   # blue
+    ([200, 100, 0], [255, 255, 155]),   # blue
     ([210, 210, 210], [230, 230, 230])  # gray
 ]
 

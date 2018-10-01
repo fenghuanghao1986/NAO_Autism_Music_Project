@@ -10,7 +10,7 @@ import numpy as np
 import cv2
 
 # load the image
-image = cv2.imread('xylophone_640_480')
+image = cv2.imread('xylophone_320_240_no_beater.jpg')
 
 # define the list of boundaries
 boundaries = [

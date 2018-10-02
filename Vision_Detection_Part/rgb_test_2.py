@@ -15,9 +15,9 @@ image = cv2.imread('xylophone_640_480.jpg')
 # define the list of boundaries
 boundaries = [
     ([0, 0, 200], [100, 100, 255]),     # red
-    ([60, 70, 120], [100, 95, 160]),     # brown not good
+    ([60, 70, 120], [100, 95, 160]),     # brown 
     ([30, 160, 240], [70, 255, 255]),   # yellow
-    ([100, 165, 0], [150, 200, 150]),  # green not good
+    ([0, 130, 0], [120, 255, 150]),  # green not good
     ([180, 100, 180], [255, 180, 255]), # pink
     ([200, 100, 0], [255, 255, 155]),   # blue
     ([205, 205, 205], [235, 235, 235])  # gray not good

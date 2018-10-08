@@ -24,7 +24,9 @@ boundaries = [
     ([200, 100, 0], [255, 255, 155]),   # blue
     ([192, 192, 192], [240, 240, 224])  # gray 
 ]
+
 n = 0
+
 # loop over the boundaries
 for (lower, upper) in boundaries:
     # create NumPy arrays from the boundaries

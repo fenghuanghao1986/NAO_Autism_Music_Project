@@ -11,8 +11,8 @@ from matplotlib import pyplot as plt
 
 MIN_MATCH_COUNT = 10
 
-img1 = cv2.imread('box.png',0)          # queryImage
-img2 = cv2.imread('box_in_scene.png',0) # trainImage
+img1 = cv2.imread('7.jpg',0)          # queryImage
+img2 = cv2.imread('1.jpg',0) # trainImage
 
 # Initiate SIFT detector
 sift = cv2.SIFT()

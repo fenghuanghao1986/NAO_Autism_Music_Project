@@ -39,12 +39,12 @@ for (lower, upper) in boundaries:
     mask = cv2.inRange(image, lower, upper)
     
     output = cv2.bitwise_and(image, image, mask = mask)
-    blurred = cv2.GaussianBlur(output, (1, 1), 0)
+    blurred = cv2.GaussianBlur(output, (3, 3), 0)
     
     # cv2.imshow("image", output)
     # show the images
     # cv2.imshow("images", np.hstack([image, output]))
-    cv2.imwrite(str(n) + ".jpg", output)
+    cv2.imwrite(str(n) + ".jpg", blurred)
     
     if n == 1:
         continue
@@ -57,7 +57,7 @@ for (lower, upper) in boundaries:
 img = cv2.imread(str(n) + ".jpg", 1)
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+blurred = cv2.GaussianBlur(gray, (1, 1), 0)
 # cv2.imshow("image", blurred)
 result = cv2.Canny(blurred, 100, 225)  
 # cv2.imshow("image", result)

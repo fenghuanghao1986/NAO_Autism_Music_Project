@@ -41,6 +41,7 @@ for (lower, upper) in boundaries:
     output = cv2.bitwise_and(image, image, mask = mask)
     blurred = cv2.GaussianBlur(output, (3, 3), 0)
     
+    
     # cv2.imshow("image", output)
     # show the images
     # cv2.imshow("images", np.hstack([image, output]))
@@ -59,9 +60,15 @@ img = cv2.imread(str(n) + ".jpg", 1)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (1, 1), 0)
 # cv2.imshow("image", blurred)
-result = cv2.Canny(blurred, 100, 225)  
+result = cv2.Canny(blurred, 100, 225)
+gray = np.float32(gray) 
+corner = cv2.cornerHarris(gray, 2,3,0.04) 
+corner = cv2.dilate(corner, None)
+add[corner>0.01*corner.max()]=[0,0,255]
 # cv2.imshow("image", result)
 # cv2.imshow("images", np.hstack([gray, result]))
+cv2.imshow("image", add)
 compare = np.hstack([gray, result])
 cv2.imwrite("edge.jpg", result)
+cv2.imwrite("corner.jpg", add)
 cv2.imwrite("compare.jpg", compare)

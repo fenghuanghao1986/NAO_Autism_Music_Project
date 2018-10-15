@@ -12,17 +12,17 @@ import numpy as np
 # from matplotlib import pyplot as plt
 
 # load the image
-image = cv2.imread('xylophone_640_480.jpg')
+image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
 
 # define the list of boundaries
 boundaries = [
-    ([0, 0, 200], [100, 100, 255]),     # red
-    ([40, 50, 120], [100, 90, 160]),    # brown
-    ([30, 160, 240], [70, 255, 255]),   # yellow
-    ([0, 130, 0], [120, 255, 150]),     # green 
-    ([180, 100, 180], [255, 180, 255]), # pink
-    ([200, 100, 0], [255, 255, 155]),   # blue
-    ([192, 192, 192], [240, 240, 224])  # gray 
+    ([0, 0, 100], [60, 60, 180]),     # red
+    ([18, 43, 64], [40, 60, 86]),    # brown
+    ([30, 140, 180], [60, 190, 240]),   # yellow
+    ([20, 70, 50], [60, 110, 80]),     # green 
+    ([100, 100, 120], [135, 134, 180]), # pink
+    ([160, 120, 70], [210, 180, 130]),   # blue
+    ([100, 135, 100], [155, 170, 160])  # gray 
 ]
 
 n = 0
@@ -39,12 +39,12 @@ for (lower, upper) in boundaries:
     mask = cv2.inRange(image, lower, upper)
     
     output = cv2.bitwise_and(image, image, mask = mask)
-    blurred = cv2.GaussianBlur(output, (5, 5), 0)
+    blurred = cv2.GaussianBlur(output, (1, 1), 0)
     
     # cv2.imshow("image", output)
     # show the images
     # cv2.imshow("images", np.hstack([image, output]))
-    cv2.imwrite(str(n) + ".jpg", blurred)
+    cv2.imwrite(str(n) + ".jpg", output)
     
     if n == 1:
         continue
@@ -57,11 +57,11 @@ for (lower, upper) in boundaries:
 img = cv2.imread(str(n) + ".jpg", 1)
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-blurred = cv2.GaussianBlur(gray, (7, 7), 0)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
 # cv2.imshow("image", blurred)
 result = cv2.Canny(blurred, 100, 225)  
 # cv2.imshow("image", result)
-cv2.imshow("images", np.hstack([gray, result]))
+# cv2.imshow("images", np.hstack([gray, result]))
 compare = np.hstack([gray, result])
 cv2.imwrite("edge.jpg", result)
 cv2.imwrite("compare.jpg", compare)

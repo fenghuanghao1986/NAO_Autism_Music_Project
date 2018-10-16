@@ -12,7 +12,8 @@ import numpy as np
 # from matplotlib import pyplot as plt
 
 # load the image
-image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
+#image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
+image = cv2.imread(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\640b.jpg')
 
 # define the list of boundaries
 boundaries = [
@@ -45,17 +46,17 @@ for (lower, upper) in boundaries:
     # cv2.imshow("image", output)
     # show the images
     # cv2.imshow("images", np.hstack([image, output]))
-    cv2.imwrite(str(n) + ".jpg", blurred)
+    cv2.imwrite(str(n) + "b.jpg", blurred)
     
     if n == 1:
         continue
     
-    img = cv2.imread(str(n-1) + ".jpg")
+    img = cv2.imread(str(n-1) + "b.jpg")
     
     add = blurred + img
-    cv2.imwrite(str(n) + ".jpg", add)
+    cv2.imwrite(str(n) + "b.jpg", add)
 
-img = cv2.imread(str(n) + ".jpg", 1)
+img = cv2.imread(str(n) + "b.jpg", 1)
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (1, 1), 0)
@@ -69,6 +70,6 @@ add[corner>0.01*corner.max()]=[0,0,255]
 # cv2.imshow("images", np.hstack([gray, result]))
 cv2.imshow("image", add)
 compare = np.hstack([gray, result])
-cv2.imwrite("edge.jpg", result)
-cv2.imwrite("corner.jpg", add)
-cv2.imwrite("compare.jpg", compare)
+cv2.imwrite("edgeb.jpg", result)
+cv2.imwrite("cornerb.jpg", add)
+cv2.imwrite("compareb.jpg", compare)

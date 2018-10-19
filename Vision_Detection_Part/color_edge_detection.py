@@ -12,8 +12,8 @@ import numpy as np
 # from matplotlib import pyplot as plt
 
 # load the image
-#image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
-image = cv2.imread(r'D:\LabWork\ThesisProject\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
+image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
+#image = cv2.imread(r'D:\LabWork\ThesisProject\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
 
 # define the list of boundaries
 boundaries = [
@@ -53,7 +53,7 @@ for (lower, upper) in boundaries:
     
     img = cv2.imread(str(n-1) + ".jpg")
     
-#    add = blurred + img
+    add = blurred + img
     
 #    cv2.imwrite(str(n) + ".jpg", add)
 
@@ -74,3 +74,4 @@ compare = np.hstack([gray, result])
 cv2.imwrite("edgeb.jpg", result)
 #cv2.imwrite("cornerb.jpg", add)
 cv2.imwrite("compareb.jpg", compare)
+

@@ -34,13 +34,13 @@ def findColor(image):
                 if img[row][col][1] >= 100 and img[row][col][1]<= 255:
                     if img[row][col][2] >= 70 and img[row][col][2]<= 135:
                         blue_result.append([col, row])
-            if img[row][col][0] >= 100 and img[row][col][0]<= 135:
-                if img[row][col][1] >= 100 and img[row][col][1]<= 134:
-                    if img[row][col][2] >= 120 and img[row][col][2]<= 180:
+            if img[row][col][0] >= 120 and img[row][col][0]<= 140:
+                if img[row][col][1] >= 120 and img[row][col][1]<= 130:
+                    if img[row][col][2] >= 150 and img[row][col][2]<= 200:
                         pink_result.append([col, row])
-            if img[row][col][0] >= 100 and img[row][col][0]<= 155:
-                if img[row][col][1] >= 135 and img[row][col][1]<= 170:
-                    if img[row][col][2] >= 100 and img[row][col][2]<= 160:
+            if img[row][col][0] >= 140 and img[row][col][0]<= 160:
+                if img[row][col][1] >= 140 and img[row][col][1]<= 160:
+                    if img[row][col][2] >= 140 and img[row][col][2]<= 160:
                         gray_result.append([col, row])
     if len(blue_result) > 0:
         pts = findVertices(blue_result)
@@ -107,8 +107,8 @@ def videoProcess(video):
     cv2.destroyAllWindows()
         
 if __name__ == "__main__":
-#    frame = cv2.resize(image, (1280, 960))
-#    cv2.imshow("image", findColor(frame))
+    frame = cv2.resize(image, (640, 480))
+    cv2.imshow("image", findColor(frame))
     # cleanup the camera and close any open windows
-    videoProcess(video)
+#    videoProcess(video)
     

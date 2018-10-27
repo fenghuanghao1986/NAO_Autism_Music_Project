@@ -9,7 +9,7 @@ import numpy as np
 
 image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\t1.jpg')
 
-video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
+video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_1.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
@@ -19,8 +19,8 @@ def findColor(image):
     img = cv2.GaussianBlur(image, (7, 7), 7)
     
     blue_result = []    
-    '''pink_result = []
-    gray_result = []'''
+#    pink_result = []
+#    gray_result = []
     
     sum_col = 0
     sum_row = 0
@@ -33,23 +33,24 @@ def findColor(image):
     channels = img.shape[2]
     print("height:%s,width:%s,channels:%s" % (height,width,channels))
     print(img.size)              
-    for row in range(height):    
-        for col in range(width): 
-            if img[row][col][0] >= 155 and img[row][col][0]<= 255:
-                if img[row][col][1] >= 0 and img[row][col][1]<= 255:
-                    if img[row][col][2] >= 0 and img[row][col][2]<= 150:
+    for row in range(height/2, height):    
+        for col in range(width*2/6, width*4/6): 
+            if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
+                if img[row][col][1] >= 120 and img[row][col][1]<= 180:
+                    if img[row][col][2] >= 70 and img[row][col][2]<= 140:
                         blue_result.append([col, row])
                         sum_col += col
                         sum_row += row
     
-            '''if img[row][col][0] >= 120 and img[row][col][0]<= 140:
-                if img[row][col][1] >= 120 and img[row][col][1]<= 130:
-                    if img[row][col][2] >= 150 and img[row][col][2]<= 200:
-                        pink_result.append([col, row])
-            if img[row][col][0] >= 140 and img[row][col][0]<= 160:
-                if img[row][col][1] >= 140 and img[row][col][1]<= 160:
-                    if img[row][col][2] >= 140 and img[row][col][2]<= 160:
-                        gray_result.append([col, row])'''
+#            if img[row][col][0] >= 120 and img[row][col][0]<= 140:
+#                if img[row][col][1] >= 120 and img[row][col][1]<= 130:
+#                    if img[row][col][2] >= 150 and img[row][col][2]<= 200:
+#                        pink_result.append([col, row])
+#            if img[row][col][0] >= 140 and img[row][col][0]<= 160:
+#                if img[row][col][1] >= 140 and img[row][col][1]<= 160:
+#                    if img[row][col][2] >= 140 and img[row][col][2]<= 160:
+#                        gray_result.append([col, row])
+                        
     if len(blue_result) > 0:
         print("array size:%d" % len(blue_result))
         pts = findVertices(blue_result)
@@ -72,18 +73,22 @@ def findColor(image):
             fontColor,
             lineType)
         
-        width = pts[2][0] - pts[3][0]
-        pts_pink = [[pts[0][0]-width*13/9, pts[0][1]], [pts[1][0]-width*13/9, pts[1][1]], [pts[2][0]-width*13/9, pts[2][1]], [pts[3][0]-width*13/9, pts[3][1]]]
-        pts1_pink = np.array(pts_pink, dtype = np.int32)
-        cv2.polylines(image, [pts1_pink], 1, (255, 0, 0))
-    '''if len(pink_result) > 0:
-        pts = findVertices(pink_result)
-        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
-        cv2.polylines(image, [pts1], 1, (255, 255, 0))
-    if len(gray_result) > 0:
-        pts = findVertices(gray_result)
-        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
-        cv2.polylines(image, [pts1], 1, (0, 0, 255))'''
+#        width1 = pts[1][0] - pts[0][0]
+#        width2 = width1*5/4
+#        pts_pink = [[pts[0][0]-width1*8/5, pts[0][1]+width1/4], 
+#                    [pts[1][0]-width2*7/5, pts[1][1]+width1/5], 
+#                    [pts[2][0]-width2*8/5, pts[2][1]-width1/5], 
+#                    [pts[3][0]-width1*10/5, pts[3][1]-width1/5]]
+#        pts1_pink = np.array(pts_pink, dtype = np.int32)
+#        cv2.polylines(image, [pts1_pink], 1, (255, 0, 0))
+#    if len(pink_result) > 0:
+#        pts = findVertices(pink_result)
+#        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
+#        cv2.polylines(image, [pts1], 1, (255, 255, 0))
+#    if len(gray_result) > 0:
+#        pts = findVertices(gray_result)
+#        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
+#        cv2.polylines(image, [pts1], 1, (0, 0, 255))
 #        cv2.rectangle(image, leftup, rightbottom, (0,225,0))
     return image
                    
@@ -125,7 +130,7 @@ def videoProcess(video):
         frame = findColor(frame)
                # show the frame to our screen and increment the frame counter
         
-        frame = cv2.resize(frame, (1280, 960))
+        frame = cv2.resize(frame, (640, 480))
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
         counter += 1

@@ -7,9 +7,9 @@ Created on Fri Oct 19 13:26:07 2018
 import cv2
 import numpy as np
 
-image = cv2.imread(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\640.jpg')
+image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\t1.jpg')
 
-video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_2.avi'
+video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
@@ -19,8 +19,13 @@ def findColor(image):
     img = cv2.GaussianBlur(image, (7, 7), 7)
     
     blue_result = []    
-    pink_result = []
-    gray_result = []
+    '''pink_result = []
+    gray_result = []'''
+    
+    sum_col = 0
+    sum_row = 0
+    avg_col = 0
+    avg_row = 0
     
     print(img.shape)              
     height = img.shape[0]        
@@ -30,30 +35,55 @@ def findColor(image):
     print(img.size)              
     for row in range(height):    
         for col in range(width): 
-            if img[row][col][0] >= 150 and img[row][col][0]<= 255:
-                if img[row][col][1] >= 100 and img[row][col][1]<= 255:
-                    if img[row][col][2] >= 70 and img[row][col][2]<= 135:
+            if img[row][col][0] >= 155 and img[row][col][0]<= 255:
+                if img[row][col][1] >= 0 and img[row][col][1]<= 255:
+                    if img[row][col][2] >= 0 and img[row][col][2]<= 150:
                         blue_result.append([col, row])
-            if img[row][col][0] >= 120 and img[row][col][0]<= 140:
+                        sum_col += col
+                        sum_row += row
+    
+            '''if img[row][col][0] >= 120 and img[row][col][0]<= 140:
                 if img[row][col][1] >= 120 and img[row][col][1]<= 130:
                     if img[row][col][2] >= 150 and img[row][col][2]<= 200:
                         pink_result.append([col, row])
             if img[row][col][0] >= 140 and img[row][col][0]<= 160:
                 if img[row][col][1] >= 140 and img[row][col][1]<= 160:
                     if img[row][col][2] >= 140 and img[row][col][2]<= 160:
-                        gray_result.append([col, row])
+                        gray_result.append([col, row])'''
     if len(blue_result) > 0:
+        print("array size:%d" % len(blue_result))
         pts = findVertices(blue_result)
         pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
         cv2.polylines(image, [pts1], 1, (255, 0, 0))
-    if len(pink_result) > 0:
+        
+        avg_col = sum_col/len(blue_result)
+        avg_row = sum_row/len(blue_result)
+    
+        font                   = cv2.FONT_HERSHEY_SIMPLEX
+        bottomLeftCornerOfText = (avg_col,avg_row)
+        fontScale              = 0.2
+        fontColor              = (0,255,0)
+        lineType               = 1
+        
+        cv2.putText(image,'B', 
+            bottomLeftCornerOfText, 
+            font, 
+            fontScale,
+            fontColor,
+            lineType)
+        
+        width = pts[2][0] - pts[3][0]
+        pts_pink = [[pts[0][0]-width*13/9, pts[0][1]], [pts[1][0]-width*13/9, pts[1][1]], [pts[2][0]-width*13/9, pts[2][1]], [pts[3][0]-width*13/9, pts[3][1]]]
+        pts1_pink = np.array(pts_pink, dtype = np.int32)
+        cv2.polylines(image, [pts1_pink], 1, (255, 0, 0))
+    '''if len(pink_result) > 0:
         pts = findVertices(pink_result)
         pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
         cv2.polylines(image, [pts1], 1, (255, 255, 0))
     if len(gray_result) > 0:
         pts = findVertices(gray_result)
         pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
-        cv2.polylines(image, [pts1], 1, (0, 0, 255))
+        cv2.polylines(image, [pts1], 1, (0, 0, 255))'''
 #        cv2.rectangle(image, leftup, rightbottom, (0,225,0))
     return image
                    
@@ -66,15 +96,17 @@ def findVertices(pixs):
     rightup = pixs[len(pixs)/2]
         
     for i in range(len(pixs)):
-        if pixs[i][0] < leftbottom[0] and pixs[i][1] > leftbottom[1]:
+        if pixs[i][0] <= leftbottom[0] and pixs[i][1] >= leftbottom[1]:
             leftbottom = pixs[i]
-        elif pixs[i][1] >leftbottom[1] and pixs[i][0] > leftbottom[0]:
-            if pixs[i][1] - leftbottom[1] > pixs[i][0] - leftbottom[0]:
+        elif pixs[i][1] >= leftbottom[1] and pixs[i][0] >= leftbottom[0]:
+            if pixs[i][1] - leftbottom[1] >= pixs[i][0] - leftbottom[0]:
                 leftbottom = pixs[i]
-        if pixs[i][1] < rightup[1] and pixs[i][0] > rightup[0]:
+                
+    for i in range(len(pixs)/8):           
+        if pixs[i][1] <= rightup[1] and pixs[i][0] >= rightup[0]:
             rightup = pixs[i]
-        elif pixs[i][1] < rightup[1] and pixs[i][0] < rightup[0]:
-            if rightup[1] - pixs[i][1] < rightup[0] - pixs[i][0]:
+        elif pixs[i][1] <= rightup[1] and pixs[i][0] <= rightup[0]:
+            if rightup[1] - pixs[i][1] <= rightup[0] - pixs[i][0]:
                 rightup = pixs[i]
                     
     print(leftup)
@@ -107,8 +139,8 @@ def videoProcess(video):
     cv2.destroyAllWindows()
         
 if __name__ == "__main__":
-    frame = cv2.resize(image, (640, 480))
-    cv2.imshow("image", findColor(frame))
+#    frame = cv2.resize(image, (640, 480))
+#    cv2.imshow("image", findColor(frame))
     # cleanup the camera and close any open windows
-#    videoProcess(video)
+    videoProcess(video)
     

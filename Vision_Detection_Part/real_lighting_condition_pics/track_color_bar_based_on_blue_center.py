@@ -11,7 +11,7 @@ image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lig
 
 #video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_1.avi'
 
-video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_1.avi'
+video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
@@ -48,7 +48,7 @@ def initPos(image):
     LB = [3, 187]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-2, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -70,7 +70,7 @@ def initPos(image):
     LB = [32, 188]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-2, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -92,7 +92,7 @@ def initPos(image):
     LB = [60, 189]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -114,7 +114,7 @@ def initPos(image):
     LB = [90, 191]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -136,7 +136,7 @@ def initPos(image):
     LB = [119, 192]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -158,7 +158,7 @@ def initPos(image):
     LB = [149, 193]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -180,7 +180,7 @@ def initPos(image):
     LB = [178, 195]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -202,7 +202,7 @@ def initPos(image):
     LB = [207, 197]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -224,7 +224,7 @@ def initPos(image):
     LB = [236, 199]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -246,7 +246,7 @@ def initPos(image):
     LB = [266, 200]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-5, (LU[1]+RU[1]+RB[1]+LB[1])/4)    
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)    
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -268,7 +268,7 @@ def initPos(image):
     LB = [297, 202]
     init = [LU, RU, RB, LB]
     init_vertices = np.array(init, dtype = np.int32)
-    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-5, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
     '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
@@ -450,7 +450,7 @@ def videoProcess(video):
     
     counter = 0
     
-    out = cv2.VideoWriter('result.avi', 
+    out = cv2.VideoWriter('result_3.avi', 
                            cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
                            20, (640, 480))
     while(True):

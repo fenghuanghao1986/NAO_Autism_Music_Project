@@ -7,7 +7,7 @@ Created on Fri Oct 19 13:26:07 2018
 import cv2
 import numpy as np
 
-image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\t1.jpg')
+image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg')
 
 #video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_1.avi'
 
@@ -16,7 +16,311 @@ video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
 
-def findColor(image):
+def updateVertices(vertices, centers, new_center):
+        
+    dx = new_center[0] - centers[5][0]
+    dy = new_center[1] - centers[5][1]
+    
+    new_vertices = []
+    for i in range(11):
+        new_vertices.append([[vertices[i][0][0]+dx, vertices[i][0][1]+dy], 
+                             [vertices[i][1][0]+dx, vertices[i][1][1]+dy],
+                             [vertices[i][2][0]+dx, vertices[i][2][1]+dy],
+                             [vertices[i][3][0]+dx, vertices[i][3][1]+dy]])
+    
+    return new_vertices
+
+def updateCells(image):
+    new_center = findBlueCenter(image)
+    (vertices, centers) = initPos(image)
+    new_vertices = updateVertices(vertices, centers, new_center)
+    new_image = renderCells(image, new_vertices)  
+    return new_image
+    
+    
+def initPos(image):
+    vertices = []
+    centers = []
+    # initial left yellow position
+    LU = [25, 141]
+    RU = [40, 141]
+    RB = [22, 187]
+    LB = [3, 187]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-2, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'F7', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial left red position
+    LU = [50, 139]
+    RU = [64, 139]
+    RB = [50, 188]
+    LB = [32, 188]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-2, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'E7', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial left brown position
+    LU = [75, 138]
+    RU = [90, 138]
+    RB = [80, 189]
+    LB = [60, 189]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'D7', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial green position
+    LU = [100, 137]
+    RU = [115, 137]
+    RB = [108, 191]
+    LB = [90, 191]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'C7', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial pink position
+    LU = [124, 135]
+    RU = [140, 135]
+    RB = [138, 192]
+    LB = [119, 192]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'B6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial Blue position    
+    LU = [149, 133]
+    RU = [165, 133]
+    RB = [167, 193]
+    LB = [149, 193]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-3, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'A6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial gray position
+    LU = [173, 131]
+    RU = [188, 131]
+    RB = [196, 195]
+    LB = [178, 195]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'G6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial rignt yellow position
+    LU = [197, 130]
+    RU = [211, 130]
+    RB = [226, 197]
+    LB = [207, 197]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'F6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial rignt red position
+    LU = [220, 129]
+    RU = [234, 129]
+    RB = [256, 199]
+    LB = [236, 199]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'E6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial right brown position
+    LU = [243, 127]
+    RU = [257, 127]
+    RB = [286, 200]
+    LB = [266, 200]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-5, (LU[1]+RU[1]+RB[1]+LB[1])/4)    
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'D6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    # initial right green position
+    LU = [264, 125]
+    RU = [277, 125]
+    RB = [320, 202]
+    LB = [297, 202]
+    init = [LU, RU, RB, LB]
+    init_vertices = np.array(init, dtype = np.int32)
+    center = ((LU[0]+RU[0]+RB[0]+LB[0])/4-5, (LU[1]+RU[1]+RB[1]+LB[1])/4)
+    vertices.append(init_vertices)
+    centers.append(center)
+    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
+    font       = cv2.FONT_HERSHEY_SIMPLEX
+    centerText = centers[-1]
+    fontScale  = 0.2
+    fontColor  = (0,255,0)
+    lineType   = 1
+    cv2.putText(image,'C6', 
+        centerText, 
+        font, 
+        fontScale,
+        fontColor,
+        lineType)'''
+    
+    return (vertices, centers)
+
+def renderCells(image, vertices):
+    for i in range(11):
+        np_vertices = np.array(vertices[i], dtype = np.int32)
+        cv2.polylines(image, [np_vertices], 1, (255, 255, 0))
+    return image
+
+def findBlueCenter(img):
+    sum_col = 0
+    sum_row = 0
+    avg_col = 0
+    avg_row = 0
+    center = (0,0)
+    length = 0
+             
+    height = img.shape[0]        
+    width = img.shape[1]
+            
+    for row in range(height/2, height):   
+        for col in range(width/3, width*2/3): 
+            if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
+                if img[row][col][1] >= 120 and img[row][col][1]<= 180:
+                    if img[row][col][2] >= 70 and img[row][col][2]<= 140:
+                        sum_col += col
+                        sum_row += row
+                        length += 1
+                        
+    if length > 0:        
+        avg_col = sum_col/length
+        avg_row = sum_row/length
+        
+        center = (avg_col, avg_row)
+    
+    return center
+    
+def findBlue(image):
     
     img = cv2.GaussianBlur(image, (7, 7), 7)
     
@@ -35,7 +339,8 @@ def findColor(image):
     channels = img.shape[2]
     print("height:%s,width:%s,channels:%s" % (height,width,channels))
     print(img.size)              
-    for row in range(height/2, height):    
+    for row in range(height/2, height):   
+        
         for col in range(width*2/6, width*4/6): 
             if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
                 if img[row][col][1] >= 120 and img[row][col][1]<= 180:
@@ -48,6 +353,7 @@ def findColor(image):
 #                if img[row][col][1] >= 120 and img[row][col][1]<= 130:
 #                    if img[row][col][2] >= 150 and img[row][col][2]<= 200:
 #                        pink_result.append([col, row])
+                        
 #            if img[row][col][0] >= 140 and img[row][col][0]<= 160:
 #                if img[row][col][1] >= 140 and img[row][col][1]<= 160:
 #                    if img[row][col][2] >= 140 and img[row][col][2]<= 160:
@@ -61,38 +367,53 @@ def findColor(image):
         
         avg_col = sum_col/len(blue_result)
         avg_row = sum_row/len(blue_result)
+        
+        new_center = (avg_col, avg_row)
     
-        font                   = cv2.FONT_HERSHEY_SIMPLEX
-        bottomLeftCornerOfText = (avg_col,avg_row)
-        fontScale              = 0.2
-        fontColor              = (0,255,0)
-        lineType               = 1
-        
-        cv2.putText(image,'B', 
-            bottomLeftCornerOfText, 
-            font, 
-            fontScale,
-            fontColor,
-            lineType)
-        
-#        width1 = pts[1][0] - pts[0][0]
-#        width2 = width1*5/4
-#        pts_pink = [[pts[0][0]-width1*8/5, pts[0][1]+width1/4], 
-#                    [pts[1][0]-width2*7/5, pts[1][1]+width1/5], 
-#                    [pts[2][0]-width2*8/5, pts[2][1]-width1/5], 
+#        font                   = cv2.FONT_HERSHEY_SIMPLEX
+#        bottomLeftCornerOfText = (avg_col,avg_row)
+#        fontScale              = 0.2
+#        fontColor              = (0,255,0)
+#        lineType               = 1
+#        
+#        cv2.putText(image,'B', 
+#            bottomLeftCornerOfText, 
+#            font, 
+#            fontScale,
+#            fontColor,
+#            lineType)
+                
+#        width1 = pts[1][0] - pts[0][0]      
+##        width2 = width1*5/4
+#        pts_pink = [[pts[0][0]-width1*8/5, pts[0][1]+width1/5], 
+#                    [pts[1][0]-width1*8/5, pts[1][1]+width1/5], 
+#                    [pts[2][0]-width1*10/5, pts[2][1]-width1/5], 
 #                    [pts[3][0]-width1*10/5, pts[3][1]-width1/5]]
+#        
 #        pts1_pink = np.array(pts_pink, dtype = np.int32)
 #        cv2.polylines(image, [pts1_pink], 1, (255, 0, 0))
+#        
+#        bottomLeftCornerOfText2 = (avg_col-2*width1,avg_row)
+#        
+#        cv2.putText(image,'P', 
+#            bottomLeftCornerOfText2, 
+#            font, 
+#            fontScale,
+#            fontColor,
+#            lineType)
+#        
 #    if len(pink_result) > 0:
 #        pts = findVertices(pink_result)
 #        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
 #        cv2.polylines(image, [pts1], 1, (255, 255, 0))
+        
 #    if len(gray_result) > 0:
 #        pts = findVertices(gray_result)
 #        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
 #        cv2.polylines(image, [pts1], 1, (0, 0, 255))
 #        cv2.rectangle(image, leftup, rightbottom, (0,225,0))
-    return image
+        
+    return (image, new_center)
                    
 
 def findVertices(pixs):
@@ -129,7 +450,9 @@ def videoProcess(video):
     counter = 0
     while(True):
         (grabbed, frame) = camera.read()
-        frame = findColor(frame)
+        frame = updateCells(frame)
+        #frame = findBlue(frame)[0]
+#        frame = initPos(frame)[0]
                # show the frame to our screen and increment the frame counter
         
         frame = cv2.resize(frame, (640, 480))
@@ -146,8 +469,10 @@ def videoProcess(video):
     cv2.destroyAllWindows()
         
 if __name__ == "__main__":
-#    frame = cv2.resize(image, (640, 480))
-#    cv2.imshow("image", findColor(frame))
+    
+#    img = cv2.resize(initPos(image)[0], (640, 480))
+#    cv2.imshow("image", img)
+#        
     # cleanup the camera and close any open windows
     videoProcess(video)
     

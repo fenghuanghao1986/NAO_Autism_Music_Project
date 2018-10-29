@@ -303,8 +303,8 @@ def findBlueCenter(img):
     height = img.shape[0]        
     width = img.shape[1]
             
-    for row in range(height/2, height):   
-        for col in range(width/3, width*2/3): 
+    for row in range(height/3, height):   
+        for col in range(width/4, width*3/4): 
             if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
                 if img[row][col][1] >= 120 and img[row][col][1]<= 180:
                     if img[row][col][2] >= 70 and img[row][col][2]<= 140:
@@ -316,7 +316,7 @@ def findBlueCenter(img):
         avg_col = sum_col/length
         avg_row = sum_row/length
         
-        center = (avg_col, avg_row)
+        center = (avg_col, avg_row+10)
     
     return center
     
@@ -445,27 +445,39 @@ def findVertices(pixs):
     return (leftup, rightup, rightbottom, leftbottom)
     
 def videoProcess(video):
+    
     camera = cv2.VideoCapture(video)
     
     counter = 0
+    
+    out = cv2.VideoWriter('result.avi', 
+                           cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                           20, (640, 480))
     while(True):
         (grabbed, frame) = camera.read()
-        frame = updateCells(frame)
-        #frame = findBlue(frame)[0]
-#        frame = initPos(frame)[0]
-               # show the frame to our screen and increment the frame counter
         
-        frame = cv2.resize(frame, (640, 480))
-        cv2.imshow("Frame", frame)
-        key = cv2.waitKey(1) & 0xFF
-        counter += 1
-        
-        # if the 'q' key is pressed, stop the loop
-        if key == ord("q"):
+        if grabbed == True:
+            
+            frame = updateCells(frame)
+            #frame = findBlue(frame)[0]
+    #        frame = initPos(frame)[0]
+                   # show the frame to our screen and increment the frame counter
+            
+            frame = cv2.resize(frame, (640, 480))
+            out.write(frame)
+            cv2.imshow("Frame", frame)
+            key = cv2.waitKey(1) & 0xFF
+            counter += 1
+            
+            # if the 'q' key is pressed, stop the loop
+            if key == ord("q"):
+                break
+            
+        else:
             break
         
-        
     camera.release()
+    out.release()
     cv2.destroyAllWindows()
         
 if __name__ == "__main__":

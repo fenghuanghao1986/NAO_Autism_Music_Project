@@ -9,9 +9,9 @@ import numpy as np
 
 image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg')
 
-#video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_1.avi'
+video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
 
-video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
+#video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
@@ -303,8 +303,8 @@ def findBlueCenter(img):
     height = img.shape[0]        
     width = img.shape[1]
             
-    for row in range(height/3, height):   
-        for col in range(width/4, width*3/4): 
+    for row in range(height):   
+        for col in range(width): 
             if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
                 if img[row][col][1] >= 120 and img[row][col][1]<= 180:
                     if img[row][col][2] >= 70 and img[row][col][2]<= 140:
@@ -320,34 +320,34 @@ def findBlueCenter(img):
     
     return center
     
-def findBlue(image):
-    
-    img = cv2.GaussianBlur(image, (7, 7), 7)
-    
-    blue_result = []    
-#    pink_result = []
-#    gray_result = []
-    
-    sum_col = 0
-    sum_row = 0
-    avg_col = 0
-    avg_row = 0
-    
-    print(img.shape)              
-    height = img.shape[0]        
-    width = img.shape[1]
-    channels = img.shape[2]
-    print("height:%s,width:%s,channels:%s" % (height,width,channels))
-    print(img.size)              
-    for row in range(height/2, height):   
-        
-        for col in range(width*2/6, width*4/6): 
-            if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
-                if img[row][col][1] >= 120 and img[row][col][1]<= 180:
-                    if img[row][col][2] >= 70 and img[row][col][2]<= 140:
-                        blue_result.append([col, row])
-                        sum_col += col
-                        sum_row += row
+#def findBlue(image):
+#    
+#    img = cv2.GaussianBlur(image, (7, 7), 7)
+#    
+#    blue_result = []    
+##    pink_result = []
+##    gray_result = []
+#    
+#    sum_col = 0
+#    sum_row = 0
+#    avg_col = 0
+#    avg_row = 0
+#    
+#    print(img.shape)              
+#    height = img.shape[0]        
+#    width = img.shape[1]
+#    channels = img.shape[2]
+#    print("height:%s,width:%s,channels:%s" % (height,width,channels))
+#    print(img.size)              
+#    for row in range(height/2, height):   
+#        
+#        for col in range(width*2/6, width*4/6): 
+#            if img[row][col][0] >= 160 and img[row][col][0]<= 255: #155,255
+#                if img[row][col][1] >= 120 and img[row][col][1]<= 180:
+#                    if img[row][col][2] >= 70 and img[row][col][2]<= 140:
+#                        blue_result.append([col, row])
+#                        sum_col += col
+#                        sum_row += row
     
 #            if img[row][col][0] >= 120 and img[row][col][0]<= 140:
 #                if img[row][col][1] >= 120 and img[row][col][1]<= 130:
@@ -359,16 +359,16 @@ def findBlue(image):
 #                    if img[row][col][2] >= 140 and img[row][col][2]<= 160:
 #                        gray_result.append([col, row])
                         
-    if len(blue_result) > 0:
-        print("array size:%d" % len(blue_result))
-        pts = findVertices(blue_result)
-        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
-        cv2.polylines(image, [pts1], 1, (255, 0, 0))
-        
-        avg_col = sum_col/len(blue_result)
-        avg_row = sum_row/len(blue_result)
-        
-        new_center = (avg_col, avg_row)
+#    if len(blue_result) > 0:
+#        print("array size:%d" % len(blue_result))
+#        pts = findVertices(blue_result)
+#        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
+#        cv2.polylines(image, [pts1], 1, (255, 0, 0))
+#        
+#        avg_col = sum_col/len(blue_result)
+#        avg_row = sum_row/len(blue_result)
+#        
+#        new_center = (avg_col, avg_row)
     
 #        font                   = cv2.FONT_HERSHEY_SIMPLEX
 #        bottomLeftCornerOfText = (avg_col,avg_row)
@@ -412,8 +412,8 @@ def findBlue(image):
 #        pts1 = np.array([pts[0], pts[1], pts[2], pts[3]], dtype = np.int32)  
 #        cv2.polylines(image, [pts1], 1, (0, 0, 255))
 #        cv2.rectangle(image, leftup, rightbottom, (0,225,0))
-        
-    return (image, new_center)
+#        
+#    return (image, new_center)
                    
 
 def findVertices(pixs):

@@ -9,9 +9,9 @@ import numpy as np
 
 image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg')
 
-video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
+#video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\ideal_position_1.avi'
 
-#video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\test_video_3.avi'
+video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\ideal_position_1.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
 #pink = [[100, 100, 120], [135, 134, 180]]
 #gray = [[100, 135, 100], [155, 170, 160]]
@@ -450,9 +450,9 @@ def videoProcess(video):
     
     counter = 0
     
-    out = cv2.VideoWriter('result_3.avi', 
+    out = cv2.VideoWriter('ideal_result_1.avi', 
                            cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
-                           20, (640, 480))
+                           15, (640, 480))
     while(True):
         (grabbed, frame) = camera.read()
         

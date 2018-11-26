@@ -316,7 +316,7 @@ def findBlueCenter(img):
         avg_col = sum_col/length
         avg_row = sum_row/length
         
-        center = (avg_col, avg_row+10)
+        center = (avg_col, avg_row+15)
     
     return center
     

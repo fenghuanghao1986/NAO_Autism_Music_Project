@@ -73,18 +73,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'E7', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial left brown position
     LU = [75, 138]
     RU = [90, 138]
@@ -95,18 +84,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'D7', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial green position
     LU = [100, 137]
     RU = [115, 137]
@@ -117,18 +95,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'C7', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial pink position
     LU = [124, 135]
     RU = [140, 135]
@@ -139,18 +106,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'B6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial Blue position    
     LU = [149, 133]
     RU = [165, 133]
@@ -161,18 +117,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'A6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial gray position
     LU = [173, 131]
     RU = [188, 131]
@@ -183,18 +128,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'G6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial rignt yellow position
     LU = [197, 130]
     RU = [211, 130]
@@ -205,18 +139,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'F6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial rignt red position
     LU = [220, 129]
     RU = [234, 129]
@@ -227,18 +150,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'E6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial right brown position
     LU = [243, 127]
     RU = [257, 127]
@@ -249,18 +161,7 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)    
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'D6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
+
     # initial right green position
     LU = [264, 125]
     RU = [277, 125]
@@ -271,18 +172,6 @@ def initPos(image):
     center = ((LU[0]+RU[0]+RB[0]+LB[0])/4, (LU[1]+RU[1]+RB[1]+LB[1])/4)
     vertices.append(init_vertices)
     centers.append(center)
-    '''cv2.polylines(image, [init_vertices], 1, (255, 255, 0))
-    font       = cv2.FONT_HERSHEY_SIMPLEX
-    centerText = centers[-1]
-    fontScale  = 0.2
-    fontColor  = (0,255,0)
-    lineType   = 1
-    cv2.putText(image,'C6', 
-        centerText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)'''
     
     return (vertices, centers)
 

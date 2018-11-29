@@ -388,12 +388,26 @@ def videoProcess(video):
         
         if grabbed == True:
             
-            frame = updateCells(frame)
+            updated_frame = updateCells(frame)
             #frame = findBlue(frame)[0]
     #        frame = initPos(frame)[0]
                    # show the frame to our screen and increment the frame counter
             
-            frame = cv2.resize(frame, (640, 480))
+            img = cv2.medianBlur(frame,3)
+            cimg = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+#           edges = cv2.Canny(cimg,50,200)
+            circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,15,5,
+                                param1=120,param2=120,minRadius=5,maxRadius=15)
+    
+            circles = np.uint16(np.around(circles))
+            for i in circles[0,:]:
+                # draw the outer circle
+                cv2.circle(updated_frame,(i[0],i[1]),i[2],(0,255,0),2)
+                # draw the center of the circle
+                cv2.circle(updated_frame,(i[0],i[1]),2,(0,0,255),3)
+        
+            
+            frame = cv2.resize(updated_frame, (640, 480))
             out.write(frame)
             cv2.imshow("Frame", frame)
             key = cv2.waitKey(1) & 0xFF

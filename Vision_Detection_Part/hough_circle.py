@@ -9,22 +9,50 @@ import cv2
 import numpy as np
 
 #image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg')
+video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\ideal_position_with_drum_stick_1.avi'
 
-img = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg',0)
-img = cv2.medianBlur(img,5)
-cimg = cv2.cvtColor(img,cv2.COLOR_GRAY2BGR)
 
-circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,1,20,
-                            param1=200,param2=30,minRadius=0,maxRadius=0)
+camera = cv2.VideoCapture(video)
 
-circles = np.uint16(np.around(circles))
-for i in circles[0,:]:
-    # draw the outer circle
-    cv2.circle(cimg,(i[0],i[1]),i[2],(0,255,0),2)
-    # draw the center of the circle
-    cv2.circle(cimg,(i[0],i[1]),2,(0,0,255),3)
-
-cv2.imshow('detected circles',cimg)
-cv2.waitKey(0)
+counter = 0
+out = cv2.VideoWriter('circle_test.avi', 
+                      cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                      15, (320, 240))
+while(True):
+    
+    (grabbed, frame) = camera.read()
+        
+    if grabbed == True:
+            
+        #frame = cv2.resize(frame, (320, 240))
+        
+        img = cv2.medianBlur(frame,3)
+        cimg = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+#        edges = cv2.Canny(cimg,50,200)
+        circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,15,5,
+                                param1=100,param2=115,minRadius=5,maxRadius=15)
+    
+        circles = np.uint16(np.around(circles))
+        for i in circles[0,:]:
+            # draw the outer circle
+            cv2.circle(frame,(i[0],i[1]),i[2],(0,255,0),2)
+            # draw the center of the circle
+            cv2.circle(frame,(i[0],i[1]),2,(0,0,255),3)
+        
+        cv2.imshow("Frame", frame)
+        out.write(frame)
+        key = cv2.waitKey(1) & 0xFF
+        counter += 1
+            
+            # if the 'q' key is pressed, stop the loop
+        if key == ord("q"):
+            break
+            
+    else:
+        break
+        
+camera.release()
+out.release()
 cv2.destroyAllWindows()
+
 

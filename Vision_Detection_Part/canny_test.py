@@ -9,9 +9,9 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('ball5.jpg',0)
-   
-edges = cv2.Canny(img,100,200)
+img = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg',0)
+img = cv2.medianBlur(img,3)   
+edges = cv2.Canny(img,50,200)
 
 plt.subplot(121),plt.imshow(img,cmap = 'gray')
 plt.title('Original Image'), plt.xticks([]), plt.yticks([])

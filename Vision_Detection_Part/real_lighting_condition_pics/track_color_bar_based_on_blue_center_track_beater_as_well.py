@@ -9,7 +9,7 @@ import numpy as np
 
 image = cv2.imread(r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\320b.jpg')
 
-video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\ideal_position_with_drum_stick_1.avi'
+video = r'D:\Howard_Feng\noteDetection\Vision_Detection_Part\real_lighting_condition_pics\redball.avi'
 
 #video = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Vision_Detection_Part\real_lighting_condition_pics\ideal_position_with_drum_stick_1.avi'
 #blue = [[160, 120, 70], [210, 180, 130]]
@@ -205,7 +205,7 @@ def findBlueCenter(img):
         avg_col = sum_col/length
         avg_row = sum_row/length
         
-        center = (avg_col, avg_row+15)
+        center = (avg_col, avg_row+8)
     
     return center
     
@@ -395,9 +395,9 @@ def videoProcess(video):
             
             img = cv2.medianBlur(frame,3)
             cimg = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-#           edges = cv2.Canny(cimg,50,200)
-            circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,15,5,
-                                param1=120,param2=120,minRadius=5,maxRadius=15)
+            edges = cv2.Canny(cimg,5,100)
+            circles = cv2.HoughCircles(cimg,cv2.HOUGH_GRADIENT,10,5,
+                                param1=100,param2=120,minRadius=5,maxRadius=15)
     
             circles = np.uint16(np.around(circles))
             for i in circles[0,:]:

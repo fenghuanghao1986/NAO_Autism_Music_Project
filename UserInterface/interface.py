@@ -8,11 +8,29 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_MainWindow(object):
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    _fromUtf8 = lambda s: s
+    
+class Ui_MainWindow(QtWidgets.QMainWindow):
+    def __init__(self,parent=None):
+        QtWidgets.QMainWindow.__init__(self,parent)
+        self.setupUi(parent)
+        
+        
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(750, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
+        
+# =============================================================================
+# =============================================================================
+# =============================================================================
+# # #         self.centralwidget.setObjectName("centralwidget")
+# =============================================================================
+# =============================================================================
+# =============================================================================
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(30, 230, 191, 111))
         self.pushButton.setObjectName("pushButton")

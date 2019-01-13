@@ -104,7 +104,49 @@ def moveShoulder(motionProxy, postureProxy):
     motionProxy.changeAngles("RShoulderRoll", random.choice(change), 1.0)
     motionProxy.changeAngles("LShoulderRoll", -random.choice(change), 1.0)
     
-    
+  
+def userArmsCartesian(motionProxy):
+    effector   = ["LArm", "RArm"]
+    frame      = motion.FRAME_TORSO
+    useSensorValues = False
+
+    # just control position
+    axisMask   = [motion.AXIS_MASK_VEL, motion.AXIS_MASK_VEL]
+
+    # LArm path
+    pathLArm = []
+    initTf   = almath.Transform(motionProxy.getTransform("LArm", frame, useSensorValues))
+    targetTf = almath.Transform(motionProxy.getTransform("LArm", frame, useSensorValues))
+    targetTf.r1_c4 += 0.04 # x
+    targetTf.r2_c4 -= 0.10 # y
+    targetTf.r3_c4 += 0.10 # z
+    pathLArm.append(list(targetTf.toVector()))
+    pathLArm.append(list(initTf.toVector()))
+    pathLArm.append(list(targetTf.toVector()))
+    pathLArm.append(list(initTf.toVector()))
+
+    # RArm path
+    pathRArm = []
+    initTf   = almath.Transform(motionProxy.getTransform("RArm", frame, useSensorValues))
+    targetTf = almath.Transform(motionProxy.getTransform("RArm", frame, useSensorValues))
+    targetTf.r1_c4 += 0.04 # x
+    targetTf.r2_c4 += 0.10 # y
+    targetTf.r3_c4 += 0.10 # z
+    pathRArm.append(list(targetTf.toVector()))
+    pathRArm.append(list(initTf.toVector()))
+    pathRArm.append(list(targetTf.toVector()))
+    pathRArm.append(list(initTf.toVector()))
+
+    pathList = []
+    pathList.append(pathLArm)
+    pathList.append(pathRArm)
+
+    # Go to the target and back again
+    timesList = [[1.0, 2.0, 3.0, 4.0],
+                 [1.0, 2.0, 3.0, 4.0]] # seconds
+
+    motionProxy.transformInterpolations(effector, frame, pathList,
+                                       axisMask, timesList)    
 def main(robotIP, PORT=9559):
     
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
@@ -122,6 +164,9 @@ def main(robotIP, PORT=9559):
         hitBarWrist(motionProxy, postureProxy)
         #time.sleep(1)
         
+    
+    
+    
     '''
     # effector   = "LArm"
     frame      = motion.FRAME_TORSO
@@ -173,15 +218,18 @@ def interpretJointsPose(motionProxy, memoryProxy):
     # Return corresponding pose.
     return almath.Pose2D(targetX, targetY, targetTheta)
 '''
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    
+    '''
     parser.add_argument("--ip", type=str, default="169.254.254.250",
                         help="Robot ip address")
     '''
     parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
-    '''
+    
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

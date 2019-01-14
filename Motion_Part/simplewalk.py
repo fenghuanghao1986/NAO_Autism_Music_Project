@@ -103,46 +103,46 @@ def main(robotIP, PORT=9559):
     #motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", False]])
     motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
 
-    #TARGET VELOCITY
-    X = -0.5  # backward
-    Y = 0.0
-    Theta = 0.0
-    Frequency =0.0 # low speed
-    try:
-        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
-    except Exception, errorMsg:
-        print str(errorMsg)
-        print "This example is not allowed on this robot."
-        exit()
-
-#    userArmsCartesian(motionProxy)
-
-    #TARGET VELOCITY
-    X = 0.8
-    Y = 0.0
-    Theta = 0.0
-    Frequency =1.0 # max speed
-    try:
-        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
-    except Exception, errorMsg:
-        print str(errorMsg)
-        print "This example is not allowed on this robot."
-        exit()
-
-    time.sleep(4.0)
-
-    #TARGET VELOCITY
-    X = 0.2
-    Y = -0.5
-    Theta = 0.2
-    Frequency = 1.0
-
-    try:
-        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
-    except Exception, errorMsg:
-        print str(errorMsg)
-        print "This example is not allowed on this robot."
-        exit()
+#    #TARGET VELOCITY
+#    X = -0.5  # backward
+#    Y = 0.0
+#    Theta = 0.0
+#    Frequency =0.0 # low speed
+#    try:
+#        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
+#    except Exception, errorMsg:
+#        print str(errorMsg)
+#        print "This example is not allowed on this robot."
+#        exit()
+#
+    userArmsCartesian(motionProxy)
+#
+#    #TARGET VELOCITY
+#    X = 0.8
+#    Y = 0.0
+#    Theta = 0.0
+#    Frequency =1.0 # max speed
+#    try:
+#        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
+#    except Exception, errorMsg:
+#        print str(errorMsg)
+#        print "This example is not allowed on this robot."
+#        exit()
+#
+#    time.sleep(4.0)
+#
+#    #TARGET VELOCITY
+#    X = 0.2
+#    Y = -0.5
+#    Theta = 0.2
+#    Frequency = 1.0
+#
+#    try:
+#        motionProxy.moveToward(X, Y, Theta, [["Frequency", Frequency]])
+#    except Exception, errorMsg:
+#        print str(errorMsg)
+#        print "This example is not allowed on this robot."
+#        exit()
 
     time.sleep(2.0)
     userArmArticular(motionProxy)

@@ -96,7 +96,7 @@ def main(robotIP, PORT=9559):
     motionProxy.wakeUp()
 
     # Send robot to Stand
-    postureProxy.goToPosture("StandInit", 0.5)
+#    postureProxy.goToPosture("StandInit", 0.5)
 
     #####################
     ## Enable arms control by Motion algorithm

@@ -11,11 +11,12 @@ from naoqi import ALProxy
 
 def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
-
+    
+    motionProxy.rest()
     # Example showing how to get the end of the right arm as a transform
     # represented in torso space. The result is a 4 by 4 matrix composed
     # of a 3*3 rotation matrix and a column vector of positions.
-    name  = 'LArm'
+    name  = 'LLeg'
     frame  = motion.FRAME_TORSO
     useSensorValues  = True
     result = motionProxy.getTransform(name, frame, useSensorValues)

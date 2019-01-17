@@ -10,11 +10,11 @@ import motion
 import argparse
 from naoqi import ALProxy
 
-def userInitPosture(motionProxy, protureProxy):
-    
-    # this function should have NAO crouching position with leg joints rest/locked?
-    # and both arms should be straight down without touching legs and other parts
-    
+#def userInitPosture(motionProxy, protureProxy):
+#    
+#    # this function should have NAO crouching position with leg joints rest/locked?
+#    # and both arms should be straight down without touching legs and other parts
+#    
 
 def userSetTransform(motionProxy):
 

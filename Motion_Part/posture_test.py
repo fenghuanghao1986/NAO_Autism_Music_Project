@@ -6,6 +6,7 @@ Created on Thu Aug  9 10:46:02 2018
 """
 
 import sys
+import time
 
 from naoqi import ALProxy
 
@@ -19,13 +20,21 @@ def main(robotIP):
         print "Error was: ", e
 
     postureProxy.goToPosture("StandInit", 1.0)
+    time.sleep(1)
     postureProxy.goToPosture("SitRelax", 1.0)
+    time.sleep(1)
     postureProxy.goToPosture("StandZero", 1.0)
-    postureProxy.goToPosture("LyingBelly", 1.0)
-    postureProxy.goToPosture("LyingBack", 1.0)
+    time.sleep(1)
+#    postureProxy.goToPosture("LyingBelly", 1.0)
+#    time.sleep(1)
+#    postureProxy.goToPosture("LyingBack", 1.0)
+    time.sleep(1)
     postureProxy.goToPosture("Stand", 1.0)
+    time.sleep(1)
     postureProxy.goToPosture("Crouch", 1.0)
-    postureProxy.goToPosture("Sit", 1.0)
+    time.sleep(1)
+#    postureProxy.goToPosture("Sit", 1.0)
+#    time.sleep(1)
 
     print postureProxy.getPostureFamily()
 

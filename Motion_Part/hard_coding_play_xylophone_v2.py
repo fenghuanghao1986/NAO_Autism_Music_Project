@@ -19,12 +19,38 @@ def userInitPosture(motionProxy, postureProxy):
     time.sleep(1)
     print postureProxy.getPostureFamily()
     
+    chainName        = "RArm"
+    frame            = motion.FRAME_TORSO
+#    transform        = [1.0, 0.0, 0.0, 0.00,
+#                        0.0, 1.0, 0.0, 0.00,
+#                        0.0, 0.0, 1.0, 0.25]
+    transform       = [0.03477038815617561, 0.9961863160133362, 0.080023854970932, 
+                       0.0029639352578669786, -0.381715327501297, 0.0872393399477005, 
+                       -0.9201536178588867, -0.183818519115448, -0.923625648021698, 
+                       0.0014477664371952415, 0.38329294323921204, -0.10117591917514801, 
+                       0.0, 0.0, 0.0, 1.0]
+    fractionMaxSpeed = 1.0
+    axisMask         = 63 # this value include position and rotation
+#    axisMask   = motion.AXIS_MASK_VEL
+#    print(motion.AXIS_MASK_VEL)
+    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
     
-    
-    
-    
-    
-    
+    chainName        = "LArm"
+    frame            = motion.FRAME_TORSO
+#    transform        = [1.0, 0.0, 0.0, 0.00,
+#                        0.0, 1.0, 0.0, 0.00,
+#                        0.0, 0.0, 1.0, 0.25]
+    transform       = [0.03795033320784569, -0.9755989909172058, -0.21625538170337677, 
+                       0.006952085066586733, 0.378103643655777, -0.1863023042678833, 
+                       0.9068236947059631, 0.18319708108901978, -0.9249851703643799, 
+                       -0.11618120968341827, 0.36180728673934937, -0.10128530114889145, 
+                       0.0, 0.0, 0.0, 1.0]
+    fractionMaxSpeed = 1.0
+    axisMask         = 63 # this value include position and rotation
+#    axisMask   = motion.AXIS_MASK_VEL
+#    print(motion.AXIS_MASK_VEL)
+    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        
 
 def userSetTransform(motionProxy):
 
@@ -97,10 +123,12 @@ def userHitNote(motionProxy):
     
 def main(robotIP, PORT=9559):
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
-#    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)    
-    
+    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)    
+    userInitPosture(motionProxy, postureProxy)
+    time.sleep(2)
     userSetTransform(motionProxy)
     userHitNote(motionProxy)
+    
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

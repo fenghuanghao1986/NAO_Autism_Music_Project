@@ -82,7 +82,7 @@ def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
 
     # Example that finds the difference between the command and sensed angles.
-    names         = "Joints"
+    names         = "LWristYaw"
     useSensors    = False
     commandAngles = motionProxy.getAngles(names, useSensors)
     print "Command angles:"

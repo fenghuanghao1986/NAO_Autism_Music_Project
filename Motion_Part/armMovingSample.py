@@ -84,7 +84,7 @@ def userArmArticular(motionProxy):
     pFractionMaxSpeed = 0.6
 
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
-#    motionProxy.angleInterpolationWithSpeed(JointNames, Arm2, pFractionMaxSpeed)
+    motionProxy.angleInterpolationWithSpeed(JointNames, Arm2, pFractionMaxSpeed)
 #    motionProxy.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
     
 def main(robotIP, PORT=9559):
@@ -114,7 +114,7 @@ def main(robotIP, PORT=9559):
 
 
     time.sleep(2.0)
-#    userArmArticular(motionProxy)
+    userArmArticular(motionProxy)
     time.sleep(2.0)
 
 

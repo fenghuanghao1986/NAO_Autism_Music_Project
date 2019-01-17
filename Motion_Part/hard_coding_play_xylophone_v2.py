@@ -50,7 +50,11 @@ def userInitPosture(motionProxy, postureProxy):
 #    axisMask   = motion.AXIS_MASK_VEL
 #    print(motion.AXIS_MASK_VEL)
     motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-        
+    
+    
+    
+    
+    
 
 def userSetTransform(motionProxy):
 
@@ -124,15 +128,15 @@ def userHitNote(motionProxy):
 def main(robotIP, PORT=9559):
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)    
-    userInitPosture(motionProxy, postureProxy)
-    time.sleep(2)
+    
     userSetTransform(motionProxy)
     userHitNote(motionProxy)
     
-    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

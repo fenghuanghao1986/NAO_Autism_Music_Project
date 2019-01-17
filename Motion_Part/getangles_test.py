@@ -94,7 +94,9 @@ def main(robotIP, PORT=9559):
     print "Sensor angles:"
     print str(sensorAngles)
     print ""
-
+    
+    difference = list(set(commandAngles) - set(sensorAngles))
+    print(difference)
 #    errors = []
 #    for i in range(0, len(commandAngles)):
 #        errors.append(commandAngles[i]-sensorAngles[i])

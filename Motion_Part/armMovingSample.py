@@ -46,7 +46,7 @@ def userArmsCartesian(motionProxy):
     pathRArm = []
     initTf   = almath.Transform(motionProxy.getTransform("RArm", frame, useSensorValues))
     targetTf = almath.Transform(motionProxy.getTransform("RArm", frame, useSensorValues))
-#    print(targetTf)
+    print(targetTf)
     targetTf.r1_c4 += 0.04 # x
     targetTf.r2_c4 += 0.10 # y
     targetTf.r3_c4 += 0.10 # z
@@ -84,7 +84,7 @@ def userArmArticular(motionProxy):
     pFractionMaxSpeed = 0.6
 
     motionProxy.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
-#    motionProxy.angleInterpolationWithSpeed(JointNames, Arm2, pFractionMaxSpeed)
+    motionProxy.angleInterpolationWithSpeed(JointNames, Arm2, pFractionMaxSpeed)
 #    motionProxy.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
     
 def main(robotIP, PORT=9559):
@@ -110,7 +110,7 @@ def main(robotIP, PORT=9559):
     #motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", False]])
     motionProxy.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
 
-#    userArmsCartesian(motionProxy)
+    userArmsCartesian(motionProxy)
 
 
     time.sleep(2.0)
@@ -121,7 +121,7 @@ def main(robotIP, PORT=9559):
     motionProxy.waitUntilMoveIsFinished()
 
     # Go to rest position
-#    motionProxy.rest()
+    motionProxy.rest()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

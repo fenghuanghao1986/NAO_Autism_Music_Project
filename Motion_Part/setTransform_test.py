@@ -31,9 +31,9 @@ def main(robotIP, PORT=9559):
                        -0.0117654, 0.32966, -0.944026, -0.033004,
                        -0.417876, 0.856077, 0.304156, 0.0541606]
     fractionMaxSpeed = 0.7
-#    axisMask         = 63
-    axisMask   = motion.AXIS_MASK_VEL
-    print(motion.AXIS_MASK_VEL)
+    axisMask         = 63
+#    axisMask   = motion.AXIS_MASK_VEL
+
     motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
 
     time.sleep(4.0)

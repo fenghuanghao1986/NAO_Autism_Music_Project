@@ -15,9 +15,8 @@ def userInitPosture(motionProxy, postureProxy):
     # this function should have NAO crouching position with leg joints rest/locked?
     # and both arms should be straight down without touching legs and other parts
      
-    postureProxy.goToPosture("Crouch", 1.0)
+    postureProxy.goToPosture("Crouch", 0.5)
     time.sleep(1)
-    print postureProxy.getPostureFamily()
     
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
@@ -29,7 +28,7 @@ def userInitPosture(motionProxy, postureProxy):
                        -0.9201536178588867, -0.183818519115448, -0.923625648021698, 
                        0.0014477664371952415, 0.38329294323921204, -0.10117591917514801, 
                        0.0, 0.0, 0.0, 1.0]
-    fractionMaxSpeed = 1.0
+    fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 #    axisMask   = motion.AXIS_MASK_VEL
 #    print(motion.AXIS_MASK_VEL)
@@ -45,13 +44,14 @@ def userInitPosture(motionProxy, postureProxy):
                        0.9068236947059631, 0.18319708108901978, -0.9249851703643799, 
                        -0.11618120968341827, 0.36180728673934937, -0.10128530114889145, 
                        0.0, 0.0, 0.0, 1.0]
-    fractionMaxSpeed = 1.0
+    fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 #    axisMask   = motion.AXIS_MASK_VEL
 #    print(motion.AXIS_MASK_VEL)
     motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
     
-    
+    motionProxy.setStiffnesses("LLeg", 0.0)
+    motionProxy.setStiffnesses("RLeg", 1.0)
     
     
     
@@ -129,7 +129,10 @@ def main(robotIP, PORT=9559):
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)    
     
-    userSetTransform(motionProxy)
+#    userInitPosture(motionProxy, postureProxy)
+#    time.sleep(2)
+#    userSetTransform(motionProxy)
+#    time.sleep(1)
     userHitNote(motionProxy)
     
 if __name__ == "__main__":

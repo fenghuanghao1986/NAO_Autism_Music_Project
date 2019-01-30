@@ -135,7 +135,7 @@ if __name__ == '__main__':
  
     try:
         import pylab as plt
-        plt.imshow(np.abs(s), aspect="auto", vmin = 1000, vmax = 2800)
+        plt.imshow(np.abs(s), aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
         plt.xlabel('frequency (Hertz)')
         plt.ylabel('time (seconds (start of chunk))')
         plt.title('STFT with chirp example')

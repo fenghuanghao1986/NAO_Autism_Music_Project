@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.fft as fft
 from scipy.io import wavfile as wav
+from scipy.signal import butter, lfilter
 
 def stft(x, Nwin, Nfft=None):
     """
@@ -93,15 +94,26 @@ def istft(stftArr, Nwin):
     arr = fft.irfft(stftArr)[:, :Nwin]
     return np.reshape(arr, -1)
 
+def bandpass_filter(data, lowcut, highcut, fs, order):
+
+    nyq = 0.5 * fs
+    low = lowcut / nyq
+    high = highcut / nyq
+    b, a = butter(order, [low, high], btype='band')
+    cleanData = lfilter(b, a, data)
+    return cleanData
 
 if __name__ == '__main__':
     
     file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
-    Nwin = 4096
-    x = data[:, 0]
+    Nwin = 10240
+    xx = data[:, 0]
     
+    low = 1000
+    high = 2800
+    x = bandpass_filter(xx, low, high, sampleRate, order=3)
     # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
     time = np.arange(N) / sampleRate  # seconds
 #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
@@ -123,7 +135,7 @@ if __name__ == '__main__':
  
     try:
         import pylab as plt
-        plt.imshow(np.abs(s), aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+        plt.imshow(np.abs(s), aspect="auto", vmin = 1000, vmax = 2800)
         plt.xlabel('frequency (Hertz)')
         plt.ylabel('time (seconds (start of chunk))')
         plt.title('STFT with chirp example')

@@ -21,7 +21,7 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order):
     cleanData = lfilter(b, a, data)
     return cleanData
 # define a function which reads the audio file and do the FFT
-def doFFT(waveData, Fs):
+def doFFT(waveData, Fs, Nwin, Nfft=None):
     # import libs for future usage
 
     # import matplotlib.pyplot as plt
@@ -32,8 +32,15 @@ def doFFT(waveData, Fs):
     # get the file/FFT length which means the total frames for the file
     waveData = waveData[:, 0]
     N = len(waveData)
-    FFTData = np.fft.rfft(waveData)
-    p2 = np.abs(FFTData / N)
+    
+    Nfft = Nfft or Nwin
+    Nwindows = waveData.size // Nwin
+    # reshape into array `Nwin` wide, and as tall as possible. This is
+    # optimized for C-order (row-major) layouts.
+    arr = np.reshape(waveData[:Nwindows * Nwin], (-1, Nwin))
+    stft = np.fft.rfft(arr, Nfft)
+
+    p2 = np.abs(stft / N)
     p2 = np.array([p2])
     gain = 2 * p2[0, 0:int(N / 2)]
     Range = np.linspace(0, int(N / 2), int(N / 2))
@@ -117,7 +124,8 @@ lowcut = 1000.0
 highcut = 3000.0
 # for guitar use 50 and 500
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
-freqData = doFFT(y, fs)
+Nwin = 1024
+freqData = doFFT(y, fs, Nwin)
 # call find peak function return peak frequency
 rawPeak = findRawPeak(freqData)
 newPeak = realPeak(rawPeak)

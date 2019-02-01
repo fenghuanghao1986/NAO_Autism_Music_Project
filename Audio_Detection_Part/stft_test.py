@@ -48,7 +48,7 @@ from scipy.signal import argrelextrema
 #    stft = np.fft.rfft(arr, Nfft)
 #    return stft
 ##
-file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
+file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\ace.wav'
 ##
 waveData, fs = sf.read(file)
 ##

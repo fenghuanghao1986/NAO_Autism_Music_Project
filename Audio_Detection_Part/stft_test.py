@@ -80,7 +80,7 @@ def istft(stftArr, Nwin):
     stftArr : ndarray
         Output of `stft` (or something the same size)
     Nwin : int
-        Same input as `stft`: length of each chunk that the STFT was calculated
+        Same input as `stft`: length of  each chunk that the STFT was calculated
         over.
     
     Returns
@@ -103,15 +103,36 @@ def bandpass_filter(data, lowcut, highcut, fs, order):
     cleanData = lfilter(b, a, data)
     return cleanData
 
+def findNotes(stftData):
+    x = len(stftData)
+    maxAmp = []
+    maxLocal = []
+    for i in range(x):
+        maxAmp.append(stftData[i].max())
+    
+    plt.plot(maxAmp)
+    plt.show()
+    for i in range(x):
+        if (i == 0):
+            if (maxAmp[i] >= maxAmp[i+1]):
+                maxLocal.append(maxAmp[i])
+        elif (i == x-1):
+            if (maxAmp[i] >= maxAmp[i-1]):
+                maxLocal.append(maxAmp[i])
+        elif (maxAmp[i] >= maxAmp[i-1]) and (maxAmp[i] >= maxAmp[i+1]):
+            maxLocal.append(maxAmp[i])
+#            
+    return maxLocal
+    
 if __name__ == '__main__':
     
     file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
-    Nwin = 10240
+    Nwin = 1024
     xx = data[:, 0]
     
-    low = 1000
+    low = 1040
     high = 2800
     x = bandpass_filter(xx, low, high, sampleRate, order=3)
     # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
@@ -120,9 +141,9 @@ if __name__ == '__main__':
 
     # Test with Nfft bigger than Nwin
     Nfft = Nwin * 2
-    s = stft(x, Nwin)
+    s = np.abs(stft(x, Nwin))
     y = istft(s, Nwin)
-
+    peaks = findNotes(s)
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!
 #    maxerr = np.max(np.abs(x - y))
@@ -133,13 +154,13 @@ if __name__ == '__main__':
     assert (len(t) == s.shape[0])
     assert (len(f) == s.shape[1])
  
-    try:
-        import pylab as plt
-        plt.imshow(np.abs(s), aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-        plt.xlabel('frequency (Hertz)')
-        plt.ylabel('time (seconds (start of chunk))')
-        plt.title('STFT with chirp example')
-        plt.grid()
-        plt.show()
-    except ModuleNotFoundError:
-        pass
+#    try:
+#        import pylab as plt
+#        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+#        plt.xlabel('frequency (Hertz)')
+#        plt.ylabel('time (seconds (start of chunk))')
+#        plt.title('STFT with chirp example')
+#        plt.grid()
+#        plt.show()
+#    except ModuleNotFoundError:
+#        pass

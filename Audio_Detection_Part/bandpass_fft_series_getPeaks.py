@@ -102,10 +102,10 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
+#file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'
-#file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
+file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\cc.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before

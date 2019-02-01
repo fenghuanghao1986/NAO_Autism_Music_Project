@@ -102,7 +102,11 @@ import soundfile as sf
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
+<<<<<<< HEAD
 #file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
+=======
+file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+>>>>>>> ea0db5a020f3280e475d3112e0bcee4d9c489aec
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'
 file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\cc.wav'

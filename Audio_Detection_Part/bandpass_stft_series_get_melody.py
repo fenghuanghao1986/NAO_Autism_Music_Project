@@ -4,10 +4,16 @@ Created on Sat Jan 26 15:13:08 2019
 
 @author: CV_LAB_Howard
 """
+from scipy.signal import butter, lfilter
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy
+import soundfile as sf
 
 # creating butter bandpass filter
 def butter_bandpass_filter(data, lowcut, highcut, fs, order):
-    from scipy.signal import butter, lfilter
+
     nyq = 0.5 * fs
     low = lowcut / nyq
     high = highcut / nyq
@@ -15,9 +21,9 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order):
     cleanData = lfilter(b, a, data)
     return cleanData
 # define a function which reads the audio file and do the FFT
-def doFFT(waveData, Fs):
+def doFFT(waveData, Fs, Nwin, Nfft=None):
     # import libs for future usage
-    import numpy as np
+
     # import matplotlib.pyplot as plt
     # Fs = 44100.0
     # import scipy as sp
@@ -26,8 +32,15 @@ def doFFT(waveData, Fs):
     # get the file/FFT length which means the total frames for the file
     waveData = waveData[:, 0]
     N = len(waveData)
-    FFTData = np.fft.rfft(waveData)
-    p2 = np.abs(FFTData / N)
+    
+    Nfft = Nfft or Nwin
+    Nwindows = waveData.size // Nwin
+    # reshape into array `Nwin` wide, and as tall as possible. This is
+    # optimized for C-order (row-major) layouts.
+    arr = np.reshape(waveData[:Nwindows * Nwin], (-1, Nwin))
+    stft = np.fft.rfft(arr, Nfft)
+
+    p2 = np.abs(stft / N)
     p2 = np.array([p2])
     gain = 2 * p2[0, 0:int(N / 2)]
     Range = np.linspace(0, int(N / 2), int(N / 2))
@@ -40,10 +53,7 @@ def doFFT(waveData, Fs):
 # This funiction will detect the raw peaks
 # later on, a refine function will be applied, to get real peaks
 def findRawPeak(freqData):
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import scipy
-    import numpy as np
+
     df = pd.DataFrame(freqData)
     low = 1000
     high = 3000
@@ -63,7 +73,7 @@ def findRawPeak(freqData):
 
 # this function is to get real peaks for future analysis
 def realPeak(rawPeak):
-    import numpy as np
+
     # since music scales is a 
     # ratio = 1.059463
     # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
@@ -96,13 +106,13 @@ def realPeak(rawPeak):
     return newPeak
 
 # main testing code
-import soundfile as sf
+
 # import scipy as sp
 # read file
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\cc.wav'
+file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'
 #file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'
@@ -114,7 +124,8 @@ lowcut = 1000.0
 highcut = 3000.0
 # for guitar use 50 and 500
 y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
-freqData = doFFT(y, fs)
+Nwin = 1024
+freqData = doFFT(y, fs, Nwin)
 # call find peak function return peak frequency
 rawPeak = findRawPeak(freqData)
 newPeak = realPeak(rawPeak)

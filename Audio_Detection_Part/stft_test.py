@@ -1,81 +1,8 @@
 import numpy as np
-<<<<<<< HEAD
-import scipy.io.wavfile as wavfile
-from scipy.interpolate import interp1d
-from scipy.signal import argrelextrema
-#def stft(x, Nwin, Nfft=None):
-#    """
-#    Short-time Fourier transform: convert a 1D vector to a 2D array
-#    The short-time Fourier transform (STFT) breaks a long vector into disjoint
-#    chunks (no overlap) and runs an FFT (Fast Fourier Transform) on each chunk.
-#    The resulting 2D array can 
-#    Parameters
-#    ----------
-#    x : array_like
-#        Input signal (expected to be real)
-#    Nwin : int
-#        Length of each window (chunk of the signal). Should be ≪ `len(x)`.
-#    Nfft : int, optional
-#        Zero-pad each chunk to this length before FFT. Should be ≥ `Nwin`,
-#        (usually with small prime factors, for fastest FFT). Default: `Nwin`.
-#    Returns
-#    -------
-#    out : complex ndarray
-#        `len(x) // Nwin` by `Nfft` complex array representing the STFT of `x`.
-#    
-#    See also
-#    --------
-#    istft : inverse function (convert a STFT array back to a data vector)
-#    stftbins : time and frequency bins corresponding to `out`
-#    """
-#    Nfft = Nfft or Nwin
-#    Nwindows = x.size // Nwin
-#    # reshape into array `Nwin` wide, and as tall as possible. This is
-#    # optimized for C-order (row-major) layouts.
-#    arr = np.reshape(x[:Nwindows * Nwin], (-1, Nwin))
-#    stft = np.fft.rfft(arr, Nfft)
-#    return stft
-##
-file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\ace.wav'
-##
-waveData, fs = sf.read(file)
-##
-#lowcut = 1000.0
-#highcut = 3000.0
-##
-#y = butter_bandpass_filter(waveData, lowcut, highcut, fs, order=3)
-##
-#
-#zxx = stft(y[:,0], 10)
-#
-#t = len(waveData)/fs
-#
-#
-#
-##
-#
-##fs = 10e3
-##N = 1e5
-##amp = 2 * np.sqrt(2)
-###noise_power = 0.01 * fs / 2
-##time = np.arange(N) / float(fs)
-##mod = 500*np.cos(2*np.pi*0.25*time)
-##carrier = np.sin(2*np.pi*3e3*time + mod)
-##
-##f, t, Zxx = signal.stft(carrier, fs, nperseg=1000)
-## =============================================================================
-#plt.plot(zxx)
-## =============================================================================
-#plt.show()
-##plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp)
-##plt.title('STFT Magnitude')
-##plt.ylabel('Frequency [Hz]')
-##plt.xlabel('Time [sec]')
-##plt.show()
-=======
 import numpy.fft as fft
 from scipy.io import wavfile as wav
 from scipy.signal import butter, lfilter
+import matplotlib.pyplot as plt
 
 def stft(x, Nwin, Nfft=None):
     """
@@ -109,7 +36,6 @@ def stft(x, Nwin, Nfft=None):
     arr = np.reshape(x[:Nwindows * Nwin], (-1, Nwin))
     stft = fft.rfft(arr, Nfft)
     return stft
->>>>>>> ea0db5a020f3280e475d3112e0bcee4d9c489aec
 
 
 def stftbins(x, Nwin, Nfft=None, d=1.0):
@@ -180,10 +106,13 @@ def bandpass_filter(data, lowcut, highcut, fs, order):
 
 def findNotes(stftData):
     x = len(stftData)
-    maxAmp = []
+    y = len(stftData[0])
+    maxAmp = 0
     maxLocal = []
     for i in range(x):
-        maxAmp.append(stftData[i].max())
+        for j in range(y):
+            maxAmp = stftData[i].max()
+            
     
     plt.plot(maxAmp)
     plt.show()
@@ -201,7 +130,8 @@ def findNotes(stftData):
     
 if __name__ == '__main__':
     
-    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+#    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
     Nwin = 1024
@@ -229,13 +159,13 @@ if __name__ == '__main__':
     assert (len(t) == s.shape[0])
     assert (len(f) == s.shape[1])
  
-#    try:
-#        import pylab as plt
-#        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-#        plt.xlabel('frequency (Hertz)')
-#        plt.ylabel('time (seconds (start of chunk))')
-#        plt.title('STFT with chirp example')
-#        plt.grid()
-#        plt.show()
-#    except ModuleNotFoundError:
-#        pass
+    try:
+        import pylab as plt
+        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+        plt.xlabel('frequency (Hertz)')
+        plt.ylabel('time (seconds (start of chunk))')
+        plt.title('STFT with chirp example')
+        plt.grid()
+        plt.show()
+    except ModuleNotFoundError:
+        pass

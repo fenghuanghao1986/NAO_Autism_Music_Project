@@ -104,37 +104,83 @@ def bandpass_filter(data, lowcut, highcut, fs, order):
     cleanData = lfilter(b, a, data)
     return cleanData
 
-def findNotes(stftData):
+def realPeak(rawPeak):
+
+    # since music scales is a 
+    # ratio = 1.059463
+    # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
+    # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
+    # because of the accuracy problem, we can only compare the detected note 
+    # in a certain range using the basic ratio between notes
+    notes = {'C6': 1038, 'D6': 1172, 'E6': 1316,
+             'F6': 1389, 'G6': 1561, 'A6': 1755,
+             'B6': 1975, 'C7': 2084, 'D7': 2343,
+             'E7': 2626, 'F7': 2785}
+    
+    #peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
+    #peaks = np.array(peaks)
+    #print(peaks)
+    n = len(rawPeak)
+    newPeak = []
+    
+    # for key, note in notes.items():
+        # thinking about how to use deque so once I get one
+        # it will also delete the first one, make second one to first
+    for i in range (n):
+        for key, note in notes.items():
+            if rawPeak[i] >= note - 9 and rawPeak[i] <= note + 8:
+                newPeak.append(key)
+                print(newPeak)
+                print(i)
+                break
+            else:
+                continue
+
+    return newPeak
+
+def findNotes(stftData, fsRange):
     x = len(stftData)
     y = len(stftData[0])
-    maxAmp = 0
+    
+    maxAmp = []
     maxLocal = []
     for i in range(x):
+        maxima = stftData[i].max()
+        index = 0
+        
         for j in range(y):
-            maxAmp = stftData[i].max()
+            if stftData[i][j] == maxima :
+                index = j
+                break
+            
+        maxAmp.append([maxima,index])
             
     
     plt.plot(maxAmp)
     plt.show()
     for i in range(x):
         if (i == 0):
-            if (maxAmp[i] >= maxAmp[i+1]):
+            if (maxAmp[i][0] >= maxAmp[i+1][0]):
                 maxLocal.append(maxAmp[i])
         elif (i == x-1):
-            if (maxAmp[i] >= maxAmp[i-1]):
+            if (maxAmp[i][0] >= maxAmp[i-1][0]):
                 maxLocal.append(maxAmp[i])
-        elif (maxAmp[i] >= maxAmp[i-1]) and (maxAmp[i] >= maxAmp[i+1]):
+        elif (maxAmp[i][0] >= maxAmp[i-1][0]) and (maxAmp[i][0] >= maxAmp[i+1][0]):
             maxLocal.append(maxAmp[i])
+    
+    rawPeaks = []
+    for i in range(len(maxLocal)):
+        rawPeaks.append(maxLocal[i][1]*fsRange/y)
 #            
-    return maxLocal
+    return rawPeaks
     
 if __name__ == '__main__':
     
-#    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
-    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
+    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+#    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
-    Nwin = 1024
+    Nwin = 2048
     xx = data[:, 0]
     
     low = 1040
@@ -148,7 +194,9 @@ if __name__ == '__main__':
     Nfft = Nwin * 2
     s = np.abs(stft(x, Nwin))
     y = istft(s, Nwin)
-    peaks = findNotes(s)
+    peaks = findNotes(s, sampleRate/2)
+    realPeaks = realPeak(peaks)
+    
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!
 #    maxerr = np.max(np.abs(x - y))

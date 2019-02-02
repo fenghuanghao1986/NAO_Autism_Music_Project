@@ -4,10 +4,15 @@ Created on Fri Jun 15 23:04:41 2018
 
 @author: fengh
 """
+from scipy.signal import butter, lfilter
+import numpy as np
+import pandas as pd
+#import matplotlib.pyplot as plt
+import scipy
+import soundfile as sf
 
 # creating butter bandpass filter
 def butter_bandpass_filter(data, lowcut, highcut, fs, order):
-    from scipy.signal import butter, lfilter
     nyq = 0.5 * fs
     low = lowcut / nyq
     high = highcut / nyq
@@ -17,7 +22,7 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order):
 # define a function which reads the audio file and do the FFT
 def doFFT(waveData, Fs):
     # import libs for future usage
-    import numpy as np
+    
     # import matplotlib.pyplot as plt
     # Fs = 44100.0
     # import scipy as sp
@@ -40,10 +45,7 @@ def doFFT(waveData, Fs):
 # This funiction will detect the raw peaks
 # later on, a refine function will be applied, to get real peaks
 def findRawPeak(freqData):
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import scipy
-    import numpy as np
+
     df = pd.DataFrame(freqData)
     low = 1000
     high = 3000
@@ -51,8 +53,8 @@ def findRawPeak(freqData):
     #df = df[(df['frequency'] >= 1000) & (df['frequency'] <= 2250)]
     df = df[(df['frequency'] >= low) & (df['frequency'] <= high)]
     df = df.reset_index(drop=True)
-    plt.figure(2)
-    plt.plot(df.frequency, df.gain)
+#    plt.figure(2)
+#    plt.plot(df.frequency, df.gain)
     # peakind = scipy.signal.find_peaks_cwt(df.gain, np.arange(1, 3500))
     # hot to get 380 this value:
     # 50/(400-50) = x/total len(df)
@@ -63,7 +65,7 @@ def findRawPeak(freqData):
 
 # this function is to get real peaks for future analysis
 def realPeak(rawPeak):
-    import numpy as np
+
     # since music scales is a 
     # ratio = 1.059463
     # for guitar starts from E2 to E5 (82.4068Hz to 659.2251Hz)
@@ -96,20 +98,20 @@ def realPeak(rawPeak):
     return newPeak
 
 # main testing code
-import soundfile as sf
+
 # import scipy as sp
 # read file
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-<<<<<<< HEAD
+
 #file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
-=======
+
 file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
->>>>>>> ea0db5a020f3280e475d3112e0bcee4d9c489aec
+
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'
-file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\cc.wav'
+#file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\new_xylo\cc.wav'
 waveData, fs = sf.read(file)
 # Sample rate and desired cutoff frequencies (in Hz).
 # need to change the cutoff frequency, new xylophone is different from before

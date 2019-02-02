@@ -149,7 +149,7 @@ def findNotes(stftData, fsRange):
         index = 0
         
         for j in range(y):
-            if stftData[i][j] == maxima :
+            if stftData[i][j] == maxima and stftData[i][j] > (100*np.mean(stftData)):
                 index = j
                 break
             
@@ -176,7 +176,7 @@ def findNotes(stftData, fsRange):
     
 if __name__ == '__main__':
     
-    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\random.wav'
 #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)

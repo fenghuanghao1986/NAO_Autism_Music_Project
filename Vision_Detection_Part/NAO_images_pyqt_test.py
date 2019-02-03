@@ -209,18 +209,15 @@ class ImageWidget(QWidget):
             #cv2.destroyAllWindows()
             qimg = CV2QImage(Iimg)
             
-            self._image = qimg
-            
+            self._image = qimg         
             self.update()
             
-
 
     def __del__(self):
         """
         When the widget is deleted, we unregister our naoqi video module.
         """
         self._unregisterImageClient()
-
 
 if __name__ == '__main__':
         

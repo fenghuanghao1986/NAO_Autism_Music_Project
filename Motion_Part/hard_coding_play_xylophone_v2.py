@@ -318,11 +318,11 @@ def main(robotIP, PORT=9559):
     motionProxy  = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)    
     
-#    userInitPosture(motionProxy, postureProxy)
-#    time.sleep(2)
+    userInitPosture(motionProxy, postureProxy)
+    time.sleep(2)
 #    userSetTransform(motionProxy)
 #    time.sleep(1)
-    #keys = [1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
+    #keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
     #        5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
     #        1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
     keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
@@ -332,10 +332,10 @@ def main(robotIP, PORT=9559):
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

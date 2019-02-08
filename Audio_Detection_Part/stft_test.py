@@ -5,6 +5,7 @@ from scipy.signal import butter, lfilter
 import matplotlib.pyplot as plt
 
 def stft(x, Nwin, Nfft=None):
+
     """
     Short-time Fourier transform: convert a 1D vector to a 2D array
     The short-time Fourier transform (STFT) breaks a long vector into disjoint
@@ -176,7 +177,7 @@ def findNotes(stftData, fsRange):
     
 if __name__ == '__main__':
     
-    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\random.wav'
+    file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
 #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
@@ -208,7 +209,7 @@ if __name__ == '__main__':
     assert (len(f) == s.shape[1])
  
     try:
-        import pylab as plt
+#        import pylab as plt
         plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
         plt.xlabel('frequency (Hertz)')
         plt.ylabel('time (seconds (start of chunk))')

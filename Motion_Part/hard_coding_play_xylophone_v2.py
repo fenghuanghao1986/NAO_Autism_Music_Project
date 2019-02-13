@@ -288,24 +288,47 @@ def userHitNote(motionProxy, key):
     
     hit = -1
     fractionMaxSpeed = 1
+    frame = motion.FRAME_TORSO
+    useSensorValues = True
     
-    if (key >= 1 and key <= 5):   
+    if (key >= 1 and key <= 5):  
+        diff = []
+        result1 = motionProxy.getTransform("RWristYaw", frame, useSensorValues)
+        
         motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
         time.sleep(0.04)
 #        time.sleep(0.05)
+        result2 = motionProxy.getTransform("RWristYaw", frame, useSensorValues)
+        for i in range (len(result1)):
+            diff.append(result2[i] - result1[i])
+            
+        print(key, diff)
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
         motionProxy.setAngles("RWristYaw", -0.4, 1)
         
         time.sleep(0.5)
-        # motionProxy.changeAngles("RWristYaw", release, 1)        
+        # motionProxy.changeAngles("RWristYaw", release, 1)    
+
     else:
+        diff = []
+        result1 = motionProxy.getTransform("LWristYaw", frame, useSensorValues)
+        
         motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
         time.sleep(0.04)
 #        time.sleep(0.05)
-#        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)    
+#        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
+        result2 = motionProxy.getTransform("LWristYaw", frame, useSensorValues)
+        for i in range (len(result1)):
+            diff.append(result2[i] - result1[i])
+            
+        print(key, diff)
         motionProxy.setAngles("LWristYaw", 0.4, 1)
         # motionProxy.changeAngles("LWristYaw", -release, 1)        
         time.sleep(0.5)
+        
+        
+        
+
 
 def Play(motionProxy, keys):
     for key in keys:
@@ -331,7 +354,7 @@ def main(robotIP, PORT=9559):
 #    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
-    keys = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10]
+    keys = [1,2,3,4,5,6,7,8,9,10,11]
     Play(motionProxy, keys)
     
 if __name__ == "__main__":

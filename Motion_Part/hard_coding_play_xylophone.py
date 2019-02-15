@@ -115,7 +115,7 @@ def main(robotIP, PORT=9559):
     initRobotPosition(motionProxy, postureProxy)    
     # handControl(motionProxy, postureProxy, touchProxy)
     
-    for i in range(0, 4):
+    for i in range(0, 20):
                        
         moveShoulder(motionProxy, postureProxy)
         time.sleep(0.25)
@@ -183,11 +183,11 @@ def interpretJointsPose(motionProxy, memoryProxy):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-#    
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

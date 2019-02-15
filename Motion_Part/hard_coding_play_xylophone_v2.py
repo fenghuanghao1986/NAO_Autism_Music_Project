@@ -294,16 +294,26 @@ def userHitNote(motionProxy, key):
     
     if (key >= 1 and key <= 5):  
         
-        result1 = motionProxy.getTransform("RArm", frame, useSensorValues)
+#        result1 = motionProxy.getTransform("RArm", frame, useSensorValues)
         
-        motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-        time.sleep(0.1)
+#        motionProxy.changeAngles("RWristYaw", hit, fractionMaxSpeed)
+        motionProxy.post.angleInterpolation("RWristYaw", -1, 0.04, False)
+        time.sleep(0.05)
+        
+        taskList = motionProxy.getTaskList()
+        
+        print(taskList)
+        if len(taskList) > 0:
+            if len(taskList[0]) > 0:
+                motionProxy.killTask(taskList[0][1])
+                print("Killed")
+#        motionProxy.killTask(taskList[0][1])
 #        time.sleep(0.05)
-        result2 = motionProxy.getTransform("RArm", frame, useSensorValues)
+        '''result2 = motionProxy.getTransform("RArm", frame, useSensorValues)
         for i in range (len(result1)):
             diff.append(result2[i] - result1[i])
             
-        print(key, result1, result2, diff)
+        print(key, result1, result2, diff)'''
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
         motionProxy.setAngles("RWristYaw", -0.4, 1)
         
@@ -311,17 +321,25 @@ def userHitNote(motionProxy, key):
         # motionProxy.changeAngles("RWristYaw", release, 1)    
 
     else:
-        result1 = motionProxy.getTransform("LArm", frame, useSensorValues)
+#        result1 = motionProxy.getTransform("LArm", frame, useSensorValues)
         
-        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed)        
+#        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed) 
+        motionProxy.post.angleInterpolation("LWristYaw", 1, 0.04, False)
         time.sleep(0.05)
 #        time.sleep(0.05)
+        taskList = motionProxy.getTaskList()
+        
+        print(taskList)
+        if len(taskList) > 0:
+            if len(taskList[0]) > 0:
+                motionProxy.killTask(taskList[0][1])
+                print("Killed")
 #        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
-        result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
+        '''result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
         for i in range (len(result1)):
             diff.append(result2[i] - result1[i])
             
-        print(key, result1, result2, diff)
+        print(key, result1, result2, diff)'''
         motionProxy.setAngles("LWristYaw", 0.4, 1)
         # motionProxy.changeAngles("LWristYaw", -release, 1)        
         time.sleep(0.5)
@@ -348,13 +366,13 @@ def main(robotIP, PORT=9559):
     time.sleep(2)
 #    userSetTransform(motionProxy)
 #    time.sleep(1)
-    #keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
-    #        5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-    #        1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
-#    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
-#            9,10,9,8,7,5,9,10,9,8,7,5,
-#            5,2,5,0,5,2,5,0]
-    keys = [2,2,2,2,2,2,2,2]
+#    keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
+#            5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
+#            1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
+            9,10,9,8,7,5,9,10,9,8,7,5,
+            5,2,5,0,5,2,5,0]
+#    keys = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
     Play(motionProxy, keys)
     
 if __name__ == "__main__":

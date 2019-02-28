@@ -16,7 +16,7 @@ def main(robotIP, PORT=9559):
     # Example showing how to get the end of the right arm as a transform
     # represented in torso space. The result is a 4 by 4 matrix composed
     # of a 3*3 rotation matrix and a column vector of positions.
-    name  = 'LArm'
+    name  = 'RArm'
     print(name)
     frame  = motion.FRAME_TORSO
     useSensorValues  = True

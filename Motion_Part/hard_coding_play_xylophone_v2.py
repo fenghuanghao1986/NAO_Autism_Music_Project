@@ -5,6 +5,7 @@ Created on Wed Jan 16 23:08:33 2019
 @author: CV_LAB_Howard
 """
 
+import almath
 import time
 import motion
 import argparse
@@ -88,7 +89,7 @@ def userSetTransform(motionProxy, key):
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-        motionProxy.setAngles("RWristYaw", -0.9, 1)
+#        motionProxy.setAngles("RWristYaw", -0.9, 1)
         time.sleep(1)
 
 
@@ -259,11 +260,18 @@ def userSetTransform(motionProxy, key):
     
 def userHitNote(motionProxy, key):
     
-    hit = -0.25
-    fractionMaxSpeed = 1
-    frame = motion.FRAME_TORSO
-    useSensorValues = True
-    diff = []
+#    hit = -0.25
+#    fractionMaxSpeed = 1
+#    frame = motion.FRAME_TORSO
+#    useSensorValues = True
+#    diff = []
+    
+    names      = ["RWristYaw"]
+    angleLists = [[-90.0*almath.TO_RAD, -56.4*almath.TO_RAD]]
+    timeLists  = [[0.05, 0.1]]
+#    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+#
+#    time.sleep(1.0)
     
     if (key >= 1 and key <= 5):  
         
@@ -271,9 +279,9 @@ def userHitNote(motionProxy, key):
         
 
 #        motionProxy.post.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-        motionProxy.post.setAngles("RWristYaw", -1.2, 1)
+#        motionProxy.post.setAngles("RWristYaw", -1.2, 1)
 #        motionProxy.post.angleInterpolation("RWristYaw", -1, 0.04, False)
-        time.sleep(0.04)
+#        time.sleep(0.04)
         
 #        taskList = motionProxy.getTaskList()
 #        
@@ -294,9 +302,9 @@ def userHitNote(motionProxy, key):
             
         print(key, result1, result2, diff)'''
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
-        motionProxy.post.setAngles("RWristYaw", -0.9, 0.6)
+#        motionProxy.post.setAngles("RWristYaw", -0.9, 0.6)
 #        motionProxy.post.angleInterpolation("RWristYaw", 1, 0.05, False)
-        time.sleep(0.04)
+#        time.sleep(0.04)
 #        taskList = motionProxy.getTaskList()
 #        
 ##        print(taskList)
@@ -309,7 +317,12 @@ def userHitNote(motionProxy, key):
         
        
         
-        # motionProxy.changeAngles("RWristYaw", release, 1)    
+        # motionProxy.changeAngles("RWristYaw", release, 1)   
+        
+        
+        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+
+#        time.sleep(0.5)
 
     else:
 #        result1 = motionProxy.getTransform("LArm", frame, useSensorValues)
@@ -372,16 +385,16 @@ def main(robotIP, PORT=9559):
 #    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
-    keys = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+    keys = [3,3,3,3,3,3,3,3,3,3,3,3]
 
     Play(motionProxy, keys)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

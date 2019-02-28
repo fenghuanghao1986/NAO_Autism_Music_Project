@@ -79,12 +79,18 @@ def userSetTransform(motionProxy, key):
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
         transform       = [0.9422568678855896, 0.2736080288887024, 0.19310784339904785, 0.1298113465309143, -0.29820317029953003, 0.947908341884613, 0.11200278997421265, -0.21574079990386963, -0.15240366756916046, -0.16312076151371002, 0.9747639298439026, 0.008839884772896767, 0.0, 0.0, 0.0, 1.0]
-
+#        transform = [1,0,0,0.10283416509628296,
+#                     0,1,0,-0.2529323101043701,
+#                     0,0,1,0.01744747906923294,
+#                     0,0,0,1]
         fractionMaxSpeed = 1.0
         axisMask         = 63 # this value include position and rotation
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("RWristYaw", -0.9, 1)
+        time.sleep(1)
+
 
 #    time.sleep(4.0)
 
@@ -253,7 +259,7 @@ def userSetTransform(motionProxy, key):
     
 def userHitNote(motionProxy, key):
     
-    hit = -1
+    hit = -0.25
     fractionMaxSpeed = 1
     frame = motion.FRAME_TORSO
     useSensorValues = True
@@ -264,13 +270,14 @@ def userHitNote(motionProxy, key):
 #        result1 = motionProxy.getTransform("RArm", frame, useSensorValues)
         
 
-        motionProxy.post.changeAngles("RWristYaw", hit, fractionMaxSpeed)
+#        motionProxy.post.changeAngles("RWristYaw", hit, fractionMaxSpeed)
+        motionProxy.post.setAngles("RWristYaw", -1.2, 1)
 #        motionProxy.post.angleInterpolation("RWristYaw", -1, 0.04, False)
-        time.sleep(0.05)
+        time.sleep(0.04)
         
-        taskList = motionProxy.getTaskList()
-        
-#        print(taskList)
+#        taskList = motionProxy.getTaskList()
+#        
+##        print(taskList)
 #        if len(taskList) > 0:
 #            if len(taskList[0]) > 0:
 #                motionProxy.killTask(taskList[0][1])
@@ -287,19 +294,21 @@ def userHitNote(motionProxy, key):
             
         print(key, result1, result2, diff)'''
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
-        motionProxy.setAngles("RWristYaw", -0.4, 1)
+        motionProxy.post.setAngles("RWristYaw", -0.9, 0.6)
 #        motionProxy.post.angleInterpolation("RWristYaw", 1, 0.05, False)
-
+        time.sleep(0.04)
 #        taskList = motionProxy.getTaskList()
 #        
-        print(taskList)
-        if len(taskList) > 0:
-            if len(taskList[0]) > 0:
-                motionProxy.killTask(taskList[0][1])
-                print("Killed")
+##        print(taskList)
+#        if len(taskList) > 0:
+#            if len(taskList[0]) > 0:
+#                motionProxy.killTask(taskList[0][1])
+#                print("Killed")
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
         
-        time.sleep(0.3)
+        
+       
+        
         # motionProxy.changeAngles("RWristYaw", release, 1)    
 
     else:
@@ -311,11 +320,11 @@ def userHitNote(motionProxy, key):
 #        time.sleep(0.05)
         taskList = motionProxy.getTaskList()
         
-        print(taskList)
-        if len(taskList) > 0:
-            if len(taskList[0]) > 0:
-                motionProxy.killTask(taskList[0][1])
-                print("Killed")
+#        print(taskList)
+#        if len(taskList) > 0:
+#            if len(taskList[0]) > 0:
+#                motionProxy.killTask(taskList[0][1])
+#                print("Killed")
 #        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
         '''result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
         for i in range (len(result1)):
@@ -349,9 +358,9 @@ def main(robotIP, PORT=9559):
 #    userSetTransform(motionProxy)
 #    time.sleep(1)
 
-    keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
-            5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-            1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+#    keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
+#            5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
+#            1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
 #    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
@@ -363,7 +372,7 @@ def main(robotIP, PORT=9559):
 #    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
-#    keys = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+    keys = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
 
     Play(motionProxy, keys)
     

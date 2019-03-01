@@ -268,86 +268,21 @@ def userHitNote(motionProxy, key):
 #    time.sleep(1.0)
     
     if (key >= 1 and key <= 5):  
-        
-#        result1 = motionProxy.getTransform("RArm", frame, useSensorValues)
-        
-
-#        motionProxy.post.changeAngles("RWristYaw", hit, fractionMaxSpeed)
-#        motionProxy.post.setAngles("RWristYaw", -1.2, 1)
-#        motionProxy.post.angleInterpolation("RWristYaw", -1, 0.04, False)
-#        time.sleep(0.04)
-        
-#        taskList = motionProxy.getTaskList()
-#        
-##        print(taskList)
-#        if len(taskList) > 0:
-#            if len(taskList[0]) > 0:
-#                motionProxy.killTask(taskList[0][1])
-#                print("Killed")
-#        motionProxy.killTask(taskList[0][1])
-
-#        motionProxy.angleInterpolation("RWristYaw", hit, 0.05, False)
-#        time.sleep(0.1)
-
-#        time.sleep(0.05)
-
-#        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
-#        motionProxy.post.setAngles("RWristYaw", -0.9, 0.6)
-#        motionProxy.post.angleInterpolation("RWristYaw", 1, 0.05, False)
-#        time.sleep(0.04)
-#        taskList = motionProxy.getTaskList()
-#        
-##        print(taskList)
-#        if len(taskList) > 0:
-#            if len(taskList[0]) > 0:
-#                motionProxy.killTask(taskList[0][1])
-#                print("Killed")
-#        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
-        
+                
         names      = ["RWristYaw"]
         angleLists = [[-105*almath.TO_RAD, -55*almath.TO_RAD]]
         timeLists  = [[0.05, 0.08]]
-       
-        
-        # motionProxy.changeAngles("RWristYaw", release, 1)   
-        
         
         motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 
         time.sleep(0.5)
 
-    else:
-#        result1 = motionProxy.getTransform("LArm", frame, useSensorValues)
-        
-#        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed) 
-##        motionProxy.post.angleInterpolation("LWristYaw", 1, 0.04, False)
-#        time.sleep(0.05)
-##        time.sleep(0.05)
-#        taskList = motionProxy.getTaskList()
-#        
-##        print(taskList)
-##        if len(taskList) > 0:
-##            if len(taskList[0]) > 0:
-##                motionProxy.killTask(taskList[0][1])
-##                print("Killed")
-##        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
-#        '''result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
-#        for i in range (len(result1)):
-#            diff.append(result2[i] - result1[i])
-#            
-#        print(key, result1, result2, diff)'''
-#        motionProxy.setAngles("LWristYaw", 0.4, 1)
-#        # motionProxy.changeAngles("LWristYaw", -release, 1)        
-#        time.sleep(0.3)
+    else:  
         
         names      = ["LWristYaw"]
         angleLists = [[110*almath.TO_RAD, 75*almath.TO_RAD]]
         timeLists  = [[0.05, 0.08]]
        
-        
-        # motionProxy.changeAngles("RWristYaw", release, 1)   
-        
-        
         motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
         time.sleep(0.5)
 

@@ -55,7 +55,6 @@ def userInitPosture(motionProxy, postureProxy):
     motionProxy.setStiffnesses("RLeg", 0.0)
     
     
-    
 # C = 1; D = 2; E = 3; F = 4; G = 5; A = 6; H = 7; C_2 = 8; D_2 = 9; E_2 = 10; F_2 = 11; 
 def userSetTransform(motionProxy, key):
 
@@ -68,71 +67,59 @@ def userSetTransform(motionProxy, key):
 #    time.sleep(4.0)
     # Example showing how to set Torso Transform, using a fraction of max speed
 
-    motionProxy.setStiffnesses("LArm", 1.0)
-    motionProxy.setStiffnesses("RArm", 1.0)
+    motionProxy.setStiffnesses("LArm", 0.5)
+    motionProxy.setStiffnesses("RArm", 0.5)
     
-    
-    #Red
-    if (key==3):
+    #Green
+    if(key==1):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9422568678855896, 0.2736080288887024, 0.19310784339904785, 0.1298113465309143, -0.29820317029953003, 0.947908341884613, 0.11200278997421265, -0.21574079990386963, -0.15240366756916046, -0.16312076151371002, 0.9747639298439026, 0.008839884772896767, 0.0, 0.0, 0.0, 1.0]
-#        transform = [1,0,0,0.10283416509628296,
-#                     0,1,0,-0.2529323101043701,
-#                     0,0,1,0.01744747906923294,
-#                     0,0,0,1]
-        fractionMaxSpeed = 1.0
+        transform       = [0.8013876080513, 0.4915792942047119, 0.3407750129699707, 0.11643370240926743, -0.5475539565086365, 0.8322187662124634, 0.08715841174125671, -0.2515045404434204, -0.24075406789779663, -0.2564404010772705, 0.9360959529876709, 0.01369384303689003, 0.0, 0.0, 0.0, 1.0]
+        fractionMaxSpeed = 1
         axisMask         = 63 # this value include position and rotation
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-#        motionProxy.setAngles("RWristYaw", -0.9, 1)
-        time.sleep(1)
-
-
-#    time.sleep(4.0)
-
-    # Go to rest position
-#    motionProxy.rest()
-
-
-    #Gray
-    elif(key==5):
+        motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
+#        time.sleep(.5)
+    # Brown
+    elif(key==2):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9684596061706543, 0.16213788092136383, 0.18920141458511353, 0.1429951936006546, -0.1707710176706314, 0.9848494529724121, 0.030144691467285156, -0.17985950410366058, -0.18144731223583221, -0.06150403246283531, 0.9814753532409668, -0.011181133799254894, 0.0, 0.0, 0.0, 1.0]
+        transform       = [0.8433941602706909, 0.46244972944259644, 0.2735447585582733, 0.12813331186771393, -0.4749271869659424, 0.8797256946563721, -0.0229511559009552, -0.23468232154846191, -0.25125810503959656, -0.11055696755647659, 0.9615854620933533, 0.003927379846572876, 0.0, 0.0, 0.0, 1.0]
 
-
-        fractionMaxSpeed = 1.0
-        axisMask         = 63 # this value include position and rotation
-    #    axisMask   = motion.AXIS_MASK_VEL
-    #    print(motion.AXIS_MASK_VEL)
-        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-
-#    time.sleep(4.0)
-
-    # Go to rest position
-#    motionProxy.rest()
-    #Brown
-    elif(key==9):
-        chainName        = "LArm"
-        frame            = motion.FRAME_TORSO
-    #    transform        = [1.0, 0.0, 0.0, 0.00,
-    #                        0.0, 1.0, 0.0, 0.00,
-    #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9624442458152771, -0.2406195104122162, 0.1257116198539734, 0.1292807161808014, 0.2665707767009735, 0.9252750873565674, -0.26982593536376953, 0.21146260201931, -0.05139244347810745, 0.2932034730911255, 0.9546678066253662, 0.015929371118545532, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
+        fractionMaxSpeed = 1
         axisMask         = 63
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
+#        time.sleep(.5)
+    
+    #Red
+    elif (key==3):
+        chainName        = "RArm"
+        frame            = motion.FRAME_TORSO
+    #    transform        = [1.0, 0.0, 0.0, 0.00,
+    #                        0.0, 1.0, 0.0, 0.00,
+    #                        0.0, 0.0, 1.0, 0.25]
+#        transform       = [0.938517153263092, 0.26535412669181824, 0.2208453118801117, 0.1289231777191162, -0.29033753275871277, 0.9527726173400879, 0.08904257416725159, -0.21311216056346893, -0.18678754568099976, -0.14768767356872559, 0.9712357521057129, 0.003036290407180786, 0.0, 0.0, 0.0, 1.0]
+        transform = [0.9526314735412598, 0.271195650100708, 0.1376451700925827, 0.15189608931541443, -0.2941758632659912, 0.9365118741989136, 0.1908036172389984, -0.21341979503631592, -0.07716123014688492, -0.22225740551948547, 0.9719299077987671, 0.02578144520521164, 0.0, 0.0, 0.0, 1.0]
+
+        fractionMaxSpeed = 1
+        axisMask         = 63 # this value include position and rotation
+    #    axisMask   = motion.AXIS_MASK_VEL
+    #    print(motion.AXIS_MASK_VEL)
+        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
+#        time.sleep(.5)
+
     #yellow
     elif(key==4):
         chainName        = "RArm"
@@ -140,52 +127,32 @@ def userSetTransform(motionProxy, key):
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9487242698669434, 0.22958898544311523, 0.21728120744228363, 0.13296592235565186, -0.24570070207118988, 0.9680595397949219, 0.04991862177848816, -0.2005704641342163, -0.1988803744316101, -0.10074515640735626, 0.974831759929657, -0.005322521552443504, 0.0, 0.0, 0.0, 1.0]
+        transform       = [0.9594770073890686, 0.22440361976623535, 0.17043142020702362, 0.1566157341003418, -0.23924320936203003, 0.968291163444519, 0.07193642854690552, -0.19604627788066864, -0.14888443052768707, -0.10979591310024261, 0.9827401638031006, 0.00857638195157051, 0.0, 0.0, 0.0, 1.0]
 
-        fractionMaxSpeed = 1.0
+        fractionMaxSpeed = 1
         axisMask         = 63 # this value include position and rotation
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-    
-    #    time.sleep(4.0)
-    
-        # Go to rest position
-#    motionProxy.rest()
-    #Brown
-    elif(key==2):
+        motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
+#        time.sleep(.5)
+        
+    #Gray
+    elif(key==5):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
-    #    transform        = [1.0, 0.0, 0.0, 0.00,
-    #                        0.0, 1.0, 0.0, 0.00,
-    #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.8432926535606384, 0.42030683159828186, 0.3349621295928955, 0.10881945490837097, -0.4554920792579651, 0.8897233009338379, 0.03032100200653076, -0.24059349298477173, -0.2852794826030731, -0.17814208567142487, 0.9417435526847839, 0.003233669325709343, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
-        axisMask         = 63
-    #    axisMask   = motion.AXIS_MASK_VEL
-    #    print(motion.AXIS_MASK_VEL)
-        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-    
-    #Green
-    elif(key==1):
-        chainName        = "RArm"
-        frame            = motion.FRAME_TORSO
-    #    transform        = [1.0, 0.0, 0.0, 0.00,
-    #                        0.0, 1.0, 0.0, 0.00,
-    #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.8238950967788696, 0.4865782856941223, 0.2905828356742859, 0.10283416509628296, -0.5231969356536865, 0.8501009941101074, 0.059944212436676025, -0.2529323101043701, -0.2178572118282318, -0.20141978561878204, 0.9549703001976013, 0.01744747906923294, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
+        
+        transform       = [0.9819556474685669, 0.12685701251029968, 0.1402507871389389, 0.16754357516765594, -0.1400074064731598, 0.9862123727798462, 0.08822131156921387, -0.1711345911026001, -0.1271255761384964, -0.10626555979251862, 0.9861777424812317, 0.004274282604455948, 0.0, 0.0, 0.0, 1.0]
+        
+        fractionMaxSpeed = 1
         axisMask         = 63 # this value include position and rotation
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
+#        time.sleep(.5)
 
-#    time.sleep(4.0)
 
-    # Go to rest position
-#    motionProxy.rest()
     #blue
     elif(key==6):
         chainName        = "LArm"
@@ -193,13 +160,15 @@ def userSetTransform(motionProxy, key):
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9858408570289612, -0.1288452297449112, 0.10731630027294159, 0.1444908231496811, 0.1417740285396576, 0.9822120070457458, -0.1231248527765274, 0.15719673037528992, -0.08954330533742905, 0.1365961730480194, 0.9865716695785522, -0.013898114673793316, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
+        transform       = [0.9956784248352051, -0.09198374301195145, -0.012784874998033047, 0.17206798493862152, 0.08883121609687805, 0.9834775328636169, -0.15773670375347137, 0.16309528052806854, 0.02708284929394722, 0.15591934323310852, 0.9873983860015869, 0.02028868906199932, 0.0, 0.0, 0.0, 1.0]
+        
+        fractionMaxSpeed = 1
         axisMask         = 63
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
     
     #pink
     elif(key==7):
@@ -208,13 +177,16 @@ def userSetTransform(motionProxy, key):
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9780711531639099, -0.1738952249288559, 0.11461755633354187, 0.14017055928707123, 0.19128765165805817, 0.9677141904830933, -0.1641288697719574, 0.17636540532112122, -0.08237580955028534, 0.1824546456336975, 0.9797573089599609, -0.007139790803194046, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
+        transform       = [0.9898942708969116, -0.137940913438797, -0.03289167582988739, 0.16925737261772156, 0.12642279267311096, 0.9635026454925537, -0.23596549034118652, 0.1781325489282608, 0.06424051523208618, 0.22942262887954712, 0.9712046384811401, 0.031086862087249756, 0.0, 0.0, 0.0, 1.0]
+        
+        fractionMaxSpeed = 1
         axisMask         = 63
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
+        
     #green
     elif(key==8):
         chainName        = "LArm"
@@ -222,41 +194,63 @@ def userSetTransform(motionProxy, key):
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9700290560722351, -0.215662881731987, 0.11195144057273865, 0.1351616531610489, 0.23392057418823242, 0.9535033702850342, -0.1900329887866974, 0.19212444126605988, -0.06576301157474518, 0.2105252742767334, 0.9753739833831787, 0.0010706502944231033, 0.0, 0.0, 0.0, 1.0]
+        transform       = [0.9819480776786804, -0.17284922301769257, -0.07681860774755478, 0.16241022944450378, 0.12994657456874847, 0.9115732908248901, -0.39006149768829346, 0.191005140542984, 0.13744762539863586, 0.37303781509399414, 0.9175788164138794, 0.046224698424339294, 0.0, 0.0, 0.0, 1.0]
 
-        fractionMaxSpeed = 1.0
+        fractionMaxSpeed = 1
         axisMask         = 63
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
+        
     #red
+    elif(key==9):
+        chainName        = "LArm"
+        frame            = motion.FRAME_TORSO
+    #    transform        = [1.0, 0.0, 0.0, 0.00,
+    #                        0.0, 1.0, 0.0, 0.00,
+    #                        0.0, 0.0, 1.0, 0.25]
+        transform       = [0.9613528847694397, -0.27436792850494385, -0.02286483347415924, 0.1525546908378601, 0.2302558571100235, 0.8467550873756409, -0.4795706868171692, 0.21160534024238586, 0.1509397327899933, 0.45577189326286316, 0.8772053122520447, 0.05384673550724983, 0.0, 0.0, 0.0, 1.0]
+
+        fractionMaxSpeed = 1
+        axisMask         = 63
+    #    axisMask   = motion.AXIS_MASK_VEL
+    #    print(motion.AXIS_MASK_VEL)
+        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
+        
+    #yellow
     elif(key==10):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
     #    transform        = [1.0, 0.0, 0.0, 0.00,
     #                        0.0, 1.0, 0.0, 0.00,
     #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9423273205757141, -0.29271256923675537, 0.16229137778282166, 0.1205998957157135, 0.32878345251083374, 0.9002969264984131, -0.28524884581565857, 0.2273084670305252, -0.06261450797319412, 0.32215648889541626, 0.9446133971214294, 0.024736732244491577, 0.0, 0.0, 0.0, 1.0]
+        transform       = [0.9296908378601074, -0.36800268292427063, 0.015775375068187714, 0.1415029764175415, 0.3383636176586151, 0.8363217115402222, -0.4313651919364929, 0.22643716633319855, 0.14555025100708008, 0.4063740670681, 0.9020394086837769, 0.05264216661453247, 0.0, 0.0, 0.0, 1.0]
 
-        fractionMaxSpeed = 1.0
+        fractionMaxSpeed = 1
+        axisMask         = 63
+    #    axisMask   = motion.AXIS_MASK_VEL
+    #    print(motion.AXIS_MASK_VEL)
+        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask) 
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
+        
+#Brown
+    elif(key==11):
+        chainName        = "LArm"
+        frame            = motion.FRAME_TORSO
+
+        transform       = [0.9143205285072327, -0.39699238538742065, 0.08009393513202667, 0.13240355253219604, 0.3777778744697571, 0.7647656202316284, -0.5219361782073975, 0.2390560358762741, 0.14595159888267517, 0.5074746608734131, 0.8492158651351929, 0.061654843389987946, 0.0, 0.0, 0.0, 1.0]
+        fractionMaxSpeed = 1
         axisMask         = 63
     #    axisMask   = motion.AXIS_MASK_VEL
     #    print(motion.AXIS_MASK_VEL)
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
-    #yellow
-    elif(key==11):
-        chainName        = "LArm"
-        frame            = motion.FRAME_TORSO
-    #    transform        = [1.0, 0.0, 0.0, 0.00,
-    #                        0.0, 1.0, 0.0, 0.00,
-    #                        0.0, 0.0, 1.0, 0.25]
-        transform       = [0.9144428968429565, -0.3451070785522461, 0.2114121913909912, 0.1145780012011528, 0.3988034129142761, 0.8573272228240967, -0.32549333572387695, 0.2408529669046402, -0.06891936808824539, 0.38195696473121643, 0.9216066598892212, 0.03251896798610687, 0.0, 0.0, 0.0, 1.0]
-
-        fractionMaxSpeed = 1.0
-        axisMask         = 63
-    #    axisMask   = motion.AXIS_MASK_VEL
-    #    print(motion.AXIS_MASK_VEL)
-        motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)    
+        motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
+#        time.sleep(.5)
     
 def userHitNote(motionProxy, key):
     
@@ -267,8 +261,8 @@ def userHitNote(motionProxy, key):
 #    diff = []
     
     names      = ["RWristYaw"]
-    angleLists = [[-90.0*almath.TO_RAD, -56.4*almath.TO_RAD]]
-    timeLists  = [[0.05, 0.1]]
+    angleLists = [[-105*almath.TO_RAD, -50*almath.TO_RAD]]
+    timeLists  = [[0.05, 0.08]]
 #    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 #
 #    time.sleep(1.0)
@@ -296,11 +290,7 @@ def userHitNote(motionProxy, key):
 #        time.sleep(0.1)
 
 #        time.sleep(0.05)
-        '''result2 = motionProxy.getTransform("RArm", frame, useSensorValues)
-        for i in range (len(result1)):
-            diff.append(result2[i] - result1[i])
-            
-        print(key, result1, result2, diff)'''
+
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
 #        motionProxy.post.setAngles("RWristYaw", -0.9, 0.6)
 #        motionProxy.post.angleInterpolation("RWristYaw", 1, 0.05, False)
@@ -314,7 +304,9 @@ def userHitNote(motionProxy, key):
 #                print("Killed")
 #        motionProxy.changeAngles("RWristYaw", -hit, fractionMaxSpeed)
         
-        
+        names      = ["RWristYaw"]
+        angleLists = [[-105*almath.TO_RAD, -55*almath.TO_RAD]]
+        timeLists  = [[0.05, 0.08]]
        
         
         # motionProxy.changeAngles("RWristYaw", release, 1)   
@@ -322,34 +314,42 @@ def userHitNote(motionProxy, key):
         
         motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 
-#        time.sleep(0.5)
+        time.sleep(0.5)
 
     else:
 #        result1 = motionProxy.getTransform("LArm", frame, useSensorValues)
         
-        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed) 
-#        motionProxy.post.angleInterpolation("LWristYaw", 1, 0.04, False)
-        time.sleep(0.05)
+#        motionProxy.changeAngles("LWristYaw", -hit, fractionMaxSpeed) 
+##        motionProxy.post.angleInterpolation("LWristYaw", 1, 0.04, False)
 #        time.sleep(0.05)
-        taskList = motionProxy.getTaskList()
+##        time.sleep(0.05)
+#        taskList = motionProxy.getTaskList()
+#        
+##        print(taskList)
+##        if len(taskList) > 0:
+##            if len(taskList[0]) > 0:
+##                motionProxy.killTask(taskList[0][1])
+##                print("Killed")
+##        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
+#        '''result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
+#        for i in range (len(result1)):
+#            diff.append(result2[i] - result1[i])
+#            
+#        print(key, result1, result2, diff)'''
+#        motionProxy.setAngles("LWristYaw", 0.4, 1)
+#        # motionProxy.changeAngles("LWristYaw", -release, 1)        
+#        time.sleep(0.3)
         
-#        print(taskList)
-#        if len(taskList) > 0:
-#            if len(taskList[0]) > 0:
-#                motionProxy.killTask(taskList[0][1])
-#                print("Killed")
-#        motionProxy.changeAngles("LWristYaw", hit, fractionMaxSpeed)  
-        '''result2 = motionProxy.getTransform("LArm", frame, useSensorValues)
-        for i in range (len(result1)):
-            diff.append(result2[i] - result1[i])
-            
-        print(key, result1, result2, diff)'''
-        motionProxy.setAngles("LWristYaw", 0.4, 1)
-        # motionProxy.changeAngles("LWristYaw", -release, 1)        
-        time.sleep(0.3)
+        names      = ["LWristYaw"]
+        angleLists = [[110*almath.TO_RAD, 75*almath.TO_RAD]]
+        timeLists  = [[0.05, 0.08]]
+       
+        
+        # motionProxy.changeAngles("RWristYaw", release, 1)   
         
         
-        
+        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+        time.sleep(0.5)
 
 
 def Play(motionProxy, keys):
@@ -378,23 +378,26 @@ def main(robotIP, PORT=9559):
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
 #    keys = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-
-    #keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
-    #        5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-    #        1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+#
+#    keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
+#            5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
+#            1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
 #    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #            9,10,9,8,7,5,9,10,9,8,7,5,
 #            5,2,5,0,5,2,5,0]
-    keys = [3,3,3,3,3,3,3,3,3,3,3,3]
+#    keys = [5,3,5,3,5,3,5,3,5,3,5,3,5,3,5]
+#    keys = [1]
+#    keys = [1,2,3,4,5,6,7,8,9,10,11]
+
 
     Play(motionProxy, keys)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
-                        help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
 #                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
+                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

@@ -46,26 +46,42 @@ class ReactToTouch(ALModule):
         # unscribe to the event when talking, to avoid repetitions
         memory.unsubscribeToEvent("TouchChanged",
                                   "ReactToTouch")
+        touched_bodies = []
+        for p in value:
+            if p[1]:
+                touched_bodies.append(p[0])
+        
+        # subscribe again to the event
+        memory.subscribeToEvent("TouchChanged",
+                                "ReactToTouch",
+                                "onTouched")
         
         
+def main(ip, port):
+    '''
+    we need this broker to be able to construct
+    NAOqi modules and subscribe to other modules
+    the broker must stay alive until the program
+    exists
+    '''
+    myBroker = ALBroker("myBroker",
+                        "0,0,0,0",  # listen to anyone
+                        0,          # find a free port and use it
+                        ip,         # parent broker IP
+                        port)       # parent broker port
+    
+    global ReactToTouch
+    ReactToTouch = ReactToTouch("ReactToTouch")
+    
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print
+        print "Interrupted by user, shtting down"
+        myBroker.shutdown()
+        sys.exit(0)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         

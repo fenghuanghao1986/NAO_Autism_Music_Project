@@ -63,7 +63,7 @@ def userSetTransform(motionProxy, key):
     motionProxy.setStiffnesses("LArm", 0.5)
     motionProxy.setStiffnesses("RArm", 0.5)
     
-    #Green
+    #Green C
     if(key==1):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
@@ -77,7 +77,7 @@ def userSetTransform(motionProxy, key):
 
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
-    # Brown
+    # Brown D
     elif(key==2):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
@@ -93,7 +93,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
         
-    #Red
+    #Red E
     elif (key==3):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
@@ -109,7 +109,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
 
-    #yellow
+    #yellow F
     elif(key==4):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
@@ -125,7 +125,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
         
-    #Gray
+    #Gray G
     elif(key==5):
         chainName        = "RArm"
         frame            = motion.FRAME_TORSO
@@ -141,7 +141,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("RWristYaw", -50*almath.TO_RAD, 1)
 
-    #blue
+    #blue A
     elif(key==6):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -157,7 +157,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
     
-    #pink
+    #pink B-H
     elif(key==7):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -173,7 +173,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
         
-    #green
+    #green C_2
     elif(key==8):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -189,7 +189,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
         
-    #red
+    #red D_2
     elif(key==9):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -205,7 +205,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
         
-    #yellow
+    #yellow E_2
     elif(key==10):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -221,7 +221,7 @@ def userSetTransform(motionProxy, key):
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask) 
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
         
-#Brown
+    #Brown F_2
     elif(key==11):
         chainName        = "LArm"
         frame            = motion.FRAME_TORSO
@@ -235,7 +235,6 @@ def userSetTransform(motionProxy, key):
 
         motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
         motionProxy.setAngles("LWristYaw", 75*almath.TO_RAD, 1)
-#        time.sleep(.5)
     
 def userHitNote(motionProxy, key):
     

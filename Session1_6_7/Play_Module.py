@@ -247,9 +247,9 @@ def userHitNote(motionProxy, key):
 #    diff = []
 # =============================================================================
     
-    names      = ["RWristYaw"]
-    angleLists = [[-105*almath.TO_RAD, -50*almath.TO_RAD]]
-    timeLists  = [[0.05, 0.08]]
+#    names      = ["RWristYaw"]
+#    angleLists = [[-105*almath.TO_RAD, -50*almath.TO_RAD]]
+#    timeLists  = [[0.05, 0.08]]
 #    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 #
 #    time.sleep(1.0)

@@ -58,6 +58,7 @@ class ReactToTouch(ALModule):
         memory.subscribeToEvent("TouchChanged",
                                 "ReactToTouch",
                                 "onTouched")
+        
 # =============================================================================
 # create different tasks, tasks should do all the job calling touch and other methods
 # need to be done today!        
@@ -78,6 +79,7 @@ class ReactToTouch(ALModule):
         sentence = sentence + " touched."
 
         self.tts.say(sentence)
+        
 def main(ip, port):
 # =============================================================================
 #     we need this broker to be able to construct

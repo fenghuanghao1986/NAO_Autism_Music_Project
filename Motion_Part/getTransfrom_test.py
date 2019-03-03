@@ -16,13 +16,25 @@ def main(robotIP, PORT=9559):
     # Example showing how to get the end of the right arm as a transform
     # represented in torso space. The result is a 4 by 4 matrix composed
     # of a 3*3 rotation matrix and a column vector of positions.
-    name  = 'LArm'
+    name  = 'RArm'
     print(name)
     frame  = motion.FRAME_TORSO
     useSensorValues  = True
-    result = motionProxy.getTransform(name, frame, useSensorValues)
-    print(result)
+    transResult = motionProxy.getTransform(name, frame, useSensorValues)
+    print(transResult)
+    
+    name = 'RWristYaw'
+    print(name)
+    posResult = motionProxy.getPosition(name, frame, useSensorValues)
+    print(posResult)
+    
+    print(name)
+    angResult = motionProxy.getAngles(name, useSensorValues)
+    print(angResult)
 
+#    names      = ["RWristYaw"]
+#    angleLists = [[-105*almath.TO_RAD, -55*almath.TO_RAD]]
+#    timeLists  = [[0.05, 0.08]]
 
 
 if __name__ == "__main__":

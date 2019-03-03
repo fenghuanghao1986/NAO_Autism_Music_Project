@@ -7,6 +7,8 @@ Created on Fri Mar  1 14:04:35 2019
 
 import sys
 import time
+import Play_Module
+import Color_Module
 
 from naoqi import ALProxy
 from naoqi import ALBroker
@@ -31,15 +33,16 @@ class ReactToTouch(ALModule):
         self.tts = ALProxy("ALTextToSpeech")        
         # subscribe to touchchanged event:
         global memory
-        memory = ALProxy("ALMeory")
+        memory = ALProxy("ALMemory")
         memory.subscribeToEvent("TouchChanged",
                                 "ReactToTouch",
                                 "onTouched")
         
     def onTouched(self, strVarName, value):
 # =============================================================================
-#      this will be called each time a touch 
-#      is detected.
+# this will be called each time a touch is detected.
+# the logic here should be able to call different tasks
+# and complete as a sequence
 # =============================================================================
         # unscribe to the event when talking, to avoid repetitions
         memory.unsubscribeToEvent("TouchChanged",
@@ -48,13 +51,33 @@ class ReactToTouch(ALModule):
         for p in value:
             if p[1]:
                 touched_bodies.append(p[0])
+                
+                
         
         # subscribe again to the event
         memory.subscribeToEvent("TouchChanged",
                                 "ReactToTouch",
                                 "onTouched")
-        
-        
+# =============================================================================
+# create different tasks, tasks should do all the job calling touch and other methods
+# need to be done today!        
+# =============================================================================
+    def say(self, bodies):
+        if (bodies == []):
+            return
+
+        sentence = "My " + bodies[0]
+
+        for b in bodies[1:]:
+            sentence = sentence + " and my " + b
+
+        if (len(bodies) > 1):
+            sentence = sentence + " are"
+        else:
+            sentence = sentence + " is"
+        sentence = sentence + " touched."
+
+        self.tts.say(sentence)
 def main(ip, port):
 # =============================================================================
 #     we need this broker to be able to construct

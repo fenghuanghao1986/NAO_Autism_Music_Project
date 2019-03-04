@@ -13,7 +13,7 @@ from naoqi import ALProxy
 def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     motionProxy.setStiffnesses("LArm", 0)
-    motionProxy.setStiffnesses("RArm", 1)
+    motionProxy.setStiffnesses("RArm", 0)
 #    motionProxy.rest()
     # Example showing how to get the end of the right arm as a transform
     # represented in torso space. The result is a 4 by 4 matrix composed
@@ -28,7 +28,12 @@ def main(robotIP, PORT=9559):
     name = "RWristYaw"
     print(name)
     angResult = motionProxy.getAngles(name, useSensorValues)
+    posResult = motionProxy.getPosition(name, frame, useSensorValues)
+
     print(angResult)
+    print(posResult)
+    
+    
     
 
 #    chainName        = "LArm"

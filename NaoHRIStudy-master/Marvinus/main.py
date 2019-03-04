@@ -6,7 +6,7 @@ import time, random
 
 maxsongs = len(jukebox.songslist)
 speech = None
-IP = "169.254.95.24"
+IP = "192.168.0.2"
 PORT = 9559
 condition="social"
 posture = None
@@ -42,7 +42,7 @@ def experiment(effector):
         speech.start_recognition(last_song = (i == maxsongs-1))       
     speech.detroduce()
 
-def main(IP = "10.0.1.7", PORT = 9559, condition="psycho"):
+def main(IP = "192.168.0.2", PORT = 9559, condition="psycho"):
     # Enable or disable tracking.
     
     

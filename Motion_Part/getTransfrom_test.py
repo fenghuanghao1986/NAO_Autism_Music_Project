@@ -15,7 +15,6 @@ def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     motionProxy.rest()
     motionProxy.setStiffnesses("LArm", 0)
-
     motionProxy.setStiffnesses("RArm", 1)
     
     time.sleep(1)

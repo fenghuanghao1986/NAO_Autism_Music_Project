@@ -15,10 +15,15 @@ def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     motionProxy.rest()
     motionProxy.setStiffnesses("LArm", 0)
+<<<<<<< HEAD
     motionProxy.setStiffnesses("RArm", 1)
     
     time.sleep(1)
         
+=======
+    motionProxy.setStiffnesses("RArm", 0)
+#    motionProxy.rest()
+>>>>>>> 7ed897247f95af0282f0f2e3053d50427644a146
     # Example showing how to get the end of the right arm as a transform
     # represented in torso space. The result is a 4 by 4 matrix composed
     # of a 3*3 rotation matrix and a column vector of positions.
@@ -29,7 +34,10 @@ def main(robotIP, PORT=9559):
     useSensorValues  = False
     transResult = motionProxy.getPosition(name, frame, useSensorValues)
     angResult = motionProxy.getAngles(name, useSensorValues)
+    posResult = motionProxy.getPosition(name, frame, useSensorValues)
+
     print(angResult)
+<<<<<<< HEAD
     print(transResult)
     
 #    name = 'RWristYaw'
@@ -38,6 +46,11 @@ def main(robotIP, PORT=9559):
 #    print(angResult)
 #    posResult = motionProxy.getPosition(name, frame, useSensorValues)
 #    print(posResult)
+=======
+    print(posResult)
+    
+    
+>>>>>>> 7ed897247f95af0282f0f2e3053d50427644a146
     
     
     chainName        = 'RArm'

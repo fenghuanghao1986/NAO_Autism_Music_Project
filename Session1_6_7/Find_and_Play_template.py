@@ -53,8 +53,9 @@ def playXylophone(motionProxy, keys):
             beforeHit = motionProxy.getAngles(names[1], useSensors)
             onHit = beforeHit[0] + 90*almath.TO_RAD
             afterHit = beforeHit
-            
-            angleLists = [[current_note[0], target_note[0]], 
+            # since for 'R/LArm' has 6 angles invoved, so we have to assign
+            # 6 interpolations for each of the joint
+            angleList = [[current_note[0], target_note[0]], 
                           [current_note[1], target_note[1]],
                           [current_note[2], target_note[2]],
                           [current_note[3], target_note[3]],
@@ -62,7 +63,7 @@ def playXylophone(motionProxy, keys):
                           [current_note[5], target_note[5]],
                           [beforeHit[0], onHit, afterHit[0]]]
             
-            timeLists  = [[0.1, 0.9], 
+            timeList  = [[0.1, 0.9], 
                           [0.1, 0.9],
                           [0.1, 0.9],
                           [0.1, 0.9],
@@ -70,7 +71,7 @@ def playXylophone(motionProxy, keys):
                           [0.1, 0.9],
                           [0.04, 0.08, 0.1]]
             
-            motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+            motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
             time.sleep(0.2)
         else:
@@ -83,8 +84,9 @@ def playXylophone(motionProxy, keys):
             beforeHit = motionProxy.getAngles(names[1], useSensors)
             onHit = beforeHit[0] + 90*almath.TO_RAD
             afterHit = beforeHit
-                
-            angleLists = [[current_note[0], target_note[0]], 
+            # since for 'R/LArm' has 6 angles invoved, so we have to assign
+            # 6 interpolations for each of the joint
+            angleList = [[current_note[0], target_note[0]], 
                           [current_note[1], target_note[1]],
                           [current_note[2], target_note[2]],
                           [current_note[3], target_note[3]],
@@ -92,7 +94,7 @@ def playXylophone(motionProxy, keys):
                           [current_note[5], target_note[5]],
                           [beforeHit[0], onHit, afterHit[0]]]
             
-            timeLists  = [[0.1, 0.9], 
+            timeList  = [[0.1, 0.9], 
                           [0.1, 0.9],
                           [0.1, 0.9],
                           [0.1, 0.9],
@@ -100,7 +102,7 @@ def playXylophone(motionProxy, keys):
                           [0.1, 0.9],
                           [0.04, 0.08, 0.1]]
             
-            motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+            motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
             time.sleep(0.2)           
 # =============================================================================

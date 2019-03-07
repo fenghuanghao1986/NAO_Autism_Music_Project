@@ -73,12 +73,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_2.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_4.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_6.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_5.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_3.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton.setText(_translate("MainWindow", "Music_1"))
+        self.pushButton_2.setText(_translate("MainWindow", "Music_2"))
+        self.pushButton_4.setText(_translate("MainWindow", "Music_4"))
+        self.pushButton_6.setText(_translate("MainWindow", "Music_6"))
+        self.pushButton_5.setText(_translate("MainWindow", "Music_5"))
+        self.pushButton_3.setText(_translate("MainWindow", "Music_3"))
     
     def process(self, filename):
         data, fs = sf.read(filename, dtype='float32')

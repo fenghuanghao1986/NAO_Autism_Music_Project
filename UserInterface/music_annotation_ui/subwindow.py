@@ -70,12 +70,12 @@ class Ui_SubWindow(QtWidgets.QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.radioButton_5.setText(_translate("MainWindow", "Emotion 1"))
-        self.radioButton.setText(_translate("MainWindow", "Emotion 2"))
-        self.radioButton_3.setText(_translate("MainWindow", "Emotion 4"))
-        self.radioButton_4.setText(_translate("MainWindow", "Emotion 5"))
-        self.radioButton_6.setText(_translate("MainWindow", "Emotion 6"))
-        self.radioButton_2.setText(_translate("MainWindow", "Emotion 3"))
+        self.radioButton_5.setText(_translate("MainWindow", "Happy"))
+        self.radioButton.setText(_translate("MainWindow", "Sad"))
+        self.radioButton_3.setText(_translate("MainWindow", "Angry"))
+        self.radioButton_4.setText(_translate("MainWindow", "Peaceful"))
+        self.radioButton_6.setText(_translate("MainWindow", "Chill"))
+        self.radioButton_2.setText(_translate("MainWindow", "None"))
         
     def setMusicId(self, id):
         self.musicId = id

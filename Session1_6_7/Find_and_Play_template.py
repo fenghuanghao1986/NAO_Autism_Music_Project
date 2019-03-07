@@ -11,6 +11,7 @@ Created on Tue Mar  5 16:53:15 2019
 import almath
 import time
 import argparse
+import motion
 from naoqi import ALProxy
 # =============================================================================
 # these notes is for temp use, later have to save them in one file and import
@@ -32,11 +33,56 @@ notes[11] = [0.6703159809112549, 1.236362099647522, -1.5708580017089844, -0.3451
 # =============================================================================
 # 
 # =============================================================================
+def userInitPosture(motionProxy, postureProxy):
+# =============================================================================
+#     # this function should have NAO crouching position with leg joints rest/locked?
+#     # and both arms should be straight down without touching legs and other parts
+# =============================================================================
+    postureProxy.goToPosture("Crouch", 0.4)
+    time.sleep(1)
+    
+    chainName        = "RArm"
+    frame            = motion.FRAME_TORSO
+
+    transform       = [0.03477038815617561, 0.9961863160133362, 0.080023854970932, 0.0029639352578669786, 
+                       -0.381715327501297, 0.0872393399477005, -0.9201536178588867, -0.183818519115448, 
+                       -0.923625648021698,0.0014477664371952415, 0.38329294323921204, -0.10117591917514801, 
+                       0.0, 0.0, 0.0, 1.0]
+    fractionMaxSpeed = 0.5
+    axisMask         = 63 # this value include position and rotation
+
+    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    
+    chainName        = "LArm"
+    frame            = motion.FRAME_TORSO
+
+    transform       = [0.03795033320784569, -0.9755989909172058, -0.21625538170337677, 0.006952085066586733, 
+                       0.378103643655777, -0.1863023042678833, 0.9068236947059631, 0.18319708108901978, 
+                       -0.9249851703643799, -0.11618120968341827, 0.36180728673934937, -0.10128530114889145, 
+                       0.0, 0.0, 0.0, 1.0]
+    fractionMaxSpeed = 0.5
+    axisMask         = 63 # this value include position and rotation
+
+    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    
+    motionProxy.setStiffnesses("LLeg", 0.4)
+    motionProxy.setStiffnesses("RLeg", 0.4)
+    
+    handName  = 'LHand'
+    motionProxy.openHand(handName)
+    time.sleep(10)
+    motionProxy.closeHand(handName)
+    handName  = 'RHand'
+    motionProxy.openHand(handName)
+    time.sleep(10)
+    motionProxy.closeHand(handName)
+
 def playXylophone(motionProxy, keys):
     # input notes is dictionary type, including key as note, and 
     # values as set of angles
     # anglse related to hit will be a seperate list
-    motionProxy.setStiffnesses("Body", 0)
+#    motionProxy.setStiffnesses("Body", 0)
+    
     
     motionProxy.setStiffnesses("LArm", 1)
     motionProxy.setStiffnesses("RArm", 1)
@@ -111,14 +157,17 @@ def playXylophone(motionProxy, keys):
 def main(robotIP, PORT=9559):
     
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
-    keys = [6,8,7,11,9,8,7,10,6,8,6,10]
-    playXylophone(motionProxy, keys)
+    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
+#    keys = [6,8,7,11,9,8,7,10,6,8,6,10]
+    userInitPosture(motionProxy, postureProxy)
+#    playXylophone(motionProxy, keys)
+    
 # =============================================================================
 # 
 # =============================================================================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

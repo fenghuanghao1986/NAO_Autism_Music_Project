@@ -86,42 +86,42 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         sd.wait()
     
     def showSubWindow0(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\a.WAV")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\b.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(0)
             self.currentWindow.show()
 
     def showSubWindow1(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\c.WAV")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\d.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(1)
             self.currentWindow.show()
             
     def showSubWindow2(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\e.WAV")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\e.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(2)
             self.currentWindow.show()
 
     def showSubWindow3(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\g.WAV")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\h.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(3)
             self.currentWindow.show()
 
     def showSubWindow4(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\guitar1.wav")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\i.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(4)
             self.currentWindow.show()
 
     def showSubWindow5(self, MainWindow):
-            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\guitar2.wav")
+            self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\j.wav")
             self.currentWindow = QtWidgets.QMainWindow()
             self.win = Ui_SubWindow(self.currentWindow)
             self.win.setMusicId(5)

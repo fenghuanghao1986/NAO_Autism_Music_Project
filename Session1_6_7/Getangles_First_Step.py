@@ -8,34 +8,57 @@ def main(robotIP, PORT=9559):
     
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
+    tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     
     postureProxy.goToPosture("Crouch", 0.4)
     time.sleep(1)
     
     motionProxy.setStiffnesses("Head", 0.0)
-    motionProxy.setStiffnesses("LLeg", 0.2)
-    motionProxy.setStiffnesses("RLeg", 0.2)
+    motionProxy.setStiffnesses("LLeg", 1)
+    motionProxy.setStiffnesses("RLeg", 1)
     
     # getting both legs angles for later set legs angles
-    names = "LHipYawPitch"
-    useSensors = True
-    sensorAngles = motionProxy.getAngles(names, useSensors)
-    print "LHipYawPitch Angles:"
-    print str(sensorAngles)
-    print ""
+#    names = "LHipYawPitch"
+#    useSensors = True
+#    sensorAngles = motionProxy.getAngles(names, useSensors)
+#    print "LHipYawPitch Angles:"
+#    print str(sensorAngles)
+#    print ""
+#    
+#    names = "LHipPitch"
+#    sensorAngles = motionProxy.getAngles(names, useSensors)
+#    print "LHipPitch Angles:"
+#    print str(sensorAngles)
+#    print ""
+#    
+#    names = "RHipPitch"
+#    sensorAngles = motionProxy.getAngles(names, useSensors)
+#    print "RHipPitch Angles:"
+#    print str(sensorAngles)
+#    print ""
     
-    names = "LHipPitch"
-    sensorAngles = motionProxy.getAngles(names, useSensors)
-    print "LHipPitch Angles:"
-    print str(sensorAngles)
-    print ""
+    # set legs angles
+    names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
+    angles  = [-0.25, -0.7, -0.7]
+    fractionMaxSpeed  = 0.2
+    motionProxy.setAngles(names, angles, fractionMaxSpeed)
+
+    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
+    motionProxy.setStiffnesses("LHipPitch", 0.2)
+    motionProxy.setStiffnesses("RHipPitch", 0.2)
+    motionProxy.setStiffnesses("RHipRoll", 0.0)
+    motionProxy.setStiffnesses("RKneePitch", 0.0)
+    motionProxy.setStiffnesses("RAnklePitch", 0.0)
+    motionProxy.setStiffnesses("RAnkleRoll", 0.0)
+    motionProxy.setStiffnesses("LHipRoll", 0.0)
+    motionProxy.setStiffnesses("LKneePitch", 0.0)
+    motionProxy.setStiffnesses("LAnklePitch", 0.0)
+    motionProxy.setStiffnesses("LAnkleRoll", 0.0)
     
-    names = "RHipPitch"
-    sensorAngles = motionProxy.getAngles(names, useSensors)
-    print "RHipPitch Angles:"
-    print str(sensorAngles)
-    print ""
+    tts.say("Move arm to get desired angles!")
     
+    time.sleep(5.0)
+       
     # Example that finds the difference between the command and sensed angles.
 #    names         = "RArm"
     names = "LArm"
@@ -45,6 +68,7 @@ def main(robotIP, PORT=9559):
     print str(sensorAngles)
     print ""
     
+    tts.say("Angle recorded!")
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

@@ -65,8 +65,8 @@ def userInitPosture(motionProxy, postureProxy):
 
     motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
     
-    motionProxy.setStiffnesses("LLeg", 0.4)
-    motionProxy.setStiffnesses("RLeg", 0.4)
+    motionProxy.setStiffnesses("LLeg", 0.2)
+    motionProxy.setStiffnesses("RLeg", 0.2)
     
     handName  = 'LHand'
     motionProxy.openHand(handName)

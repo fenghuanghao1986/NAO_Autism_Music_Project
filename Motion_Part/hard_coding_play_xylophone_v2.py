@@ -338,36 +338,36 @@ def userSetTransform(motionProxy, key):
 #        time.sleep(0.3)
 #        time.sleep(.5)
     
-#def userHitNote(motionProxy, key):
-#    
-##    hit = -0.25
-##    fractionMaxSpeed = 1
-##    frame = motion.FRAME_TORSO
-##    useSensorValues = True
-##    diff = []
-#    
-##    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
-##
-##    time.sleep(1.0)
-#    
-#    if (key >= 1 and key <= 5):  
-#                
-#        names      = ["RWristYaw"]
-#        angleLists = [[-105*almath.TO_RAD, -55*almath.TO_RAD]]
-#        timeLists  = [[0.05, 0.08]]
-#        
-#        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+def userHitNote(motionProxy, key):
+    
+#    hit = -0.25
+#    fractionMaxSpeed = 1
+#    frame = motion.FRAME_TORSO
+#    useSensorValues = True
+#    diff = []
+    
+#    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 #
-#        time.sleep(0.3)
-#
-#    else:  
-#        
-#        names      = ["LWristYaw"]
-#        angleLists = [[110*almath.TO_RAD, 75*almath.TO_RAD]]
-#        timeLists  = [[0.05, 0.08]]
-#       
-#        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
-#        time.sleep(0.3)
+#    time.sleep(1.0)
+    
+    if (key >= 1 and key <= 5):  
+                
+        names      = ["RWristYaw"]
+        angleLists = [[-105*almath.TO_RAD, -55*almath.TO_RAD]]
+        timeLists  = [[0.05, 0.08]]
+        
+        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+
+        time.sleep(0.3)
+
+    else:  
+        
+        names      = ["LWristYaw"]
+        angleLists = [[110*almath.TO_RAD, 95*almath.TO_RAD]]
+        timeLists  = [[0.05, 0.08]]
+       
+        motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+        time.sleep(0.3)
 
 
 def Play(motionProxy, keys):

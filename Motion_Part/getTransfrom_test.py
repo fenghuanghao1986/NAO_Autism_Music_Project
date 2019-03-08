@@ -29,7 +29,7 @@ def main(robotIP, PORT=9559):
     name  = 'RArm'
     print(name)
     frame  = motion.FRAME_TORSO
-    useSensorValues  = False
+    useSensorValues  = True
     transResult = motionProxy.getPosition(name, frame, useSensorValues)
     angResult = motionProxy.getAngles(name, useSensorValues)
     posResult = motionProxy.getPosition(name, frame, useSensorValues)
@@ -48,7 +48,7 @@ def main(robotIP, PORT=9559):
     
     
     
-    chainName        = 'RArm'
+    chainName        = 'LArm'
     frame            = motion.FRAME_TORSO
 
     transform       = [0.13809768855571747, -0.1352280229330063, -0.05866047367453575, 1.5619783401489258, 0.6344230771064758, -0.2303130328655243]
@@ -59,7 +59,7 @@ def main(robotIP, PORT=9559):
     motionProxy.setPosition(chainName, frame, transform, fractionMaxSpeed, axisMask)
     time.sleep(1)
     
-    transResult = motionProxy.getPosition(name, frame, useSensorValues)
+    transResult = motionProxy.getTransform(name, frame, useSensorValues)
     angResult = motionProxy.getAngles(name, useSensorValues)
     print(angResult)
     print(transResult)

@@ -10,12 +10,15 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     time.sleep(1)
     
     motionProxy.setStiffnesses("Head", 0.2)
     motionProxy.setStiffnesses("LLeg", 1)
     motionProxy.setStiffnesses("RLeg", 1)
+#    motionProxy.setAngles("LHand", 0.22, 1)
+    motionProxy.setAngles("RHand", 0.22, 1)
+
     
     # getting both legs angles for later set legs angles
 #    names = "LHipYawPitch"
@@ -65,8 +68,10 @@ def main(robotIP, PORT=9559):
     time.sleep(10.0)
     
     motionProxy.setStiffnesses("LArm", 1.0)
-#    motionProxy.setStiffnesses("RArm", 1.0)
-    
+ #   motionProxy.setStiffnesses("RArm", 1.0)
+    motionProxy.setAngles("LHand", 0.22, 1)
+#    motionProxy.setAngles("RHand", 0.22, 1)
+
 #    names         = "RArm"
     names = "LArm"
     useSensors  = True

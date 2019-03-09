@@ -84,6 +84,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         data, fs = sf.read(filename, dtype='float32')
         sd.play(data, fs)
         sd.wait()
+        self.worker = MainBackgroundThread(self.keyword.text(), self.sector.text())
+        self.worker.start()
     
     def showSubWindow0(self, MainWindow):
             self.process(r"D:\Howard_Feng\noteDetection\UserInterface\music_annotation_ui\b.wav")

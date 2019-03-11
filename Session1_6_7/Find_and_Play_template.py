@@ -79,8 +79,8 @@ def userInitPosture(motionProxy, postureProxy):
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
     
-    motionProxy.setAngles("LArm", [0.9234261512756348, 0.3451080322265625, -1.4542741775512695, -0.8283181190490723, 1.2839161157608032, 0.23400002717971802]
-, 0.3)
+#    motionProxy.setAngles("LArm", [0.9234261512756348, 0.3451080322265625, -1.4542741775512695, -0.8283181190490723, 1.2839161157608032, 0.23400002717971802]
+#, 0.3)
 #    motionProxy.setAngles("RArm", 0.0, 1.0)
     time.sleep(1.0)
     
@@ -126,23 +126,28 @@ def playXylophone(motionProxy, keys):
                           [current_note[5], target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-            timeList  = [[0.4, 0.8], 
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8]]
-#                          [0.04, 0.08, 0.1]]
+#            timeList  = [[0.4, 0.8], 
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8]]
+            timeList = [[0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35]]
             
             motionProxy.angleInterpolationBezier([names[0]], timeList, angleList)
             
             beforeHit = motionProxy.getAngles(names[1], useSensors)
             onHit = beforeHit[0] - 45*almath.TO_RAD
-            afterHit = beforeHit[0] + 5*almath.TO_RAD
-            motionProxy.setAngles("RHand", 0.22, 1)
+            afterHit = beforeHit[0] 
+            motionProxy.setAngles("RHand", 0.25, 1)
 
             angleLists = [[onHit, afterHit]]
-            timeLists  = [[0.06, 0.08]]
+            timeLists  = [[0.07, 0.1]]
         
             motionProxy.angleInterpolationBezier([names[1]], timeLists, angleLists)
             
@@ -166,23 +171,29 @@ def playXylophone(motionProxy, keys):
                           [current_note[5], target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-            timeList  = [[0.4, 0.8], 
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8],
-                          [0.4, 0.8]]
-#                          [0.04, 0.08, 0.1]]
+#            timeList  = [[0.4, 0.8], 
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8],
+#                          [0.4, 0.8]]
+
+            timeList = [[0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35],
+                        [0,0.35]]
             
             motionProxy.angleInterpolationBezier([names[0]], timeList, angleList)
             
             beforeHit = motionProxy.getAngles(names[1], useSensors)
             onHit = beforeHit[0] + 35*almath.TO_RAD
-            afterHit = beforeHit[0] - 5*almath.TO_RAD
-            motionProxy.setAngles("LHand", 0.22, 1)
+            afterHit = beforeHit[0] 
+            motionProxy.setAngles("LHand", 0.25, 1)
 
             angleLists = [[onHit, afterHit]]
-            timeLists  = [[0.07, 0.09]]
+            timeLists  = [[0.07, 0.1]]
         
             motionProxy.angleInterpolationBezier([names[1]], timeLists, angleLists)
             
@@ -196,14 +207,19 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
 
 #    keys = [7,8,7,8,7,9,7,9,7,8]
-#    keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
-#            9,10,9,8,7,5,9,10,9,8,7,5,
-#            5,2,5,0,5,2,5,0]
-    keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
-            5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-            1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+    keys = [5,6,7,5,5,6,7,5,7,8,9,7,8,9,
+            9,10,9,8,7,5,9,10,9,8,7,5,
+            5,2,5,5,2,5]
+#    keys = [1,1,5,5,6,6,5,4,4,3,3,2,2,1,
+#            5,5,4,4,3,3,2,5,5,4,4,3,3,2,
+#            1,1,5,5,6,6,5,4,4,3,3,2,2,1]
+#    keys = [4,5,10,6,7,8,7,6,10,5,4,3,3,2,3,4,5,1,6,7,8,10,11,2,11,3,4,1,5,2,3,4]
 #    userInitPosture(motionProxy, postureProxy)
+#    motionProxy.setAngles("LHand", 0.22, 1)
+#    motionProxy.setAngles("RHand", 0.22, 1)
     playXylophone(motionProxy, keys)
+#    userInitPosture(motionProxy, postureProxy)
+
     
 # =============================================================================
 # 

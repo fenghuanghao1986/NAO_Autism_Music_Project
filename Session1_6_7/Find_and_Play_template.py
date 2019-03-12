@@ -106,7 +106,7 @@ def playXylophone(motionProxy, keys):
     for key in keys:        
         # identify which hand to use to find and hit current note
         if key == 0:
-            time.sleep(0.4)
+            time.sleep(0.35)
         elif key > 0 and key < 6:
             
             names = ['RArm', 'RWristYaw']
@@ -207,13 +207,19 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
 
 #    keys = [7,8,7,8,7,9,7,9,7,8]
-    keys = [5,6,7,5,5,6,7,5,7,8,9,7,8,9,
-            9,10,9,8,7,5,9,10,9,8,7,5,
-            5,2,5,5,2,5]
+#    keys = [5,6,7,5,5,6,7,5,7,8,9,7,8,9,
+#            9,10,9,8,7,5,9,10,9,8,7,5,
+#            5,2,5,5,2,5]
 #    keys = [1,1,5,5,6,6,5,4,4,3,3,2,2,1,
 #            5,5,4,4,3,3,2,5,5,4,4,3,3,2,
 #            1,1,5,5,6,6,5,4,4,3,3,2,2,1]
 #    keys = [4,5,10,6,7,8,7,6,10,5,4,3,3,2,3,4,5,1,6,7,8,10,11,2,11,3,4,1,5,2,3,4]
+    # NAO plays promise from Silent Hill
+#    keys = [6,7,8,9,10,9,8,7,6,0,3,0,6,0,7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,
+#            6,7,8,9,10,9,8,7,6,0,3,0,6,0,7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6]
+    # NAO plays Harry Potter Theme
+    keys = [3,6,0,8,7,10,0,9,0,7,0,6,0,8,7,5,0,7,3,0,1,3,
+            3,6,0,8,7,10,0,9,0,7,0,6,0,8,7,5,0,7,3,0,1,3]
 #    userInitPosture(motionProxy, postureProxy)
 #    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)

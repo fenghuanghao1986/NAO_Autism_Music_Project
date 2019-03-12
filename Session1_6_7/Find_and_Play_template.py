@@ -142,7 +142,7 @@ def playXylophone(motionProxy, keys):
             motionProxy.angleInterpolationBezier(['RArm'], timeList, angleList)
             
             beforeHit = motionProxy.getAngles('RWristYaw', useSensors)
-            onHit = beforeHit[0] - 35*almath.TO_RAD
+            onHit = beforeHit[0] - 45*almath.TO_RAD
             afterHit = beforeHit[0] 
             motionProxy.setAngles("RHand", 0.22, 1)
 
@@ -188,7 +188,7 @@ def playXylophone(motionProxy, keys):
             motionProxy.angleInterpolationBezier(['LArm'], timeList, angleList)
             
             beforeHit = motionProxy.getAngles('LWristYaw', useSensors)
-            onHit = beforeHit[0] + 30*almath.TO_RAD
+            onHit = beforeHit[0] + 35*almath.TO_RAD
             afterHit = beforeHit[0] 
             motionProxy.setAngles("LHand", 0.22, 1)
 
@@ -218,8 +218,10 @@ def main(robotIP, PORT=9559):
 #    keys = [6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6,
 #            6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6]
 #     NAO plays Harry Potter Theme
-    keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
-            3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
+#    keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
+#            3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
+    # test time keys
+    keys = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
 #    userInitPosture(motionProxy, postureProxy)
 #    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)

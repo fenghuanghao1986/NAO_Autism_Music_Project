@@ -218,10 +218,10 @@ def main(robotIP, PORT=9559):
 #    keys = [6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6,
 #            6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6]
 #     NAO plays Harry Potter Theme
-    keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
-            3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
+#    keys = [3,6,8,7,6,10,9,7,6,8,7,5,7,3,1,3,
+#            3,6,8,7,6,10,9,7,6,8,7,5,7,3,1,3]
     # test time keys
-#    keys = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
+    keys = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
 #    userInitPosture(motionProxy, postureProxy)
 #    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)
@@ -234,10 +234,10 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

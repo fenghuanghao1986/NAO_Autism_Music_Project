@@ -118,26 +118,21 @@ def playXylophone(motionProxy, keys):
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            angleList = [[current_note[0], target_note[0]], 
-                          [current_note[1], target_note[1]],
-                          [current_note[2], target_note[2]],
-                          [current_note[3], target_note[3]],
-                          [current_note[4], target_note[4]],
-                          [current_note[5], target_note[5]]]
+            angleList = [[target_note[0]], 
+                          [target_note[1]],
+                          [target_note[2]],
+                          [target_note[3]],
+                          [target_note[4]],
+                          [target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-#            timeList  = [[0.4, 0.8], 
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8]]
-            timeList = [[0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3]]
+
+            timeList = [[0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3]]
             
             motionProxy.angleInterpolationBezier(['RArm'], timeList, angleList)
             
@@ -158,32 +153,26 @@ def playXylophone(motionProxy, keys):
 #            names = ['LArm']
             useSensors  = True
             
-            current_note = motionProxy.getAngles('LArm', useSensors)
+#            current_note = motionProxy.getAngles('LArm', useSensors)
             target_note = list(notes[key])
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            angleList = [[current_note[0], target_note[0]], 
-                          [current_note[1], target_note[1]],
-                          [current_note[2], target_note[2]],
-                          [current_note[3], target_note[3]],
-                          [current_note[4], target_note[4]],
-                          [current_note[5], target_note[5]]]
+            angleList = [[target_note[0]], 
+                          [target_note[1]],
+                          [target_note[2]],
+                          [target_note[3]],
+                          [target_note[4]],
+                          [target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-#            timeList  = [[0.4, 0.8], 
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8],
-#                          [0.4, 0.8]]
 
-            timeList = [[0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3],
-                        [0,0.3]]
+            timeList = [[0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3],
+                        [0.3]]
             
             motionProxy.angleInterpolationBezier(['LArm'], timeList, angleList)
             

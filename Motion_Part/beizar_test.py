@@ -14,32 +14,32 @@ def main(robotIP, PORT = 9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
 
     motionProxy.setStiffnesses("Head", 1.0)
-
-    # Example showing a single target angle for one joint
-    # Interpolates the head yaw to 1.0 radian in 1.0 second
-    names      = ["HeadYaw"]
-    angleLists = [[50.0*almath.TO_RAD]]
-    timeLists  = [[0.05]]
-    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
-
-    time.sleep(1.0)
-
-    # Example showing a single trajectory for one joint
-    # Interpolates the head yaw to 1.0 radian and back to zero in 2.0 seconds
-    names      = ["HeadYaw"]
-    #              2 angles
-    angleLists = [[30.0*almath.TO_RAD, 0.0]]
-    #              2 times
-    timeLists  = [[0.05, 0.1]]
-    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
-
-    time.sleep(1.0)
+#
+#    # Example showing a single target angle for one joint
+#    # Interpolates the head yaw to 1.0 radian in 1.0 second
+#    names      = ["HeadYaw"]
+#    angleLists = [[50.0*almath.TO_RAD]]
+#    timeLists  = [[0.05]]
+#    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+#
+#    time.sleep(1.0)
+#
+#    # Example showing a single trajectory for one joint
+#    # Interpolates the head yaw to 1.0 radian and back to zero in 2.0 seconds
+#    names      = ["HeadYaw"]
+#    #              2 angles
+#    angleLists = [[30.0*almath.TO_RAD, 0.0]]
+#    #              2 times
+#    timeLists  = [[0.05, 0.1]]
+#    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+#
+#    time.sleep(1.0)
 
     # Example showing multiple trajectories
-    names      = ["HeadYaw", "HeadPitch"]
-    angleLists = [[30.0*almath.TO_RAD], [30.0*almath.TO_RAD]]
-    timeLists  = [[0.05], [0.1]]
-    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
+#    names      = ["HeadYaw", "HeadPitch"]
+#    angleLists = [[30.0*almath.TO_RAD], [30.0*almath.TO_RAD]]
+#    timeLists  = [[0.5], [0.1]]
+#    motionProxy.angleInterpolationBezier(names, timeLists, angleLists)
 
     # Example showing multiple trajectories
     # Interpolates the head yaw to 1.0 radian and back to zero in 2.0 seconds

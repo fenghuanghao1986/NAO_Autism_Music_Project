@@ -202,8 +202,7 @@ def main(robotIP, PORT=9559):
 #    keys = [1,1,5,5,6,6,5,4,4,3,3,2,2,1,
 #            5,5,4,4,3,3,2,5,5,4,4,3,3,2,
 #            1,1,5,5,6,6,5,4,4,3,3,2,2,1]
-    # test kesy 
-    keys = [1,5,6,11,2,4,7,10,3,8,9,5,6,1,11]
+
     # NAO plays promise from Silent Hill
 #    keys = [6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6,
 #            6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6]
@@ -212,6 +211,7 @@ def main(robotIP, PORT=9559):
 #            3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
     # test time keys
 #    keys = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
+    keys = [1,5,6,11,2,4,7,10,3,8,9,5,6,1,11]
 #    userInitPosture(motionProxy, postureProxy)
 #    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)

@@ -198,15 +198,6 @@ def main(robotIP, PORT=9559):
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     
-#    name = 'LeftFaceLeds'
-#    colorName = 'red'
-#    name = 'RightFaceLeds'
-#    colorName = 'green'
-#    name = 'ChestLeds'
-#    colorName = 'blue'
-#    duration = 2.0
-#    ledProxy.fadeRGB(name, colorName, duration)
-    
 # =============================================================================
 #   Intro to entire session
     tts.say("Hello, my friend!")
@@ -217,13 +208,14 @@ def main(robotIP, PORT=9559):
     ledProxy.randomEyes(3.0)
     tts.say("Let me show you what I have learned lately!")
     time.sleep(0.5)
+    
 # =============================================================================
 # =============================================================================
 #   Start play Harry Potter Theme as demo
 #   NAO plays Harry Potter Theme
     keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
             3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
-    # need better
+    # need better starting point for both arms, record the transform Friday
     userInitPosture(motionProxy, postureProxy)
     playXylophone(motionProxy, keys)
     ledProxy.randomEyes(2.0)
@@ -236,10 +228,11 @@ def main(robotIP, PORT=9559):
     time.sleep(3.0)
     tts.say("Great! Let me tell you hot to play this song")
     time.sleep(2.0)    
+    
 # =============================================================================
 # =============================================================================
 #   Start single note play without color
-    key1 = [5]
+    key1 = [6]
     name = 'FaceLeds'
     colorName1 = 'blue'
     duration = 1.0
@@ -256,6 +249,7 @@ def main(robotIP, PORT=9559):
     # may have to create a if condition depending on user's response
     tts.say("Do you want to try this again?")
     time.sleep(4.0)
+    
 # =============================================================================
 # Start single note play along with color    
     key2 = [8]
@@ -278,7 +272,13 @@ def main(robotIP, PORT=9559):
     tts.say("Now, it is your turn to play the green bar!")
     tts.say("And try to use your left hand to do this.")
     time.sleep(5.0)
+    
 # =============================================================================
+# Start multiple notes play along with color
+    key3 = [3, 6, 8]
+    # create a color group maybe? or just do it in sequence then
+    colorNames = ['red', 'green', 'blue']
+    duration = [0.5, 1.0, 0.5]
     
 
     

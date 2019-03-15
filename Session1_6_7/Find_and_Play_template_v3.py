@@ -114,7 +114,7 @@ def playXylophone(motionProxy, keys):
 #            names = ['LArm']
             useSensors  = True
             
-            current_note = motionProxy.getAngles('RArm', useSensors)
+#            current_note = motionProxy.getAngles('RArm', useSensors)
             target_note = list(notes[key])
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
@@ -223,10 +223,10 @@ def main(robotIP, PORT=9559):
 #   NAO plays Harry Potter Theme
     keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
             3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
+    # need better
     userInitPosture(motionProxy, postureProxy)
     playXylophone(motionProxy, keys)
     ledProxy.randomEyes(2.0)
-    userInitPosture(motionProxy,postureProxy)
     tts.say("Do you recognize this song from somewhere?")
     time.sleep(3.0)
     tts.say("Yes, it is the the most popular theme from Movie Harry Potter!")
@@ -239,35 +239,54 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 # =============================================================================
 #   Start single note play without color
+    key1 = [5]
+    name = 'FaceLeds'
+    colorName1 = 'blue'
+    duration = 1.0
+    
+    ledProxy.fadeRGB(name, colorName1, duration)
+    playXylophone(motionProxy, key1)
+    userInitPosture(motionProxy,postureProxy)
+    tts.say("I just played a note, can you repeat that note for me?")
+    time.sleep(1.0)
+    tts.say("You may find a pair of red head mallet on the table somewhere.")
+    time.sleep(1.0)
+    tts.say("I want you to pick them up, and use one of them to play that note.")
+    time.sleep(5.0)
+    # may have to create a if condition depending on user's response
+    tts.say("Do you want to try this again?")
+    time.sleep(4.0)
+# =============================================================================
+# Start single note play along with color    
+    key2 = [8]
+    colorName2 = 'green'
+    duration = 1.0
+    
+    tts.say("Wonderful! Here comes an other one!")
+    ledProxy.fadeRGB(name, colorName2, duration)
+    playXylophone(motionProxy, key2)
+    userInitPosture(motionProxy, postureProxy)
+    tts.say("This is a new note, can you repeat that note for me?")
+    time.sleep(5.0)
+    tts.say("Have you notice that my eye color matchs the note color?")
+    time.sleep(2.0)
+    tts.say("Let's try it again, I am going to hit the green bar now, listen carefully!")
+    
+    ledProxy.fadeRGB(name, colorName2, duration)
+    playXylophone(motionProxy, key2)
+    userInitPosture(motionProxy, postureProxy)
+    tts.say("Now, it is your turn to play the green bar!")
+    tts.say("And try to use your left hand to do this.")
+    time.sleep(5.0)
+# =============================================================================
+    
+
+    
+    
     
 # =============================================================================
-
-#    keys = [7,8,7,8,7,9,7,9,7,8]
-#    keys = [5,6,7,5,5,6,7,5,7,8,9,7,8,9,
-#            9,10,9,8,7,5,9,10,9,8,7,5,
-#            5,2,5,5,2,5]
-#    keys = [1,1,5,5,6,6,5,4,4,3,3,2,2,1,
-#            5,5,4,4,3,3,2,5,5,4,4,3,3,2,
-#            1,1,5,5,6,6,5,4,4,3,3,2,2,1]
-
-    # NAO plays promise from Silent Hill
-#    keys = [6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6,
-#            6,7,8,9,10,9,8,7,6,3,6,7,8,9,8,7,6,8,7,6,5,7,6]
-#     NAO plays Harry Potter Theme
-    keys = [3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3,
-            3,6,8,7,6,10,9,7,0,6,8,7,5,7,3,1,3]
-    # test time keys
-#    keys = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]
-#    keys = [1,5,6,11,2,4,7,10,3,8,9,5,6,1,11]
-#    userInitPosture(motionProxy, postureProxy)
-#    motionProxy.setAngles("LHand", 0.22, 1)
-#    motionProxy.setAngles("RHand", 0.22, 1)
-    playXylophone(motionProxy, keys)
-#    userInitPosture(motionProxy, postureProxy)
-
 # =============================================================================
-# 
-# =============================================================================
+# Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="192.168.0.2",
@@ -278,4 +297,6 @@ if __name__ == "__main__":
                         help="Robot port number")
 
     args = parser.parse_args()
-    main(args.ip, args.port)
+    main(args.ip, args.port)    
+# =============================================================================
+# End of the test session program

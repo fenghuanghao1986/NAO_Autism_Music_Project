@@ -270,7 +270,7 @@ def main(robotIP, PORT=9559):
     tts.say("Have you notice that my eye color matchs the note color?")
     time.sleep(2.0)
     tts.say("Let's try it again, I am going to hit the green bar now, listen carefully!")
-    repeat = raw_input("User selection 1 or 0: ");
+    repeat = raw_input("User selection 1 or 0: ")
     while repeat:
         ledProxy.fadeRGB(name, colorName2, duration)
         playXylophone(motionProxy, key2)
@@ -291,18 +291,21 @@ def main(robotIP, PORT=9559):
     
     tts.say("Now we are goint to play something more fun!")
     ledProxy.randomEyes(2.0)
-    playXylophone(motionProxy, key3)
-    userInitPosture(motionProxy, postureProxy)
-    tts.say("I just played three notes, can you repeat them for me?")
-    time.sleep(5.0)
-    tts.say("Great Job!")
-    time.sleep(1.0)
-    tts.say("Now, if you can sing the color and hit the note that would be even better!")
-    time.sleep(5.0)
-    tts.say("Well done!")
-    tts.say("Do you want to try it again?")
-    time.sleep(4.0)
-    repeat = int(raw_input("User selection 1 or 0: "))
+    repeat = raw_input("User selection 1 or 0: ")
+    while repeat:
+        playXylophone(motionProxy, key3)
+        userInitPosture(motionProxy, postureProxy)
+        tts.say("I just played three notes, can you repeat them for me?")
+        time.sleep(5.0)
+        tts.say("Great Job!")
+        time.sleep(1.0)
+        tts.say("Now, if you can sing the color and hit the note that would be even better!")
+        time.sleep(5.0)
+        tts.say("Well done!")
+        tts.say("Do you want to try it again?")
+        time.sleep(4.0)
+        repeat = int(raw_input("User selection 1 or 0: "))
+        
     
     
     

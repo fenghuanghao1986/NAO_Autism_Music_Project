@@ -232,27 +232,32 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 # =============================================================================
 #   Start single note play without color
-    key1 = [6]
-    name = 'FaceLeds'
-    colorName1 = 'blue'
-    duration = 1.0
-    
-    ledProxy.fadeRGB(name, colorName1, duration)
-    playXylophone(motionProxy, key1)
-    userInitPosture(motionProxy,postureProxy)
-    tts.say("I just played a note, can you repeat that note for me?")
-    time.sleep(1.0)
-    tts.say("You may find a pair of red head mallet on the table somewhere.")
-    time.sleep(1.0)
-    tts.say("I want you to pick them up, and use one of them to play that note.")
-    time.sleep(5.0)
-    # may have to create a if condition depending on user's response
-    tts.say("Do you want to try this again?")
-    time.sleep(4.0)
-    
+    repeat = raw_input("User selection 1 or 0: ");
+    while repeat:
+        key1 = [6]
+        name = 'FaceLeds'
+        colorName1 = 'blue'
+        duration = 1.0
+        
+        ledProxy.fadeRGB(name, colorName1, duration)
+        playXylophone(motionProxy, key1)
+        userInitPosture(motionProxy,postureProxy)
+        tts.say("I just played a note, can you repeat that note for me?")
+        time.sleep(1.0)
+        tts.say("You may find a pair of red head mallet on the table somewhere.")
+        time.sleep(1.0)
+        tts.say("I want you to pick them up, and use one of them to play that note.")
+        time.sleep(5.0)
+        # may have to create a if condition depending on user's response
+        tts.say("Do you want to try this again?")
+        time.sleep(4.0)
+        repeat = int(raw_input("User selection 1 or 0: "))
+        
 # =============================================================================
-# Start single note play along with color    
+# Start single note play along with color  
+
     key2 = [8]
+    name = 'FaceLeds'
     colorName2 = 'green'
     duration = 1.0
     
@@ -265,20 +270,41 @@ def main(robotIP, PORT=9559):
     tts.say("Have you notice that my eye color matchs the note color?")
     time.sleep(2.0)
     tts.say("Let's try it again, I am going to hit the green bar now, listen carefully!")
-    
-    ledProxy.fadeRGB(name, colorName2, duration)
-    playXylophone(motionProxy, key2)
-    userInitPosture(motionProxy, postureProxy)
-    tts.say("Now, it is your turn to play the green bar!")
-    tts.say("And try to use your left hand to do this.")
-    time.sleep(5.0)
+    repeat = raw_input("User selection 1 or 0: ");
+    while repeat:
+        ledProxy.fadeRGB(name, colorName2, duration)
+        playXylophone(motionProxy, key2)
+        userInitPosture(motionProxy, postureProxy)
+        tts.say("Now, it is your turn to play the green bar!")
+        tts.say("And try to use your left hand to do this.")
+        time.sleep(5.0)
+        tts.say("Do you want to try this again?")
+        time.sleep(4.0)
+        repeat = int(raw_input("User selection 1 or 0: "))
     
 # =============================================================================
 # Start multiple notes play along with color
     key3 = [3, 6, 8]
-    # create a color group maybe? or just do it in sequence then
+    name = 'FaceLeds'
     colorNames = ['red', 'green', 'blue']
     duration = [0.5, 1.0, 0.5]
+    
+    tts.say("Now we are goint to play something more fun!")
+    ledProxy.randomEyes(2.0)
+    playXylophone(motionProxy, key3)
+    userInitPosture(motionProxy, postureProxy)
+    tts.say("I just played three notes, can you repeat them for me?")
+    time.sleep(5.0)
+    tts.say("Great Job!")
+    time.sleep(1.0)
+    tts.say("Now, if you can sing the color and hit the note that would be even better!")
+    time.sleep(5.0)
+    tts.say("Well done!")
+    tts.say("Do you want to try it again?")
+    time.sleep(4.0)
+    repeat = int(raw_input("User selection 1 or 0: "))
+    
+    
     
 
     

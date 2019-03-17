@@ -61,8 +61,6 @@ def userInitPosture(motionProxy, postureProxy):
 #     # this function should have NAO crouching position with leg joints rest/locked?
 #     # and both arms should be straight down without touching legs and other parts
 # =============================================================================
-    postureProxy.goToPosture("Crouch", 0.4)
-    time.sleep(1)
     
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
@@ -92,19 +90,21 @@ def userInitPosture(motionProxy, postureProxy):
     
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
-    time.sleep(1.0)
+    time.sleep(5.0)
     
 def userReadyToPlay(motionProxy, postureProxy):
 # =============================================================================
 # Have to record the transformation for ready to play position
 # =============================================================================
-    postureProxy.goToPosture("Crouch", 0.4)
-    time.sleep(1)
-    
+
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
 
-    transform       = []
+    transform       = [0.4127737283706665, -0.21474865078926086, -0.8851559162139893, 
+                       0.06692149490118027, -0.907514750957489, -0.17985010147094727, 
+                       -0.37956666946411133, -0.29789382219314575, -0.0776839479804039, 
+                       0.9599671959877014, -0.26912495493888855, 0.06466364860534668, 
+                       0.0, 0.0, 0.0, 1.0]
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
@@ -114,7 +114,11 @@ def userReadyToPlay(motionProxy, postureProxy):
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
 
-    transform       = []
+    transform       = [0.3653983175754547, 0.20093390345573425, -0.9089057445526123, 
+                       0.056045692414045334, 0.911535382270813, -0.2751205563545227, 
+                       0.30563390254974365, 0.29891785979270935, -0.18864643573760986, 
+                       -0.940177857875824, -0.28368696570396423, 0.04994587600231171, 
+                       0.0, 0.0, 0.0, 1.0]
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
@@ -123,7 +127,7 @@ def userReadyToPlay(motionProxy, postureProxy):
     
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
-    time.sleep(1.0)
+    time.sleep(5.0)
     
 def playXylophone(motionProxy, keys, dt):
     # input notes is dictionary type, including key as note, and 

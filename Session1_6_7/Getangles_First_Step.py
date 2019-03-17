@@ -2,6 +2,7 @@
 
 import argparse
 import time
+import motion
 from naoqi import ALProxy
 
 def main(robotIP, PORT=9559):
@@ -67,19 +68,22 @@ def main(robotIP, PORT=9559):
 
     time.sleep(10.0)
     
-    motionProxy.setStiffnesses("LArm", 1.0)
- #   motionProxy.setStiffnesses("RArm", 1.0)
-    motionProxy.setAngles("LHand", 0.22, 1)
-#    motionProxy.setAngles("RHand", 0.22, 1)
+#    motionProxy.setStiffnesses("LArm", 1.0)
+    motionProxy.setStiffnesses("RArm", 1.0)
+#    motionProxy.setAngles("LHand", 0.22, 1)
+    motionProxy.setAngles("RHand", 0.22, 1)
 
-#    names         = "RArm"
-    names = "LArm"
+    names         = "RArm"
+#    names = "LArm"
     useSensors  = True
-    sensorAngles = motionProxy.getAngles(names, useSensors)
-    print "Sensor angles:"
-    print str(sensorAngles)
-    print ""
-    
+    frame  = motion.FRAME_TORSO
+#    sensorAngles = motionProxy.getAngles(names, useSensors)
+#    print "Sensor angles:"
+#    print str(sensorAngles)
+#    print ""
+
+    result = motionProxy.getTransform(names, frame, useSensors)
+    print(result)
     tts.say("Angle recorded!")
     
 if __name__ == "__main__":

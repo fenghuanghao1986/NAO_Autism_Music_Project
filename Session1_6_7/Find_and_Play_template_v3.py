@@ -4,7 +4,6 @@ Created on Tue Mar  5 16:53:15 2019
 
 @author: CV_LAB_Howard
 """
-
 # =============================================================================
 # This is a find notes and hit template 
 # =============================================================================
@@ -19,28 +18,40 @@ from naoqi import ALProxy
 # =============================================================================
 notes = {}
 # Right Arm
-notes[1] = [1.2180380821228027, -0.9189081192016602, 1.514016032218933, 0.6151759624481201, -0.7210218906402588, 0.22960001230239868]
+notes[1] = [1.2180380821228027, -0.9189081192016602, 1.514016032218933, 
+             0.6151759624481201, -0.7210218906402588, 0.22960001230239868]
 
-notes[2] = [1.2257080078125, -0.8038580417633057, 1.5094140768051147, 0.6427879333496094, -0.6719338893890381, 0.22960001230239868]
+notes[2] = [1.2257080078125, -0.8038580417633057, 1.5094140768051147, 
+             0.6427879333496094, -0.6719338893890381, 0.22960001230239868]
 
-notes[3] = [1.211902141571045, -0.7302260398864746, 1.515550136566162, 0.7056820392608643, -0.6980118751525879, 0.22960001230239868]
+notes[3] = [1.211902141571045, -0.7302260398864746, 1.515550136566162, 
+             0.7056820392608643, -0.6980118751525879, 0.22960001230239868]
 
-notes[4] = [1.2011637687683105, -0.6151759624481201, 1.5078800916671753, 0.7563040256500244, -0.7609059810638428, 0.22960001230239868]
+notes[4] = [1.2011637687683105, -0.6151759624481201, 1.5078800916671753, 
+             0.7563040256500244, -0.7609059810638428, 0.22960001230239868]
 
-#notes[5] = [1.1029877662658691, -0.49859189987182617, 1.501744031906128, 0.84527587890625, -0.9971418380737305, 0.23000001907348633]
-notes[5] = [1.182755947113037, -0.48325204849243164, 1.5109480619430542, 0.7977218627929688, -0.8698201179504395, 0.22960001230239868]
+#notes[5] = [1.1029877662658691, -0.49859189987182617, 1.501744031906128, 
+#           0.84527587890625, -0.9971418380737305, 0.23000001907348633]
+notes[5] = [1.182755947113037, -0.48325204849243164, 1.5109480619430542, 
+             0.7977218627929688, -0.8698201179504395, 0.22960001230239868]
 # Left Arm
-notes[6] = [0.9480281066894531, 0.3328361511230469, -1.512566089630127, -0.7669579982757568, 1.2271580696105957, 0.2239999771118164]
+notes[6] = [0.9480281066894531, 0.3328361511230469, -1.512566089630127, 
+             -0.7669579982757568, 1.2271580696105957, 0.2239999771118164]
 
-notes[7] = [1.0691561698913574, 0.5491299629211426, -1.4205260276794434, -0.8053081035614014, 0.9617760181427002, 0.23040002584457397]
+notes[7] = [1.0691561698913574, 0.5491299629211426, -1.4205260276794434, 
+             -0.8053081035614014, 0.9617760181427002, 0.23040002584457397]
 
-notes[8] = [1.0568840503692627, 0.6581020545959473, -1.4220600128173828, -0.8252501487731934, 0.9893879890441895, 0.23240000009536743]
+notes[8] = [1.0568840503692627, 0.6581020545959473, -1.4220600128173828, 
+             -0.8252501487731934, 0.9893879890441895, 0.23240000009536743]
 
-notes[9] = [1.1075060367584229, 0.7684919834136963, -1.4650120735168457, -0.7915019989013672, 0.8482601642608643, 0.29600000381469727]
+notes[9] = [1.1075060367584229, 0.7684919834136963, -1.4650120735168457, 
+             -0.7915019989013672, 0.8482601642608643, 0.29600000381469727]
 
-notes[10] = [1.3207321166992188, 0.8283181190490723, -1.679771900177002, -0.8620660305023193, 0.8682019710540771, 0.22640001773834229]
+notes[10] = [1.3207321166992188, 0.8283181190490723, -1.679771900177002, 
+             -0.8620660305023193, 0.8682019710540771, 0.22640001773834229]
 
-notes[11] = [1.3529460430145264, 0.931096076965332, -1.679771900177002, -0.7500841617584229, 0.7638900279998779, 0.225600004196167]
+notes[11] = [1.3529460430145264, 0.931096076965332, -1.679771900177002, 
+             -0.7500841617584229, 0.7638900279998779, 0.225600004196167]
 
 # =============================================================================
 # The following function initializes NAO's starting position or resting position
@@ -63,7 +74,8 @@ def userInitPosture(motionProxy, postureProxy):
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
-    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    motionProxy.setTransforms(chainName, frame, transform, 
+                              fractionMaxSpeed, axisMask)
     
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
@@ -75,7 +87,8 @@ def userInitPosture(motionProxy, postureProxy):
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
-    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    motionProxy.setTransforms(chainName, frame, transform, 
+                              fractionMaxSpeed, axisMask)
     
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
@@ -95,7 +108,8 @@ def userReadyToPlay(motionProxy, postureProxy):
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
-    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    motionProxy.setTransforms(chainName, frame, transform, 
+                              fractionMaxSpeed, axisMask)
     
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
@@ -104,7 +118,8 @@ def userReadyToPlay(motionProxy, postureProxy):
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
 
-    motionProxy.setTransforms(chainName, frame, transform, fractionMaxSpeed, axisMask)
+    motionProxy.setTransforms(chainName, frame, transform, 
+                              fractionMaxSpeed, axisMask)
     
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
@@ -141,7 +156,6 @@ def playXylophone(motionProxy, keys, dt):
                           [target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-
             timeList = [[dt],
                         [dt],
                         [dt],
@@ -159,9 +173,9 @@ def playXylophone(motionProxy, keys, dt):
             angleLists = [[onHit, afterHit]]
             timeLists  = [[0.07, 0.1]]
         
-            motionProxy.angleInterpolationBezier(['RWristYaw'], timeLists, angleLists)
+            motionProxy.angleInterpolationBezier(['RWristYaw'], 
+                                                 timeLists, angleLists)
             
-#            time.sleep(0.1)  
         else:
             
 #            names = ['LArm', 'LWristYaw']
@@ -181,7 +195,6 @@ def playXylophone(motionProxy, keys, dt):
                           [target_note[5]]]
 #                          [beforeHit[0], onHit, afterHit[0]]]
             
-
             timeList = [[dt],
                         [dt],
                         [dt],
@@ -211,40 +224,7 @@ def main(robotIP, PORT=9559):
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     
-# =============================================================================
-#   Intro to entire session
-    tts.say("Hello, my friend!")
-    time.sleep(0.5)
-    tts.say("Welcome to NAO music party!")
-    time.sleep(1.0)
-    tts.say("Today, we are going to play a migical song!")
-    ledProxy.randomEyes(3.0)
-    tts.say("Let me show you what I have learned lately!")
-    time.sleep(0.5)
-    
-# =============================================================================
-# =============================================================================
-#   Start play Harry Potter Theme as demo
-#   NAO plays Harry Potter Theme
-    keys = [3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,3,
-            3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,3]
-#   need better starting point for both arms, record the transform Friday
-    userInitPosture(motionProxy, postureProxy)
-    userReadyToPlay(motionProxy, postureProxy)
-    playXylophone(motionProxy, keys, dt = 0.3)
-    userReadyToPlay(motionProxy, postureProxy)
-    userInitPosture(motionProxy, postureProxy)
-    ledProxy.randomEyes(2.0)
-    tts.say("Do you recognize this song from somewhere?")
-    time.sleep(3.0)
-    tts.say("Yes, it is the the most popular theme from Movie Harry Potter!")
-    time.sleep(1.0)
-#   may use speech recognition instead of this
-    tts.say("Do you like it?")
-    time.sleep(3.0)
-    tts.say("Great! Let me tell you how to play this song")
-    time.sleep(2.0)    
-    
+# =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
     for i in range(1000):
@@ -258,12 +238,46 @@ def main(robotIP, PORT=9559):
                                    6: whole song play\n\
                                    7: take break\n\
                                    8: free play\n\
-                                   0: end session\n\
+                                   9: end session\n\
+                                   0: intro\n\
                                    please make selection: "))
         
 # =============================================================================
+        if taskNumber == 0:
+#           Intro to entire session
+            tts.say("Hello, my friend!")
+            time.sleep(0.5)
+            tts.say("Welcome to NAO music party!")
+            time.sleep(1.0)
+            tts.say("Today, we are going to play a migical song!")
+            ledProxy.randomEyes(3.0)
+            tts.say("Let me show you what I have learned lately!")
+            time.sleep(0.5)   
+# =============================================================================
+#           Start play Harry Potter Theme as demo
+#           NAO plays Harry Potter Theme
+            keys = [3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,3,
+                    3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,3]
+
+            userInitPosture(motionProxy, postureProxy)
+            userReadyToPlay(motionProxy, postureProxy)
+            playXylophone(motionProxy, keys, dt = 0.3)
+            userReadyToPlay(motionProxy, postureProxy)
+            userInitPosture(motionProxy, postureProxy)
+            ledProxy.randomEyes(2.0)
+            tts.say("Do you recognize this song from somewhere?")
+            time.sleep(3.0)
+            tts.say("Yes, it is the the most popular theme from Movie Harry Potter!")
+            time.sleep(1.0)
+#           may use speech recognition instead of this
+            tts.say("Do you like it?")
+            time.sleep(3.0)
+            tts.say("Great! Let me tell you how to play this song")
+            
+# =============================================================================
+# =============================================================================
 #       task 1: Start single note play without color
-        if taskNumber == 1:
+        elif taskNumber == 1:
             
             keys = [6]
             name = 'FaceLeds'
@@ -405,7 +419,7 @@ def main(robotIP, PORT=9559):
 #       task 6: play the whole song
         elif taskNumber == 6:
             keys = [3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,
-                    6,0,8,7,0,5,0,0,7,0,3,0,1,3]
+                    6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
             name = 'FacdLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -437,11 +451,25 @@ def main(robotIP, PORT=9559):
             time.sleep(180)
             tts.say("Shall we start the next task?")  
         
-        
+# =============================================================================
+#       task 8: free play
+        elif taskNumber == 8:
+            
+            tts.say("We are done learning Harry Potter song today.")
+            time.sleep(1.0)
+            tts.say("Feel free to stay and play whatever song you may like.")
+            time.sleep(1.0)
+
 # =============================================================================
 #       task 9: end the session get out the loop
         elif taskNumber == 9:
+            tts.say("Have a nice day! See you next time!")            
+            motionProxy.rest()
             break
+        
+#       other typo or mistakes
+        else:
+            continue
         
 # =============================================================================
 # Calling the main

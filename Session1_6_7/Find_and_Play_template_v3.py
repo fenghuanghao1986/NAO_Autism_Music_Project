@@ -61,6 +61,19 @@ def userInitPosture(motionProxy, postureProxy):
 #     # this function should have NAO crouching position with leg joints rest/locked?
 #     # and both arms should be straight down without touching legs and other parts
 # =============================================================================
+    motionProxy.setStiffnesses("LArm", 1)
+    motionProxy.setStiffnesses("RArm", 1)
+    
+    names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
+    angles  = [-0.25, -0.7, -0.7]
+    fractionMaxSpeed  = 0.1
+    motionProxy.setAngles(names, angles, fractionMaxSpeed)
+
+    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
+    motionProxy.setStiffnesses("LHipPitch", 0.2)
+    motionProxy.setStiffnesses("RHipPitch", 0.2)
+    motionProxy.setStiffnesses("LLeg", 0.2)
+    motionProxy.setStiffnesses("RLeg", 0.2)
     
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
@@ -90,15 +103,26 @@ def userInitPosture(motionProxy, postureProxy):
     motionProxy.setTransforms(chainName, frame, transform, 
                               fractionMaxSpeed, axisMask)
     
-    motionProxy.setStiffnesses("LLeg", 0.2)
-    motionProxy.setStiffnesses("RLeg", 0.2)
-    time.sleep(5.0)
+    time.sleep(2.0)
     
 def userReadyToPlay(motionProxy, postureProxy):
 # =============================================================================
 # Have to record the transformation for ready to play position
 # =============================================================================
+    motionProxy.setStiffnesses("LArm", 1)
+    motionProxy.setStiffnesses("RArm", 1)
+    
+    names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
+    angles  = [-0.25, -0.7, -0.7]
+    fractionMaxSpeed  = 0.1
+    motionProxy.setAngles(names, angles, fractionMaxSpeed)
 
+    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
+    motionProxy.setStiffnesses("LHipPitch", 0.2)
+    motionProxy.setStiffnesses("RHipPitch", 0.2)
+    motionProxy.setStiffnesses("LLeg", 0.2)
+    motionProxy.setStiffnesses("RLeg", 0.2)
+    
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
 
@@ -112,10 +136,7 @@ def userReadyToPlay(motionProxy, postureProxy):
 
     motionProxy.setTransforms(chainName, frame, transform, 
                               fractionMaxSpeed, axisMask)
-    
-
-    time.sleep(2.0)
-    
+        
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
 
@@ -132,15 +153,7 @@ def userReadyToPlay(motionProxy, postureProxy):
     
 
     time.sleep(2.0)
-    
-    
-    motionProxy.setStiffnesses("LLeg", 0.2)
-    motionProxy.setStiffnesses("RLeg", 0.2)
-    
-
-
-    time.sleep(5.0)
-    
+        
 def playXylophone(motionProxy, keys, dt):
     # input notes is dictionary type, including key as note, and 
     # values as set of angles
@@ -241,6 +254,9 @@ def main(robotIP, PORT=9559):
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     
+    userInitPosture(motionProxy, postureProxy)
+    motionProxy.rest()
+
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
@@ -267,7 +283,7 @@ def main(robotIP, PORT=9559):
             tts.say("Welcome to NAO music party!")
             time.sleep(1.0)
             tts.say("Today, we are going to play a migical song!")
-            ledProxy.randomEyes(3.0)
+            ledProxy.randomEyes(2.0)
             tts.say("Let me show you what I have learned lately!")
             time.sleep(0.5)   
 # =============================================================================
@@ -295,12 +311,12 @@ def main(robotIP, PORT=9559):
             userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
-            time.sleep(3.0)
+            time.sleep(1.0)
             tts.say("Yes, it is the the most popular theme from Movie Harry Potter!")
             time.sleep(1.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
-            time.sleep(3.0)
+            time.sleep(1.0)
             tts.say("Great! Let me tell you how to play this song")
             
 # =============================================================================
@@ -470,11 +486,11 @@ def main(robotIP, PORT=9559):
                                    0.9893879890441895, 0.23240000009536743], 
                                    0.3)
             time.sleep(2.0)
-            playXylophone(motionProxy, keys, dt = 1)
+            playXylophone(motionProxy, keys, dt = 0.6)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
             tts.say("Did you get it?")
-            time.sleep(2.0)
+            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             time.sleep(20.0)
             tts.say("Do you want to try it again?")
@@ -507,11 +523,11 @@ def main(robotIP, PORT=9559):
                                    0.9893879890441895, 0.23240000009536743], 
                                    0.3)
             time.sleep(2.0)
-            playXylophone(motionProxy, keys, dt = 1)
+            playXylophone(motionProxy, keys, dt = 0.6)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
             tts.say("Did you get it?")
-            time.sleep(2.0)
+            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             time.sleep(20.0)
             tts.say("Do you want to try it again?")
@@ -547,7 +563,7 @@ def main(robotIP, PORT=9559):
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
             tts.say("Did you get it?")
-            time.sleep(2.0)
+            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             time.sleep(20.0)
             tts.say("Do you want to try it again?")            
@@ -557,11 +573,15 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 7:
             
             tts.say("Do you want to take a break?")
-            tts.say("You will have one hundred and eighty seconds \
+            tts.say("You will have 180 seconds \
                     for a short break!")
             tts.say("Starting now!")
-            ledProxy.randomEyes(5.0)
-            time.sleep(180)
+            ledProxy.randomEyes(3.0)
+            time.sleep(10)
+            tts.say("You have 120 seconds left.")
+            time.sleep(10)
+            tts.say("You have one minunt left.")
+            time.sleep(10)
             tts.say("Shall we start the next task?")  
         
 # =============================================================================
@@ -588,10 +608,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

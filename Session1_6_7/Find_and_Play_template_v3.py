@@ -65,9 +65,10 @@ def userInitPosture(motionProxy, postureProxy):
     chainName        = "RArm"
     frame            = motion.FRAME_TORSO
 
-    transform       = [0.03477038815617561, 0.9961863160133362, 0.080023854970932, 0.0029639352578669786, 
-                       -0.381715327501297, 0.0872393399477005, -0.9201536178588867, -0.183818519115448, 
-                       -0.923625648021698,0.0014477664371952415, 0.38329294323921204, -0.10117591917514801, 
+    transform       = [0.035065650939941406, 0.18206071853637695, -0.9826618432998657, 
+                       0.01609862968325615, -0.38233551383018494, -0.9060218334197998, 
+                       -0.1815047711133957, -0.1932658553123474, -0.9233579635620117, 
+                       0.3820711076259613, 0.03783803433179855, -0.09672538936138153, 
                        0.0, 0.0, 0.0, 1.0]
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
@@ -78,9 +79,10 @@ def userInitPosture(motionProxy, postureProxy):
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
 
-    transform       = [0.03795033320784569, -0.9755989909172058, -0.21625538170337677, 0.006952085066586733, 
-                       0.378103643655777, -0.1863023042678833, 0.9068236947059631, 0.18319708108901978, 
-                       -0.9249851703643799, -0.11618120968341827, 0.36180728673934937, -0.10128530114889145, 
+    transform       = [0.03785611316561699, -0.17644673585891724, -0.9835819602012634, 
+                       0.016386376693844795, 0.37893712520599365, -0.9082373380661011, 
+                       0.17751504480838776, 0.19260691106319427, -0.9246478080749512, 
+                       -0.3794357478618622, 0.03247988224029541, -0.09699571877717972, 
                        0.0, 0.0, 0.0, 1.0]
     fractionMaxSpeed = 0.5
     axisMask         = 63 # this value include position and rotation
@@ -111,6 +113,9 @@ def userReadyToPlay(motionProxy, postureProxy):
     motionProxy.setTransforms(chainName, frame, transform, 
                               fractionMaxSpeed, axisMask)
     
+
+    time.sleep(2.0)
+    
     chainName        = "LArm"
     frame            = motion.FRAME_TORSO
 
@@ -125,8 +130,15 @@ def userReadyToPlay(motionProxy, postureProxy):
     motionProxy.setTransforms(chainName, frame, transform, 
                               fractionMaxSpeed, axisMask)
     
+
+    time.sleep(2.0)
+    
+    
     motionProxy.setStiffnesses("LLeg", 0.2)
     motionProxy.setStiffnesses("RLeg", 0.2)
+    
+
+
     time.sleep(5.0)
     
 def playXylophone(motionProxy, keys, dt):
@@ -216,7 +228,8 @@ def playXylophone(motionProxy, keys, dt):
             angleLists = [[onHit, afterHit]]
             timeLists  = [[0.07, 0.1]]
         
-            motionProxy.angleInterpolationBezier(['LWristYaw'], timeLists, angleLists)
+            motionProxy.angleInterpolationBezier(['LWristYaw'], 
+                                                 timeLists, angleLists)
             
 # =============================================================================
 # 
@@ -265,6 +278,18 @@ def main(robotIP, PORT=9559):
 
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.3)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy, postureProxy)
@@ -291,6 +316,18 @@ def main(robotIP, PORT=9559):
             ledProxy.fadeRGB(name, colorName1, duration)
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.3)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -318,6 +355,18 @@ def main(robotIP, PORT=9559):
             ledProxy.fadeRGB(name, colorName2, duration)
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.3)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)    
@@ -330,6 +379,18 @@ def main(robotIP, PORT=9559):
             ledProxy.fadeRGB(name, colorName2, duration)
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.3)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -352,6 +413,18 @@ def main(robotIP, PORT=9559):
         
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.5)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -385,6 +458,18 @@ def main(robotIP, PORT=9559):
             tts.say("I will use slower speed to play.")
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 1)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -410,6 +495,18 @@ def main(robotIP, PORT=9559):
             tts.say("I will use slower speed to play.")
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 1)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -434,6 +531,18 @@ def main(robotIP, PORT=9559):
             tts.say("I will use normal speed to play.")
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.3)
+            time.sleep(2.0)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.3)
+            time.sleep(2.0)
             playXylophone(motionProxy, keys, dt = 0.3)
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
@@ -479,10 +588,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
-                        help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
 #                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

@@ -253,10 +253,10 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    
+    postureProxy.goToPosture("Crouch", 0.4)
     userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
-
+    
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
@@ -608,10 +608,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
-                        help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
 #                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

@@ -253,7 +253,7 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
     

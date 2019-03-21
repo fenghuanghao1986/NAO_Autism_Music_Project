@@ -267,10 +267,6 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         if taskNumber == 1:
                 
-#            keys = [6, 7, 8, 9]
-#            name = 'FaceLeds'
-#            colorNames = ['red', 'green', 'blue']
-#            duration = 0.5
             note6 = [0.9480281066894531, 0.3328361511230469, -1.512566089630127, 
                          -0.7669579982757568, 1.2271580696105957, 0.2239999771118164]
 
@@ -300,15 +296,9 @@ def main(robotIP, PORT=9559):
                                    0.9893879890441895, 0.23240000009536743], 
                                    0.3)
             time.sleep(2.0)
-            
-
-            
-#            names = ['LArm', 'LWristYaw']
+             
             names = ['LArm']
-#            useSensors  = True
-            
-#            current_note = motionProxy.getAngles('LArm', useSensors)
-#            target_note = list(notes[])
+
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
@@ -342,16 +332,6 @@ def main(robotIP, PORT=9559):
             
             motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
-#            beforeHit = motionProxy.getAngles('LWristYaw', useSensors)
-#            onHit = beforeHit[0] + 35*almath.TO_RAD
-#            afterHit = beforeHit[0] 
-#            motionProxy.setAngles("LHand", 0.22, 1)
-#
-#            angleLists = [[onHit, afterHit]]
-#            timeLists  = [[0.07, 0.1]]
-#        
-#            motionProxy.angleInterpolationBezier(['LWristYaw'], 
-#                                                 timeLists, angleLists)
             tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)

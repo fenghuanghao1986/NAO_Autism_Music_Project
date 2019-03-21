@@ -303,8 +303,8 @@ def main(robotIP, PORT=9559):
             
 
             
-            names = [['LArm'], ['LWristYaw']]
-#            names = ['LArm']
+#            names = ['LArm', 'LWristYaw']
+            names = ['LArm']
 #            useSensors  = True
             
 #            current_note = motionProxy.getAngles('LArm', useSensors)
@@ -312,27 +312,21 @@ def main(robotIP, PORT=9559):
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            angleList = [[[note6[0],note7[0],note8[0],note9[0]], 
-                          [note6[1],note7[1],note8[1],note9[1]],
-                          [note6[2],note7[2],note8[2],note9[2]],
-                          [note6[3],note7[3],note8[3],note9[3]],
-                          [note6[4],note7[4],note8[4],note9[4]],
-                          [note6[5],note7[5],note8[5],note9[5]]],
-                          [[note6[5]+0.6],
-                           [note7[5]+0.6],
-                           [note8[5]+0.6],
-                           [note9[5]+0.6]]]
+            angleList = [[note6[0],note6[0],note6[0],note7[0],note7[0],note7[0],note8[0],note8[0],note8[0],note9[0],note9[0],note9[0]], 
+                          [note6[1],note6[1],note6[1],note7[1],note7[1],note7[1],note8[1],note8[1],note8[1],note9[1],note9[1],note9[1]],
+                          [note6[2],note6[2],note6[2],note7[2],note7[2],note7[2],note8[2],note8[2],note8[2],note9[2],note9[2],note9[2]],
+                          [note6[3],note6[3],note6[3],note7[3],note7[3],note7[3],note8[3],note8[3],note8[3],note9[3],note9[3],note9[3]],
+                          [note6[4],note6[4]+0.65,note6[4],note7[4],note7[4]+0.65,note7[4],note8[4],note8[4]+0.65,note8[4],note9[4],note9[4]+0.65,note9[4]],
+                          [note6[5],note6[5],note6[5],note7[5],note7[5],note7[5],note8[5],note8[5],note8[5],note9[5],note9[5],note9[5]]]
+
                          
-            timeList = [[[1, 2, 3, 4], 
-                        [1, 2, 3, 4], 
-                        [1, 2, 3, 4], 
-                        [1, 2, 3, 4], 
-                        [1, 2, 3, 4], 
-                        [1, 2, 3, 4]],
-                        [[1.07],
-                         [2.07],
-                         [3.07],
-                         [4.07]]]
+            timeList = [[1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
+                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
+                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
+                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
+                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
+                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1]]
+                    
             
             motionProxy.angleInterpolationBezier(names, timeList, angleList)
             

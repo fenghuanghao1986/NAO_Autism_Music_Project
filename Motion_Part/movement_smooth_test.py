@@ -303,7 +303,7 @@ def main(robotIP, PORT=9559):
             
 
             
-            names = ['LArm', 'LWristYaw']
+            names = [['LArm'], ['LWristYaw']]
 #            names = ['LArm']
 #            useSensors  = True
             

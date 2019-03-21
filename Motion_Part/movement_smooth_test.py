@@ -253,7 +253,7 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
 #    ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
     
@@ -312,20 +312,32 @@ def main(robotIP, PORT=9559):
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            angleList = [[note6[0],note6[0],note6[0],note7[0],note7[0],note7[0],note8[0],note8[0],note8[0],note9[0],note9[0],note9[0]], 
-                          [note6[1],note6[1],note6[1],note7[1],note7[1],note7[1],note8[1],note8[1],note8[1],note9[1],note9[1],note9[1]],
-                          [note6[2],note6[2],note6[2],note7[2],note7[2],note7[2],note8[2],note8[2],note8[2],note9[2],note9[2],note9[2]],
-                          [note6[3],note6[3],note6[3],note7[3],note7[3],note7[3],note8[3],note8[3],note8[3],note9[3],note9[3],note9[3]],
-                          [note6[4],note6[4]+0.65,note6[4],note7[4],note7[4]+0.65,note7[4],note8[4],note8[4]+0.65,note8[4],note9[4],note9[4]+0.65,note9[4]],
-                          [note6[5],note6[5],note6[5],note7[5],note7[5],note7[5],note8[5],note8[5],note8[5],note9[5],note9[5],note9[5]]]
+            angleList = [[note6[0],note6[0],note6[0],note7[0],note7[0],note7[0],note8[0],note8[0],note8[0],note9[0],note9[0],note9[0],
+                          note6[0],note6[0],note6[0],note7[0],note7[0],note7[0],note8[0],note8[0],note8[0],note9[0],note9[0],note9[0],
+                          note6[0],note6[0],note6[0],note7[0],note7[0],note7[0],note8[0],note8[0],note8[0],note9[0],note9[0],note9[0]], 
+                          [note6[1],note6[1],note6[1],note7[1],note7[1],note7[1],note8[1],note8[1],note8[1],note9[1],note9[1],note9[1],
+                           note6[1],note6[1],note6[1],note7[1],note7[1],note7[1],note8[1],note8[1],note8[1],note9[1],note9[1],note9[1],
+                           note6[1],note6[1],note6[1],note7[1],note7[1],note7[1],note8[1],note8[1],note8[1],note9[1],note9[1],note9[1]],
+                          [note6[2],note6[2],note6[2],note7[2],note7[2],note7[2],note8[2],note8[2],note8[2],note9[2],note9[2],note9[2],
+                           note6[2],note6[2],note6[2],note7[2],note7[2],note7[2],note8[2],note8[2],note8[2],note9[2],note9[2],note9[2],
+                           note6[2],note6[2],note6[2],note7[2],note7[2],note7[2],note8[2],note8[2],note8[2],note9[2],note9[2],note9[2]],
+                          [note6[3],note6[3],note6[3],note7[3],note7[3],note7[3],note8[3],note8[3],note8[3],note9[3],note9[3],note9[3],
+                           note6[3],note6[3],note6[3],note7[3],note7[3],note7[3],note8[3],note8[3],note8[3],note9[3],note9[3],note9[3],
+                           note6[3],note6[3],note6[3],note7[3],note7[3],note7[3],note8[3],note8[3],note8[3],note9[3],note9[3],note9[3]],
+                          [note6[4],note6[4]+0.65,note6[4],note7[4],note7[4]+0.65,note7[4],note8[4],note8[4]+0.65,note8[4],note9[4],note9[4]+0.65,note9[4],
+                           note6[4],note6[4]+0.65,note6[4],note7[4],note7[4]+0.65,note7[4],note8[4],note8[4]+0.65,note8[4],note9[4],note9[4]+0.65,note9[4],
+                           note6[4],note6[4]+0.65,note6[4],note7[4],note7[4]+0.65,note7[4],note8[4],note8[4]+0.65,note8[4],note9[4],note9[4]+0.65,note9[4]],
+                          [note6[5],note6[5],note6[5],note7[5],note7[5],note7[5],note8[5],note8[5],note8[5],note9[5],note9[5],note9[5],
+                           note6[5],note6[5],note6[5],note7[5],note7[5],note7[5],note8[5],note8[5],note8[5],note9[5],note9[5],note9[5],
+                           note6[5],note6[5],note6[5],note7[5],note7[5],note7[5],note8[5],note8[5],note8[5],note9[5],note9[5],note9[5]]]
 
                          
-            timeList = [[1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
-                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
-                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
-                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
-                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1], 
-                        [1, 1.07, 1.1, 2, 2.07, 2.1, 3, 3.07, 3.1, 4, 4.07, 4.1]]
+            timeList = [[1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1], 
+                        [1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1], 
+                        [1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1], 
+                        [1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1], 
+                        [1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1], 
+                        [1,1.07,1.1,2,2.07,2.1,3,3.07,3.1,4,4.07,4.1,5,5.07,5.1,6,6.07,6.1,7,7.07,7.1,8,8.07,8.1,9,9.07,9.1,10,10.07,10.1,11,11.07,11.1,12,12.07,12.1]]
                     
             
             motionProxy.angleInterpolationBezier(names, timeList, angleList)
@@ -343,6 +355,8 @@ def main(robotIP, PORT=9559):
             tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
+            motionProxy.rest()
+
         
 # =============================================================================
 # =============================================================================
@@ -360,10 +374,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

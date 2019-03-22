@@ -55,7 +55,7 @@ names = ['RArm', 'LArm']
 dt = 1
 n = len(keys)
 
-leftTimeList = []
+timeList = []
 
 for h in range(6):
     t = []
@@ -70,35 +70,32 @@ for h in range(6):
             t.append(dt*i + 0.07)
             t.append(dt*i + 0.1)
             
-    leftTimeList.append(t)   
+    timeList.append(t)   
 
-leftAngleList = []
+angleList = []
 
 for j in range(6):
     
-    angleList = []
-    
+    l = []
     for k in keys:
                 
         if k > 5 and k < 12: 
             note = list(notes[k])
             if j == 4:
-                angleList.append(note[j])
-                angleList.append(note[j]+35*almath.TO_RAD)
-                angleList.append(note[j])
+                l.append(note[j])
+                l.append(note[j]+35*almath.TO_RAD)
+                l.append(note[j])
             else:
-                angleList.append(note[j])
-                angleList.append(note[j])
-                angleList.append(note[j])
+                l.append(note[j])
+                l.append(note[j])
+                l.append(note[j])
         else:
             note = list(notes[8])
-            angleList.append(note[j])
-            angleList.append(note[j])
-            angleList.append(note[j])
-            
-    leftAngleList.append(angleList)
+            l.append(note[j])
+            l.append(note[j])
+            l.append(note[j])
+    angleList.append(l)            
 
-rightTimeList = []
 
 for h in range(6):
     t = []
@@ -113,38 +110,34 @@ for h in range(6):
             t.append(dt*i + 0.07)
             t.append(dt*i + 0.1)
             
-    rightTimeList.append(t)   
+    timeList.append(t)   
 
-rightAngleList = []
 
 for j in range(6):
     
-    angleList = []
-    
+    r = []
     for k in keys:
                 
         if k > 0 and k < 6: 
             note = list(notes[k])
             if j == 4:
-                angleList.append(note[j])
-                angleList.append(note[j]+45*almath.TO_RAD)
-                angleList.append(note[j])
+                r.append(note[j])
+                r.append(note[j]-45*almath.TO_RAD)
+                r.append(note[j])
             else:
-                angleList.append(note[j])
-                angleList.append(note[j])
-                angleList.append(note[j])
+                r.append(note[j])
+                r.append(note[j])
+                r.append(note[j])
         else:
             note = list(notes[3])
-            angleList.append(note[j])
-            angleList.append(note[j])
-            angleList.append(note[j])
-            
-    rightAngleList.append(angleList)
+            r.append(note[j])
+            r.append(note[j])
+            r.append(note[j])
+    angleList.append(r)   
     
-angleList = [rightAngleList, leftAngleList]
-timeList = [rightTimeList, leftTimeList]
-    
-    
+#angleList = [rightAngleList, leftAngleList]
+#timeList = [rightTimeList, leftTimeList]
+
     
     
     

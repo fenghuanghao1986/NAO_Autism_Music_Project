@@ -343,8 +343,13 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         if taskNumber == 1:
                 
-            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3,
-                    0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
+#            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
+            keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
+                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
+                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
+                    9,10,9,8,7,5,9,10,9,8,7,5,
+                    5,2,5,0,5,2,5,0]        
 
             tts.say("play starts")
 #            ledProxy.randomEyes(2.0)
@@ -378,10 +383,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
-                        help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
 #                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

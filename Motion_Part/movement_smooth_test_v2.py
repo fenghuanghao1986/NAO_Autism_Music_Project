@@ -161,7 +161,6 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     userInitPosture(motionProxy, postureProxy)
-    postureProxy.goToPosture("Crouch", 0.4)
 
     motionProxy.rest()
     
@@ -175,7 +174,8 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         if taskNumber == 1:
                 
-            keys = [3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,3]
+            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3,
+                    0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
 
             tts.say("play starts")
 #            ledProxy.randomEyes(2.0)
@@ -186,19 +186,19 @@ def main(robotIP, PORT=9559):
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 
                                    -0.6980118751525879, 0.22960001230239868], 
-                                   0.3)
-            time.sleep(2.0)
+                                   0.5)
+#            time.sleep(2.0)
             motionProxy.setAngles("LArm", 
                                   [1.0568840503692627, 0.6581020545959473, 
                                    -1.4220600128173828, -0.8252501487731934, 
                                    0.9893879890441895, 0.23240000009536743], 
-                                   0.3)
-            time.sleep(2.0)
+                                   0.5)
+#            time.sleep(2.0)
              
             names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
                      'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
             # tempo
-            dt = 0.6
+            dt = 0.5
 #            n = len(keys)
             timeList = []
             angleList = []
@@ -206,9 +206,9 @@ def main(robotIP, PORT=9559):
                 t = []
                 for i in range(len(keys)): 
                     
-                    t.append(dt*i)
-                    t.append(dt*i + 0.07)
-                    t.append(dt*i + 0.1)
+                    t.append(dt*(i+1))
+                    t.append(dt*(i+1) + 0.07)
+                    t.append(dt*(i+1) + 0.1)
                         
                 timeList.append(t)   
                 
@@ -238,9 +238,9 @@ def main(robotIP, PORT=9559):
                 t = []
                 for i in range(len(keys)): 
                     
-                    t.append(dt*i)
-                    t.append(dt*i + 0.07)
-                    t.append(dt*i + 0.1)
+                    t.append(dt*(i+1))
+                    t.append(dt*(i+1) + 0.07)
+                    t.append(dt*(i+1) + 0.1)
                         
                 timeList.append(t)    
             
@@ -298,10 +298,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

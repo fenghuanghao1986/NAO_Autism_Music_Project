@@ -153,53 +153,24 @@ def userReadyToPlay(motionProxy, postureProxy):
     
 
     time.sleep(2.0)
-        
-# =============================================================================
-def main(robotIP, PORT=9559):
-    
-    motionProxy = ALProxy("ALMotion", robotIP, PORT)
-    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
-    tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    userInitPosture(motionProxy, postureProxy)
 
-    motionProxy.rest()
-    
-    for i in range(10):
-        
-        taskNumber = int(raw_input("select task:\n\
-                                   1: test run\n\
-                                   0: end\n\
-                                   please make selection: "))
-# =============================================================================
-#       task 3: Start multiple notes play along with color
-        if taskNumber == 1:
-                
-            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3,
-                    0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
 
-            tts.say("play starts")
-#            ledProxy.randomEyes(2.0)
-        
-            userInitPosture(motionProxy, postureProxy)
-            userReadyToPlay(motionProxy, postureProxy)
+def playXylo(motionProxy, keys):
             motionProxy.setAngles("RArm", 
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 
                                    -0.6980118751525879, 0.22960001230239868], 
                                    0.5)
-#            time.sleep(2.0)
             motionProxy.setAngles("LArm", 
                                   [1.0568840503692627, 0.6581020545959473, 
                                    -1.4220600128173828, -0.8252501487731934, 
                                    0.9893879890441895, 0.23240000009536743], 
                                    0.5)
-#            time.sleep(2.0)
              
             names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
                      'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
             # tempo
             dt = 0.5
-#            n = len(keys)
             timeList = []
             angleList = []
             for h in range(6):
@@ -266,22 +237,47 @@ def main(robotIP, PORT=9559):
                         
                 angleList.append(r)
                 
-            motionProxy.angleInterpolationBezier(names, timeList, angleList)
+            motionProxy.angleInterpolationBezier(names, timeList, angleList) 
+            
+# =============================================================================
+def main(robotIP, PORT=9559):
+    
+    motionProxy = ALProxy("ALMotion", robotIP, PORT)
+    postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
+    tts = ALProxy("ALTextToSpeech", robotIP, PORT)
+    userInitPosture(motionProxy, postureProxy)
+
+    motionProxy.rest()
+    
+    for i in range(10):
+        
+        taskNumber = int(raw_input("select task:\n\
+                                   1: test run\n\
+                                   0: end\n\
+                                   please make selection: "))
+# =============================================================================
+#       task 3: Start multiple notes play along with color
+        if taskNumber == 1:
+                
+            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3,
+                    0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
+
+            tts.say("play starts")
+#            ledProxy.randomEyes(2.0)
+        
+            userInitPosture(motionProxy, postureProxy)
+            userReadyToPlay(motionProxy, postureProxy)
+            playXylo(motionProxy, keys)
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            
-#            rName = ['RArm']
-#            motionProxy.angleInterpolationBezier(rName, rightTimeList, rightAngleList)
-#            lName = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
-#                     'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
-#            motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
-            
+                      
 
             tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
-            motionProxy.rest()        
+            motionProxy.rest()   
+            
 # =============================================================================
 # =============================================================================
 #       task 9: end the session get out the loop
@@ -298,10 +294,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
-                        help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#    parser.add_argument("--ip", type=str, default="192.168.0.2",
 #                        help="Robot ip address")
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

@@ -155,100 +155,6 @@ def userReadyToPlay(motionProxy, postureProxy):
     time.sleep(2.0)
         
 # =============================================================================
-# def playXylophone(motionProxy, keys, dt):
-#     # input notes is dictionary type, including key as note, and 
-#     # values as set of angles
-#     # anglse related to hit will be a seperate list
-#    
-#     motionProxy.setStiffnesses("LArm", 1)
-#     motionProxy.setStiffnesses("RArm", 1)
-#     
-#     for key in keys:        
-#         # identify which hand to use to find and hit current note
-#         if key == 0:
-#             time.sleep(0.3)
-#         elif key > 0 and key < 6:
-#             
-# #            names = ['RArm', 'RWristYaw']
-# #            names = ['LArm']
-#             useSensors  = True
-#             
-# #            current_note = motionProxy.getAngles('RArm', useSensors)
-#             target_note = list(notes[key])
-#             
-#             # since for 'R/LArm' has 6 angles invoved, so we have to assign
-#             # 6 interpolations for each of the joint
-#             angleList = [[target_note[0]], 
-#                           [target_note[1]],
-#                           [target_note[2]],
-#                           [target_note[3]],
-#                           [target_note[4]],
-#                           [target_note[5]]]
-# #                          [beforeHit[0], onHit, afterHit[0]]]
-#             
-#             timeList = [[dt],
-#                         [dt],
-#                         [dt],
-#                         [dt],
-#                         [dt],
-#                         [dt]]
-#             
-#             motionProxy.angleInterpolationBezier(['RArm'], timeList, angleList)
-#             
-#             beforeHit = motionProxy.getAngles('RWristYaw', useSensors)
-#             onHit = beforeHit[0] - 45*almath.TO_RAD
-#             afterHit = beforeHit[0] 
-#             motionProxy.setAngles("RHand", 0.22, 1)
-# 
-#             angleLists = [[onHit, afterHit]]
-#             timeLists  = [[0.07, 0.1]]
-#         
-#             motionProxy.angleInterpolationBezier(['RWristYaw'], 
-#                                                  timeLists, angleLists)
-#             
-#         else:
-#             
-# #            names = ['LArm', 'LWristYaw']
-# #            names = ['LArm']
-#             useSensors  = True
-#             
-# #            current_note = motionProxy.getAngles('LArm', useSensors)
-#             target_note = list(notes[key])
-#             
-#             # since for 'R/LArm' has 6 angles invoved, so we have to assign
-#             # 6 interpolations for each of the joint
-#             angleList = [[target_note[0]], 
-#                           [target_note[1]],
-#                           [target_note[2]],
-#                           [target_note[3]],
-#                           [target_note[4]],
-#                           [target_note[5]]]
-# #                          [beforeHit[0], onHit, afterHit[0]]]
-#             
-#             timeList = [[dt],
-#                         [dt],
-#                         [dt],
-#                         [dt],
-#                         [dt],
-#                         [dt]]
-#             
-#             motionProxy.angleInterpolationBezier(['LArm'], timeList, angleList)
-#             
-#             beforeHit = motionProxy.getAngles('LWristYaw', useSensors)
-#             onHit = beforeHit[0] + 35*almath.TO_RAD
-#             afterHit = beforeHit[0] 
-#             motionProxy.setAngles("LHand", 0.22, 1)
-# 
-#             angleLists = [[onHit, afterHit]]
-#             timeLists  = [[0.07, 0.1]]
-#         
-#             motionProxy.angleInterpolationBezier(['LWristYaw'], 
-#                                                  timeLists, angleLists)
-#             
-# =============================================================================
-# =============================================================================
-# 
-# =============================================================================
 def main(robotIP, PORT=9559):
     
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
@@ -315,13 +221,16 @@ def main(robotIP, PORT=9559):
                             
                     if k > 5 and k < 12: 
                         note = list(notes[k])
+                        if j == 4:
+                            angleList.append(note[j])
+                            angleList.append(note[j]+35*almath.TO_RAD)
+                            angleList.append(note[j])
+                        else:
+                            angleList.append(note[j])
+                            angleList.append(note[j])
+                            angleList.append(note[j])
                     else:
                         note = list(notes[8])
-                    if j == 4:
-                        angleList.append(note[j])
-                        angleList.append(note[j]+35*almath.TO_RAD)
-                        angleList.append(note[j])
-                    else:
                         angleList.append(note[j])
                         angleList.append(note[j])
                         angleList.append(note[j])
@@ -349,13 +258,16 @@ def main(robotIP, PORT=9559):
                             
                     if k > 0 and k < 6: 
                         note = list(notes[k])
+                        if j == 4:
+                            angleList.append(note[j])
+                            angleList.append(note[j]+45*almath.TO_RAD)
+                            angleList.append(note[j])
+                        else:
+                            angleList.append(note[j])
+                            angleList.append(note[j])
+                            angleList.append(note[j])
                     else:
                         note = list(notes[3])
-                    if j == 4:
-                        angleList.append(note[j])
-                        angleList.append(note[j]+45*almath.TO_RAD)
-                        angleList.append(note[j])
-                    else:
                         angleList.append(note[j])
                         angleList.append(note[j])
                         angleList.append(note[j])
@@ -367,10 +279,10 @@ def main(robotIP, PORT=9559):
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-#            rName = ['RArm']
-#            motionProxy.angleInterpolationBezier(rName, rightTimeList, leftAngleList)
-            lName = ['LArm']
-            motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
+            rName = ['RArm']
+            motionProxy.angleInterpolationBezier(rName, rightTimeList, rightAngleList)
+#            lName = ['LArm']
+#            motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
 #            motionProxy.angleInterpolationBezier(names, timeList, angleList)
 
             tts.say("Do you want to try it again?")

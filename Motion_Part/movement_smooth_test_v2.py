@@ -161,17 +161,17 @@ def playXylo(motionProxy, keys):
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 
                                    -0.6980118751525879, 0.22960001230239868], 
-                                   0.5)
+                                   0.1)
             motionProxy.setAngles("LArm", 
                                   [1.0568840503692627, 0.6581020545959473, 
                                    -1.4220600128173828, -0.8252501487731934, 
                                    0.9893879890441895, 0.23240000009536743], 
-                                   0.5)
+                                   0.1)
              
             names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
                      'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
             # tempo
-            dt = 0.5
+            dt = 0.4
             timeList = []
             angleList = []
             for h in range(6):
@@ -202,7 +202,7 @@ def playXylo(motionProxy, keys):
                         note = list(notes[8])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j]+35*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -212,7 +212,7 @@ def playXylo(motionProxy, keys):
                         note = list(notes[9])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j]+35*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -222,7 +222,7 @@ def playXylo(motionProxy, keys):
                         note = list(notes[10])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j]+35*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -232,7 +232,7 @@ def playXylo(motionProxy, keys):
                         note = list(notes[11])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j]+35*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -378,10 +378,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

@@ -367,8 +367,8 @@ def main(robotIP, PORT=9559):
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            rName = ['RArm']
-            motionProxy.angleInterpolationBezier(rName, rightTimeList, leftAngleList)
+#            rName = ['RArm']
+#            motionProxy.angleInterpolationBezier(rName, rightTimeList, leftAngleList)
             lName = ['LArm']
             motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
 

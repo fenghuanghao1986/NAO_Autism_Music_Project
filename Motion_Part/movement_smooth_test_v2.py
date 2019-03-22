@@ -198,6 +198,46 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
+                    elif k == 1:
+                        note = list(notes[8])
+                        if j == 4:
+                            l.append(note[j])
+                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j])
+                        else:
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
+                    elif k == 2:
+                        note = list(notes[9])
+                        if j == 4:
+                            l.append(note[j])
+                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j])
+                        else:
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
+                    elif k == 3:
+                        note = list(notes[10])
+                        if j == 4:
+                            l.append(note[j])
+                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j])
+                        else:
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
+                    elif k == 4:
+                        note = list(notes[11])
+                        if j == 4:
+                            l.append(note[j])
+                            l.append(note[j]-45*almath.TO_RAD)
+                            l.append(note[j])
+                        else:
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
                     else:
                         # need to change note here
                         note = list(notes[8])
@@ -231,6 +271,46 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
+                    elif k == 8:
+                        note = list(notes[1])
+                        if j == 4:
+                            r.append(note[j])
+                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j])
+                        else:
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
+                    elif k == 9:
+                        note = list(notes[2])
+                        if j == 4:
+                            r.append(note[j])
+                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j])
+                        else:
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
+                    elif k == 10:
+                        note = list(notes[3])
+                        if j == 4:
+                            r.append(note[j])
+                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j])
+                        else:
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
+                    elif k == 11:
+                        note = list(notes[4])
+                        if j == 4:
+                            r.append(note[j])
+                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j])
+                        else:
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
                     else:
                         # need to change note here
                         note = list(notes[3])
@@ -248,6 +328,7 @@ def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
+    postureProxy.goToPosture("Crouch", 0.4)
     userInitPosture(motionProxy, postureProxy)
 
     motionProxy.rest()

@@ -289,7 +289,7 @@ def main(robotIP, PORT=9559):
                                    0.3)
             time.sleep(2.0)
              
-#            names = [['RArm'], ['LArm']]
+            names = ['RArm', 'LArm']
             # tempo
             dt = 1
 #            n = len(keys)
@@ -371,6 +371,7 @@ def main(robotIP, PORT=9559):
 #            motionProxy.angleInterpolationBezier(rName, rightTimeList, leftAngleList)
             lName = ['LArm']
             motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
+#            motionProxy.angleInterpolationBezier(names, timeList, angleList)
 
             tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)

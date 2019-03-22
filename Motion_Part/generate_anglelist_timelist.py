@@ -82,13 +82,16 @@ for j in range(6):
                 
         if k > 5 and k < 12: 
             note = list(notes[k])
+            if j == 4:
+                angleList.append(note[j])
+                angleList.append(note[j]+35*almath.TO_RAD)
+                angleList.append(note[j])
+            else:
+                angleList.append(note[j])
+                angleList.append(note[j])
+                angleList.append(note[j])
         else:
             note = list(notes[8])
-        if k == 4:
-            angleList.append(note[j])
-            angleList.append(note[j]+35*almath.TO_RAD)
-            angleList.append(note[j])
-        else:
             angleList.append(note[j])
             angleList.append(note[j])
             angleList.append(note[j])
@@ -96,6 +99,7 @@ for j in range(6):
     leftAngleList.append(angleList)
 
 rightTimeList = []
+
 for h in range(6):
     t = []
     for i in range(len(keys)): 
@@ -121,13 +125,16 @@ for j in range(6):
                 
         if k > 0 and k < 6: 
             note = list(notes[k])
+            if j == 4:
+                angleList.append(note[j])
+                angleList.append(note[j]+45*almath.TO_RAD)
+                angleList.append(note[j])
+            else:
+                angleList.append(note[j])
+                angleList.append(note[j])
+                angleList.append(note[j])
         else:
             note = list(notes[3])
-        if k == 4:
-            angleList.append(note[j])
-            angleList.append(note[j]+45*almath.TO_RAD)
-            angleList.append(note[j])
-        else:
             angleList.append(note[j])
             angleList.append(note[j])
             angleList.append(note[j])

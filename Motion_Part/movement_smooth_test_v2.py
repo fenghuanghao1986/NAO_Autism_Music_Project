@@ -195,12 +195,13 @@ def main(robotIP, PORT=9559):
                                    0.3)
             time.sleep(2.0)
              
-            names = ['RArm', 'LArm']
+            names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
+                     'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
             # tempo
-            dt = 1
+            dt = 0.6
 #            n = len(keys)
-            leftTimeList = []
-            
+            timeList = []
+            angleList = []
             for h in range(6):
                 t = []
                 for i in range(len(keys)): 
@@ -209,35 +210,30 @@ def main(robotIP, PORT=9559):
                     t.append(dt*i + 0.07)
                     t.append(dt*i + 0.1)
                         
-                leftTimeList.append(t)   
-
-            leftAngleList = []
-            
+                timeList.append(t)   
+                
             for j in range(6):
-                
-                angleList = []
-                
+                l = []                
                 for k in keys:
                             
                     if k > 5 and k < 12: 
                         note = list(notes[k])
                         if j == 4:
-                            angleList.append(note[j])
-                            angleList.append(note[j]+35*almath.TO_RAD)
-                            angleList.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j])
                         else:
-                            angleList.append(note[j])
-                            angleList.append(note[j])
-                            angleList.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
                     else:
                         note = list(notes[8])
-                        angleList.append(note[j])
-                        angleList.append(note[j])
-                        angleList.append(note[j])
+                        l.append(note[j])
+                        l.append(note[j])
+                        l.append(note[j])
                         
-                leftAngleList.append(angleList)
+                angleList.append(l)
             
-            rightTimeList = []
             for h in range(6):
                 t = []
                 for i in range(len(keys)): 
@@ -246,44 +242,41 @@ def main(robotIP, PORT=9559):
                     t.append(dt*i + 0.07)
                     t.append(dt*i + 0.1)
                         
-                rightTimeList.append(t)    
-            
-            rightAngleList = []
+                timeList.append(t)    
             
             for j in range(6):
-                
-                angleList = []
-                
+                r = []                
                 for k in keys:
                             
                     if k > 0 and k < 6: 
                         note = list(notes[k])
                         if j == 4:
-                            angleList.append(note[j])
-                            angleList.append(note[j]+45*almath.TO_RAD)
-                            angleList.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j])
                         else:
-                            angleList.append(note[j])
-                            angleList.append(note[j])
-                            angleList.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
                     else:
                         note = list(notes[3])
-                        angleList.append(note[j])
-                        angleList.append(note[j])
-                        angleList.append(note[j])
+                        r.append(note[j])
+                        r.append(note[j])
+                        r.append(note[j])
                         
-                rightAngleList.append(angleList)
+                angleList.append(r)
                 
-#            angleList = [rightAngleList, leftAngleList]
-#            timeList = [rightTimeList, leftTimeList]
+            motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
-            rName = ['RArm']
-            motionProxy.angleInterpolationBezier(rName, rightTimeList, rightAngleList)
-#            lName = ['LArm']
+            
+#            rName = ['RArm']
+#            motionProxy.angleInterpolationBezier(rName, rightTimeList, rightAngleList)
+#            lName = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
+#                     'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
 #            motionProxy.angleInterpolationBezier(lName, leftTimeList, leftAngleList)
-#            motionProxy.angleInterpolationBezier(names, timeList, angleList)
+            
 
             tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)

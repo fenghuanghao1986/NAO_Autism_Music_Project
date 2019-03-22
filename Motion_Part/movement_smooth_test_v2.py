@@ -198,6 +198,7 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                     else:
+                        # need to change note here
                         note = list(notes[8])
                         l.append(note[j])
                         l.append(note[j])
@@ -230,6 +231,7 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                     else:
+                        # need to change note here
                         note = list(notes[3])
                         r.append(note[j])
                         r.append(note[j])

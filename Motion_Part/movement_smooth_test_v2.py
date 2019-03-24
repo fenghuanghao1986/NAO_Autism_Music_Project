@@ -186,10 +186,10 @@ def playXylo(motionProxy, keys):
                 
             for j in range(6):
                 l = []                
-                for k in keys:
+                for k in range(len(keys)):
                             
-                    if k > 5 and k < 12: 
-                        note = list(notes[k])
+                    if keys[k] > 5 and keys[k] < 12: 
+                        note = list(notes[keys[k]])
                         if j == 4:
                             l.append(note[j])
                             l.append(note[j]+35*almath.TO_RAD)
@@ -198,7 +198,7 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
-                    elif k == 1:
+                    elif keys[k] == 1:
                         note = list(notes[8])
                         if j == 4:
                             l.append(note[j])
@@ -208,7 +208,7 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
-                    elif k == 2:
+                    elif keys[k] == 2:
                         note = list(notes[9])
                         if j == 4:
                             l.append(note[j])
@@ -218,7 +218,7 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
-                    elif k == 3:
+                    elif keys[k] == 3:
                         note = list(notes[10])
                         if j == 4:
                             l.append(note[j])
@@ -228,7 +228,7 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
-                    elif k == 4:
+                    elif keys[k] == 4:
                         note = list(notes[11])
                         if j == 4:
                             l.append(note[j])
@@ -239,11 +239,18 @@ def playXylo(motionProxy, keys):
                             l.append(note[j])
                             l.append(note[j])
                     else:
-                        # need to change note here
-                        note = list(notes[8])
-                        l.append(note[j])
-                        l.append(note[j])
-                        l.append(note[j])
+                        if k == len(keys)-1:
+                            note = list(notes[keys[k]])
+                        else:
+                            nextk = k
+                            for x in range(k+1, len(keys)):
+                                if x != 0:
+                                    nextk = x
+                                    break    
+                            note = list(notes[keys[nextk+1]])
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
                         
                 angleList.append(l)
             
@@ -261,8 +268,8 @@ def playXylo(motionProxy, keys):
                 r = []                
                 for k in keys:
                             
-                    if k > 0 and k < 6: 
-                        note = list(notes[k])
+                    if keys[k] > 0 and keys[k] < 6: 
+                        note = list(notes[keys[k]])
                         if j == 4:
                             r.append(note[j])
                             r.append(note[j]-45*almath.TO_RAD)
@@ -271,7 +278,7 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
-                    elif k == 8:
+                    elif keys[k] == 8:
                         note = list(notes[1])
                         if j == 4:
                             r.append(note[j])
@@ -281,7 +288,7 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
-                    elif k == 9:
+                    elif keys[k] == 9:
                         note = list(notes[2])
                         if j == 4:
                             r.append(note[j])
@@ -291,7 +298,7 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
-                    elif k == 10:
+                    elif keys[k] == 10:
                         note = list(notes[3])
                         if j == 4:
                             r.append(note[j])
@@ -301,7 +308,7 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
-                    elif k == 11:
+                    elif keys[k] == 11:
                         note = list(notes[4])
                         if j == 4:
                             r.append(note[j])
@@ -312,11 +319,18 @@ def playXylo(motionProxy, keys):
                             r.append(note[j])
                             r.append(note[j])
                     else:
-                        # need to change note here
-                        note = list(notes[3])
-                        r.append(note[j])
-                        r.append(note[j])
-                        r.append(note[j])
+                        if k == len(keys)-1:
+                            note = list(notes[keys[k]])
+                        else:
+                            nextk = k
+                            for x in range(k+1, len(keys)):
+                                if x != 0:
+                                    nextk = x
+                                    break    
+                            note = list(notes[keys[nextk+1]])
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
                         
                 angleList.append(r)
                 
@@ -333,7 +347,7 @@ def main(robotIP, PORT=9559):
 
     motionProxy.rest()
     
-    for i in range(10):
+    while True:
         
         taskNumber = int(raw_input("select task:\n\
                                    1: test run\n\
@@ -347,9 +361,9 @@ def main(robotIP, PORT=9559):
             keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
                     5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
                     1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
-            keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
-                    9,10,9,8,7,5,9,10,9,8,7,5,
-                    5,2,5,0,5,2,5,0]        
+#            keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
+#                    9,10,9,8,7,5,9,10,9,8,7,5,
+#                    5,2,5,0,5,2,5,0]        
 
             tts.say("play starts")
 #            ledProxy.randomEyes(2.0)

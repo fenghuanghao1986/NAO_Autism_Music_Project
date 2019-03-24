@@ -8,6 +8,7 @@ Created on Tue Mar  5 16:53:15 2019
 # This is a find notes and hit template 
 # =============================================================================
 import almath
+import random
 import time
 import argparse
 import motion
@@ -18,41 +19,41 @@ from naoqi import ALProxy
 # =============================================================================
 notes = {}
 # Right Arm
-notes[1] = [1.2180380821228027, -0.9189081192016602, 1.514016032218933, 
-             0.6151759624481201, -0.7210218906402588, 0.22960001230239868]
+notes[1] = [1.2180380821228027, -0.8589081192016602, 1.514016032218933, 
+             0.6151759624481201, -0.7210218906402588, 0.22]
 
 # note 2, 3, 4, 5 may have to re-do.
-notes[2] = [1.2257080078125, -0.8038580417633057, 1.5094140768051147, 
-             0.6427879333496094, -0.6719338893890381, 0.22960001230239868]
+notes[2] = [1.2257080078125, -0.7538580417633057, 1.5094140768051147, 
+             0.6427879333496094, -0.6719338893890381, 0.22]
 
-notes[3] = [1.211902141571045, -0.7302260398864746, 1.515550136566162, 
-             0.7056820392608643, -0.6980118751525879, 0.22960001230239868]
+notes[3] = [1.2011637687683105, -0.6551759624481201, 1.5078800916671753, 
+             0.7563040256500244, -0.7609059810638428, 0.22]
 
-notes[4] = [1.2011637687683105, -0.6151759624481201, 1.5078800916671753, 
-             0.7563040256500244, -0.7609059810638428, 0.22960001230239868]
+notes[4] = [1.2011637687683105, -0.551759624481201, 1.5078800916671753, 
+             0.7563040256500244, -0.7609059810638428, 0.22]
 
 #notes[5] = [1.1029877662658691, -0.49859189987182617, 1.501744031906128, 
-#           0.84527587890625, -0.9971418380737305, 0.23000001907348633]
-notes[5] = [1.182755947113037, -0.48325204849243164, 1.5109480619430542, 
-             0.7977218627929688, -0.8698201179504395, 0.22960001230239868]
+#           0.84527587890625, -0.9971418380737305, 0.22]
+notes[5] = [1.12755947113037, -0.45325204849243164, 1.5109480619430542, 
+             0.7977218627929688, -0.8698201179504395, 0.22]
 # Left Arm
 notes[6] = [0.9480281066894531, 0.3328361511230469, -1.512566089630127, 
-             -0.7669579982757568, 1.2271580696105957, 0.2239999771118164]
+             -0.7669579982757568, 1.2271580696105957, 0.22]
 
 notes[7] = [1.0691561698913574, 0.5491299629211426, -1.4205260276794434, 
-             -0.8053081035614014, 0.9617760181427002, 0.23040002584457397]
+             -0.8053081035614014, 0.9617760181427002, 0.22]
 
 notes[8] = [1.0568840503692627, 0.6581020545959473, -1.4220600128173828, 
-             -0.8252501487731934, 0.9893879890441895, 0.23240000009536743]
+             -0.8252501487731934, 0.9893879890441895, 0.22]
 
 notes[9] = [1.1075060367584229, 0.7684919834136963, -1.4650120735168457, 
-             -0.7915019989013672, 0.8482601642608643, 0.29600000381469727]
+             -0.7915019989013672, 0.8482601642608643, 0.22]
 
 notes[10] = [1.3207321166992188, 0.8283181190490723, -1.679771900177002, 
-             -0.8620660305023193, 0.8682019710540771, 0.22640001773834229]
+             -0.8620660305023193, 0.8682019710540771, 0.22]
 
 notes[11] = [1.3529460430145264, 0.931096076965332, -1.679771900177002, 
-             -0.7500841617584229, 0.7638900279998779, 0.225600004196167]
+             -0.7500841617584229, 0.7638900279998779, 0.22]
 
 # =============================================================================
 # The following function initializes NAO's starting position or resting position
@@ -156,7 +157,7 @@ def userReadyToPlay(motionProxy, postureProxy):
     time.sleep(2.0)
 
 
-def playXylo(motionProxy, keys):
+def playXylo(motionProxy, keys, dt):
             motionProxy.setAngles("RArm", 
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 
@@ -171,7 +172,6 @@ def playXylo(motionProxy, keys):
             names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
                      'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
             # tempo
-            dt = 0.4
             timeList = []
             angleList = []
             for h in range(6):
@@ -192,65 +192,65 @@ def playXylo(motionProxy, keys):
                         note = list(notes[keys[k]])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j]+40*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
                     elif keys[k] == 1:
-                        note = list(notes[8])
+                        note = list(notes[10])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j]+40*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
                     elif keys[k] == 2:
-                        note = list(notes[9])
+                        note = list(notes[11])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j]+40*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
                     elif keys[k] == 3:
-                        note = list(notes[10])
+                        note = list(notes[7])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j]+40*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
                     elif keys[k] == 4:
-                        note = list(notes[11])
+                        note = list(notes[8])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+35*almath.TO_RAD)
+                            l.append(note[j]+40*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
                             l.append(note[j])
                             l.append(note[j])
                     else:
-                        if k == len(keys)-1:
-                            note = list(notes[keys[k]])
-                        else:
+                        note = list(notes[8])
+                        if k != len(keys)-1:
                             nextk = k
                             for x in range(k+1, len(keys)):
-                                if x != 0:
+                                if keys[x] > 5 and keys[x] < 12:
                                     nextk = x
-                                    break    
-                            note = list(notes[keys[nextk+1]])
-                            l.append(note[j])
-                            l.append(note[j])
-                            l.append(note[j])
+                                    break 
+                            if nextk != k:
+                                note = list(notes[keys[nextk]])
+                        l.append(note[j])
+                        l.append(note[j])
+                        l.append(note[j])
                         
                 angleList.append(l)
             
@@ -266,71 +266,71 @@ def playXylo(motionProxy, keys):
             
             for j in range(6):
                 r = []                
-                for k in keys:
+                for k in range(len(keys)):
                             
                     if keys[k] > 0 and keys[k] < 6: 
                         note = list(notes[keys[k]])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j]-40*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
                     elif keys[k] == 8:
-                        note = list(notes[1])
+                        note = list(notes[5])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j]-40*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
                     elif keys[k] == 9:
-                        note = list(notes[2])
+                        note = list(notes[4])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j]-40*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
                     elif keys[k] == 10:
-                        note = list(notes[3])
+                        note = list(notes[1])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j]-40*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
                     elif keys[k] == 11:
-                        note = list(notes[4])
+                        note = list(notes[2])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-45*almath.TO_RAD)
+                            r.append(note[j]-40*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
                             r.append(note[j])
                             r.append(note[j])
                     else:
-                        if k == len(keys)-1:
-                            note = list(notes[keys[k]])
-                        else:
+                        note = list(notes[3])
+                        if k != len(keys)-1:
                             nextk = k
                             for x in range(k+1, len(keys)):
-                                if x != 0:
+                                if keys[x] != 0 and keys[x] > 0 and keys[x] < 6:
                                     nextk = x
-                                    break    
-                            note = list(notes[keys[nextk+1]])
-                            r.append(note[j])
-                            r.append(note[j])
-                            r.append(note[j])
+                                    break
+                            if nextk != k:
+                                note = list(notes[keys[nextk]])
+                        r.append(note[j])
+                        r.append(note[j])
+                        r.append(note[j])
                         
                 angleList.append(r)
                 
@@ -356,21 +356,28 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #       task 3: Start multiple notes play along with color
         if taskNumber == 1:
-                
-#            keys = [0,0,3,0,6,0,0,8,7,0,6,0,0,10,0,9,0,0,7,0,0,6,0,8,7,0,5,0,0,7,0,3,0,1,0,3]
-            keys = [1,1,5,5,6,6,5,0,4,4,3,3 ,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
-#            keys = [5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
+#            dt = 0.4
+#            keys = [0,3,0,6,0,8,7,0,6,0,10,0,9,0,7,0,6,0,8,7,0,5,0,7,0,3,0,1,0,3]
+#            dt = 0.6
+#            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
+#                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
+#                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+#            dt = 0.5
+#            keys = [0,0,5,6,7,5,5,6,7,5,7,8,9,0,7,8,9,0,
 #                    9,10,9,8,7,5,9,10,9,8,7,5,
-#                    5,2,5,0,5,2,5,0]        
+#                    5,2,5,0,5,2,5,0]   
+#            dt = 0.6
+#            keys = [1,3,0,5,7,9,0,2,4,6,0,8,10,11,0,2,5,8,0,4,7,0,11,3,4,0,5,7,8,9,0,1,10]
+            dt = 0.5
+            keys = [6,7,8,9,10,9,8,7,6,0,3,0,6,0,7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,0,
+                    6,7,8,9,10,9,8,7,6,0,3,0,6,0,7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,0]
 
             tts.say("play starts")
 #            ledProxy.randomEyes(2.0)
         
             userInitPosture(motionProxy, postureProxy)
             userReadyToPlay(motionProxy, postureProxy)
-            playXylo(motionProxy, keys)
+            playXylo(motionProxy, keys, dt)
             
             # since for 'R/LArm' has 6 angles invoved, so we have to assign
             # 6 interpolations for each of the joint
@@ -397,10 +404,10 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

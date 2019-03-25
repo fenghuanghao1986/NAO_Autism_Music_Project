@@ -112,7 +112,7 @@ def realPeak(rawPeak):
 # file = r'D:\LabWork\ThesisProject\noteDetection\new_xylo\cc.wav'
 # testing new xylophone sound clip
 # signal not very clear to me, may need think more
-file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Audio_Detection_Part\santa.wav'
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'
 #file = r'C:\Users\fengh\pythonProject\noteDetection\new_xylo\cc.wav'

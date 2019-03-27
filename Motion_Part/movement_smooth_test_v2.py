@@ -212,7 +212,7 @@ def playXylo(motionProxy, keys, dt):
                         note = list(notes[6])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+50*almath.TO_RAD)
+                            l.append(note[j]+60*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -342,7 +342,7 @@ def main(robotIP, PORT=9559):
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     userInitPosture(motionProxy, postureProxy)
 
     motionProxy.rest()
@@ -377,7 +377,7 @@ def main(robotIP, PORT=9559):
             keys = [0,2,1,6,1,0,1,6,1,0,1,6,1,6,5,0,0,2,1,6,1,0,1,6,1,0,1,3,2,1,1,0,0,5,6,3,
                     3,0,3,2,3,0,3,2,3,5,0,3,0,3,3,3,2,2,2,2,2,0,1,3,0,0,0,0,0,2,1,6,1,0,1,6,
                     1,0,1,6,1,6,5,0,0,5,6,3,5,0,5,3,5,0,5,3,2,1,1,0,0,2,1,2,3,2,2,0,2,0,1,6,
-                    2,1,1,6,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,3,2,3,4,0,2,3,5,3,2,0,0,0,
+                    2,1,1,6,1,0,1,1,0,0,0,0,0,0,0,0,4,0,3,0,2,5,5,3,2,3,4,0,2,3,5,3,2,0,0,0,
                     0,5,5,3,2,3,5,0,2,3,5,2,1,0,0,0,0,1,2,3,5,6,5,4,5,3,3,2,2,0,0,0,0,1,2,1,
                     1,0,1,2,0,3,0,5,0,3,0,0,0,5,5,3,2,3,6,0,2,3,5,3,2,0,0,0,0,5,5,3,2,3,5,0,
                     2,3,5,2,1,0,0,0,0,1,2,3,5,6,5,4,5,3,3,2,2,0,0,5,3,0,2,2,0,1,0,0]
@@ -410,7 +410,7 @@ def main(robotIP, PORT=9559):
 #                    5,5,0,3,0,1,1,0,1,0,0,0,0,0,1,1,7,0,5,5,0,0,5,0,5,0,0,0,0,0,0,4,
 #                    4,0,4,3,4,3,4,4,3,1,0,0,0,0,0,0]
 
-            tts.say("play starts")
+#            tts.say("play starts")
 #            ledProxy.randomEyes(2.0)
         
             userInitPosture(motionProxy, postureProxy)
@@ -421,7 +421,7 @@ def main(robotIP, PORT=9559):
             # 6 interpolations for each of the joint
                       
 
-            tts.say("Do you want to try it again?")
+#            tts.say("Do you want to try it again?")
             userReadyToPlay(motionProxy, postureProxy)
             userInitPosture(motionProxy,postureProxy)
             motionProxy.rest()   

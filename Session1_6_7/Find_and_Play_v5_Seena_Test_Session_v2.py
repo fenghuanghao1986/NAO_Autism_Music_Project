@@ -372,7 +372,7 @@ def main(robotIP, PORT=9559):
 #           Intro to entire session
             tts.say("Hello, my friend!")
             time.sleep(0.5)
-            tts.say("Welcome to NAO music party!")
+            tts.say("Welcome back to NAO music party!")
             time.sleep(1.0)
             tts.say("Today, we are going to play a lovely song!")
             ledProxy.randomEyes(2.0)
@@ -393,12 +393,15 @@ def main(robotIP, PORT=9559):
             userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
-            time.sleep(1.0)
-            tts.say("Yes, it is the the most popular Twinkle Twinkle!")
+            time.sleep(3.0)
+            tts.say("Yes, it is the the most popular Twinkle Twinkle Little Star!")
             time.sleep(1.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
-            time.sleep(1.0)
+            time.sleep(3.0)
+            tts.say("Do you want me to play another one?")
+            if int(raw_input("1 for play new song, 2 for no:")):
+                
             tts.say("Great! Let me tell you how to play this song")
             
 # =============================================================================

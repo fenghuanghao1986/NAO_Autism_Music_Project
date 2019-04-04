@@ -355,6 +355,7 @@ def main(robotIP, PORT=9559):
     for i in range(1000):
         
         taskNumber = int(raw_input("select task:\n\
+                                   0: intro\n\
                                    1: single note play\n\
                                    2: single note with color\n\
                                    3: multiple notes with color\n\
@@ -364,7 +365,8 @@ def main(robotIP, PORT=9559):
                                    7: take break\n\
                                    8: free play\n\
                                    9: end session\n\
-                                   0: intro\n\
+                                   10: ask robot show again\n\
+                                   11: robot ask kid try it again\n\
                                    please make selection: "))
         
 # =============================================================================
@@ -399,10 +401,10 @@ def main(robotIP, PORT=9559):
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
             time.sleep(3.0)
-            tts.say("Do you want me to play another one?")
+            tts.say("Do you want to hear another one?")
             if int(raw_input("1 for play new song, 2 for no:")):
                 
-            tts.say("Great! Let me tell you how to play this song")
+                tts.say("Great! Let me tell you how to play this song")
             
 # =============================================================================
 # =============================================================================
@@ -428,9 +430,7 @@ def main(robotIP, PORT=9559):
             time.sleep(1.0)
             tts.say("I want you to pick them up, \
                     and use one of them to play that note.")
-            time.sleep(5.0)
-            # may have to create a if condition depending on user's response
-            tts.say("Do you want to try this again?")
+
         
 # =============================================================================
 #       task 2: Start single note play along with color  
@@ -464,8 +464,7 @@ def main(robotIP, PORT=9559):
             userInitPosture(motionProxy,postureProxy)
             tts.say("Now, it is your turn to play the green bar!")
             tts.say("And try to use your left hand to do this.")
-            time.sleep(5.0)
-            tts.say("Do you want to try this again?")
+
         
 # =============================================================================
 #       task 3: Start multiple notes play along with color
@@ -523,9 +522,7 @@ def main(robotIP, PORT=9559):
             tts.say("Did you get it?")
             time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
-            time.sleep(20.0)
-            tts.say("Do you want to try it again?")
-        
+
 # =============================================================================
 #       task 5: Start play whole song 
 #       second half song 
@@ -549,8 +546,6 @@ def main(robotIP, PORT=9559):
             tts.say("Did you get it?")
             time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
-            time.sleep(20.0)
-            tts.say("Do you want to try it again?")
 
 # =============================================================================
 #       task 6: play the whole song
@@ -574,9 +569,7 @@ def main(robotIP, PORT=9559):
             userInitPosture(motionProxy,postureProxy)
             tts.say("Did you get it?")
             time.sleep(1.0)
-            tts.say("Now, it is your turn to play.")
-            time.sleep(20.0)
-            tts.say("Do you want to try it again?")            
+            tts.say("Now, it is your turn to play.")      
 
 # =============================================================================
 #       task 7: take a break for 180 seconds      
@@ -600,7 +593,7 @@ def main(robotIP, PORT=9559):
 #       task 8: free play
         elif taskNumber == 8:
             
-            tts.say("We are done learning Harry Potter song today.")
+            tts.say("We are done with practice today.")
             time.sleep(1.0)
             tts.say("Feel free to stay and play whatever song you may like.")
             time.sleep(1.0)
@@ -613,6 +606,15 @@ def main(robotIP, PORT=9559):
             break
         
 #       other typo or mistakes
+            
+        elif taskNumber == 10:
+            tts.say("Do you want me to show you again?")
+            motionProxy.rest()
+            
+        elif taskNumber == 11:
+            tts.say("It looks like you may need want to try it again.")
+            
+        elif taskNumber == 
         else:
             continue
         

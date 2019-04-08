@@ -17,7 +17,7 @@ from naoqi import ALProxy
 # these notes is for temp use, later have to save them in one file and import
 # =============================================================================
 notes = {}
-notes = {}
+
 # Right Arm
 notes[1] = [1.2180380821228027, -0.8589081192016602, 1.514016032218933, 
              0.6151759624481201, -0.7210218906402588, 0.22]

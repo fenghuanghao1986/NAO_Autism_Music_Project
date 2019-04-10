@@ -12,7 +12,7 @@ class SSHConnection(object):
     """"""
  
     #----------------------------------------------------------------------
-    def __init__(self, host, username, password, port=9559):
+    def __init__(self, host, username, password, port=22):
         """Initialize and setup connection"""
         self.sftp = None
         self.sftp_open = False
@@ -58,13 +58,13 @@ class SSHConnection(object):
         self.transport.close()
  
 if __name__ == "__main__":
-    host = "192.168.0.3"
+    host = "192.168.0.2"
     username = "nao"
     pw = "nao"
- 
-    origin = '/home/mld/projects/ssh/random_file.txt'
-    dst = '/home/mdriscoll/random_file.txt'
+    
+    origin = '/home/nao/test.txt'
+#    dst = '/home/mdriscoll/random_file.txt'
  
     ssh = SSHConnection(host, username, pw)
-    ssh.put(origin, dst)
+#    ssh.put(origin, dst)
     ssh.close()

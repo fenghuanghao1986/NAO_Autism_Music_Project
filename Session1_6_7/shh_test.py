@@ -63,7 +63,7 @@ if __name__ == "__main__":
     pw = "nao"
     
     origin = '/home/nao/test.txt'
-    dst = r'C:\Users\fengh\Desktop\random_file.txt'
+    dst = r'C:\Users\fengh\Desktop\record.txt'
  
     ssh = SSHConnection(host, username, pw)
     ssh.get(origin, dst)

@@ -7,12 +7,17 @@ Created on Tue Mar  5 16:53:15 2019
 # =============================================================================
 # This is a find notes and hit template 
 # =============================================================================
-import almath
+#import almath
 import time
 import argparse
-import motion
+#import motion
 import Positions
+import ssh
+import numpy as np
+import recordplay
+import stft
 from naoqi import ALProxy
+from scipy.io import wavfile as wav
 
 
 # 
@@ -46,6 +51,8 @@ def main(robotIP, PORT=9559):
                                    10: ask robot show again\n\
                                    11: well done move on next one\n\
                                    12: robot ask kid try it again\n\
+                                   13: start record and play back\n\
+                                   14: ssh, process and send feedback\n\
                                    please make selection: "))
         
 # =============================================================================
@@ -171,7 +178,6 @@ def main(robotIP, PORT=9559):
             tts.say("I just played three notes, can you repeat them for me? \
                     make sure you followed by the proper color order\
                     for example green, gray, blue.")
-            time.sleep(5.0)
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
 
@@ -310,6 +316,44 @@ def main(robotIP, PORT=9559):
                     please try it again. I am listening.")
             motionProxy.rest()
             
+        elif taskNumber == 13:
+            
+            recordplay.record(robotIP, PORT, t=5)
+            recordplay.playBack(robotIP, PORT)
+            
+        elif taskNumber == 14:
+            
+            host = "192.168.0.6"
+            username = "nao"
+            pw = "nao"
+            
+            origin = '/home/nao/test.wav'
+            dst = r'C:\Users\fengh\Desktop\record.wav'
+         
+            sshFile = ssh("SSHConnection", host, username, pw)
+            sshFile.get(origin, dst)
+            sshFile.close()
+            
+        #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
+            sampleRate, data = wav.read(dst)
+            N = len(data)
+            Nwin = 2048
+            xx = data[:, 0]
+            
+            low = 1040
+            high = 2800
+            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
+            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
+            totleTime = np.arange(N) / sampleRate  # seconds
+        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+        
+            # Test with Nfft bigger than Nwin
+            Nfft = Nwin * 2
+            s = np.abs(stft.stft(x, Nwin))
+            y = stft.istft(s, Nwin)
+            peaks = stft.findNotes(s, sampleRate/2)
+            realPeaks = stft.realPeak(peaks)
+            
         else:
             continue
         
@@ -319,8 +363,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
-#    parser.add_argument("--ip", type=str, default="127.0.0.1",
-#                        help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 

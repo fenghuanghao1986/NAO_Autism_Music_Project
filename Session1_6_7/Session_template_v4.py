@@ -18,8 +18,6 @@ import recordplay
 import stft
 from naoqi import ALProxy
 from scipy.io import wavfile as wav
-
-
 # 
 # =============================================================================
 def main(robotIP, PORT=9559):

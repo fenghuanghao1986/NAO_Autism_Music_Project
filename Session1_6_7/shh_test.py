@@ -58,12 +58,12 @@ class SSHConnection(object):
         self.transport.close()
  
 if __name__ == "__main__":
-    host = "192.168.0.3"
+    host = "192.168.0.6"
     username = "nao"
     pw = "nao"
     
-    origin = '/home/nao/test.txt'
-    dst = r'C:\Users\fengh\Desktop\record.txt'
+    origin = '/home/nao/test.wav'
+    dst = r'C:\Users\fengh\Desktop\record.wav'
  
     ssh = SSHConnection(host, username, pw)
     ssh.get(origin, dst)

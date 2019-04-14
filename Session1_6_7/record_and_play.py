@@ -24,21 +24,21 @@ from naoqi import ALProxy
 #  const std::string pIp = argv[1];
 
 def main(robotIP, PORT):
-    recordProxy = ALProxy("ALAudioRecorderProxy", robotIP, PORT)
+    recordProxy = ALProxy("ALAudioDevice", robotIP, PORT)
     #  AL::ALAudioRecorderProxy proxy(pIp);
     
     #  /// Configures the channels that need to be recorded.
-    channelsProxy = ALProxy("ALValue", robotIP, PORT)
-    #  AL::ALValue channels;
-    channelsProxy.arrayPush(0); #//Left
-    channelsProxy.arrayPush(0); #//Right
-    channelsProxy.arrayPush(1); #//Front
-    channelsProxy.arrayPush(0); #//Rear
+#    channelsProxy = ALProxy("ALValue", robotIP, PORT)
+#    #  AL::ALValue channels;
+#    channelsProxy.arrayPush(0); #//Left
+#    channelsProxy.arrayPush(0); #//Right
+#    channelsProxy.arrayPush(1); #//Front
+#    channelsProxy.arrayPush(0); #//Rear
     
     #  /// Starts the recording of NAO's front microphone at 24000Hz
     #  /// in the specified wav file
-    recordProxy.startMicrophonesRecording("/home/nao/test.wav", "wav", 24000, channelsProxy);
-    
+    recordProxy.startMicrophonesRecording("/home/nao/test.wav");
+    print("recording")
     time.sleep(10);
     
     #  /// Stops the recording and close the file after 10 seconds.
@@ -70,7 +70,7 @@ def main(robotIP, PORT):
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="192.168.0.6",
                         help="Robot ip address")
 #    parser.add_argument("--ip", type=str, default="127.0.0.1",
 #                        help="Robot ip address")

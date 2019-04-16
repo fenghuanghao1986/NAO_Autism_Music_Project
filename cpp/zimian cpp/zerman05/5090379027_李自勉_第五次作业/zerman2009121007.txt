@@ -1,0 +1,28 @@
+
+	
+//F0903701 5090379027 李自勉
+//题号:7
+//要求:函数
+#include<iostream>
+#include<cmath>
+using namespace std;
+void calarea(double a,double b,double c,double& area,double& perimeter);
+int main()
+{
+	double a,b,c;
+	double area,p;
+	cout<<"Please input the lengths of the triangle"<<endl;
+	cin>>a>>b>>c;
+	if((abs(a-b)<c)&&((a+b)>c))
+		calarea(a,b,c,area,p);
+	else
+		cerr<<"The lengths are not suitable"<<endl;
+	return 0;
+}
+
+void calarea(double a,double b,double c,double& area,double& perimeter)
+{
+	perimeter=(a+b+c);
+	area=sqrt((perimeter/2)*(perimeter/2-a)*(perimeter/2-b)*(perimeter/2-c));
+	cout<<"The area of the triangle is "<<area<<endl;
+}

@@ -1,0 +1,128 @@
+//F0903701 5090379027 李自勉
+//题号:5
+//要求:main函数
+#include<iostream>
+using namespace std;
+int main(int argc,char *argv[]){
+	for(int i=1;i<argc;++i){
+		char *pchar1=argv[i];
+		char *pchar2=argv[i+1];
+		char *pchar3=argv[i+2];
+	switch(pchar1[2]){
+		case 'a':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,max=0;
+				while(cin>>x)
+				{
+					if(x>max)
+						max=x;
+				}
+				cout<<"The max number is "<<max<<endl;
+			}
+		break;
+		case 'i':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,min=0;
+				while(cin>>x)
+				{
+					if(x<min)
+						min=x;
+				}
+				cout<<"The min number is "<<min<<endl;
+			}
+		break;
+		case 'v':
+			{
+				cout<<"Please input somr numbers"<<endl;
+				int x,sum=0,num=0;
+				while(cin>>x)
+				{
+					sum=sum+x;
+					num=num+1;
+				}
+				cout<<"The average number is "<<(sum/num)<<endl;
+			}
+		break;
+	}
+	switch(pchar2[2]){
+		case 'a':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,max=0;
+				while(cin>>x)
+				{
+					if(x>max)
+						max=x;
+				}
+				cout<<"The max number is "<<max<<endl;
+			}
+		break;
+		case 'i':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,min=0;
+				while(cin>>x)
+				{
+					if(x<min)
+						min=x;
+				}
+				cout<<"The min number is "<<min<<endl;
+			}
+		break;
+		case 'v':
+			{
+				cout<<"Please input somr numbers"<<endl;
+				int x,sum=0,num=0;
+				while(cin>>x)
+				{
+					sum=sum+x;
+					num=num+1;
+				}
+				cout<<"The average number is "<<(sum/num)<<endl;
+			}
+		break;
+	}
+	switch(pchar3[2]){
+		case 'a':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,max=0;
+				while(cin>>x)
+				{
+					if(x>max)
+						max=x;
+				}
+				cout<<"The max number is "<<max<<endl;
+			}
+		break;
+		case 'i':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,min=0;
+				while(cin>>x)
+				{
+					if(x<min)
+						min=x;
+				}
+				cout<<"The min number is "<<min<<endl;
+			}
+		break;
+		case 'v':
+			{
+				cout<<"Please input somr numbers"<<endl;
+				int x,sum=0,num=0;
+				while(cin>>x)
+				{
+					sum=sum+x;
+					num=num+1;
+				}
+				cout<<"The average number is "<<(sum/num)<<endl;
+			}
+		break;
+	}
+	return 0;
+	}
+}
+

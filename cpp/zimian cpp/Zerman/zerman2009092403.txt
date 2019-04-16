@@ -1,0 +1,35 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：3
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	char a,d,e,g,h,m,o;
+	int b,c,x,f,i,j;
+	double k,l,n;
+	cin>>a
+		>>b
+		>>c>>d
+		>>x>>e
+		>>f>>g>>h
+		>>oct>>i
+		>>hex>>j
+		>>k
+		>>l>>m
+		>>n>>o;
+	cout<<a<<endl
+		<<b<<endl
+		<<c<<endl
+		<<x<<endl
+		<<f<<endl
+		<<i<<endl
+		<<j<<endl
+		<<k<<endl
+		<<l<<endl
+		<<n<<endl;
+
+	
+	return 0;
+}

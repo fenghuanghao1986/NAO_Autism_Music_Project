@@ -1,0 +1,17 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：6
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	double Pi=3.14159,r,C,S;
+	cout<<"半径是多少？\n";
+	cin>>r;
+    C=Pi*(2*r);
+	S=Pi*(r*r);
+	cout<<"周长是"<<C<<"\n"<<"面积是"<<S<<"\n";
+    system("pause");
+	return 0;
+}

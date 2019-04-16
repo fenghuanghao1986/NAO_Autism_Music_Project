@@ -1,0 +1,99 @@
+//F0903701 5090379027 李自勉
+
+//题号:6
+
+//要求:函数
+
+#include<iostream>
+
+using namespace std;
+
+void input(int& hour,int& minute);
+
+void trans(int& hour,int& minute,char& notation);
+
+void output(int hour,int minute,char notation);
+
+
+int main()
+
+{
+	char answer='y';
+
+	while(answer=='y')
+
+	{
+		
+		cout<<"Do you want to have a transform of time? (y or n)"<<endl;
+		
+		cin>>answer;
+		
+		if(answer=='n')
+			
+		return 0;
+	
+		int hour,minute;
+	
+		char notation=0;
+	
+		input(hour,minute);
+	
+		trans(hour,minute,notation);
+	
+		output(hour,minute,notation);
+	
+	}
+	
+	return 0;
+	
+}
+
+
+
+void input(int& hour,int& minute)
+
+{
+
+	cout<<"Please input the time in 24-hour notation"<<endl;
+
+	cin>>hour>>minute;
+
+}
+
+
+
+void trans(int& hour,int& minute,char& notation)
+
+{
+
+	if(hour>12)
+	
+	{
+		
+		hour=hour-12;
+		
+		notation='P';
+	
+	}
+	
+	else
+	
+	notation='A';
+
+}
+
+
+
+void output(int hour,int minute,char notation)
+
+{
+
+	if(notation=='P')
+
+		cout<<"The result is "<<hour<<":"<<minute<<" P.M."<<endl;
+
+	else
+
+		cout<<"The result is "<<hour<<":"<<minute<<" A.M."<<endl;
+
+}

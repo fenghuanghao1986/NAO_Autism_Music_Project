@@ -1,0 +1,15 @@
+//F0903701 50903790227 李自勉
+//题目序号：1
+//要求：简单控制
+#include<iostream>
+using namespace std;
+int main()
+{  float a;
+cout<<"Please input a number.\n";
+cin>>a;
+if (a>=0)//判断a的正负
+cout<<a<<endl;
+else
+cout<<(-a)<<endl;
+return 0;
+}

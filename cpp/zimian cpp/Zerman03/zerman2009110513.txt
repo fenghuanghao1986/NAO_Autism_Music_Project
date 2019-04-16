@@ -1,0 +1,19 @@
+//F0903701 5090379027 李自勉
+//题号:13
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{double a,b,c,d;
+cout<<"请输入该项开支，持续年数，通货膨胀率"<<endl;
+cin>>a;
+cin>>b;
+cin>>c;
+c=c/100;
+d=a;
+for(int i=1;i<=b;i++)
+{d=d*b*(1+c);}
+cout<<"估计支出为"<<d<<endl;
+
+return 0;
+}

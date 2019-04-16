@@ -1,0 +1,28 @@
+//F0903701 5090379027 李自勉
+//题号：12
+//要求：数组
+#include<iostream>
+using namespace std;
+int main()
+{int a[5];
+int i=0,k=0,j=0,max;
+cout<<"input five intergers"<<endl;
+cin>>a[0]>>a[1]>>a[2]>>a[3]>>a[4];
+
+while(i<5)
+{a[i]=a[i]*2;//乘2
+cout<<a[i]<<" ";
+i++;}
+cout<<endl;
+
+for(k=4;k>=0;k--)//倒序
+cout<<a[k]<<" ";
+cout<<endl;
+
+max=a[0];
+for(j=0;j<5;j++)//取最大值
+{if(a[j]>max)
+max=a[j];}
+cout<<"max="<<max<<endl;
+return 0;
+}

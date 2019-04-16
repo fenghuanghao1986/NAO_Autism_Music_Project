@@ -1,0 +1,24 @@
+//F0903701 5090379027 李自勉
+//题号:3
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{ int x,i=0,m=0,n=0,z=0;
+while(cin>>x)
+{i++;
+if(x>0)
+m=m+1;
+else if(x==0)
+z=z+1;
+else 
+n=n+1;
+}
+if(n>0)
+cout<<"存在负数，其个数为"<<n<<endl;
+cout<<"输入数字个数为"<<i<<endl
+<<"正数个数为"<<m<<endl
+<<"0的个数为"<<z<<endl;
+
+return 0;
+}

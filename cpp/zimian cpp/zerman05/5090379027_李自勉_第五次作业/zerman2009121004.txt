@@ -1,0 +1,95 @@
+//F0903701 5090379027 李自勉
+//题号:4
+//要求:main函数
+#include<iostream>
+using namespace std;
+int main(int argc,char *argv[]){
+	for(int i=1;i<argc;++i){
+		char *pchar=argv[i];
+	switch(pchar[2]){
+		case 'a':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,max=0;
+				while(cin>>x)
+				{
+					if(x>max)
+						max=x;
+				}
+				cout<<"The max number is "<<max<<endl;
+			}
+		break;
+		case 'i':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,min=0;
+				while(cin>>x)
+				{
+					if(x<min)
+						min=x;
+				}
+				cout<<"The min number is "<<min<<endl;
+			}
+		break;
+		case 'v':
+			{
+				cout<<"Please input somr numbers"<<endl;
+				int x,sum=0,num=0;
+				while(cin>>x)
+				{
+					sum=sum+x;
+					num=num+1;
+				}
+				cout<<"The average number is "<<(sum/num)<<endl;
+			}
+		break;
+		case ' ':
+			{
+		pchar=argv[i+1];
+		switch(pchar[2]){
+		case 'a':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,max=0;
+				while(cin>>x)
+				{
+					if(x>max)
+						max=x;
+				}
+				cout<<"The max number is "<<max<<endl;
+			}
+		break;
+		case 'i':
+			{
+				cout<<"Please input some numbers"<<endl;
+				int x,min=0;
+				while(cin>>x)
+				{
+					if(x<min)
+						min=x;
+				}
+				cout<<"The min number is "<<min<<endl;
+			}
+		break;
+		case 'v':
+			{
+				cout<<"Please input somr numbers"<<endl;
+				int x,sum=0,num=0;
+				while(cin>>x)
+				{
+					sum=sum+x;
+					num=num+1;
+				}
+				cout<<"The average number is "<<(sum/num)<<endl;
+			}
+		break;
+	}
+			}
+	break;
+		case 'm':
+		cerr<<"What you input is WRONG"<<endl;
+		break;
+	return 0;
+	}
+	}
+}

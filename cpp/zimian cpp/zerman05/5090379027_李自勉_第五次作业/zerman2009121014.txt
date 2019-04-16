@@ -1,0 +1,44 @@
+//F0903701 5090379027 李自勉
+//题号:14
+//要求:域和生命周期
+
+//(1)
+int ix = 1024;               //全局
+int ix();                    //全局
+void func( int ix, int iy ) {
+	int ix = 255;			//函数内部
+	if ( int ix = 0 ) {		//if语句中
+		int ix = 79;        //错误，重定义
+		{
+		int ix = 89;		//错误，重定义
+		}
+	}
+	else {
+			int ix = 99;	//错误，重定义
+	}
+}	
+
+//(2)
+int ix = 1024;
+void func( int ix, int iy ) {
+	ix = 100;
+	for( int iy = 0 ; iy < 400; iy += 100 ) {
+		iy += 100;	//引用于for语句内
+	ix = 300;       //引用于函数声明
+	}
+	iy = 400;		//引用于函数声明
+}
+
+//(3)
+(a) extern int ix = 1024;           //定义
+(b) int iy;							//声明
+(c) extern void reset( void *p ) { /* ... */ }//定义
+(d) extern const int *pi;			//声明
+(e) void print( const matrix & );	//声明
+
+//(4)
+(a) int var;				//程序文件
+(b) inline bool is_equal( const SmallInt &, const SmallInt & ) { }//头文件
+(c) void putValues( int *arr, int size );//头文件
+(d) const double pi = 3.1416;//头文件
+(e) extern int total = 255;//头文件

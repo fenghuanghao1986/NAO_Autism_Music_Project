@@ -1,0 +1,33 @@
+//F0903701 5090379027 李自勉
+//题号：9
+//要求：引用与指针
+#include<iostream>
+using namespace std;
+int main()
+{ int a[5];
+int *p;
+int i=0,k=0,j=0,max;
+cout<<"input five intergers"<<endl;
+cin>>a[0]>>a[1]>>a[2]>>a[3]>>a[4];
+p=&a[0];
+
+while(i<5)//将所有元素乘2
+{a[i]=*p*2;
+cout<<*p<<" ";
+p=p+1;
+i++;}
+cout<<endl;
+
+p=p-1;
+for(k=0;k<5;k++)//倒序
+{cout<<*p<<" ";
+p=p-1;}
+cout<<endl;
+
+max=a[0];
+for(j=0;j<5;j++)//取最大值
+{if(a[j]>max)
+max=a[j];}
+cout<<"max="<<max<<endl;
+return 0;
+}

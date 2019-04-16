@@ -1,0 +1,20 @@
+//F0903701 5090379027 李自勉
+//题号：11
+//要求：考查枚举类型
+#include<iostream>
+using namespace std;
+int main()
+{ typedef enum{greater_than=0,equal_to=1,less_than=2};
+ cout<<"Please input two integers"<<endl;
+ int x,y;
+ cin>>x>>y;
+ if(x>y)                   //判断大小，输出相应关系所代表的数字
+	 cout<<greater_than;
+ else if(x==y)
+	 cout<<equal_to;
+ else
+	 cout<<less_than;
+	
+   return 0;
+
+}

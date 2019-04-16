@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+//题号:11
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{long sum=0;
+int a=1;
+for(int i=1;i<13;i++)
+{for(int j=i;j>0;j--)//求阶乘
+a=a*j;
+sum=sum+a;//求和
+}
+cout<<sum<<endl;
+return 0;
+}

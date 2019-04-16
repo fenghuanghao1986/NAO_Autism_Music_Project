@@ -1,0 +1,19 @@
+//F0903701 5090379027 李自勉
+//题号：15
+//要求：表达式
+#include<iostream>
+using namespace std;
+int main()
+{int x,y;
+cout<<"Please input two integers"<<endl;
+cin>>x>>y;
+cout<<"x+y="<<(x+y)<<endl
+    <<"x-y="<<(x-y)<<endl
+	<<"x*y="<<(x*y)<<endl;
+if(y!=0)
+cout<<"x/y="<<(x/y)<<endl
+    <<"x%y="<<(x%y)<<endl;
+else
+cout<<"Error!"<<endl;
+return 0;
+}

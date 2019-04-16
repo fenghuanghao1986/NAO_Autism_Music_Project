@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+//题号:10
+//要求:数组
+#include<iostream>
+using namespace std;
+int main()
+{int a[9][9];
+for(int i=1;i<10;i++)
+{for(int j=1;j<10;j++)
+{a[i-1][j-1]=i*j;
+cout<<i<<"*"<<j<<"="<<a[i-1][j-1]<<" ";
+}
+cout<<endl;
+}
+return 0;
+}

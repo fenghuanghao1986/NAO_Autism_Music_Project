@@ -1,0 +1,38 @@
+//F0903701 5090379027 李自勉
+//题号:14
+//要求:函数
+#include<iostream>
+#include<cmath>
+using namespace std;
+double stanDev(int s1,int s2,int s3,int s4);
+double a(int s1,int s2,int s3,int s4);
+double squ(int s);
+
+int main()
+{
+	int s1,s2,s3,s4;
+	double stdv;
+	while(cin>>s1>>s2>>s3>>s4)
+	{
+		stdv=stanDev(s1,s2,s3,s4);
+		cout<<stdv<<endl;
+	}
+
+return 0;
+}
+
+
+double a(int s1,int s2,int s3,int s4)
+{
+	return (s1+s2+s3+s4)/4;
+}
+
+double squ(int s,int s1,int s2,int s3,int s4)
+{
+	return (s-a(s1,s2,s3,s4))*(s-a(s1,s2,s3,s4));
+}
+
+double stanDev(int s1,int s2,int s3,int s4)
+{
+	return sqrt((squ(s1,s1,s2,s3,s4)+squ(s2,s1,s2,s3,s4)+squ(s3,s1,s2,s3,s4)+squ(s4,s1,s2,s3,s4))/4);
+}

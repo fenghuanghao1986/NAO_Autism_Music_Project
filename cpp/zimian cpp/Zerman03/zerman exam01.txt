@@ -1,0 +1,91 @@
+//F0903701 5090379027 李自勉
+#include<iostream>
+using namespace std;
+int main()
+{
+	int T1[4][4];
+    int T2[4][4];
+	int T0[30];
+	int T[4][4];
+	int x;
+	int i=0;
+	int j=0,k=0,m=0,n=0;
+	int a=0,b=0,c=0;
+	cout<<"Please input a sequence of numbers:"<<endl;
+    while(cin>>x)
+	{
+		T0[i]=x;
+        i++;
+	}
+
+	cout<<"You just inputted "<<i<<" numbers!"<<endl;
+   for(j=0;j<4;j++)
+   {
+	   for(m=0;m<4;m++)
+	   {
+		   T2[j][m]=T0[i-1];
+           i--;
+	   }
+   }
+   
+   i=0;                    //从输入最后一个值开始，给T2赋值
+   for(k=0;k<4;k++)
+   {
+	   for(n=0;n<4;n++)
+	   {
+	      T1[k][n]=T0[i];
+	      i++;
+	   }
+   }
+   
+   cout<<"T1="<<endl;
+   for(k=0;k<4;k++)
+   {
+	   for(n=0;n<4;n++)
+	   {
+		   cout<<"     "<<T1[k][n];
+	   }
+	   cout<<endl;
+   }
+   
+   cout<<"T2="<<endl;
+   for(j=0;j<4;j++)
+   {
+	   for(m=0;m<4;m++)
+	   {
+		   cout<<"     "<<T2[j][m];
+	   }
+	   cout<<endl;
+   }
+   
+   for(a=0;a<4;a++)           //将T矩阵的每一个元素都初始化为零，为了下面的累加操作
+   {
+	   for(b=0;b<4;b++)
+	   {
+		   T[a][b]=0;
+	   }
+   }
+   
+   for(a=0;a<4;a++)
+   {
+	   for(b=0;b<4;b++)
+	   {   
+		   for(k=0;k<4;k++)
+		   {
+			   T[a][b]=T[a][b]+T1[a][k]*T2[k][b];
+		   }
+	   }
+   }
+   
+   cout<<"T=T1*T2="<<endl;
+   for(a=0;a<4;a++)
+   {
+	   for(b=0;b<4;b++)
+	   {
+		   cout<<"     "<<T[a][b];
+	   }
+	   cout<<endl;
+   }
+
+return 0;
+}

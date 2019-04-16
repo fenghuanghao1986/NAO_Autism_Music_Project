@@ -1,0 +1,9 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：9(2)
+*要求是:
+*/
+
+	int count=0;
+	int count(0);
+	double distance=1.5;
+	double distance(1.5);

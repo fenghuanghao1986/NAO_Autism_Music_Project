@@ -1,0 +1,43 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：15
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+  const double sph=16.78,n=1.5;
+  int hour,number;
+  double grossIncome,netIncome,pay;
+  cout<<"请输入每周工作小时数和全家人数"<<endl;
+  cin>>hour>>number;
+  if((hour<=40)&&(number<3))
+  {grossIncome=sph*hour;
+   pay=0.25*grossIncome+10;
+   netIncome=grossIncome-pay;
+   cout<<"毛收入为"<<grossIncome<<endl
+	   <<"应支付的款项为"<<pay<<endl
+	   <<"一周的净收入为"<<netIncome<<endl;
+  }else if((hour<=40)&&(number>=3))
+   {grossIncome=sph*hour;
+    pay=0.25*grossIncome+45;
+    netIncome=grossIncome-pay;
+    cout<<"毛收入为"<<grossIncome<<endl
+	   <<"应支付的款项为"<<pay<<endl
+	   <<"一周的净收入为"<<netIncome<<endl;
+  }else if((hour>40)&&(number<3))
+    {grossIncome=sph*40+sph*n*(hour-40);
+   pay=0.25*grossIncome+10;
+   netIncome=grossIncome-pay;
+   cout<<"毛收入为"<<grossIncome<<endl
+	   <<"应支付的款项为"<<pay<<endl
+	   <<"一周的净收入为"<<netIncome<<endl;
+  }else
+    {grossIncome=sph*40+sph*n*(hour-40);
+   pay=0.25*grossIncome+45;
+   netIncome=grossIncome-pay;
+   cout<<"毛收入为"<<grossIncome<<endl
+	   <<"应支付的款项为"<<pay<<endl
+	   <<"一周的净收入为"<<netIncome<<endl;
+  }
+}

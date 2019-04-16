@@ -1,0 +1,18 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：10
+*要求是:
+*/
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	double mass,a=35273.92;
+	cout<<"What's the ounces?\n";
+    cin>>mass;
+	mass=mass/a;
+	cout<<mass<<"\n";
+    cout<<ceil(1/mass);
+	system("pause");
+	
+}

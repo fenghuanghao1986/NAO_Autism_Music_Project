@@ -1,0 +1,62 @@
+//F0903701 5090379027 李自勉
+//题号:12
+//要求:数组
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a[50];
+	int b[50];
+	int c[50];
+	int size=0;
+	int count=1;
+	cout<<"Please input some numbers"<<endl;
+	while(cin>>a[size])
+		size++;
+	for(int i=0;i<size;i++)
+	{
+		for(int j=i+1;j<size;j++)
+		{
+			if(a[i]==a[j])
+			{
+				b[i]=a[i];
+				for(int k=j;k<size;k++)
+				{
+					a[k]=a[k+1];
+					count=count+1;
+					c[i]=count;
+				}
+				size=size-1;
+			}
+			else
+			{
+				b[i]=a[i];
+				c[i]=1;
+			}
+			count=1;
+		}
+	}
+	int temp1,temp2;
+	for(int j=0;j<size;j++)
+	{
+		static int max;
+		max=b[j];
+		for(int i=j;i<size;i++)
+		{
+			if(b[i]>max)
+			{
+				max=b[i];
+				temp1=b[i];
+				b[i]=b[j];
+				b[j]=temp1;
+				temp2=c[i];
+				c[i]=c[j];
+				c[j]=temp2;
+			}
+		}
+	}
+	cout<<"N"<<"\t"<<"Count"<<"\t"<<endl;
+	for(int i=0;i<size;i++)
+		cout<<b[i]<<"\t"<<c[i]<<"\t"<<endl;
+	return 0;
+}

@@ -1,0 +1,46 @@
+//F0903701 5090379027 李自勉
+//题号:9
+//要求:数组
+#include<iostream>
+using namespace std;
+int main()
+{
+	int average[12],actual[12];
+	int index;
+	cout<<"Please input the average monthly rainfall of the city in a year"<<endl;
+	for(int i=0;i<12;i++) cin>>average[i];
+	cout<<"What the month is now?"<<endl;
+	cin>>index;
+	cout<<"Please input the actual monthly rainfall of the city in the previous 12 months"<<endl;
+	for(int i=index;i<12;i++) cin>>actual[i];
+	for(int i=0;i<index;i++)  cin>>actual[i];
+	char answer='y';
+	while(answer=='y')
+	{
+		int choose;
+		cout<<"Which one do you choose?"<<endl<<"1.table"<<endl<<"2.bar graph"<<endl;
+		cin>>choose;
+		if(choose==1)
+		{
+			cout<<"MONTH"<<"\t"<<"AVERAGE"<<"\t"<<"ACTUAL"<<"\t"<<"BALANCE"<<"\t"<<endl;
+			for(int i=0;i<12;i++)
+				cout<<i+1<<"\t"<<average[i]<<"\t"<<actual[i]<<"\t"<<(actual[i]-average[i])<<"\t"<<endl;
+		}
+		else if(choose==2)
+		{
+			for(int i=0;i<12;i++)
+			{
+				cout<<"MONTH"<<i+1<<"\t";
+				cout<<"AVERAGE"<<"\t";
+				for(int n=0;n<(average[i]/30);n++)  cout<<"*";
+				cout<<"\t"<<endl;
+				cout<<"        ACTUAL"<<"\t";                 //空格是为了使字符对齐
+				for(int n=0;n<(actual[i]/30);n++)   cout<<"*";
+				cout<<"\t"<<endl;
+			}
+		}
+		cout<<"Do you want to continue?(y or n)"<<endl;
+		cin>>answer;
+	}
+		return 0;
+}

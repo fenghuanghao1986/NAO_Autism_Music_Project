@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：16
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+   char a;
+   cout<<"please input a character"<<endl;
+   cin>>a;
+   int b;
+   b=(int)a;
+   cout<<b<<endl;
+
+}

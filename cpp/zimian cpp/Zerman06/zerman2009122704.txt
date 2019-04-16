@@ -1,0 +1,36 @@
+//F0903701 5090379027 李自勉
+//题号:4
+//要求:IOStream库函数
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	ifstream fin;
+	fin.open("c:/xyz/abc.txt");
+	if(fin.fail())
+	{
+		cout<<"Opening failed"<<endl;
+		exit(1);
+	}
+	int numberOfPart=0;
+	char next;
+	fin.get(next);
+	while(!fin.eof())
+	{
+		if(next=='\n')
+		{
+			++numberOfPart;
+			while(fin.get(next))
+			{
+				if(next!='\n')
+				break;
+			}
+		}
+		else
+			fin.get(next);
+
+	}
+	fin.close();
+	cout<<"This passage is made up of "<<numberOfPart<<" parts"<<endl;
+}

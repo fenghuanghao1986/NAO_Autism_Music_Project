@@ -1,0 +1,23 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：19
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	char cha;
+	cin>>cha;
+	if ((cha>='0')&&(cha<='9'))
+	   cout<<"it is a number"<<endl;
+	else if((cha>='a')&&(cha<='z'))
+	   cout<<"it is a lowercase letter"<<endl;
+	else if((cha>='A')&&(cha<='Z'))
+	   cout<<"it is a capital letter"<<endl;
+	else
+	  {int b;
+	   b=(int)cha;
+	   cout<<"it is a special character with ASCII "<<b<<endl;
+	  }
+	return 0;
+}

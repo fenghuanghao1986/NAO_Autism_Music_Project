@@ -1,0 +1,39 @@
+
+	
+//F0903701 5090379027 李自勉
+//题号:8
+//要求:函数
+#include<iostream>
+using namespace std;
+void computeCoin(int coinValue,int& number,int& amountLeft);
+int main()
+{
+	int cv,num,al;
+	char answer='y';
+	while(answer=='y')
+	{
+		cout<<"Please input the amount of the change"<<endl;
+		cin>>al;
+		cout<<al<<" cents can be given as"<<endl;
+		cv=25;
+		computeCoin(cv,num,al);
+		cout<<" quarter(s) ";
+		cv=10;
+		computeCoin(cv,num,al);
+		cout<<" dime(s) and ";
+		cv=1;
+		computeCoin(cv,num,al);
+		cout<<" penny(pennies)"<<endl;
+		cout<<"Do you want to continue?(y or n)"<<endl;
+		cin>>answer;
+	}
+	return 0;
+}
+
+void computeCoin(int coinValue,int& number,int& amountLeft)
+{
+	number=amountLeft/coinValue;
+	amountLeft=amountLeft-coinValue*number;
+	cout<<number;
+}
+	

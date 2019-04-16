@@ -1,0 +1,17 @@
+//F0903701 5090379027 李自勉
+//题号:17
+//要求:判断改错题
+#include<iostream>
+using namespace std;
+int foobar(int *p i){
+	int a;
+	pi=&a;
+	*pi=1024;
+	return *pi;
+}
+
+int main(){
+	int *pi2=0;
+	int ival=foobar(pi2);
+	return 0;
+}

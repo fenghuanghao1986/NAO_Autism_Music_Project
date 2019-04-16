@@ -1,0 +1,25 @@
+//F0903701 50903790227 李自勉
+//题目序号：2
+//要求:简单控制
+#include<iostream>
+using namespace std;
+int main()
+{ int a;
+float b,c;
+cout<<"如果想将摄氏度转化为华氏度，请按1。\n"
+<<"如果想将华氏度转化为摄氏度，请按2。\n";
+cin>>a;
+cout<<"请输入温度。\n";
+cin>>b;
+switch(a)
+{case 1:
+c=((9*b)/5)+32;//转换关系
+cout<<c;
+break;
+case 2:
+c=(5*(b-32))/9;
+cout<<c;
+break;
+}
+return 0;
+}

@@ -1,0 +1,24 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：14
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+  int max,number,d;
+  cout<<"请输入会议室最大容量和参加会议的人数"<<endl;
+  cin>>max>>number;
+  if(number<=max)
+  {
+	  d=max-number;
+	  cout<<"这次会议没有违反消防法规"<<endl
+		  <<"依法还可以有"<<d<<"人参加会议"<<endl;
+  }else{
+	  d=number-max;
+	  cout<<"这次会议不符合消防法规的要求，不能按预定方案召开"<<endl
+		  <<"根据法规，应该减少"<<d<<"人"<<endl;
+  }
+
+   return 0;
+}

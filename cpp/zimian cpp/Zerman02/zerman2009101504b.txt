@@ -1,0 +1,29 @@
+//F0903701 50903790227 李自勉
+//题目序号：4(b)
+//简单控制
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{ double a,b,c,d,e,maxNumber,minNumber;
+cout<<"Please input three float numbers."<<endl;
+cin>>a>>b>>c;
+d=max(a,b);
+e=min(a,b);
+if ((d>c)&&(e<c))//多次判断
+{maxNumber=d;
+minNumber=e;
+cout<<"最大值为"<<maxNumber<<endl
+    <<"最小值为"<<minNumber<<endl;
+}else if((d>c)&&(e>c))
+{maxNumber=d;
+minNumber=c;
+cout<<"最大值为"<<maxNumber<<endl
+    <<"最小值为"<<minNumber<<endl;
+}else
+{maxNumber=c;
+minNumber=e;
+cout<<"最大值为"<<maxNumber<<endl
+    <<"最小值为"<<minNumber<<endl;
+}return 0;
+}

@@ -1,0 +1,25 @@
+//F0903701 5090379027 李自勉
+//题号：10
+//要求：考查布尔类型
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"The default output of the true value is "<<true<<endl;//输出结果为The default output of the true value is 1
+    cout<<"In order to output the true value,we can write the value as "<<boolalpha<<true<<endl;//输出结果为In order to output the true value,we can write the value as true
+    int x,y;
+	cout<<"please input two numbers"<<endl;
+	cin>>x>>y;
+	bool x_isgreaterthan_y=false,x_isequalto_y=false,x_islessthan_y=false;
+    if (x<y)
+    x_islessthan_y=true;
+	else if (x>y)
+	x_isgreaterthan_y=true;
+	else
+	x_isequalto_y=true;
+    cout<<"It is "<<x_isgreaterthan_y<<" that x is greater than y"<<endl
+		<<"It is "<<x_isequalto_y<<" that x is equal toy"<<endl
+		<<"It is "<<x_islessthan_y<<" that x is less tha y"<<endl;
+   return 0;
+
+}

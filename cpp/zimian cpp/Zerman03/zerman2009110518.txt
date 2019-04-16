@@ -1,0 +1,35 @@
+//F0903701 5090379027 李自勉
+//题号:18
+//要求:简单控制计算
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{int a;
+char b[33];
+cout<<"请输入一个整数"<<endl;
+cin>>a;
+cout<<"请输入一个32位的数字串"<<endl;
+cin>>b;
+
+int c=0,d=0;
+float i=0;
+while(a>0)
+{c=a%2;
+a=a/2;
+d=d+c*pow(10,i);
+i++;
+}cout<<"转为二进制为"<<d<<endl;
+
+char *p=&b[1];
+int e=0;
+for(float j=1;j<32;j++)
+{
+e=e+(*p-48)*pow(2,31-j);//*p因为是char类型，所以在此表示的是ASCII码
+p++;}
+*p=b[0];
+if(*p==1)
+e=-1*e;
+cout<<"转为十进制为"<<e<<endl;
+return 0;
+}

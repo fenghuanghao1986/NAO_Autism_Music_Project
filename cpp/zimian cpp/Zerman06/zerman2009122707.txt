@@ -1,0 +1,23 @@
+//F0903701 5090379027 李自勉
+//题号:7
+//要求:IOStream库函数
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+int main()
+{
+	vector<string> text;
+	string word;
+	while(cin>>word)
+		text.push_back(word);
+	vector<string>::iterator it=text.begin();
+	string str;
+	for(it=text.begin();it!=text.end();it++)
+	{
+		str=*it;
+		str[0]=toupper(str[0]);
+		cout<<str<<" ";
+	}
+	return 0;
+}

@@ -1,0 +1,55 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：20
+*要求是:
+*/
+
+
+//20.1 int car=1024,auto=2048;
+//错误信息：auto为关键字，不能作变量名
+//更正
+int car=1024,autos=2048;
+
+//20.2 int ival=ival;
+//错误信息：使用了未初始化的局部变量“ival”
+//更正
+int ival=0;
+
+//20.3 int ival(int());
+//正确
+
+
+//20.4 double salary=wage=9999.99
+//错误信息：赋值格式错误
+//更正
+double salary=9999.99,wage=9999.99;
+
+//20.5 cin>>int input_value;
+//错误信息：赋值应该在输入之前
+//更正
+int input_value;
+cin>>input_value;
+
+//20.6 int double=3.14159;
+//错误信息：double为关键字，不能作变量名
+//更正
+int Pi=3.14159;
+
+//20.7 string namespace;
+//错误信息：namespace为关键字，不能做变量名
+//更正
+string name;
+
+//20.8 string catch-22;
+//错误信息：变量名称里含有-
+//更正
+string catch_22;
+
+//20.9 char 1_or_2='1';
+//错误信息：不能在代码中定义含两个下划线的标识符
+//更正
+char or='1';
+
+//20.10 float Float=3.14f；
+//错误信息：变量首字母要小写，float为关键字。
+//更正
+float Pi=3.14f；

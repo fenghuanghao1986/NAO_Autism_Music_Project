@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：8
+*要求是:
+*/
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	double x,y;
+	cout<<"input two numbers\n";
+	cin>>x>>y;
+    cout<<pow(x,y)<<"\n";
+    system("pause");
+	return 0;
+}

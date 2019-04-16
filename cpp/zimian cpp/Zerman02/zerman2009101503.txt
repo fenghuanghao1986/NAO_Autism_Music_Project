@@ -1,0 +1,28 @@
+//F0903701 50903790227 李自勉
+//题目序号：3
+//要求：简单控制
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{ double x,a,b,c,d;
+cout<<"please input a number."<<endl;
+cin>>x;
+a=sin(x);
+b=cos(x);
+c=sin(2*x);
+d=tan(x);
+if((c==2*a*b)&&(d==a/b))//分类判断
+cout<<"We can ensure that sin(2x)=2sin(x)*cos(x)"<<endl
+    <<"We can ensure that tan(x)=sin(x)/cos(x)"<<endl;
+else if ((c==2*a*b)&&(d!=a/b))
+cout<<"We can ensure that sin(2x)=2sin(x)*cos(x)"<<endl
+    <<"We found that tan(x)!=sin(x)/cos(x)"<<endl;
+else if ((c!=2*a*b)&&(d==a/b))
+cout<<"We found that sin(2x)!=2sin(x)*cos(x)"<<endl
+    <<"We can ensure that tan(x)=sin(x)/cos(x)"<<endl;
+else
+cout<<"We found that sin(2x)!=2sin(x)*cos(x)"<<endl
+    <<"We found that tan(x)!=sin(x)/cos(x)"<<endl;
+return 0;
+}

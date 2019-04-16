@@ -1,0 +1,22 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：2
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	char b='a';
+        int c=10,d=10u,e=10ul,f=012,g=0xC;
+	cout<<b<<"\n"
+		<<c<<"\n"
+		<<d<<"\n"
+		<<e<<"\n"
+		<<f<<"\n"
+		<<g<<"\n";
+	double h=3.14,i=3.14f,j=3.14L;
+	cout<<h<<"\n"
+		<<i<<"\n"
+		<<j<<"\n";
+		return 0;
+}

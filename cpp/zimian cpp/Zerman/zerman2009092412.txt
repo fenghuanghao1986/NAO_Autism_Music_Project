@@ -1,0 +1,20 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：12
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	const double rateOfRise=0.076;
+	double salary,increase,newSalary,monthlyPay;
+	cout<<"请输入一个雇员以前的年收入"<<endl;
+	cin>>salary;
+	newSalary=salary*(rateOfRise+1)*(rateOfRise+1);
+	increase=newSalary-salary;
+	monthlyPay=newSalary/12;
+	cout<<"员工工资增加的数额为"<<increase<<endl
+		<<"新的年收入为"<<newSalary<<endl
+		<<"新的月收入为"<< monthlyPay<<endl;
+    return 0;
+}

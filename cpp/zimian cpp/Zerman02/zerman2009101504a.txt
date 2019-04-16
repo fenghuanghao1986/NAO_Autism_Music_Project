@@ -1,0 +1,13 @@
+//F0903701 50903790227 李自勉
+//题目序号：4(a)
+//要求：简单控制
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{ double a,b;
+cout<<"Please input two float numbers."<<endl;
+cin>>a>>b;
+cout<<max(a,b)<<">"<<min(a,b)<<endl;//利用数学库函数
+return 0;
+}

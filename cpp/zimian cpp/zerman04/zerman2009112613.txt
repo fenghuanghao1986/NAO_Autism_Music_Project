@@ -1,0 +1,44 @@
+//F0903701 5090379027 李自勉
+//题号:13
+//要求:函数
+#include<iostream>
+using namespace std;
+double sizeOfHat(double weight,double height);
+double sizeOfJacket(double weight,double height,int age);
+double waist(double weight,int age);
+int main()
+{
+	double weight,height;
+	int age;
+	double hat,jacket,wst;
+	cout<<"Please input your weight,height and age"<<endl;
+	cin>>weight>>height>>age;
+	hat=sizeOfHat(weight,height);
+	jacket=sizeOfJacket(weight,height,age);
+	wst=waist(weight,age);
+	cout<<"The hat size is  "<<hat<<endl
+		<<"The jacket size is "<<jacket<<endl
+		<<"The waist in inches is "<<wst<<endl;
+	return 0;
+}
+
+double sizeOfHat(double weight,double height)
+{
+	return weight*2.9/height;
+}
+
+double sizeOfJacket(double weight,double height,int age)
+{
+	if(age>30)
+		return height*weight/288+(age-30)/10*(1/8);
+	else
+		return height*weight/288;
+}
+
+double waist(double weight,int age)
+{
+	if(age>28)
+		return weight/5.7+(age-28)/2*(1/10);
+	else
+		return weight/5.7;
+}

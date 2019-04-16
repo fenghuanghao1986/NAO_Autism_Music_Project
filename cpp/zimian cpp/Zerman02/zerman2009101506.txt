@@ -1,0 +1,23 @@
+//F0903701 50903790227 李自勉
+//题目序号：6
+//要求：指针与引用
+#include<iostream>
+using namespace std;
+int main()
+{ int x,y,*pi_x=&x,*pi_y=&y,a;
+cout<<"Please input two numbers\n";
+cin>>x>>y;
+x+=1;
+y-=1;
+a=*pi_x;//通过第三变量交换变量值
+*pi_x=*pi_y;
+*pi_x=a;
+cout<<pi_x<<endl
+    <<pi_y<<endl
+	<<*pi_x<<endl
+	<<*pi_y<<endl
+	<<x<<endl
+	<<y<<endl;
+
+return 0;
+}

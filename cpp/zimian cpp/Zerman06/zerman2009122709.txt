@@ -1,0 +1,58 @@
+//F0903701 5090379027 李自勉
+//题号:9
+//要求:IOStream库函数
+#include<iostream>
+#include<vector>
+#include<string>
+#include<map>
+using namespace std;
+int main()
+{
+	map<int,vector<string> > blank;
+	vector<string> name;
+	vector<int> grade;
+	char answer1='y',answer2='y';
+	int number;
+	string word;
+	while(answer1=='y')
+	{
+		cout<<"Please input the grade"<<endl;
+		cin>>number;
+		grade.push_back(number);
+		cout<<"Do you want to input grade?(y or n)"<<endl;
+		cin>>answer1;
+	}
+	vector<int>::iterator it=grade.begin();
+	for(it=grade.begin();it!=grade.end();it++)
+	{
+		while(answer2=='y')
+		{
+			cout<<"Please input the name"<<endl;
+			cin>>word;
+			name.push_back(word);
+			cout<<"Any other names?(y or n)"<<endl;
+			cin>>answer2;
+		}
+		blank[int(*it)]=name;
+		vector<string>().swap(name);
+	}
+	//name的输出出现问题，不会解决
+	map<int,vector<string> >::iterator iter;
+	for(iter=blank.begin();iter!=blank.end();iter++)
+		cout<<(*iter).first<<"\t";
+	vector<string> &container1=(*iter).second;
+	for(vector<string>::iterator p=container1.begin();p!=container1.end();p++)
+		cout<<*p<<"\t"<<endl;
+
+	map<int, vector<string> >::iterator where;
+	where = blank.find(90);
+	blank.erase(where,blank.end());
+	for(iter=blank.begin();iter!=blank.end();iter++)
+		cout<<(*iter).first<<"\t";
+	vector<string> &container2=(*iter).second;
+	for(vector<string>::iterator p=container2.begin();p!=container2.end();p++)
+		cout<<*p<<"\t"<<endl;
+
+
+	return 0;
+}

@@ -1,0 +1,17 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：9(11)
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	double a;
+	cin>>a;
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(3);
+	cout<<a;
+	
+	
+}

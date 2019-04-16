@@ -1,0 +1,22 @@
+//F0903701 5090379027 李自勉
+//题号：16
+//要求：考查表达式
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{ double year,a,b;//因为后面需要取整，所以定义为double
+cout<<"Please input a year"<<endl;
+cin>>year;
+a=year/100;
+if(a==ceil(a))//判断是否为100的倍数
+ b=year/400;
+else
+b=year/4;
+if(b==ceil(b))
+cout<<"This is a lead year"<<endl;
+else
+cout<<"This is not a lead year"<<endl;
+   return 0;
+
+}

@@ -1,0 +1,19 @@
+//F0903701 5090379027 李自勉
+//题号:15
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{int b,a;
+cout<<"请输入钱数"<<endl;
+cin>>b;
+a=b;
+while(a>=7)
+{b=b+a/7;
+a=a/7;}
+cout<<"吃的巧克力数为"<<b<<endl;
+cout<<"剩下的奖券数为"<<a<<endl;
+
+	return 0;
+
+}

@@ -1,0 +1,26 @@
+//F0903701 5090379027 李自勉
+//题号:12(for)
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{double x,n,sum=0,a=1,b=1;
+cin>>x;
+cin>>n;
+for(int i=1;i<n+1;i++)
+{for(int j=i;j<n+1;j++)
+{if(j%2==0)//判断是否加负号
+{a=-1*a*x;
+b=b*j;}
+else
+{a=a*x;
+b=b*j;}
+}
+sum=sum+a/b;
+}
+cout.setf(ios::fixed);
+cout.setf(ios::showpoint);
+cout.precision(8);
+cout<<sum<<endl;
+return 0;
+}

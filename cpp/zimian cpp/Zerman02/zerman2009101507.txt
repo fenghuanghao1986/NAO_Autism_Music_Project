@@ -1,0 +1,20 @@
+//F0903701 50903790227 李自勉
+//题目序号：7
+//指针与引用
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{int x,y;
+cout<<"Please input two numbers.\n";
+cin>>x>>y;
+int &ref_x=x,&ref_y=y;//引用
+cout<<max(ref_x,ref_y)<<">"<<min(ref_x,ref_y)<<endl;
+int a;
+a=x;
+x=y;
+y=a;
+cout<<ref_x<<endl
+    <<ref_y<<endl;
+return 0;
+}

@@ -1,0 +1,22 @@
+//F0903701 5090379027 李自勉
+//题号:9
+//要求:控制计算
+
+unsigned long
+factorial(int val){
+if(val!=0)
+	return val*factorial(val-1);
+return 1;
+}
+
+//若val为负数，则会进入死循环。
+
+
+//修改
+
+unsigned long
+factorial(int val){
+if(val>0)
+	return val*factorial(val-1);
+return 1;
+}

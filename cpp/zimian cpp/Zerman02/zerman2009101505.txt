@@ -1,0 +1,17 @@
+//F0903701 50903790227 李自勉
+//题目序号：5
+//要求:指针和引用
+#include<iostream>
+using namespace std;
+int main()
+{ int x,y,*pi_x=&x,*pi_y=&y;
+cout<<"Please input two numbers\n";
+cin>>x>>y;
+cout<<pi_x<<endl//内存地址
+    <<pi_y<<endl
+	<<*pi_x<<endl//对应值
+	<<*pi_y<<endl
+	<<x<<endl
+	<<y<<endl;
+return 0;
+}

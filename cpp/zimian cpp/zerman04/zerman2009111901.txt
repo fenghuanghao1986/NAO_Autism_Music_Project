@@ -1,0 +1,39 @@
+//F0903701 5090379027 李自勉
+//题号:1
+//要求:控制计算
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"Please input 10 numbers"<<endl;
+	int x;
+	int a[10];
+	for(int i=0;i<10;i++)
+	{
+		cin>>x;
+		a[i]=x;
+	}
+
+	int max,min;
+	max=a[0];
+	min=a[0];
+	for(int j=0;j<10;j++)
+	{
+		if (a[j]>=max)
+			max=a[j];
+		else
+			min=a[j];
+	}
+
+	cout<<"1 or 2?"<<endl;
+	int b;
+	cin>>b;
+	if (b==1)
+	    cout<<max<<endl;
+	else
+        cout<<min<<endl;
+
+
+	return 0;
+
+}

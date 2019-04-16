@@ -1,0 +1,20 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：1
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+ int numberOfLanguages;                            //定义一个变量
+ cout<<"Hello reader.\n"                           /*在屏幕输出两句话*/
+	 <<"Welcome to C++.\n";             
+ cout<<"How many programming languanges have you used?";//提示语言
+ cin>>numberOfLanguages;
+ if(numberOfLanguages<1)                                //对变量大小进行逻辑判断
+	 cout<<"read the preface.You may prefer\n"
+	     <<"a more elementary book by the same author.\n";
+ else
+	 cout<<"Enjoy the book.\n";
+ return 0;
+}

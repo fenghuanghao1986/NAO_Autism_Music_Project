@@ -1,0 +1,20 @@
+//F0903701 5090379027 李自勉
+//题号：14
+//要求：考查数组
+#include<iostream>
+using namespace std;
+int main()
+{ int array1[5][5];
+  int i,j;
+  for(i=0;i<5;i++)//初始化数组，都赋值为1
+  {for(j=0;j<5;j++)
+  array1[i][j]=1;}
+    array1[2][3]=0;
+    cin>>i>>j;
+	if ((i<5)&&(j<5))
+	cout<<array1[i][j]<<endl;
+	else
+	cout<<"Error!"<<endl;
+   return 0;
+
+}

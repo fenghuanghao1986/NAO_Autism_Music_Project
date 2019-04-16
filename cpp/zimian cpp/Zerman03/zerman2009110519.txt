@@ -1,0 +1,56 @@
+//F0903701 5090379027 李自勉
+//题号:19
+//要求:简单控制计算
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{char a[5];
+cin>>a[0]>>a[1]>>a[2]>>a[3]>>a[4];
+char *p=&a[4];
+for(int k=0;k<5;k++)
+{cout<<*p<<" ";
+p--;}
+
+int x,y;
+cout<<"请输入一个十进制整数x(100<x<1000)"<<endl;
+cin>>x;
+y=x;
+
+int c=0,d=0;
+float i=0;
+while(x>0)
+{c=x%8;
+x=x/8;
+d=d+c*pow(10,i);
+i++;
+}cout<<"转为八进制为"<<d<<endl;
+
+int m=0;
+int j=2;
+char he[4];
+while(j>=0)
+{
+m=y%16;
+y=y/16;
+if(m==10)
+he[j]='A';
+else if(m==11)
+he[j]='B';
+else if(m==12)
+he[j]='C';
+else if(m==13)
+he[j]='D';
+else if(m==14)
+he[j]='E';
+else if(m==15)
+he[j]='F';
+else
+he[j]=char(m+48);
+j--;
+
+}
+cout<<"转为十六进制为"<<he[0]<<he[1]<<he[2]<<endl;
+
+return 0;
+}

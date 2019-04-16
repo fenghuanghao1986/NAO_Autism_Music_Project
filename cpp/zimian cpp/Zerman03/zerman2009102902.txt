@@ -1,0 +1,33 @@
+//F0903701 5090379027 李自勉
+//题号：2
+//要求：简单控制计算
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{ int year;
+string a;
+string month[12][4]={"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEM","OCT","NOV","DEC"};
+cout<<"Please input your date"<<endl;
+cin>>year;
+cin>>a;
+if((a=="JAN")||(a=="MAR")||(a=="MAY")||(a=="JUL")||(a=="AUG")||(a=="OCT")||(a=="DEC"))
+cout<<"31"<<endl;
+else if((a=="JUN")||(a=="SEM")||(a=="NOV"))
+cout<<"30"<<endl;
+else 
+{if (year%100==0)
+		{if (year%400==0)
+		cout<<"29"<<endl;
+		else
+			cout<<"28"<<endl;
+		}
+		else if (year%100!=0)
+		{if (year%4==0)
+		cout<<"29"<<endl;
+		else
+			cout<<"28"<<endl;
+		}
+}
+return 0;
+}

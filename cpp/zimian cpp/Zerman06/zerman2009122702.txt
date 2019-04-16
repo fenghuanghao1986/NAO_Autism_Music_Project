@@ -1,0 +1,39 @@
+//F0903701 5090379027 李自勉
+//题号:2
+//要求:IOStream库函数
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+int main()
+{
+//本题要求要使用list，但我认为没必要用list，所以还是用的vector
+	vector<string> text;
+	string word;
+	while(cin>>word)
+		text.push_back(word);
+	vector<string>::iterator it=text.begin();
+	int max_length=it->size();
+	int min_length=it->size();
+	string max_string=*it,min_string=*it;
+	int length;
+	for(it=text.begin();it!=text.end();it++)
+	{
+		length=it->size();
+		if(length>=max_length)
+		{
+			max_length=length;
+			max_string=*it;
+		}
+		else if(length<=min_length)
+		{
+			min_length=length;
+			min_string=*it;
+		}
+	}
+	cout<<"The longest word is "<<max_string<<endl
+	    <<"Its length is "<<max_length<<endl
+	    <<"The shortest word is "<<min_string<<endl
+	    <<"Its length is "<<min_length<<endl;
+	return 0;
+}

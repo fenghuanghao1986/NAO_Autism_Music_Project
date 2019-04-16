@@ -1,0 +1,28 @@
+//F0903701 5090379027 李自勉
+//题号:8(1)
+//要求:控制计算
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	double x0,m,p0,p;
+    cout<<"请输入初始近似值和最大迭代次数"<<endl;
+	cin>>x0>>m;
+	p0=x0;
+	for(int i=0;i<m;i++)
+	{
+		p=(p0+3/p0)/2;
+
+		if(abs(p-p0)<1.0/100000000)
+		{
+			cout<<"3开方的近似值为"<<p<<endl;
+			return 0;
+		}
+		else
+			p0=p;
+	}
+	
+	cout<<"Method failed"<<endl;
+	return 0;
+}

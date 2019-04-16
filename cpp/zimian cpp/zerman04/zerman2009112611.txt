@@ -1,0 +1,23 @@
+//F0903701 5090379027 李自勉
+//题号:11
+//要求:控制计算
+#include<iostream>
+using namespace std;
+int numberOfCows(int n);
+int main()
+{
+	int n;
+	cin>>n;
+	cout<<"该年的母牛数为"<<numberOfCows(n)<<endl;
+	return 0;
+}
+
+int numberOfCows(int n)
+{
+	static int b;
+	if((n<=3)&&(n>=1))
+		b=1;
+	else
+		b=numberOfCows(n-1)+numberOfCows(n-3);
+	return b;
+}

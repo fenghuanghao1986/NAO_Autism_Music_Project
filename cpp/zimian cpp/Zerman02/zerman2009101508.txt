@@ -1,0 +1,18 @@
+//F0903701 50903790227 李自勉
+//题目序号：8
+//要求：指针与引用
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{int x,y;
+cout<<"Please input a number.\n";
+cin>>x>>y;
+const int *pi_y=&y;//常量指针
+int *const pi_x=&x;//指针常量
+cout<<*pi_x<<endl
+      <<*pi_y<<endl
+	  <<pi_x<<endl
+	  <<pi_y<<endl;
+return 0;
+}

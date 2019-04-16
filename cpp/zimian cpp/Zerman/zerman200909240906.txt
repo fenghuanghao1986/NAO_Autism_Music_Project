@@ -1,0 +1,13 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：9(6)
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	int number;
+	number=(1/3)*3;
+	cout<<"(1/3)*3 is equal to "<<number;
+		
+}

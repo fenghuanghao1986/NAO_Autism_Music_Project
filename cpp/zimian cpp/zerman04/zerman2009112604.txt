@@ -1,0 +1,57 @@
+//F0903701 5090379027 李自勉
+//题号:4
+//要求:控制计算
+#include<iostream>
+using namespace std;
+int main()
+{
+	
+	//(1)
+	char a[19][19];
+	for (int i=0;i<19;i++)
+	{
+		for (int j=0;j<19;j++)
+			a[i][j]=' ';
+	}
+	for (int i=0;i<19;i++)
+	{
+		for (int j=0;j<19;j++)
+		{
+			if((i%2==0)&&(j>=i/2)&&(j<=18-i/2)&&((i/2+j)%2==0))
+				a[i][j]='S';
+			if ((i%2==0)&&(j>=i/2)&&(j<=18-i/2)&&((i/2+j)%2!=0))
+				a[i][j]='T';
+			cout<<a[i][j];
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+
+	
+	
+	
+	
+	
+	//(2)
+	char b[19][24];
+	for (int i=0;i<19;i++)
+	{
+		for (int j=0;j<24;j++)
+		{
+			b[i][j]=' ';
+		}
+	}
+	for (int i=0;i<19;i++)
+	{
+		for (int j=0;j<24;j++)
+		{
+			if ((i%2==0)&&(i/2+j>=9)&&(j<=9))
+				b[i][j]='#';
+			if ((i%2==0)&&(j>=14)&&(j-i/2<=14))
+				b[i][j]='$';
+				cout<<b[i][j];
+		}
+		cout<<endl;
+	}
+        return 0;
+}

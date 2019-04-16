@@ -1,0 +1,103 @@
+//F0903701 5090379027 李自勉
+//题号:17
+//要求:改错
+
+// (a)
+	if ( ival1 != ival2 )
+		ival1 = ival2;           //分号
+	else
+	{
+	    ival1 =0;			// 赋值方式错误
+	    ival2 = 0;
+	}
+
+	// (b)
+	if ( ival < minval )
+	{
+		minval = ival;		// if后面的语句应放在括号中
+		occurs = 1;
+	}
+
+	// (c)
+	if ( ival == 0 )		// if后要有语句
+		ival = 0;
+
+	// (d)
+	switch ( ival )
+	{
+	case 'a':			// 每个case后应有break
+		aCnt++;
+		break;
+	case 'e': 
+		eCnt++;
+		break;
+	default : 
+		iouCnt++;
+		break;
+	}
+
+	// (e)
+	switch ( ival )
+	{
+	case 1:	case 3:case 5:case 7:case 9://case使用方法错误			
+		oddcnt++;
+		break;
+	case 2:case 4:case 6:case 8:case 10://同上
+		evencnt++;
+		break;
+	}
+
+	// (f)
+	const int ival = 512, jval = 1024, kval = 4096;//逗号
+	int bufsize;
+	
+	switch ( swt)			
+	{
+	case ival:										
+		bufsize = ival * sizeof( int );
+		break;
+	case jval:
+		bufsize = jval * sizeof( int );
+		break;
+	case kval:
+		bufsize = kval * sizeof( int );
+		break;
+	}
+
+	// (g)
+	typedef enum o{ illustrator = 1, photoshop, photostyler = 2};			
+	switch ( ival )
+	{
+	case illustrator:
+		--illus_license;
+		break;
+	case photoshop:
+		--pshop_license;
+		break;
+	case photostyler:
+		--pstyler_license;
+		break;
+	}
+        //(h)for( int *ptr = &ia,ix = 0;(ix < size)&&(ptr != ia+size);++ix,++ptr)
+    //条件要放在括号中
+	// (i)
+	for (int i=0;i<10;i++)	//for后要有条件						
+	{
+		if ( some_condition )
+		break;
+	}
+
+	// (j)
+	for ( int ix = 0; ix < sz; ++ix)
+							
+	{if ( ix != sz )					
+			
+	}                         //for后的语句应在括号中
+
+	// (k)
+	int ix;
+	for ( ix = 1; ix < sz; ++ix )//ix需要初始化				
+	
+
+	// (l)
+	for ( int ix = 0; ix < sz; ++ix )//死循环

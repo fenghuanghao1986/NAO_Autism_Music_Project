@@ -1,0 +1,24 @@
+//F0903701 5090379027 李自勉
+//题号:14
+//要求:简单控制计算
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+const int i=50;
+	double a=1000,b=0.015,c=0;
+	int month = 0;
+
+	while(a>0)												
+	{
+		c= c+floor(a*b*100+0.5)/100;		
+		a=a-(i-i*b); 
+		month++;
+	}
+	double d=floor(c*100+0.5)/100
+	cout<<"需要月数为"<<month<<endl;
+	cout <<"利息总额为"<<d<<endl;
+	return 0;
+
+}

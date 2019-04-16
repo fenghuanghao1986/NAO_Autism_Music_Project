@@ -1,0 +1,117 @@
+//F0903701 5090379027 李自勉
+//题号:8
+//要求:IOStream库函数
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+	typedef vector<vector<double> >   vec2d;
+	int length1,length2,width1,width2;
+	cout<<"Please input the length and width of the first matrix"<<endl;
+	cin>>length1>>width1;
+	vec2d T1(length1,vector<double>(width1) );
+	cout<<"Please input the length and width of the secend matrix"<<endl;
+	cin>>length2>>width2;
+	vec2d T2(length2,vector<double>(width2) );
+	vec2d T(length2,vector<double>(width1) );
+	if(length2!=width1)
+	{
+		cout<<"Error"<<endl;
+		return 0;
+	}
+
+	for(int i=0;i<length1;i++)
+	{
+		for(int j=0;j<width1;j++)
+		{
+			T1[i][j]=0;
+		}
+	}
+	for(int i=0;i<length2;i++)
+	{
+		for(int j=0;j<width2;j++)
+		{
+			T2[i][j]=0;
+		}
+	}
+	for(int i=0;i<length2;i++)
+	{
+		for(int j=0;j<width1;j++)
+		{
+			T[i][j]=0;
+		}
+	}
+
+	cout<<"Please input the element of the first matrix"<<endl;
+
+	for(int i=0;i<length1;i++)
+	{
+		for(int j=0;j<width1;j++)
+		{
+			cin>>T1[i][j];
+		}
+	}
+
+	cout<<"Please input the element of the sencond matrix"<<endl;
+	for(int i=0;i<length2;i++)
+	{
+		for(int j=0;j<width2;j++)
+		{
+			cin>>T2[i][j];
+		}
+	}
+
+	for(int i=0;i<length2;i++)
+	{
+		for(int m=0;m<length1;m++)
+		{
+			for(int n=0;n<width2;n++)
+			{
+				T[m][n]=T[m][n]+T1[m][i]*T2[i][n];
+			}
+		}
+
+	}
+	
+	cout<<"T1="<<endl;
+	for(int i=0;i<length1;i++)
+	{
+		for(int j=0;j<width1;j++)
+		{
+			cout<<T1[i][j]<<"\t";
+		}
+		cout<<endl;
+	}
+	
+
+	cout<<"T2="<<endl;
+	for(int i=0;i<length2;i++)
+	{
+		for(int j=0;j<width2;j++)
+		{
+			cout<<T2[i][j]<<"\t";
+		}
+		cout<<endl;
+	}	
+	
+
+	cout<<"T=T1*T2="<<endl;
+	for(int i=0;i<length2;i++)
+	{
+		for(int j=0;j<width1;j++)
+		{
+			cout<<T[i][j]<<"\t";
+		}
+		cout<<endl;
+	}
+}
+	
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+//F0903701 5090379027 李自勉
+//题号:11
+//要求:数组
+#include<iostream>
+#include<cmath>
+using namespace std;
+double stanDev(double s[],int size);
+int main()
+{
+	double sd;
+	double s[50];
+	int size=0;
+	cout<<"Please input some numbers"<<endl;
+	while(cin>>s[size])
+		size++;
+	sd=stanDev(s,size);
+	cout<<"The result is "<<sd<<endl;
+}
+
+double stanDev(double s[],int size)
+{
+	double sum=0;
+	double average;
+	double temp=0;
+	for(int i=0;i<size;i++)
+		sum=s[i]+sum;
+	average=sum/size;
+	for(int i=0;i<size;i++)
+		temp=temp+(s[i]-average)*(s[i]-average);
+	return sqrt(temp/size);
+}

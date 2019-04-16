@@ -1,0 +1,36 @@
+//F0903701 5090379027 李自勉
+//题号:3
+//要求:IOStream库函数
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	ifstream fin;
+	fin.open("c:/xyz/abc.txt");
+	if(fin.fail())
+	{
+		cout<<"Opening failed"<<endl;
+		exit(1);
+	}
+	int numberOfWord=1;
+	char next;
+	fin.get(next);
+	while(!fin.eof())
+	{
+		if(next==' ')
+		{
+			numberOfWord++;
+			while(fin.get(next))
+			{
+				if(next!=' ')
+					break;
+			}
+		}
+		else
+			fin.get(next);
+	}
+	fin.close();
+	cout<<"The number of string is "<<numberOfWord<<endl;
+	return 0;
+}

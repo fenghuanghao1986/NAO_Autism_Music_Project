@@ -1,0 +1,29 @@
+//F0903701 5090379027 李自勉
+//题号:4
+//要求:简单控制
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{int a,number,c,d;
+char b;
+	cout<<"please input a number"<<endl;
+cin>>a;
+cout<<"Y or N?"<<endl;
+cin>>b;
+while((b=='Y')||(b=='y'))//对输入的字符进行判断
+{
+	
+	cout<<"please input a number"<<endl;
+	cin>>number;
+	c=max(a,number);
+	d=min(a,number);
+	c=max(c,number);
+	d=min(d,number);//排序
+	cout<<"Y or N?"<<endl;
+    cin>>b;
+}
+cout<<"The max number is "<<c<<endl
+<<"The min number is "<<d<<endl;
+return 0;
+}

@@ -1,0 +1,15 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：4
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+    int year,month,day,hour,minute,second;
+	cout<<"What's your date?\n";
+	cin>>year>>month>>day>>hour>>minute>>second;
+	cout<<year<<"-"<<month<<"-"<<day<<" "<<hour<<":"<<minute<<":"<<second;
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,31 @@
+//F0903701 5090379027 李自勉
+//题号:6
+//要求:IOStream库函数
+#include<iostream>
+#include<vector>
+#include<string>
+#include<map>
+using namespace std;
+int main()
+{
+	vector<string> text;
+	string word;
+	while(cin>>word)
+		text.push_back(word);
+	vector<string>::iterator it=text.begin();
+	map<string,int> word_count;
+	for(it=text.begin();it!=text.end();it++)
+		word_count[string(*it)]=0;
+	map<string,int>::iterator iter;
+	for(iter=word_count.begin();iter!=word_count.end();iter++)
+	{
+		for(it=text.begin();it!=text.end();it++)
+		{
+			if( *it == (*iter).first)
+				word_count[ *it ]+=1;
+		}
+	}
+	for(iter=word_count.begin();iter!=word_count.end();iter++)
+		cout<<(*iter).first<<"\t"<<(*iter).second<<"\t"<<endl;
+	return 0;
+}

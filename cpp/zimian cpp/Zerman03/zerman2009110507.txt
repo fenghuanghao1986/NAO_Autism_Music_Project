@@ -1,0 +1,73 @@
+//F0903701 5090379027 李自勉
+//题号:7
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{char str1[255],str2[3]="ff",str3[3]="fl",str4[3]="fi",*p1,*p2,*p3,*p4, *temp2,*temp3,*temp4; 
+ int sum2=0,sum3=0,sum4=0; 
+ cin>>str1;  
+ p1=str1; 
+ p2=str2;
+ p3=str3;
+ p4=str4;
+
+ while (*p1!='\0') 
+ { 
+  temp2=p1;
+  if(*temp2==*p2) 
+  { 
+   
+   while((*temp2==*p2)&&(*p2!='\0')&&(*temp2!='\0')) 
+   { 
+    temp2++; 
+    p2++; 
+   } 
+  } 
+     p1++; 
+  if(*p2=='\0') sum2=sum2+1;
+  p2=str2; 
+ } 
+ cout<<"ff出现的次数为"<<sum2<<endl; 
+ 
+ p1=str1;
+ while (*p1!='\0') 
+ { 
+  temp3=p1;
+  if(*temp3==*p3) 
+  { 
+   
+   while((*temp3==*p3)&&(*p3!='\0')&&(*temp3!='\0')) 
+   { 
+    temp3++; 
+    p3++; 
+   } 
+  } 
+     p1++; 
+  if(*p3=='\0') sum3=sum3+1;
+  p3=str3; 
+ } 
+ cout<<"fl出现的次数为"<<sum3<<endl; 
+
+ p1=str1;
+ while (*p1!='\0') 
+ { 
+  temp4=p1;
+  if(*temp4==*p4) 
+  { 
+   
+   while((*temp4==*p4)&&(*p4!='\0')&&(*temp4!='\0')) 
+   { 
+    temp4++; 
+    p4++; 
+   } 
+  } 
+     p1++; 
+  if(*p4=='\0') sum4=sum4+1;
+  p4=str4; 
+ } 
+ cout<<"fi出现的次数为"<<sum4<<endl; 
+
+
+return 0;
+}

@@ -1,0 +1,22 @@
+//F0903701 5090379027 李自勉
+//题号:9
+//要求:数组
+#include<iostream>
+using namespace std;
+int main()
+{const int bufsize=512;
+int array[bufsize];
+for(int index=0;index<=bufsize;++index){//溢出，应改为for(int index=0;index<bufsize;index++)
+	array[index]=index;
+}
+for(int index1=0;index1<=bufsize;++index1){//溢出，应改为for(int index1=0;index1<bufsize;index1++)
+	if(bufsize=index1)//应改为if(bufsize==index1)，不过该行与下一行不可能被执行可以去掉
+		cout<<-1<<"\n";
+	else
+		cout<<array[index1]<<"\n";
+}
+
+
+
+return 0;
+}

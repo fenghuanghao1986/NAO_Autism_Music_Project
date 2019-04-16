@@ -1,0 +1,52 @@
+//F0903701 5090379027 李自勉
+//题号:1
+//要求:字符串操作
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+bool compare(string str1,string str2);
+bool ignoreCase(string str1,string str2);
+int main()
+{
+	string str1,str2;
+	cout<<"Please input two strings"<<endl;
+	cin>>str1>>str2;
+	bool cp,ic;
+	cp=compare(str1,str2);
+	ic=ignoreCase(str1,str2);
+	if(cp==true)
+		cout<<"They are equal"<<endl;
+	else
+		cout<<"They are not equal"<<endl;
+	if(ic==true)
+		cout<<"They are equal if we ignore case"<<endl;
+	else
+		cout<<"They are still not equal if we don't ignore case"<<endl;
+	return 0;
+}
+
+bool compare(string str1,string str2)
+{
+	if(str1==str2)
+		return true;
+	else
+		return false;
+}
+
+bool ignoreCase(string str1,string str2)
+{
+	char cstr1[1000];
+	char cstr2[1000];
+	strcpy(cstr1,str1.c_str());
+	strcpy(cstr2,str2.c_str());
+	char ccstr1[1000],ccstr2[1000];
+	for(int i=0;i<1000;i++)
+		ccstr1[i]=tolower(cstr1[i]);
+	for(int i=0;i<1000;i++)
+		ccstr2[i]=tolower(cstr2[i]);
+	if(strcmp(ccstr1,ccstr2))
+		return false;
+	else
+		return true;
+}

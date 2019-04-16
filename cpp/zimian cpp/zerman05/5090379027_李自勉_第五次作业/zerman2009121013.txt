@@ -1,0 +1,39 @@
+//F0903701 5090379027 李自勉
+//题号:13
+//要求:数组
+#include<iostream>
+using namespace std;
+const int size=20;
+int main()
+{
+	cout<<"Please input two numbers which have "<<size<<" digits"<<endl;
+	char ca[size];
+	for(int i=size-1;i>=0;i--)
+		cin>>ca[i];
+	int ia[size];
+	for(int i=0;i<size;i++)
+		ia[i]=ca[i]-'0';
+	char cb[size];
+	for(int i=size-1;i>=0;i--)
+		cin>>cb[i];
+	int ib[size];
+	for(int i=0;i<size;i++)
+		ib[i]=cb[i]-'0';
+	if(((ia[0]+ib[0])+(ia[1]+ib[1])/10)>=10)
+	{
+		cerr<<"integer overflow"<<endl;
+		return 0;
+	}
+	int sum[size];
+	sum[0]=(ia[0]+ib[0])%10;
+	int plus=(ia[0]+ib[0])/10;
+	for(int i=1;i<size;i++)
+	{
+		sum[i]=(ia[i]+ib[i])%10+plus;
+		plus=(ia[i]+ib[i])/10;
+	}
+	cout<<"The result is ";
+	for(int i=size-1;i>=0;i--)
+		cout<<sum[i];
+	return 0;
+}

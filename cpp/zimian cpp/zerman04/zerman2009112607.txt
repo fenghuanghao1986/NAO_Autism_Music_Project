@@ -1,0 +1,47 @@
+//F0903701 5090379027 李自勉
+//题号:7
+//要求:控制计算
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	double x1,x2,x3;
+	int num;
+	cout<<"循环次数"<<endl;
+	cin>>num;
+
+	for(int i=0;i<num;i++)
+	{
+		static double a=0;
+		static double b=1;
+		a=sqrt(2+a)/2;
+		b=b*a;
+		x1=2/b;
+	}
+	cout<<"X1="<<x1<<endl;
+
+	for(int i=0;i<num;i++)
+	{
+		static double n=1;
+		static double a=1;
+		static double b=1;
+		a=((2*n)/(2*n-1))*a;
+		b=((2*n)/(2*n+1))*b;
+		n++;
+		x2=2*a*b;
+	}
+	cout<<"X2="<<x2<<endl;
+
+	for(int i=0;i<num;i++)
+	{
+		static int a=1;
+		static double b=0;
+		b=b+1/(a*a);
+		a++;
+		x3=sqrt(6*b);
+	}
+	cout<<"X3="<<x3<<endl;
+
+	return 0;
+}

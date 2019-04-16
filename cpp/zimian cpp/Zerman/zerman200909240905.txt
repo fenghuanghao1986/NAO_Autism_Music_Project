@@ -1,0 +1,12 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：9(5)
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+	char a='b',b='c',c=a;
+	cout<< a << b << c << 'c' ;
+}	
+	

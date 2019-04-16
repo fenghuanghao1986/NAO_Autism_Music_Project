@@ -1,0 +1,24 @@
+//F0903701 5090379027 李自勉
+//题号:5
+//要求:控制计算
+#include<iostream>
+using namespace std;
+int main()
+{
+	double a=1000,b,c;
+	b=a;
+	c=a;
+	for(b=1000;b<=2000;b+=2)
+	{
+		for(int i=0;i<9;i++)
+		{
+			a=a/2-1;
+		}
+		if(a==1)
+			cout<<"第一天摘了"<<b<<"个枣子"<<endl;
+		a=c+2;
+		c=c+2;
+		
+	}
+    return 0;
+}

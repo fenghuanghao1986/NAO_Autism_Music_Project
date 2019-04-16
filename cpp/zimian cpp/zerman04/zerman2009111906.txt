@@ -1,0 +1,25 @@
+//F0903701 5090379027 李自勉
+//题号:6
+//要求:控制计算
+#include<iostream>
+using namespace std;
+int main()
+{
+	double e=0,a,b=1;
+	int n;
+	cin>>n;
+	for(int j=n;j>0;j--)
+	{
+		for(int i=j;i>0;i--)
+		{
+		    b=b*i;
+		    a=1/b;
+	    }
+		e=e+a;
+		b=1;
+		a=1;
+	}
+	e=e+1;
+	cout<<"e="<<e<<endl;
+    return 0;
+}

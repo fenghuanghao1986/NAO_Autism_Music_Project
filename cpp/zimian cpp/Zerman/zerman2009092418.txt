@@ -1,0 +1,21 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：18
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+ cout<<"#include<iostream>\n"
+     <<"using namespace std;\n"
+	 <<"int main()\n"
+	 <<"{\n"
+   <<"int a;\n"
+   <<"cout<<\"please input an intergal number\"<<endl;\n"
+   <<"cin>>a;\n"
+   <<"char b;\n"
+   <<"b=(char)a;\n"
+   <<"cout<<b<<endl;\n"
+   <<"}\n";
+
+}

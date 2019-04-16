@@ -1,0 +1,27 @@
+//F0903701 5090379027 李自勉
+//题号:2
+//要求:函数声明、定义
+#include<iostream>
+using namespace std;
+void narNum(int a);
+int main()
+{   int a=100;
+    narNum(a);
+    return 0;
+}
+
+void narNum(int a)
+{
+	a=100;
+	int b,x,y,z;
+	while(a<1000)
+	{
+		x=a%10;
+		y=((a-x)%100)/10;
+		z=(a-y*10-x)/100;
+		b=x*x*x+y*y*y+z*z*z;
+		if(a==b)
+		   cout<<a<<endl;
+		a++;
+	}
+}

@@ -1,0 +1,18 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：13
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+   double loan,rateOfInterest,time,bankNote,repay;
+   cout<<"请输入期望得到的贷款额、利率和贷款期限（以月计）"<<endl;
+   cin>>loan>>rateOfInterest>>time;
+   bankNote=loan/(1-rateOfInterest*time/12);
+   repay=bankNote/time;
+   cout<<"实际需要的数额为 "<<loan<<endl
+	   <<"申请的面值为"<<bankNote<<endl
+	   <<"每月的偿还额为"<<repay<<endl;
+   return 0;
+}

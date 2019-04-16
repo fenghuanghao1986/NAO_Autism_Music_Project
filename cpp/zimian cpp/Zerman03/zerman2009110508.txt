@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+//题号:8
+//要求:数组
+#include<iostream>
+using namespace std;
+int main()
+{
+const int array_size=10;
+int ia[array_size];
+for(int ix=1;ix<=array_size;++ix)//数组的元素索引从0开始，应该为for(int ix=0;ix<array_size;ix++)
+ia[ix]=ix;
+}
+
+
+return 0;
+}

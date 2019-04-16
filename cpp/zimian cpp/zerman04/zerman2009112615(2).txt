@@ -1,0 +1,18 @@
+//F0903701 5090379027 李自勉
+//题号:15(2)
+//要求:字符串操作
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string str;
+	cin>>str;
+	int n;
+	n=str.size();
+	if(n%2==1)
+		cout<<str[(n+1)/2-1]<<endl;
+	else
+		cout<<"长度为偶数"<<endl;
+	return 0;
+}

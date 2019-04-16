@@ -1,0 +1,21 @@
+//F0903701 5090379027 李自勉
+//题号:6
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,b;
+cout<<"please input a number"<<endl;
+cin>>a;
+b=a;
+for(int i=0;i<32;i++)
+{a=1<<a;//左移一位
+cout<<a<<endl;
+}
+for(int j=0;j<32;j++)
+{b=b>>1;//右移一位
+cout<<b<<endl;
+}
+return 0;
+}

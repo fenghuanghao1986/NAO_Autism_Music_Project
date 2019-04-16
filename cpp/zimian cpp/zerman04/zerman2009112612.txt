@@ -1,0 +1,19 @@
+//F0903701 5090379027 李自勉
+//题号:12
+//要求:函数
+#include<iostream>
+using namespace std;
+const double G=0.00000006673;
+
+double force(double m1,double m2,double d){
+	return G*m1*m2/(d*d);}
+
+int main()
+{
+	double m1,m2,d,f;
+	cout<<"Please input the mass of two objects and the distance between them"<<endl;
+	cin>>m1>>m2>>d;
+	f=force(m1,m2,d);
+	cout<<"The gravitational force between them is "<<f<<" dyne"<<endl;
+	return 0;
+}

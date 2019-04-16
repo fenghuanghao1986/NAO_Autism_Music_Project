@@ -1,0 +1,33 @@
+//F0903701 5090379027 李自勉
+//题号:18
+//要求:判断改错题
+
+//下列哪些函数原型是无效的?为什么?
+(a) set( int *, int );    //没定义返回值类型
+(b) void func();
+(c) string error( int );
+(b) void func();
+(d) arr[10] sum( int *, int );    //没定义返回值类型
+(e) void print( int arr[][], int size );    //数组大小没定义
+(f) int ff( int a, int b = 0, int c = 0 );
+(g) void operate( int *matrix[] );         //数组大小没定义
+(h) char *screenInit( int height = 24, int width, char background );
+(i) void putValues( int (&ia)[] );
+//已知下列声明，哪些函数调用是错误的?为什么?
+// 声明
+double calc( double );
+int count( const string &, char );
+void sum( vector<int> &, int );
+vector<int> vec( 10 );
+void print( int arr[][5], int size );
+void operate(int *matrix[7]);
+char *screenInit( int height = 24, int width = 80, char background = ' ' );
+(a) calc( 23.4, 55.1 );     //calc只有一个参数
+(b) count( "abcda", 'a' );
+(c) sum( vec, 43.8 );       //后一个参数应为整型
+(d) calc( 66 );
+(e) screenInit(); // 没参数
+(f) int *matrix[5];
+operator( matrix ); 
+(g) int arr[5][5];
+print( arr, 5 ); 

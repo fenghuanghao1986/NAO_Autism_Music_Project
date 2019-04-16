@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：17
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+   int a;
+   cout<<"please input an intergal number"<<endl;
+   cin>>a;
+   char b;
+   b=(char)a;
+   cout<<b<<endl;
+
+}

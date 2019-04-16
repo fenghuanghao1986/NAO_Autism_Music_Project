@@ -1,0 +1,16 @@
+//F0903701 5090379027 李自勉
+/*本道题目的题号是：11
+*要求是:
+*/
+#include<iostream>
+using namespace std;
+int main()
+{
+ const double con=0.001;
+ double dosage,weightOfMouse,weightOfWoman,numberOfSoda;
+ cout<<"请输入杀死一只老鼠所需的人造甜味剂的量、老鼠的体重和节食者的体重"<<endl;
+ cin>>dosage>>weightOfMouse>>weightOfWoman;
+ numberOfSoda=((weightOfWoman*dosage/weightOfMouse)/con);
+ cout<<"你可以喝的苏打水的数量为"<<numberOfSoda<<endl;
+ return 0;
+}

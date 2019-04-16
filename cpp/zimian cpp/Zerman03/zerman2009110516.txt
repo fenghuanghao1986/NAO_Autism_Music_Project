@@ -1,0 +1,32 @@
+//F0903701 5090379027 李自勉
+//题号:16
+//要求:简单控制计算
+#include<iostream>
+using namespace std;
+int main()
+{int a=0;
+for(int i=2;i<10001;i++)
+{int k=0;
+for(int j=2;j<=i;j++)
+{if(i%j==0)
+k++;}
+if(k==1)
+a++;
+}
+cout<<"质数个数为"<<a<<endl;
+
+int m=10001,n=0,l;
+while(n==0)
+{l=0;
+for(int b=2;b<=m;b++)
+{if(m%b==0)
+l++;}
+if(l==1)
+n=1;
+else
+m++;
+}
+cout<<m;
+
+return 0;
+}

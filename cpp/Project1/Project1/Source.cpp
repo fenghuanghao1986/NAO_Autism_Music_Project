@@ -72,5 +72,8 @@ int main()
 	int year, month, day, hour, minute, second;
 	cout << "please tell me the date and time: ";
 	cin >> year >> month >> day >> hour >> minute >> second;
-	
+	cout << year << ":" << month << ":" << day << ":" << hour
+		<< ":" << minute << ":" << second << endl;
+	system("pause");
+	return 0;
 }

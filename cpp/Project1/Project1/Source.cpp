@@ -234,12 +234,110 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	double loan, rateOfInterest, timeLength, bankNote, repay;
+	int maxNum = 300, actualNum, diff;
+	cout << "How many people attending this meeting: " << endl;
+	cin >> actualNum;
+	if (actualNum <= maxNum)
+	{
+		diff = maxNum - actualNum;
+		cout << "Number of people not vailate the rule." << endl
+			<< "Based on law, you still can have " << diff
+			<< " people atttend." << endl;
+	}
+	else {
+		diff = actualNum - maxNum;
+		cout << "Based to law, you should reduce " << diff
+			<< " amount of people to start the meeting." << endl;
+	}
+	system("pause");
+	return 0;
 
 }
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char a;
+	cin >> a;
+	int b;
+	b = (int)a;
+	cout << b << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a;
+	cin >> a;
+	char b;
+	b = (char)a;
+	cout << b << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	cout << "#include<iostream>\n"
+		<< "using namespace std;\n"
+		<< "int main()\n"
+		<< "{\n"
+		<< "int a;\n"
+		<< "cout<<\"please input an intergal number\"<<endl;\n"
+		<< "cin>>a;\n"
+		<< "char b;\n"
+		<< "b=(char)a;\n"
+		<< "cout<<b<<endl;\n"
+		<< "}\n";
+		system("pause");
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	char cha;
+	cin >> cha;
+	if ((cha >= '0') && (cha <= '9'))
+		cout << "it is a number" << endl;
+	else if ((cha >= 'a') && (cha <= 'z'))
+		cout << "it is a lowercase letter" << endl;
+	else if ((cha >= 'A') && (cha <= 'Z'))
+		cout << "it is a capital letter" << endl;
+	else
+	{
+		int b;
+		b = (int)cha;
+		cout << "it is a special character with ASCII " << b << endl;
+	}
+	system("pause");
+	return 0;
+}
+*/
+
+

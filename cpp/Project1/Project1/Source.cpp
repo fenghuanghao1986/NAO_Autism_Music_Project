@@ -495,7 +495,7 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 using namespace std;
 int main()
@@ -516,5 +516,53 @@ int main()
 	}
 	cout << endl;
 	
-	p = p-1
+	p = p - 1;
+	for (j = 0; j < 5; j++)
+	{
+		cout << *p << " ";
+		p = p - 1;
+	}
+	cout << endl;
+
+	max = a[0];
+	for (k = 0; k < 5; k++)
+	{
+		if (a[k] > max)
+			max = a[k];
+	}
+	cout << "max = " << max << endl;
+	system("pause");
+	return 0;
+	
 }
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "The default output of the true value is "
+		<< true << endl;
+	cout << "In order to output the true value, we can write the value as "
+		<< boolalpha << true << endl;
+	int x, y;
+	cout << "please input numbers: " << endl;
+	cin >> x >> y;
+	bool x_greater_y = false, x_less_y = false, x_equal_y = false;
+	if (x < y)
+		x_less_y = true;
+	else if (x > y)
+		x_greater_y = true;
+	else
+		x_equal_y = true;
+	cout << "It is " << x_equal_y << " that x is equal to y. \n"
+		<< "It is " << x_greater_y << " that x is greater than y. \n"
+		<< "It is " << x_less_y << " that x is less than y."
+		<< endl;
+	system("pause");
+	return 0;
+}
+*/
+
+

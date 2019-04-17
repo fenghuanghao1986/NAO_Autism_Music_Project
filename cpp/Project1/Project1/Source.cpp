@@ -340,4 +340,181 @@ int main()
 }
 */
 
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	float a;
+	cout << "Please type a number: ";
+	cin >> a;
+	if (a >= 0)
+		cout << "you input is " << a << " which is greater than 0." << endl;
+	else
+		cout << "you input is " << a
+		<< " which is less than 0. And now I am converting it to positive. "
+		<< (-a) << " is the final answer now." << endl;
+	system("pause");
+	return 0;
+}
+*/
 
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	float temp, result;
+	int conv;
+	cout << "Please choose your function: \n"
+		<< "Type 1 to convert C to F; \n"
+		<< "Type 2 to convert F to C. \n"
+		<< "Make you selection now: ";
+	cin >> conv;
+	cout << "Please type current temperture: " << endl;
+	cin >> temp;
+	switch (conv)
+	{
+	case 1:
+		result = ((9 * temp) / 5) + 32;
+		cout << "Temperture is " << result << " F." << endl;
+		break;
+	case 2:
+		result = (5 * (temp - 32)) / 9;
+		cout << "Temperture is " << result << " C." << endl;
+		break;
+	default:
+		break;
+	}
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	double a, b;
+	cout << "This function is to compare two numbers you put in."
+		<< "Please input your two numbers: "
+		<< endl;
+	cin >> a >> b;
+	cout << _Max_value(a, b) << ">" << _Min_value(a, b) << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y, * pi_x = &x, * pi_y = &y;
+	cout << "Please input two numbers\n";
+	cin >> x >> y;
+	cout << pi_x << endl	// this is memory address
+		<< pi_y << endl		// this is memory address
+		<< *pi_x << endl	// this is variable value
+		<< *pi_y << endl	// this is variable value
+		<< x << endl		// this is always value
+		<< y << endl;		// this is always value
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y, * pi_x = &x, * pi_y = &y, a;
+	cout << "Please input two numbers: \n";
+	cin >> x >> y;
+	x += 1;
+	y -= 1;
+	a = *pi_x;
+	*pi_x = *pi_y;
+	*pi_y = a;
+	cout << pi_x << endl
+		<< pi_y << endl
+		<< *pi_x << endl
+		<< *pi_y << endl
+		<< x << endl
+		<< y << endl;
+	system("pause");
+	return 0;
+
+}
+*/
+
+/*
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	int x, y;
+	cout << "Please input two numbers: \n";
+	cin >> x >> y;
+	int &ref_x = x, &ref_y = y;		// this is reference, then what is the difference between pointer and reference?
+	cout << _Max_value(ref_x, ref_y) << "> " << _Min_value(ref_x, ref_y) << endl;
+	int a;
+	a = x;
+	x = y;
+	y = a;
+	cout << ref_x << endl
+		<< ref_y << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	int x, y;
+	cout << "Please input two number: \n";
+	cin >> x >> y;
+	const int *pi_y = &y;		//constant pointer
+	int* const pi_x = &x;		//pinter constat
+								//then what is the difference between these two pointer or constant????
+	cout << *pi_x << endl
+		<< *pi_y << endl
+		<< pi_x << endl
+		<< pi_y << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[5];
+	int *p;
+	int i = 0, k = 0, j = 0, max;
+	cout << "input five intergers: " << endl;
+	cin >> a[0] >> a[1] >> a[2] >> a[3] >> a[4];
+	p = &a[0];
+
+	while (i < 5)
+	{
+		a[i] = *p * 2;
+		cout << *p << " ";
+		p = p + 1;
+		i++;
+	}
+	cout << endl;
+	
+	p = p-1
+}

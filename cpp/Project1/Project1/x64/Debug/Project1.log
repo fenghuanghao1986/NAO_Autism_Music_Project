@@ -1,2 +1,3 @@
 ﻿  Source.cpp
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\Project1\Source.cpp(505): warning C4101: 'max': unreferenced local variable
   Project1.vcxproj -> D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\x64\Debug\Project1.exe

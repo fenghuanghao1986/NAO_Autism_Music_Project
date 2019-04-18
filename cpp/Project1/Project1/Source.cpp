@@ -485,7 +485,8 @@ int main()
 	cin >> x >> y;
 	const int *pi_y = &y;		//constant pointer
 	int* const pi_x = &x;		//pinter constat
-								//then what is the difference between these two pointer or constant????
+	
+	*pi_x = 10;							//then what is the difference between these two pointer or constant????
 	cout << *pi_x << endl
 		<< *pi_y << endl
 		<< pi_x << endl
@@ -565,4 +566,31 @@ int main()
 }
 */
 
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	typedef enum states{ greater_than=0, equal_to=1, less_than=2};
+	cout << "Please input two integers " << endl;
+	int x, y;
+	cin >> x >> y;
+	if (x > y)
+		cout << greater_than << endl;
+	else if (x == y)
+		cout << equal_to << endl;
+	else
+		cout << less_than << endl;
+	system("pause");
+	return 0;
+}
+*/
 
+
+#include <iostream>
+#include <cctype>
+using namespace std;
+int main()
+{
+
+}

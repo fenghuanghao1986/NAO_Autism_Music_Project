@@ -655,18 +655,59 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 #include <math.h>
 using namespace std;
 int main()
 {
 	int year;
-	double a, b;
+	double a, b, c;
 	cout << "Please input a year number, I can tell you if it is lead numer: " << endl;
 	cin >> year;
 	if (year <= 0)
 		cout << "error!" << endl;
 	else
-		
+	{
+		a = year % 4;
+		b = year % 100;
+		c = year % 400;
+		if (a != 0)
+			cout << "This is not lead year!" << endl;
+		else if (b == 0 && c != 0)
+			cout << "This is not lead year!" << endl;
+		else
+			cout << "This is lead year!" << endl;
+	}
+
+	system("pause");
+	return 0;
+}
+*/
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double T0[30], T1[4][4], T2[4][4], T[4][4];
+	double* p_t0 = &T0[0], * p_t1 = &T1[0][0], * p_t2 = &T2[0][0];
+	int i = 0, j = 0, k = 0;
+	cout << "Please keep inputing numbers untill you cannot type more: " << endl;
+	while (i < 5)
+	{
+		cin >> T0[i];
+		i++;
+	}
+	cout << "Please check below, to make sure these are the numbers you wanted!" << endl;
+	
+	while (i > 0)
+	{
+		cout << *p_t0 << endl;
+		p_t0++;
+		i--;
+	}
+	
+	system("pause");
+	return 0;
 }

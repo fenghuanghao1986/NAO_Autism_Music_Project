@@ -586,11 +586,87 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 #include <cctype>
 using namespace std;
 int main()
 {
+	char s[30] = "Uinversity of Denver";
+	int i;
+	char* p_c;
+	p_c = &s[0];
+	for (i = 0; i < 29; i++)
+	{
+		*p_c = toupper(*p_c);
+		cout << *p_c;
+		p_c++;
+	}
+	cout << endl;
+	system("pause");
+	return 0;
+}
+*/
 
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int arr[5][5];
+	int i, j;
+	for (i = 0; i < 5; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			arr[i][j] = 1;
+		}
+	}
+	arr[2][3] = 0;
+	cout << "Please input two numbers to see the value in array: \n";
+	cin >> i >> j;
+	if ((i < 5) && (j < 5))
+		cout << arr[i][j] << endl;
+	else
+		cout << "error!" << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y;
+	cout << "please input 2 numbers: " << endl;
+	cin >> x >> y;
+	cout << "x + y = " << x + y << endl
+		<< "x - y = " << x - y << endl
+		<< "x * y = " << x * y << endl;
+	if (y != 0)
+		cout << "x / y = " << x / y << endl
+		<< "x % y = " << x % y << endl;			// to find a remainder you must use interger to do the math
+	else
+		cout << "error!" << endl;
+	system("pause");
+	return 0;
+}
+*/
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+	int year;
+	double a, b;
+	cout << "Please input a year number, I can tell you if it is lead numer: " << endl;
+	cin >> year;
+	if (year <= 0)
+		cout << "error!" << endl;
+	else
+		
 }

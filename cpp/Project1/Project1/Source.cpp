@@ -685,29 +685,96 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 using namespace std;
 int main()
 {
 	double T0[30], T1[4][4], T2[4][4], T[4][4];
-	double* p_t0 = &T0[0], * p_t1 = &T1[0][0], * p_t2 = &T2[0][0];
-	int i = 0, j = 0, k = 0;
+	double* p_t = &T0[0];
+	int i = 0, j = 0;
+
 	cout << "Please keep inputing numbers untill you cannot type more: " << endl;
-	while (i < 5)
+	// inputting numbers for future useage
+	while (i < 30)
 	{
 		cin >> T0[i];
 		i++;
 	}
+	cout << p_t << endl;
 	cout << "Please check below, to make sure these are the numbers you wanted!" << endl;
-	
+	// confirming inputted numbers for next steps
 	while (i > 0)
 	{
-		cout << *p_t0 << endl;
-		p_t0++;
+		cout << *p_t;
+		p_t++;
 		i--;
 	}
+	cout << endl;
+	p_t = p_t - 1;
+	cout << p_t << endl;
+	system("pause");
+	// assign second half of inputs from bottom to top into T1
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			T1[i][j] = *p_t;
+			p_t--;
+		}
+	}
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			cout << T1[i][j] << " ";
+		}
+		cout << endl;
+
+	}
+	cout << endl;
+	cout << p_t << endl;
+	system("pause");
+	p_t = &T0[0];
+	// assign first half of inputs from top to bottom to T2
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			T2[i][j] = *p_t; 
+			p_t++;
+		}
+	}
+	cout << endl;
+	cout << p_t << endl;
 	
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			cout << T2[i][j] << " ";
+		}
+		cout << endl;
+	}
+	system("pause");
+
+	p_t = &T0[0];
+	cout << p_t << endl;
+	// calculate T = T1 * T2 for each element
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			T[i][j] = T1[i][j] * T2[i][j];
+			cout << T[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << p_t << endl;
 	system("pause");
 	return 0;
 }
+*/
+
+

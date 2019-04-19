@@ -1,2 +1,5 @@
 ﻿  Source.cpp
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\Project1\Source.cpp(906): warning C4101: 'temp2': unreferenced local variable
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\Project1\Source.cpp(906): warning C4101: 'temp3': unreferenced local variable
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\Project1\Source.cpp(906): warning C4101: 'temp4': unreferenced local variable
   Project1.vcxproj -> D:\Howard_Feng\NAO_Music_Autism_Project\cpp\Project1\x64\Debug\Project1.exe

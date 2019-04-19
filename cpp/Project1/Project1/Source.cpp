@@ -805,7 +805,7 @@ int main()
 }
 */
 
-
+/*
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -836,4 +836,80 @@ int main()
 
 	system("pause");
 	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i, j, k, m, n;
+	for (i = 0; i < 8; i++)
+	{
+		if (i <= 4) {
+			for (j = 0; j < 5 - i; j++)
+				cout << " ";
+			for (k = 0; k < 2 * i - 1; k++)
+				cout << "*";
+			cout << endl;
+		}
+		else
+		{
+			for (m = 0; m < i - 3; m++)
+				cout << " ";
+			for (n = 0; n < 15 - i * 2; n++)
+				cout << "*";
+			cout << endl;
+		}
+	}
+	system("pause");
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i;
+	int a, b;
+	cout << "input a number: " << endl;
+	cin >> a;
+	b = a;
+
+	cout << "this is new a: " << endl;
+	for (i = 0; i < 16; i++)
+	{
+		a = a << 1;					// shift a for 1 bit left
+		cout << a << endl;
+	}
+
+	cout << "this is new b: " << endl;
+	for (i = 0; i < 16; i++)
+	{
+		b = b >> 1;					// shift b for 1 bit right
+		cout << b << endl;
+	}
+
+	system("pause");
+	return 0;
+}
+*/
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	char str1[255], str2[3] = "ff", str3[3] = "fl", str4[3] = "fi", * p1, * p2, * p3, * p4, * temp2, * temp3, * temp4;
+	int sum2 = 0, sum3 = 0, sum4 = 0;
+	cout << "Please input some some f l i letters: " << endl;
+	cin >> str1;
+	p1 = str1;
+	p2 = str2;
+	p3 = str3;
+	p4 = str4;
+
 }

@@ -685,6 +685,34 @@ int main()
 }
 */
 
+
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x, i = 0, m = 0, n = 0, z = 0;
+	while (cin >> x)
+	{
+		i++;
+		if (x > 0)
+			m = m + 1;
+		else if (x == 0)
+			z = z + 1;
+		else
+			n = n + 1;
+	}
+	if (n > 0)
+		cout << "negitave number" << n << endl;
+	cout << "total number" << i << endl
+		<< "positive number" << m << endl
+		<< "number of zero" << z << endl;
+
+	return 0;
+}
+*/
+
+
 /*
 #include <iostream>
 using namespace std;
@@ -778,3 +806,34 @@ int main()
 */
 
 
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int num, maxNum, minNum, anotherNum;
+	char choice;
+	cout << "please input first number: " << endl;
+	cin >> num;
+	maxNum = num;
+	minNum = num;
+	cout << "do you want to input something more? Please enter y or n: " << endl;
+	cin >> choice;
+	while ((choice == 'Y') || (choice == 'y'))
+	{
+		cout << "now, you may enter another number: " << endl;
+		cin >> anotherNum;
+		maxNum = max(num, maxNum);
+		maxNum = max(maxNum, anotherNum);
+		minNum = min(num, minNum);
+		minNum = min(minNum, anotherNum);
+		cout << "do you want to input another number: " << endl;
+		cin >> choice;
+	}
+
+	cout << "The max number of all your inputs is :" << maxNum << endl;
+	cout << "The min number of all your inputs is : " << minNum << endl;
+
+	system("pause");
+	return 0;
+}

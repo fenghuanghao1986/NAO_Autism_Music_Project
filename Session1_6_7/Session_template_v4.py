@@ -320,8 +320,8 @@ def main(robotIP, PORT=9559):
             recordplay.playBack(robotIP, PORT)
             
         elif taskNumber == 14:
-            
-            host = "192.168.0.6"
+        
+            host = "192.168.0.6"    # this host name may have to change 
             username = "nao"
             pw = "nao"
             

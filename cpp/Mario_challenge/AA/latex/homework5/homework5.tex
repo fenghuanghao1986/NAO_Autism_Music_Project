@@ -1,0 +1,211 @@
+\documentclass{article}       % use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                              % See geometry.pdf to learn the layout options. There are lots.
+%\geo4metry{landscape}                            % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}                  % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                         % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+% TeX will automatically convert eps --> pdf in pdflatex         
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{tabto}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\usetikzlibrary{shapes.geometric}
+\tikzset{
+        buffer/.style={
+                draw,
+                shape border rotate=0,
+                regular polygon,
+                regular polygon sides=3,
+                fill=white,
+                node distance=2cm,
+                minimum height=4em
+        }
+}
+\tikzset{
+        buffer2/.style={
+                draw,
+                shape border rotate=180,
+                regular polygon,
+                regular polygon sides=3,
+                fill=white,
+                node distance=2cm,
+                minimum height=4em
+        }
+}
+
+
+
+\title{Adv Data Struct $\&$ Algorithm: Homework 5}
+\author{Zimian Li}
+
+\begin{document}
+        
+\maketitle
+\begin{enumerate}
+	\item[1.]Union of dynamic sets. Let $T_1$ and $T_2$ be BSTs with the property that if $x_1 \in T_1$ and $x_2 \in T_2$ then $key[x_1] < key[x_2]$.
+	\begin{enumerate}
+		\item[(a)] Show how to efficiently create a single randomized search treap $T = T_1 \cup T_2$ when $T_1$ and $T_2$ are valid randomized search treaps.\newline\newline
+		Add a new node $x$ as the root, then put $T_1$ as left sub-tree and $T_2$ as right sub-tree. Change $\rho (x)$ to $\infty$, and rotate $x$ down to be a leaf, then remove $x$.\newline
+		\item[(b)] Show how to efficiently create a single RB-tree $T = T_1 \cup T_2$ when $T_1$ and $T_2$ are both valid RB-trees.\newline\newline
+		Assume $height(T_1) >= height(T_2)$.\newline
+		At first, get the leftmost node of $T_2$, remove it from $T_2$, let it be node $x$. Then from the root of $T_1$, following the right children, find a node whose height is $height(T_2)$. When find it, let it be node $y$, replace node $x$ with $y$, then make $y$ be the left child of $x$, and put the rest of $T_2$ as the right sub-tree. Then I think in some conditions it also need to recolor some nodes.\newline
+		\item[(c)] Analyze the running time in both cases.\newline\newline
+		Suppose $h_1 = height(T_1), h_2 = height(T_2)$.\newline
+		For (a), the time complexity is $O(h_2)$, because the root would rotate from top to the bottom of $T_2$.\newline
+		For (b), I'm not sure with the recoloring part, if it's similar with the insertion of RB tree, I think the time complexity should be $O(max(h_1, h_2))$, because it need to go from the root of the shorter tree to the leftmost end, and then go from the root of the higher tree to the node with the same height of the shorter tree.\newline
+	\end{enumerate}
+	\item[2.] Supppose that we wish to keep track of a point of maximum overlap in a set of intervals, that is, a point with the largest number of intervals in the set that contain it.
+	\begin{enumerate}
+		\item[(a)] Show that there will always be a point of maximum overlap that is an endpoint of one of the segments.\newline\newline
+		\textbf{Proof:} Assume none of endpoints is a point of maximum overlap. Let an interval of all contiguous points of maximum be $[x, y]$. As I assumed, no segment ends in $[x, y]$, in other words, all segments should end after $y$. Suppose the endpoint of the segment that ends first is $z$, and $z > y$. Then all other segments should end after $z$. Therefore, I can increase the interval of all contiguous points of maximum to $[x, z]$, and there's an endpoint on $z$. That's a contradiction! Hence, there will always be a point of maximum overlap that is an endpoint of one of the segments.\newline
+		\item[(b)] Design a data structure that efficiently supports the operations INTERVALINSERT, INTERVALDELETE, and FIND-POM, which returns a point of maximum overlap.\newline\newline
+		First keep a red-black tree of all endpoints. Then about the additional information, we need three more. For an arbitrary node $x$:\newline
+		1) Let $v(x) = 1$ if it's a low endpoint, and $v(x) = -1$ if it's a high endpoint. Then we can find when looking for the POM in a sorted array of endpoints, just add all these values $+1, -1$ until finding the maximum. \newline
+		2) Let $sum(x) = sum(v(left(x))) + v(x) + sum(v(right(x)))$. It records the sum of all values of its all children plus itself.\newline
+		3) Let $max(x) = \max\{max(left(x)), sum(v(left(x))) + v(x), sum(v(left(x))) + v(x) + max(right(x))\}$. If $max(x) == max(left(x)),$ the POM is in the left subtree; If $max(x) == sum(v(left(x))) + v(x),$ the POM is $x$; if $max(x) == sum(v(left(x))) + v(x) + max(right(x)),$ the POM is in the right subtree.\newline
+		The operations INTERVALINSERT, INTERVALDELETE are simliar with the regular red-black tree, except we need to maintain these extra information, it still takes $O(h)$ time, because these extra information are only related with their left and right children. And the FIND-POM also takes $O(h)$ time, as the rule (3) above, we can look from the root to the right branches.\newline
+	\end{enumerate}	
+	\item[3.] Consider the problem of neatly printing a paragraph on a printer, The input text is a sequence of n words of lengths $l_1, l_2, ..., l_n$, measured in characters. All words are alphanmeric and no punctuation is allowed. We want to print this paragraph neatly on a number of lines that hold a maximum of $M$ characters each, Our criterion of "neatness" is as follows. If a given line contains words $i$ through $j$ and we leave exactly one space between words, the number of extra space characters at the end of the line is $extra[i, j] = M - j + i -\sum_{k=i}^{j}l_k$. We wish to minimize the sum, over all lines except the last, of the cubes of the numbers of extra space characters at the ends of lines.
+	\begin{enumerate}
+		\item[(a)] Explain why a dynamic programming solution is appropriate. In your answer, consider the two key ingredients of dynamic programming: optimal substructure and overlapping subproblems.\newline\newline
+		This problem of  optimally printing $n$ words can be splitted into a subproblem that optimally printing $i$ words $(1 \leq i < n)$ and the rest lines. And because one problem that printing $i$ words is based on the results of all subproblems that printing $j(1 \leq j < i)$ words, therefore many subproblems are referred many times.\newline
+		\item[(b)] Give a formula for the cost $lc[i,j]$ of including a line containing words $i$ through $j$ in the sum we want to minimize. Make sure your formula handles properly the last line (when j = n) and the case where words $i$ through $j$ do not fit on a single line.\newline\newline
+		$lc[i,j] = \begin{cases} 0, if j = n, extra[i,j] \geq 0 \\  extra[i,j], if j \neq n, extra[i,j] \geq 0 \\ \infty, if extra[i,j] < 0\end{cases}$\newline
+		\item[(c)] Let $c[j]$ be the cost of an optimal arrangement of words 1 through $j$. The cost of the optimal arrangement we want is thus $c[n]$. Define $c[j]$ recursively in a form suitable for dynamic programming.\newline\newline
+		$c[j] = \min_{1<i<j} \{c[i] + lc[i, j]\}$\newline
+		\item[(d)] Give a dynamic programming algorithm to print a paragraph of n words as neatly as possible.
+		\begin{algorithm}[H]
+	\caption{DPCOST}
+	\small
+	\begin{algorithmic}[1]
+		\Procedure {DPCOST}{A, n, M}
+		\State c[1] = 0
+		\For {j $\gets$ 2 to n}
+		\State c[j] $\gets \infty$
+		\For {i $\gets$ 2 to j}
+		\State extra = M - j + i
+		\For {k $\gets$ i to j}
+		\State extra $\gets$ extra - A[i]
+		\EndFor
+		\If {extra $\geq$ 0 and j == n}
+		\State lc $\gets$ 0
+		\EndIf
+		\If {extra $\geq$ 0 and j $\neq$ n}
+		\State lc $\gets$ extra
+		\EndIf
+		\If {extra $<$ 0}
+		\State lc $\gets \infty$  
+		\EndIf
+		\State v $\gets$ c[i] + lc
+			\If {v $<$ c[j]}
+			\State c[j] $\gets$ v
+			\EndIf
+		\EndFor
+		\EndFor
+		\State \Return c
+		\EndProcedure
+		\end{algorithmic}\label{p2}
+	\end{algorithm}
+	\begin{algorithm}[H]
+		\caption{PRINT}
+		\small
+		\begin{algorithmic}[1]
+			\Procedure {PRINT}{W, c, n}
+			\For {i $\gets$ 1 to n}
+			\State Print W[i] + ' '
+			\If {i $\neq$ n and c[i] $\neq$ c[i+1]}
+			\State Print endl
+			\EndIf
+			\EndFor
+			\EndProcedure
+		\end{algorithmic}\label{p1}
+	\end{algorithm}
+		\item[(e)] Analyze the running time and space requirements of your algorithm.\newline\newline
+		Running time is the sum of both algorithms above:\newline
+		Time Complexity = $\sum_{j=2}^{n}\sum_{i=2}^{j}\sum_{k=i}^{j} 1 + O(n) = \sum_{j=2}^{n}\sum_{i=2}^{j} (j-i) + O(n) = \sum_{j=2}^{n} O(n^2) + O(n) = O(n^3) + O(n) = O(n^3)$.\newline
+		Space requirement is an additional array:\newline
+		Space Complexity = $O(n)$.\newline
+	\end{enumerate}	
+	\item[4.] Earlier in the course we described a problem where a robot repeatedly visit a set P of n points, performing an assigned task at each point, The path followed by the robot is a loop and we wish to find a loop whose total length is small. Finding the shortest loop efficiently proved to be a difficult problem (one of the so called millennium problems). Instead, we considered various heuristics. Here we consider only loops that start at the rightmost point and proceed leftwards, visiting a subset of the points in decreasing x-coordinate order, until the leftmost point is reached. Then the robot turns around and visits the remaining points in increasing x-coordinate order. A loop with this property is called an LR-loop. We wish to find the shortest LR-loop using dynamic programming.	
+	\begin{enumerate}
+		\item[(a)] Assume $P=\{P_1, ..., P_n\}$ has been sorted by x-coordinate so that $P_1$ is the leftmost and $P_n$ is the rightmost point. What points is $P_1$ connected to in an LR-loop? What can you say about those points if the loop is optimal?\newline\newline
+		There should only be 2 points connected to $P_1$ in an LR-loop, they could be $P_2$ to $P_n$. If the loop is optimal, I think these points should be roughly divided to half and half, and the loop should look more like a circle.\newline
+		\item[(b)] Explain why a dynamic programming solution is appropriate. In your answer, consider the two key ingredients of dynamic programming: optimal substructure and overlapping subproblems.\newline\newline
+		This problem can be splitted into optimal subproblems, when deciding the routine of $P_i$, it has existed an optimal subproblem with $P_1$ to $P_i$ and $P_n$, we need to choose to put $P_i$ on the upper half or the lower half. And every step depends on the last step, these last steps are overlapping subproblems.\newline
+		\item[(c)] Give a recursive formula for the length of the shortest LR-loop in a form suitable for dynamic programming.\newline\newline
+		$l(i) = l(i-1) + \min_{2\leq j < i} \{d(j, i) + d(i, n) - d(j, n)\}$\newline
+		$d(x, y)$ is getting the Euclidean distance of $P_x$ and $P_y$.\newline
+		\item[(d)] Write a dynamic programming algorithm to find the shortest LR-loop for the set $P = \{P_1, ..., P_n\}$.
+		\begin{algorithm}[H]
+			\caption{DPCOST}
+			\small
+			\begin{algorithmic}[1]
+				\Procedure {DPCOST}{P, n}
+				\State L[2] = d(1, 2) + d(2, n) + d(1, n)
+				\State M[0] = 2
+				\For {i $\gets$ 3 to n-1}
+				\State L[i] = $\infty$
+				\For {j $\gets$ 2 to i-1}
+				\State v = L[i-1] + d(j, i) + d(i, n) - d(j, n)
+				\If {v < L[i]}
+				\State L[i] = v
+				\State M[i-2] = j
+				\EndIf
+				\EndFor
+				\EndFor
+				\State \Return L, M
+				\EndProcedure
+			\end{algorithmic}\label{p1}
+		\end{algorithm}
+		\item[(e)] Analyze the running time and space requirements of your algorithm.\newline\newline
+		Time complexity = $\sum_{i=3}^{n-1}\sum_{j=2}^{i-1} 1 = O(n)$.\newline
+		Space complexity = $O(n)$.
+	\end{enumerate}
+	\item[5.] Consider the following the task scheduling problem. You are given n tasks, competing for the same resource. Each task is specified by a pair $(p_i, t_i)$ meaning that it requires $p_i$ units of processing time and that it can start no earlier than $t_i$. Assume that active tasks can be suspended and finished later with no penalty. We are interested in finding solutions that minimize the sum of completion times of all tasks involved. For example if n = 2 with tasks (5, 2) and (3, 0) then a valid schedule runs task 2 from time 0 to time 2, suspend it, run task 1 to completion from time 2 to time 7, and finally complete task 2 from time 7 to time 8. The cost of this schedule is 7+8 = 15. Describe an efficient algorithm to find an optimal schedule, i.e., one that minimizes the sum of completion times. Make sure to prove that you algorithm is correct and analyze its running time.
+	\begin{algorithm}[H]
+		\caption{SCHEDULING}
+		\small
+		\begin{algorithmic}[1]
+			\Procedure {SCHEDULING}{A, n}
+			\State sort A by t
+			\State sum $\gets$ 0
+			\For {i $\gets$ 0 to n-2}
+			\If {A[i].t + A[i].p $\leq$ A[i+1].t}
+			\State sum $\gets$ sum + A[i].t + A[i].p
+			\Else
+			\If {A[i].t + A[i].p $\geq$ A[i+1].t + A[i+1].p}
+			\State A[i].t = A[i+1].t + A[i+1].p
+			\State A[i].p = A[i].p - (A[i+1].t - A[i].t)
+			\State find a new position k for A[i] by binary search, and put A[i] in the new position
+			\State i $\gets$ i - 1
+			\Else
+			\State sum $\gets$ sum + A[i].t + A[i].p
+			\EndIf
+			\EndIf
+			\EndFor
+			\EndProcedure
+		\end{algorithmic}\label{p1}
+	\end{algorithm}
+	The core part of this algorithm is : \newline
+	When meeting a overlapped task, compare $p+t$ with it, if the current task is smaller, then complete the current one first, otherwise suspend the current task, run the new one, and update the $t$ and $p$ of the suspended task.\newline\newline
+	\textbf{Proof of Correctness:} if there's no overlapped task, then just run all tasks one by one per their arrival time. It's obviously optimal.\newline
+	And it's also obvious that those tasks need to be executed by arrival time. The only problem is that it should suspend or not when encounter an overlapped task.\newline
+	Suppose two overlapped tasks $(p_i, t_i)$ and $(p_j, t_j)$, let $t_i \leq t_j \leq t_i + p_i$.\newline
+	The scenario is like task $i$ is running, and then task $j$ arrives.\newline
+	If task $i$ doesn't suspend, the sum of completion time of these two tasks is $s_1 = t_i + p_i + (t_i + p_i + p_j) = 2t_i + 2p_i + p_j$.\newline
+	If task $i$ suspends, then the sum of completion time of these two tasks is $s_2 = t_i + p_i + p_j + t_j + p_j = t_i + p_i + t_j + 2p_j$\newline
+	If $s_1 > s_2$, then $s_1 - s_2 = (t_i + p_i) - (t_j + p_j) > 0 \implies t_i + p_i > t_j + p_j$. And similarly, if $s_1 < s_2$, $t_i + p_i < t_j + p_j$.\newline
+	Then I can conclude that if $ t_i + p_i > t_j + p_j$, task $i$ should suspend to decrease the sum, otherwise task $i$ should complete itself first. This is also the choice of my algorithm.\newline\newline
+	\textbf{Running Time:} For best case that no overlapped tasks, the running time is $O(n\log n)$ because of the sorting.\newline
+	The difficult part is the worst case, think all tasks as segments, if all segments construct like a pyramid, it would be the worst case. In worst case, line 11 is the main problem, if $A$ is a linear array, inserting $A[i]$ to a new position would also move all other elements in front of it. Then the time complexity would be $O(n^2)$. If $A$ is some kind of container that inserting $A[i]$ only cost no more than $O(\log n)$ time (tree or hash table), then the time complexity would also be $O(n\log n)$.
+	
+\end{enumerate}
+\end{document}

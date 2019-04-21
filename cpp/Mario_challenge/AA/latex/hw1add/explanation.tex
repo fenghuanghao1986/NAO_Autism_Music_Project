@@ -1,0 +1,90 @@
+\documentclass{article}       % use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                              % See geometry.pdf to learn the layout options. There are lots.
+%\geo4metry{landscape}                            % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}                  % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                         % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+% TeX will automatically convert eps --> pdf in pdflatex         
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{tabto}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric}
+\tikzset{
+        buffer/.style={
+                draw,
+                shape border rotate=0,
+                regular polygon,
+                regular polygon sides=3,
+                fill=white,
+                node distance=2cm,
+                minimum height=4em
+        }
+}
+\tikzset{
+        buffer2/.style={
+                draw,
+                shape border rotate=180,
+                regular polygon,
+                regular polygon sides=3,
+                fill=white,
+                node distance=2cm,
+                minimum height=4em
+        }
+}
+
+
+
+\title{Adv Data Struct $\&$ Algorithm: Homework 1 Additional Explanation}
+\author{Zimian Li}
+
+\begin{document}
+        
+\maketitle
+        \begin{enumerate}
+                \item[(a)] In class we established that the worst-case complexity of Boston Pool algorithm is $O(n^2)$. For each value of $n$ describe how to construct an instance with at least $2n$ participants ($n$ for each set in the bipartite graph) that elicit this worst case. Make sure to discuss the order in which proposals are made.\newline\newline
+                \textbf{Original Answer:}\newline
+                Suppose these two sets are $M = \{m_1, m_2, ..., m_n\}$ and $W = \{w_1, w_2, ..., w_n\}$.\newline
+                The worst-case scenario could be like the preference list of every $m_i$ is $\{w_1, w_2, ..., w_n\}$, and the preference list of every $w_i$ is $\{m_n, m_{n-1}, ..., m_1\}$. And the proposal order should be from $m_1$ to $m_n$.\newline\newline
+                \textbf{Explanation:}\newline
+                As I mentioned above, start the Bostion Pool procedure from picking $m_1$ first, it would be paired with $w_1$, then $m_2$, pair it with $w_1$, $m_1$ would get single again. Continue it until all done, it's obvious that $m_1$ attempted $n$ times and at last got paired with $w_n$, and $m_2$ attempted $n-1$ times and ended with $w_{n-1}$, and so forth, until $m_n$ which attempted $1$ time and ended with $w_1$. Finally, the total number of loops is $1+2+3+...+n = (n^2+n)/2$. That's the worst case.\newline
+                \item[(g)]  Consider the following partial preference list of 4 men and 4 women. \newline
+                 \begin{tabular}{ | l | c | c | c | r | }
+                	\hline
+                	Vic: & Amy & Beth & - & -\\ \hline
+                	Will: & Beth & Amy & - & - \\ \hline
+                	Xavi: & - & - & Demi & Cora \\ \hline
+                	Yan: & - & - & Cora & Demi \\ \hline
+                \end{tabular}
+                \begin{tabular}{ | l | c | c | c | r | }
+                	\hline
+                	Amy: & Will & Vic & - & -\\ \hline
+                	Beth: & Vic & Will & - & - \\ \hline
+                	Cora: & - & - & Xavi & Yan \\ \hline
+                	Demi: & - & - & Yan & Xavi \\ \hline
+                \end{tabular} \newline
+                Find a matching that is guaranteed to be stable independent of what the unspecified preferences.\newline\newline
+                \textbf{Original Answer:}\newline
+                $\{(Vic, Amy), (Will, Beth), (Xavi, Demi), (Yan, Cora)\}$\newline\newline
+                \textbf{Explanation:}\newline
+                Look at the structure of the partial preference list, $Amy$ and $Beth$ are top 2 in the preference list of $Vic$ and $Will$, on the other hand, $Vic$ and $Will$ are also top 2 in $Amy$ and $Beth$'s preference lists. That means the other 2 men and 2 women can't produce any unstable pairs which can influence the guys in the upper half part of the chart, vice versa. Anyway, the upper half and the lower half are independent which can't influence each other. Then we only need to check if $\{(Vic, Beth), (Will, Amy), (Xavi, Cora), (Yan, Demi)\}$ are unstable pairs. It's obvious that none of them is an unstable pair.\newline
+         \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

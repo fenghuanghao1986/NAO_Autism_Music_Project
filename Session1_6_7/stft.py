@@ -1,4 +1,5 @@
 import numpy as np
+import time
 import numpy.fft as fft
 from scipy.io import wavfile as wav
 from scipy.signal import butter, lfilter
@@ -113,10 +114,10 @@ def realPeak(rawPeak):
     # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
     # because of the accuracy problem, we can only compare the detected note 
     # in a certain range using the basic ratio between notes
-    notes = {'C6': 1038, 'D6': 1172, 'E6': 1316,
-             'F6': 1389, 'G6': 1561, 'A6': 1755,
-             'B6': 1975, 'C7': 2084, 'D7': 2343,
-             'E7': 2626, 'F7': 2785}
+    notes = {'1': 1038, '2': 1172, '3': 1316,
+             '4': 1389, '5': 1561, '6': 1755,
+             '7': 1975, '8': 2084, '9': 2343,
+             '10': 2626, '11': 2785}
     
     #peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
     #peaks = np.array(peaks)
@@ -174,9 +175,16 @@ def findNotes(stftData, fsRange):
         rawPeaks.append(maxLocal[i][1]*fsRange/y)
 #            
     return rawPeaks
+
+def findDiff(orgPeak, newPeak):
+    diffN = abs(len(orgPeak) - len(newPeak))
+    res = 
+    
+    return diff
     
 if __name__ == '__main__':
     
+    start = time.time()
     file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
 #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
     sampleRate, data = wav.read(file)
@@ -188,7 +196,7 @@ if __name__ == '__main__':
     high = 2800
     x = bandpass_filter(xx, low, high, sampleRate, order=3)
     # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-    time = np.arange(N) / sampleRate  # seconds
+    audioTime = np.arange(N) / sampleRate  # seconds
 #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
 
     # Test with Nfft bigger than Nwin
@@ -197,6 +205,11 @@ if __name__ == '__main__':
     y = istft(s, Nwin)
     peaks = findNotes(s, sampleRate/2)
     realPeaks = realPeak(peaks)
+    orgPeak = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8']
+    diff = findDiff(orgPeak, realPeaks)
+    end = time.time()
+    print("stft time: " + str(end - start))
+    print(diff)
     
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!

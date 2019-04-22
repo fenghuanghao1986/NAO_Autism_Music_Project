@@ -176,40 +176,81 @@ def findNotes(stftData, fsRange):
 #            
     return rawPeaks
 
-def findDiff(orgPeak, newPeak):
-    diffN = abs(len(orgPeak) - len(newPeak))
-    res = 
+def LevDist(s_peak, s_len, t_peak, t_len):
     
-    return diff
+    if s_len == 0:
+        return t_len
+    if t_len == 0:
+        return s_len
+    if s_peak[s_len - 1] == t_peak[t_len - 1]:
+        cost = 0
+    else:
+        cost = 1
     
-if __name__ == '__main__':
-    
-    start = time.time()
-    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
-#    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
-    sampleRate, data = wav.read(file)
-    N = len(data)
-    Nwin = 2048
-    xx = data[:, 0]
-    
-    low = 1040
-    high = 2800
-    x = bandpass_filter(xx, low, high, sampleRate, order=3)
-    # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-    audioTime = np.arange(N) / sampleRate  # seconds
-#    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+    if result[t_len-1][s_len-1] != -1:
+        return result[t_len-1][s_len-1]
+    res = min([LevDist(s_peak, s_len - 1, t_peak, t_len    ) + 1,
+               LevDist(s_peak, s_len    , t_peak, t_len - 1) + 1, 
+               LevDist(s_peak, s_len - 1, t_peak, t_len - 1) + cost])
+    result[t_len-1][s_len-1] = res
+    return res
 
-    # Test with Nfft bigger than Nwin
-    Nfft = Nwin * 2
-    s = np.abs(stft(x, Nwin))
-    y = istft(s, Nwin)
-    peaks = findNotes(s, sampleRate/2)
-    realPeaks = realPeak(peaks)
-    orgPeak = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8']
-    diff = findDiff(orgPeak, realPeaks)
-    end = time.time()
-    print("stft time: " + str(end - start))
-    print(diff)
+def LevDist2(s, t):
+    slen = len(s)
+    tlen = len(t)
+    result = [[0 for i in range(len(s))] for j in range(len(t))]
+    cost = 0
+
+    for i in range(tlen):
+        result[i][0] = i
+    for j in range(slen):
+        result[0][j] = i
+
+    for i in range(tlen):
+        for j in range(slen):
+            if s[j-1] == t[i-1]:
+                cost = 0
+            else:
+                cost = 1
+
+            result[i][j] = min([result[i-1][j]+1,
+                                result[i][j-1]+1,
+                                result[i-1][j-1]+cost])
+    return result[tlen-1][slen-1]
+
+#if __name__ == '__main__':
+#    
+###    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
+#    file = r'D:\LabWork\ThesisProject\Music_Autism_Robot\Session1_6_7\record.wav'
+#    sampleRate, data = wav.read(file)
+#    N = len(data)
+#    Nwin = 2048
+#    xx = data[:, 0]
+#    
+#    low = 1040
+#    high = 2800
+#    x = bandpass_filter(xx, low, high, sampleRate, order=3)
+#    # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
+#    audioTime = np.arange(N) / sampleRate  # seconds
+##    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+#
+#    # Test with Nfft bigger than Nwin
+#    Nfft = Nwin * 2
+#    s = np.abs(stft(x, Nwin))
+#    y = istft(s, Nwin)
+#    peaks = findNotes(s, sampleRate/2)
+#    realPeaks = realPeak(peaks)
+#    start = time.time()
+##    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
+#    r_len = len(realPeaks)
+#    orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
+#    o_len = len(orgPeaks)
+#    result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
+#
+#    diff = LevDist(realPeaks, r_len, orgPeaks, o_len)
+#    end = time.time()
+#    print("stft time: " + str(end - start))
+#    print(diff)
     
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!
@@ -217,17 +258,17 @@ if __name__ == '__main__':
 #    assert (maxerr < np.spacing(1) * 10)
 
     # Test `stftbins`
-    t, f = stftbins(x, Nwin, d=1.0 / sampleRate)
-    assert (len(t) == s.shape[0])
-    assert (len(f) == s.shape[1])
- 
-    try:
-#        import pylab as plt
-        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-        plt.xlabel('frequency (Hertz)')
-        plt.ylabel('time (seconds (start of chunk))')
-        plt.title('STFT with chirp example')
-        plt.grid()
-        plt.show()
-    except ModuleNotFoundError:
-        pass
+#    t, f = stftbins(x, Nwin, d=1.0 / sampleRate)
+#    assert (len(t) == s.shape[0])
+#    assert (len(f) == s.shape[1])
+# 
+#    try:
+##        import pylab as plt
+#        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+#        plt.xlabel('frequency (Hertz)')
+#        plt.ylabel('time (seconds (start of chunk))')
+#        plt.title('STFT with chirp example')
+#        plt.grid()
+#        plt.show()
+#    except ModuleNotFoundError:
+#        pass

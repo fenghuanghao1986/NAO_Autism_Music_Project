@@ -351,6 +351,20 @@ def main(robotIP, PORT=9559):
             y = stft.istft(s, Nwin)
             peaks = stft.findNotes(s, sampleRate/2)
             realPeaks = stft.realPeak(peaks)
+            start = time.time()
+#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
+            r_len = len(realPeaks)
+#            change orgpeaks to the key that nao just played or the music just played
+#           find a way please!
+            orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
+            o_len = len(orgPeaks)
+#            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
+        
+            diff = stft.LevDist2(realPeaks, orgPeaks)
+            sim = 1 - (float(diff)/(float(o_len)))
+            end = time.time()
+            print("stft time: " + str(end - start))
+            print(diff, sim)
             
         else:
             continue

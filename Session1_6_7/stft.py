@@ -176,24 +176,24 @@ def findNotes(stftData, fsRange):
 #            
     return rawPeaks
 
-def LevDist(s_peak, s_len, t_peak, t_len):
-    
-    if s_len == 0:
-        return t_len
-    if t_len == 0:
-        return s_len
-    if s_peak[s_len - 1] == t_peak[t_len - 1]:
-        cost = 0
-    else:
-        cost = 1
-    
-    if result[t_len-1][s_len-1] != -1:
-        return result[t_len-1][s_len-1]
-    res = min([LevDist(s_peak, s_len - 1, t_peak, t_len    ) + 1,
-               LevDist(s_peak, s_len    , t_peak, t_len - 1) + 1, 
-               LevDist(s_peak, s_len - 1, t_peak, t_len - 1) + cost])
-    result[t_len-1][s_len-1] = res
-    return res
+#def LevDist(s_peak, s_len, t_peak, t_len):
+#    
+#    if s_len == 0:
+#        return t_len
+#    if t_len == 0:
+#        return s_len
+#    if s_peak[s_len - 1] == t_peak[t_len - 1]:
+#        cost = 0
+#    else:
+#        cost = 1
+#    
+#    if result[t_len-1][s_len-1] != -1:
+#        return result[t_len-1][s_len-1]
+#    res = min([LevDist(s_peak, s_len - 1, t_peak, t_len    ) + 1,
+#               LevDist(s_peak, s_len    , t_peak, t_len - 1) + 1, 
+#               LevDist(s_peak, s_len - 1, t_peak, t_len - 1) + cost])
+#    result[t_len-1][s_len-1] = res
+#    return res
 
 def LevDist2(s, t):
     slen = len(s)
@@ -218,39 +218,39 @@ def LevDist2(s, t):
                                 result[i-1][j-1]+cost])
     return result[tlen-1][slen-1]
 
-#if __name__ == '__main__':
-#    
-###    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
+if __name__ == '__main__':
+    
+    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
 #    file = r'D:\LabWork\ThesisProject\Music_Autism_Robot\Session1_6_7\record.wav'
-#    sampleRate, data = wav.read(file)
-#    N = len(data)
-#    Nwin = 2048
-#    xx = data[:, 0]
-#    
-#    low = 1040
-#    high = 2800
-#    x = bandpass_filter(xx, low, high, sampleRate, order=3)
-#    # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-#    audioTime = np.arange(N) / sampleRate  # seconds
-##    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
-#
-#    # Test with Nfft bigger than Nwin
-#    Nfft = Nwin * 2
-#    s = np.abs(stft(x, Nwin))
-#    y = istft(s, Nwin)
-#    peaks = findNotes(s, sampleRate/2)
-#    realPeaks = realPeak(peaks)
-#    start = time.time()
-##    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
-#    r_len = len(realPeaks)
-#    orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
-#    o_len = len(orgPeaks)
-#    result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
-#
+    sampleRate, data = wav.read(file)
+    N = len(data)
+    Nwin = 2048
+    xx = data[:, 0]
+    
+    low = 1040
+    high = 2800
+    x = bandpass_filter(xx, low, high, sampleRate, order=3)
+    # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
+    audioTime = np.arange(N) / sampleRate  # seconds
+#    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+
+    # Test with Nfft bigger than Nwin
+    Nfft = Nwin * 2
+    s = np.abs(stft(x, Nwin))
+    y = istft(s, Nwin)
+    peaks = findNotes(s, sampleRate/2)
+    realPeaks = realPeak(peaks)
+    start = time.time()
+#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
+    r_len = len(realPeaks)
+    orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
+    o_len = len(orgPeaks)
+    result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
+    diff = LevDist2(realPeaks, orgPeaks)
 #    diff = LevDist(realPeaks, r_len, orgPeaks, o_len)
-#    end = time.time()
-#    print("stft time: " + str(end - start))
-#    print(diff)
+    end = time.time()
+    print("stft time: " + str(end - start))
+    print(diff)
     
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!

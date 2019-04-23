@@ -913,5 +913,18 @@ int main()
 	p2 = str2;
 	p3 = str3;
 	p4 = str4;
+	while (*p1 != '\0')
+	{
+		temp2 = p1;
+		if (*temp2 == *p2)
+		{
+			while ((*temp2 == *p2) && (*p2 != '\0') && (temp2 != '\0'))
+			{
+				temp2++;
+				p2++;
+			}
+		}
+
+	}
 
 }

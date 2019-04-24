@@ -93,6 +93,11 @@ string setTime(char str[])
 	string result(str);
 	return result;
 }
+
+void getTime(string result)
+{
+	cout<< result
+}
 /*
 // define output function
 string getTime(string str)

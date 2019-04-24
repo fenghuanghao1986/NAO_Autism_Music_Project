@@ -87,6 +87,18 @@ user says he or she wants to end the program.*/
 #include <string.h>
 using namespace std;
 
+string input()
+{
+	string str;
+	cin >> str;
+	return str;
+}
+
+void output(string result)
+{
+	cout << result;
+}
+
 // define input function
 string setTime(char str[])
 {

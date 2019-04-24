@@ -297,29 +297,35 @@ def main(robotIP, PORT=9559):
             tts.say("Have a nice day! See you next time!")            
             motionProxy.rest()
             break
+# =============================================================================
         
 #       other typo or mistakes
-            
+#        task 10: ask for help from robot
         elif taskNumber == 10:
             tts.say("It looks like you may need some help. \
                     Do you want me to show you again?")
             motionProxy.rest()
-            
+# =============================================================================
+#        task 11: reward for kid    
         elif taskNumber == 11:
             tts.say("Well done! You just unlocked a new challenge, \
                     let's try it now!")
             motionProxy.rest()
-            
+# =============================================================================
+#        task 12: based on bad result, ask kid try again and no NAO play    
         elif taskNumber == 12:
             tts.say("It doesn't sound quite right, \
                     please try it again. I am listening.")
             motionProxy.rest()
-            
+# =============================================================================
+#        task 13: record what kid plays and play back let kid confirm    
         elif taskNumber == 13:
             
             recordplay.record(robotIP, PORT, t=5)
             recordplay.playBack(robotIP, PORT)
-            
+# =============================================================================
+#        task 14: shh, transfer file and ntft get frequency, then make judgement
+#        send feedback to kid
         elif taskNumber == 14:
         
             host = "192.168.0.6"    # this host name may have to change 
@@ -366,6 +372,7 @@ def main(robotIP, PORT=9559):
             end = time.time()
             print("stft time: " + str(end - start))
             print(diff, sim)
+# =============================================================================
             
         else:
             continue

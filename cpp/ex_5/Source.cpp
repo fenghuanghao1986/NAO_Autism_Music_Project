@@ -88,30 +88,46 @@ user says he or she wants to end the program.*/
 using namespace std;
 
 // define input function
-string setTime(int len)
+string setTime(char str[])
 {
-	
+	string result(str);
+	return result;
 }
-
+/*
 // define output function
-char getTime(char str[])
+string getTime(string str)
 {
-
+	return str;
 }
 
 // define time conversion function
-char convertTime(char str[])
+char convertTime()
 {
 	char A = 'A.M.', P = 'P.M.';
-	
+	char comma = ':';
+	char dispHr = '00', dispMi = '00';
+	int hr = 0, mi = 0;
+	char t[4] = { dispHr, comma, dispMi, A};
+	cout << t << endl;
 }
-
+*/
 // define main function
 int main()
 {
-	char tOf24[5], tOf12[10];
+	int hr = 0, mi = 0;
+	char tOf24[5], tOf12;
+	string t;
+	string dispHr = "00", dispMi = "00";
+	string comma = ":";
+	string A ="A.M.", P = "P.M.";
+	
 	cout << "Please enter current time in 24hr notation, "
 		<< "follow this format 01:23: " << endl;
+	cin >> tOf24;
+	t = setTime(tOf24);
+	cout << t;
+	//getTime();
 
-	tOf24 = setTime();
+	//cout << dispHr << comma << dispMi << ' ' << A << endl;
+	//system("pause");
 }

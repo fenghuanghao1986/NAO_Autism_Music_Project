@@ -51,6 +51,7 @@ def main(robotIP, PORT=9559):
                                    12: robot ask kid try it again\n\
                                    13: start record and play back\n\
                                    14: ssh, process and send feedback\n\
+                                   15: game time\n\
                                    please make selection: "))
         
 # =============================================================================

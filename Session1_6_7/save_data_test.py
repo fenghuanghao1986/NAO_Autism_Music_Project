@@ -22,10 +22,10 @@ year = str(now.year)
 
 fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day
 
-with open(fileName + '.csv', 'wb') as csvfile:
+with open(fileName + '.csv', 'a') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
+#    filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
     filewriter.writerow(['01', '123', '122', '.667'])
     filewriter.writerow(['01', '123', '122', '.667'])
     filewriter.writerow(['01', '123', '122', '.667'])

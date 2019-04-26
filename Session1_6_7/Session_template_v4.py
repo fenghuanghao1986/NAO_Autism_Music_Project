@@ -9,6 +9,7 @@ Created on Tue Mar  5 16:53:15 2019
 # =============================================================================
 #import almath
 import time
+import sys
 import argparse
 #import motion
 import Positions
@@ -18,6 +19,30 @@ import recordplay
 import stft
 from naoqi import ALProxy
 from scipy.io import wavfile as wav
+import csv
+import datetime
+
+print "Enter subject number:\n"
+subject = raw_input()
+print "Enter session number:\n"
+session = raw_input()
+now = datetime.datetime.now()
+day = str(now.day)
+mon = str(now.month)
+year = str(now.year)
+fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
+
+with open(fileName, 'wb') as csvfile:
+    filewriter = csv.writer(csvfile, delimiter=',',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
+    try:
+        with open(fileName, 'a') as csvfile:
+            filewriter.writerow(['01', '123', '122', '.667'])
+            filewriter.writerow(['01', '123', '122', '.667'])
+            filewriter.writerow(['01', '123', '122', '.667'])
+    except csv.Error as e:
+        sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
 def main(robotIP, PORT=9559):

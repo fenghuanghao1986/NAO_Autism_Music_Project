@@ -397,6 +397,17 @@ def main(robotIP, PORT=9559):
             end = time.time()
             print("stft time: " + str(end - start))
             print(diff, sim)
+            with open(fileName, 'wb') as csvfile:
+                filewriter = csv.writer(csvfile, delimiter=',',
+                                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
+                try:
+                    with open(fileName, 'a') as csvfile:
+                        filewriter.writerow(['01', '123', '122', '.667'])
+                        filewriter.writerow(['01', '123', '122', '.667'])
+                        filewriter.writerow(['01', '123', '122', '.667'])
+                except csv.Error as e:
+                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
             
         else:

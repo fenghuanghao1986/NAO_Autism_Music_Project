@@ -28,6 +28,7 @@ day = str(now.day)
 mon = str(now.month)
 year = str(now.year)
 task = 0
+keys = []
 fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
 
 try:
@@ -101,20 +102,22 @@ def main():
 #       first half song
         elif taskNumber == 4:
             
-            
+            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3]
             task = 'notes+color'
 # =============================================================================
 #       task 5: Start play whole song 
 #       second half song 
         elif taskNumber == 5:
             
-            
+            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
+                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
             task = 'notes+color'
 
 # =============================================================================
 #       task 6: play the whole song
         elif taskNumber == 6:
             
+            keys = [5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0]
             task = 'song'
 
 # =============================================================================
@@ -127,13 +130,13 @@ def main():
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([task, '123', '122', '.667'])
+                    filewriter.writerow([task, keys, '122', '.667'])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
             
         else:
-            continue
+            break
         
 # =============================================================================
 # Calling the main

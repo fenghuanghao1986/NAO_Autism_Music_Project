@@ -30,19 +30,16 @@ now = datetime.datetime.now()
 day = str(now.day)
 mon = str(now.month)
 year = str(now.year)
+task = 0
 fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
 
-with open(fileName, 'wb') as csvfile:
-    filewriter = csv.writer(csvfile, delimiter=',',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
-    try:
-        with open(fileName, 'a') as csvfile:
-            filewriter.writerow(['01', '123', '122', '.667'])
-            filewriter.writerow(['01', '123', '122', '.667'])
-            filewriter.writerow(['01', '123', '122', '.667'])
-    except csv.Error as e:
-        sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
+try:
+    with open(fileName, 'wb') as csvfile:
+        filewriter = csv.writer(csvfile, delimiter=',',
+                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
+except csv.Error as e:
+    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
 def main(robotIP, PORT=9559):
@@ -142,7 +139,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("I just played a note, can you repeat that note for me?")
             time.sleep(1.0)
-
+            task = 'note'
         
 # =============================================================================
 #       task 2: Start single note play along with color  
@@ -178,7 +175,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("Now, it is your turn to play the green bar!")
             tts.say("And try to use your left hand to do this.")
-
+            task = 'note+color'
         
 # =============================================================================
 #       task 3: Start multiple notes play along with color
@@ -204,7 +201,7 @@ def main(robotIP, PORT=9559):
                     for example green, gray, blue.")
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
-
+            task = 'notes+colors'
         
 # =============================================================================
 #       task 4: Start play whole song 
@@ -231,7 +228,7 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-
+            task = 'notes+color'
 # =============================================================================
 #       task 5: Start play whole song 
 #       second half song 
@@ -258,7 +255,7 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-
+            task = 'notes+color'
 
 # =============================================================================
 #       task 6: play the whole song
@@ -286,7 +283,7 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-
+            task = 'song'
 
 # =============================================================================
 #       task 7: take a break for 180 seconds      
@@ -397,17 +394,13 @@ def main(robotIP, PORT=9559):
             end = time.time()
             print("stft time: " + str(end - start))
             print(diff, sim)
-            with open(fileName, 'wb') as csvfile:
-                filewriter = csv.writer(csvfile, delimiter=',',
-                                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
-                try:
-                    with open(fileName, 'a') as csvfile:
-                        filewriter.writerow(['01', '123', '122', '.667'])
-                        filewriter.writerow(['01', '123', '122', '.667'])
-                        filewriter.writerow(['01', '123', '122', '.667'])
-                except csv.Error as e:
-                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([task, '123', '122', '.667'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
             
         else:

@@ -132,8 +132,8 @@ def realPeak(rawPeak):
         for key, note in notes.items():
             if rawPeak[i] >= note - 9 and rawPeak[i] <= note + 8:
                 newPeak.append(key)
-                print(newPeak)
-                print(i)
+#                print(newPeak)
+#                print(i)
                 break
             else:
                 continue
@@ -220,8 +220,9 @@ def LevDist2(s, t):
 
 if __name__ == '__main__':
     
-    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
+#    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
 #    file = r'D:\LabWork\ThesisProject\Music_Autism_Robot\Session1_6_7\record.wav'
+    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\record.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
     Nwin = 2048
@@ -257,18 +258,18 @@ if __name__ == '__main__':
 #    maxerr = np.max(np.abs(x - y))
 #    assert (maxerr < np.spacing(1) * 10)
 
-    # Test `stftbins`
+#     Test `stftbins`
 #    t, f = stftbins(x, Nwin, d=1.0 / sampleRate)
 #    assert (len(t) == s.shape[0])
 #    assert (len(f) == s.shape[1])
-# 
-#    try:
-##        import pylab as plt
-#        plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-#        plt.xlabel('frequency (Hertz)')
-#        plt.ylabel('time (seconds (start of chunk))')
-#        plt.title('STFT with chirp example')
-#        plt.grid()
-#        plt.show()
+ 
+##    try:
+#    import pylab as plt
+#    plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+#    plt.xlabel('frequency (Hertz)')
+#    plt.ylabel('time (seconds (start of chunk))')
+#    plt.title('STFT with chirp example')
+#    plt.grid()
+#    plt.show()
 #    except ModuleNotFoundError:
 #        pass

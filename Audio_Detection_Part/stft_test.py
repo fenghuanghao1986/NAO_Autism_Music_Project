@@ -177,11 +177,14 @@ def findNotes(stftData, fsRange):
     
 if __name__ == '__main__':
     
-    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Audio_Detection_Part\santa.wav'
+#    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Audio_Detection_Part\santa.wav'
 #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
+    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\record.wav'
+
     sampleRate, data = wav.read(file)
     N = len(data)
     Nwin = 2048
+#    Nwin = 4096
     xx = data[:, 0]
     
     low = 1040

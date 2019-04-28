@@ -99,23 +99,6 @@ void output(string result)
 	cout << result;
 }
 
-// define input function
-string setTime(char str[])
-{
-	string result(str);
-	return result;
-}
-
-void getTime(string result)
-{
-	cout<< result
-}
-/*
-// define output function
-string getTime(string str)
-{
-	return str;
-}
 
 // define time conversion function
 char convertTime()
@@ -127,7 +110,7 @@ char convertTime()
 	char t[4] = { dispHr, comma, dispMi, A};
 	cout << t << endl;
 }
-*/
+
 // define main function
 int main()
 {
@@ -141,7 +124,7 @@ int main()
 	cout << "Please enter current time in 24hr notation, "
 		<< "follow this format 01:23: " << endl;
 	cin >> tOf24;
-	t = setTime(tOf24);
+	t = input();
 	cout << t;
 	//getTime();
 

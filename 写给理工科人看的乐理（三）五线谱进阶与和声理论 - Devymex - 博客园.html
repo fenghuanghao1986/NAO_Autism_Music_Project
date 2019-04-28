@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://www.cnblogs.com/devymex/p/3389620.html -->
+<html lang="zh-cn" class="gr__cnblogs_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+    <title>写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园</title>
+<meta property="og:description" content="关键字：成人学乐理 乐理基础 乐理入门 上一讲我们学习了表示音符相对音高的十二平均律系统和表示绝对音高的五线谱系统，这一讲将对我们已经学到的这些知识做进一步展开，并对和声理论做简单的介绍。和上一讲一样">
+    <link type="text/css" rel="stylesheet" href="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/bundle-Cogitation.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/bundle-Cogitation-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/devymex/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/devymex/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/devymex/wlwmanifest.xml">
+    <script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/amp4ads-host-v0.js.download"></script><script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/osd.js.download"></script><script type="text/javascript" async="" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/ga.js.download"></script><script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/pubads_impl_rendering_2019041801.js.download"></script><script async="" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/analytics.js.download"></script><script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/jquery-2.2.0.min.js.download"></script>
+    <script>var currentBlogId=73997;var currentBlogApp='devymex',cb_enable_mathjax=true;var isLogined=false;</script>
+    <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: { 
+            equationNumbers: { autoNumber: ['AMS'], useLabelIds: true }, 
+            extensions: ['extpfeil.js'],
+            Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script><script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/MathJax.js.download"></script>
+<script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/blog-common.js.download" type="text/javascript"></script>
+<style type="text/css">.backpack.dropzone {
+  font-family: 'SF UI Display', 'Segoe UI';
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  font-weight: lighter;
+  color: white;
+  will-change: right;
+  z-index: 2147483647;
+  bottom: 20%;
+  background: #333;
+  position: fixed;
+  user-select: none;
+  transition: left .5s, right .5s;
+  right: 0px; }
+  .backpack.dropzone .animation {
+    height: 80px;
+    width: 250px;
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+  .backpack.dropzone .title::before {
+    content: 'Save to'; }
+  .backpack.dropzone.closed {
+    right: -250px; }
+  .backpack.dropzone.hover .animation {
+    animation: sxt-play-anim-hover 0.91s steps(21);
+    animation-fill-mode: forwards;
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+
+@keyframes sxt-play-anim-hover {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -5250px; } }
+  .backpack.dropzone.saving .title::before {
+    content: 'Saving to'; }
+  .backpack.dropzone.saving .animation {
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+    animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+@keyframes sxt-play-anim-saving {
+  100% {
+    background-position: -14750px; } }
+  .backpack.dropzone.saved .title::before {
+    content: 'Saved to'; }
+  .backpack.dropzone.saved .animation {
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+    animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+@keyframes sxt-play-anim-saved {
+  100% {
+    background-position: -5000px; } }
+</style><link rel="preload" href="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/f(4).txt" as="script"><script type="text/javascript" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/f(4).txt"></script><script src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/pubads_impl_2019041801.js.download" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.2') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.2') format('woff'), url('https://mathjax.cnblogs.com/2_7_2/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.2') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-gr-c-s-loaded="true"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+<a name="top"></a>
+
+<div id="page_begin_html"><script type="text/javascript">window['__document_write_ajax_callbacks__']['2']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script></div><script>load_page_begin_html();</script>
+
+<div id="top">
+	
+<div>
+	<table>
+		<tbody><tr>
+			<td class="HeaderTitles">
+				<h1 class="HeaderTitle"><a id="Header1_HeaderTitle" class="HeaderMainTitle" href="https://www.cnblogs.com/devymex/">程序控</a></h1>
+				<p id="tagline">IPPP (Institute of Penniless Peasent-Programmer) Fellow</p>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="HeaderBar">
+	<table id="HeaderBar" class="HeaderBar" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="HeaderBarTab" nowrap="">
+&nbsp;
+<a id="blog_nav_sitehome" href="https://www.cnblogs.com/">博客园</a> ::
+<a id="blog_nav_myhome" href="https://www.cnblogs.com/devymex/">首页</a> ::
+<a href="http://q.cnblogs.com/" class="menu">博问</a> ::
+<a href="http://home.cnblogs.com/ing/" class="menu">闪存</a> ::
+<a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a> ::
+<a id="blog_nav_contact" accesskey="9" rel="nofollow" href="https://msg.cnblogs.com/send/Devymex">联系</a> ::
+
+ ::
+<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a> ::
+
+</td>
+			<td><img id="Header1_BlueTab" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/BlueTabRight.gif" align="absmiddle"></td>
+			<td class="HeaderBarTabBack" nowrap="" width="100%">
+				<div id="blog_stats">
+<div class="BlogStatsBar">
+	<table class="BlogStatsBar">
+		<tbody><tr>
+			<td width="100%">
+			</td>
+			<td class="BlogStatsBar" nowrap="">
+				&nbsp;
+				77 
+				随笔&nbsp;::
+				0 文章
+				::
+				434 评论
+				::
+				0 引用
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+</div>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+</div>
+<div id="leftmenu">	
+
+	    <div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/03/01&#39;);return false;">&lt;</a></td><td align="center">2019年4月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/05/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalTodayDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr><tr><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td><td class="CalOtherMonthDay" align="center">11</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>公告</h3>
+<div class="News">
+	<div id="blog-news"><p>
+你虚度的今天，正是昨天死去的人们向往的明天。<br>
+</p><div align="center"><a href="http://home.cnblogs.com/devymex/"><img alt="" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/o_bigbro1.PNG" height="216" width="180"></a></div>
+<p></p>
+<h3>全文RSS</h3>
+<p align="center">
+<a href="http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/cnblogs/devymex" target="_blank">
+<img style="MARGIN-BOTTOM: 3px" border="0" alt="google reader" vspace="2" src="http://img.feedsky.com/images/icon_subshot01_google.gif">
+</a>
+<br>
+<a href="http://www.zhuaxia.com/add_channel.php?url=http://feeds.feedburner.com/cnblogs/devymex" target="_blank">
+<img style="MARGIN-BOTTOM: 3px" border="0" alt="抓虾" vspace="2" src="http://img.feedsky.com/images/icon_subshot01_zhuaxia.gif">
+</a>
+<br>
+<a href="http://www.xianguo.com/subscribe.php?url=http://feeds.feedburner.com/cnblogs/devymex" target="_blank">
+<img style="MARGIN-BOTTOM: 3px" border="0" alt="鲜果" vspace="2" src="http://img.feedsky.com/images/icon_subshot01_xianguo.gif">
+</a>
+<br>
+<a href="http://inezha.com/add?url=http://feeds.feedburner.com/cnblogs/devymex" target="_blank">
+<img style="MARGIN-BOTTOM: 3px" border="0" alt="哪吒" vspace="2" src="http://img.feedsky.com/images/icon_subshot01_nazha.gif">
+</a>
+<br>
+<a href="http://mail.qq.com/cgi-bin/feed?u=http://feeds.feedburner.com/cnblogs/devymex" target="_blank">
+<img style="MARGIN-BOTTOM: 3px" border="0" alt="QQ邮箱" vspace="2" src="http://img.feedsky.com/images/icon_subshot01_qq.gif">
+</a>
+<br>
+</p>
+<p>敬告：本博客所有文章持续更新，RSS订阅可能无法查看到最新的内容。</p>
+<h3>博客信息</h3>
+<p>
+联系我请发送电子邮件到：<br>
+<img src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/o_gmail.png">
+</p><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/devymex/">Devymex</a><br>园龄：<a href="https://home.cnblogs.com/u/devymex/" title="入园时间：2010-04-28">9年</a><br>粉丝：<a href="https://home.cnblogs.com/u/devymex/followers/">372</a><br>关注：<a href="https://home.cnblogs.com/u/devymex/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;bca6b9d7-7352-df11-ba8f-001cf0cd104b&#39;)">+加关注</a></div><script>getFollowStatus('bca6b9d7-7352-df11-ba8f-001cf0cd104b')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+		<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_categories">
+		<h3>随笔分类<span style="font-size:11px;font-weight:normal">(66)</span></h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/devymex/category/260491.html">Advanced C++(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/devymex/category/256869.html">Algorithm(5)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/devymex/category/641054.html">Linux(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/devymex/category/256254.html">OJ Problems(54)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/devymex/category/346627.html">Win32 Programming(3)</a> </li>
+			
+				</ul>
+			
+	</div><div id="sidebar_scorerank" class="sidebar-block">
+<h3>积分与排名</h3>
+<ul>
+	<li>
+		积分 -
+		89247
+	</li><li>
+		排名 -
+		5440
+	</li>
+</ul>
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/devymex/p/3386886.html#4240121">1. Re:写给理工科人看的乐理（四）和弦与调式</a></li>
+        <li class="recent_comment_body">文章历史部分：G音与F音的比例是1.5。。这个应该写错了吧，应该是G音和C音比例是1.5倍，正好是纯五度关系。 并且后面的公式中应该是2^(7/12)约等于1.498307，而不是2^(5/12)啊。......</li>
+        <li class="recent_comment_author">--trumansdo</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/devymex/p/3391069.html#4226382">2. Re:写给理工科人看的乐理（五）调性</a></li>
+        <li class="recent_comment_body">中午打开论文准备阅读，无意中发现了作者的乐理基础介绍，然后就顺着作者的博客，看到了现在，终于看完了，期待继续更新啊，内容整体上讲的还可以吧，个人很喜欢穿插发展历史的讲法，因为任何一个东西刚开始诞生的时......</li>
+        <li class="recent_comment_author">--meixsh</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/devymex/p/3385179.html#4108821">3. Re:写给理工科人看的乐理（一）声学基础</a></li>
+        <li class="recent_comment_body">请问下博主，这个f=sqrt(3)的波形图怎么画？拜谢先。是S=sin(x*(1/f))?</li>
+        <li class="recent_comment_author">--刘笙</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/devymex/p/3385179.html#4096333">4. Re:写给理工科人看的乐理（一）声学基础</a></li>
+        <li class="recent_comment_body">不错，不错，也正想学习。</li>
+        <li class="recent_comment_author">--henryqin</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/devymex/p/4156378.html#3966692">5. Re:怎样从外网访问内网服务器</a></li>
+        <li class="recent_comment_body">ssh实现内网穿透很好用的，不过需要一个公网的虚拟机的网上找到了一个开源的Holer不需要公网虚拟机，简单配置一个Holer Access Key也可以实现公网访问内网服务...</li>
+        <li class="recent_comment_author">--东.Dom</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/devymex/p/3385179.html">1. 写给理工科人看的乐理（一）声学基础(166213)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3387054.html">2. 写给理工科人看的乐理（二）十二平均律与五线谱(121027)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3389620.html">3. 写给理工科人看的乐理（三）五线谱进阶与和声理论(79937)</a></li><li><a href="https://www.cnblogs.com/devymex/p/4156378.html">4. 怎样从外网访问内网服务器(77162)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3386886.html">5. 写给理工科人看的乐理（四）和弦与调式(55054)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/devymex/archive/2012/07/08/2581523.html">1. 别说我不会玩，我来告诉你iPhone有多烂！iPhone缺点集(186)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3385179.html">2. 写给理工科人看的乐理（一）声学基础(38)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3389620.html">3. 写给理工科人看的乐理（三）五线谱进阶与和声理论(32)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3387054.html">4. 写给理工科人看的乐理（二）十二平均律与五线谱(22)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3329635.html">5. 甲乙两人互猜数字（鬼谷子问题）的逻辑推理与算法建模(18)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/devymex/archive/2012/07/08/2581523.html">1. 别说我不会玩，我来告诉你iPhone有多烂！iPhone缺点集(62)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3385179.html">2. 写给理工科人看的乐理（一）声学基础(25)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3389620.html">3. 写给理工科人看的乐理（三）五线谱进阶与和声理论(21)</a></li><li><a href="https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html">4. C++的cout高阶格式化操作(14)</a></li><li><a href="https://www.cnblogs.com/devymex/p/3391069.html">5. 写给理工科人看的乐理（五）调性(9)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+	
+</div>
+<div id="main">
+	
+        <div id="post_detail">
+<div class="post">
+	<div class="postTitle">
+		<a id="cb_post_title_url" href="https://www.cnblogs.com/devymex/p/3389620.html">写给理工科人看的乐理（三）五线谱进阶与和声理论</a>
+	</div>
+	
+	<div class="postText">
+		<div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 15px;"><span style="font-size: 15px;">关键字：成人学乐理 乐理基础 乐理入门</span></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 15px;">上一讲我们学习了表示音符相对音高的十二平均律系统和表示绝对音高的五线谱系统，这一讲将对我们已经学到的这些知识做进一步展开，并对和声理论做简单的介绍。和上一讲一样，我们先从历史开始讲起。</span></p>
+<h2>一、乐理发展史 · 之二</h2>
+<p><span style="font-size: 15px;">人们很早就发现长度比为1:2的两根弦同时拨响可以发出非常协调的声音，但仅仅使用2倍关系的弦长所构造出来的音过于单调了，可以说根本不足以形成音乐，因此人们就尝试用其它的弦长比来发声。一根固定在平面上的弦如果从中间任意位置按在平面上，就形成了左右两段成不同长度比且可以分开振动的弦，人们就是用这种方法尝试不同的弦长比的。</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/27121605-b1125e8e05434afea6252cb6d22b586e.gif" alt=""></p>
+<p style="text-align: center;">图1 弦长的分割（左手按下，右手拨动）</p>
+<p><span style="font-size: 15px;">我们把原弦长所发出的频率记为f。用手指按在弦的正中间，即1/2处，形成的两段弦长是相等的，它们发出的声音频率都为2f，这样纯八度音程就形成了。接下来人们尝试在纯八度音程的中间找到其它的音，首先按在弦长的1/3处，在较长的那一段人们听到了一个新的音，它的频率是3f/2，听起来与f非常协调。信心满满的人们接下来又尝试按在弦长的1/4处，但较长那一段的音听起来虽没有前一个音程那么协调，但也挺不错，它的频率是4f/3。用同样的方法人们又得到5f/4、6f/5、7f/6……然而，人们很快就遇到了麻烦：首先，新得到的音的频率与f的叠加变得越来越不协调（其原因将在下文“和声”部分详细说明）；其次，新产生的音与前一个产生的音之间也不存在任何协调关系，这样下去是不可能产生悦耳动听的音乐的。人们只能另辟蹊径。</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/27123550-021ffa1b59514ac29d74e1eea849e332.png" alt=""></p>
+<p style="text-align: center;">图2 三种最简单的分割</p>
+<p><span style="font-size: 15px;">不过这时人们已经获得了3种最简单也最重要的弦长比，分别是1:2、2:3和3:4，它们来自于3个不同的分割点。为了获得新的频率，又要与f或之前已产生的频率保持协调，</span><span style="font-size: 15px;">那么</span><span style="font-size: 15px;">能否以这3种分割点为基础，从较长的那一段再以同样的比例继续细分呢？当然是可行的，因为协调性可以传递！1/2即是原弦长的一半，再将其细分为1/2就得到原弦长的1/4，协调性没问题，但这仍然是纯八度音程，没有出现新的音程。而从2/3处再细分情况就大不相同了，2/3再细分2/3，就得到了与原弦长比为4:9的长度。9f/4是一个全新的频率，显然它与3f/2的协调程度和3f/2与f的协调程度是相同的。再从4/9中分割出2/3，得到频率27f/8……一直用<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 3.548em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.807em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.378em, 1002.81em, 2.701em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mo" id="MathJax-Span-3" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-4" style="font-family: MathJax_Main;">2</span><span class="texatom" id="MathJax-Span-5"><span class="mrow" id="MathJax-Span-6"><span class="mo" id="MathJax-Span-7" style="font-family: MathJax_Main;">/</span></span></span><span class="mn" id="MathJax-Span-8" style="font-family: MathJax_Main;">3</span><span class="msubsup" id="MathJax-Span-9"><span style="display: inline-block; position: relative; width: 0.902em; height: 0px;"><span style="position: absolute; clip: rect(3.124em, 1000.32em, 4.447em, -999.997em); top: -4.019em; left: 0em;"><span class="mo" id="MathJax-Span-10" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -4.389em; left: 0.373em;"><span class="mi" id="MathJax-Span-11" style="font-size: 70.7%; font-family: MathJax_Math-italic;">n</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.397em; border-left: 0px solid; width: 0px; height: 1.403em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>2</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>3</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup></math></span></span><script type="math/tex" id="MathJax-Element-1">(2/3)^n</script>切分下去就得到了如下的频率序列：</span></p>
+<table style="width: 164px; height: 197px;" border="0">
+<tbody>
+<tr>
+<td>n</td>
+<td>
+<p>频率</p>
+</td>
+<td>倍率</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3f/2</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9f/4</td>
+<td>2.25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>27/8</td>
+<td>3.375</td>
+</tr>
+<tr>
+<td>4</td>
+<td>81f/16</td>
+<td>5.0625</td>
+</tr>
+<tr>
+<td>5</td>
+<td>243f/32</td>
+<td>7.59375</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 15px;">上表中的“倍率”是指其频率除以f的值。然而这样找音存在一个问题，那就是后面产生的音已经超过以f开始的一个纯八度音程了。我们把这5个音和<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;">4f/3</span></span></span>一并标记在数轴上，如图3所示。</span></p>
+<p><span style="font-size: 15px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/27152850-bfe36f1d52a140ca92540b836c5d9db2.png" alt="" width="455" height="194"></span></p>
+<p style="text-align: center;">&nbsp;图3 7个音所隶属的八度音程</p>
+<p><span style="font-size: 15px;">看以看出，<span style="font-size: 15px;">这6个音（黑x表示）分别隶属于3个不同的纯八度音程（红x表示）。<span style="font-size: 15px;">4f/3和3f/2隶属于[f, 2f]，9f/4和27f/8隶属于[2f, 4f]，81f/16和243f/32隶属于[4f, 8f]。既然我们要确定的只是一个纯八度音程中的相对位置，那最简单的办法就将这6个音的频率都除以所在纯八度的最低频率。这样得到的新的6个倍率，从小到大排列<span style="font-size: 15px;">&lt;1.125 1.265625 1.333 1.5 1.6875 1.8984375&gt;</span>。f自身的倍率为1，2f为2，把这8个倍率<span style="font-size: 15px;"><span style="font-size: 15px;">一起</span>画在二维坐标系中，见图4所示。</span></span></span></span></p>
+<p><span style="font-size: 15px;"><span style="font-size: 15px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/27162624-979ee68f2a5a4cbba0cb55b8b81e27c8.png" alt="" width="333" height="250"></span></span></p>
+<p>&nbsp;</p>
+<p style="text-align: center;">图4 7音阶折线（蓝色）与理想指数曲线（橙色）对比</p>
+<p><span style="font-size: 15px;">挺奇妙的不是吗？与理想的指数曲线相比误差并不大。这<span style="font-size: 15px;">不仅</span>意味着音和音之间存在协调关系，而且按这样的倍率关系，从任意置开始的连续7个音都能形成一条听起来相当不错的音阶。这就是7音阶的来历。这种方法由f产生的第1个音是3f/2，除4f/3之外的其它因都是由3f/2产生，而f到3f/2是纯五度关系，因此这个方法被人们称为“<strong>五度相生律</strong>”，世界历史上多个民族都独立发明出五度相生律，但一般认为最早是由古希腊哲学家毕达哥拉斯提出的。<br></span></p>
+<p>&nbsp;<span style="font-size: 15px;">然而，随着音乐水平的不断发展，这7个音慢慢变得不够用了，而且相邻两个音之间的频率比并不统一，跟不上乐器音准的提高速度。因此后来人们又发明出了十二平均律系统，直到现在7音与12音并存的局面。篇幅关系，12音阶的来历我们放在下一次历史课上讲解。下面的内容我们会学到关于五线谱的新知识，并以此为基础了解到为什么有的音程听起来协调，而有的不协调，这些都是和声理论要研究的内容。</span></p>
+<p>&nbsp;</p>
+<h2>二、五线谱进阶</h2>
+<h3>1. 五线谱中的相对音程</h3>
+<p><span style="font-size: 15px;">上一讲我们已经知道了高音五线谱中，第二间的A的音高定为440Hz，那么我们如何来确定其它音的音高呢？下面将会按照十二平均律的法则在五线谱中建立相对音高系统，请看图5。</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25170257-974e3ba93c4c4ba2927c012168690e4e.png" alt="" width="229" height="236"></p>
+<p style="text-align: center;">图5 放大的没有任何升降标记的高音谱</p>
+<p><span style="font-size: 15px;">上图是一个放大的最简单的高音谱，可以看到第一线上的音名是E，第一间的音名是F，其它以此类推。右侧的“全”和“半”表示相邻两个音符之间的音程是全音还是半音。至于为什么是这样规定的，我们会在下一讲《调式与调性理论》中进一步展开。确定了音符之间的相对音程，并确定了一个基准音高A，我们就可以开始推算所有其它单音的频率了。</span></p>
+<p><span style="font-size: 15px;">首先为了方便的表示众多音符，下文将使用<span style="font-size: 15px;"><span style="font-size: 15px;">科学记音法（见<a href="http://en.wikipedia.org/wiki/Scientific_pitch_notation">维基百科</a>）来表示所有的音符，即两个字符表示一个音：XN。其中X为音名，可以是{C, D, E, F, G, A, B}中的任意一个；N为该音的序号，从0开始由低到高编号。N每增加1，音的频率就翻倍，并规定第C4位于高音五线谱的下加一线。根据科学音调记号法，高音谱下加一线上的C记作C4，往高依次是D4，E4，F4……往低依次是B3，A3，G3……。所有的C音在五线谱上标记如图6所示。</span></span></span></p>
+<p><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/26120954-72297034a69245dfbdb70ece3f2c5bb0.png" alt="" width="375" height="228"></span></span></span></p>
+<p style="text-align: center;">&nbsp;图6 五线谱上所有C音的音符</p>
+<p><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;">比A4低纯八度的音符是A3，其频率为A4频率的一半，即220Hz，比A4高纯八度的音符是A5，频率为A4频率的二倍，即880。A0到A7间所有A音的频率见下表：</span></span></span></p>
+<table border="0">
+<tbody>
+<tr>
+<td>基准音名</td>
+<td>A0</td>
+<td>A1</td>
+<td>A2</td>
+<td>A3</td>
+<td>A4</td>
+<td>A5</td>
+<td>A6</td>
+<td>A7</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>频率(Hz)</td>
+<td>27.5</td>
+<td>55</td>
+<td>110</td>
+<td>220</td>
+<td>440</td>
+<td>880</td>
+<td>1760</td>
+<td>3520</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+<p><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;">要计算其它音符<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;">XN</span></span></span>的频率<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-12" style="width: 1.484em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.167em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.378em, 1001.17em, 2.595em, -999.997em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-13"><span class="msubsup" id="MathJax-Span-14"><span style="display: inline-block; position: relative; width: 1.167em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.53em, 4.394em, -999.997em); top: -4.019em; left: 0em;"><span class="mi" id="MathJax-Span-15" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -3.86em; left: 0.479em;"><span class="mi" id="MathJax-Span-16" style="font-size: 70.7%; font-family: MathJax_Math-italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.33em; border-left: 0px solid; width: 0px; height: 1.27em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>f</mi><mi>X</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-2">f_X</script></span></span></span>，则应以XN下方的第一个A音AN'的频率<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-17" style="width: 1.431em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.114em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.378em, 1001.11em, 2.595em, -999.997em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-18"><span class="msubsup" id="MathJax-Span-19"><span style="display: inline-block; position: relative; width: 1.114em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.53em, 4.394em, -999.997em); top: -4.019em; left: 0em;"><span class="mi" id="MathJax-Span-20" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -3.86em; left: 0.479em;"><span class="mi" id="MathJax-Span-21" style="font-size: 70.7%; font-family: MathJax_Math-italic;">A</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.33em; border-left: 0px solid; width: 0px; height: 1.27em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>f</mi><mi>A</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-3">f_A</script></span></span></span>作为基准，然后算出XN与AN'之间的音数t，那么XN的频率为：<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mfrac&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mfrac&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mfrac&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-22" style="width: 13.865em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.008em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.008em, 1011.01em, 2.648em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-23"><span class="msubsup" id="MathJax-Span-24"><span style="display: inline-block; position: relative; width: 1.167em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.53em, 4.394em, -999.997em); top: -4.019em; left: 0em;"><span class="mi" id="MathJax-Span-25" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -3.86em; left: 0.479em;"><span class="mi" id="MathJax-Span-26" style="font-size: 70.7%; font-family: MathJax_Math-italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main; padding-left: 0.267em;">=</span><span class="msubsup" id="MathJax-Span-28" style="padding-left: 0.267em;"><span style="display: inline-block; position: relative; width: 1.114em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.53em, 4.394em, -999.997em); top: -4.019em; left: 0em;"><span class="mi" id="MathJax-Span-29" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -3.86em; left: 0.479em;"><span class="mi" id="MathJax-Span-30" style="font-size: 70.7%; font-family: MathJax_Math-italic;">A</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-31" style="font-family: MathJax_Main; padding-left: 0.214em;">×</span><span class="msubsup" id="MathJax-Span-32" style="padding-left: 0.214em;"><span style="display: inline-block; position: relative; width: 1.431em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0em;"><span class="mn" id="MathJax-Span-33" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -4.442em; left: 0.479em;"><span class="mfrac" id="MathJax-Span-34"><span style="display: inline-block; position: relative; width: 0.638em; height: 0px; margin-right: 0.108em; margin-left: 0.108em;"><span style="position: absolute; clip: rect(3.548em, 1000.43em, 4.183em, -999.997em); top: -4.336em; left: 50%; margin-left: -0.209em;"><span class="mrow" id="MathJax-Span-35"><span class="mn" id="MathJax-Span-36" style="font-size: 50%; font-family: MathJax_Main;">2</span><span class="mi" id="MathJax-Span-37" style="font-size: 50%; font-family: MathJax_Math-italic;">t</span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.48em, 4.183em, -999.997em); top: -3.701em; left: 50%; margin-left: -0.262em;"><span class="mn" id="MathJax-Span-38" style="font-size: 50%; font-family: MathJax_Main;">12</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(0.849em, 1000.64em, 1.22em, -999.997em); top: -1.214em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.638em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.061em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-39" style="font-family: MathJax_Main; padding-left: 0.267em;">=</span><span class="msubsup" id="MathJax-Span-40" style="padding-left: 0.267em;"><span style="display: inline-block; position: relative; width: 1.114em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.53em, 4.394em, -999.997em); top: -4.019em; left: 0em;"><span class="mi" id="MathJax-Span-41" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -3.86em; left: 0.479em;"><span class="mi" id="MathJax-Span-42" style="font-size: 70.7%; font-family: MathJax_Math-italic;">A</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-43" style="font-family: MathJax_Main; padding-left: 0.214em;">×</span><span class="msubsup" id="MathJax-Span-44" style="padding-left: 0.214em;"><span style="display: inline-block; position: relative; width: 1.167em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0em;"><span class="mn" id="MathJax-Span-45" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -4.442em; left: 0.479em;"><span class="mfrac" id="MathJax-Span-46"><span style="display: inline-block; position: relative; width: 0.373em; height: 0px; margin-right: 0.108em; margin-left: 0.108em;"><span style="position: absolute; clip: rect(3.548em, 1000.16em, 4.183em, -999.997em); top: -4.336em; left: 50%; margin-left: -0.103em;"><span class="mi" id="MathJax-Span-47" style="font-size: 50%; font-family: MathJax_Math-italic;">t</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.21em, 4.183em, -999.997em); top: -3.701em; left: 50%; margin-left: -0.103em;"><span class="mn" id="MathJax-Span-48" style="font-size: 50%; font-family: MathJax_Main;">6</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(0.849em, 1000.37em, 1.22em, -999.997em); top: -1.214em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.373em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.061em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.33em; border-left: 0px solid; width: 0px; height: 1.803em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>f</mi><mi>X</mi></msub><mo>=</mo><msub><mi>f</mi><mi>A</mi></msub><mo>×</mo><msup><mn>2</mn><mfrac><mrow><mn>2</mn><mi>t</mi></mrow><mn>12</mn></mfrac></msup><mo>=</mo><msub><mi>f</mi><mi>A</mi></msub><mo>×</mo><msup><mn>2</mn><mfrac><mi>t</mi><mn>6</mn></mfrac></msup></math></span></span><script type="math/tex" id="MathJax-Element-4">f_X=f_A\times 2^\frac{2t}{12}=f_A\times 2^\frac{t}{6}</script></span></span></span></span></span></span>。例</span></span>如，由于第三间的C音（即<span style="font-size: 15px;">C5）</span>与其下方第一个A音，即A4之间的音程是小三度，音数t=1.5，因此C5的频率为：<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;440&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mfrac&gt;&lt;mn&gt;1.5&lt;/mn&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/mfrac&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2248;&lt;/mo&gt;&lt;mn&gt;523.25113&lt;/mn&gt;&lt;mtext&gt;Hz&lt;/mtext&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-49" style="width: 13.971em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.061em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.008em, 1011.01em, 2.437em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-50"><span class="mn" id="MathJax-Span-51" style="font-family: MathJax_Main;">440</span><span class="mo" id="MathJax-Span-52" style="font-family: MathJax_Main; padding-left: 0.214em;">×</span><span class="msubsup" id="MathJax-Span-53" style="padding-left: 0.214em;"><span style="display: inline-block; position: relative; width: 1.59em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0em;"><span class="mn" id="MathJax-Span-54" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -4.442em; left: 0.479em;"><span class="mfrac" id="MathJax-Span-55"><span style="display: inline-block; position: relative; width: 0.743em; height: 0px; margin-right: 0.108em; margin-left: 0.108em;"><span style="position: absolute; clip: rect(3.548em, 1000.64em, 4.183em, -999.997em); top: -4.389em; left: 50%; margin-left: -0.315em;"><span class="mn" id="MathJax-Span-56" style="font-size: 50%; font-family: MathJax_Main;">1.5</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.21em, 4.183em, -999.997em); top: -3.701em; left: 50%; margin-left: -0.103em;"><span class="mn" id="MathJax-Span-57" style="font-size: 50%; font-family: MathJax_Main;">6</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(0.849em, 1000.74em, 1.22em, -999.997em); top: -1.214em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.743em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.061em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-58" style="font-family: MathJax_Main; padding-left: 0.267em;">≈</span><span class="mn" id="MathJax-Span-59" style="font-family: MathJax_Main; padding-left: 0.267em;">523.25113</span><span class="mtext" id="MathJax-Span-60" style="font-family: MathJax_Main;">Hz</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.063em; border-left: 0px solid; width: 0px; height: 1.537em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>440</mn><mo>×</mo><msup><mn>2</mn><mfrac><mn>1.5</mn><mn>6</mn></mfrac></msup><mo>≈</mo><mn>523.25113</mn><mtext>Hz</mtext></math></span></span><script type="math/tex" id="MathJax-Element-5">440\times 2^\frac{1.5}{6}\approx 523.25113\text{Hz}</script>。当然，也可通过纯八度音程的倍率关系计算，比如C4的频率为C5的1/2，约为261.62557Hz。</span></p>
+<h3>2. 升降记号</h3>
+<p><span style="font-size: 15px;">五线谱中，音符的后面可以添加升降标记，表示该音符升高半音或降低半音。升号为#，降号为b。显然，有两个音是没必要升的：E升半音就是F，B升半音就是C，而这就是钢琴键盘布局形成的原因。如下图所示：</span></p>
+<p><span style="font-size: 15px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/26125450-481027d0466742ec8afdab21d041eece.gif" alt="" width="477" height="225"></span></p>
+<p style="text-align: center;">&nbsp;图7 钢琴键盘中部分键位的音名（下面是白键音名，上面是黑键音名）</p>
+<p><span style="font-size: 15px;">钢琴上的黑键比左边的白键高半音（也可以说是比右边的白键低半音），因此白键B和E的右边就没有黑键。此外，所有的降音都可以由另一些音的升音代替，比如Bb就是A#，Gb就是F#。那既然如此，为什么不用升号代替全部的降号呢？原因就是为了可读性，正如写代码时不能为了减少代码量就把所有的if语句都换成三目运算符。</span></p>
+<p><span style="font-size: 15px;">如果一段谱子中的某个音符几乎都要升半音或降半音处理，那就可以在高音谱号的右侧，这个音符所在的一条线或一个间上标记升降号。</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25174705-42e729ae191c44fda5db92613606d85e.png" alt=""></p>
+<p style="text-align: center;">图8 肖邦《练习曲 Op.25》第3首选段（略有删改简化）</p>
+<p><span style="font-size: 15px;">在图8所示乐谱中，第三线上标记了一个降号b，表示这个谱子里的所有B音都需降半音，除非另外在个别音符上标记升降或还原记号。音符被升降半音后的频率可根据之前学过的相邻音符之间的频率倍数关系计算。升高半音后的频率为原频率的<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mroot&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mroot&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-61" style="width: 1.696em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.325em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.22em, 1001.33em, 2.542em, -999.997em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-62"><span class="mroot" id="MathJax-Span-63"><span style="display: inline-block; position: relative; width: 1.325em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0.849em;"><span class="mn" id="MathJax-Span-64" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.601em, 1000.48em, 3.918em, -999.997em); top: -4.548em; left: 0.849em;"><span style="font-family: MathJax_Main;">–</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.071em, 1000.85em, 4.394em, -999.997em); top: -4.071em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.48em, 4.183em, -999.997em); top: -4.495em; left: 0.056em;"><span class="mn" id="MathJax-Span-65" style="font-size: 50%; font-family: MathJax_Main;">12</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.263em; border-left: 0px solid; width: 0px; height: 1.403em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mroot><mn>2</mn><mn>12</mn></mroot></math></span></span><script type="math/tex" id="MathJax-Element-6">\sqrt[12]{2}</script>倍，降低半音后的频率为原频率的<span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mroot&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mroot&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-66" style="width: 2.966em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.331em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.272em, 1002.33em, 2.701em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-67"><span class="mn" id="MathJax-Span-68" style="font-family: MathJax_Main;">1</span><span class="texatom" id="MathJax-Span-69"><span class="mrow" id="MathJax-Span-70"><span class="mo" id="MathJax-Span-71" style="font-family: MathJax_Main;">/</span></span></span><span class="mroot" id="MathJax-Span-72"><span style="display: inline-block; position: relative; width: 1.325em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0.849em;"><span class="mn" id="MathJax-Span-73" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.601em, 1000.48em, 3.918em, -999.997em); top: -4.548em; left: 0.849em;"><span style="font-family: MathJax_Main;">–</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.071em, 1000.85em, 4.394em, -999.997em); top: -4.071em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.48em, 4.183em, -999.997em); top: -4.495em; left: 0.056em;"><span class="mn" id="MathJax-Span-74" style="font-size: 50%; font-family: MathJax_Main;">12</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.397em; border-left: 0px solid; width: 0px; height: 1.537em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mroot><mn>2</mn><mn>12</mn></mroot></math></span></span><script type="math/tex" id="MathJax-Element-7">1/\sqrt[12]{2}</script>倍。比如C5升高半音的频率即为<span style="font-size: 15px;"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;523.25113&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;mroot&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mroot&gt;&lt;mo&gt;&amp;#x2248;&lt;/mo&gt;&lt;mn&gt;554.3653&lt;/mn&gt;&lt;mtext&gt;Hz&lt;/mtext&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-75" style="width: 16.511em; display: inline-block;"><span style="display: inline-block; position: relative; width: 13.071em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.272em, 1013.02em, 2.595em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-76"><span class="mn" id="MathJax-Span-77" style="font-family: MathJax_Main;">523.25113</span><span class="mo" id="MathJax-Span-78" style="font-family: MathJax_Main; padding-left: 0.214em;">×</span><span class="mroot" id="MathJax-Span-79" style="padding-left: 0.214em;"><span style="display: inline-block; position: relative; width: 1.325em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0.849em;"><span class="mn" id="MathJax-Span-80" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.601em, 1000.48em, 3.918em, -999.997em); top: -4.548em; left: 0.849em;"><span style="font-family: MathJax_Main;">–</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.071em, 1000.85em, 4.394em, -999.997em); top: -4.071em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.48em, 4.183em, -999.997em); top: -4.495em; left: 0.056em;"><span class="mn" id="MathJax-Span-81" style="font-size: 50%; font-family: MathJax_Main;">12</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-82" style="font-family: MathJax_Main; padding-left: 0.267em;">≈</span><span class="mn" id="MathJax-Span-83" style="font-family: MathJax_Main; padding-left: 0.267em;">554.3653</span><span class="mtext" id="MathJax-Span-84" style="font-family: MathJax_Main;">Hz</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.263em; border-left: 0px solid; width: 0px; height: 1.403em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>523.25113</mn><mo>×</mo><mroot><mn>2</mn><mn>12</mn></mroot><mo>≈</mo><mn>554.3653</mn><mtext>Hz</mtext></math></span></span><script type="math/tex" id="MathJax-Element-8">523.25113\times \sqrt[12]{2}\approx 554.3653\text{Hz}</script>。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h3>3. 双音谱</h3>
+<p>&nbsp;</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25153446-2580394f652f4a989ab02f3525b37455.png" alt=""></p>
+<p style="text-align: center;">图9 肖邦《C大调练习曲》选段</p>
+<p><span style="font-size: 15px;">图9是一个钢琴谱，这下我们终于见到了高音谱号和低音谱号并存的样子了。标有高音谱号的上面一排是高音谱，标有低音谱号的下面一排是低音谱，它们分别对应钢琴健盘上不同的键区。低音谱的“线”和“间”所对应的音符与高音谱不同，如图10所示：</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25160225-591cdab1bdd64f5587c4880e5f0994cc.gif" alt=""></p>
+<p style="text-align: center;">图10 低音谱各音符及其音名</p>
+<p><span style="font-size: 15px;">其实低音谱中的音名也没有那么难记，实际上它和高音谱是相互连接的，中间刚好只隔了一条加线。高音谱的下加一线就是低音谱的上加一线，而这条线上的音就是中央C，即C4</span><span style="font-size: 15px;">。和高音谱号类似，低音谱号的圆心标记的是F3在谱中的位置，即第四线上。</span></p>
+<p><span style="font-size: 15px;">低音谱中各音的频率计算与高音谱是相同的，只要搞清音程关系，从基准音推算即可。比如在前面的钢琴谱中可以看到低音谱的最左端有两个C（它们是用圆圈表示的），一个是第二间的C3；另一个是下加二线上的C2。C3和C2的频率分别为C4频率的1/4和1/8，而C4的频率在前面已经计算过了。</span></p>
+<p><span style="font-size: 15px;">利用上面的知识，你已经可以计算任何一个五线谱中每个音的频率了，八度音程中各音之间的音程可参见<a href="http://www.cnblogs.com/devymex/p/3391069.html">第五讲</a>后面给出的<a href="https://images0.cnblogs.com/blog/129662/201310/28211513-457d45af7d81487983078e14f8761914.png">音程表</a>。那么接下来我们介绍对一些特别的频率进行合成的问题——和声。</span></p>
+<p>&nbsp;</p>
+<h2>三、和声</h2>
+<p><span style="font-size: 15px;"><strong>和声</strong>，是指由超过一个单音所组合而成的声音。你可能会发现，和声的定义与拍音的定义是非常相似的。的确如此，所有的拍音都是和声，但和声不一定会产生拍音。首先，人耳可以听到的声波频率范围大约为20Hz到20000Hz，如果和声产生的频率超过这个范围，通常就不能称之为拍音了。其次，不同的乐器发出的单音进行叠加也可以称为和声，这也不是拍音。最后，拍音要求所有单音同时发出，而和声则无此要求，只要一个音在另一个音结束之前发出，它们交叠的部分就形成了和声。</span></p>
+<p><span style="font-size: 15px;">肖邦《C大调练习曲》的前两个小节，<a href="http://files.cnblogs.com/devymex/chopin.7z">下载收听</a>。这是由一架钢琴演奏的曲目，前两个小节的乐谱在本讲第一节中给出。一开始的那个低沉的重音就是C3和C2的和声。朋友们可以在<a href="http://www.onlinepianist.com/virtual_piano/">在线钢琴</a>上试着弹一下<span style="font-size: 15px;">C3和C2</span>这两个单音的和声（对应键盘上左起第1个键和第8个键）。乐谱中这个和声从一开始延续到了第二个小节结束，在这期间，钢琴还奏出了一共31个音符，这每一个音符与持续的低音和声又形成了更复杂的和声。下面请收看<span style="font-size: 15px;">《C大调练习曲》的完整版，请朋友们注意<span style="font-size: 15px;">钢琴家的左手总是保持按下的状态，都是在利用声音的延续制造和声。</span></span></span></p>
+<p style="text-align: center;"><span style="font-size: 15px;"><object style="display: block; margin-left: auto; margin-right: auto;" width="320" height="240" data="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/v.swf.download" type="application/x-shockwave-flash"><param name="src" value="http://player.youku.com/player.php/sid/XMjQ2MDE4ODQw/v.swf"></object></span></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">瓦伦蒂娜‧乌拉索娃演奏，肖邦《C大调练习曲》</p>
+<p><span style="font-size: 15px;">在西方古典音乐理论中，和声主要研究两个单音构成的和声，三个或以上单音构成的和声一般称为和弦，我们放在下一节讨论。在一个纯八度范围内，两个单音的和声一共有12种，即与12种音程相对应。在钢琴键盘上以中央C键，即C4为准，请试听一下C4分别与D4、E4、F4、G4、A4、B4以及C5键同时按下的和声效果。听过以后有没有发现某些和声比较悦耳，而某些则比较难听？比如C4和C5同时按下（纯八度音程）的和声就毫无违和感，就像只有一个音；而C4和D4同时按下（小二度音程）就非常刺耳难听。这究竟是为什么呢？</span><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25204137-cf3abc76aff3462c80256f4ae663cead.jpg" alt=""></p>
+<p style="text-align: center;">图11 钢琴键盘与五线谱对照图</p>
+<p><span style="font-size: 15px;">就是因为拍音！上一讲我们学到，相邻两个音之间的频率比为<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mroot&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mroot&gt;&lt;mo&gt;&amp;#x2248;&lt;/mo&gt;&lt;mn&gt;1.059463&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-85" style="width: 8.098em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.405em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.272em, 1006.35em, 2.595em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-86"><span class="mroot" id="MathJax-Span-87"><span style="display: inline-block; position: relative; width: 1.325em; height: 0px;"><span style="position: absolute; clip: rect(3.177em, 1000.43em, 4.183em, -999.997em); top: -4.019em; left: 0.849em;"><span class="mn" id="MathJax-Span-88" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.601em, 1000.48em, 3.918em, -999.997em); top: -4.548em; left: 0.849em;"><span style="font-family: MathJax_Main;">–</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.071em, 1000.85em, 4.394em, -999.997em); top: -4.071em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; clip: rect(3.548em, 1000.48em, 4.183em, -999.997em); top: -4.495em; left: 0.056em;"><span class="mn" id="MathJax-Span-89" style="font-size: 50%; font-family: MathJax_Main;">12</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span><span class="mo" id="MathJax-Span-90" style="font-family: MathJax_Main; padding-left: 0.267em;">≈</span><span class="mn" id="MathJax-Span-91" style="font-family: MathJax_Main; padding-left: 0.267em;">1.059463</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.263em; border-left: 0px solid; width: 0px; height: 1.403em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mroot><mn>2</mn><mn>12</mn></mroot><mo>≈</mo><mn>1.059463</mn></math></span></span><script type="math/tex" id="MathJax-Element-9">\sqrt[12]{2}\approx 1.059463</script>，我们将这个数记为p，那么各音程的频率比（即相距某个音程的低音比高音）可由其音数t按公式：<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mo&gt;/&lt;/mo&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-92" style="width: 3.865em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.071em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.378em, 1003.07em, 2.701em, -999.997em); top: -2.272em; left: 0em;"><span class="mrow" id="MathJax-Span-93"><span class="mn" id="MathJax-Span-94" style="font-family: MathJax_Main;">1</span><span class="texatom" id="MathJax-Span-95"><span class="mrow" id="MathJax-Span-96"><span class="mo" id="MathJax-Span-97" style="font-family: MathJax_Main;">/</span></span></span><span class="mo" id="MathJax-Span-98" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-99" style="font-family: MathJax_Main;">2</span><span class="mi" id="MathJax-Span-100" style="font-family: MathJax_Math-italic;">t</span><span class="msubsup" id="MathJax-Span-101"><span style="display: inline-block; position: relative; width: 0.796em; height: 0px;"><span style="position: absolute; clip: rect(3.124em, 1000.32em, 4.447em, -999.997em); top: -4.019em; left: 0em;"><span class="mo" id="MathJax-Span-102" style="font-family: MathJax_Main;">)</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span><span style="position: absolute; top: -4.389em; left: 0.373em;"><span class="mi" id="MathJax-Span-103" style="font-size: 70.7%; font-family: MathJax_Math-italic;">p</span><span style="display: inline-block; width: 0px; height: 4.024em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.397em; border-left: 0px solid; width: 0px; height: 1.403em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mo stretchy="false">(</mo><mn>2</mn><mi>t</mi><msup><mo stretchy="false">)</mo><mi>p</mi></msup></math></span></span><script type="math/tex" id="MathJax-Element-10">1/(2t)^p</script>算得。由于除纯八度外的所有音程的频率比均为无理数，因此他们的拍音的频率只能按他们频率的近似整数比来计算，详见第一讲第三节。计算近似整数比的数学过程是比较复杂的，这里篇幅有限，不做进一步的讨论。接下来我们分别换算一下12个音程的频率比。</span></p>
+<table style="width: 261px; height: 330px;" border="0">
+<tbody>
+<tr>
+<td>音程</td>
+<td>近似频率比</td>
+<td>近似整数比</td>
+<td>最小公倍数</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>小二度</td>
+<td>1:1.06</td>
+<td>15:16</td>
+<td>240</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>大二度</td>
+<td>1:1.12</td>
+<td>8:9</td>
+<td>72</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>小三度</td>
+<td>1:1.19</td>
+<td>5:6</td>
+<td>30</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>大三度</td>
+<td>1:1.26</td>
+<td>4:5</td>
+<td>20</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>纯四度</td>
+<td>1:1.34</td>
+<td>3:4</td>
+<td>12</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>三全音</td>
+<td>1:1.41</td>
+<td>7:10</td>
+<td>70</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>纯五度</td>
+<td>1:1.50</td>
+<td>2:3</td>
+<td>6</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>小六度</td>
+<td>1:1.59</td>
+<td>5:8</td>
+<td>40</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>大六度</td>
+<td>1:1.68</td>
+<td>3:5</td>
+<td>15</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>小七度</td>
+<td>1:1.78</td>
+<td>5:9</td>
+<td>45</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>大七度</td>
+<td>1:1.89</td>
+<td>8:15</td>
+<td>120</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr>
+<td>纯八度</td>
+<td>1:2</td>
+<td>1:2</td>
+<td>2</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+<p><span style="font-size: 15px;">按近似整数比的最小公倍数排序，可以得到如下和声序列：&lt;纯八度，纯五度，纯四度，大六度，大三度，小三度，小六度，小七度，三全音，大二度，大七度，小二度&gt;</span></p>
+<p><span style="font-size: 15px;">通过在钢琴上弹奏对比可知，越向左边的和声越“协和”，但也越空洞，就是好像只有一个音，不够饱满；越向右边的和声越“难听”，但也越饱满。人们根据这一特征，将和声的协和程度分为“极完全协和”、“完全协和”、“不完全协和”、“不协和”与“极不协和”五类，如下图所示：</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/25230031-c61ee624ca7b46569db31f52437438c5.png" alt="" width="594" height="30"></p>
+<p style="text-align: center;">图12 各音程的协和程度</p>
+<p><span style="font-size: 15px;">我们做一个实验来验证。比如C4和G4之间是完全协和的纯五度，他们的弦长比是3:2，最小公倍数是6，那么他们的拍音频率就是弦长为C4弦长2倍的弦所发出的声音的频率，显然就是C3的音。我们可以在<a href="http://www.onlinepianist.com/virtual_piano/">在线钢琴</a>上同时按下i（C4）和x（G4）键，然后试着同时按下i、x和q（C3）键听一听效果。可以感觉到<span style="font-size: 15px;">C4</span>和<span style="font-size: 15px;">G4</span>把<span style="font-size: 15px;">C3</span>增强了。同理，A6和B6这两个小二度音程的弦长比是16:15，最小公倍数240，拍音频率对应的音为B2，然而B2与A6和B6相隔太远了，我们无法听出拍音增强的效果。</span></p>
+<p><span style="font-size: 15px;">和声理论已经发展为一门学科，称为和声学，内容是相当复杂的，这里只做简单的科普性介绍，感兴趣的同学可以阅读《和声学》。</span></p>
+<p>&nbsp;</p>
+<h2>四、总结</h2>
+<p><span style="font-size: 15px;">这一讲的内容是所有乐理中最复杂，也最困难的。但只要过了这一关，后面的内容就会轻松很多了。今天就到这里，最后给大家放一点福利，教你如何在2分钟内学会弹钢琴。玩笑归玩笑，也请各位结合本讲的内容，思考这里面的原理。</span></p>
+<p><span style="font-size: 15px;"><object style="display: block; margin-left: auto; margin-right: auto;" width="320" height="240" data="http://player.56.com/v_OTQ4NDQ4NzI.swf" type="application/x-shockwave-flash"><param name="src" value="http://player.56.com/v_OTQ4NDQ4NzI.swf"></object></span></p></div><div id="MySignature" style="display: block;"><p><br></p>
+<div align="center"><table border="0"><tbody><tr>
+<td valign="middle"><a href="http://www.cnblogs.com/devymex/archive/2010/08/09/1795938.html"><img src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/o_92.png" align="middle"></a></td>
+<td valign="middle" style="font-size:large;"><a href="http://www.cnblogs.com/devymex/archive/2010/08/09/1795938.html">返回我的文章目录</a></td>
+</tr></tbody></table></div>
+<p><br></p>
+
+<div><table border="0"><tbody><tr>
+<td valign="middle"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/cn/"><img alt="知识共享许可协议" style="border-width:0" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/88x31.png" align="bottom"></a></td>
+<td>作者：王雨濛；新浪微博：<a href="http://weibo.com/devymex">@吉祥村码农</a>；来源：<a href="http://www.cnblogs.com/devymex/">《程序控》</a>博客 -- <a href="http://www.cnblogs.com/devymex/">http://www.cnblogs.com/devymex/</a><br>
+
+此文章版权归作者所有（有特别声明的除外)，转载必须注明作者及来源。您不能用于商业目的也不能修改原文内容。
+</td></tr></tbody></table></div>
+<p>&nbsp;</p></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(3389620,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;bca6b9d7-7352-df11-ba8f-001cf0cd104b&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/devymex/" target="_blank"><img src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/u129662.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/devymex/">Devymex</a><br>
+            <a href="http://home.cnblogs.com/u/devymex/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/devymex/followers">粉丝 - 372</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;bca6b9d7-7352-df11-ba8f-001cf0cd104b&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(3389620,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">21</span>
+    </div>
+    <div class="buryit" onclick="votePost(3389620,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/devymex/p/3387054.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/devymex/p/3387054.html" title="发布于2013-10-25 16:45">写给理工科人看的乐理（二）十二平均律与五线谱</a><br><a href="https://www.cnblogs.com/devymex/p/3386886.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/devymex/p/3386886.html" title="发布于2013-10-27 18:53">写给理工科人看的乐理（四）和弦与调式</a><br></div>
+</div>
+
+
+	</div>
+	
+	<div class="postfoot">
+		posted on <span id="post-date">2013-10-26 16:30</span> <a href="https://www.cnblogs.com/devymex/">Devymex</a> 阅读(<span id="post_view_count">79938</span>) 评论(<span id="post_comment_count">32</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=3389620" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/devymex/p/3389620.html#" onclick="AddToWz(3389620);return false;">收藏</a>
+	</div>
+</div>
+<script type="text/javascript">var allowComments=true,cb_blogId=73997,cb_entryId=3389620,cb_blogApp=currentBlogApp,cb_blogUserGuid='bca6b9d7-7352-df11-ba8f-001cf0cd104b',cb_entryCreatedDate='2013/10/26 16:30:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<a name="comments"></a>
+<br>
+<div id="comments">
+<h3>评论</h3>
+
+
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2802858" class="layer">#1楼</a><a name="2802858" id="comment_anchor_2802858"></a>
+					<span>
+						 <span class="comment_date">2013-10-26 16:51</span>
+					</span>
+				<a id="a_comment_author_2802858" href="http://home.cnblogs.com/u/518056/" target="_blank">chisheng</a> <a href="http://msg.cnblogs.com/send/chisheng" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2802858" class="blog_comment_body">楼主果然理工男，刨根问底，弄清原理，钻研技术。写得真的很好，有时解释一些事情的时候也这个方式，结果。。。。，你懂得</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2802858,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2802858,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2802907" class="layer">#2楼</a><a name="2802907" id="comment_anchor_2802907"></a>
+					<span>
+						 <span class="comment_date">2013-10-26 18:06</span>
+					</span>
+				<a id="a_comment_author_2802907" href="https://www.cnblogs.com/Daniel-zhao/" target="_blank">Daniel Zhao</a> <a href="http://msg.cnblogs.com/send/Daniel%20Zhao" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2802907" class="blog_comment_body">哇塞。 好牛x的帖子。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2802907,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2802907,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2802934" class="layer">#3楼</a><a name="2802934" id="comment_anchor_2802934"></a>
+					<span>
+						 <span class="comment_date">2013-10-26 18:44</span>
+					</span>
+				<a id="a_comment_author_2802934" href="http://home.cnblogs.com/u/132954/" target="_blank">金贵软件</a> <a href="http://msg.cnblogs.com/send/%E9%87%91%E8%B4%B5%E8%BD%AF%E4%BB%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2802934" class="blog_comment_body">貌似音乐专业出身，先讲五线谱，理解有点困难，楼主加油！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2802934,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2802934,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2802997" class="layer">#4楼</a><a name="2802997" id="comment_anchor_2802997"></a>
+					<span>
+						 <span class="comment_date">2013-10-26 21:22</span>
+					</span>
+				<a id="a_comment_author_2802997" href="http://home.cnblogs.com/u/142868/" target="_blank">豪侠</a> <a href="http://msg.cnblogs.com/send/%E8%B1%AA%E4%BE%A0" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2802997" class="blog_comment_body">楼主讲讲唱歌是怎么发声的？听人家说用丹田发声，用丹田怎么发声？用什么工具可以练习发声的^_^</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2802997,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2802997,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803035" class="layer">#5楼</a><a name="2803035" id="comment_anchor_2803035"></a>[<span class="louzhu">楼主</span>]
+					<span>
+						 <span class="comment_date">2013-10-26 22:23</span>
+					</span>
+				<a id="a_comment_author_2803035" href="https://www.cnblogs.com/devymex/" target="_blank">Devymex</a> <a href="http://msg.cnblogs.com/send/Devymex" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803035" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2802934" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2802934);">@</a>
+金贵软件<br>专业是计算机软件，音乐只是个人爱好，感谢支持！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803035,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803035,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803035_avatar" style="display:none;">http://pic.cnblogs.com/face/u129662.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803040" class="layer">#6楼</a><a name="2803040" id="comment_anchor_2803040"></a>[<span class="louzhu">楼主</span>]
+					<span>
+						 <span class="comment_date">2013-10-26 22:26</span>
+					</span>
+				<a id="a_comment_author_2803040" href="https://www.cnblogs.com/devymex/" target="_blank">Devymex</a> <a href="http://msg.cnblogs.com/send/Devymex" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803040" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2802997" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2802997);">@</a>
+豪侠<br>我不懂声乐，但是听到过这样一句话：工匠做出的乐器大同小异，而上帝创造的嗓音却千差万别。这里面的道理就是每个人的生理差异是巨大的，因此训练方法也必须因人而异。总而言之，气息的控制和基本原理的掌握是最重要的，但是最好不要自己盲目瞎练，一定要找个专业人士给予指导。人的技艺可以练好，也可以练坏，切记。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803040,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803040,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803040_avatar" style="display:none;">http://pic.cnblogs.com/face/u129662.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803094" class="layer">#7楼</a><a name="2803094" id="comment_anchor_2803094"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 00:16</span>
+					</span>
+				<a id="a_comment_author_2803094" href="https://www.cnblogs.com/fej121/" target="_blank">为森</a> <a href="http://msg.cnblogs.com/send/%E4%B8%BA%E6%A3%AE" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803094" class="blog_comment_body">在高音谱中有两个音是没必要升的：E升半音就是F，B升半音就是C 这句话没明白 根据你第一个图D升半音还是E了为什么就有必要</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803094,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803094,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803094_avatar" style="display:none;">http://pic.cnblogs.com/face/28457/20141210231443.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803101" class="layer">#8楼</a><a name="2803101" id="comment_anchor_2803101"></a>[<span class="louzhu">楼主</span>]
+					<span>
+						 <span class="comment_date">2013-10-27 00:28</span>
+					</span>
+				<a id="a_comment_author_2803101" href="https://www.cnblogs.com/devymex/" target="_blank">Devymex</a> <a href="http://msg.cnblogs.com/send/Devymex" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803101" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2803094" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2803094);">@</a>
+文楚<br>D与E之间是大二度音程，即有两个半音，因此D升半音是D#或Eb，不是E。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803101,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803101,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803101_avatar" style="display:none;">http://pic.cnblogs.com/face/u129662.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803107" class="layer">#9楼</a><a name="2803107" id="comment_anchor_2803107"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 01:15</span>
+					</span>
+				<a id="a_comment_author_2803107" href="https://www.cnblogs.com/fej121/" target="_blank">为森</a> <a href="http://msg.cnblogs.com/send/%E4%B8%BA%E6%A3%AE" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803107" class="blog_comment_body">看的很勉强，果然很难</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803107,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803107,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803107_avatar" style="display:none;">http://pic.cnblogs.com/face/28457/20141210231443.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803109" class="layer">#10楼</a><a name="2803109" id="comment_anchor_2803109"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 01:39</span>
+					</span>
+				<a id="a_comment_author_2803109" href="https://www.cnblogs.com/haoqi/" target="_blank">Moulton</a> <a href="http://msg.cnblogs.com/send/Moulton" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803109" class="blog_comment_body">我也想学音乐  买了个二手的吉他  结果不会弹。。。大家说是不是悲剧呀。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803109,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803109,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803109_avatar" style="display:none;">http://pic.cnblogs.com/face/137849/20131208231047.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803125" class="layer">#11楼</a><a name="2803125" id="comment_anchor_2803125"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:01</span>
+					</span>
+				<a id="a_comment_author_2803125" href="https://www.cnblogs.com/zhaowenlong/" target="_blank">文泽_z</a> <a href="http://msg.cnblogs.com/send/%E6%96%87%E6%B3%BD_z" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803125" class="blog_comment_body">不好意思咱音乐科班出身</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803125,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803125,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803141" class="layer">#12楼</a><a name="2803141" id="comment_anchor_2803141"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:38</span>
+					</span>
+				<a id="a_comment_author_2803141" href="https://www.cnblogs.com/frand/" target="_blank">栖山</a> <a href="http://msg.cnblogs.com/send/%E6%A0%96%E5%B1%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803141" class="blog_comment_body">请问楼主，唱歌，钢琴什么水平？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803141,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803141,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803144" class="layer">#13楼</a><a name="2803144" id="comment_anchor_2803144"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:41</span>
+					</span>
+				<a id="a_comment_author_2803144" href="https://www.cnblogs.com/pmer/" target="_blank">garbageMan</a> <a href="http://msg.cnblogs.com/send/garbageMan" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803144" class="blog_comment_body">先推荐<br>再找第一篇</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803144,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803144,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803144_avatar" style="display:none;">http://pic.cnblogs.com/face/u114426.jpg?id=04091809</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803142" class="layer">#14楼</a><a name="2803142" id="comment_anchor_2803142"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:42</span>
+					</span>
+				<a id="a_comment_author_2803142" href="https://www.cnblogs.com/frand/" target="_blank">栖山</a> <a href="http://msg.cnblogs.com/send/%E6%A0%96%E5%B1%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803142" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2803125" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2803125);">@</a>
+wenrow<br>音乐科班出身该行当程序员？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803142,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803142,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803143" class="layer">#15楼</a><a name="2803143" id="comment_anchor_2803143"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:43</span>
+					</span>
+				<a id="a_comment_author_2803143" href="https://www.cnblogs.com/pmer/" target="_blank">garbageMan</a> <a href="http://msg.cnblogs.com/send/garbageMan" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803143" class="blog_comment_body">好贴！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803143,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803143,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803143_avatar" style="display:none;">http://pic.cnblogs.com/face/u114426.jpg?id=04091809</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803148" class="layer">#16楼</a><a name="2803148" id="comment_anchor_2803148"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 09:44</span>
+					</span>
+				<a id="a_comment_author_2803148" href="https://www.cnblogs.com/frand/" target="_blank">栖山</a> <a href="http://msg.cnblogs.com/send/%E6%A0%96%E5%B1%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803148" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2802997" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2802997);">@</a>
+豪侠<br>网上有周小燕的声乐讲座视频， 看一看就知道了，丹田发声其实是说的腹式呼吸。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803148,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803148,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803208" class="layer">#17楼</a><a name="2803208" id="comment_anchor_2803208"></a>
+					<span>
+						 <span class="comment_date">2013-10-27 11:55</span>
+					</span>
+				<a id="a_comment_author_2803208" href="https://www.cnblogs.com/pandaren/" target="_blank">pandaren</a> <a href="http://msg.cnblogs.com/send/pandaren" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803208" class="blog_comment_body">前一阵听明白人白活了一下，五迷三道的没懂，mark</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803208,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803208,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803569" class="layer">#18楼</a><a name="2803569" id="comment_anchor_2803569"></a>
+					<span>
+						 <span class="comment_date">2013-10-28 08:42</span>
+					</span>
+				<a id="a_comment_author_2803569" href="https://www.cnblogs.com/aspnetx/" target="_blank">哥本哈士奇(aspnetx)</a> <a href="http://msg.cnblogs.com/send/%E5%93%A5%E6%9C%AC%E5%93%88%E5%A3%AB%E5%A5%87%28aspnetx%29" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803569" class="blog_comment_body">这个必须顶，我的琴也好久没碰过了呢。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803569,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803569,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2803569_avatar" style="display:none;">http://pic.cnblogs.com/face/8622/20130526224329.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2803599" class="layer">#19楼</a><a name="2803599" id="comment_anchor_2803599"></a>
+					<span>
+						 <span class="comment_date">2013-10-28 09:07</span>
+					</span>
+				<a id="a_comment_author_2803599" href="https://www.cnblogs.com/zhaowenlong/" target="_blank">文泽_z</a> <a href="http://msg.cnblogs.com/send/%E6%96%87%E6%B3%BD_z" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2803599" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#2803142" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2803142);">@</a>
+栖山<br>恩，所以在痛苦前行中呵呵，要回头学的理论知识太多</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2803599,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2803599,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#2804881" class="layer">#20楼</a><a name="2804881" id="comment_anchor_2804881"></a>
+					<span>
+						 <span class="comment_date">2013-10-29 14:47</span>
+					</span>
+				<a id="a_comment_author_2804881" href="http://home.cnblogs.com/u/577815/" target="_blank">dcchan</a> <a href="http://msg.cnblogs.com/send/dcchan" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2804881" class="blog_comment_body">果然厉害。<br>觉得以前的乐理都是死记硬背的，这会总是知道为什么啦。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2804881,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2804881,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3068620" class="layer">#21楼</a><a name="3068620" id="comment_anchor_3068620"></a>
+					<span>
+						 <span class="comment_date">2014-11-21 10:06</span>
+					</span>
+				<a id="a_comment_author_3068620" href="http://home.cnblogs.com/u/695161/" target="_blank">爱音乐的可白</a> <a href="http://msg.cnblogs.com/send/%E7%88%B1%E9%9F%B3%E4%B9%90%E7%9A%84%E5%8F%AF%E7%99%BD" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3068620" class="blog_comment_body">注册用户只为赞博主, 讲的太好了!!!!<br>我也是有博主这样的想法, 只是自己做的太少了<br>以前也很喜欢乐理, 每每看到不明白的术语就想弄明白原理<br><br>因为自己不是音乐专业的, 就上网随便找各种文章看, 大多都是一些死记硬背的东西, 看到这一系列文章实在是太兴奋了!!<br><br>再次赞!!!!!!!!!!!!!!!!!!!!</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3068620,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3068620,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3080542" class="layer">#22楼</a><a name="3080542" id="comment_anchor_3080542"></a>
+					<span>
+						 <span class="comment_date">2014-12-08 09:28</span>
+					</span>
+				<a id="a_comment_author_3080542" href="http://home.cnblogs.com/u/701007/" target="_blank">孤水长天</a> <a href="http://msg.cnblogs.com/send/%E5%AD%A4%E6%B0%B4%E9%95%BF%E5%A4%A9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3080542" class="blog_comment_body">楼主最后举例的A6和B6不是小二度吧，应该大二度。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3080542,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3080542,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3080544" class="layer">#23楼</a><a name="3080544" id="comment_anchor_3080544"></a>
+					<span>
+						 <span class="comment_date">2014-12-08 09:29</span>
+					</span>
+				<a id="a_comment_author_3080544" href="http://home.cnblogs.com/u/701007/" target="_blank">孤水长天</a> <a href="http://msg.cnblogs.com/send/%E5%AD%A4%E6%B0%B4%E9%95%BF%E5%A4%A9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3080544" class="blog_comment_body">不过楼主太赞了，技术帝统治世界呀！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3080544,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3080544,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3268168" class="layer">#24楼</a><a name="3268168" id="comment_anchor_3268168"></a>
+					<span>
+						 <span class="comment_date">2015-09-17 00:31</span>
+					</span>
+				<a id="a_comment_author_3268168" href="http://home.cnblogs.com/u/812357/" target="_blank">清晨227</a> <a href="http://msg.cnblogs.com/send/%E6%B8%85%E6%99%A8227" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3268168" class="blog_comment_body">首先，同21楼注册账号只为感谢楼主。<br>    看流行于世面的《李重光音乐理论基础》一书（只看过这一本，别的没看过，不敢妄议），感觉其虽然叫基本音乐理论基础，但其实还是不够“基础”，如只以“以纯五度关系生律，再生次律”的语句来解释何谓“五度相生律”，然实则对于完全0基础的我们而言，本身就不知道什么叫“纯五度”，什么又叫“生律”。将“音”之本质剖析为”振动“，将”音高“之本质解释为”振动频率“以为基本乐理书开篇者多。但能一以贯之地以”振动频率“这种本质形态来解释律、音程、调式，如以砖石解构大厦而达从无到有效果的文章就太稀缺了。可能是在大师眼里，这些东西都太简单无需赘言，也可能是要编写这么多数据、表格、图片，来描述这么复杂的计算、推演、逻辑太麻烦，从而无意为之。只能说，不论是因为哪一种原因，楼主撰写此文之耐心和用心都已在两相比对之下昭然。<br>     是故，楼主之所为作，实万千乐理小白之福音也，再次感谢之。<br>     PS：最后，有一个问题不太明白想请教一下，在五度相生律中从f到3f/2是”纯五度“关系，而在十二平均律中相差3.5个音数的音程关系也叫”纯五度“。但若都以440hz的音为第一个音，则前者的纯五度关系音为660Hz，而后者的纯五度关系音为659.2551138Hz。这是不是意味着在两个不同的律中”纯五度“的内涵，即他们所表示的振动频率关系也不相同？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3268168,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3268168,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3309047" class="layer">#25楼</a><a name="3309047" id="comment_anchor_3309047"></a>
+					<span>
+						 <span class="comment_date">2015-11-18 11:43</span>
+					</span>
+				<a id="a_comment_author_3309047" href="http://home.cnblogs.com/u/839946/" target="_blank">浮空</a> <a href="http://msg.cnblogs.com/send/%E6%B5%AE%E7%A9%BA" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3309047" class="blog_comment_body">大二度 	1:1.24 	8:9 	72<br>这个比值错了，应该是1:1.12吧，笔误？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3309047,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3309047,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3309078" class="layer">#26楼</a><a name="3309078" id="comment_anchor_3309078"></a>[<span class="louzhu">楼主</span>]
+					<span>
+						 <span class="comment_date">2015-11-18 12:36</span>
+					</span>
+				<a id="a_comment_author_3309078" href="https://www.cnblogs.com/devymex/" target="_blank">Devymex</a> <a href="http://msg.cnblogs.com/send/Devymex" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3309078" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#3309047" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3309047);">@</a>
+浮空<br>感谢您的细心指正！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3309078,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3309078,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3309078_avatar" style="display:none;">http://pic.cnblogs.com/face/u129662.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3310941" class="layer">#27楼</a><a name="3310941" id="comment_anchor_3310941"></a>
+					<span>
+						 <span class="comment_date">2015-11-20 16:44</span>
+					</span>
+				<a id="a_comment_author_3310941" href="http://home.cnblogs.com/u/839946/" target="_blank">浮空</a> <a href="http://msg.cnblogs.com/send/%E6%B5%AE%E7%A9%BA" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3310941" class="blog_comment_body">1.在一个纯八度范围内，两个单音的和声一共有12种，即与12种音程相对应。<br>为什么不是组合的结果，12*11/2呢？<br><br>2. 图7 黑键对应的G#A，为什么不是G#Ab？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3310941,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3310941,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3316607" class="layer">#28楼</a><a name="3316607" id="comment_anchor_3316607"></a>[<span class="louzhu">楼主</span>]
+					<span>
+						 <span class="comment_date">2015-11-29 13:04</span>
+					</span>
+				<a id="a_comment_author_3316607" href="https://www.cnblogs.com/devymex/" target="_blank">Devymex</a> <a href="http://msg.cnblogs.com/send/Devymex" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3316607" class="blog_comment_body"><a href="https://www.cnblogs.com/devymex/p/3389620.html#3310941" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3310941);">@</a>
+浮空<br>12种是指从八度的第1个音开始比，1/2、1/3、1/4、……1/11。其它任两个音的音程都在这里面了，比如3/4的音程和1/2的音程都是小二。<br><br>那张图里应该是Ab，图是网上找的，估计是画不下省略了。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3316607,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3316607,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3316607_avatar" style="display:none;">http://pic.cnblogs.com/face/u129662.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3379443" class="layer">#29楼</a><a name="3379443" id="comment_anchor_3379443"></a>
+					<span>
+						 <span class="comment_date">2016-03-13 10:14</span>
+					</span>
+				<a id="a_comment_author_3379443" href="http://home.cnblogs.com/u/912216/" target="_blank">Lokitang</a> <a href="http://msg.cnblogs.com/send/Lokitang" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3379443" class="blog_comment_body">双音谱一节，“ C3和C2的频率分别为C4频率的1/4和1/8，而C4的频率在前面已经计算过了。 ”，是否为笔误？应该为1/2,1/4？<br><br>和声一节，“而C4和D4同时按下（小二度音程）就非常刺耳难听。这究竟是为什么呢？”，c4与d4之间应该是一个全音，是大二度音程？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3379443,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3379443,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3511501" class="layer">#30楼</a><a name="3511501" id="comment_anchor_3511501"></a>
+					<span>
+						 <span class="comment_date">2016-09-16 17:27</span>
+					</span>
+				<a id="a_comment_author_3511501" href="http://home.cnblogs.com/u/1027407/" target="_blank">yuqiuqiu</a> <a href="http://msg.cnblogs.com/send/yuqiuqiu" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3511501" class="blog_comment_body">请教楼主一个困扰我许久的问题，谢谢解惑:<br>我用Sound forge9.0中的频谱仪测量一个男高音歌声，发现有的音的一个次谐波的db峰值大于基音（基波）的db值，这是可能的吗？我用钢琴核对过这个音，其基音频率的db值低于它旁边高次谐波的db值。有这种现象吗？劳烦释疑，不胜感激！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3511501,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3511501,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3564731" class="layer">#31楼</a><a name="3564731" id="comment_anchor_3564731"></a>
+					<span>
+						 <span class="comment_date">2016-11-25 01:23</span>
+					</span>
+				<a id="a_comment_author_3564731" href="http://home.cnblogs.com/u/1069659/" target="_blank">锅弟</a> <a href="http://msg.cnblogs.com/send/%E9%94%85%E5%BC%9F" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3564731" class="blog_comment_body">楼主写的挺好！不过有一处公式是不是写错了：各音程的频率比（即相距某个音程的低音比高音）可由其音数t按公式 1/(2t)^p 算出，应该是 1/p^(2t) 吧？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3564731,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3564731,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="https://www.cnblogs.com/devymex/p/3389620.html#3695842" class="layer">#32楼</a><a name="3695842" id="comment_anchor_3695842"></a><span id="comment-maxId" style="display:none;">3695842</span><span id="comment-maxDate" style="display:none;">2017/5/19 8:52:35</span>
+					<span>
+						 <span class="comment_date">2017-05-19 08:52</span>
+					</span>
+				<a id="a_comment_author_3695842" href="https://www.cnblogs.com/fhys/" target="_blank">fhys</a> <a href="http://msg.cnblogs.com/send/fhys" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3695842" class="blog_comment_body">好多数学公式图片显示不了，求修复</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3695842,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3695842,&#39;Bury&#39;,this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+</div><div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/devymex/p/3389620.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/devymex/p/3389620.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://ke.qq.com/adActivity.html?name=xiangxueketang2" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-享学&#39;)">【培训】IT职业生涯指南，Java程序员薪资翻3倍的秘密</a><br><a href="https://gitee.com/enterprises?from=bky-2" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-gitee&#39;)">【推荐】专业便捷的企业级代码托管服务 - Gitee 码云</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/gpt.js.download"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CO2uw6Oc8eECFYgYAQodiB8MXQ"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/container.html" id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/VCAWP/archive/2005/01/10/89640.html" target="_blank" onclick="clickRecomItmem(89640)">写给二当家看的。</a><br>·  <a href="https://www.cnblogs.com/kiss/archive/2010/05/13/1734324.html" target="_blank" onclick="clickRecomItmem(1734324)">写给自己看的HTML、CSS、XHTML指南 三</a><br>·  <a href="https://www.cnblogs.com/MaxWoods/archive/2007/08/11/851500.html" target="_blank" onclick="clickRecomItmem(851500)">基础乐理--五线谱</a><br>·  <a href="https://www.cnblogs.com/binarytreeyifan/p/3378248.html" target="_blank" onclick="clickRecomItmem(3378248)">&lt;写给大家看的设计书&gt;</a><br>·  <a href="https://www.cnblogs.com/winnieKing/p/8142819.html" target="_blank" onclick="clickRecomItmem(8142819)">小记--写给自己看</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CKfbv6Oc8eECFYgYAQodiB8MXQ"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-amp-allowed="send-positions" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/624485/" target="_blank">亚马逊谷歌推免费音乐服务，或将改变全球音乐市场格局</a><br> ·  <a href="https://news.cnblogs.com/n/624484/" target="_blank">周源：知乎已成长为大社区 下一步构建特色社区生态</a><br> ·  <a href="https://news.cnblogs.com/n/624483/" target="_blank">10万美元，让死去的宠物狗克隆“复活”，你愿意吗?</a><br> ·  <a href="https://news.cnblogs.com/n/624482/" target="_blank">研究人员创造了新的塑料类型 有望实现近乎无损的回收</a><br> ·  <a href="https://news.cnblogs.com/n/624481/" target="_blank">一线｜联通首个子公司完成混改 9家车企入股智网科技</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+</div>
+<div class="footer">
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="https://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © Devymex
+</p>
+</div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10279853-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><iframe id="google_osd_static_frame_2480725692401" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./写给理工科人看的乐理（三）五线谱进阶与和声理论 - Devymex - 博客园_files/saved_resource(1).html"></iframe><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Math-italic, sans-serif;"></div></div></body></html>

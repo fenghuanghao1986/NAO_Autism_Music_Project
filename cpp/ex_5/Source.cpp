@@ -117,17 +117,10 @@ int main()
 	int hr = 0, mi = 0;
 	char tOf24[5], tOf12;
 	string t;
-	string dispHr = "00", dispMi = "00";
-	string comma = ":";
-	string A ="A.M.", P = "P.M.";
-	
+
 	cout << "Please enter current time in 24hr notation, "
 		<< "follow this format 01:23: " << endl;
-	cin >> tOf24;
 	t = input();
 	cout << t;
-	//getTime();
 
-	//cout << dispHr << comma << dispMi << ' ' << A << endl;
-	//system("pause");
 }

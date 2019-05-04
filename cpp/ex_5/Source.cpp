@@ -83,44 +83,96 @@ type char to record whether it is A.M. or P.M. (The function will have other par
 Include a loop that lets the user repeat this computation for new input values again and again until the
 user says he or she wants to end the program.*/
 //
+/*
 #include <iostream>
-#include <string.h>
+#include <string>
 using namespace std;
 
 string input()
 {
 	string str;
 	cin >> str;
+	cout << str.size() << endl;
 	return str;
 }
 
 void output(string result)
 {
-	cout << result;
+	cout << result << endl;
 }
 
 
 // define time conversion function
-char convertTime()
+string convertTime(string inTime)
 {
-	char A = 'A.M.', P = 'P.M.';
-	char comma = ':';
-	char dispHr = '00', dispMi = '00';
-	int hr = 0, mi = 0;
-	char t[4] = { dispHr, comma, dispMi, A};
-	cout << t << endl;
+	int i, j, k;
+	int h, m;
+	string tempH, tempM;
+	string outTime;
+
+	for (i = 0; i < inTime.size(); i++)
+	{
+		if (inTime[i] == ':')
+			cout << i << endl;
+			break;
+	}
+
+	for (j = 0; j < i; j++)
+	{
+		cout << j << endl;
+		tempH.append(inTime, j);
+	}
+
+	for (k = i; k < inTime.size(); k++)
+	{
+		cout << k << endl;
+		tempM.append(inTime, k);
+	}
+
+	h = atoi(tempH.c_str());
+
+	if (h > 12 && h <= 24)
+	{ 
+		h = h - 12;
+		tempH = to_string(h);
+		outTime = tempH + ":" + tempM + "P.M.";
+		return outTime;
+	}
+	else if (h == 12)
+	{
+		outTime = tempH + ":" + tempM + "P.M.";
+		return outTime;
+	}
+	else if (h == 0)
+	{
+		h = 12;
+		tempH = to_string(h);
+		outTime = tempH + ":" + tempM + "A.M.";
+		return outTime;
+	}
+	else
+	{ 
+		outTime = tempH + ":" + tempM + "A.M.";
+		return outTime;
+	}
+		
 }
 
 // define main function
 int main()
 {
-	int hr = 0, mi = 0;
-	char tOf24[5], tOf12;
-	string t;
+	string inTime, outTime;
 
 	cout << "Please enter current time in 24hr notation, "
 		<< "follow this format 01:23: " << endl;
-	t = input();
-	cout << t;
+
+	inTime = input();
+	outTime = convertTime(inTime);
+	output(outTime);
+
+	system("pause");
 
 }
+*/
+
+

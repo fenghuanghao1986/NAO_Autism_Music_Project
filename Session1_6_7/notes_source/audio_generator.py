@@ -23,6 +23,7 @@ host = "192.168.0.6"
 username = "nao"
 pw = "nao"
 
+def game(robotIP, PORT=9559):
 uncfList = ['3','4','7','8','10','11']
 comfList = ['1','2','4','5','6','8','9']
 modeList = ['easy', 'hard']
@@ -51,7 +52,8 @@ else:
     for i in range(n):
         play.append(random.choice(comfList))
 # =============================================================================
-# nao play one piece or two, kid should tell if they feel same or not and what do they fell
+# nao play one piece or two, kid should tell if they feel same or not and what 
+# do they fell
 # =============================================================================
 if game == 'f':
     # find a way to combine single note files

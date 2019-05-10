@@ -126,3 +126,72 @@ diplay(ostream &os)
 	}
 	os << ")\n";
 }
+
+inline void
+ilist::
+remove_front()
+{
+	if (_at_front)
+	{
+		ilist_item* ptr = _at_front;
+		_at_front = _at_front->next();
+
+		bump_down_size();
+		delete ptr;
+	}
+}
+
+void
+ilist::
+remove_all()
+{
+	while (_at_front)
+		remove_front();
+
+	_size = 0;
+	_at_front = _at_end = 0;
+}
+
+int
+ilist::
+remove(int value)
+{
+	ilist_item* plist = _at_front;
+	int elem_cnt = 0;
+
+	while (plist && plist->value() == value)
+	{
+		plist = plist->next();
+		remove_front();
+		++elem_cnt;
+	}
+
+	if (!plist)
+		return elem_cnt;
+
+	ilist_item* prev = plist;
+	plist = plist->next();
+
+	while (plist)
+	{
+		if (plist->value() == value)
+		{
+			prev->next(plist->next());
+			delete plist;
+			++elem_cnt;
+			bump_down_size();
+			plist = prev->next();
+			if (!plist)
+			{
+				_at_end = prev;
+				return elem_cnt;
+			}
+		}
+		else
+		{
+			prev = plist;
+			plist = plist->next();
+		}
+	}
+	return elem_cnt;
+}

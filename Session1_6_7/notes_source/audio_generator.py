@@ -29,30 +29,21 @@ gameList = ['feeling', 'distinguish', 'play', 'match']
 def game(robotIP, PORT=9559):
     uncfList = ['3','4','7','8','10','11']
     comfList = ['1','2','4','5','6','8','9']
-
+    n = 6
     play = []
     now = datetime.datetime.now()
     # =============================================================================
     # 
     # =============================================================================
-    mode = raw_input("select mode level type e or h: ")
+#    mode = raw_input("select mode level type e or h: ")
     u_cList = raw_input("select comfortable list type u or c: ")
     game = raw_input("select game name type f d p or m: ")
     count = raw_input("type how many times kid play game: ")
     # =============================================================================
     # 
     # =============================================================================
-    if mode == 'easy':
-        n = 3
-    else: 
-        n = 6
-        
-    if u_cList == 'u':
-        for i in range(n):
-            play.append(random.choice(uncfList))
-    else:
-        for i in range(n):
-            play.append(random.choice(comfList))
+
+
     # =============================================================================
     # nao play one piece or two, kid should tell if they feel same or not and what 
     # do they fell
@@ -60,8 +51,14 @@ def game(robotIP, PORT=9559):
     if game == 'f':
         # find a way to combine single note files
         # send to robot and play on it
+        if u_cList == 'u':
+            for i in range(n):
+                play.append(random.choice(uncfList))
+        else:
+            for i in range(n):
+                play.append(random.choice(comfList))
         newData = []
-        for j in range(n):
+        for j in play:
             rate, data = wav.read(str(j) + '.wav')
             newData = np.vstack((data, newData))
         newFile = game + now + count + '.wav'
@@ -82,9 +79,14 @@ def game(robotIP, PORT=9559):
     # =============================================================================
         return
     elif game == 'd':
-        
+        if u_cList == 'u':
+            for i in range(n):
+                play.append(random.choice(uncfList))
+        else:
+            for i in range(n):
+                play.append(random.choice(comfList))
         newData = []
-        for j in range(n):
+        for j in play:
             rate, data = wav.read(str(j) + '.wav')
             newData = np.vstack((data, newData))
         newFile = game + now + count + '.wav'
@@ -105,9 +107,14 @@ def game(robotIP, PORT=9559):
     # =============================================================================
         return
     elif game == 'p':
-        
+        if u_cList == 'u':
+            for i in range(n):
+                play.append(random.choice(uncfList))
+        else:
+            for i in range(n):
+                play.append(random.choice(comfList))        
         newData = []
-        for j in range(n):
+        for j in play:
             rate, data = wav.read(str(j) + '.wav')
             newData = np.vstack((data, newData))
         newFile = game + now + count + '.wav'
@@ -128,8 +135,14 @@ def game(robotIP, PORT=9559):
     # =============================================================================
         return
     else:
+        if u_cList == 'u':
+            for i in range(n):
+                play.append(random.choice(uncfList))
+        else:
+            for i in range(n):
+                play.append(random.choice(comfList))        
         newData = []
-        for j in range(n):
+        for j in play:
             rate, data = wav.read(str(j) + '.wav')
             newData = np.vstack((data, newData))
         newFile = game + now + count + '.wav'

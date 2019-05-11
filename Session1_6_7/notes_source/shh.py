@@ -58,7 +58,7 @@ class SSHConnection(object):
         self.transport.close()
  
 if __name__ == "__main__":
-    host = "192.168.0.2"
+    host = "192.168.0.6"
     username = "nao"
     pw = "nao"
     

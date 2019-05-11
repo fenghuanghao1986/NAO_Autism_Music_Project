@@ -13,7 +13,7 @@ import sys
 import argparse
 #import motion
 import Positions
-import ssh
+import shh
 import numpy as np
 import recordplay
 import stft
@@ -21,6 +21,7 @@ from naoqi import ALProxy
 from scipy.io import wavfile as wav
 import csv
 import datetime
+#import audio_generator
 
 print "Enter subject number:\n"
 subject = raw_input()
@@ -350,14 +351,14 @@ def main(robotIP, PORT=9559):
 #        send feedback to kid
         elif taskNumber == 14:
         
-            host = "192.168.0.6"    # this host name may have to change 
+            host = "192.168.0.2"    # this host name may have to change 
             username = "nao"
             pw = "nao"
             
             origin = '/home/nao/test.wav'
             dst = r'C:\Users\fengh\Desktop\record.wav'
          
-            sshFile = ssh("SSHConnection", host, username, pw)
+            sshFile = SSHConnection (host, username, pw)
             sshFile.get(origin, dst)
             sshFile.close()
             
@@ -398,7 +399,7 @@ def main(robotIP, PORT=9559):
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([task, '123', '122', '.667'])
+                    filewriter.writerow([taskNumber, '123', '122', '.667'])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================

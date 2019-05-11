@@ -7,7 +7,30 @@ import matplotlib.pyplot as plt
 
 def stft(x, Nwin, Nfft=None):
 
-   
+    """
+    Short-time Fourier transform: convert a 1D vector to a 2D array
+    The short-time Fourier transform (STFT) breaks a long vector into disjoint
+    chunks (no overlap) and runs an FFT (Fast Fourier Transform) on each chunk.
+    The resulting 2D array can 
+    Parameters
+    ----------
+    x : array_like
+        Input signal (expected to be real)
+    Nwin : int
+        Length of each window (chunk of the signal). Should be ≪ `len(x)`.
+    Nfft : int, optional
+        Zero-pad each chunk to this length before FFT. Should be ≥ `Nwin`,
+        (usually with small prime factors, for fastest FFT). Default: `Nwin`.
+    Returns
+    -------
+    out : complex ndarray
+        `len(x) // Nwin` by `Nfft` complex array representing the STFT of `x`.
+    
+    See also
+    --------
+    istft : inverse function (convert a STFT array back to a data vector)
+    stftbins : time and frequency bins corresponding to `out`
+    """
     Nfft = Nfft or Nwin
     Nwindows = x.size // Nwin
     # reshape into array `Nwin` wide, and as tall as possible. This is

@@ -18,31 +18,7 @@ def stft(x, Nwin, Nfft=None):
 
 
 def stftbins(x, Nwin, Nfft=None, d=1.0):
-    """
-    Time and frequency bins corresponding to short-time Fourier transform.
-    Call this with the same arguments as `stft`, plus one extra argument: `d`
-    sample spacing, to get the time and frequency axes that the output of
-    `stft` correspond to.
-    Parameters
-    ----------
-    x : array_like
-        same as `stft`
-    Nwin : int
-        same as `stft`
-    Nfft : int, optional
-        same as `stft`
-    d : float, optional
-        Sample spacing of `x` (or 1 / sample frequency), units of seconds.
-        Default: 1.0.
-    Returns
-    -------
-    t : ndarray
-        Array of length `len(x) // Nwin`, in units of seconds, corresponding to
-        the first dimension (height) of the output of `stft`.
-    f : ndarray
-        Array of length `Nfft`, in units of Hertz, corresponding to the second
-        dimension (width) of the output of `stft`.
-    """
+    
     Nfft = Nfft or Nwin
     Nwindows = x.size // Nwin
     t = np.arange(Nwindows) * (Nwin * d)
@@ -51,26 +27,7 @@ def stftbins(x, Nwin, Nfft=None, d=1.0):
 
 
 def istft(stftArr, Nwin):
-    """
-    Inverse short-time Fourier transform (ISTFT)
-    Given an array representing the output of `stft`, convert it back to the
-    original samples.
-    Parameters
-    ----------
-    stftArr : ndarray
-        Output of `stft` (or something the same size)
-    Nwin : int
-        Same input as `stft`: length of  each chunk that the STFT was calculated
-        over.
-    
-    Returns
-    -------
-    y : ndarray
-        Data samples corresponding to STFT data.
-    
-    See also:
-    stft : the forward transform
-    """
+   
     arr = fft.irfft(stftArr)[:, :Nwin]
     return np.reshape(arr, -1)
 

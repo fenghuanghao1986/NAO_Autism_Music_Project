@@ -32,6 +32,37 @@ pw = "nao"
 modeList = ['easy', 'hard']
 gameList = ['feeling', 'distinguish', 'play', 'match']
 
+def createMisc(uncfList, comfList, n, game, count):
+    
+    play = []
+        
+    u_cList = raw_input("select comfortable list type u or c: ")
+
+    if u_cList == 'u':
+        for i in range(n):
+            play.append(random.choice(uncfList))
+    else:
+        for i in range(n):
+            play.append(random.choice(comfList))
+    newData = []
+    for j in play:
+        rate, data = wav.read(str(j) + '.wav')
+        if len(newData) == 0:
+            newData = copy.deepcopy(data)
+        else:
+            newData = np.concatenate((newData, data), axis=0)
+    print(play)
+    newFile = game + count + u_cList +  '.wav'
+    wav.write(newFile, rate, newData)
+        
+    dst = '/home/nao/' + newFile
+    # this path need to be changed
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile)
+    sshFile = shh.SSHConnection(host, username, pw)
+    sshFile.put(origin, dst)
+    sshFile.close()
+    
+    return dst
 
 def main(robotIP, PORT=9559):
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
@@ -72,69 +103,20 @@ def main(robotIP, PORT=9559):
         tts.say("You can say Same or Different to tell me the answer!")
         time.sleep(0.5)
         tts.say("Let's begin!")
-        
-        u_cList = raw_input("select comfortable list type u or c: ")
-        play1 = []
-        if u_cList == 'u':
-            for i in range(n):
-                play1.append(random.choice(uncfList))
-        else:
-            for i in range(n):
-                play1.append(random.choice(comfList))
-        newData1 = []
-        for j in play1:
-            rate, data1 = wav.read(str(j) + '.wav')
-            if len(newData1) == 0:
-                newData1 = copy.deepcopy(data1)
-            else:
-                newData1 = np.concatenate((newData1, data1), axis=0)
-        newFile1 = game + count + u_cList + '.wav'
-        wav.write(newFile1, rate, newData1)
-        
-        dst = '/home/nao/' + newFile1
-        # this path need to be changed
-        origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile1)
-        sshFile = shh.SSHConnection(host, username, pw)
-        sshFile.put(origin, dst)
-        sshFile.close()
+        dst1 = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the first piece of music, feel it carefully!")
-#        recordplay.record(robotIP, PORT, t=5)
-        recordplay.playBack(robotIP, PORT, dst)
-
-        u_cList = raw_input("select comfortable list type u or c: ")
-        play2 = []
-
-        if u_cList == 'u':
-            for i in range(n):
-                play2.append(random.choice(uncfList))
-        else:
-            for i in range(n):
-                play2.append(random.choice(comfList))
-        newData2 = []
-        for j in play2:
-            rate, data2 = wav.read(str(j) + '.wav')
-            if len(newData2) == 0:
-                newData2 = copy.deepcopy(data2)
-            else:
-                newData2 = np.concatenate((newData2, data2), axis=0)
-        newFile2 = game + count + u_cList + '.wav'
-        wav.write(newFile2, rate, newData2)
-        
-        dst = '/home/nao/' + newFile2
-        # this path need to be changed
-        origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile2)
-        sshFile = shh.SSHConnection(host, username, pw)
-        sshFile.put(origin, dst)
-        sshFile.close()
+        recordplay.record(robotIP, PORT, t=5)
+        recordplay.playBack(robotIP, PORT, dst1)
+        dst2 = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the second pieces of music, feel it carefully!")
-        recordplay.playBack(robotIP, PORT, dst)
+        recordplay.playBack(robotIP, PORT, dst2)
         time.sleep(15)
-        
         tts.say("Now, you may tell me what do you feel about those two music piece?")
         tts.say("Are they feel same or different?")
         time.sleep(5)
         tts.say("Good! I understand how you feel about music now!")
         time.sleep(2)
+        
     #    tts to say and provide feedback
     # =============================================================================
     #     nao plays two pieces of audios and kid tell if they are same or not
@@ -195,49 +177,20 @@ def main(robotIP, PORT=9559):
         tts.say("Try your best to match them, there is no right or wrong!")
         time.sleep(0.5)
         tts.say("Just have fun!")
-        tts.say("Let's begin!")
-        
-        play = []
-        
-        u_cList = raw_input("select comfortable list type u or c: ")
-
-        if u_cList == 'u':
-            for i in range(n):
-                play.append(random.choice(uncfList))
-        else:
-            for i in range(n):
-                play.append(random.choice(comfList))
-        newData = []
-        for j in play:
-            rate, data = wav.read(str(j) + '.wav')
-            if len(newData) == 0:
-                newData = copy.deepcopy(data)
-            else:
-                newData = np.concatenate((newData, data), axis=0)
-        print(play)
-        newFile = game + count + u_cList +  '.wav'
-        wav.write(newFile, rate, newData)
-        
-        dst = '/home/nao/' + newFile
-        # this path need to be changed
-        origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile)
-        sshFile = shh.SSHConnection(host, username, pw)
-        sshFile.put(origin, dst)
-        sshFile.close()
+        tts.say("Let's begin!")     
+        dst = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the piece of music, feel it carefully!")
         recordplay.playBack(robotIP, PORT, dst)
         time.sleep(4)
-        tts.say("Now, it is your time to play!")
-        
+        tts.say("Now, it is your time to play!")    
         recordplay.record(robotIP, PORT, t=8)
 #        recordplay.playBack(robotIP, PORT)
         origin = '/home/nao/test.wav'
         local = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
-         
         sshFile = shh.SSHConnection (host, username, pw)
         sshFile.get(origin, local)
         sshFile.close()
-        
+       
         sampleRate, data = wav.read(local)
         N = len(data)
         Nwin = 2048
@@ -284,30 +237,9 @@ def main(robotIP, PORT=9559):
     # =============================================================================
         return
     else:
-        play = []
-        if u_cList == 'u':
-            for i in range(n):
-                play.append(random.choice(uncfList))
-        else:
-            for i in range(n):
-                play.append(random.choice(comfList))
-        newData = []
-        for j in play:
-            rate, data = wav.read(str(j) + '.wav')
-            if len(newData) == 0:
-                newData = copy.deepcopy(data)
-            else:
-                newData = np.concatenate((newData, data), axis=0)
-        newFile = game + count + '.wav'
-        wav.write(newFile, rate, newData)
         
-        dst = '/home/nao/' + newFile
-        # this path need to be changed
-        origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile)
-        sshFile = SSHConnection(host, username, pw)
-        sshFile.put(origin, dst)
-        sshFile.close()
-        
+        dst = createMisc(uncfList, comfList, n, game, count)
+
 #        recordplay.record(robotIP, PORT, t=5)
         recordplay.playBack(robotIP, PORT, dst)
     #    tts to say and provide feedback

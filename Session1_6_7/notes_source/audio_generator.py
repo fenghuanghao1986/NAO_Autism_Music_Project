@@ -62,7 +62,7 @@ def createMisc(uncfList, comfList, n, game, count):
     sshFile.put(origin, dst)
     sshFile.close()
     
-    return dst
+    return (dst, play)
 
 def main(robotIP, PORT=9559):
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
@@ -103,11 +103,11 @@ def main(robotIP, PORT=9559):
         tts.say("You can say Same or Different to tell me the answer!")
         time.sleep(0.5)
         tts.say("Let's begin!")
-        dst1 = createMisc(uncfList, comfList, n, game, count)
+        (dst1, play1) = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the first piece of music, feel it carefully!")
         recordplay.record(robotIP, PORT, t=5)
         recordplay.playBack(robotIP, PORT, dst1)
-        dst2 = createMisc(uncfList, comfList, n, game, count)
+        (dst2, play2) = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the second pieces of music, feel it carefully!")
         recordplay.playBack(robotIP, PORT, dst2)
         time.sleep(15)
@@ -178,7 +178,7 @@ def main(robotIP, PORT=9559):
         time.sleep(0.5)
         tts.say("Just have fun!")
         tts.say("Let's begin!")     
-        dst = createMisc(uncfList, comfList, n, game, count)
+        (dst, play) = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the piece of music, feel it carefully!")
         recordplay.playBack(robotIP, PORT, dst)
         time.sleep(4)
@@ -192,7 +192,7 @@ def main(robotIP, PORT=9559):
         sshFile.close()
        
         sampleRate, data = wav.read(local)
-        N = len(data)
+#        N = len(data)
         Nwin = 2048
         xx = data[:, 0]
             
@@ -200,22 +200,20 @@ def main(robotIP, PORT=9559):
         high = 2800
         x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
             # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-        totleTime = np.arange(N) / sampleRate  # seconds
+#        totleTime = np.arange(N) / sampleRate  # seconds
         #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
         
             # Test with Nfft bigger than Nwin
-        Nfft = Nwin * 2
+#        Nfft = Nwin * 2
         s = np.abs(stft.stft(x, Nwin))
-        y = stft.istft(s, Nwin)
+#        y = stft.istft(s, Nwin)
         peaks = stft.findNotes(s, sampleRate/2)
         realPeaks = stft.realPeak(peaks)
         print(realPeaks)
         start = time.time()
-#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
-        r_len = len(realPeaks)
+#        r_len = len(realPeaks)
 #            change orgpeaks to the key that nao just played or the music just played
 #           find a way please!
-#        orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
         o_len = len(play)
 #            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
         

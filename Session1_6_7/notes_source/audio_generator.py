@@ -35,7 +35,8 @@ gameList = ['feeling', 'distinguish', 'play', 'match']
 def createMisc(uncfList, comfList, n, game, count):
     
     play = []
-        
+    newData = []
+  
     u_cList = raw_input("select comfortable list type u or c: ")
 
     if u_cList == 'u':
@@ -44,9 +45,9 @@ def createMisc(uncfList, comfList, n, game, count):
     else:
         for i in range(n):
             play.append(random.choice(comfList))
-    newData = []
+    print(uncfList, comfList, play)
     for j in play:
-        rate, data = wav.read(str(j) + '.wav')
+        rate, data = wav.read(j + '.wav')
         if len(newData) == 0:
             newData = copy.deepcopy(data)
         else:
@@ -62,13 +63,13 @@ def createMisc(uncfList, comfList, n, game, count):
     sshFile.put(origin, dst)
     sshFile.close()
     
-    return (dst, play)
+    return dst, play
 
 def main(robotIP, PORT=9559):
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
 
-    uncfList = ['3','4','7','8','10','11']
-    comfList = ['1','2','4','5','6','8','9']
+    uncfList = ['0','3','4','7','8','10','11']
+    comfList = ['0','1','2','4','5','6','8','9']
 #    uncfList = ['1', '2']
 #    comfList = ['3', '4']
 #    now = datetime.datetime.now()
@@ -103,11 +104,11 @@ def main(robotIP, PORT=9559):
         tts.say("You can say Same or Different to tell me the answer!")
         time.sleep(0.5)
         tts.say("Let's begin!")
-        (dst1, play1) = createMisc(uncfList, comfList, n, game, count)
+        dst1, play1 = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the first piece of music, feel it carefully!")
         recordplay.record(robotIP, PORT, t=5)
         recordplay.playBack(robotIP, PORT, dst1)
-        (dst2, play2) = createMisc(uncfList, comfList, n, game, count)
+        dst2, play2 = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the second pieces of music, feel it carefully!")
         recordplay.playBack(robotIP, PORT, dst2)
         time.sleep(15)
@@ -178,7 +179,7 @@ def main(robotIP, PORT=9559):
         time.sleep(0.5)
         tts.say("Just have fun!")
         tts.say("Let's begin!")     
-        (dst, play) = createMisc(uncfList, comfList, n, game, count)
+        dst, play = createMisc(uncfList, comfList, n, game, count)
         tts.say("This is the piece of music, feel it carefully!")
         recordplay.playBack(robotIP, PORT, dst)
         time.sleep(4)

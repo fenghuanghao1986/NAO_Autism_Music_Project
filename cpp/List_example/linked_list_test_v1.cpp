@@ -35,5 +35,5 @@ int main()
 	cout << "\n" << "Removed all elements\n";
 	mylist.remove_all();
 	mylist.display();
-
+	system("pause");
 }

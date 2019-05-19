@@ -68,8 +68,8 @@ def createMisc(uncfList, comfList, n, game, count):
 def main(robotIP, PORT=9559):
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
 
-    uncfList = ['0','3','4','7','8','10','11']
-    comfList = ['0','1','2','4','5','6','8','9']
+    uncfList = ['3','4','7','8','10','11']
+    comfList = ['1','2','4','5','6','8','9']
 #    uncfList = ['1', '2']
 #    comfList = ['3', '4']
 #    now = datetime.datetime.now()

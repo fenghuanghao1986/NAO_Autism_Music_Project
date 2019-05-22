@@ -153,7 +153,7 @@ def userReadyToPlay(motionProxy, postureProxy):
     time.sleep(2.0)
 
 
-def playXylo(motionProxy, keys, dt, mood):
+def playXylo(motionProxy, keys, dt):
             motionProxy.setAngles("RArm", 
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 
@@ -195,59 +195,59 @@ def playXylo(motionProxy, keys, dt, mood):
                             l.append(note[j])
                             l.append(note[j])
 # =============================================================================
-#                    elif keys[k] == 1:
-#                         note = list(notes[10])
-#                         if j == 4:
-#                             l.append(note[j])
-#                             l.append(note[j]+50*almath.TO_RAD)
-#                             l.append(note[j])
-#                         else:
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                    elif keys[k] == 2:
-#                         note = list(notes[6])
-#                         if j == 4:
-#                             l.append(note[j])
-#                             l.append(note[j]+50*almath.TO_RAD)
-#                             l.append(note[j])
-#                         else:
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                    elif keys[k] == 3:
-#                         note = list(notes[8])
-#                         if j == 4:
-#                             l.append(note[j])
-#                             l.append(note[j]+50*almath.TO_RAD)
-#                             l.append(note[j])
-#                         else:
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                    elif keys[k] == 4:
-#                         note = list(notes[9])
-#                         if j == 4:
-#                             l.append(note[j])
-#                             l.append(note[j]+50*almath.TO_RAD)
-#                             l.append(note[j])
-#                         else:
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                             l.append(note[j])
-#                    else:
-#                         note = list(notes[8])
-#                         if k != len(keys)-1:
-#                             nextk = k
-#                             for x in range(k+1, len(keys)):
-#                                 if keys[x] > 5 and keys[x] < 12:
-#                                     nextk = x
-#                                     break 
-#                             if nextk != k:
-#                                 note = list(notes[keys[nextk]])
-#                         l.append(note[j])
-#                         l.append(note[j])
-#                         l.append(note[j])
+                    elif keys[k] == 1:
+                         note = list(notes[10])
+                         if j == 4:
+                             l.append(note[j])
+                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j])
+                         else:
+                             l.append(note[j])
+                             l.append(note[j])
+                             l.append(note[j])
+                    elif keys[k] == 2:
+                         note = list(notes[6])
+                         if j == 4:
+                             l.append(note[j])
+                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j])
+                         else:
+                             l.append(note[j])
+                             l.append(note[j])
+                             l.append(note[j])
+                    elif keys[k] == 3:
+                         note = list(notes[8])
+                         if j == 4:
+                             l.append(note[j])
+                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j])
+                         else:
+                             l.append(note[j])
+                             l.append(note[j])
+                             l.append(note[j])
+                    elif keys[k] == 4:
+                         note = list(notes[9])
+                         if j == 4:
+                             l.append(note[j])
+                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j])
+                         else:
+                             l.append(note[j])
+                             l.append(note[j])
+                             l.append(note[j])
+                    else:
+                         note = list(notes[8])
+                         if k != len(keys)-1:
+                             nextk = k
+                             for x in range(k+1, len(keys)):
+                                 if keys[x] > 5 and keys[x] < 12:
+                                     nextk = x
+                                     break 
+                             if nextk != k:
+                                 note = list(notes[keys[nextk]])
+                         l.append(note[j])
+                         l.append(note[j])
+                         l.append(note[j])
 # =============================================================================
                         
                 angleList.append(l)
@@ -277,59 +277,59 @@ def playXylo(motionProxy, keys, dt, mood):
                             r.append(note[j])
                             r.append(note[j])
 # =============================================================================
-#                    elif keys[k] == 8:
-#                         note = list(notes[3])
-#                         if j == 4:
-#                             r.append(note[j])
-#                             r.append(note[j]-50*almath.TO_RAD)
-#                             r.append(note[j])
-#                         else:
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                    elif keys[k] == 9:
-#                         note = list(notes[5])
-#                         if j == 4:
-#                             r.append(note[j])
-#                             r.append(note[j]-50*almath.TO_RAD)
-#                             r.append(note[j])
-#                         else:
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                    elif keys[k] == 10:
-#                         note = list(notes[1])
-#                         if j == 4:
-#                             r.append(note[j])
-#                             r.append(note[j]-40*almath.TO_RAD)
-#                             r.append(note[j])
-#                         else:
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                    elif keys[k] == 11:
-#                         note = list(notes[2])
-#                         if j == 4:
-#                             r.append(note[j])
-#                             r.append(note[j]-45*almath.TO_RAD)
-#                             r.append(note[j])
-#                         else:
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                             r.append(note[j])
-#                    else:
-#                         note = list(notes[3])
-#                         if k != len(keys)-1:
-#                             nextk = k
-#                             for x in range(k+1, len(keys)):
-#                                 if keys[x] != 0 and keys[x] > 0 and keys[x] < 6:
-#                                     nextk = x
-#                                     break
-#                             if nextk != k:
-#                                 note = list(notes[keys[nextk]])
-#                         r.append(note[j])
-#                         r.append(note[j])
-#                         r.append(note[j])
+                    elif keys[k] == 8:
+                         note = list(notes[3])
+                         if j == 4:
+                             r.append(note[j])
+                             r.append(note[j]-50*almath.TO_RAD)
+                             r.append(note[j])
+                         else:
+                             r.append(note[j])
+                             r.append(note[j])
+                             r.append(note[j])
+                    elif keys[k] == 9:
+                         note = list(notes[5])
+                         if j == 4:
+                             r.append(note[j])
+                             r.append(note[j]-50*almath.TO_RAD)
+                             r.append(note[j])
+                         else:
+                             r.append(note[j])
+                             r.append(note[j])
+                             r.append(note[j])
+                    elif keys[k] == 10:
+                         note = list(notes[1])
+                         if j == 4:
+                             r.append(note[j])
+                             r.append(note[j]-40*almath.TO_RAD)
+                             r.append(note[j])
+                         else:
+                             r.append(note[j])
+                             r.append(note[j])
+                             r.append(note[j])
+                    elif keys[k] == 11:
+                         note = list(notes[2])
+                         if j == 4:
+                             r.append(note[j])
+                             r.append(note[j]-45*almath.TO_RAD)
+                             r.append(note[j])
+                         else:
+                             r.append(note[j])
+                             r.append(note[j])
+                             r.append(note[j])
+                    else:
+                         note = list(notes[3])
+                         if k != len(keys)-1:
+                             nextk = k
+                             for x in range(k+1, len(keys)):
+                                 if keys[x] != 0 and keys[x] > 0 and keys[x] < 6:
+                                     nextk = x
+                                     break
+                             if nextk != k:
+                                 note = list(notes[keys[nextk]])
+                         r.append(note[j])
+                         r.append(note[j])
+                         r.append(note[j])
 # =============================================================================
                         
                 angleList.append(r)

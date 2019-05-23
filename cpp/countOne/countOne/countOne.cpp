@@ -5,29 +5,39 @@
 #include <math.h>
 using namespace std;
 
-int main()
+int countOne(int i, int orgNum, int preResult, int curResult)
 {
-    std::cout << "Hello World!\n"; 
+	int remainder, ones;
+	int result[2];
+
+	remainder = preResult % 10;
+
+	if (remainder > 1)
+		ones = (curResult + 1) * pow(10, i);
+	else
+		ones = curResult * pow(10, i) + (orgNum - preResult * pow(10, i) + 1) * remainder;
+
+
+	return ones;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
-
-int countOne(int n, int preDig, int curDig, int posDig)
+int main()
 {
-	int result = 0;
-	if curDig > 1
+	int n, i, num, preResult, curResult, ones, sum = 0;
+
+	cout << "Please input a interger less than 32 digits: ";
+	cin >> num;
+
+	preResult = num;
+	n = floor(log10(num));
+
+	for (i = 0; i < n + 1; i++)
 	{
-		result = (preDig + 1) * pow(10, n - 1);
+		curResult = preResult / 10;
+		ones = countOne(i, num, preResult, curResult);
+		preResult = curResult;
+		sum = sum + ones;
 	}
 
-	return result;
+	cout << "There is " << sum << " 1s accurred from 1 to " << num << endl;
 }

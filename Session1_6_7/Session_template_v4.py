@@ -284,7 +284,6 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-            task = 'song'
 
 # =============================================================================
 #       task 7: take a break for 180 seconds      

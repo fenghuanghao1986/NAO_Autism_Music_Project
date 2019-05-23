@@ -1,6 +1,6 @@
 ﻿  countOne.cpp
-C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\cpp\countOne\countOne\countOne.cpp(16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\cpp\countOne\countOne\countOne.cpp(18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\cpp\countOne\countOne\countOne.cpp(11): warning C4101: 'result': unreferenced local variable
-C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\cpp\countOne\countOne\countOne.cpp(32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  countOne.vcxproj -> C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\cpp\countOne\x64\Debug\countOne.exe
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\countOne\countOne\countOne.cpp(16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\countOne\countOne\countOne.cpp(18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\countOne\countOne\countOne.cpp(11): warning C4101: 'result': unreferenced local variable
+D:\Howard_Feng\NAO_Music_Autism_Project\cpp\countOne\countOne\countOne.cpp(32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  countOne.vcxproj -> D:\Howard_Feng\NAO_Music_Autism_Project\cpp\countOne\x64\Debug\countOne.exe

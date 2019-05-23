@@ -25,7 +25,7 @@ int main()
 {
 	int n, i, num, preResult, curResult, ones, sum = 0;
 
-	cout << "Please input a interger less than 32 digits: ";
+	cout << "Please input a interger less than 9 digits: ";
 	cin >> num;
 
 	preResult = num;
@@ -40,4 +40,5 @@ int main()
 	}
 
 	cout << "There is " << sum << " 1s accurred from 1 to " << num << endl;
+	system("pause");
 }

@@ -219,16 +219,21 @@ def main(robotIP, PORT=9559):
 #            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
         
         diff = stft.LevDist2(realPeaks, play)
-        sim = 1 - (float(diff)/(float(o_len)))
-        end = time.time()
-        print("stft time: " + str(end - start))
-        print(diff, sim)
-        if sim >= 0.7:
-            tts.say("Wonderful! You are a music master!!")
-        elif sim > 0.4 and sim < 0.7:
-            tts.say("Great job! I cannot believe you made it!")
-        else:
-            tts.say("Nice! I am sure you did your best!")
+        
+# =============================================================================
+        # this similarity seems not quite right
+        # need to change the fomular#         
+#        sim = 1 - (float(diff)/(float(o_len)))
+# =============================================================================
+#        end = time.time()
+#        print("stft time: " + str(end - start))
+#        print(diff, sim)
+#        if sim >= 0.7:
+#            tts.say("Wonderful! You are a music master!!")
+#        elif sim > 0.4 and sim < 0.7:
+#            tts.say("Great job! I cannot believe you made it!")
+#        else:
+#            tts.say("Nice! I am sure you did your best!")
         
     #    tts to say and provide feedback
     # =============================================================================

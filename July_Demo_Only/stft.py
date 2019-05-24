@@ -138,7 +138,7 @@ def LevDist2(s, t):
     for i in range(tlen):
         result[i][0] = i
     for j in range(slen):
-        result[0][j] = i
+        result[0][j] = j
 
     for i in range(tlen):
         for j in range(slen):

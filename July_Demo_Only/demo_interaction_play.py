@@ -90,7 +90,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello, Seena!")
+            tts.say("Hello, there!")
             time.sleep(0.5)
             tts.say("Welcome back to NAO music party!")
             time.sleep(1.0)

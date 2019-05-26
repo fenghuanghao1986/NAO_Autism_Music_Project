@@ -72,10 +72,11 @@ def main(robotIP, PORT=9559):
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     postureProxy.goToPosture("Crouch", 0.4)
+    asr = ALProxy("ALSpeechRecognition", robotIP, PORT)
     Positions.userInitPosture(motionProxy, postureProxy)
-    spchRec = ALProxy("ALSpeechRecognition", robotIP, PORT)
-    spchRec.setLanguage("English")
-    modeList = ["shuffle play", "copy me", "teach me"]
+    asr.setLanguage("English")
+    menu = ["menu list"]
+    menuList = ["shuffle play", "copy me", "teach me"]
     pstvAnsList = ["yes", "ok", "good", "go for it"]
     ngtvAnsList = ["no", "not", "don't", "stop"]
     motionProxy.rest()
@@ -97,6 +98,12 @@ def main(robotIP, PORT=9559):
         time.sleep(1.0)
         tts.say("Let me show you my talent!")
         ledProxy.randomEyes(2.0)
+        tts.say("Tell me which mode do you want to try?")
+        time.sleep(1.0)
+        tts.say("You can say show menu list to know the options.")
+        asr.setVocalbulary(menu, False)
+        
+        
         
 # =============================================================================
         if taskNumber == 0:

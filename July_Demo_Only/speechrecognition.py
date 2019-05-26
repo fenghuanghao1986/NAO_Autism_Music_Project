@@ -5,23 +5,46 @@ Created on Sun May 26 17:32:07 2019
 @author: CV_LAB_Howard
 """
 
+import qi
+import argparse
+import sys
 import time
-from naoqi import ALProxy
 
 
-ROBOT_IP = "your.robot.ip.here"
+def main(session):
+    """
+    This example uses the ALSpeechRecognition module.
+    """
+    # Get the service ALSpeechRecognition.
 
-# Creates a proxy on the speech-recognition module
-asr = ALProxy("ALSpeechRecognition", ROBOT_IP, 9559)
+    asr_service = session.service("ALSpeechRecognition")
 
-asr.setLanguage("English")
+    asr_service.setLanguage("English")
 
-# Example: Adds "yes", "no" and "please" to the vocabulary (without wordspotting)
-vocabulary = ["yes", "no", "please"]
-asr.setVocabulary(vocabulary, False)
+    # Example: Adds "yes", "no" and "please" to the vocabulary (without wordspotting)
+    vocabulary = ["yes", "no", "please"]
+    asr_service.setVocabulary(vocabulary, False)
 
-# Start the speech recognition engine with user Test_ASR
-asr.subscribe("Test_ASR")
-print 'Speech recognition engine started'
-time.sleep(20)
-asr.unsubscribe("Test_ASR")
+    # Start the speech recognition engine with user Test_ASR
+    asr_service.subscribe("Test_ASR")
+    print 'Speech recognition engine started'
+    time.sleep(20)
+    asr_service.unsubscribe("Test_ASR")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ip", type=str, default="127.0.0.1",
+                        help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")
+    parser.add_argument("--port", type=int, default=9559,
+                        help="Naoqi port number")
+
+    args = parser.parse_args()
+    session = qi.Session()
+    try:
+        session.connect("tcp://" + args.ip + ":" + str(args.port))
+    except RuntimeError:
+        print ("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port) +".\n"
+               "Please check your script arguments. Run with -h option for help.")
+        sys.exit(1)
+    main(session)

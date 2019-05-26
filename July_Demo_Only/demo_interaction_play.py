@@ -73,6 +73,11 @@ def main(robotIP, PORT=9559):
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
     postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
+    spchRec = ALProxy("ALSpeechRecognition", robotIP, PORT)
+    spchRec.setLanguage("English")
+    modeList = ["shuffle play", "copy me", "teach me"]
+    pstvAnsList = ["yes", "ok", "good", "go for it"]
+    ngtvAnsList = ["no", "not", "don't", "stop"]
     motionProxy.rest()
     
 # =============================================================================      
@@ -86,18 +91,18 @@ def main(robotIP, PORT=9559):
                                    2: I play you play\n\
                                    3: you play I play\n\
                                    please make selection: "))
+        tts.say("Hello, there!")
+        time.sleep(0.5)
+        tts.say("Welcome back to NAO music party!")
+        time.sleep(1.0)
+        tts.say("Let me show you my talent!")
+        ledProxy.randomEyes(2.0)
         
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello, there!")
-            time.sleep(0.5)
-            tts.say("Welcome back to NAO music party!")
-            time.sleep(1.0)
-            tts.say("Today, we are going to learn a lovely song!")
-            ledProxy.randomEyes(2.0)
-            tts.say("Let me show you how to play!")
-            time.sleep(0.5)   
+
+
 # =============================================================================
 #           Play twinkle twinkle
             dt = 0.6

@@ -74,12 +74,21 @@ def main(robotIP, PORT=9559):
     postureProxy.goToPosture("Crouch", 0.4)
 #    asr = ALProxy("ALSpeechRecognition", robotIP, PORT)
     Positions.userInitPosture(motionProxy, postureProxy)
-    asr.setLanguage("English")
+#    asr.setLanguage("English")
 #    menu = ["menu list"]
 #    menuList = ["shuffle play", "copy me", "teach me"]
 #    pstvAnsList = ["yes", "ok", "good", "go for it"]
 #    ngtvAnsList = ["no", "not", "don't", "stop"]
     motionProxy.rest()
+    tts.say("Hello, there!")
+    time.sleep(0.5)
+    tts.say("Welcome back to NAO music party!")
+    time.sleep(1.0)
+    tts.say("Let me show you my talent!")
+    ledProxy.randomEyes(2.0)
+    tts.say("Tell me which mode do you want to try?")
+    time.sleep(1.0)
+    tts.say("You can say show menu list to know the options.")
     
 # =============================================================================      
 # =============================================================================
@@ -87,20 +96,11 @@ def main(robotIP, PORT=9559):
     for i in range(1000):
         
         taskNumber = int(raw_input("select task:\n\
-                                   0: intro\n\
-                                   1: Demo a song\n\
-                                   2: I play you play\n\
-                                   3: you play I play\n\
+                                   0: Demo a song\n\
+                                   1: I play you play\n\
+                                   2: you play I play\n\
                                    please make selection: "))
-        tts.say("Hello, there!")
-        time.sleep(0.5)
-        tts.say("Welcome back to NAO music party!")
-        time.sleep(1.0)
-        tts.say("Let me show you my talent!")
-        ledProxy.randomEyes(2.0)
-        tts.say("Tell me which mode do you want to try?")
-        time.sleep(1.0)
-        tts.say("You can say show menu list to know the options.")
+
 #        asr.setVocalbulary(menu, False)
         
         
@@ -113,7 +113,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #           Play twinkle twinkle
             dt = 0.6
-            keys = songBank["QingHuaCi"]
+            keys = songBank["Promise"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -122,6 +122,8 @@ def main(robotIP, PORT=9559):
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
+            motionProxy.rest()
+
         
 # =============================================================================
 

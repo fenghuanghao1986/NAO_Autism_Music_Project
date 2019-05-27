@@ -28,13 +28,14 @@ def main(session):
     # Start the speech recognition engine with user Test_ASR
     asr_service.subscribe("Test_ASR")
     print 'Speech recognition engine started'
+    
     time.sleep(20)
     asr_service.unsubscribe("Test_ASR")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")
     parser.add_argument("--port", type=int, default=9559,
                         help="Naoqi port number")

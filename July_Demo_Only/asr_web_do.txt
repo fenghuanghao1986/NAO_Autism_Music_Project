@@ -1,0 +1,5 @@
+https://developer.softbankrobotics.com/nao6/naoqi-developer-guide/naoqi-apis/naoqi-audio/alspeechrecognition/alspeechrecognition-tutorial#alspeechrecognition-tuto
+https://developer.softbankrobotics.com/pepper-naoqi-25/naoqi-developer-guide/other-tutorials/python-sdk-tutorials/python-sdk-examples-11
+http://doc.aldebaran.com/2-1/naoqi/audio/alspeechrecognition.html#alspeechrecognition
+http://doc.aldebaran.com/2-1/dev/python/reacting_to_events.html?highlight=subscriber
+http://doc.aldebaran.com/2-1/naoqi/core/almemory-tuto.html#almemory-tuto

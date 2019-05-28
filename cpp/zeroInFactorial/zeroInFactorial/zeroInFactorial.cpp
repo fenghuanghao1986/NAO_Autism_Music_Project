@@ -5,20 +5,23 @@
 #include <math.h>
 using namespace std;
 
-double countZero(double n)
+double countZero(int n)
 {
-	double x, N = 0;
-	while (x >= 5)
+	int x = 0, result = 0;
+	while (true)
 	{
-		N = n / 5;
 		x = n % 5;
+		n = n / 5;
+		result = result + n;
+		if (x != 0)
+			break;
 	}
-	return N;
+	return result;
 }
 
 int main()
 {
-	double n, N;
+	int n, N;
 	cout << "Please input an interger: " << endl;
 	cin >> n;
 	N = countZero(n);

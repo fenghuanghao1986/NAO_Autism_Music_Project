@@ -1,0 +1,3 @@
+﻿  zeroInFactorial.cpp
+D:\LabWork\ThesisProject\Music_Autism_Robot\cpp\zeroInFactorial\zeroInFactorial\zeroInFactorial.cpp(27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  zeroInFactorial.vcxproj -> D:\LabWork\ThesisProject\Music_Autism_Robot\cpp\zeroInFactorial\x64\Debug\zeroInFactorial.exe

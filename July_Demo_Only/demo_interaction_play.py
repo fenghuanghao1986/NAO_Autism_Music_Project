@@ -65,6 +65,8 @@ except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
+def game1()    
+    
 def main(robotIP, PORT=9559):
     
     motionProxy = ALProxy("ALMotion", robotIP, PORT)

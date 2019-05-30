@@ -65,7 +65,46 @@ except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
-def game1()    
+def game1(robotIP, PORT, host, username, pw):
+    recordplay.record(robotIP, PORT, t=8)
+#        recordplay.playBack(robotIP, PORT)
+    origin = '/home/nao/test.wav'
+    local = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
+    sshFile = shh.SSHConnection (host, username, pw)
+    sshFile.get(origin, local)
+    sshFile.close()
+       
+    sampleRate, data = wav.read(local)
+#        N = len(data)
+    Nwin = 2048
+    xx = data[:, 0]
+            
+    low = 1040
+    high = 2800
+    x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
+            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
+#        totleTime = np.arange(N) / sampleRate  # seconds
+        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+        
+            # Test with Nfft bigger than Nwin
+#        Nfft = Nwin * 2
+    s = np.abs(stft.stft(x, Nwin))
+#        y = stft.istft(s, Nwin)
+    peaks = stft.findNotes(s, sampleRate/2)
+    realPeaks = stft.realPeak(peaks)
+    dt = 0.6
+    keys = realPeaks
+    Positions.userInitPosture(motionProxy, postureProxy)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    Positions.playXylo(motionProxy, keys, dt)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    Positions.userInitPosture(motionProxy, postureProxy)
+    ledProxy.randomEyes(2.0)
+    motionProxy.rest()
+    
+def game2(robotIP, PORT, host, username, pw):
+    
+    
     
 def main(robotIP, PORT=9559):
     

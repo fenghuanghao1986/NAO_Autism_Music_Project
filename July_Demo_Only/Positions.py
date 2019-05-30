@@ -338,7 +338,7 @@ def playXylo(motionProxy, keys, dt):
             
 # =============================================================================
             
-def playXyloSingle(motionProxy, keys, dt):
+def playXyloOne(motionProxy, keys, dt):
             motionProxy.setAngles("RArm", 
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 

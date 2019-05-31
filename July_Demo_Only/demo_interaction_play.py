@@ -65,12 +65,12 @@ except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
-def game1(robotIP, PORT, host, username, pw):
+def game2(robotIP, PORT, username, pw, origin, local):
     recordplay.record(robotIP, PORT, t=8)
 #        recordplay.playBack(robotIP, PORT)
     origin = '/home/nao/test.wav'
     local = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
-    sshFile = shh.SSHConnection (host, username, pw)
+    sshFile = shh.SSHConnection (robotIP, username, pw)
     sshFile.get(origin, local)
     sshFile.close()
        
@@ -178,57 +178,10 @@ def main(robotIP, PORT=9559):
 #        send feedback to kid
         elif taskNumber == 2:
         
-            host = "192.168.0.2"    # this host name may have to change 
             username = "nao"
             pw = "nao"
-            
-            origin = '/home/nao/test.wav'
-            dst = r'C:\Users\fengh\Desktop\record.wav'
-         
-            sshFile = SSHConnection (host, username, pw)
-            sshFile.get(origin, dst)
-            sshFile.close()
-            
-        #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
-            sampleRate, data = wav.read(dst)
-            N = len(data)
-            Nwin = 2048
-            xx = data[:, 0]
-            
-            low = 1040
-            high = 2800
-            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
-            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-            totleTime = np.arange(N) / sampleRate  # seconds
-        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
-        
-            # Test with Nfft bigger than Nwin
-            Nfft = Nwin * 2
-            s = np.abs(stft.stft(x, Nwin))
-            y = stft.istft(s, Nwin)
-            peaks = stft.findNotes(s, sampleRate/2)
-            realPeaks = stft.realPeak(peaks)
-            start = time.time()
-#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
-            r_len = len(realPeaks)
-#            change orgpeaks to the key that nao just played or the music just played
-#           find a way please!
-            orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
-            o_len = len(orgPeaks)
-#            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
-        
-            diff = stft.LevDist2(realPeaks, orgPeaks)
-            sim = 1 - (float(diff)/(float(o_len)))
-            end = time.time()
-            print("stft time: " + str(end - start))
-            print(diff, sim)
-            try:
-                with open(fileName, 'a') as csvfile:
-                    filewriter = csv.writer(csvfile, delimiter=',', 
-                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([taskNumber, '123', '122', '.667'])
-            except csv.Error as e:
-                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
+            game2(robotIP, PORT, username, pw, origin, dst)
+
 # =============================================================================
             
         else:

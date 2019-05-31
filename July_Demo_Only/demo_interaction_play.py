@@ -64,12 +64,15 @@ try:
 except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
+    
+def game1(robotIP, PORT, username, pw):
+    
+    
 # =============================================================================
 def game2(robotIP, PORT, username, pw, origin, local):
     recordplay.record(robotIP, PORT, t=8)
 #        recordplay.playBack(robotIP, PORT)
-    origin = '/home/nao/test.wav'
-    local = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
+
     sshFile = shh.SSHConnection (robotIP, username, pw)
     sshFile.get(origin, local)
     sshFile.close()
@@ -102,9 +105,7 @@ def game2(robotIP, PORT, username, pw, origin, local):
     ledProxy.randomEyes(2.0)
     motionProxy.rest()
     
-def game2(robotIP, PORT, host, username, pw):
-    
-    
+
     
 def main(robotIP, PORT=9559):
     
@@ -180,6 +181,8 @@ def main(robotIP, PORT=9559):
         
             username = "nao"
             pw = "nao"
+            origin = '/home/nao/test.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
             game2(robotIP, PORT, username, pw, origin, dst)
 
 # =============================================================================

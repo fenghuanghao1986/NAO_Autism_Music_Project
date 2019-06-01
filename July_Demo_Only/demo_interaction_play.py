@@ -22,6 +22,9 @@ from naoqi import ALProxy
 from scipy.io import wavfile as wav
 import csv
 import datetime
+import random
+import os
+import copy
 #import audio_generator
 
 songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
@@ -54,6 +57,8 @@ day = str(now.day)
 mon = str(now.month)
 year = str(now.year)
 task = 0
+username = "nao"
+pw = "nao"
 fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
 
 try:
@@ -65,15 +70,63 @@ except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
     
-def game1(robotIP, PORT, username, pw):
+def createMisc(robotIP, username, pw):
     
+    play = []
+    newData = []
+    uncfList = ['3','4','7','8','10','11']
+    comfList = ['1','2','4','5','6','8','9']
+    mode = ['u', 'c']
+    u_cList = random.choice(mode)
+    n = 6
+    if u_cList == 'u':
+        for i in range(n):
+            play.append(random.choice(uncfList))
+    else:
+        for i in range(n):
+            play.append(random.choice(comfList))
+    print(uncfList, comfList, play)
+    
+    for j in play:
+        rate, data = wav.read(j + '.wav')
+        if len(newData) == 0:
+            newData = copy.deepcopy(data)
+        else:
+            newData = np.concatenate((newData, data), axis=0)
+    
+    newFile = 'imitate' + u_cList +  '.wav'
+    wav.write(newFile, rate, newData)
+        
+    dst = '/home/nao/' + newFile
+    # this path need to be changed
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile)
+    sshFile = ssh.SSHConnection(robotIP, username, pw)
+    sshFile.put(origin, dst)
+    sshFile.close()
+    
+    return dst, play
+    
+def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy):
+    dst, play = createMisc();
+    recordplay.playBack(robotIP, PORT, dst)
+    print(play)
+    dt = 0.6
+    keys = play
+    Positions.userInitPosture(motionProxy, postureProxy)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    Positions.playXylo(motionProxy, keys, dt)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    Positions.userInitPosture(motionProxy, postureProxy)
+    ledProxy.randomEyes(2.0)
+    motionProxy.rest()
+
     
 # =============================================================================
-def game2(robotIP, PORT, username, pw, origin, local):
-    recordplay.record(robotIP, PORT, t=8)
+def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy):
+    recordplay.record(robotIP, PORT, t=10)
 #        recordplay.playBack(robotIP, PORT)
 
-    sshFile = shh.SSHConnection (robotIP, username, pw)
+    sshFile = ssh.SSHConnection (robotIP, username, pw)
     sshFile.get(origin, local)
     sshFile.close()
        
@@ -172,18 +225,16 @@ def main(robotIP, PORT=9559):
 #        task 13: record what kid plays and play back let kid confirm    
         elif taskNumber == 1:
             
-            recordplay.record(robotIP, PORT, t=5)
-            recordplay.playBack(robotIP, PORT)
+            game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy)
 # =============================================================================
 #        task 14: shh, transfer file and ntft get frequency, then make judgement
 #        send feedback to kid
         elif taskNumber == 2:
         
-            username = "nao"
-            pw = "nao"
+
             origin = '/home/nao/test.wav'
             dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
-            game2(robotIP, PORT, username, pw, origin, dst)
+            game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy)
 
 # =============================================================================
             

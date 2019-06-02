@@ -26,11 +26,11 @@ def main(session):
     asr_service.setVocabulary(vocabulary, False)
 
     # Start the speech recognition engine with user Test_ASR
-    asr_service.subscribe("Test_ASR")
+    asr_service.subscribe("1")
     print 'Speech recognition engine started'
     
     time.sleep(20)
-    asr_service.unsubscribe("Test_ASR")
+    asr_service.unsubscribe("1")
 
 
 if __name__ == "__main__":

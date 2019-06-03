@@ -9,7 +9,55 @@ import qi
 import argparse
 import sys
 import time
+from naoqi import ALProxy
+from naoqi import ALBroker
+from naoqi import ALModule
 
+from optparse import OptionParser
+
+NAO_IP = "nao.local"
+
+
+# Global variable to store the HumanGreeter module instance
+WordDetected = None
+memory = None
+
+class WordDetectModule(ALModule):
+    """ A simple module able to react
+    to facedetection events
+
+    """
+    def __init__(self, name):
+        ALModule.__init__(self, name)
+        # No need for IP and port here because
+        # we have our Python broker connected to NAOqi broker
+
+        # Create a proxy to ALTextToSpeech for later use
+        self.tts = ALProxy("ALTextToSpeech")
+
+        # Subscribe to the FaceDetected event:
+        global memory
+        memory = ALProxy("ALMemory")
+        memory.subscribeToEvent("WordRecognized",
+            "WordDetected",
+            "onWordDetected")
+
+    def onWordDetected(self, *_args):
+        """ This will be called each time a face is
+        detected.
+
+        """
+        # Unsubscribe to the event when talking,
+        # to avoid repetitions
+        memory.unsubscribeToEvent("WordRecognized",
+            "WordDetected")
+
+        self.tts.say("Hello, you")
+
+        # Subscribe again to the event
+        memory.subscribeToEvent("WordRecognized",
+            "WordDetected",
+            "onWordDetected")
 
 def main(session):
     """
@@ -26,11 +74,25 @@ def main(session):
     asr_service.setVocabulary(vocabulary, False)
 
     # Start the speech recognition engine with user Test_ASR
-    asr_service.subscribe("1")
+    asr_service.subscribe("Test_ASR")
     print 'Speech recognition engine started'
+    try:
+
+        wordModule = WordDetectModule("wordModule")
+        prox = ALProxy("ALMemory")
+        #prox.insertData("val",1) # forbiden, data is optimized and doesn't manage callback
+        prox.subscribeToEvent("wordModule", "onWordDetected") #  event is case sensitive !
     
+    except Exception,e:
+        print "error"
+        print e
+        exit(1)
+        
+    while (1):
+          time.sleep(2)
+          
     time.sleep(20)
-    asr_service.unsubscribe("1")
+    asr_service.unsubscribe("Test_ASR")
 
 
 if __name__ == "__main__":

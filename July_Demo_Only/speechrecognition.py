@@ -15,7 +15,7 @@ from naoqi import ALModule
 
 from optparse import OptionParser
 
-NAO_IP = "nao.local"
+#NAO_IP = "nao.local"
 
 
 # Global variable to store the HumanGreeter module instance
@@ -64,7 +64,7 @@ def main(session):
     This example uses the ALSpeechRecognition module.
     """
     # Get the service ALSpeechRecognition.
-
+    broker = ALBroker("pythonBroker", "192.168.0.3",9999,"192.168.0.2",9559)
     asr_service = session.service("ALSpeechRecognition")
 
     asr_service.setLanguage("English")
@@ -72,10 +72,12 @@ def main(session):
     # Example: Adds "yes", "no" and "please" to the vocabulary (without wordspotting)
     vocabulary = ["yes", "no", "please"]
     asr_service.setVocabulary(vocabulary, False)
-
-    # Start the speech recognition engine with user Test_ASR
     asr_service.subscribe("Test_ASR")
     print 'Speech recognition engine started'
+    time.sleep(20)
+    # Start the speech recognition engine with user Test_ASR
+    asr_service.unsubscribe("Test_ASR")
+
     try:
 
         wordModule = WordDetectModule("wordModule")
@@ -90,9 +92,10 @@ def main(session):
         
     while (1):
           time.sleep(2)
-          
+    asr_service.subscribe("wordModule")
+    print 'Speech recognition engine started'
     time.sleep(20)
-    asr_service.unsubscribe("Test_ASR")
+    asr_service.unsubscribe("wordModule")
 
 
 if __name__ == "__main__":

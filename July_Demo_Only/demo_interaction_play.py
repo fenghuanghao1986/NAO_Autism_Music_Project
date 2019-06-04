@@ -108,22 +108,29 @@ def createMisc(robotIP, username, pw):
     
     return dst, play
     
-def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy):
+def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts):
     dst, play = createMisc(robotIP, username, pw)
     print('creat music done')
     recordplay.playBack(robotIP, PORT, dst)
+    tts.say("Here is what I will play now, listen carefully!")
+    time.sleep(5)
     print('playback ok')
     dt = 0.6
     orgKeys = play
     keys = convertKeys(orgKeys)
-    
+    tts.say("This is how I play, watch carefully!")
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
+    tts.say("Now it is your time to play! You have ten seconds to play.")
     Positions.userInitPosture(motionProxy, postureProxy)
+    tts.say("When you see my eys flash, you may start.")
     ledProxy.randomEyes(2.0)
     motionProxy.rest()
+    time.sleep(10)
+    tts.say("Times up! You did really well! Which mode you want to play next?")
+    tts.say("You may also say exit to quit play with me!")
 
     
 # =============================================================================
@@ -267,7 +274,7 @@ def main(robotIP, PORT=9559):
 #        task 13: record what kid plays and play back let kid confirm    
         elif taskNumber == 1:
             
-            game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy)
+            game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
 # =============================================================================
 #        task 14: shh, transfer file and ntft get frequency, then make judgement
 #        send feedback to kid

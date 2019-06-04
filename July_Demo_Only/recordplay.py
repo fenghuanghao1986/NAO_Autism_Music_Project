@@ -24,7 +24,7 @@ def record(robotIP, PORT, t):
         
 #    recordProxy = ALProxy("ALAudioDevice", robotIP, PORT)
 
-    recordProxy.startMicrophonesRecording("/home/nao/test.wav");
+    recordProxy.startMicrophonesRecording("/home/nao/uplay.wav");
     print("recording")
     
     time.sleep(t);

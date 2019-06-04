@@ -114,7 +114,9 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy):
     recordplay.playBack(robotIP, PORT, dst)
     print('playback ok')
     dt = 0.6
-    keys = play
+    orgKeys = play
+    keys = convertKeys(orgKeys)
+    
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.playXyloOne(motionProxy, keys, dt)
@@ -163,7 +165,42 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     
 
 def convertKeys(keys):
-    
+    trueKeys = []
+    for i in range(len(keys)):
+        if keys[i] == '1':
+            trueKeys.append(1)
+            continue
+        elif keys[i] == '2':
+            trueKeys.append(2)
+            continue
+        elif keys[i] == '3':
+            trueKeys.append(3)
+            continue
+        elif keys[i] == '4':
+            trueKeys.append(4)
+            continue
+        elif keys[i] == '5':
+            trueKeys.append(5)
+            continue
+        elif keys[i] == '6':
+            trueKeys.append(6)
+            continue
+        elif keys[i] == '7':
+            trueKeys.append(7)
+            continue
+        elif keys[i] == '8':
+            trueKeys.append(8)
+            continue
+        elif keys[i] == '9':
+            trueKeys.append(9)
+            continue
+        elif keys[i] == '10':
+            trueKeys.append(10)
+            continue
+        else:
+            trueKeys.append(11)
+            continue
+            
     return trueKeys
     
 def main(robotIP, PORT=9559):
@@ -218,7 +255,6 @@ def main(robotIP, PORT=9559):
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
-
             Positions.playXylo(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -239,7 +275,7 @@ def main(robotIP, PORT=9559):
         
 
             origin = '/home/nao/test.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source\test.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\test.wav'
             game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy)
 
 # =============================================================================

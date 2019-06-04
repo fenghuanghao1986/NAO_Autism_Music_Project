@@ -44,7 +44,7 @@ def playBack(robotIP, PORT, fileName):
         sys.exit(1)
     
 #    plays a file and get the current position 5 seconds later
-#    fileId = aup.post.playFile(fileName)
+    aup.post.playFile(fileName)
 #    
 #    time.sleep(5)
 #    

@@ -162,6 +162,9 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     motionProxy.rest()
     
 
+def convertKeys(keys):
+    
+    return trueKeys
     
 def main(robotIP, PORT=9559):
     

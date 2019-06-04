@@ -31,21 +31,21 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
                         1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0], 
 
-            "QingHuaCi": [0,2,1,6,1,0,1,6,1,0,1,6,1,6,5,0,0,2,1,6,1,0,1,6,1,0,
-                          1,3,2,1,1,0,0,5,6,3,3,0,3,2,3,0,3,2,3,5,0,3,0,3,3,3,
-                          2,2,2,2,2,0,1,3,0,0,0,0,0,2,1,6,1,0,1,6,1,0,1,6,1,6,
-                          5,0,0,5,6,3,5,0,5,3,5,0,5,3,2,1,1,0,0,2,1,2,3,2,2,0,
-                          2,0,1,6,2,1,1,6,1,0,1,1,0,0,0,0,0,0,0,0,4,0,3,0,2,5,
-                          5,3,2,3,4,0,2,3,5,3,2,0,0,0,0,5,5,3,2,3,5,0,2,3,5,2,
-                          1,0,0,0,0,1,2,3,5,6,5,4,5,3,3,2,2,0,0,0,0,1,2,1,1,0,
-                          1,2,0,3,0,5,0,3,0,0,0,5,5,3,2,3,6,0,2,3,5,3,2,0,0,0,
-                          0,5,5,3,2,3,5,0,2,3,5,2,1,0,0,0,0,1,2,3,5,6,5,4,5,3,
-                          3,2,2,0,0,5,3,0,2,2,0,1,0,0],
+#            "QingHuaCi": [0,2,1,6,1,0,1,6,1,0,1,6,1,6,5,0,0,2,1,6,1,0,1,6,1,0,
+#                          1,3,2,1,1,0,0,5,6,3,3,0,3,2,3,0,3,2,3,5,0,3,0,3,3,3,
+#                          2,2,2,2,2,0,1,3,0,0,0,0,0,2,1,6,1,0,1,6,1,0,1,6,1,6,
+#                          5,0,0,5,6,3,5,0,5,3,5,0,5,3,2,1,1,0,0,2,1,2,3,2,2,0,
+#                          2,0,1,6,2,1,1,6,1,0,1,1,0,0,0,0,0,0,0,0,4,0,3,0,2,5,
+#                          5,3,2,3,4,0,2,3,5,3,2,0,0,0,0,5,5,3,2,3,5,0,2,3,5,2,
+#                          1,0,0,0,0,1,2,3,5,6,5,4,5,3,3,2,2,0,0,0,0,1,2,1,1,0,
+#                          1,2,0,3,0,5,0,3,0,0,0,5,5,3,2,3,6,0,2,3,5,3,2,0,0,0,
+#                          0,5,5,3,2,3,5,0,2,3,5,2,1,0,0,0,0,1,2,3,5,6,5,4,5,3,
+#                          3,2,2,0,0,5,3,0,2,2,0,1,0,0],
                           
             "Promise": [0,6,7,8,9,10,9,8,7,6,0,3,0,6,0,
-                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,0,
+                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,
                         0,6,7,8,9,10,9,8,7,6,0,3,0,6,0,
-                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,0]}
+                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6]}
 
 
 print "Enter subject number:\n"
@@ -78,7 +78,7 @@ def createMisc(robotIP, username, pw):
     comfList = ['1','2','4','5','6','8','9']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
-    n = 6
+    n = 8
     if u_cList == 'u':
         for i in range(n):
             play.append(random.choice(uncfList))
@@ -111,11 +111,11 @@ def createMisc(robotIP, username, pw):
 def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts):
     dst, play = createMisc(robotIP, username, pw)
     print('creat music done')
-    recordplay.playBack(robotIP, PORT, dst)
     tts.say("Here is what I will play now, listen carefully!")
-    time.sleep(5)
+    recordplay.playBack(robotIP, PORT, dst)
+    time.sleep(6)
     print('playback ok')
-    dt = 0.6
+    dt = 0.8
     orgKeys = play
     keys = convertKeys(orgKeys)
     tts.say("This is how I play, watch carefully!")
@@ -125,7 +125,7 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     tts.say("Now it is your time to play! You have ten seconds to play.")
     Positions.userInitPosture(motionProxy, postureProxy)
-    tts.say("When you see my eys flash, you may start.")
+    tts.say("When you see my eyes flash, you may start.")
     ledProxy.randomEyes(2.0)
     motionProxy.rest()
     time.sleep(10)
@@ -134,10 +134,13 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
 
     
 # =============================================================================
-def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy):
-    recordplay.record(robotIP, PORT, t=10)
+def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy, tts):
+    tts.say("In this mode, you will have five seconds to play what ever you want.")
+    tts.say("When times up, I will try to mimic what I heard from you.")
+    tts.say("After you see my eyes flash, you may start to play!")
+    ledProxy.randomEyes(2.0)
+    recordplay.record(robotIP, PORT, t=5)
 #        recordplay.playBack(robotIP, PORT)
-
     sshFile = ssh.SSHConnection (robotIP, username, pw)
     sshFile.get(origin, local)
     sshFile.close()
@@ -150,29 +153,34 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     low = 1040
     high = 2800
     x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
-            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-#        totleTime = np.arange(N) / sampleRate  # seconds
-        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
-        
-            # Test with Nfft bigger than Nwin
-#        Nfft = Nwin * 2
+
     s = np.abs(stft.stft(x, Nwin))
-#        y = stft.istft(s, Nwin)
+    
     peaks = stft.findNotes(s, sampleRate/2)
     realPeaks = stft.realPeak(peaks)
+    print(realPeaks)
     dt = 0.6
-    keys = realPeaks
+    orgKeys = realPeaks
+    keys = convertKeys(orgKeys)
+    tts.say("I think I got it!")
+    tts.say("Now it is my turn to play!")
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
-    Positions.playXylo(motionProxy, keys, dt)
+    Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.userInitPosture(motionProxy, postureProxy)
-    ledProxy.randomEyes(2.0)
     motionProxy.rest()
+    tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
+    ledProxy.randomEyes(2.0)
+    time.sleep(3)
+    tts.say("Thanks for playing this game, which game do you want to play next?")
+    tts.say("You may also say exit to quit play with me!")
     
 
 def convertKeys(keys):
     trueKeys = []
+    trueKeys.append(0)
+    trueKeys.append(0)
     for i in range(len(keys)):
         if keys[i] == '1':
             trueKeys.append(1)
@@ -216,24 +224,19 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
-#    asr = ALProxy("ALSpeechRecognition", robotIP, PORT)
+#    postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
-#    asr.setLanguage("English")
-#    menu = ["menu list"]
-#    menuList = ["shuffle play", "copy me", "teach me"]
-#    pstvAnsList = ["yes", "ok", "good", "go for it"]
-#    ngtvAnsList = ["no", "not", "don't", "stop"]
+
     motionProxy.rest()
-    tts.say("Hello, there!")
+    tts.say("Hello there!")
     time.sleep(0.5)
     tts.say("Welcome back to NAO music party!")
     time.sleep(1.0)
     tts.say("Let me show you my talent!")
     ledProxy.randomEyes(2.0)
     tts.say("Tell me which mode do you want to try?")
+    tts.say("You can say Demo, Mimic Practice or Free Play.")
     time.sleep(1.0)
-    tts.say("You can say show menu list to know the options.")
     
 # =============================================================================      
 # =============================================================================
@@ -242,22 +245,17 @@ def main(robotIP, PORT=9559):
         
         taskNumber = int(raw_input("select task:\n\
                                    0: Demo a song\n\
-                                   1: I play you play\n\
-                                   2: you play I play\n\
+                                   1: game 1\n\
+                                   2: game 2\n\
                                    please make selection: "))
 
-#        asr.setVocalbulary(menu, False)
-        
-        
-        
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
 
-
 # =============================================================================
-#           Play twinkle twinkle
-            dt = 0.6
+#           Play demo
+            dt = 0.4
             keys = songBank["Promise"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -267,23 +265,23 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
             motionProxy.rest()
-
+            tts.say("Thanks for listening! Which mode you want to play next?")
+            tts.say("You may also say exit to quit play with me!")
         
 # =============================================================================
 
-#        task 13: record what kid plays and play back let kid confirm    
+#        game 1    
         elif taskNumber == 1:
             
             game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
 # =============================================================================
-#        task 14: shh, transfer file and ntft get frequency, then make judgement
-#        send feedback to kid
+#       game 2
         elif taskNumber == 2:
         
 
-            origin = '/home/nao/test.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\test.wav'
-            game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy)
+            origin = '/home/nao/uplay.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\uplay.wav'
+            game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
 
 # =============================================================================
             

@@ -85,7 +85,7 @@ def createMisc(robotIP, username, pw):
     else:
         for i in range(n):
             play.append(random.choice(comfList))
-    print(uncfList, comfList, play)
+    print(play)
     
     for j in play:
         rate, data = wav.read(j + '.wav')
@@ -93,28 +93,31 @@ def createMisc(robotIP, username, pw):
             newData = copy.deepcopy(data)
         else:
             newData = np.concatenate((newData, data), axis=0)
-    
-    newFile = 'imitate' + u_cList +  '.wav'
+#    print('music creating done')
+    newFile = 'imitate_' + u_cList +  '.wav'
     wav.write(newFile, rate, newData)
+#    print('music write to folder done')
         
     dst = '/home/nao/' + newFile
     # this path need to be changed
-    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\notes_source', newFile)
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only', newFile)
     sshFile = ssh.SSHConnection(robotIP, username, pw)
+    print('connection ok')
     sshFile.put(origin, dst)
     sshFile.close()
     
     return dst, play
     
 def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy):
-    dst, play = createMisc();
+    dst, play = createMisc(robotIP, username, pw)
+    print('creat music done')
     recordplay.playBack(robotIP, PORT, dst)
-    print(play)
+    print('playback ok')
     dt = 0.6
     keys = play
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
-    Positions.playXylo(motionProxy, keys, dt)
+    Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.userInitPosture(motionProxy, postureProxy)
     ledProxy.randomEyes(2.0)

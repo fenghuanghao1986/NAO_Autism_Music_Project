@@ -3,10 +3,13 @@
 
 #include <iostream>
 
-
-
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	int col, row;
+	int a[3][3] = { 1,2,3,4,5,6,7,8,9 };
+	int b[3][3] = { 1,2,3,4,5,6,7,8,9 };
+	
+
+
 }
 

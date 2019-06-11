@@ -58,6 +58,7 @@ void loop()
   {
     selectMuxPin(pin); // Select one at a time
     int inputValue = analogRead(A0); // and read Z
+    // may want to have a condition to contorl inputvalue, may have time involved that can only make sound card play one note
     Serial.print(String(inputValue) + "\t");
   }
   Serial.println();

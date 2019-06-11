@@ -7,7 +7,11 @@ int fakeSudo()
 
 int main()
 {
-	int col, row;
+	int row, col;
+	for (row = 0; row < 9; row++)
+	{
+		for 
+	}
 	
 }
 

@@ -2,16 +2,20 @@
 //
 
 #include <iostream>
-
-int fakeSudo()
+using namespace std;
 
 int main()
 {
-	int row, col;
-	for (row = 0; row < 9; row++)
+	int i, j;
+	for (i = 1; i <= 9; i++)
 	{
-		for 
+		for (j = 1; j <= 9; j++)
+		{
+			if ((j % 3) != (i % 3))
+				cout << "A = " << i << ", "
+				<< "B = " << j << ";" << endl;
+		}
 	}
-	
+	system("pause");
 }
 

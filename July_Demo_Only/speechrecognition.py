@@ -197,7 +197,7 @@ class SpeechRecoModule(ALModule):
                 self.asr.pushContexts()
             self.hasPushed = True
             if self.asr:
-                self.asr.setVocabulary( ['yes','no'], True )
+                self.asr.setVocabulary( ['yes','no', 'help', 'free play', 'copy machine', 'song'], True )
             self.memory.subscribeToEvent("WordRecognized", self.getName(), "onWordRecognized")
             self.hasSubscribed = True
         except RuntimeError, e:
@@ -209,14 +209,14 @@ class SpeechRecoModule(ALModule):
     def onWordRecognized(self, key, value, message):
         print 'word recognized'
         if(len(value) > 1 and value[1] >= 0.5):
-            print 'recognized the word :', value[0]
+            print ('recognized the word : %s' % value[0])
         else:
             print 'unsifficient threshold'
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, ROBOT_IP, 9559)
-global pythonSpeechModule;
-pythonSpeechModule = SpeechRecoModule('pythonSpeechModule')
-pythonSpeechModule.onLoad()
-pythonSpeechModule.onInput_onStart()
-time.sleep(10)
-pythonSpeechModule.onUnload()
+#global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, ROBOT_IP, 9559)
+#global pythonSpeechModule;
+#pythonSpeechModule = SpeechRecoModule('pythonSpeechModule')
+#pythonSpeechModule.onLoad()
+#pythonSpeechModule.onInput_onStart()
+#time.sleep(10)
+#pythonSpeechModule.onUnload()

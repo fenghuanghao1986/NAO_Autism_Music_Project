@@ -19,6 +19,7 @@ import numpy as np
 import recordplay
 import stft
 from naoqi import ALProxy
+from naoqi import ALBroker
 from scipy.io import wavfile as wav
 import csv
 import datetime
@@ -26,6 +27,11 @@ import random
 import os
 import copy
 #import audio_generator
+import speechrecognition
+
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
+global pythonSpeechModule;
+pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
 songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
@@ -235,8 +241,12 @@ def main(robotIP, PORT=9559):
     tts.say("Let me show you my talent!")
     ledProxy.randomEyes(2.0)
     tts.say("Tell me which mode do you want to try?")
-    tts.say("You can say Demo, Mimic Practice or Free Play.")
+    tts.say("You can say song,copy machine or Free Play.")
     time.sleep(1.0)
+    pythonSpeechModule.onLoad()
+    pythonSpeechModule.onInput_onStart()
+    time.sleep(5)
+    pythonSpeechModule.onUnload()
     
 # =============================================================================      
 # =============================================================================
@@ -244,7 +254,7 @@ def main(robotIP, PORT=9559):
     for i in range(1000):
         
         taskNumber = int(raw_input("select task:\n\
-                                   0: Demo a song\n\
+                                   0: song\n\
                                    1: game 1\n\
                                    2: game 2\n\
                                    please make selection: "))
@@ -267,6 +277,10 @@ def main(robotIP, PORT=9559):
             motionProxy.rest()
             tts.say("Thanks for listening! Which mode you want to play next?")
             tts.say("You may also say exit to quit play with me!")
+            pythonSpeechModule.onLoad()
+            pythonSpeechModule.onInput_onStart()
+            time.sleep(5)
+            pythonSpeechModule.onUnload()
         
 # =============================================================================
 
@@ -274,6 +288,10 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 1:
             
             game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
+            pythonSpeechModule.onLoad()
+            pythonSpeechModule.onInput_onStart()
+            time.sleep(5)
+            pythonSpeechModule.onUnload()
 # =============================================================================
 #       game 2
         elif taskNumber == 2:
@@ -282,6 +300,10 @@ def main(robotIP, PORT=9559):
             origin = '/home/nao/uplay.wav'
             dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\uplay.wav'
             game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
+            pythonSpeechModule.onLoad()
+            pythonSpeechModule.onInput_onStart()
+            time.sleep(5)
+            pythonSpeechModule.onUnload()
 
 # =============================================================================
             
@@ -292,7 +314,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

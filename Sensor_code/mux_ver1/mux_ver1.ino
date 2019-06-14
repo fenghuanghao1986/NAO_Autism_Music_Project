@@ -62,7 +62,7 @@ void loop()
     Serial.print(String(inputValue) + "\t");
   }
   Serial.println();
-  delay(10);
+  delay(25);
 }
 
 // The selectMuxPin function sets the S0, S1, and S2 pins

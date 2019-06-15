@@ -168,6 +168,10 @@ class SpeechRecoModule(ALModule):
         self.hasPushed = False
         self.hasSubscribed = False
         self.BIND_PYTHON(self.getName(), "onWordRecognized")
+        self.targetWord = ''
+    
+    def reset(self):
+        self.targetWord = ''
 
     def onUnload(self):
         from threading import Lock
@@ -209,6 +213,7 @@ class SpeechRecoModule(ALModule):
     def onWordRecognized(self, key, value, message):
         print 'word recognized'
         if(len(value) > 1 and value[1] >= 0.5):
+            self.targetWord = value[0]
             print ('recognized the word : %s' % value[0])
         else:
             print 'unsifficient threshold'

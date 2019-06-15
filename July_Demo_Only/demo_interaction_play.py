@@ -253,11 +253,20 @@ def main(robotIP, PORT=9559):
 #   creating for loop to control the task including repeat task and take break
     for i in range(1000):
         
-        taskNumber = int(raw_input("select task:\n\
-                                   0: song\n\
-                                   1: game 1\n\
-                                   2: game 2\n\
-                                   please make selection: "))
+        taskNumber = 100
+        if pythonSpeechModule.targetWord == 'free play':
+            taskNumber = 1
+        elif pythonSpeechModule.targetWord == 'copy machine':
+            taskNumber = 2
+        elif pythonSpeechModule.targetWord == 'song':
+            taskNumber = 0
+        else:
+            taskNumber = int(raw_input("select task:\n\
+                                       0: song\n\
+                                       1: game 1\n\
+                                       2: game 2\n\
+                                       please make selection: "))
+        pythonSpeechModule.reset()
 
 # =============================================================================
         if taskNumber == 0:

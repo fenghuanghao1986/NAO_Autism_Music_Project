@@ -239,7 +239,7 @@ def main(robotIP, PORT=9559):
     tts.say("Welcome back to NAO music party!")
     time.sleep(1.0)
     tts.say("Let me show you my talent!")
-    ledProxy.randomEyes(2.0)
+    ledProxy.randomEyes(1.0)
     tts.say("Tell me which mode do you want to try?")
     tts.say("You can say song,copy machine or Free Play.")
     time.sleep(1.0)
@@ -254,11 +254,11 @@ def main(robotIP, PORT=9559):
     for i in range(1000):
         
         taskNumber = 100
-        if pythonSpeechModule.targetWord == 'free play':
+        if pythonSpeechModule.targetWord == '<...> free play <...>':
             taskNumber = 1
-        elif pythonSpeechModule.targetWord == 'copy machine':
+        elif pythonSpeechModule.targetWord == '<...> copy machine <...>':
             taskNumber = 2
-        elif pythonSpeechModule.targetWord == 'song':
+        elif pythonSpeechModule.targetWord == '<...> song <...>':
             taskNumber = 0
         else:
             taskNumber = int(raw_input("select task:\n\

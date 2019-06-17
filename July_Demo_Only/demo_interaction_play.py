@@ -254,25 +254,20 @@ def main(robotIP, PORT=9559):
     for i in range(1000):
         
         taskNumber = 100
-<<<<<<< HEAD
         if pythonSpeechModule.targetWord == '<...> free play <...>':
             taskNumber = 1
         elif pythonSpeechModule.targetWord == '<...> copy machine <...>':
             taskNumber = 2
         elif pythonSpeechModule.targetWord == '<...> song <...>':
-=======
-        if pythonSpeechModule.targetWord == 'free play':
-            taskNumber = 2
-        elif pythonSpeechModule.targetWord == 'copy machine':
-            taskNumber = 1
-        elif pythonSpeechModule.targetWord == 'song':
->>>>>>> 23214e2df79b8f78c0415fdd8cf08bea57cec99b
             taskNumber = 0
+        elif pythonSpeechModule.targetWord == '<...> exit <...>':
+            taskNumber = 3
         else:
             taskNumber = int(raw_input("select task:\n\
                                        0: song\n\
                                        1: game 1\n\
                                        2: game 2\n\
+                                       3: exit 3\n\
                                        please make selection: "))
         pythonSpeechModule.reset()
 
@@ -323,7 +318,9 @@ def main(robotIP, PORT=9559):
             pythonSpeechModule.onUnload()
 
 # =============================================================================
-            
+        elif taskNumber == 3:
+            break
+        
         else:
             continue
         

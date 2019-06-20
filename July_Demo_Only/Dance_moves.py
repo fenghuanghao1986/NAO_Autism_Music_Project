@@ -93,7 +93,7 @@ def userInitPosture(motionProxy, postureProxy):
     
     time.sleep(2.0)
     
-def userReadyToPlay(motionProxy, postureProxy):
+def userReadyToDance(motionProxy, postureProxy):
 # =============================================================================
 # Have to record the transformation for ready to play position
 # =============================================================================
@@ -143,7 +143,7 @@ def userReadyToPlay(motionProxy, postureProxy):
     time.sleep(2.0)
 
 
-def playXylo(motionProxy, keys, dt):
+def Dance(motionProxy, keys, dt):
             motionProxy.setAngles("RArm", 
                                   [1.211902141571045, -0.7302260398864746, 
                                    1.515550136566162, 0.7056820392608643, 

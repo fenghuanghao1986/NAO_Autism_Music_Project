@@ -4,7 +4,8 @@ Created on Wed Jun 19 11:17:30 2019
 
 @author: CV_LAB_Howard
 """
-
+global armNames; armNames = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
+                             'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
 import almath
 import time
 import motion
@@ -151,8 +152,7 @@ def Dance(motionProxy, keys, dt):
                                   [0,0,0,0,0,0], 
                                    0.1)
              
-            names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
-                     'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
+
             # tempo
             timeList = []
             angleList = []
@@ -312,7 +312,7 @@ def Dance(motionProxy, keys, dt):
                                      nextk = x
                                      break
                              if nextk != k:
-                                 note = list(notes[keys[nextk]])
+                                 note = list(moves[keys[nextk]])
                          r.append(note[j])
                          r.append(note[j])
                          r.append(note[j])
@@ -320,6 +320,6 @@ def Dance(motionProxy, keys, dt):
                         
                 angleList.append(r)
                 
-            motionProxy.angleInterpolationBezier(names, timeList, angleList)
+            motionProxy.angleInterpolationBezier(armNames, timeList, angleList)
             
 # =============================================================================

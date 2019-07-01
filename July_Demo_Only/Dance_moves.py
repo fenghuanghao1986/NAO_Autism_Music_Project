@@ -43,8 +43,6 @@ moves[11] = []
 
 moves[12] = []
 
-
-
 # =============================================================================
 # The following function initializes NAO's starting position or resting position
 # =============================================================================
@@ -103,72 +101,36 @@ def userReadyToDance(motionProxy, postureProxy):
 # =============================================================================
     motionProxy.setStiffnesses("LArm", 1)
     motionProxy.setStiffnesses("RArm", 1)
+    motionProxy.setSitffnesses("RLeg", 1)
+    motionProxy.setSitffnesses("LLeg", 1)
     
     names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
     angles  = [-0.25, -0.7, -0.7]
     fractionMaxSpeed  = 0.1
     motionProxy.setAngles(names, angles, fractionMaxSpeed)
-
-    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
-    motionProxy.setStiffnesses("LHipPitch", 0.2)
-    motionProxy.setStiffnesses("RHipPitch", 0.2)
-    motionProxy.setStiffnesses("LLeg", 0.2)
-    motionProxy.setStiffnesses("RLeg", 0.2)
     
-    chainName        = "RArm"
-    frame            = motion.FRAME_TORSO
-
-    transform       = [0.4127737283706665, -0.21474865078926086, -0.8851559162139893, 
-                       0.06692149490118027, -0.907514750957489, -0.17985010147094727, 
-                       -0.37956666946411133, -0.29789382219314575, -0.0776839479804039, 
-                       0.9599671959877014, -0.26912495493888855, 0.06466364860534668, 
-                       0.0, 0.0, 0.0, 1.0]
-    fractionMaxSpeed = 0.5
-    axisMask         = 63 # this value include position and rotation
-
-    motionProxy.setTransforms(chainName, frame, transform, 
-                              fractionMaxSpeed, axisMask)
-        
-    chainName        = "LArm"
-    frame            = motion.FRAME_TORSO
-
-    transform       = [0.3653983175754547, 0.20093390345573425, -0.9089057445526123, 
-                       0.056045692414045334, 0.911535382270813, -0.2751205563545227, 
-                       0.30563390254974365, 0.29891785979270935, -0.18864643573760986, 
-                       -0.940177857875824, -0.28368696570396423, 0.04994587600231171, 
-                       0.0, 0.0, 0.0, 1.0]
-    fractionMaxSpeed = 0.5
-    axisMask         = 63 # this value include position and rotation
-
-    motionProxy.setTransforms(chainName, frame, transform, 
-                              fractionMaxSpeed, axisMask)
+    postureProxy.goToPosture("StandZero", 0.5)
     
-
     time.sleep(2.0)
 
-
 def Dance(motionProxy, keys, dt):
-            motionProxy.setAngles("RArm", 
-                                  [0,0,0,0,0,0], 
-                                   0.1)
-            motionProxy.setAngles("LArm", 
-                                  [0,0,0,0,0,0], 
-                                   0.1)
+    
+    motionProxy.setAngles("RArm", [0,0,0,0,0,0], 0.1)
+    motionProxy.setAngles("LArm", [0,0,0,0,0,0], 0.1)
              
-
-            # tempo
-            timeList = []
-            angleList = []
-            for h in range(6):
-                t = []
-                for i in range(len(keys)): 
-                    
-                    t.append(dt*(i+1))
-                    t.append(dt*(i+1) + 0.07)
-                    t.append(dt*(i+1) + 0.1)
-                        
-                timeList.append(t)   
-                
+    timeList = []
+    angleList = []
+    
+    # generate a time list for all 12 joints for both arms 
+    for h in range (12):
+        t = []
+        for i in range(len(keys)):
+            t.append(dt*(i+1))
+            t.append(dt*(i+1) + 0.1)
+        
+        timeList.append(t)
+    
+             
             for j in range(6):
                 l = []                
                 for k in range(len(keys)):

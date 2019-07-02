@@ -15,9 +15,9 @@ def main(robotIP, PORT=9559):
     time.sleep(1)
     
     motionProxy.setStiffnesses("Head", 0.2)
-    motionProxy.setStiffnesses("LLeg", 1)
-    motionProxy.setStiffnesses("RLeg", 1)
-    motionProxy.setAngles("LHand", 0.22, 1)
+    motionProxy.setStiffnesses("LLeg", 0)
+    motionProxy.setStiffnesses("RLeg", 0)
+#    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)
 
     
@@ -42,22 +42,22 @@ def main(robotIP, PORT=9559):
 #    print ""
     
     # set legs angles
-    names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
-    angles  = [-0.25, -0.7, -0.7]
-    fractionMaxSpeed  = 0.1
-    motionProxy.setAngles(names, angles, fractionMaxSpeed)
-
-    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
-    motionProxy.setStiffnesses("LHipPitch", 0.2)
-    motionProxy.setStiffnesses("RHipPitch", 0.2)
-    motionProxy.setStiffnesses("RHipRoll", 0.0)
-    motionProxy.setStiffnesses("RKneePitch", 0.0)
-    motionProxy.setStiffnesses("RAnklePitch", 0.0)
-    motionProxy.setStiffnesses("RAnkleRoll", 0.0)
-    motionProxy.setStiffnesses("LHipRoll", 0.0)
-    motionProxy.setStiffnesses("LKneePitch", 0.0)
-    motionProxy.setStiffnesses("LAnklePitch", 0.0)
-    motionProxy.setStiffnesses("LAnkleRoll", 0.0)
+#    names  = ["LHipYawPitch", "LHipPitch", "RHipPitch"]
+#    angles  = [-0.25, -0.7, -0.7]
+#    fractionMaxSpeed  = 0.1
+#    motionProxy.setAngles(names, angles, fractionMaxSpeed)
+#
+#    motionProxy.setStiffnesses("LHipYawPitch", 0.2)
+#    motionProxy.setStiffnesses("LHipPitch", 0.2)
+#    motionProxy.setStiffnesses("RHipPitch", 0.2)
+#    motionProxy.setStiffnesses("RHipRoll", 0.0)
+#    motionProxy.setStiffnesses("RKneePitch", 0.0)
+#    motionProxy.setStiffnesses("RAnklePitch", 0.0)
+#    motionProxy.setStiffnesses("RAnkleRoll", 0.0)
+#    motionProxy.setStiffnesses("LHipRoll", 0.0)
+#    motionProxy.setStiffnesses("LKneePitch", 0.0)
+#    motionProxy.setStiffnesses("LAnklePitch", 0.0)
+#    motionProxy.setStiffnesses("LAnkleRoll", 0.0)
     
     tts.say("Move arm to get desired angles!")
     
@@ -68,13 +68,13 @@ def main(robotIP, PORT=9559):
 
     time.sleep(10.0)
     
-#    motionProxy.setStiffnesses("LArm", 1.0)
-    motionProxy.setStiffnesses("RArm", 1.0)
-#    motionProxy.setAngles("LHand", 0.22, 1)
-    motionProxy.setAngles("RHand", 0.22, 1)
+    motionProxy.setStiffnesses("LArm", 1.0)
+#    motionProxy.setStiffnesses("RArm", 1.0)
+    motionProxy.setAngles("LHand", 0.22, 1)
+#    motionProxy.setAngles("RHand", 0.22, 1)
 
-    names         = "RArm"
-#    names = "LArm"
+#    names         = "RArm"
+    names = "LArm"
     useSensors  = True
     frame  = motion.FRAME_TORSO
     sensorAngles = motionProxy.getAngles(names, useSensors)

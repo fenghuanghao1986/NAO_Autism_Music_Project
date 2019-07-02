@@ -333,7 +333,9 @@ def playXylo(motionProxy, keys, dt):
 # =============================================================================
                         
                 angleList.append(r)
-                
+            print(len(names))
+            print(len(timeList))
+            print(len(angleList))
             motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
 # =============================================================================

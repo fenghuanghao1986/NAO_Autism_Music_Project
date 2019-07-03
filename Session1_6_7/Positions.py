@@ -333,9 +333,114 @@ def playXylo(motionProxy, keys, dt):
 # =============================================================================
                         
                 angleList.append(r)
-            print(len(names))
-            print(len(timeList))
-            print(len(angleList))
+                
+            motionProxy.angleInterpolationBezier(names, timeList, angleList)
+            
+# =============================================================================
+            
+def playXyloOne(motionProxy, keys, dt):
+            motionProxy.setAngles("RArm", 
+                                  [1.211902141571045, -0.7302260398864746, 
+                                   1.515550136566162, 0.7056820392608643, 
+                                   -0.6980118751525879, 0.22960001230239868], 
+                                   0.1)
+            motionProxy.setAngles("LArm", 
+                                  [1.0568840503692627, 0.6581020545959473, 
+                                   -1.4220600128173828, -0.8252501487731934, 
+                                   0.9893879890441895, 0.23240000009536743], 
+                                   0.1)
+             
+            names = ['LShoulderPitch', 'LShoulderRoll', 'LElbowYaw', 'LElbowRoll', 'LWristYaw', 'LHand',
+                     'RShoulderPitch', 'RShoulderRoll', 'RElbowYaw', 'RElbowRoll', 'RWristYaw', 'RHand']
+            # tempo
+            timeList = []
+            angleList = []
+            for h in range(6):
+                t = []
+                for i in range(len(keys)): 
+                    
+                    t.append(dt*(i+1))
+                    t.append(dt*(i+1) + 0.07)
+                    t.append(dt*(i+1) + 0.1)
+                        
+                timeList.append(t)   
+                
+            for j in range(6):
+                l = []                
+                for k in range(len(keys)):
+                            
+                    if keys[k] > 5 and keys[k] < 12: 
+                        note = list(notes[keys[k]])
+                        if j == 4:
+                            l.append(note[j])
+                            l.append(note[j]+55*almath.TO_RAD)
+                            l.append(note[j])
+                        else:
+                            l.append(note[j])
+                            l.append(note[j])
+                            l.append(note[j])
+# =============================================================================
+                    
+                    else:
+                         note = list(notes[8])
+                         if k != len(keys)-1:
+                             nextk = k
+                             for x in range(k+1, len(keys)):
+                                 if keys[x] > 5 and keys[x] < 12:
+                                     nextk = x
+                                     break 
+                             if nextk != k:
+                                 note = list(notes[keys[nextk]])
+                         l.append(note[j])
+                         l.append(note[j])
+                         l.append(note[j])
+# =============================================================================
+                        
+                angleList.append(l)
+            
+            for h in range(6):
+                t = []
+                for i in range(len(keys)): 
+                    
+                    t.append(dt*(i+1))
+                    t.append(dt*(i+1) + 0.07)
+                    t.append(dt*(i+1) + 0.1)
+                        
+                timeList.append(t)    
+            
+            for j in range(6):
+                r = []                
+                for k in range(len(keys)):
+                            
+                    if keys[k] > 0 and keys[k] < 6: 
+                        note = list(notes[keys[k]])
+                        if j == 4:
+                            r.append(note[j])
+                            r.append(note[j]-55*almath.TO_RAD)
+                            r.append(note[j])
+                        else:
+                            r.append(note[j])
+                            r.append(note[j])
+                            r.append(note[j])
+# =============================================================================
+                 
+                    else:
+                         note = list(notes[3])
+                         if k != len(keys)-1:
+                             nextk = k
+                             for x in range(k+1, len(keys)):
+                                 if keys[x] != 0 and keys[x] > 0 and keys[x] < 6:
+                                     nextk = x
+                                     break
+                             if nextk != k:
+                                 note = list(notes[keys[nextk]])
+                         r.append(note[j])
+                         r.append(note[j])
+                         r.append(note[j])
+# =============================================================================
+                        
+                angleList.append(r)
+                
             motionProxy.angleInterpolationBezier(names, timeList, angleList)
             
 # =============================================================================

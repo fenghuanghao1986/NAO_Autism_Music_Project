@@ -24,7 +24,7 @@ def record(robotIP, PORT, t):
         
 #    recordProxy = ALProxy("ALAudioDevice", robotIP, PORT)
 
-    recordProxy.startMicrophonesRecording("/home/nao/test.wav");
+    recordProxy.startMicrophonesRecording("/home/nao/uplay.wav");
     print("recording")
     
     time.sleep(t);
@@ -32,7 +32,7 @@ def record(robotIP, PORT, t):
 #      Stops the recording and close the file after 10 seconds.
     recordProxy.stopMicrophonesRecording(); 
 
-def playBack(robotIP, PORT):
+def playBack(robotIP, PORT, fileName):
     
     if (len(sys.argv) > 2):
         PORT = sys.argv[2]
@@ -44,12 +44,12 @@ def playBack(robotIP, PORT):
         sys.exit(1)
     
 #    plays a file and get the current position 5 seconds later
-    fileId = aup.post.playFile("/home/nao/test.wav")
-    
-    time.sleep(5)
-    
-#    currentPos should be near 5 secs
-    currentPos = aup.getCurrentPosition(fileId)
+    aup.post.playFile(fileName)
+#    
+#    time.sleep(5)
+#    
+##    currentPos should be near 5 secs
+#    currentPos = aup.getCurrentPosition(fileId)
     
 #if __name__ == "__main__":
 #    parser = argparse.ArgumentParser()

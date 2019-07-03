@@ -13,7 +13,7 @@ import sys
 import argparse
 #import motion
 import Positions
-import shh
+import ssh
 import numpy as np
 import recordplay
 import stft
@@ -43,6 +43,78 @@ except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # 
 # =============================================================================
+       
+    
+def convertKeys(keys):
+    trueKeys = []
+    trueKeys.append(0)
+    trueKeys.append(0)
+    for i in range(len(keys)):
+        if keys[i] == '1':
+            trueKeys.append(1)
+            continue
+        elif keys[i] == '2':
+            trueKeys.append(2)
+            continue
+        elif keys[i] == '3':
+            trueKeys.append(3)
+            continue
+        elif keys[i] == '4':
+            trueKeys.append(4)
+            continue
+        elif keys[i] == '5':
+            trueKeys.append(5)
+            continue
+        elif keys[i] == '6':
+            trueKeys.append(6)
+            continue
+        elif keys[i] == '7':
+            trueKeys.append(7)
+            continue
+        elif keys[i] == '8':
+            trueKeys.append(8)
+            continue
+        elif keys[i] == '9':
+            trueKeys.append(9)
+            continue
+        elif keys[i] == '10':
+            trueKeys.append(10)
+            continue
+        else:
+            trueKeys.append(11)
+            continue
+            
+    return trueKeys
+
+def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, tts):
+
+    recordplay.record(robotIP, PORT, t=5)
+    recordplay.playBack(robotIP, PORT)
+    sshFile = ssh.SSHConnection (robotIP, username, pw)
+    sshFile.get(origin, local)
+    sshFile.close()
+       
+    sampleRate, data = wav.read(local)
+#        N = len(data)
+    Nwin = 2048
+    xx = data[:, 0]
+            
+    low = 1040
+    high = 2800
+    x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
+
+    s = np.abs(stft.stft(x, Nwin))
+    
+    peaks = stft.findNotes(s, sampleRate/2)
+    realPeaks = stft.realPeak(peaks)
+    print(realPeaks)
+    orgKeys = realPeaks
+    keys = convertKeys(orgKeys)
+    
+    
+    
+    
+    
 def main(robotIP, PORT=9559):
     
     motionProxy = ALProxy("ALMotion", robotIP, PORT)
@@ -52,11 +124,12 @@ def main(robotIP, PORT=9559):
     postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
-    
+    username = "nao"
+    pw = "nao"
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
-    for i in range(1000):
+    while(True):
         
         taskNumber = int(raw_input("select task:\n\
                                    0: intro\n\
@@ -80,7 +153,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello, Seena!")
+            tts.say("Hello, my friend!")
             time.sleep(0.5)
             tts.say("Welcome back to NAO music party!")
             time.sleep(1.0)
@@ -103,12 +176,12 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
-            time.sleep(5.0)
+            time.sleep(3.0)
             tts.say("Yes, it is the the most popular Twinkle Twinkle Little Star!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
-            time.sleep(5.0)
+            time.sleep(3.0)
             tts.say("Let's start our practice!")
             tts.say("You may find a pair of red head mallet \
                     on the table somewhere.")
@@ -135,7 +208,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("I just played a note, can you repeat that note for me?")
@@ -158,7 +231,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)    
             tts.say("This is a new note, can you repeat that note for me?")
@@ -171,7 +244,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("Now, it is your turn to play the green bar!")
@@ -194,7 +267,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             
-            Positions.playXylo(motionProxy, keys, dt1)
+            Positions.playXyloOne(motionProxy, keys, dt1)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("I just played three notes, can you repeat them for me? \
@@ -210,7 +283,7 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 4:
             
             keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1]
-            name = 'FacdLeds'
+            name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
@@ -222,7 +295,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt1)
+            Positions.playXyloOne(motionProxy, keys, dt1)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
 #            tts.say("Did you get it?")
@@ -237,7 +310,7 @@ def main(robotIP, PORT=9559):
             
             keys = [0,0,5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0]
             dt1 = 1
-            name = 'FacdLeds'
+            name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
@@ -249,7 +322,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt1)
+            Positions.playXyloOne(motionProxy, keys, dt1)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
 #            tts.say("Did you get it?")
@@ -265,7 +338,7 @@ def main(robotIP, PORT=9559):
                     5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
                     1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
             dt=0.6
-            name = 'FacdLeds'
+            name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
@@ -277,7 +350,7 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
 
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
 #            tts.say("Did you get it?")
@@ -349,60 +422,64 @@ def main(robotIP, PORT=9559):
 #        task 14: shh, transfer file and ntft get frequency, then make judgement
 #        send feedback to kid
         elif taskNumber == 14:
-        
-            host = "192.168.0.2"    # this host name may have to change 
-            username = "nao"
-            pw = "nao"
             
-            origin = '/home/nao/test.wav'
-            dst = r'C:\Users\fengh\Desktop\record.wav'
-         
-            sshFile = SSHConnection (host, username, pw)
-            sshFile.get(origin, dst)
-            sshFile.close()
+#            host = "192.168.0.2"    # this host name may have to change 
+#            username = "nao"
+#            pw = "nao"
+#            
+#            origin = '/home/nao/test.wav'
+#            dst = r'C:\Users\fengh\Desktop\record.wav'
+#         
+#            sshFile = SSHConnection (host, username, pw)
+#            sshFile.get(origin, dst)
+#            sshFile.close()
+#            
+#        #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
+#            sampleRate, data = wav.read(dst)
+#            N = len(data)
+#            Nwin = 2048
+#            xx = data[:, 0]
+#            
+#            low = 1040
+#            high = 2800
+#            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
+#            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
+#            totleTime = np.arange(N) / sampleRate  # seconds
+#        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
+#        
+#            # Test with Nfft bigger than Nwin
+#            Nfft = Nwin * 2
+#            s = np.abs(stft.stft(x, Nwin))
+#            y = stft.istft(s, Nwin)
+#            peaks = stft.findNotes(s, sampleRate/2)
+#            realPeaks = stft.realPeak(peaks)
+#            start = time.time()
+##    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
+#            r_len = len(realPeaks)
+##            change orgpeaks to the key that nao just played or the music just played
+##           find a way please!
+#            orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
+#            o_len = len(orgPeaks)
+##            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
+#        
+#            diff = stft.LevDist2(realPeaks, orgPeaks)
+#            sim = 1 - (float(diff)/(float(o_len)))
+#            end = time.time()
+#            print("stft time: " + str(end - start))
+#            print(diff, sim)
+            origin = '/home/nao/uplay.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\uplay.wav'
+            game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, tts)
             
-        #    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Audio_Detection_Part\promise.wav'
-            sampleRate, data = wav.read(dst)
-            N = len(data)
-            Nwin = 2048
-            xx = data[:, 0]
-            
-            low = 1040
-            high = 2800
-            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
-            # Generate a chirp: start frequency at 5 Hz and going down at 2 Hz/s
-            totleTime = np.arange(N) / sampleRate  # seconds
-        #    x = np.cos(2 * np.pi * time * (5 - 2 * 0.5 * time))
-        
-            # Test with Nfft bigger than Nwin
-            Nfft = Nwin * 2
-            s = np.abs(stft.stft(x, Nwin))
-            y = stft.istft(s, Nwin)
-            peaks = stft.findNotes(s, sampleRate/2)
-            realPeaks = stft.realPeak(peaks)
-            start = time.time()
-#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
-            r_len = len(realPeaks)
-#            change orgpeaks to the key that nao just played or the music just played
-#           find a way please!
-            orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
-            o_len = len(orgPeaks)
-#            result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
-        
-            diff = stft.LevDist2(realPeaks, orgPeaks)
-            sim = 1 - (float(diff)/(float(o_len)))
-            end = time.time()
-            print("stft time: " + str(end - start))
-            print(diff, sim)
-            try:
-                with open(fileName, 'a') as csvfile:
-                    filewriter = csv.writer(csvfile, delimiter=',', 
-                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([taskNumber, '123', '122', '.667'])
-            except csv.Error as e:
-                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
+#            try:
+#                with open(fileName, 'a') as csvfile:
+#                    filewriter = csv.writer(csvfile, delimiter=',', 
+#                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+#                    filewriter.writerow([taskNumber, '123', '122', '.667'])
+#            except csv.Error as e:
+#                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
-            
+        
         else:
             continue
         

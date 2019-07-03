@@ -251,7 +251,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
-    for i in range(1000):
+    while(True):
         
         taskNumber = 100
         if pythonSpeechModule.targetWord == '<...> free play <...>':

@@ -258,7 +258,7 @@ def main(robotIP, PORT=9559):
             taskNumber = 1
         elif pythonSpeechModule.targetWord == '<...> copy machine <...>':
             taskNumber = 2
-        elif pythonSpeechModule.targetWord == '<...> song <...>':
+        elif pythonSpeechModule.targetWord == '<...> play song <...>':
             taskNumber = 0
         elif pythonSpeechModule.targetWord == '<...> exit <...>':
             taskNumber = 3
@@ -278,7 +278,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #           Play demo
             dt = 0.4
-            keys = songBank["Promise"]
+            keys = songBank["Twinkle"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)

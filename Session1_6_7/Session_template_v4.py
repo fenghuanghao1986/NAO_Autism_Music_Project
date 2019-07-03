@@ -213,7 +213,13 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("I just played a note, can you repeat that note for me?")
             time.sleep(1.0)
-            task = 'note'
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
         
 # =============================================================================
 #       task 2: Start single note play along with color  
@@ -249,7 +255,13 @@ def main(robotIP, PORT=9559):
             Positions.userInitPosture(motionProxy,postureProxy)
             tts.say("Now, it is your turn to play the green bar!")
             tts.say("And try to use your left hand to do this.")
-            task = 'note+color'
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
         
 # =============================================================================
 #       task 3: Start multiple notes play along with color
@@ -275,7 +287,13 @@ def main(robotIP, PORT=9559):
                     for example green, gray, blue.")
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
-            task = 'notes+colors'
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
         
 # =============================================================================
 #       task 4: Start play whole song 
@@ -302,7 +320,13 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-            task = 'notes+color'
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
 #       task 5: Start play whole song 
 #       second half song 
@@ -329,7 +353,13 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
-            task = 'notes+color'
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 
 # =============================================================================
 #       task 6: play the whole song
@@ -357,6 +387,13 @@ def main(robotIP, PORT=9559):
 #            time.sleep(1.0)
             tts.say("Now, it is your turn to play.")
             tts.say("If you need help, please say Help.")
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, keys, '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 
 # =============================================================================
 #       task 7: take a break for 180 seconds      
@@ -375,7 +412,13 @@ def main(robotIP, PORT=9559):
 #            ledProxy.randomEyes(3.0)
 #            time.sleep(57)
 #            tts.say("Shall we start the next task?")  
-        
+            #            try:
+#                with open(fileName, 'a') as csvfile:
+#                    filewriter = csv.writer(csvfile, delimiter=',', 
+#                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+#                    filewriter.writerow([taskNumber, '123', '122', '.667'])
+#            except csv.Error as e:
+#                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
 #       task 8: free play
         elif taskNumber == 8:
@@ -400,6 +443,13 @@ def main(robotIP, PORT=9559):
             tts.say("It looks like you may need some help. \
                     Do you want me to show you again?")
             motionProxy.rest()
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, '0', '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
 #        task 11: reward for kid    
         elif taskNumber == 11:
@@ -412,6 +462,13 @@ def main(robotIP, PORT=9559):
             tts.say("It doesn't sound quite right, \
                     please try it again. I am listening.")
             motionProxy.rest()
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, '0', '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
 #        task 13: record what kid plays and play back let kid confirm    
         elif taskNumber == 13:

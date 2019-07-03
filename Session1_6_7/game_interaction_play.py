@@ -80,11 +80,11 @@ def createMisc(robotIP, username, pw):
     
     play = []
     newData = []
-    uncfList = ['3','4','7','8','10','11']
-    comfList = ['1','2','4','5','6','8','9']
+    uncfList = ['3','4','7','8','10','11','0']
+    comfList = ['1','2','4','5','6','8','9','0']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
-    n = 8
+    n = 16
     if u_cList == 'u':
         for i in range(n):
             play.append(random.choice(uncfList))
@@ -106,7 +106,7 @@ def createMisc(robotIP, username, pw):
         
     dst = '/home/nao/' + newFile
     # this path need to be changed
-    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only', newFile)
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7', newFile)
     sshFile = ssh.SSHConnection(robotIP, username, pw)
     print('connection ok')
     sshFile.put(origin, dst)
@@ -119,23 +119,30 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     print('creat music done')
     tts.say("Here is what I will play now, listen carefully!")
     recordplay.playBack(robotIP, PORT, dst)
-    time.sleep(6)
+    time.sleep(14)
     print('playback ok')
     dt = 0.8
     orgKeys = play
     keys = convertKeys(orgKeys)
+    tts.say("Before I play, let me ask you a quick question.")
+    tts.say("How do you feel about what you just heard?")
+    tts.say("Could you please use few words to describe it? You will have ten seconds.")
+    tts.say("Thanks.")
+    time.sleep(10)
+    tts.say("Good to know")
+    time.sleep(1)
     tts.say("This is how I play, watch carefully!")
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
-    tts.say("Now it is your time to play! You have ten seconds to play.")
+    tts.say("Now it is your time to play! You have ten 15 to play.")
     Positions.userInitPosture(motionProxy, postureProxy)
     tts.say("When you see my eyes flash, you may start.")
-    ledProxy.randomEyes(2.0)
+    ledProxy.randomEyes(1.0)
     motionProxy.rest()
-    time.sleep(10)
-    tts.say("Times up! You did really well! Which mode you want to play next?")
+    time.sleep(15)
+    tts.say("Times up! I know you have tried your best! And you did goo! Which mode you want to play next?")
     tts.say("You may also say exit to quit play with me!")
 
     
@@ -143,8 +150,8 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
 def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy, tts):
     tts.say("In this mode, you will have five seconds to play what ever you want.")
     tts.say("When times up, I will try to mimic what I heard from you.")
-    tts.say("After you see my eyes flash, you may start to play!")
-    ledProxy.randomEyes(2.0)
+    tts.say("After you see my eyes flash, you may start to play! Try to hit harder!")
+    ledProxy.randomEyes(1.0)
     recordplay.record(robotIP, PORT, t=5)
 #        recordplay.playBack(robotIP, PORT)
     sshFile = ssh.SSHConnection (robotIP, username, pw)
@@ -234,11 +241,11 @@ def main(robotIP, PORT=9559):
     Positions.userInitPosture(motionProxy, postureProxy)
 
     motionProxy.rest()
-    tts.say("Hello there!")
+    tts.say("Hello my friend!")
     time.sleep(0.5)
-    tts.say("Welcome to NAO music party!")
+    tts.say("Welcome to music game party!")
     time.sleep(1.0)
-    tts.say("Let me show you my talent!")
+    tts.say("Let's have some fun here!")
     ledProxy.randomEyes(1.0)
     tts.say("Tell me which mode do you want to try?")
     tts.say("You can say play song, copy machine or free Play.")
@@ -304,18 +311,32 @@ def main(robotIP, PORT=9559):
             pythonSpeechModule.onInput_onStart()
             time.sleep(5)
             pythonSpeechModule.onUnload()
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, '0', '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
 #       game 2
         elif taskNumber == 2:
         
 
             origin = '/home/nao/uplay.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\July_Demo_Only\uplay.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\uplay.wav'
             game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
             pythonSpeechModule.onLoad()
             pythonSpeechModule.onInput_onStart()
             time.sleep(5)
             pythonSpeechModule.onUnload()
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([taskNumber, '0', '0', '0'])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 
 # =============================================================================
         elif taskNumber == 3:

@@ -57,14 +57,3 @@ class SSHConnection(object):
             self.sftp_open = False
         self.transport.close()
  
-#if __name__ == "__main__":
-#    host = "192.168.0.2"
-#    username = "nao"
-#    pw = "nao"
-#    
-#    origin = '/home/nao/test.wav'
-#    dst = r'C:\Users\fengh\Desktop\record.wav'
-# 
-#    ssh = SSHConnection(host, username, pw)
-#    ssh.get(origin, dst)
-#    ssh.close()

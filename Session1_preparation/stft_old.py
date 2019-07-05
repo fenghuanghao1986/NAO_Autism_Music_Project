@@ -91,9 +91,10 @@ def findNotes(stftData, fsRange):
             
         maxAmp.append([maxima,index])
             
-    
+    plt.figure(1)
     plt.plot(maxAmp)
     plt.show()
+    
     for i in range(x):
         if (i == 0):
             if (maxAmp[i][0] >= maxAmp[i+1][0]):
@@ -154,9 +155,9 @@ def LevDist2(s, t):
 
 if __name__ == '__main__':
     
-#    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_6_7\record.wav'
+    file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Session1_preparation\test_stft.wav'
 #    file = r'D:\LabWork\ThesisProject\Music_Autism_Robot\Session1_6_7\record.wav'
-    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\record.wav'
+#    file = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\record.wav'
     sampleRate, data = wav.read(file)
     N = len(data)
     Nwin = 2048
@@ -175,17 +176,17 @@ if __name__ == '__main__':
     y = istft(s, Nwin)
     peaks = findNotes(s, sampleRate/2)
     realPeaks = realPeak(peaks)
-    start = time.time()
-#    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
-    r_len = len(realPeaks)
-    orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
-    o_len = len(orgPeaks)
-    result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
-    diff = LevDist2(realPeaks, orgPeaks)
-#    diff = LevDist(realPeaks, r_len, orgPeaks, o_len)
-    end = time.time()
-    print("stft time: " + str(end - start))
-    print(diff)
+#    start = time.time()
+##    realPeaks = ['6', '7', '8', '9', '10', '9', '8', '6', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7']
+#    r_len = len(realPeaks)
+#    orgPeaks = ['6', '7', '8', '9', '10', '9', '8', '5', '3', '6', '7', '8', '9', '8', '7', '6', '8', '7', '6', '5', '7', '6']
+#    o_len = len(orgPeaks)
+#    result = [[-1 for i in range(len(realPeaks))] for j in range(len(orgPeaks))]
+#    diff = LevDist2(realPeaks, orgPeaks)
+##    diff = LevDist(realPeaks, r_len, orgPeaks, o_len)
+#    end = time.time()
+#    print("stft time: " + str(end - start))
+#    print(diff)
     
     # Make sure the stft and istft are inverses. Caveat: `x` and `y` won't be
     # the same length if `N/Nwin` isn't integral!
@@ -193,17 +194,16 @@ if __name__ == '__main__':
 #    assert (maxerr < np.spacing(1) * 10)
 
 #     Test `stftbins`
-#    t, f = stftbins(x, Nwin, d=1.0 / sampleRate)
-#    assert (len(t) == s.shape[0])
-#    assert (len(f) == s.shape[1])
+    t, f = stftbins(x, Nwin, d=1.0 / sampleRate)
+    assert (len(t) == s.shape[0])
+    assert (len(f) == s.shape[1])
  
-##    try:
-#    import pylab as plt
-#    plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-#    plt.xlabel('frequency (Hertz)')
-#    plt.ylabel('time (seconds (start of chunk))')
-#    plt.title('STFT with chirp example')
-#    plt.grid()
-#    plt.show()
-#    except ModuleNotFoundError:
-#        pass
+    import pylab as pltsp
+    pltsp.figure(2)
+    pltsp.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+    pltsp.xlabel('frequency (Hertz)')
+    pltsp.ylabel('time (seconds (start of chunk))')
+    pltsp.title('STFT with chirp example')
+    pltsp.grid()
+    pltsp.show()
+    

@@ -107,7 +107,7 @@ def realPeak(rawPeak):
 
 #file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\new_xylo\ace.wav'
 
-file = r'D:\Howard_Feng\noteDetection\Audio_Detection_Part\promise.wav'
+file = r'D:\Howard_Feng\NAO_Music_Autism_Project\Audio_Detection_Part\test_stft.wav'
 
 # no difference between 48k and 44k hz as fs
 #file = r'D:\Howard_Feng\noteDetection\cc.wav'

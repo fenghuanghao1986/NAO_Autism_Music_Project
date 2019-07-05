@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -106,7 +106,7 @@ def createMisc(robotIP, username, pw):
         
     dst = '/home/nao/' + newFile
     # this path need to be changed
-    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7', newFile)
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\Baseline_Session', newFile)
     sshFile = ssh.SSHConnection(robotIP, username, pw)
     print('connection ok')
     sshFile.put(origin, dst)
@@ -332,7 +332,7 @@ def main(robotIP, PORT=9559):
         
 
             origin = '/home/nao/uplay.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\uplay.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\Baseline_Session\uplay.wav'
             game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
             pythonSpeechModule.onLoad()
             pythonSpeechModule.onInput_onStart()
@@ -357,7 +357,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

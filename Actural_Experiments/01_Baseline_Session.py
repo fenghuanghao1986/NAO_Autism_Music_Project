@@ -2,6 +2,11 @@
 """
 Created on Tue Mar  5 16:53:15 2019
 
+This is the baseline session for both TD and ASD kids
+each practice will be judged by researcher
+This session is a test session for demostrating basic sense
+of how this experiment will look like
+
 @author: CV_LAB_Howard
 """
 # =============================================================================

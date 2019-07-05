@@ -106,7 +106,7 @@ def createMisc(robotIP, username, pw):
         
     dst = '/home/nao/' + newFile
     # this path need to be changed
-    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7', newFile)
+    origin = os.path.join(r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments', newFile)
     sshFile = ssh.SSHConnection(robotIP, username, pw)
     print('connection ok')
     sshFile.put(origin, dst)

@@ -2,6 +2,12 @@
 """
 Created on Fri Jul  5 14:18:05 2019
 
+This function is for help child to play xylophone properly
+that can help robot better recognize notes at some point
+and this is also can be consider as a motor control practice
+robot will provide same contant to both groups and will see
+different learning curve between two groups of kids
+
 @author: CV_LAB_Howard
 """
 
@@ -26,7 +32,13 @@ import datetime
 import random
 import os
 import copy
+import speechrecognition
 
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+global pythonSpeechModule; pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
+
+print "Enter subject Name:\n"
+kid_name = raw_input()
 print "Enter subject number:\n"
 subject = raw_input()
 print "Enter session number:\n"
@@ -38,7 +50,12 @@ year = str(now.year)
 task = 0
 username = "nao"
 pw = "nao"
-fileName = subject + '_' + session  + '_' + 'hit_practice_' + year + '_' + mon + '_' + day + '.csv'
+
+count_good = 0
+count_bad = 0
+result = 2
+
+fileName = subject + '_' + session  + '_' + 'hit_practice_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
@@ -51,22 +68,22 @@ except csv.Error as e:
     
 def createMisc(robotIP, username, pw):
     
-    play = []
+    play_note = []
     newData = []
     uncfList = ['3','4','7','8','10','11']
     comfList = ['1','2','4','5','6','8','9']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
-    n = 16
+    n = 1
     if u_cList == 'u':
         for i in range(n):
-            play.append(random.choice(uncfList))
+            play_note.append(random.choice(uncfList))
     else:
         for i in range(n):
-            play.append(random.choice(comfList))
-    print(play)
+            play_note.append(random.choice(comfList))
+    print(play_note)
     
-    for j in play:
+    for j in play_note:
         rate, data = wav.read(j + '.wav')
         if len(newData) == 0:
             newData = copy.deepcopy(data)
@@ -85,15 +102,16 @@ def createMisc(robotIP, username, pw):
     sshFile.put(origin, dst)
     sshFile.close()
     
-    return dst, play
+    return dst, play_note
     
 # =============================================================================
-def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy, tts):
-    tts.say("In this mode, you will have five seconds to play what ever you want.")
-    tts.say("When times up, I will try to mimic what I heard from you.")
-    tts.say("After you see my eyes flash, you may start to play! Try to hit harder!")
+def game2(robotIP, PORT, username, pw, origin, local, ledProxy, tts, play_note):
+
+    tts.say("After you see my eyes flash, you may start to play!")
+    tts.say("Try to make it sounds like what you just heard.")
     ledProxy.randomEyes(1.0)
-    recordplay.record(robotIP, PORT, t=5)
+    tts.say("Now, you may start!")
+    recordplay.record(robotIP, PORT, t=3)
 #        recordplay.playBack(robotIP, PORT)
     sshFile = ssh.SSHConnection (robotIP, username, pw)
     sshFile.get(origin, local)
@@ -113,23 +131,12 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     peaks = stft.findNotes(s, sampleRate/2)
     realPeaks = stft.realPeak(peaks)
     print(realPeaks)
-    dt = 0.6
     orgKeys = realPeaks
     keys = convertKeys(orgKeys)
-    tts.say("I think I got it!")
-    tts.say("Now it is my turn to play!")
-    Positions.userInitPosture(motionProxy, postureProxy)
-    Positions.userReadyToPlay(motionProxy, postureProxy)
-    Positions.playXyloOne(motionProxy, keys, dt)
-    Positions.userReadyToPlay(motionProxy, postureProxy)
-    Positions.userInitPosture(motionProxy, postureProxy)
-    motionProxy.rest()
-    tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
-    ledProxy.randomEyes(2.0)
-    time.sleep(3)
-    tts.say("Thanks for playing this game, which game do you want to play next?")
-    tts.say("You may also say exit to quit play with me!")
-    
+   
+    diff = stft.LevDist2(keys, play_note)
+    print(diff)
+    return diff
 
 def convertKeys(keys):
     trueKeys = []
@@ -171,6 +178,18 @@ def convertKeys(keys):
             continue
             
     return trueKeys
+
+def compare(result, taskNumber):
+    
+    if result == 0:
+        taskNumber == 0
+    elif result == 1:
+        taskNumber == 1
+    else:
+        taskNumber = taskNumber + 1
+        
+    return taskNumber
+
     
 def main(robotIP, PORT=9559):
     
@@ -178,30 +197,50 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-#    postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
 
     motionProxy.rest()
-
+    
+    tts.say("Hello", kid_name) # figure out how to say name in tts
+    tts.say(kid_name)
+    tts.say("Before we start our practice, I would like to help you with a 10 minutes warm up!")
+    tts.say("In this warm up section, I will ask you to play some notes.")
+    tts.say("And I want you to follow my instruction carefully.")
+    tts.say("You will play notes after my eye flashs!")
+    tts.say("Let's begin!")
+    
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
     while(True):
         
+        taskNumber = 100
+        if pythonSpeechModule.targetWord == '<...> help <...>':
+            taskNumber == 0
+        else:
+            taskNumber = int(raw_input("select task:\n\
+                                       0: help\n\
+                                       1: keep practice\n\
+                                       2: free play\n\
+                                       3: exit 3\n\
+                                       please make selection: "))
+        pythonSpeechModule.reset()
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-
+            tts.say("help content must be type here")
 # =============================================================================
 
 #        game 1    
-        if taskNumber == 1:
+        elif taskNumber == 1:
             
-            game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
-            pythonSpeechModule.onLoad()
-            pythonSpeechModule.onInput_onStart()
-            time.sleep(5)
-            pythonSpeechModule.onUnload()
+            dst, play_note = createMisc(robotIP, username, pw)
+            print('creat music done')
+            tts.say("Here is what I will play now, listen carefully!")
+            recordplay.playBack(robotIP, PORT, dst)
+            time.sleep(3)
+            print('playback ok')
+            
             try:
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
@@ -215,8 +254,26 @@ def main(robotIP, PORT=9559):
         
 
             origin = '/home/nao/uplay.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\uplay.wav'
-            game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
+            result = game2(robotIP, PORT, username, pw, origin, dst, ledProxy, tts)
+            
+            taskNumber = compare(result, taskNumber)
+            
+            tts.say("I think I got it!")
+            tts.say("Now it is my turn to play!")
+            Positions.userInitPosture(motionProxy, postureProxy)
+            Positions.userReadyToPlay(motionProxy, postureProxy)
+            dt = 1.0
+            Positions.playXyloOne(motionProxy, play_note, dt)
+            Positions.userReadyToPlay(motionProxy, postureProxy)
+            Positions.userInitPosture(motionProxy, postureProxy)
+            motionProxy.rest()
+            tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
+            ledProxy.randomEyes(2.0)
+            time.sleep(3)
+            tts.say("Thanks for playing this game, which game do you want to play next?")
+            tts.say("You may also say exit to quit play with me!")
+            
             pythonSpeechModule.onLoad()
             pythonSpeechModule.onInput_onStart()
             time.sleep(5)

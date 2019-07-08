@@ -68,13 +68,13 @@ def main(robotIP, PORT=9559):
 
     time.sleep(10.0)
     
-#    motionProxy.setStiffnesses("LArm", 1.0)
-    motionProxy.setStiffnesses("RArm", 1.0)
-#    motionProxy.setAngles("LHand", 0.22, 1)
-    motionProxy.setAngles("RHand", 0.22, 1)
+    motionProxy.setStiffnesses("LArm", 1.0)
+#    motionProxy.setStiffnesses("RArm", 1.0)
+    motionProxy.setAngles("LHand", 1, 1.0)
+#    motionProxy.setAngles("RHand", 1, 1.0)
 
-    names         = "RArm"
-#    names = "LArm"
+#    names         = "RArm"
+    names = "LArm"
     useSensors  = True
     frame  = motion.FRAME_TORSO
     sensorAngles = motionProxy.getAngles(names, useSensors)
@@ -88,11 +88,11 @@ def main(robotIP, PORT=9559):
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-#    parser.add_argument("--ip", type=str, default="192.168.0.2",
-#                        help="Robot ip address")
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
-    parser.add_argument("--port", type=int, default=51677,
+#    parser.add_argument("--ip", type=str, default="127.0.0.1",
+#                        help="Robot ip address")
+    parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")
 
     args = parser.parse_args()

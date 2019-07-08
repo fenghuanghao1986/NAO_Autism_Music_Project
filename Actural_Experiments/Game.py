@@ -53,7 +53,8 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         0,6,7,8,9,10,9,8,7,6,0,3,0,6,0,
                         7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6]}
 
-
+print "Enter subject name:\n"
+kid_name = raw_input()
 print "Enter subject number:\n"
 subject = raw_input()
 print "Enter session number:\n"
@@ -189,11 +190,13 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     tts.say("Thanks for playing this game, which game do you want to play next?")
     tts.say("You may also say exit to quit play with me!")
     
-
+# This function is to convert str type to int type for robot to play
 def convertKeys(keys):
+    
     trueKeys = []
     trueKeys.append(0)
     trueKeys.append(0)
+    
     for i in range(len(keys)):
         if keys[i] == '1':
             trueKeys.append(1)

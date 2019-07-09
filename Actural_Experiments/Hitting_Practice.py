@@ -34,7 +34,8 @@ import os
 import copy
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+# before run this, make sure the IP is currect
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule; pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
 print "Enter subject Name:\n"
@@ -54,7 +55,7 @@ pw = "nao"
 count_good = 0
 count_bad = 0
 result = 2
-
+color = 'nothing'
 fileName = subject + '_' + session  + '_' + 'hit_practice_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
@@ -105,7 +106,7 @@ def createMisc(robotIP, username, pw):
     return dst, play_note
     
 # =============================================================================
-def game2(robotIP, PORT, username, pw, origin, local, ledProxy, tts, play_note):
+def hit(robotIP, PORT, username, pw, origin, local, ledProxy, tts, play_note):
 
     tts.say("After you see my eyes flash, you may start to play!")
     tts.say("Try to make it sounds like what you just heard.")
@@ -142,6 +143,7 @@ def convertKeys(keys):
     trueKeys = []
     trueKeys.append(0)
     trueKeys.append(0)
+    
     for i in range(len(keys)):
         if keys[i] == '1':
             trueKeys.append(1)
@@ -183,8 +185,10 @@ def compare(result, taskNumber):
     
     if result == 0:
         taskNumber == 0
+        count_bad = count_bad + 1
     elif result == 1:
         taskNumber == 1
+        count_good = count_good + 1
     else:
         taskNumber = taskNumber + 1
         
@@ -231,7 +235,7 @@ def main(robotIP, PORT=9559):
             tts.say("help content must be type here")
 # =============================================================================
 
-#        game 1    
+#        play one note in audio   
         elif taskNumber == 1:
             
             dst, play_note = createMisc(robotIP, username, pw)
@@ -240,6 +244,20 @@ def main(robotIP, PORT=9559):
             recordplay.playBack(robotIP, PORT, dst)
             time.sleep(3)
             print('playback ok')
+            if play_note[0] == '1' or play_note[0] == '8':
+                color == 'green'
+            elif play_note[0] == '2' or play_note[0] == '9':
+                color == 'brown'
+            elif play_note[0] == '3' or play_note[0] == '10':
+                color == 'red'
+            elif play_note[0] == '4' or play_note[0] == '11':
+                color == 'yellow'
+            elif play_note[0] == '5':
+                color == 'gray'
+            elif play_note[0] == '6':
+                color == 'blue'
+            else:
+                color == 'pink'
             
             try:
                 with open(fileName, 'a') as csvfile:
@@ -249,13 +267,13 @@ def main(robotIP, PORT=9559):
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
 # =============================================================================
-#       game 2
+#        hit practice
         elif taskNumber == 2:
         
 
             origin = '/home/nao/uplay.wav'
             dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
-            result = game2(robotIP, PORT, username, pw, origin, dst, ledProxy, tts)
+            result = hit(robotIP, PORT, username, pw, origin, dst, ledProxy, tts)
             
             taskNumber = compare(result, taskNumber)
             

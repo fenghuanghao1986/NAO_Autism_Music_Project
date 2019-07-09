@@ -65,7 +65,6 @@ try:
         filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
 except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
-# 
     
 def createMisc(robotIP, username, pw):
     
@@ -315,7 +314,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

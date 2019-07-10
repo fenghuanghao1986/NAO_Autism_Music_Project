@@ -52,8 +52,8 @@ task = 0
 username = "nao"
 pw = "nao"
 
-count_good = 0
-count_bad = 0
+good = 0
+bad = 1
 result = 2
 color = 'nothing'
 fileName = subject + '_' + session  + '_' + 'hit_practice_' + mon + '_' + day + '_' + year + '.csv'
@@ -184,12 +184,9 @@ def compare(result, taskNumber):
     
     if result == 0:
         taskNumber == 0
-        count_bad = count_bad + 1
-    elif result == 1:
-        taskNumber == 1
-        count_good = count_good + 1
     else:
-        taskNumber = taskNumber + 1
+        result == 1
+        taskNumber == 1
         
     return taskNumber
 
@@ -239,7 +236,7 @@ def main(robotIP, PORT=9559):
             
             dst, play_note = createMisc(robotIP, username, pw)
             print('creat music done')
-            tts.say("Here is what I will play now, listen carefully!")
+            tts.say("Here is what I want you to play now, listen carefully!")
             recordplay.playBack(robotIP, PORT, dst)
             time.sleep(3)
             print('playback ok')
@@ -258,6 +255,10 @@ def main(robotIP, PORT=9559):
             else:
                 color == 'pink'
             
+            tts.say("Now, so I just played")
+            tts.say(color)
+            tts.say("It is your turn to play now!")
+            
             try:
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
@@ -269,7 +270,6 @@ def main(robotIP, PORT=9559):
 #        hit practice
         elif taskNumber == 2:
         
-
             origin = '/home/nao/uplay.wav'
             dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
             result = hit(robotIP, PORT, username, pw, origin, dst, ledProxy, tts)

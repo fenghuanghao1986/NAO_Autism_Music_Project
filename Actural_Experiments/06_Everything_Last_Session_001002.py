@@ -31,8 +31,8 @@ print "Enter session number:\n"
 session = raw_input()
 print "Enter kid's name:\n"
 kid_name = raw_input()
-print "Enter kid requied song name:\n"
-song = raw_input()
+#print "Enter kid requied song name:\n"
+#song = raw_input()
 
 now = datetime.datetime.now()
 day = str(now.day)
@@ -58,7 +58,7 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
 
@@ -92,7 +92,8 @@ def main(robotIP, PORT=9559):
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello, my friend!")
+            tts.say("Hello!")
+            tts.say(kid_name)
             time.sleep(0.5)
             tts.say("Welcome to NAO music party!")
             time.sleep(1.0)
@@ -102,7 +103,7 @@ def main(robotIP, PORT=9559):
             time.sleep(0.5)   
 # =============================================================================
 #           Play custom song
-            dt = 0.53
+            dt = 0.6
             keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
@@ -252,7 +253,7 @@ def main(robotIP, PORT=9559):
             duration = 0.5
             dt1 = 1
             tts.say("Here comes the ultimate challenge!")
-            tts.say("This is the first half of the song! \
+            tts.say("This is the first part of the song! \
                     Listen and watch carefully.")
             tts.say("I will use slower speed to play.")
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -285,7 +286,7 @@ def main(robotIP, PORT=9559):
             duration = 0.5
 
             tts.say("Here comes the ultimate challenge! \
-                    This is second half of the song\
+                    This is second part of the song\
                     Listen and watch carefully.")
             tts.say("I will use slower speed to play.")
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -313,7 +314,7 @@ def main(robotIP, PORT=9559):
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
                     0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
-            dt=0.53
+            dt=0.6
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -428,9 +429,10 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 15:
             
 
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
+                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
             
             dt = 0.53
 

@@ -183,7 +183,7 @@ def main(robotIP, PORT=9559):
         
         help_count = 100
         
-        if count < 11:
+        if count < 7:
             
             dst, play_note = createMisc(robotIP, username, pw)
             print('creat music done!')
@@ -243,6 +243,8 @@ def main(robotIP, PORT=9559):
             realPeaks = stft.realPeak(peaks)
             print("audio analysis done! here is the note detected: ")
             print(realPeaks)
+            if len(realPeaks) == 0:
+                realPeaks.append('0')
 #            keys = convertKeys(realPeaks) 
             result = stft.LevDist2(realPeaks[0], play_note)
             print("difference calculated done! Here is the result: ")

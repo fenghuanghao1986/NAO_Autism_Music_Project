@@ -1,0 +1,5 @@
+number of practice,ground_truth,kid_input,result,number ask for help
+2,['2'],['2'],0,100
+3,['5'],['5'],0,100
+4,['1'],['0'],1,0
+5,['8'],['8'],0,100

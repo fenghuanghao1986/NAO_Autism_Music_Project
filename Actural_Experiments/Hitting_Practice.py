@@ -52,17 +52,13 @@ task = 0
 username = "nao"
 pw = "nao"
 
-good = 0
-bad = 1
-result = 2
-color = 'nothing'
 fileName = subject + '_' + session  + '_' + 'hit_practice_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',',
                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        filewriter.writerow(['task', 'ground_truth', 'kid_input', 'result'])
+        filewriter.writerow(['number of practice', 'ground_truth', 'kid_input', 'result', 'number ask for help'])
 except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
     
@@ -105,38 +101,15 @@ def createMisc(robotIP, username, pw):
     return dst, play_note
     
 # =============================================================================
-def hit(robotIP, PORT, username, pw, origin, local, ledProxy, tts, play_note):
-
-    tts.say("After you see my eyes flash, you may start to play!")
-    tts.say("Try to make it sounds like what you just heard.")
-    ledProxy.randomEyes(1.0)
-    tts.say("Now, you may start!")
-    recordplay.record(robotIP, PORT, t=3)
-#        recordplay.playBack(robotIP, PORT)
-    sshFile = ssh.SSHConnection (robotIP, username, pw)
-    sshFile.get(origin, local)
-    sshFile.close()
-       
-    sampleRate, data = wav.read(local)
-#        N = len(data)
-    Nwin = 2048
-    xx = data[:, 0]
-            
-    low = 1040
-    high = 2800
-    x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
-
-    s = np.abs(stft.stft(x, Nwin))
+def sampleHit(motionProxy, postureProxy, ledProxy, tts, play_note):
     
-    peaks = stft.findNotes(s, sampleRate/2)
-    realPeaks = stft.realPeak(peaks)
-    print(realPeaks)
-    orgKeys = realPeaks
-    keys = convertKeys(orgKeys)
-   
-    diff = stft.LevDist2(keys, play_note)
-    print(diff)
-    return diff
+    Positions.userInitPosture(motionProxy, postureProxy)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    dt = 1.0
+    Positions.playXyloOne(motionProxy, play_note, dt)
+    Positions.userReadyToPlay(motionProxy, postureProxy)
+    Positions.userInitPosture(motionProxy, postureProxy)
+    motionProxy.rest()
 
 def convertKeys(keys):
     trueKeys = []
@@ -179,17 +152,6 @@ def convertKeys(keys):
             continue
             
     return trueKeys
-
-def compare(result, taskNumber):
-    
-    if result == 0:
-        taskNumber == 0
-    else:
-        result == 1
-        taskNumber == 1
-        
-    return taskNumber
-
     
 def main(robotIP, PORT=9559):
     
@@ -206,40 +168,28 @@ def main(robotIP, PORT=9559):
     tts.say("Before we start our practice, I would like to help you with a 10 minutes warm up!")
     tts.say("In this warm up section, I will ask you to play some notes.")
     tts.say("And I want you to follow my instruction carefully.")
-    tts.say("You will play notes after my eye flashs!")
+    tts.say("You will play a single note after my eye flashs!")
     tts.say("Let's begin!")
     
+    count = 1
+    result = 0   
+    color = 'nothing'
 # =============================================================================      
 # =============================================================================
 #   creating for loop to control the task including repeat task and take break
     while(True):
         
-        taskNumber = 100
-        if pythonSpeechModule.targetWord == '<...> help <...>':
-            taskNumber == 0
-        else:
-            taskNumber = int(raw_input("select task:\n\
-                                       0: help\n\
-                                       1: keep practice\n\
-                                       2: free play\n\
-                                       3: exit 3\n\
-                                       please make selection: "))
-        pythonSpeechModule.reset()
-# =============================================================================
-        if taskNumber == 0:
-#           Intro to entire session
-            tts.say("help content must be type here")
-# =============================================================================
-
-#        play one note in audio   
-        elif taskNumber == 1:
+        help_count = 100
+        
+        if count < 11:
             
             dst, play_note = createMisc(robotIP, username, pw)
-            print('creat music done')
+            print('creat music done!')
             tts.say("Here is what I want you to play now, listen carefully!")
             recordplay.playBack(robotIP, PORT, dst)
             time.sleep(3)
-            print('playback ok')
+            print('playback ok!')
+            
             if play_note[0] == '1' or play_note[0] == '8':
                 color == 'green'
             elif play_note[0] == '2' or play_note[0] == '9':
@@ -258,57 +208,101 @@ def main(robotIP, PORT=9559):
             tts.say("Now, so I just played")
             tts.say(color)
             tts.say("It is your turn to play now!")
-            
-            try:
-                with open(fileName, 'a') as csvfile:
-                    filewriter = csv.writer(csvfile, delimiter=',', 
-                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([taskNumber, '0', '0', '0'])
-            except csv.Error as e:
-                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
-# =============================================================================
-#        hit practice
-        elif taskNumber == 2:
+                
+            tts.say("After you see my eyes flash, you may start to play!")
+            tts.say("Try to make it sounds like what you just heard.")
+            tts.say("I will be except a clear and long last sound!")
         
+            ledProxy.randomEyes(1.0)
+            tts.say("Now, you may start!")
+            recordplay.record(robotIP, PORT, t=3)
+            print("record done!")
+            
             origin = '/home/nao/uplay.wav'
             dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
-            result = hit(robotIP, PORT, username, pw, origin, dst, ledProxy, tts)
             
-            taskNumber = compare(result, taskNumber)
-            
-            tts.say("I think I got it!")
-            tts.say("Now it is my turn to play!")
-            Positions.userInitPosture(motionProxy, postureProxy)
-            Positions.userReadyToPlay(motionProxy, postureProxy)
-            dt = 1.0
-            Positions.playXyloOne(motionProxy, play_note, dt)
-            Positions.userReadyToPlay(motionProxy, postureProxy)
-            Positions.userInitPosture(motionProxy, postureProxy)
-            motionProxy.rest()
-            tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
-            ledProxy.randomEyes(2.0)
-            time.sleep(3)
-            tts.say("Thanks for playing this game, which game do you want to play next?")
-            tts.say("You may also say exit to quit play with me!")
-            
-            pythonSpeechModule.onLoad()
-            pythonSpeechModule.onInput_onStart()
-            time.sleep(5)
-            pythonSpeechModule.onUnload()
-            try:
-                with open(fileName, 'a') as csvfile:
-                    filewriter = csv.writer(csvfile, delimiter=',', 
-                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([taskNumber, '0', '0', '0'])
-            except csv.Error as e:
-                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
-
-# =============================================================================
-        elif taskNumber == 3:
-            break
+            sshFile = ssh.SSHConnection (robotIP, username, pw)
+            sshFile.get(origin, dst)
+            sshFile.close()
+            print("file download complete!")
+               
+            sampleRate, data = wav.read(dst)
+        #        N = len(data)
+            Nwin = 2048
+            xx = data[:, 0]
+                    
+            low = 1040
+            high = 2800
+            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
         
+            s = np.abs(stft.stft(x, Nwin))
+            
+            peaks = stft.findNotes(s, sampleRate/2)
+            realPeaks = stft.realPeak(peaks)
+            print("audio analysis done! here is the note detected: ")
+            print(realPeaks)
+            orgKeys = realPeaks
+            keys = convertKeys(orgKeys) 
+            result = stft.LevDist2(keys, play_note)
+            print("difference calculated done! Here is the result: ")
+            print(result)             
+    
+            if result == 0:
+                # call help function
+                count += 1      # test see if count will change in here
+                
+                tts.say("Looks like you didn't hit it very well.")
+                tts.say("I couldn't recognize it.")
+                tts.say("I am very sensitive to sound.")
+                tts.say("So it would be good for you to play it nicely. Thank you!")
+                tts.say("Let me tell you some hint for getting a perfect!")
+#                tts.say("I need more description here!!!!!!!!!!!!")
+                time.sleep(1.0)
+                tts.say("Do you want me to show you a perfect hit?")
+                tts.say("Or we can move on to the next one.")
+                tts.say("You can say yes or no after the beep.")
+                
+                pythonSpeechModule.onLoad()
+                pythonSpeechModule.onInput_onStart()
+                time.sleep(5)
+                pythonSpeechModule.onUnload()
+                
+                if pythonSpeechModule.targetWord == '<...> yes <...>':
+                    tts.say("OK, now let me show you how to hit properly!")
+                    tts.say("Listen and watch carefully!")
+                    sampleHit(motionProxy, postureProxy, ledProxy, tts, play_note=['6'])
+                    tts.say("Did you get it? Let's try another one. Follow my instructions.")
+                    help_count = 1
+                elif pythonSpeechModule.targetWord == '<...> no <...>':
+                    tts.say("OK, we can play the next note.")
+                    help_count = 0              
+                else:
+                    tts.say("I didn't get that, let's just move on to the next note.")
+                    
+                pythonSpeechModule.reset()
+                
+                try:
+                    with open(fileName, 'a') as csvfile:
+                        filewriter = csv.writer(csvfile, delimiter=',', 
+                                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                except csv.Error as e:
+                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
+                
+            else:
+                # continue the loop and run next note
+                count += 1
+                
+                try:
+                    with open(fileName, 'a') as csvfile:
+                        filewriter = csv.writer(csvfile, delimiter=',', 
+                                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                except csv.Error as e:
+                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
+                    
         else:
-            continue
+            break
         
 # =============================================================================
 # Calling the main

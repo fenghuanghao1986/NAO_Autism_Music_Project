@@ -101,8 +101,8 @@ def main(robotIP, PORT=9559):
             tts.say("Let me show you how to play!")
             time.sleep(0.5)   
 # =============================================================================
-#           Play twinkle twinkle
-            dt = 0.8
+#           Play custom song
+            dt = 0.53
             keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
@@ -313,7 +313,7 @@ def main(robotIP, PORT=9559):
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
                     0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
                     0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
-            dt=0.6
+            dt=0.53
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -348,16 +348,7 @@ def main(robotIP, PORT=9559):
             tts.say("Do you want to take a break?")
             tts.say(" If yes, You will have 180 seconds \
                     for a short break!")
-#            tts.say("Starting now!")
-#            ledProxy.randomEyes(3.0)
-#            time.sleep(57)
-#            tts.say("You have 120 seconds left.")
-#            ledProxy.randomEyes(3.0)
-#            time.sleep(57)
-#            tts.say("You have one minunt left.")
-#            ledProxy.randomEyes(3.0)
-#            time.sleep(57)
-#            tts.say("Shall we start the next task?")  
+
             try:
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
@@ -473,7 +464,7 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 18:
             
             keys = [0, 0, 1, 1, 3, 3, 5, 5]
-            dt1 = 0.6
+            dt1 = 0.8
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.playXyloOne(motionProxy, keys, dt1)

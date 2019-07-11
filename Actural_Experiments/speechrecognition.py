@@ -75,7 +75,7 @@ class SpeechRecoModule(ALModule):
         if(len(value) > 1 and value[1] >= 0.5):
             self.targetWord = value[0]
             print value[0]
-            print len(value[0])
+#            print len(value[0])
             print ('recognized the word : %s' % value[0])
         else:
             print 'unsifficient threshold'

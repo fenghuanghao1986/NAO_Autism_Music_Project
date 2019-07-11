@@ -66,8 +66,10 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['3','4','7','8','10','11']
-    comfList = ['1','2','4','5','6','8','9']
+    uncfList = ['1','2','3','4','5','6','7','8','9','10','11']
+    comfList = ['1','2','3','4','5','6','7','8','9','10','11']
+#    uncfList = ['8','8','8','8']
+#    comfList = ['7','7','7']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
     n = 1
@@ -163,7 +165,7 @@ def main(robotIP, PORT=9559):
 
     motionProxy.rest()
     
-    tts.say("Hello", kid_name) # figure out how to say name in tts
+    tts.say("Hello") # figure out how to say name in tts
     tts.say(kid_name)
     tts.say("Before we start our practice, I would like to help you with a 10 minutes warm up!")
     tts.say("In this warm up section, I will ask you to play some notes.")
@@ -191,19 +193,19 @@ def main(robotIP, PORT=9559):
             print('playback ok!')
             
             if play_note[0] == '1' or play_note[0] == '8':
-                color == 'green'
+                color = 'green'
             elif play_note[0] == '2' or play_note[0] == '9':
-                color == 'brown'
+                color = 'brown'
             elif play_note[0] == '3' or play_note[0] == '10':
-                color == 'red'
+                color = 'red'
             elif play_note[0] == '4' or play_note[0] == '11':
-                color == 'yellow'
+                color = 'yellow'
             elif play_note[0] == '5':
-                color == 'gray'
+                color = 'gray'
             elif play_note[0] == '6':
-                color == 'blue'
+                color = 'blue'
             else:
-                color == 'pink'
+                color = 'pink'
             
             tts.say("Now, so I just played")
             tts.say(color)
@@ -211,7 +213,7 @@ def main(robotIP, PORT=9559):
                 
             tts.say("After you see my eyes flash, you may start to play!")
             tts.say("Try to make it sounds like what you just heard.")
-            tts.say("I will be except a clear and long last sound!")
+            tts.say("I am waiting a clear and long lasting sound!")
         
             ledProxy.randomEyes(1.0)
             tts.say("Now, you may start!")
@@ -241,13 +243,12 @@ def main(robotIP, PORT=9559):
             realPeaks = stft.realPeak(peaks)
             print("audio analysis done! here is the note detected: ")
             print(realPeaks)
-            orgKeys = realPeaks
-            keys = convertKeys(orgKeys) 
-            result = stft.LevDist2(keys, play_note)
+#            keys = convertKeys(realPeaks) 
+            result = stft.LevDist2(realPeaks[0], play_note)
             print("difference calculated done! Here is the result: ")
             print(result)             
     
-            if result == 0:
+            if result > 0:
                 # call help function
                 count += 1      # test see if count will change in here
                 
@@ -255,10 +256,10 @@ def main(robotIP, PORT=9559):
                 tts.say("I couldn't recognize it.")
                 tts.say("I am very sensitive to sound.")
                 tts.say("So it would be good for you to play it nicely. Thank you!")
-                tts.say("Let me tell you some hint for getting a perfect!")
+                tts.say("Let me tell you a key to achieve a perfect strike!")
 #                tts.say("I need more description here!!!!!!!!!!!!")
                 time.sleep(1.0)
-                tts.say("Do you want me to show you a perfect hit?")
+                tts.say("Do you want me to show you a good strike?")
                 tts.say("Or we can move on to the next one.")
                 tts.say("You can say yes or no after the beep.")
                 
@@ -270,7 +271,9 @@ def main(robotIP, PORT=9559):
                 if pythonSpeechModule.targetWord == '<...> yes <...>':
                     tts.say("OK, now let me show you how to hit properly!")
                     tts.say("Listen and watch carefully!")
-                    sampleHit(motionProxy, postureProxy, ledProxy, tts, play_note=['6'])
+                    keys = convertKeys(play_note) 
+                    print(keys)
+                    sampleHit(motionProxy, postureProxy, ledProxy, tts, keys)
                     tts.say("Did you get it? Let's try another one. Follow my instructions.")
                     help_count = 1
                 elif pythonSpeechModule.targetWord == '<...> no <...>':
@@ -292,7 +295,7 @@ def main(robotIP, PORT=9559):
             else:
                 # continue the loop and run next note
                 count += 1
-                
+                tts.say("Well done! Let's try another one!")
                 try:
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
@@ -302,6 +305,7 @@ def main(robotIP, PORT=9559):
                     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
                     
         else:
+            tts.say("Congratulations! You just completed the warm up practice!")
             break
         
 # =============================================================================

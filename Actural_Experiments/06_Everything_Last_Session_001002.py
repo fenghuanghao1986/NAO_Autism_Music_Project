@@ -102,10 +102,11 @@ def main(robotIP, PORT=9559):
             time.sleep(0.5)   
 # =============================================================================
 #           Play twinkle twinkle
-            dt = 0.6
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            dt = 0.8
+            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
+                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -117,7 +118,7 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is the the most popular Twinkle Twinkle Little Star!")
+            tts.say("Yes, it is you are my sunshine!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
@@ -137,11 +138,11 @@ def main(robotIP, PORT=9559):
 #       task 1: Start single note play without color
         elif taskNumber == 1:
             
-            keys = [0,0,1]
-            dt = 0.6
+            keys = [0,0,8]
+            dt = 0.8
             name = 'FaceLeds'
             colorName1 = 'green'
-            duration = 0.5
+            duration = 0.3
             tts.say("Welcome to the strike challenge!")
 
             ledProxy.fadeRGB(name, colorName1, duration)
@@ -167,7 +168,7 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 2: 
             
             keys = [0,0,6]
-            dt = 0.6
+            dt = 0.8
 
             name = 'FaceLeds'
             colorName2 = 'blue'
@@ -210,13 +211,13 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         elif taskNumber == 3:
                 
-            keys = [0,0,1,5,6]
+            keys = [0,0,5,1,2,3,0,3]
             dt1 = 1
             name = 'FaceLeds'
 #            colorNames = ['red', 'green', 'blue']
             duration = 0.5
             
-            tts.say("Welcome to the triple blend challenge!")
+            tts.say("Welcome to the mix and match challenge!")
             ledProxy.randomEyes(2.0)
         
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -226,9 +227,9 @@ def main(robotIP, PORT=9559):
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
             motionProxy.rest()
-            tts.say("I just played three notes, can you repeat them for me? \
+            tts.say("I just played few notes, can you repeat them for me? \
                     make sure you followed by the proper color order\
-                    for example green, gray, blue.")
+                    for example gray, green, brown, red, red.")
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
             try:
@@ -244,7 +245,7 @@ def main(robotIP, PORT=9559):
 #       first half song
         elif taskNumber == 4:
             
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1]
+            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0]
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -276,7 +277,7 @@ def main(robotIP, PORT=9559):
 #       second half song 
         elif taskNumber == 5:
             
-            keys = [0,0,5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0]
+            keys = [0,0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0]
             dt1 = 1
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
@@ -308,9 +309,10 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #       task 6: play the whole song
         elif taskNumber == 6:
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
+                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
+                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
             dt=0.6
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',

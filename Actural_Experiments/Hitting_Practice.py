@@ -173,7 +173,7 @@ def main(robotIP, PORT=9559):
     tts.say("You will play a single note after my eye flashs!")
     tts.say("Let's begin!")
     
-    count = 1
+    count = 0
     result = 0   
     color = 'nothing'
 # =============================================================================      
@@ -183,7 +183,7 @@ def main(robotIP, PORT=9559):
         
         help_count = 100
         
-        if count < 7:
+        if count < 10:
             
             dst, play_note = createMisc(robotIP, username, pw)
             print('creat music done!')
@@ -258,8 +258,6 @@ def main(robotIP, PORT=9559):
                 tts.say("I couldn't recognize it.")
                 tts.say("I am very sensitive to sound.")
                 tts.say("So it would be good for you to play it nicely. Thank you!")
-                tts.say("Let me tell you a key to achieve a perfect strike!")
-#                tts.say("I need more description here!!!!!!!!!!!!")
                 time.sleep(1.0)
                 tts.say("Do you want me to show you a good strike?")
                 tts.say("Or we can move on to the next one.")
@@ -271,16 +269,24 @@ def main(robotIP, PORT=9559):
                 pythonSpeechModule.onUnload()
                 
                 if pythonSpeechModule.targetWord == '<...> yes <...>':
-                    tts.say("OK, now let me show you how to hit properly!")
+                    tts.say("Let me tell you a key to achieve a perfect strike!")
+                    tts.say("Before you hit, you may want to relax your wrist.")
+                    tts.say("And then, you strike the bar quickly do this move.")
+                    tts.say("Down and Up!")
+                    time.sleep(0.5)
+                    tts.say("I believe there will be a perfect sound after that strkie.")
+                    tts.say("OK, now let me show you how to hit the barproperly!")
                     tts.say("Listen and watch carefully!")
                     keys = convertKeys(play_note) 
                     print(keys)
                     sampleHit(motionProxy, postureProxy, ledProxy, tts, keys)
                     tts.say("Did you get it? Let's try another one. Follow my instructions.")
                     help_count = 1
+                    
                 elif pythonSpeechModule.targetWord == '<...> no <...>':
                     tts.say("OK, we can play the next note.")
-                    help_count = 0              
+                    help_count = 0     
+                    
                 else:
                     tts.say("I didn't get that, let's just move on to the next note.")
                     

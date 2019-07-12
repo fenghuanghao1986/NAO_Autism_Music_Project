@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -51,7 +51,32 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
             "Promise": [0,6,7,8,9,10,9,8,7,6,0,3,0,6,0,
                         7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6,
                         0,6,7,8,9,10,9,8,7,6,0,3,0,6,0,
-                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6]}
+                        7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6],
+                        
+            "Sunshine": [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
+                        0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
+                        0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
+                        0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0],
+                         
+            "BlueSky":  [0,0,5,0,5,0,5,0,5,0,5,0,10,6,0,0,
+                         0,0,10,5,0,10,0,6,0,0,10,0,9,0,8,
+                         0,0,6,0,1,0,9,0,10,0,0,6,8,9,0,0,
+                         7,0,9,0,7,10,0,0,10,0,9,0,10,8,0,
+                         1,0,2,3,0,0,2,0,3,2,3,0,0,0,4,3,2],
+            
+            "BabySharkv1":[0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,
+                           0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,
+                           0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,0,7],
+            
+            "BabySharkv2":[0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,
+                           0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,
+                           0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,0,3],
+            
+            "BabySharkv3":[0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,
+                           0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,
+                           0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,0,10]}
+
+song_names = ["Twinkle", "Promise", "Sunshine", "BlueSky", "BabySharkv1","BabySharkv2", "BabySharkv3"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -66,7 +91,7 @@ year = str(now.year)
 task = 0
 username = "nao"
 pw = "nao"
-fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
+fileName = subject + '_' + session  + '_game_' + year + '_' + mon + '_' + day + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
@@ -135,7 +160,7 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     tts.say("This is how I play, watch carefully!")
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
-    Positions.playXylo(motionProxy, keys, dt)
+    Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     tts.say("Now it is your time to play! You have 15 seconds to play.")
     Positions.userInitPosture(motionProxy, postureProxy)
@@ -288,7 +313,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #           Play demo
             dt = 0.4
-            keys = songBank["Promise"]
+            keys = songBank[random.choice(song_names)]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -335,7 +360,7 @@ def main(robotIP, PORT=9559):
         
 
             origin = '/home/nao/uplay.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Session1_6_7\uplay.wav'
+            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
             game2(robotIP, PORT, username, pw, origin, dst, motionProxy, postureProxy, ledProxy, tts)
             pythonSpeechModule.onLoad()
             pythonSpeechModule.onInput_onStart()
@@ -360,7 +385,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

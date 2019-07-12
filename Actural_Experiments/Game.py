@@ -54,29 +54,29 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         7,8,9,0,8,0,7,0,6,0,8,7,6,5,7,0,6],
                         
             "Sunshine": [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
-                        0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
-                        0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
-                        0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0],
+                         0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
+                         0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
+                         0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0],
                          
-            "BlueSky":  [0,0,5,0,5,0,5,0,5,0,5,0,10,6,0,0,
-                         0,0,10,5,0,10,0,6,0,0,10,0,9,0,8,
-                         0,0,6,0,1,0,9,0,10,0,0,6,8,9,0,0,
-                         7,0,9,0,7,10,0,0,10,0,9,0,10,8,0,
-                         1,0,2,3,0,0,2,0,3,2,3,0,0,0,4,3,2],
+#            "BlueSky":  [0,0,5,5,5,5,5,10,6,
+#                         10,5,10,6,10,9,8,
+#                         6,1,9,10,6,8,9,
+#                         7,9,7,10,10,9,10,8,
+#                         1,2,3,2,3,2,3,4,3,2],
             
-            "BabySharkv1":[0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,
-                           0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,
-                           0,0,5,0,6,0,8,0,8,0,8,0,8,8,8,8,8,0,8,0,8,0,7],
+            "BabySharkv1":[0,5,6,8,8,8,8,8,8,
+                           0,5,6,8,8,8,8,8,8,
+                           0,5,6,8,8,8,8,8,8,7],
             
-            "BabySharkv2":[0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,
-                           0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,
-                           0,0,1,0,2,0,4,0,4,0,4,0,4,4,4,4,4,0,4,0,4,0,3],
+            "BabySharkv2":[0,1,2,4,4,4,4,4,4,
+                           0,1,2,4,4,4,4,4,4,
+                           0,1,2,4,4,4,4,4,4,3],
             
-            "BabySharkv3":[0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,
-                           0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,
-                           0,0,8,0,9,0,11,0,11,0,11,0,11,11,11,11,11,0,11,0,11,0,10]}
+            "BabySharkv3":[0,8,9,11,11,11,11,11,11,
+                           0,8,9,11,11,11,11,11,11,
+                           0,8,9,11,11,11,11,11,11,10]}
 
-song_names = ["Twinkle", "Promise", "Sunshine", "BlueSky", "BabySharkv1","BabySharkv2", "BabySharkv3"]
+song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1","BabySharkv2", "BabySharkv3"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -269,9 +269,10 @@ def main(robotIP, PORT=9559):
     Positions.userInitPosture(motionProxy, postureProxy)
 
     motionProxy.rest()
-    tts.say("Hello my friend!")
+    tts.say("Hello!")
+    tts.say(kid_name)
     time.sleep(0.5)
-    tts.say("Welcome to music game party!")
+    tts.say("Welcome to NAO music game party!")
     time.sleep(1.0)
     tts.say("Let's have some fun here!")
     ledProxy.randomEyes(1.0)
@@ -312,12 +313,13 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
 #           Play demo
-            dt = 0.4
+            dt = 0.43
             keys = songBank[random.choice(song_names)]
+#            keys = songBank["BabySharkv1"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)
@@ -376,6 +378,7 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
         elif taskNumber == 3:
+            tts.say("Thanks for playing game with me!")
             break
         
         else:

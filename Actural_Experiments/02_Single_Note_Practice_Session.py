@@ -163,14 +163,19 @@ def main(robotIP, PORT=9559):
     
     tts.say("Hello") # figure out how to say name in tts
     tts.say(kid_name)
-    tts.say("Before we start our practice, I would like to help you with a 10 minutes warm up!")
-    tts.say("In this warm up section, I will ask you to play some notes.")
-    tts.say("And I want you to follow my instruction carefully.")
-    tts.say("You will play a single note after my eye flashs!")
+    tts.say("Welcome to the single color challenge!")
+    tts.say("In this challenge, I will ask you to play some single notes along with color.")
+    tts.say("And I want you to follow my instruction carefully. And try to find the correct color!")
+    tts.say("You will play a single note after my eye flashs, every time!")
+    tts.say("And I will tell you how well you play!")
+    time.sleep(1.0)
     tts.say("Let's begin!")
     
-    count = 0
-    result = 0   
+    count = 0.0
+    good = 0.0
+    total = 10.0
+    result = 0 
+    accuracy = 0.0
     color = 'nothing'
 # =============================================================================      
 # =============================================================================
@@ -178,140 +183,161 @@ def main(robotIP, PORT=9559):
     while(True):
         
         help_count = 100
+            
+        dst, play_note = createMisc(robotIP, username, pw)
+        print('creat music done!')
+        tts.say("Here is what I want you to play now, listen carefully!")
+        recordplay.playBack(robotIP, PORT, dst)
+        time.sleep(3)
+        print('playback ok!')
+        
+        if play_note[0] == '1' or play_note[0] == '8':
+            color = 'green'
+            ledProxy.fadeRGB('FaceLeds', color, 1)
+        elif play_note[0] == '2' or play_note[0] == '9':
+            color = 'brown'
+            ledProxy.fadeRGB('FaceLeds', 0X008B4513, 1)
+        elif play_note[0] == '3' or play_note[0] == '10':
+            color = 'red'
+            ledProxy.fadeRGB('FaceLeds', color, 1)
+        elif play_note[0] == '4' or play_note[0] == '11':
+            color = 'yellow'
+            ledProxy.fadeRGB('FaceLeds', color, 1)
+        elif play_note[0] == '5':
+            color = 'gray'
+            ledProxy.fadeRGB('FaceLeds', 0X00DCDCDC, 1)
+        elif play_note[0] == '6':
+            color = 'blue'
+            ledProxy.fadeRGB('FaceLeds', color, 1)
+        else:
+            color = 'pink'
+            ledProxy.fadeRGB('FaceLeds', 'magenta', 1)
+            
+        tts.say("Now, so I just played")
+        tts.say(color)
+        tts.say("Look at my eyes, are they showing ")
+        tts.say(color)
+        tts.say("Now, I want you to find the color and play it!")
+        tts.say("Try to hit the bar with the same color as my eyes just showed.")
+        time.sleep(1.0)
+        tts.say("After you see my eyes flash, you may start to play!")
+    
+        ledProxy.randomEyes(1.0)
+        tts.say("Now, you may start!")
+        recordplay.record(robotIP, PORT, t=3)
+        print("record done!")
+        
+        origin = '/home/nao/uplay.wav'
+        dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
+        
+        sshFile = ssh.SSHConnection (robotIP, username, pw)
+        sshFile.get(origin, dst)
+        sshFile.close()
+        print("file download complete!")
+        
+        sampleRate, data = wav.read(dst)
+        #       N = len(data)
+        Nwin = 2048
+        xx = data[:, 0]
+        
+        low = 1040
+        high = 2800
+        x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
+    
+        s = np.abs(stft.stft(x, Nwin))
+        
+        peaks = stft.findNotes(s, sampleRate/2)
+        realPeaks = stft.realPeak(peaks)
+        print("audio analysis done! here is the note detected: ")
+        print(realPeaks)
+        if len(realPeaks) == 0:
+            realPeaks.append('0')
+#           keys = convertKeys(realPeaks) 
+        print("This is the note use for compare: ")
+        print(realPeaks[0])
+        
+        result = stft.LevDist2(realPeaks[0], play_note)
+        print("difference calculated done! Here is the result: ")
+        print(result)             
+    
+        if result > 0:
+                # call help function
+            count += 1     
+                
+            tts.say("Good Job, I believe you find the correct color!")
+            tts.say("However, it looks like you didn't hit it very well.")
+            tts.say("I couldn't recognize the note by listen to it.")
+            tts.say("I am very sensitive to sound.")
+            tts.say("So it would be good for you to play it nicely. Thank you!")
+            time.sleep(1.0)
+            tts.say("Do you want me to show you a good strike?")
+            tts.say("Or we can move on to the next one.")
+            tts.say("You can say yes or no after the beep.")
+            
+            pythonSpeechModule.onLoad()
+            pythonSpeechModule.onInput_onStart()
+            time.sleep(5)
+            pythonSpeechModule.onUnload()
+            
+            if pythonSpeechModule.targetWord == '<...> yes <...>':
+                tts.say("OK, here is the correct color I want you to play!")
+                tts.say("Listen and watch carefully!")
+                keys = convertKeys(play_note) 
+                print(keys)
+                sampleHit(motionProxy, postureProxy, ledProxy, tts, keys)
+                tts.say("Did you get it? Let's try another one. Follow my instructions.")
+                help_count = 1
+            elif pythonSpeechModule.targetWord == '<...> no <...>':
+                tts.say("OK, we can try the next color.")
+                help_count = 0              
+            else:
+                tts.say("I didn't get that, let's just move on to the next note.")
+                
+            pythonSpeechModule.reset()
+                
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
+                
+        else:
+                # continue the loop and run next note
+            count += 1
+            good += 1
+            tts.say("Well done! You find the correct color and played very well!")
+            tts.say("Keep this feeling! Let's try another one!")
+            try:
+                with open(fileName, 'a') as csvfile:
+                    filewriter = csv.writer(csvfile, delimiter=',', 
+                                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+            except csv.Error as e:
+                sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
+        print("conut value: ")
+        print(count)
+        
+        accuracy = good / count
+        print("accuracy value: ")
+        print(accuracy)
         
         if count < 10:
-            
-            dst, play_note = createMisc(robotIP, username, pw)
-            print('creat music done!')
-            tts.say("Here is what I want you to play now, listen carefully!")
-            recordplay.playBack(robotIP, PORT, dst)
-            time.sleep(3)
-            print('playback ok!')
-            
-            tts.say("Now, so I just played")
-            tts.say(color)
-            tts.say("It is your turn to play now!")
-                
-            tts.say("After you see my eyes flash, you may start to play!")
-            tts.say("Try to hit the bar with the same color as my eyes showing right now.")
-            
-            if play_note[0] == '1' or play_note[0] == '8':
-                color = 'green'
-                ledProxy.fadeRGB('FaceLeds', color, 1)
-            elif play_note[0] == '2' or play_note[0] == '9':
-                color = 'brown'
-                ledProxy.fadeRGB('FaceLeds', 0X008B4513, 1)
-            elif play_note[0] == '3' or play_note[0] == '10':
-                color = 'red'
-                ledProxy.fadeRGB('FaceLeds', color, 1)
-            elif play_note[0] == '4' or play_note[0] == '11':
-                color = 'yellow'
-                ledProxy.fadeRGB('FaceLeds', color, 1)
-            elif play_note[0] == '5':
-                color = 'gray'
-                ledProxy.fadeRGB('FaceLeds', 0X00DCDCDC, 1)
-            elif play_note[0] == '6':
-                color = 'blue'
-                ledProxy.fadeRGB('FaceLeds', color, 1)
-            else:
-                color = 'pink'
-                ledProxy.fadeRGB('FaceLeds', 'magenta', 1)
-        
-            ledProxy.randomEyes(1.0)
-            tts.say("Now, you may start!")
-            recordplay.record(robotIP, PORT, t=3)
-            print("record done!")
-            
-            origin = '/home/nao/uplay.wav'
-            dst = r'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\Actural_Experiments\uplay.wav'
-            
-            sshFile = ssh.SSHConnection (robotIP, username, pw)
-            sshFile.get(origin, dst)
-            sshFile.close()
-            print("file download complete!")
-               
-            sampleRate, data = wav.read(dst)
-        #        N = len(data)
-            Nwin = 2048
-            xx = data[:, 0]
-                    
-            low = 1040
-            high = 2800
-            x = stft.bandpass_filter(xx, low, high, sampleRate, order=3)
-        
-            s = np.abs(stft.stft(x, Nwin))
-            
-            peaks = stft.findNotes(s, sampleRate/2)
-            realPeaks = stft.realPeak(peaks)
-            print("audio analysis done! here is the note detected: ")
-            print(realPeaks)
-            if len(realPeaks) == 0:
-                realPeaks.append('0')
-#            keys = convertKeys(realPeaks) 
-            result = stft.LevDist2(realPeaks[0], play_note)
-            print("difference calculated done! Here is the result: ")
-            print(result)             
-    
-            if result > 0:
-                # call help function
-                count += 1     
-                
-                tts.say("Good Job, you find the correct color!")
-                tts.say("However, it looks like you didn't hit it very well.")
-                tts.say("I couldn't recognize the note by listen to it.")
-                tts.say("I am very sensitive to sound.")
-                tts.say("So it would be good for you to play it nicely. Thank you!")
-                tts.say("Let me tell you a key to achieve a perfect strike!")
-                time.sleep(1.0)
-                tts.say("Do you want me to show you a good strike?")
-                tts.say("Or we can move on to the next one.")
-                tts.say("You can say yes or no after the beep.")
-                
-                pythonSpeechModule.onLoad()
-                pythonSpeechModule.onInput_onStart()
-                time.sleep(5)
-                pythonSpeechModule.onUnload()
-                
-                if pythonSpeechModule.targetWord == '<...> yes <...>':
-                    tts.say("OK, here is the correct color I want you to play!")
-                    tts.say("Listen and watch carefully!")
-                    keys = convertKeys(play_note) 
-                    print(keys)
-                    sampleHit(motionProxy, postureProxy, ledProxy, tts, keys)
-                    tts.say("Did you get it? Let's try another one. Follow my instructions.")
-                    help_count = 1
-                elif pythonSpeechModule.targetWord == '<...> no <...>':
-                    tts.say("OK, we can try the next color.")
-                    help_count = 0              
-                else:
-                    tts.say("I didn't get that, let's just move on to the next note.")
-                    
-                pythonSpeechModule.reset()
-                
-                try:
-                    with open(fileName, 'a') as csvfile:
-                        filewriter = csv.writer(csvfile, delimiter=',', 
-                                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
-                except csv.Error as e:
-                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
-                
-            else:
-                # continue the loop and run next note
-                count += 1
-                tts.say("Well done! You find the correct color and played very well!")
-                tts.say("Keep this feeling! Let's try another one!")
-                try:
-                    with open(fileName, 'a') as csvfile:
-                        filewriter = csv.writer(csvfile, delimiter=',', 
-                                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
-                except csv.Error as e:
-                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
-                    
+            continue
         else:
-            tts.say("Congratulations! You just completed color challenge!")
-            break
+            if total < 20 and count <= total and accuracy < 0.5:
+                total += 2
+                continue
+            elif total < 20 and count <= total and accuracy < 0.6:
+                total += 1
+                continue
+            elif total < 20 and count <= total and accuracy >= 0.7:
+                tts.say("Congratulations! You just completed single color challenge!")
+                break
+            else:
+                tts.say("Congratulations! You just completed single color challenge!")
+                break
         
 # =============================================================================
 # Calling the main

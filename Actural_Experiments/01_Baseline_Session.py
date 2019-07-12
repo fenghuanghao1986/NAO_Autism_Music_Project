@@ -139,7 +139,7 @@ def main(robotIP, PORT=9559):
             name = 'FaceLeds'
             colorName1 = 'green'
             duration = 0.5
-            tts.say("Welcome to the strike challenge!")
+            tts.say("Welcome to single strike challenge!")
 
             ledProxy.fadeRGB(name, colorName1, duration)
             Positions.userInitPosture(motionProxy, postureProxy)

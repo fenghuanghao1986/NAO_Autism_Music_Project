@@ -193,38 +193,37 @@ def main(robotIP, PORT=9559):
         
         if play_note[0] == '1' or play_note[0] == '8':
             color = 'green'
-            ledProxy.fadeRGB('FaceLeds', color, 1)
+            ledProxy.fadeRGB('FaceLeds', color, 3)
         elif play_note[0] == '2' or play_note[0] == '9':
             color = 'brown'
-            ledProxy.fadeRGB('FaceLeds', 0X008B4513, 1)
+            ledProxy.fadeRGB('FaceLeds', 0X008B4513, 3)
         elif play_note[0] == '3' or play_note[0] == '10':
             color = 'red'
-            ledProxy.fadeRGB('FaceLeds', color, 1)
+            ledProxy.fadeRGB('FaceLeds', color, 3)
         elif play_note[0] == '4' or play_note[0] == '11':
             color = 'yellow'
-            ledProxy.fadeRGB('FaceLeds', color, 1)
+            ledProxy.fadeRGB('FaceLeds', color, 3)
         elif play_note[0] == '5':
             color = 'gray'
-            ledProxy.fadeRGB('FaceLeds', 0X00DCDCDC, 1)
+            ledProxy.fadeRGB('FaceLeds', 0X00DCDCDC, 3)
         elif play_note[0] == '6':
             color = 'blue'
-            ledProxy.fadeRGB('FaceLeds', color, 1)
+            ledProxy.fadeRGB('FaceLeds', color, 3)
         else:
             color = 'pink'
-            ledProxy.fadeRGB('FaceLeds', 'magenta', 1)
+            ledProxy.fadeRGB('FaceLeds', 'magenta', 3)
             
         tts.say("Now, so I just played")
         tts.say(color)
-        tts.say("Look at my eyes, are they showing ")
+        tts.say("Look at my eyes, they are showing ")
         tts.say(color)
         tts.say("Now, I want you to find the color and play it!")
-        tts.say("Try to hit the bar with the same color as my eyes just showed.")
         time.sleep(1.0)
-        tts.say("After you see my eyes flash, you may start to play!")
     
         ledProxy.randomEyes(1.0)
-        tts.say("Now, you may start!")
-        recordplay.record(robotIP, PORT, t=3)
+        tts.say("Now, play ")
+        tts.say(color)
+        recordplay.record(robotIP, PORT, t=5)
         print("record done!")
         
         origin = '/home/nao/uplay.wav'
@@ -285,7 +284,7 @@ def main(robotIP, PORT=9559):
                 keys = convertKeys(play_note) 
                 print(keys)
                 sampleHit(motionProxy, postureProxy, ledProxy, tts, keys)
-                tts.say("Did you get it? Let's try another one. Follow my instructions.")
+                tts.say("Do you get it? Let's try another one. Follow my instructions.")
                 help_count = 1
             elif pythonSpeechModule.targetWord == '<...> no <...>':
                 tts.say("OK, we can try the next color.")
@@ -299,7 +298,7 @@ def main(robotIP, PORT=9559):
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                    filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
                 
@@ -313,7 +312,7 @@ def main(robotIP, PORT=9559):
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                    filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
         print("conut value: ")
@@ -323,16 +322,16 @@ def main(robotIP, PORT=9559):
         print("accuracy value: ")
         print(accuracy)
         
-        if count < 10:
+        if count < total:
             continue
         else:
-            if total < 20 and count <= total and accuracy < 0.5:
+            if total < 20 and accuracy < 0.5:
                 total += 2
                 continue
-            elif total < 20 and count <= total and accuracy < 0.6:
+            elif total < 20 and accuracy < 0.6:
                 total += 1
                 continue
-            elif total < 20 and count <= total and accuracy >= 0.7:
+            elif total < 20 and accuracy >= 0.7:
                 tts.say("Congratulations! You just completed single color challenge!")
                 break
             else:

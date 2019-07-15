@@ -274,8 +274,8 @@ def main(robotIP, PORT=9559):
                     tts.say("And then, you strike the bar quickly do this move.")
                     tts.say("Down and Up!")
                     time.sleep(0.5)
-                    tts.say("I believe there will be a perfect sound after that strkie.")
-                    tts.say("OK, now let me show you how to hit the barproperly!")
+                    tts.say("I believe there will be a perfect sound after that strike.")
+                    tts.say("OK, now let me show you how to hit the bar properly!")
                     tts.say("Listen and watch carefully!")
                     keys = convertKeys(play_note) 
                     print(keys)
@@ -296,7 +296,7 @@ def main(robotIP, PORT=9559):
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                        filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
                 except csv.Error as e:
                     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
                 
@@ -308,7 +308,7 @@ def main(robotIP, PORT=9559):
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                        filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
                 except csv.Error as e:
                     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
                     

@@ -62,8 +62,8 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['1','2','3','4','5','6','7','8','9','10','11']
-    comfList = ['1','2','3','4','5','6','7','8','9','10','11']
+    uncfList = ['1','2','3','4','5','6','7','8','9','a','b']
+    comfList = ['1','2','3','4','5','6','7','8','9','a','b']
 #    uncfList = ['8','8','8','8']
 #    comfList = ['7','7','7']
     mode = ['u', 'c']
@@ -142,7 +142,7 @@ def convertKeys(keys):
         elif keys[i] == '9':
             trueKeys.append(9)
             continue
-        elif keys[i] == '10':
+        elif keys[i] == 'a':
             trueKeys.append(10)
             continue
         else:
@@ -166,24 +166,24 @@ def createColor(play_note):
         elif play_note[i] == '2' or play_note[i] == '9':
             colorNameList.append('brown')
             colorList.append(0X008B4513)
-        elif play_note[i] == '3' or play_note[i] == '10':
+        elif play_note[i] == '3' or play_note[i] == 'a':
             colorNameList.append('red')
             colorList.append(0X00FF0000)
-        elif play_note[i] == '4' or play_note[i] == '11':
+        elif play_note[i] == '4' or play_note[i] == 'b':
             colorNameList.append('yellow')
             colorList.append(0X00FFFF00)
         elif play_note[i] == '5':
             colorNameList.append('gray')
-            colorList.apply(0X00808080)
+            colorList.append(0X00808080)
         elif play_note[i] == '6':
             colorNameList.append('blue')
-            colorList.apply(0X000000FF)
+            colorList.append(0X000000FF)
         else:
             colorNameList.append('pink')
-            colorList.app(0X00800080)
+            colorList.append(0X00800080)
         
     for j in range(len(play_note)):
-        timeList.append(2.0)
+        timeList.append(j + 0.5)
         
     return colorList, colorNameList, timeList
     
@@ -200,10 +200,13 @@ def main(robotIP, PORT=9559):
     tts.say("Hello") # figure out how to say name in tts
     tts.say(kid_name)
     tts.say("Welcome to the mix and match challenge!")
-    tts.say("In this challenge, I will ask you to play some single notes along with color.")
-    tts.say("And I want you to follow my instruction carefully. And try to find the correct color!")
-    tts.say("You will play a single note after my eye flashs, every time!")
-    tts.say("And I will tell you how well you play!")
+    tts.say("In this challenge, I will ask you to play two to three notes along with different colors.")
+    tts.say("And I want you to follow my instruction carefully. And try to find the correct colors!")
+    tts.say("You will play those notes after my eye flashs, every time!")
+    tts.say("And I will tell you how well you played!")
+    tts.say("And one more thing I may have to remind you, hopefully you have already noticed.")
+    tts.say("On this xylophone, the longer the bar, the lower the pitch. And keep this in mind.")
+    tts.say("You may use this in the following practice!")
     time.sleep(1.0)
     tts.say("Let's begin!")
     
@@ -222,27 +225,25 @@ def main(robotIP, PORT=9559):
             
         dst, play_note = createMisc(robotIP, username, pw)
         print('creat music done!')
-        tts.say("Here is what I want you to play now, listen carefully!")
+        tts.say("Here is what I want you to play now, listen and look at my eye color carefully!")
         recordplay.playBack(robotIP, PORT, dst)
+        colorList, colorNameList, timeList = createColor(play_note)
+        ledProxy.fadeListRGB('FaceLeds', colorList, timeList)
         time.sleep(3)
         print('playback ok!')
 
-        colorList, colorNameList, timeList = createColor(play_note)
-        ledProxy.fadeListRGB('FaceLeds', colorList, timeList)
-            
-        tts.say("Now, so I just played")
+        tts.say("So I just played")
         for color in colorNameList:
-            tts.say(color)    
-        tts.say("Now, I want you to find the color and play it!")
-        time.sleep(1.0)
-    
+            tts.say(color)  
+        
+        tts.say(kid_name)                
+        tts.say("Look at my eyes again and remember the colors")
+        for x in range(len(colorList)):
+            tts.say(colorNameList[x]) 
+            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.5)
+        tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         
-        tts.say("Now, play ")
-        for color in colorNameList:
-            tts.say(color)   
-            
-        ledProxy.fadeListRGB('FaceLeds', colorList, timeList)    
         recordplay.record(robotIP, PORT, t=5)
         
         print("record done!")
@@ -273,8 +274,7 @@ def main(robotIP, PORT=9559):
         if len(realPeaks) == 0:
             realPeaks.append('0')
 #           keys = convertKeys(realPeaks) 
-        print("This is the note use for compare: ")
-        print(realPeaks)
+
         
         result = stft.LevDist2(realPeaks, play_note)
         print("difference calculated done! Here is the result: ")
@@ -312,6 +312,7 @@ def main(robotIP, PORT=9559):
                 help_count = 0              
             else:
                 tts.say("I didn't get that, let's just move on to the next note.")
+                help_count = 2
                 
             pythonSpeechModule.reset()
                 
@@ -353,10 +354,10 @@ def main(robotIP, PORT=9559):
                 total += 1
                 continue
             elif total < 20 and accuracy >= 0.7:
-                tts.say("Congratulations! You just completed single color challenge!")
+                tts.say("Congratulations! You just completed mix and match challenge!")
                 break
             else:
-                tts.say("Congratulations! You just completed single color challenge!")
+                tts.say("Congratulations! You just completed mix and match challenge!")
                 break
         
 # =============================================================================

@@ -51,7 +51,7 @@ def realPeak(rawPeak):
     notes = {'1': 1038, '2': 1172, '3': 1316,
              '4': 1389, '5': 1561, '6': 1754,
              '7': 1975, '8': 2084, '9': 2343,
-             '10': 2626, '11': 2785}
+             'a': 2626, 'b': 2785}
     
     #peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
     #peaks = np.array(peaks)

@@ -59,10 +59,14 @@ void loop()
     selectMuxPin(pin); // Select one at a time
     int inputValue = analogRead(A0); // and read Z
     // may want to have a condition to contorl inputvalue, may have time involved that can only make sound card play one note
+//    if (inputValue > 100)
+//      Serial.print(inputValue);
+//      Serial.println();
+//      Serial.print(pin);
     Serial.print(String(inputValue) + "\t");
   }
   Serial.println();
-  delay(1);
+  delay(50);
 }
 
 // The selectMuxPin function sets the S0, S1, and S2 pins

@@ -68,8 +68,7 @@ def createMisc(robotIP, username, pw):
     newData = []
     uncfList = ['1','2','3','4','5','6','7','8','9','10','11']
     comfList = ['1','2','3','4','5','6','7','8','9','10','11']
-#    uncfList = ['8','8','8','8']
-#    comfList = ['7','7','7']
+
     mode = ['u', 'c']
     u_cList = random.choice(mode)
     n = 1
@@ -171,10 +170,14 @@ def main(robotIP, PORT=9559):
     tts.say("In this warm up section, I will ask you to play some notes.")
     tts.say("And I want you to follow my instruction carefully.")
     tts.say("You will play a single note after my eye flashs!")
+    tts.say("Try to make it sounds like what you just heard.")
+    tts.say("I am waiting a clear and long lasting sound!")
     tts.say("Let's begin!")
     
-    count = 0
-    result = 0   
+    count = 0.0
+    result = 0.0 
+    good = 1
+    bad = 0
     color = 'nothing'
 # =============================================================================      
 # =============================================================================
@@ -212,11 +215,10 @@ def main(robotIP, PORT=9559):
             tts.say("It is your turn to play now!")
                 
             tts.say("After you see my eyes flash, you may start to play!")
-            tts.say("Try to make it sounds like what you just heard.")
-            tts.say("I am waiting a clear and long lasting sound!")
         
             ledProxy.randomEyes(1.0)
-            tts.say("Now, you may start!")
+            tts.say("Now, play")
+            tts.say(color)
             recordplay.record(robotIP, PORT, t=3)
             print("record done!")
             
@@ -244,21 +246,17 @@ def main(robotIP, PORT=9559):
             print("audio analysis done! here is the note detected: ")
             print(realPeaks)
             if len(realPeaks) == 0:
-                realPeaks.append('0')
-#            keys = convertKeys(realPeaks) 
-            result = stft.LevDist2(realPeaks[0], play_note)
-            print("difference calculated done! Here is the result: ")
-            print(result)             
-    
-            if result > 0:
-                # call help function
-                count += 1      # test see if count will change in here
                 
-                tts.say("Looks like you didn't hit it very well.")
-                tts.say("I couldn't recognize it.")
-                tts.say("I am very sensitive to sound.")
-                tts.say("So it would be good for you to play it nicely. Thank you!")
-                time.sleep(1.0)
+                count += 1      # test see if count will change in here
+                result = bad
+                responseList = ["Looks like you didn't play it very well.",
+                                "Sorry, I couldn't recognize it.",
+                                "Sorry, I didn't get that one.",
+                                "I think you might missed it.",
+                                "That was not a perfect one, but it is OK."]
+                response = random.choice(responseList)
+                tts.say(response)
+
                 tts.say("Do you want me to show you a good strike?")
                 tts.say("Or we can move on to the next one.")
                 tts.say("You can say yes or no after the beep.")
@@ -288,8 +286,9 @@ def main(robotIP, PORT=9559):
                     help_count = 0     
                     
                 else:
-                    tts.say("I didn't get that, let's just move on to the next note.")
-                    
+                    tts.say("OK, let's just move on to the next note.")
+                    help_count = 2
+                
                 pythonSpeechModule.reset()
                 
                 try:
@@ -298,19 +297,26 @@ def main(robotIP, PORT=9559):
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
                 except csv.Error as e:
-                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
-                
+                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
+                               
             else:
-                # continue the loop and run next note
                 count += 1
-                tts.say("Well done! Let's try another one!")
+                result = good
+                responseList = ["Well done! You find the correct color and played very well!",
+                                "Awesome! Keep this feeling! Let's try another one!",
+                                "Great! Here comes the next one!",
+                                "You are doing great! Ready for the next one!",
+                                "Nice job! Let's focus on the next one!"]
+                response = random.choice(responseList)
+                tts.say(response)
+                
                 try:
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
                         filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
                 except csv.Error as e:
-                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
+                    sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
                     
         else:
             tts.say("Congratulations! You just completed the warm up practice!")

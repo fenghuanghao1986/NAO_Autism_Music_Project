@@ -204,6 +204,8 @@ def main(robotIP, PORT=9559):
     tts.say("And I want you to follow my instruction carefully. And try to find the correct colors!")
     tts.say("You will play those notes after my eye flashs, every time!")
     tts.say("And I will tell you how well you played!")
+    tts.say("I am very sensitive to sound.")
+    tts.say("So it would be good for you to play it nicely. Thank you!")
     tts.say("And one more thing I may have to remind you, hopefully you have already noticed.")
     tts.say("On this xylophone, the longer the bar, the lower the pitch. And keep this in mind.")
     tts.say("You may use this in the following practice!")
@@ -284,11 +286,16 @@ def main(robotIP, PORT=9559):
                 # call help function
             count += 1     
                 
-            tts.say("Good Job, I believe you find the correct color!")
-            tts.say("However, it looks like you didn't hit it very well.")
-            tts.say("I couldn't recognize the note by listen to it.")
-            tts.say("I am very sensitive to sound.")
-            tts.say("So it would be good for you to play it nicely. Thank you!")
+            responseList = ["Looks like you didn't play it very well.",
+                            "Sorry, I couldn't recognize it.",
+                            "Sorry, I didn't get that one.",
+                            "I think you might missed it.",
+                            "That was not a perfect one, but it is OK.",
+                            "I believe you find some of the colors! But not all of them!",
+                            "The color looks fine, but I couldn't recognize the notes by listening."]
+            response = random.choice(responseList)
+            tts.say(response)
+            
             time.sleep(1.0)
             tts.say("Do you want me to show you a good strike?")
             tts.say("Or we can move on to the next one.")
@@ -311,7 +318,7 @@ def main(robotIP, PORT=9559):
                 tts.say("OK, we can try the next color.")
                 help_count = 0              
             else:
-                tts.say("I didn't get that, let's just move on to the next note.")
+                tts.say("OK, let's just move on to the next note.")
                 help_count = 2
                 
             pythonSpeechModule.reset()
@@ -328,8 +335,14 @@ def main(robotIP, PORT=9559):
                 # continue the loop and run next note
             count += 1
             good += 1
-            tts.say("Well done! You find the correct color and played very well!")
-            tts.say("Keep this feeling! Let's try another one!")
+            responseList = ["Well done! You find the correct color and played very well!",
+                            "Awesome! Keep this feeling! Let's try another one!",
+                            "Great! Here comes the next one!",
+                            "You are doing great! Ready for the next one!",
+                            "Nice job! Let's focus on the next one!"]
+            response = random.choice(responseList)
+            tts.say(response)
+            
             try:
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 

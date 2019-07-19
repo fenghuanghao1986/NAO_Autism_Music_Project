@@ -66,8 +66,8 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['1','2','3','4','5','6','7','8','9','10','11']
-    comfList = ['1','2','3','4','5','6','7','8','9','10','11']
+    uncfList = ['1','2','3','4','5','6','7','8','9','a','b']
+    comfList = ['1','2','3','4','5','6','7','8','9','a','b']
 
     mode = ['u', 'c']
     u_cList = random.choice(mode)
@@ -145,7 +145,7 @@ def convertKeys(keys):
         elif keys[i] == '9':
             trueKeys.append(9)
             continue
-        elif keys[i] == '10':
+        elif keys[i] == 'a':
             trueKeys.append(10)
             continue
         else:
@@ -166,7 +166,7 @@ def main(robotIP, PORT=9559):
     
     tts.say("Hello") # figure out how to say name in tts
     tts.say(kid_name)
-    tts.say("Before we start our practice, I would like to help you with a 10 minutes warm up!")
+    tts.say("Before we start our practice, I would like to help you with a five minutes warm up!")
     tts.say("In this warm up section, I will ask you to play some notes.")
     tts.say("And I want you to follow my instruction carefully.")
     tts.say("You will play a single note after my eye flashs!")
@@ -199,9 +199,9 @@ def main(robotIP, PORT=9559):
                 color = 'green'
             elif play_note[0] == '2' or play_note[0] == '9':
                 color = 'brown'
-            elif play_note[0] == '3' or play_note[0] == '10':
+            elif play_note[0] == '3' or play_note[0] == 'a':
                 color = 'red'
-            elif play_note[0] == '4' or play_note[0] == '11':
+            elif play_note[0] == '4' or play_note[0] == 'b':
                 color = 'yellow'
             elif play_note[0] == '5':
                 color = 'gray'
@@ -243,10 +243,12 @@ def main(robotIP, PORT=9559):
             
             peaks = stft.findNotes(s, sampleRate/2)
             realPeaks = stft.realPeak(peaks)
-            print("audio analysis done! here is the note detected: ")
-            print(realPeaks)
+            
             if len(realPeaks) == 0:
-                
+                realPeaks.append('0')
+                print("audio analysis done! here is the note detected: ")
+                print(realPeaks[0])
+
                 count += 1      # test see if count will change in here
                 result = bad
                 responseList = ["Looks like you didn't play it very well.",
@@ -295,13 +297,15 @@ def main(robotIP, PORT=9559):
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
+                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
                 except csv.Error as e:
                     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
                                
             else:
                 count += 1
                 result = good
+                print("audio analysis done! here is the note detected: ")
+                print(realPeaks[0])
                 responseList = ["Well done! You find the correct color and played very well!",
                                 "Awesome! Keep this feeling! Let's try another one!",
                                 "Great! Here comes the next one!",
@@ -314,7 +318,7 @@ def main(robotIP, PORT=9559):
                     with open(fileName, 'a') as csvfile:
                         filewriter = csv.writer(csvfile, delimiter=',', 
                                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                        filewriter.writerow([count, play_note, realPeaks[0], result, help_count])
+                        filewriter.writerow([count, play_note, realPeaks, result, help_count])
                 except csv.Error as e:
                     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
                     

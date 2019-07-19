@@ -54,7 +54,7 @@ try:
     with open(fileName, 'wb') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',',
                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        filewriter.writerow(['number of practice', 'ground_truth', 'kid_input', 'result', 'number ask for help'])
+        filewriter.writerow(['number of practice', 'ground_truth', 'kid_input', 'result', 'number ask for help', 'demo_on_or_not'])
 except csv.Error as e:
     sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))
     
@@ -224,7 +224,7 @@ def main(robotIP, PORT=9559):
     while(True):
         
         help_count = 100
-            
+        demo = [0, 0, 0, 1]   
         dst, play_note = createMisc(robotIP, username, pw)
         print('creat music done!')
         tts.say("Here is what I want you to play now, listen and look at my eye color carefully!")
@@ -233,6 +233,13 @@ def main(robotIP, PORT=9559):
         ledProxy.fadeListRGB('FaceLeds', colorList, timeList)
         time.sleep(3)
         print('playback ok!')
+        # throw the dice and there will be 25% of chance robot will do the demo hit
+        demo_on = random.choice(demo)
+        
+        if demo_on == 1:
+            keys = convertKeys(play_note) 
+            print(keys)
+            sampleHit(motionProxy, postureProxy, ledProxy, tts, keys) 
 
         tts.say("So I just played")
         for color in colorNameList:
@@ -327,7 +334,7 @@ def main(robotIP, PORT=9559):
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                    filewriter.writerow([count, play_note, realPeaks, result, help_count, demo_on])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
                 
@@ -347,7 +354,7 @@ def main(robotIP, PORT=9559):
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                    filewriter.writerow([count, play_note, realPeaks, result, help_count])
+                    filewriter.writerow([count, play_note, realPeaks, result, help_count, demo_on])
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (fileName, filewriter.line_num, e))  
         print("conut value: ")

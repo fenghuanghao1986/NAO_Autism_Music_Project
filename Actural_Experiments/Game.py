@@ -106,7 +106,7 @@ def createMisc(robotIP, username, pw):
     
     play = []
     newData = []
-    uncfList = ['3','4','7','8','10','11']
+    uncfList = ['3','4','7','8','a','b']
     comfList = ['1','2','4','5','6','8','9']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
@@ -250,7 +250,7 @@ def convertKeys(keys):
         elif keys[i] == '9':
             trueKeys.append(9)
             continue
-        elif keys[i] == '10':
+        elif keys[i] == 'a':
             trueKeys.append(10)
             continue
         else:

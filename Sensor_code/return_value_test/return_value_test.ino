@@ -15,7 +15,7 @@ void setup() {
     digitalWrite(selectPins2[i], HIGH);
   }
   pinMode(zInput1, INPUT);  // Set up z1 as an input for mux1
-  pinMode(zInput2, INPUT);  // Set up z2 as an input for mux2
+  //pinMode(zInput2, INPUT);  // Set up z2 as an input for mux2
 }
 
 void loop() {
@@ -23,13 +23,24 @@ void loop() {
   for (byte pin=0; pin<=7; pin++)
   {
     selectMuxPin1(pin);   // Select one at a time from mux1
-    selectMuxPin2(pin);   // Select one at a time from mux2
     int inputValue1 = analogRead(A1);  // read z1
-    int inputValue2 = analogRead(A2);  // read z2
     int hitBar1 = checkSensor(inputValue1, pin);
-    int hitBar2 = checkSensor(inputValue2, pin);
+
     Serial.print(hitBar1);
+    // func to play note in midi
+  }
+   for (byte pin=0; pin<=7; pin++)
+  {
+    selectMuxPin2(pin);   // Select one at a time from mux2
+    int inputValue2 = analogRead(A2);  // read z2
+    int hitBar2 = checkSensor(inputValue2, pin);
+    if (hitBar2 >= 1 && hitBar2 <=4){
+      hitBar2 = hitBar2 + 7;
+      }
+
+    // Serial.print(hitBar1);
     Serial.print(hitBar2);
+    // func to play note in midi
   }
   Serial.println();
   delay(100);

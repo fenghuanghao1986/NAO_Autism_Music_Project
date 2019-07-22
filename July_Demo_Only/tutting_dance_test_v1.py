@@ -220,23 +220,24 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
 #    ledProxy = ALProxy("ALLeds", robotIP, PORT)
 #    tts = ALProxy("ALTextToSpeech", robotIsP, PORT)
-#    userReadyToDance(postureProxy)
+    userReadyToDance(postureProxy)
     dt = 0.83
 #    dt = 2
-#    keys = []
-#    for i in range(0, 20):
-#        keys.append(random.randint(0, 20))
-#    print(keys)
-    keys = [1,2,3,4,5,6,1,7,8,9,10,11,1,
-            12,13,14,15,16,17,12,18,19,20,21,22,12]
+    keys = []
+    for i in range(0, 22):
+        keys.append(random.randint(0, 22))
+    print(keys)
+#    keys = [1,2,3,4,5,6,1,7,8,9,10,11,1,
+#            12,13,14,15,16,17,12,18,19,20,21,22,12]
     Dance(motionProxy, keys, dt)
+    userReadyToDance(postureProxy)
     
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ip", type=str, default="127.0.0.1",
                         help="Robot ip address")
-    parser.add_argument("--port", type=int, default=51677,
+    parser.add_argument("--port", type=int, default=52567,
                         help="Robot port number")
 
     args = parser.parse_args()

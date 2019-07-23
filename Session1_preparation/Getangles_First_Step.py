@@ -15,8 +15,8 @@ def main(robotIP, PORT=9559):
     time.sleep(1)
     
     motionProxy.setStiffnesses("Head", 0.2)
-    motionProxy.setStiffnesses("LLeg", 0)
-    motionProxy.setStiffnesses("RLeg", 0)
+    motionProxy.setStiffnesses("LLeg", 1)
+    motionProxy.setStiffnesses("RLeg", 1)
 #    motionProxy.setAngles("LHand", 0.22, 1)
 #    motionProxy.setAngles("RHand", 0.22, 1)
 
@@ -68,13 +68,13 @@ def main(robotIP, PORT=9559):
 
     time.sleep(10.0)
     
-    motionProxy.setStiffnesses("LArm", 1.0)
+#    motionProxy.setStiffnesses("LArm", 1.0)
 #    motionProxy.setStiffnesses("RArm", 1.0)
-    motionProxy.setAngles("LHand", 1, 1.0)
+#    motionProxy.setAngles("LHand", 1, 1.0)
 #    motionProxy.setAngles("RHand", 1, 1.0)
 
 #    names         = "RArm"
-    names = "LArm"
+    names = "LLeg"
     useSensors  = True
     frame  = motion.FRAME_TORSO
     sensorAngles = motionProxy.getAngles(names, useSensors)

@@ -26,7 +26,7 @@ void loop() {
     int inputValue1 = analogRead(A1);  // read z1
     int hitBar1 = checkSensor(inputValue1, pin);
 
-    Serial.print(hitBar1);
+    //Serial.print(String(hitBar1));
     // func to play note in midi
   }
    for (byte pin=0; pin<=7; pin++)
@@ -35,15 +35,15 @@ void loop() {
     int inputValue2 = analogRead(A2);  // read z2
     int hitBar2 = checkSensor(inputValue2, pin);
     if (hitBar2 >= 1 && hitBar2 <=4){
-      hitBar2 = hitBar2 + 7;
+      hitBar2 = hitBar2;
       }
 
     // Serial.print(hitBar1);
-    Serial.print(hitBar2);
+    //Serial.print(String(hitBar2));
     // func to play note in midi
   }
-  Serial.println();
-  delay(100);
+  //Serial.println();
+  delay(200);
 }
 
 // The selectMuxPin function sets the S0, S1, and S2 pins
@@ -71,10 +71,13 @@ void selectMuxPin2(byte pin)
 }
 
 int checkSensor(int inputValue, int pin) {
-  if (inputValue > 100) {
+  if (inputValue > 1000) {
+    Serial.print(String(pin));
+    Serial.println();
     return pin;
   }
   else {
+
     return 0;
   }
 }

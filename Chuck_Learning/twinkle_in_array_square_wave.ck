@@ -1,5 +1,5 @@
 // twinkle with a square wave
-SqrOsc s => dac;
+SinOsc s => dac;
 
 // gains to seqarate our notes
 0.7 => float onGain;

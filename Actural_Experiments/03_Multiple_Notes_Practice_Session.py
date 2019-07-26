@@ -64,8 +64,7 @@ def createMisc(robotIP, username, pw):
     newData = []
     uncfList = ['1','2','3','4','5','6','7','8','9','a','b']
     comfList = ['1','2','3','4','5','6','7','8','9','a','b']
-#    uncfList = ['8','8','8','8']
-#    comfList = ['7','7','7']
+
     mode = ['u', 'c']
     u_cList = random.choice(mode)
 

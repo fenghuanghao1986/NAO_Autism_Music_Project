@@ -3,7 +3,7 @@ SinOsc s => dac;
 
 // gains to seqarate our notes
 0.7 => float onGain;
-0.0 => float offGain;
+0.2 => float offGain;
 
 // declare and initialize array of MIDI notes
 [57,57,64,64,66,66,64,62,62,61,61,59,59,57] @=> int twinkle[];

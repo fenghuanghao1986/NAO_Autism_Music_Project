@@ -1,3 +1,20 @@
+Hid myHid;                  // (1) Makes a new Hid.
+
+// message to convey data from Hid device
+HidMsg msg;                 // (2) Makes a Hid message holder.
+
+// device number: which keyboard to open
+1 => int device;            // (3) Opens Hid on keyboard device.
+
+// open keyboard; or exit if fail to open
+if( !myHid.openKeyboard( device ) )
+{                           // (4) Error if it can't be opened.
+    <<< "Can't open this device!! ", "Sorry." >>>;  
+    me.exit();              // (5) Exit, because nothing more can be done.
+}
+
+<<< "keyboard '" + myHid.name() + "' ready", "" >>>;
+
 SerialIO.list() @=> string list[];
 
 for(int i; i < list.cap(); i++)

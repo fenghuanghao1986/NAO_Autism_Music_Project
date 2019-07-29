@@ -1,9 +1,10 @@
 SinOsc chord[3] => Echo e =>  SqrOsc note => dac;               // (1) Three oscillators for a chord
+0 => int change;
 
 for (0 => int i; i < chord.cap(); i++)
 {
     // connect each element of our array to dac
-    //chord[i] => dac;           // (2) Connects them all to the dac...
+    chord[i] => dac;           // (2) Connects them all to the dac...
 
     // adjust gain so we don't overload
     1.0/chord.cap() => chord[i].gain; // (3) ...and sets their gains so you don't overload.

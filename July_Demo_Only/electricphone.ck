@@ -7,6 +7,7 @@ for(int i; i < list.cap(); i++)
 
 // parse first argument as device number
 0 => int device;
+
 if(me.args()) {
     me.arg(0) => Std.atoi => device;
 }
@@ -26,9 +27,8 @@ if(!cereal.open(device, SerialIO.B9600, SerialIO.ASCII))
 
 // Set up the music generators
 // synchronize to period
-.5::second => dur T;
+.3::second => dur T;
 T - (now % T) => now;
-
 //SinOsc s => JCRev r => dac;
 SinOsc s => NRev n => Echo e => dac;
 //SinOsc s => Chorus c => dac;
@@ -39,37 +39,51 @@ SinOsc s => NRev n => Echo e => dac;
 //.1 => c.mix;
 .2 => e.mix;
 
+0 => int cnt;
+
 [60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77] @=> int xylo[];
+<<<"start the loop">>>;
 
 while(true)
 {
+    <<<"in the loop">>>;
     cereal.onLine() => now;
     cereal.getLine() => string line;
+    <<< "line get!" >>>;
+    
+    if (cnt == 0) 
+    {
+        1 => cnt;
+        
+    }
+    else if(cnt == 1)
+    {
+        0 => cnt;
+        continue;
+    }
 
     if(line$Object != null) {
+        <<< "in the if" >>>;
         chout <= "read line: " <= line <= IO.newline();
         
-        StringTokenizer tok;
-        tok.set(line);
+        //StringTokenizer tok;
+        //tok.set(line);
         Std.atoi(line) => int pos;
-        chout <= "pos: " <= pos <= IO.newline();
-        
+        chout <= "pos: " <= pos <= IO.newline();   
         Std.mtof(xylo[pos]) => float f;
         chout <= "Freq: " <= f <= IO.newline();
         s.freq(f); // Change sin wave frequency 
         //.05 => s.gain;
         .3 => s.gain;
         0 => s.phase;
-
-        // advance time
-        // note: Math.randomf() returns value between 0 and 1
         if( Math.randomf() > .25 ) .25::T => now;
-        else .5::T => now;
+        else .3::T => now;
            
     }
-    
-    .01 => s.gain;
+    <<< "out if" >>>;
     .0 => s.gain;
     0.0 :: second => now;
-    chout <= "play done" <= IO.newline();
+    chout <= "play done" <= IO.newline(); 
+   
+
 }

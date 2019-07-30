@@ -25,21 +25,13 @@ void loop() {
     selectMuxPin1(pin);   // Select one at a time from mux1
     int inputValue1 = analogRead(A1);  // read z1
     int hitBar1 = checkSensor(inputValue1, pin);
-
-    //Serial.print(String(hitBar1));
-  }
-   for (byte pin=0; pin<=7; pin++)
-  {
     selectMuxPin2(pin);   // Select one at a time from mux2
     int inputValue2 = analogRead(A2);  // read z2
     int hitBar2 = checkSensor(inputValue2, pin+7);
 
-    // Serial.print(hitBar1);
-    //Serial.print(String(hitBar2));
-
+    //Serial.print(String(hitBar1));
   }
-  //Serial.println();
-  //delay(300);
+
 }
 
 // The selectMuxPin function sets the S0, S1, and S2 pins
@@ -75,8 +67,5 @@ int checkSensor(int inputValue, int pin) {
     delay(300);
     return pin;
   }
-  else {
 
-    return 0;
-  }
 }

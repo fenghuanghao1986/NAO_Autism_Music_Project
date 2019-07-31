@@ -15,7 +15,7 @@ void setup() {
     digitalWrite(selectPins2[i], HIGH);
   }
   pinMode(zInput1, INPUT);  // Set up z1 as an input for mux1
-  pinMode(zInput2, INPUT);  // Set up z2 as an input for mux2
+  //pinMode(zInput2, INPUT);  // Set up z2 as an input for mux2
 }
 
 void loop() {

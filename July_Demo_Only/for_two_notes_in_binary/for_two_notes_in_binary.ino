@@ -3,6 +3,8 @@ const int selectPins2[3] = {2,3,4}; // mux2 S0~2, S1~3, S2~4
 const int zOutput = 5; // Don't know what is this for in our case
 const int zInput1 = A1; // Connect common z to A1 for mux1
 const int zInput2 = A2; // Connect common z to A2 for mux2
+int seq[16];
+int hasInput = 0;
 
 void setup() {
   Serial.begin(9600);   // Initialize the serial port
@@ -25,11 +27,23 @@ void loop() {
     selectMuxPin1(pin);   // Select one at a time from mux1
     int inputValue1 = analogRead(A1);  // read z1
     int hitBar1 = checkSensor(inputValue1, pin);
+    seq[pin] = hitBar1;
+  }
+  for (byte pin=0; pin<=7; pin++)
+  {
     selectMuxPin2(pin);   // Select one at a time from mux2
     int inputValue2 = analogRead(A2);  // read z2
-    int hitBar2 = checkSensor(inputValue2, pin+7);
-
-    //Serial.print(String(hitBar1));
+    int hitBar2 = checkSensor(inputValue2, pin);
+    seq[pin+7] = hitBar2;
+  }
+  hasInput = checkInput(seq);
+  if (hasInput == 1){
+    for (int j=0; j<16; j++)
+    {
+      Serial.print(seq[j]);
+    }
+    Serial.println();
+    delay(300);
   }
 
 }
@@ -60,12 +74,23 @@ void selectMuxPin2(byte pin)
 
 int checkSensor(int inputValue, int pin) {
   if (inputValue > 1013) {
-    Serial.print(String(pin));
-    Serial.println();
-    Serial.print(String(pin));
-    Serial.println();
-    delay(300);
-    return pin;
-  }
 
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
+
+int checkInput(int seq[])
+{
+  for(int i=0; i<16; i++)
+  {
+    if(seq[i] != 0){
+      return 1;
+    }
+    else
+      continue;
+  }
+  return 0;
 }

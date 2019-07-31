@@ -61,7 +61,7 @@ class SpeechRecoModule(ALModule):
                 self.asr.pushContexts()
             self.hasPushed = True
             if self.asr:
-                self.asr.setVocabulary( ['yes', 'no', 'help', 'free play', 'copy machine', 'play song', 'exit', 'next', ], True )
+                self.asr.setVocabulary( ['yes', 'no', 'help', 'challenge me', 'test your skill', 'play song', 'exit', 'next', ], True )
             self.memory.subscribeToEvent("WordRecognized", self.getName(), "onWordRecognized")
             self.hasSubscribed = True
         except RuntimeError, e:

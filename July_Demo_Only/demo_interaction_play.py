@@ -142,6 +142,7 @@ def createMisc(robotIP, username, pw):
     return dst, play
     
 def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts):
+    tts.say("In this mode, I will play some random music, and you will try to remember it and play back.")
     dst, play = createMisc(robotIP, username, pw)
     print('creat music done')
     tts.say("Here is what I will play now, listen carefully!")
@@ -151,13 +152,6 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     dt = 0.6
     orgKeys = play
     keys = convertKeys(orgKeys)
-    tts.say("Before I play, let me ask you a quick question.")
-    tts.say("How do you feel about what you just heard?")
-    tts.say("Could you please use few words to describe it? You will have ten seconds.")
-    tts.say("Thanks.")
-    time.sleep(15)
-    tts.say("Good to know")
-    time.sleep(1)
     tts.say("This is how I play, watch carefully!")
     Positions.userInitPosture(motionProxy, postureProxy)
     Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -169,7 +163,20 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     ledProxy.randomEyes(1.0)
     motionProxy.rest()
     time.sleep(15)
-    tts.say("Times up! I know you have tried your best! And you did good! Which mode you want to play next?")
+    tts.say("Times up! Let me see.")
+    time.sleep(2)
+    responseList = ["Looks like you didn't play it very well. You may not good at it.",
+                    "Sorry, I couldn't recognize it. Please try harder!",
+                    "Sorry, I didn't get that one. You may want to try it next time.",
+                    "I think you might missed some of the notes. Let's just move on.",
+                    "That was not a perfect one, but it is OK. I belive you have tried your best.",
+                    "I believe you find some of the colors! But not all of them!",
+                    "The color looks fine, but I couldn't recognize some notes by listening.",
+                    "Are you sure that's what you just played? I don't quite understand.",
+                    "I believe you really tried, however, not good enough, try it next time."]
+    response = random.choice(responseList)
+    tts.say(response)
+    tts.say("Which mode you want to play next?")
     tts.say("You may also say exit to quit play with me!")
 
     
@@ -210,10 +217,20 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
-    tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
+    responseList = ["It wasn't an easy one! I have tried my best.",
+                    "Did I just Aced it? Haha!",
+                    "It was easy! You should try a harder one next time! Remember, I am a robot, I can do everything!",
+                    "oops, I think I just screwed it. Can I have another chance?",
+                    "That was not a perfect one, but it is OK I think. Are we on the same page?",
+                    "I believe I faild you, but we are still friends, right?",
+                    "I thought I got it, but all of a sudden, I got nervous, and, you know how it goes."]
+    response = random.choice(responseList)
+    tts.say(response)
+    tts.say("How do you rate my performance? From zero to ten!")
     ledProxy.randomEyes(2.0)
     time.sleep(3)
-    tts.say("Thanks for playing this game, which game do you want to play next?")
+    tts.say("Thank you!")
+    tts.say("It was a great challenge, which game do you want to play next? You can say play song, test your skill or challenge me.")
     tts.say("You may also say exit to quit play with me!")
     
 # This function is to convert str type to int type for robot to play
@@ -273,12 +290,14 @@ def main(robotIP, PORT=9559):
     tts.say("Hello!")
     tts.say(kid_name)
     time.sleep(0.5)
-    tts.say("Welcome to NAO music game party!")
+    tts.say("Welcome to Denver International Festival of Arts and Technology!")
     time.sleep(1.0)
-    tts.say("Let's have some fun here!")
+    tts.say("My name is NAO, and here is my assistant Howard! Let's have some fun today!")
     ledProxy.randomEyes(1.0)
+    tts.say("Introducing the next generation of xylophone! I call it Xelecphone!")
+    
     tts.say("Tell me which mode do you want to try?")
-    tts.say("You can say play song, copy machine or free Play.")
+    tts.say("You can say play song, test your skill or challenge me.")
     time.sleep(1.0)
     pythonSpeechModule.onLoad()
     pythonSpeechModule.onInput_onStart()
@@ -291,9 +310,9 @@ def main(robotIP, PORT=9559):
     while(True):
         
         taskNumber = 100
-        if pythonSpeechModule.targetWord == '<...> free play <...>':
+        if pythonSpeechModule.targetWord == '<...> challenge me <...>':
             taskNumber = 2
-        elif pythonSpeechModule.targetWord == '<...> copy machine <...>':
+        elif pythonSpeechModule.targetWord == '<...> test your skill <...>':
             taskNumber = 1
         elif pythonSpeechModule.targetWord == '<...> play song <...>':
             taskNumber = 0
@@ -302,8 +321,8 @@ def main(robotIP, PORT=9559):
         else:
             taskNumber = int(raw_input("select task:\n\
                                        0: play song\n\
-                                       1: copy machine\n\
-                                       2: free play\n\
+                                       1: test your skill\n\
+                                       2: challenge me\n\
                                        3: exit 3\n\
                                        please make selection: "))
         pythonSpeechModule.reset()
@@ -317,24 +336,19 @@ def main(robotIP, PORT=9559):
             dt = 0.5
             keys = songBank[random.choice(song_names)]
             
-#            keys = [0,1,2,3,4,5,6,7,8,9,10,11]
+#            keys = songBank["SunShine"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
-            ledProxy.randomEyes(2.0)
             motionProxy.rest()
-            tts.say("Before we move on, let me ask you a quick question.")
-            tts.say("How do you feel about what you just heard?")
-            tts.say("Could you please use few words to describe it? You will have ten seconds.")
-            tts.say("Thanks.")
-            time.sleep(15)
-            tts.say("Good to know")
+            ledProxy.randomEyes(2.0)
+
             time.sleep(1)
             tts.say("Thanks for listening! Which mode you want to play next?")
-            tts.say("You can say play song, copy machine or free Play.")
+            tts.say("You can say play song, test your skill or challenge me.")
             tts.say("You may also say exit to quit play with me!")
             pythonSpeechModule.onLoad()
             pythonSpeechModule.onInput_onStart()

@@ -48,10 +48,10 @@ def realPeak(rawPeak):
     # for xylophone from C6 to F7 (1046.5023Hz to 2793.8259Hz)
     # because of the accuracy problem, we can only compare the detected note 
     # in a certain range using the basic ratio between notes
-    notes = {'1': 1038.5, '2': 1172.5, '3': 1316,
-             '4': 1389.5, '5': 1561.5, '6': 1754,
-             '7': 1975.5, '8': 2084.5, '9': 2343,
-             '10': 2626.5, '11': 2785.5}
+    notes = {'1': 1038, '2': 1172, '3': 1316,
+             '4': 1389, '5': 1561, '6': 1754,
+             '7': 1975, '8': 2084, '9': 2343,
+             'a': 2626, 'b': 2785}
     
     #peaks = rawPeak.frequency[rawPeak.gain >= rawPeak.gain.mean()*0.4]
     #peaks = np.array(peaks)
@@ -64,7 +64,7 @@ def realPeak(rawPeak):
         # it will also delete the first one, make second one to first
     for i in range (n):
         for key, note in notes.items():
-            if rawPeak[i] >= note - 6 and rawPeak[i] <= note + 6:
+            if rawPeak[i] >= note - 10 and rawPeak[i] <= note + 10:
                 newPeak.append(key)
 #                print(newPeak)
 #                print(i)

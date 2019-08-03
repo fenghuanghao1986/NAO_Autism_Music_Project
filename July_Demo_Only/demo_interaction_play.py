@@ -217,7 +217,7 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
-    responseList = ["It wasn't an easy one! I have tried my best.",
+    responseList = ["It wasn't an easy one! But I really have tried my best.",
                     "Did I just Aced it? Haha!",
                     "It was easy! You should try a harder one next time! Remember, I am a robot, I can do everything!",
                     "oops, I think I just screwed it. Can I have another chance?",
@@ -294,7 +294,7 @@ def main(robotIP, PORT=9559):
     time.sleep(1.0)
     tts.say("My name is NAO, and here is my assistant Howard! Let's have some fun today!")
     ledProxy.randomEyes(1.0)
-    tts.say("Introducing the next generation of xylophone! I call it Xelecphone!")
+    tts.say("Introducing the next generation of xylophone! I call it X-elophone!")
     
     tts.say("Tell me which mode do you want to try?")
     tts.say("You can say play song, test your skill or challenge me.")
@@ -394,7 +394,7 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
         elif taskNumber == 3:
-            tts.say("Thanks for playing game with me!")
+            tts.say("Thanks for playing game with me! Hope I will see you again!")
             break
         
         else:

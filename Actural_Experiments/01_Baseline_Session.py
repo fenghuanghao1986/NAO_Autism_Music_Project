@@ -28,6 +28,8 @@ import csv
 import datetime
 #import audio_generator
 
+print "Enter kid name:\n"
+kid_name = raw_input()
 print "Enter subject number:\n"
 subject = raw_input()
 print "Enter session number:\n"
@@ -55,7 +57,7 @@ def main(robotIP, PORT=9559):
     postureProxy = ALProxy("ALRobotPosture", robotIP, PORT)  
     ledProxy = ALProxy("ALLeds", robotIP, PORT)
     tts = ALProxy("ALTextToSpeech", robotIP, PORT)
-    postureProxy.goToPosture("Crouch", 0.4)
+#    postureProxy.goToPosture("Crouch", 0.4)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
 
@@ -89,7 +91,8 @@ def main(robotIP, PORT=9559):
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello, my friend!")
+            tts.say("Hello")
+            tts.say(kid_name)
             time.sleep(0.5)
             tts.say("Welcome to NAO music party!")
             time.sleep(1.0)

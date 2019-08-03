@@ -175,7 +175,7 @@ def playXylo(motionProxy, keys, dt):
                 for i in range(len(keys)): 
                     
                     t.append(dt*(i+1))
-                    t.append(dt*(i+1) + 0.07)
+                    t.append(dt*(i+1) + 0.08)
                     t.append(dt*(i+1) + 0.1)
                         
                 timeList.append(t)   

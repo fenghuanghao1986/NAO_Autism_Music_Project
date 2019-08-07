@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -76,7 +76,7 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                            0,8,9,11,11,11,11,11,11,
                            0,8,9,11,11,11,11,11,11,10]}
 
-song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1","BabySharkv2", "BabySharkv3", "QingHuaCi"]
+song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1","BabySharkv2", "BabySharkv3"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -110,7 +110,7 @@ def createMisc(robotIP, username, pw):
     comfList = ['1','2','4','5','6','8','9']
     mode = ['u', 'c']
     u_cList = random.choice(mode)
-    n = 16
+    n = 8
     if u_cList == 'u':
         for i in range(n):
             play.append(random.choice(uncfList))
@@ -141,20 +141,21 @@ def createMisc(robotIP, username, pw):
     return dst, play
     
 def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts):
+    tts.say("In this mode, I will play some random music, and you will try to remember it and play back.")
     dst, play = createMisc(robotIP, username, pw)
     print('creat music done')
     tts.say("Here is what I will play now, listen carefully!")
     recordplay.playBack(robotIP, PORT, dst)
-    time.sleep(14)
+    time.sleep(8)
     print('playback ok')
-    dt = 0.8
+    dt = 0.6
     orgKeys = play
     keys = convertKeys(orgKeys)
     tts.say("Before I play, let me ask you a quick question.")
     tts.say("How do you feel about what you just heard?")
     tts.say("Could you please use few words to describe it? You will have ten seconds.")
     tts.say("Thanks.")
-    time.sleep(15)
+    time.sleep(10)
     tts.say("Good to know")
     time.sleep(1)
     tts.say("This is how I play, watch carefully!")
@@ -162,14 +163,25 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.playXyloOne(motionProxy, keys, dt)
     Positions.userReadyToPlay(motionProxy, postureProxy)
-    tts.say("Now it is your time to play! You have 15 seconds to play.")
+    tts.say("Now it is your time to play! You have 10 seconds to play.")
     Positions.userInitPosture(motionProxy, postureProxy)
     tts.say("When you see my eyes flash, you may start.")
     ledProxy.randomEyes(1.0)
     motionProxy.rest()
-    time.sleep(15)
-    tts.say("Times up! I know you have tried your best! And you did good! Which mode you want to play next?")
-    tts.say("You may also say exit to quit play with me!")
+    time.sleep(10)
+    tts.say("Times up!")
+    responseList = ["Looks like you didn't play it very well. You may not good at it.",
+                    "Sorry, I couldn't recognize it. Please try harder!",
+                    "Sorry, I didn't get that one. You may want to try it next time.",
+                    "I think you might missed some of the notes. Let's just move on.",
+                    "That was not a perfect one, but it is OK. I belive you have tried your best.",
+                    "I believe you find some of the colors! But not all of them!",
+                    "The color looks fine, but I couldn't recognize some notes by listening.",
+                    "Are you sure that's what you just played? I don't quite understand.",
+                    "I believe you really tried, however, not good enough, try it next time."]
+    response = random.choice(responseList)
+    tts.say(response)
+    tts.say("Which mode you want to play next? You may also say exit to quit play with me!")
 
     
 # =============================================================================
@@ -209,9 +221,19 @@ def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy,
     Positions.userReadyToPlay(motionProxy, postureProxy)
     Positions.userInitPosture(motionProxy, postureProxy)
     motionProxy.rest()
-    tts.say("It was an easy one! How do you rate my performance? From zero to ten!")
+    responseList = ["It wasn't an easy one! But I really have tried my best.",
+                    "Did I just Aced it? Haha!",
+                    "It was easy! You should try a harder one next time! Remember, I am a robot, I can do everything!",
+                    "oops, I think I just screwed it. Can I have another chance?",
+                    "That was not a perfect one, but it is OK I think. Are we on the same page?",
+                    "I believe I faild you, but we are still friends, right?",
+                    "I thought I got it, but all of a sudden, I got nervous, and, you know how it goes."]
+    response = random.choice(responseList)
+    tts.say(response)
+    tts.say("How do you rate my performance? From zero to ten!")
     ledProxy.randomEyes(2.0)
-    time.sleep(3)
+    time.sleep(1)
+    tts.say("Thank you!")
     tts.say("Thanks for playing this game, which game do you want to play next?")
     tts.say("You may also say exit to quit play with me!")
     
@@ -388,7 +410,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

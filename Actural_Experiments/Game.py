@@ -348,7 +348,7 @@ def main(robotIP, PORT=9559):
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
-            Positions.playXyloOne(motionProxy, keys, dt)
+            Positions.playXylo(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)

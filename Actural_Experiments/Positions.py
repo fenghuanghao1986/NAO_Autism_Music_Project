@@ -175,7 +175,7 @@ def playXylo(motionProxy, keys, dt):
                 for i in range(len(keys)): 
                     
                     t.append(dt*(i+1))
-                    t.append(dt*(i+1) + 0.08)
+                    t.append(dt*(i+1) + 0.07)
                     t.append(dt*(i+1) + 0.1)
                         
                 timeList.append(t)   
@@ -188,7 +188,7 @@ def playXylo(motionProxy, keys, dt):
                         note = list(notes[keys[k]])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+55*almath.TO_RAD)
+                            l.append(note[j]+58*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -199,7 +199,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[10])
                          if j == 4:
                              l.append(note[j])
-                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j]+58*almath.TO_RAD)
                              l.append(note[j])
                          else:
                              l.append(note[j])
@@ -209,7 +209,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[6])
                          if j == 4:
                              l.append(note[j])
-                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j]+58*almath.TO_RAD)
                              l.append(note[j])
                          else:
                              l.append(note[j])
@@ -219,7 +219,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[8])
                          if j == 4:
                              l.append(note[j])
-                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j]+58*almath.TO_RAD)
                              l.append(note[j])
                          else:
                              l.append(note[j])
@@ -229,7 +229,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[9])
                          if j == 4:
                              l.append(note[j])
-                             l.append(note[j]+50*almath.TO_RAD)
+                             l.append(note[j]+58*almath.TO_RAD)
                              l.append(note[j])
                          else:
                              l.append(note[j])
@@ -270,7 +270,7 @@ def playXylo(motionProxy, keys, dt):
                         note = list(notes[keys[k]])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-55*almath.TO_RAD)
+                            r.append(note[j]-58*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])
@@ -281,7 +281,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[3])
                          if j == 4:
                              r.append(note[j])
-                             r.append(note[j]-50*almath.TO_RAD)
+                             r.append(note[j]-58*almath.TO_RAD)
                              r.append(note[j])
                          else:
                              r.append(note[j])
@@ -291,7 +291,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[5])
                          if j == 4:
                              r.append(note[j])
-                             r.append(note[j]-50*almath.TO_RAD)
+                             r.append(note[j]-58*almath.TO_RAD)
                              r.append(note[j])
                          else:
                              r.append(note[j])
@@ -301,7 +301,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[1])
                          if j == 4:
                              r.append(note[j])
-                             r.append(note[j]-40*almath.TO_RAD)
+                             r.append(note[j]-58*almath.TO_RAD)
                              r.append(note[j])
                          else:
                              r.append(note[j])
@@ -311,7 +311,7 @@ def playXylo(motionProxy, keys, dt):
                          note = list(notes[2])
                          if j == 4:
                              r.append(note[j])
-                             r.append(note[j]-45*almath.TO_RAD)
+                             r.append(note[j]-58*almath.TO_RAD)
                              r.append(note[j])
                          else:
                              r.append(note[j])
@@ -373,7 +373,7 @@ def playXyloOne(motionProxy, keys, dt):
                         note = list(notes[keys[k]])
                         if j == 4:
                             l.append(note[j])
-                            l.append(note[j]+55*almath.TO_RAD)
+                            l.append(note[j]+58*almath.TO_RAD)
                             l.append(note[j])
                         else:
                             l.append(note[j])
@@ -416,7 +416,7 @@ def playXyloOne(motionProxy, keys, dt):
                         note = list(notes[keys[k]])
                         if j == 4:
                             r.append(note[j])
-                            r.append(note[j]-55*almath.TO_RAD)
+                            r.append(note[j]-58*almath.TO_RAD)
                             r.append(note[j])
                         else:
                             r.append(note[j])

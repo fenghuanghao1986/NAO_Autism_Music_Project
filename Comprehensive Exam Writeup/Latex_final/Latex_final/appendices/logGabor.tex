@@ -1,0 +1,91 @@
+\chapter{Design of a Log-Gabor Filter Bank} \label{apx_logGabor}
+A Gabor, or log-Gabor, filter bank does not form an orthogonal basis
+set and hence there is no unique or ideal arrangement of the
+filters. Thus, the design of a filter bank is somewhat of an art but
+the following should give you some guidelines. One aim is to produce
+a filter bank that provides even coverage of the section of the
+spectrum that you wish to represent. This can be achieved by making
+the overlap of the filter transfer functions sufficiently large so
+that when one sums the individual transfer functions the net result
+is an even coverage of the spectrum. Thus, every point in the
+spectrum ends up being represented equally in the final result. For
+computational reasons one wants to achieve this even coverage of the
+spectrum with a minimal number of filters.
+
+A second aim, which conflicts with the first, is to ensure the
+outputs of the individual filters in the bank are as independent as
+possible. The whole aim of applying the filter bank is to obtain
+information about our signal, if a filter's outputs are highly
+correlated with those of its neighbors then we have an inefficient
+arrangement of filters that do not provide as much information as
+they should. To achieve independence of output the filters should
+have minimal overlap of their transfer functions.
+
+Thus the transfer functions of our filters should have the minimal
+overlap necessary to achieve fairly even spectral coverage.
+
+Here are the parameters you have to decide on, several are
+interdependent.
+
+The minimum and maximum frequencies you wish to cover. The filter
+bandwidth to use. The scaling between centre frequencies of
+successive filters. The number of filter scales. The number of
+filter orientations to use. The angular spread of each filter.
+Maximum frequency The maximum frequency is set by the wavelength of
+the smallest scale filter, this is controlled by the parameter
+minWaveLength. The smallest value you can sensibly use here is the
+Nyquist wavelength of 2 pixels, however at this wavelength you will
+get considerable alaising and I prefer to keep the minimum value to
+3 pixels or above.
+
+Minimum frequency The minimum frequency is set by the wavelength of
+the largest scale filter. This is implicitly defined once you have
+set the number of filter scales (nscale), the scaling between centre
+frequencies of successive filters (mult), and the wavelength of the
+smallest scale filter.
+
+   maximum wavelength = minWavelength * mult^(nscale-1)
+
+   minimum frequency = 1 / maximum wavelength
+
+Filter bandwidth The filter bandwidth is set by specifying the ratio
+of the standard deviation of the Gaussian describing the log Gabor
+filter's transfer function in the log-frequency domain to the filter
+center frequency. This is set by the parameter sigmaOnf . The
+smaller sigmaOnf is the larger the bandwidth of the filter. I have
+not worked out an expression relating sigmaOnf to bandwidth, but
+empirically a sigmaOnf value of 0.75 will result in a filter with a
+bandwidth of approximately 1 octave and a value of 0.55 will result
+in a bandwidth of roughly 2 octaves.
+
+Scaling between centre frequencies Having set a filter bandwidth one
+is then in a position to decide on the scaling between centre
+frequencies of successive filters (mult). It is here one has to play
+off the conflicting demands of even spectral coverage and
+independence of filter output.
+
+Here is a table of values, determined experimentally, that result in
+the minimal overlap necessary to achieve fairly even spectral
+coverage.
+
+ sigmaOnf  .85   mult 1.3
+ sigmaOnf  .75   mult 1.6     (bandwidth ~1 octave)
+ sigmaOnf  .65   mult 2.1
+ sigmaOnf  .55   mult 3       (bandwidth ~2 octaves)
+
+The number of filter orientations This, in conjunction with the
+angular spread of each filter, specifies the resolution of the
+orientation information you obtain from the filters. I have
+traditionally used six orientations. The angular spread of each
+filter Here again one plays off the demands of even spectral
+coverage and independence of filter output. The angular interval
+between filter orientations is fixed by the number of filter
+orientations. In the frequency domain the spread of 2D log-Gabor
+filter in the angular direction is simply a Gaussian with respect to
+the polar angle around the centre. The angular overlap of the filter
+transfer functions is controlled by the ratio of the angular
+interval between filter orientations and the standard deviation of
+the angular Gaussian spreading function. Within the code this ratio
+is controlled by the parameter dThetaOnSigma. A value of
+dThetaOnSigma = 1.5 results in approximately the minimum overlap
+needed to get even spectral coverage.

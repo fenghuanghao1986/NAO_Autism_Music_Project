@@ -1,0 +1,71 @@
+\chapter{Background} \label{chap:background}
+\graphicspath{{./bg/fig/}}
+
+%\section{Preliminaries} In this section, we briefly summarize the mathematical
+%background needed for the rest of the proposal. Readers may refer to \cite{agg88, bar94,
+%fau01,fau96,fle92,har00,luo96,may93,wol02} for further treatment on these subjects.
+%
+
+\section{Introduction}
+
+In this chapter, we provide some necessary technical background and briefly review some of the
+existing relevant techniques in the field of computer vision. These techniques can be classified in
+five groups 1) panoramic imaging; 2) motion estimation; 3) 2-D super-resolution mosaicing; 4)
+3-D-reconstruction; and 5) error analysis. Selected examples for further treatment of these topics
+can be found in \cite{mil77, soa98, soa98p, sze99, tia96, tom92, ura89, wax87, wen87}.
+
+
+\section{Panoramic Cameras}
+
+Panoramic cameras allow us to capture a scene video over a larger field of view. This is specially
+important for navigation, mapping, tracking, and obstacle avoidance in the application of unmanned
+vehicles. Currently the design of existing panoramic sensors involve:
+
+\bi
+
+\item {\bf Mirrors:} This kind of panoramic imaging, using a combination of mirror(s) placed in an
+arranged configuration in front of the camera, has been extensively explored by many researchers
+\cite{bak98,bru99,gro01,nay97-2,nay97-1,pri01,swa01,tan02,yok98}. Panoramic stereo imaging systems
+also have been studied in \cite{ben01,bha98,ish92,nay01,nen98,pel00}.
+
+\item {\bf Wide-angle Lenses:} Use of very wide-angle lenses for an ordinary camera makes it
+suitable for panoramic imaging \cite{gre86,gro01,zhu00,zhu99}.
+
+\item {\bf Multiple Cameras:} These provide panoramic images at much higher image resolution.
+Analyzing these types of panoramic sensors is not as straight forward as the previous ones
+\cite{bak01,bak00,fer00,fir03-2,gro01,mcc97,nal98,neg01,ple03,swa00}. In this proposal, we
+introduce a generalized camera model which is suitable for the modeling of such panoramic sensors
+\cite{fir03-2}.
+
+\ei
+
+The first two groups of panoramic sensors are powered by a single ordinary camera. These deal with
+a single optical center which makes them simpler to design and calibrate. Unlike the last group,
+they suffer from limited image resolution and thus accuracy for many visual tasks that rely on
+high spatial resolution.
+
+\section{2-D Super-Resolution Mosaicing} Mosaicing and super resolution imaging are two ways
+to combine information from multiple frames in video sequences. Mosaicing displays the information
+from multiple frames in a single panoramic image, while super-resolution exploits regions appearing
+in multiple frames to improve resolution and quality by reducing the noise \cite{zom00,zom01-1}.
+Applying a super-resolution technique to 2-D mosaics improves the resolution while preserving the
+geometry. The main assumption in super-resolution imaging is that the low-resolution images are the
+projections of a high-resolution image onto the image plane. The goal is to find the
+high-resolution image which fits this model. Presenting this in mathematical language:
+
+Given $N$ camera images $\{I_N^{(n)}\}^N_{n=1}$, find the the high-resolution image $I$, which
+minimizes the the error function:
+
+\beq \D E(I)=\sum_{n=1}^N\left\|P_n(I)-I_N^{(n)}\right\|^2 \eeq where $P_n(I)$ is the projection of
+$I$ onto the sampling grid of image $I_N^{(n)}$.
+
+\section{Summary}
+In this chapter, we summarized certain definitions, notations and mathematical background needed
+for the rest of the thesis. These included geometric and photometric constraints, which are the
+core of most motion and 3-D reconstruction techniques. In the next chapter, we propose a
+generalization to the camera model that makes it suitable for the application of interest in our
+research.
+
+%While the geometric constraints are tightly related to the projection and the homogeneous
+%transformation between two camera positions, the photometric constraints come from the underlying
+%physics of the image formation.

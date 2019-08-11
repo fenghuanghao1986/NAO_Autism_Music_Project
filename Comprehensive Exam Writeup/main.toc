@@ -15,3 +15,11 @@
 \contentsline {subsubsection}{Speech Recognition}{3}% 
 \contentsline {subsubsection}{Dynamic Oral Feedback}{3}% 
 \contentsline {section}{\numberline {1.4}Summary}{3}% 
+\contentsline {chapter}{\numberline {2}X-Elophone: A Revolution of Xylophone}{4}% 
+\contentsline {section}{\numberline {2.1}More Sound, More Possibilities}{4}% 
+\contentsline {subsection}{\numberline {2.1.1}Components Selection}{4}% 
+\contentsline {subsubsection}{Piezo Vibration Sensor}{4}% 
+\contentsline {subsubsection}{Op-Amp}{5}% 
+\contentsline {subsubsection}{Multiplexer}{5}% 
+\contentsline {subsubsection}{Arduino UNO}{6}% 
+\contentsline {subsection}{\numberline {2.1.2}ChucK: A On-the-fly Audio Programming Language}{6}% 

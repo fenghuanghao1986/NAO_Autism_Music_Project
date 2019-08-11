@@ -1,31 +1,35 @@
 \chapter{Xylo-Bot: A Interactive Human-Robot Music Teaching System Design} 
 A novelty Interactive human-robot music teaching system design is presented in this chapter. 
+In order to make robot play xylophone properly, several things need to be done before that. First is to find a proper xylophone with correct timber; second, we have to make the xylophone in a proper position in front of the robot that makes it to be seen properly and be reached to play; finally, design the intelligent music system for NAO. 
 
-\section{Robot Play Music System Design}
-In order to 
-
-\subsection{NAO: A Humanoid Robot}
+\section{NAO: A Humanoid Robot}
 We used a humanoid  robot called NAO developed  by Aldebaran Robotics in  France [ref].  NAO  is  58  cm  (23  inches)  tall,  with  25  degrees  of  freedom  this  robot  can  conduct most  of  the  human  behaviors.  It  also  features  an  onboard  multimedia  system  including, four  microphones  for  voice  recognition,  and  sound  localization,  two  speakers  for  text-to-speech  synthesis,  and  two  HD  cameras  with  maximum  image  resolution 1280×960 for online  observation.    As  shown  in Figure 4-1, these  utilities  are  located  in  the  middle  of the forehead  and the mouth  area.  NAO’s  computer  vision  module  includes  facial  and  shape recognition  units. 
 By  using Choregraphe software (Shown  in  Figure 4-2),researcher  can  easily  control  NAO remotely.  Inside  the user interface we  have  accesstoNAO’s cameras. It  isalsoeasy  to control different  joints  ofthe robot (see  Figure 4-3). This  allowsthe  operator to  control  and monitor  the different  activities  of robots  online. 
 
-\subsection{Accessories}
+\section{Accessories}
 Due to the size limitation of the toy xylophone, we have to design some accessories for robot to able play.
 
-\subsubsection{Xylophone: A Toy for Music Beginner}
+\subsection{Xylophone: A Toy for Music Beginner}
 Attach the picture of xylophone and describe the frequency of all notes.
 
-\subsubsection{Mallet Gripper Design}
+\subsection{Mallet Gripper Design}
 3D printed, need to measure some numbers and list them here, attach the SolidWorks
 screen shot and actual pictures.
 
-\subsubsection{Instrument Stand Design}
+\subsection{Instrument Stand Design}
 Laser cut, made of wood, need measurement of all dimensions, attach the SolidWorks
 screen shot and actual pictures.
 
-\section{An Audio Feedback System}
+\section{Music Teaching System Design}
+After all the preparation, we start to design the system, including joint trajectory, vision control and audio feedback
+
+\subsection{Joint Trajectory}
+Calibration of kinematic parameters. Try to explain it better at some point, if possible describer the future work may implemented using vision feedback system. 
+
+\subsection{Auditory Feedback System}
 The purpose of this system is to provide a back and forth interaction using music therapy to teach kid social skills and music knowledge.
 
-\subsection{Short Time Fourier Transform}
+\subsubsection{Short Time Fourier Transform}
 The short-time Fourier transform (STFT), is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.[1] In practice, the procedure for computing STFTs is to divide a longer time signal into shorter segments of equal length and then compute the Fourier transform separately on each shorter segment. This reveals the Fourier spectrum on each shorter segment. One then usually plots the changing spectra as a function of time.
 Use wiki to attach more pics and more info here.
 https://en.wikipedia.org/wiki/Short-time_Fourier_transform

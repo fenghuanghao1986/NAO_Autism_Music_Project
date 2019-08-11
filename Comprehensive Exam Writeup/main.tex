@@ -1,0 +1,60 @@
+\input{preamble}
+\input{macro}
+
+%\reviewtimetoday{\today}{Draft Version}
+
+\def\mytitleA{A MULTI-MODAL APPROACH FOR FACE MODELING AND RECOGNITION}
+
+\def\mydate{December 2007}
+
+\begin{document}
+
+\include{./sh/frontpage}
+%\include{./sh/copyright}
+\include{./sh/signaturepage}
+\normalsize
+\include{./sh/abstract}
+\pagestyle{plain}
+\renewcommand{\baselinestretch}{2}
+\pagenumbering{roman} \setcounter{page}{3}
+%\include{./sh/to}
+\include{./sh/ack}
+
+\pagestyle{plain}
+
+\addtocontents{toc}{\contentsline {chapter}{\numberline {$\bullet$}List of Figures}{vi}\vskip-.15in}%
+\addtocontents{toc}{\contentsline {chapter}{\numberline {$\bullet$}List of Tables}{xv}\vskip-.15in}%
+\addtocontents{toc}{\contentsline {chapter}{\numberline {$\bullet$}Mathematical Notation}{xvii}\vskip-.15in}%
+
+\begin{spacing}{2}
+\tableofcontents \pagebreak %
+\listoffigures \pagebreak %
+\listoftables \pagebreak %
+\end{spacing}
+%
+\include{./sh/notation}
+%
+\pagenumbering{arabic} \pagestyle{myheadings} \markright{}
+%
+%\include{./chapters/ch1}
+%\include{./chapters/ch2}
+\include{./chapters/ch3}
+%\include{./chapters/ch4}
+%\include{./chapters/ch5}
+%\include{./chapters/ch6}
+
+\appendix
+%
+%\include{./appendices/asm}
+%\include{./appendices/icp}
+%\include{./appendices/sffs}
+\baselineskip 0.21in
+\bibliographystyle{plain}
+\bibliography{ref}
+\baselineskip 0.33in
+
+\label{LastPage}
+%
+\include{./sh/vita}
+
+\end{document}

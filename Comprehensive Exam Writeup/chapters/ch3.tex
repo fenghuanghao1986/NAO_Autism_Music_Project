@@ -101,15 +101,21 @@ to show a flow chart regarding how to implement in the code)
 of the instrument and beaters' heads to computes for each sound bar a suitable 
 beating configuration for arm kinematics chain. Suitable means that the beater's 
 head can be placed on the surface of the sound bar at the desired angle. From 
-this configuration, the control points of a predefined beating motion are updated.) 
+this configuration, the control points of a predefined beating motion are updated.)\\ 
 
 \subsection{Module 2: Joint Trajectory Generator}
-
+Our system parses a list of numerical numbers (from 1 to 11) to obtain the sequence
+of notes to play. It converts the notes into a joint trajectory using the beating
+configurations obtained from inverse kinematic as control points. The timestamps
+for the control points will be defined by user in order to meet the experiment requirement.
+The trajectory is then computed using Bezier interpolation in joint space by the
+manufacturer-provided API and send to the robot controller for execution. In this
+way, the robot plays in-time with the song.\\
 
 
 \subsection{Module 3: Real-Time Performance Scoring Feedback}
 The purpose of this system is to provide a back and forth interaction using music 
-therapy to teach kid social skills and music knowledge.
+therapy to teach kid social skills and music knowledge. This module creates the 
 
 \subsubsection{A. Short Time Fourier Transform}
 The short-time Fourier transform (STFT) , is a Fourier-related 

@@ -1,20 +1,24 @@
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Figures\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss vi\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Tables\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xv\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }Mathematical Notation\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xvii\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
-\contentsline {chapter}{\numberline {1}Xylo-Bot: A Interactive Human-Robot Music Teaching System Design}{1}% 
-\contentsline {section}{\numberline {1.1}NAO: A Humanoid Robot}{2}% 
+\contentsline {chapter}{\numberline {1}Xylo-Bot and X-Elophone}{1}% 
+\contentsline {section}{\numberline {1.1}NAO: A Humanoid Robot}{1}% 
 \contentsline {section}{\numberline {1.2}Accessories}{3}% 
 \contentsline {subsection}{\numberline {1.2.1}Xylophone: A Toy for Music Beginner}{3}% 
-\contentsline {subsection}{\numberline {1.2.2}Mallet Gripper Design}{4}% 
+\contentsline {subsection}{\numberline {1.2.2}Mallet Gripper Design}{3}% 
 \contentsline {subsection}{\numberline {1.2.3}Instrument Stand Design}{4}% 
-\contentsline {section}{\numberline {1.3}Music Teaching System Design}{4}% 
-\contentsline {subsection}{\numberline {1.3.1}Module 1: Eye-hand Self-Calibration}{5}% 
+\contentsline {section}{\numberline {1.3}Module-Based Acoustic Music Interactive System Design}{4}% 
+\contentsline {subsection}{\numberline {1.3.1}Module 1: Eye-hand Self-Calibration Micro-Adjustment}{4}% 
 \contentsline {subsubsection}{A. Color-Based Object Tracking}{5}% 
-\contentsline {subsubsection}{B. Calibration of Kinematic Parameters}{6}% 
+\contentsline {subsubsection}{B. Calibration of Kinematic Parameters}{5}% 
 \contentsline {subsection}{\numberline {1.3.2}Module 2: Joint Trajectory Generator}{6}% 
 \contentsline {subsection}{\numberline {1.3.3}Module 3: Real-Time Performance Scoring Feedback}{6}% 
 \contentsline {subsubsection}{A. Short Time Fourier Transform}{6}% 
-\contentsline {subsection}{\numberline {1.3.4}Dialog System}{7}% 
-\contentsline {subsubsection}{Speech Recognition}{7}% 
-\contentsline {subsubsection}{Dynamic Oral Feedback}{7}% 
-\contentsline {section}{\numberline {1.4}Summary}{7}% 
+\contentsline {section}{\numberline {1.4}X-Elophone: A Revolution of Xylophone}{7}% 
+\contentsline {subsection}{\numberline {1.4.1}Components Selection}{7}% 
+\contentsline {subsubsection}{Piezo Vibration Sensor}{7}% 
+\contentsline {subsubsection}{Op-Amp}{8}% 
+\contentsline {subsubsection}{Multiplexer}{9}% 
+\contentsline {subsubsection}{Arduino UNO}{11}% 
+\contentsline {subsection}{\numberline {1.4.2}ChucK: A On-the-fly Audio Programming Language}{12}% 
+\contentsline {section}{\numberline {1.5}Summary}{12}% 

@@ -5,10 +5,11 @@ reason why need this design. Due to the limitation of keys. This provides more
 possibility for different timber and major minor keys. That allows this system to 
 play more customized song which kids love.
 
+\section{Xylophone Modification}
+
 \subsection{Components Selection}
 
-\subsubsection{Piezo Vibration Sensor}
-
+\subparagraph{A. Piezo Vibration Sensor: }
 The LDT0-028K is a flexible component comprising a 28 µm thick piezoelectric PVDF
 polymer film with screen-printed Ag-ink electrodes, laminated to a 0.125 mm polyester 
 substrate, and fitted with two crimped contacts. As the piezo film is displaced from 
@@ -29,7 +30,7 @@ Also have to show the circuit, how to design this and attach the figure from her
 https://www.sparkfun.com/datasheets/Sensors/Flex/MSI-techman.pdf
 page 39
 
-\subsubsection{Op-Amp}
+\subparagraph{B. Op-Amp: }
 An operational amplifier (often op-amp or opamp) is a DC-coupled high-gain electronic 
 voltage amplifier with a differential input and, usually, a single-ended output.[1] In 
 this configuration, an op-amp produces an output potential (relative to circuit ground) 
@@ -54,11 +55,13 @@ the instrumentation amplifier (usually built from three op-amps), the isolation 
 (similar to the instrumentation amplifier, but with tolerance to common-mode voltages 
 that would destroy an ordinary op-amp), and negative-feedback amplifier (usually built 
 from one or more op-amps and a resistive feedback network).
-https://en.wikipedia.org/wiki/Operational_amplifier
-https://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf
+https://en.wikipedia.org/wiki/Operational_amplifier\\
+
+https://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf\\
 
 
-\subsubsection{Multiplexer}
+
+\subparagraph{C. Multiplexer: }
 In electronics, a multiplexer (or mux) is a device that selects between several analog 
 or digital input signals and forwards it to a single output line.[1] A multiplexer of 
 ${\displaystyle 2^{n}} 2^{n}$ inputs has ${\displaystyle n}$ n select lines, which are 
@@ -86,9 +89,10 @@ common input/output (Z) and a digital enable input (E). When E is HIGH, the swit
 turned off. Inputs include clamp diodes. This enables the use of current limiting resistors 
 to interface inputs to voltages in excess of VCC.
 https://en.wikipedia.org/wiki/Multiplexer
-https://cdn.sparkfun.com/assets/learn_tutorials/5/5/3/74HC_HCT4051.pdf
+https://cdn.sparkfun.com/assets/learn_tutorials/5/5/3/74HC_HCT4051.pdf\\
 
-\subsubsection{Arduino UNO}
+
+\subparagraph{D. Arduino UNO: }
 The Arduino Uno is an open-source microcontroller board based on the Microchip ATmega328P 
 microcontroller and developed by Arduino.cc.[2][3] The board is equipped with sets of digital 
 and analog input/output (I/O) pins that may be interfaced to various expansion boards (shields) 
@@ -109,12 +113,17 @@ that allows uploading new code to it without the use of an external hardware pro
 While the Uno communicates using the original STK500 protocol,[1] it differs from all 
 preceding boards in that it does not use the FTDI USB-to-serial driver chip. Instead, 
 it uses the Atmega16U2 (Atmega8U2 up to version R2) programmed as a USB-to-serial converter.[7]
-https://en.wikipedia.org/wiki/Arduino_Uno
+https://en.wikipedia.org/wiki/Arduino_Uno\\
+
 show block diagram of the code:
 
+\subsection{Circuit Design}
+
+\section{Sound Design}
 
 \subsection{ChucK: A On-the-fly Audio Programming Language}
-https://www.researchgate.net/profile/Ge_Wang9/publication/259326122_The_ChucK_Programming_Language_A_Strongly-Timed_On-the-fly_Environmentality/links/0c96052b02acb79c2c000000.pdf
+https://www.researchgate.net/profile/Ge_Wang9/publication/259326122_The_ChucK_Programming_Language_A_Strongly-Timed_On-the-fly_Environmentality/links/0c96052b02acb79c2c000000.pdf\\
+
 briefly describe the language, and show the block diagram of of this code as well. 
 The computer has long been considered an extremely attractive tool for creating,
 manipulating, and analyzing sound. Its precision, possibilities for new timbres, and
@@ -140,7 +149,6 @@ programs in real-time, and to provide a platform for building highly customizabl
 user interfaces.
 In addition to presenting the ChucK programming language, a history of music
 and programming is provided (Chapter 2), and the various aspects of the ChucK
-iv
 language are evaluated in the context of computer music research, performance,
 and pedagogy (Chapter 6). As part of an extensive case study, the thesis discusses
 ChucK as a primary teaching and development tool in the Princeton Laptop Orchestra 

@@ -33,17 +33,16 @@ requirements for designing the online feedback audio score system which will be
 described below.\\
 
 \section{Accessories}
-Due to the size of the toy xylophone which has been used in this study, several 
-accessories have been designed and crafted using 3D printing and laser cut 
-machines.\\
+The purpose of this study is to have a toy size humanoid robot to play music,
+some necessary accessories need to be purchased and made before teach the robot
+to play music. All accessories will be discussed in the following sections.\\
 
 \subsection{Xylophone: A Toy for Music Beginner}
-In this system we choose a Sonor Toy Sound SM soprano-xylophone with 11 sound 
-bars of 2 cm in width. The instrument has a size of xx cm x xx cm x xx cm, 
-including the resonateing body. The smallest sound bar is playable in an area of 
-2.8 cm x 2 cm, the largest in an area of 4.8 cm x 2 cm. The instrument is 
-diatonically tuned in C-Major/a-minor. The beaters/mallets, we use the pair which 
-come with the xylophone with a modified 3D printed grips (details in next 
+In this system, according NAO's open arms' length, we choose a Sonor Toy Sound SM soprano-xylophone with 11 sound bars of 2 cm in width. The instrument has a size of 
+31 cm x 9.5 cm x 4 cm, including the resonateing body. The smallest sound bar is 
+playable in an area of 2.8 cm x 2 cm, the largest in an area of 4.8 cm x 2 cm. The 
+instrument is diatonically tuned in C-Major/a-minor. The beaters/mallets, we use 
+the pair which come with the xylophone with a modified 3D printed grips (details in next 
 subsection) to allow the robot's hands to hold them properly. The mallets 
 are approximately 21 cm in length include a head of 0.8 cm radius.\\ 
 %(see figure somewhere with real instrument)
@@ -60,7 +59,7 @@ in figure somewhere.\\
 \subsection{Instrument Stand Design}
 A wooden base has designed and laser cut to hold the instrument in a proper place 
 in order to have the robot be able to play music. All dimensions can be found in 
-figure somewhere below. (attach both actural and solidworks pics somewhere blow)\\
+figure somewhere below. (attach both actual and solidworks pics somewhere blow)\\
 
 \section{Module-Based Acoustic Music Interactive System Design}
 In this section, a novelty module-based robot-music teaching system will be presented. 
@@ -75,7 +74,8 @@ tasks requiring high precision such as playing the xylophone. While the kinemati
 structure is known from the construction plan, errors can occur, e.g., due to the 
 imperfect manufacturing. After multiple times of test, the targeted angle chain 
 of arms never equals to the returned chain in reality. We therefore use a 
-calibration method to accurately eliminate these errors. 
+calibration method to accurately eliminate these errors.\\
+ 
 
 \subsubsection{A. Color-Based Object Tracking}
 To play the xylophone, the robot has to be able to adjust its motions according to
@@ -107,31 +107,58 @@ manufacturer-provided API and send to the robot controller for execution. In thi
 way, the robot plays in-time with the song.\\
 
 \subsection{Module 3: Real-Time Performance Scoring Feedback}
-The purpose of this system is to provide a back and forth interaction using music 
-therapy to teach kid social skills and music knowledge. This module creates the 
+The purpose of this system is to provide a real-life interaction experience using 
+music therapy to teach kids social skills and music knowledge.  In this scoring 
+system, two core features have designed to complete the task: 1) music detection;
+2) intelligent scoring-feedback system.\\
 
-\subsubsection{A. Short Time Fourier Transform}
-The short-time Fourier transform (STFT) , is a Fourier-related 
-transform used to determine the sinusoidal frequency and phase content of local 
-sections of a signal as it changes over time. In practice, the procedure for 
-computing STFTs is to divide a longer time signal into shorter segments of equal 
-length and then compute the Fourier transform separately on each shorter segment. 
-This reveals the Fourier spectrum on each shorter segment. One then usually plots 
-the changing spectra as a function of time.
-In the discrete time case, the data to be transformed could be broken up into chunks 
-or frames (which usually overlap each other, to reduce artifacts at the boundary). 
-Each chunk is Fourier transformed, and the complex result is added to a matrix, which 
-records magnitude and phase for each point in time and frequency. This can be expressed as:
+
+\subsubsection{A. Music Detection}
+Music, in the understanding of science and technology can be considered as a combination 
+of time and frequency. For robot to detect a sequence of frequencies, we adopt the 
+short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
+be able to understands the music played by users and provide the proper feedback as
+a music teaching instructor.\\
+
+The short-time Fourier transform (STFT) , is a Fourier-related transform used to 
+determine the sinusoidal frequency and phase content of local sections of a signal 
+as it changes over time. In practice, the procedure for computing STFTs is to divide 
+a longer time signal into shorter segments of equal length and then compute the 
+Fourier transform separately on each shorter segment. This reveals the Fourier 
+spectrum on each shorter segment. One then usually plots the changing spectra as 
+a function of time.In the discrete time case, the data to be transformed could 
+be broken up into chunks or frames (which usually overlap each other, to reduce 
+artifacts at the boundary). Each chunk is Fourier transformed, and the complex 
+result is added to a matrix, which records magnitude and phase for each point in 
+time and frequency. This can be expressed as:
 
 ${\displaystyle \mathbf {STFT} \{x[n]\}(m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty }x[n]w[n-m]e^{-j\omega n}}$
 
 likewise, with signal x[n] and window w[n]. In this case, m is discrete and $\omega$ 
 is continuous, but in most typical applications the STFT is performed on a computer 
 using the Fast Fourier Transform, so both variables are discrete and quantized.\\
-The magnitude squared of the STFT yields the spectrogram representation of the Power Spectral Density of the function:
+The magnitude squared of the STFT yields the spectrogram representation of the Power 
+Spectral Density of the function:
 
 ${\displaystyle \operatorname {spectrogram} \{x(t)\}(\tau ,\omega )\equiv |X(\tau ,\omega )|^{2}}$
 
+\subsubsection{B. Intelligent Scoring-Feedback System}
+By using the result detected by STFT, 
+
+
+The Levenshtein distance between two strings ${\displaystyle a,b}$ (of length ${\displaystyle |a|}$ 
+and ${\displaystyle |b|}$ respectively) is given by ${\displaystyle \operatorname {lev} _{a,b}(|a|,|b|)}$ where
+
+${\displaystyle \qquad \operatorname {lev} _{a,b}(i,j)={\begin{cases}\max(i,j)&{\text{ if }}\min(i,j)=0,\\\min {\begin{cases}\operatorname {lev} _{a,b}(i-1,j)+1\\\operatorname {lev} _{a,b}(i,j-1)+1\\\operatorname {lev} _{a,b}(i-1,j-1)+1_{(a_{i}\neq b_{j})}\end{cases}}&{\text{ otherwise.}}\end{cases}}}$\\
+
+
+where ${\displaystyle 1_{(a_{i}\neq b_{j})}}$ is the indicator function equal to 0 when 
+${\displaystyle a_{i}=b_{j}}$ and equal to 1 otherwise, and ${\displaystyle \operatorname {lev} _{a,b}(i,j)}$ 
+is the distance between the first ${\displaystyle i}$ characters of ${\displaystyle a}$ and the
+ first ${\displaystyle j}$ characters of ${\displaystyle b}$.
+
+Note that the first element in the minimum corresponds to deletion (from ${\displaystyle a}$ to ${\displaystyle b}$), 
+the second to insertion and the third to match or mismatch, depending on whether the respective symbols are the same.
 
 \section{Summary}
 

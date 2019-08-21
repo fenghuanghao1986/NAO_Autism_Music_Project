@@ -1,47 +1,33 @@
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Figures\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss vi\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Tables\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xv\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
 \penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }Mathematical Notation\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xvii\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
-\contentsline {chapter}{\numberline {1}Introduction}{1}% 
-\contentsline {section}{\numberline {1.1}Autism Spectrum Disorders (ASD)}{1}% 
-\contentsline {section}{\numberline {1.2}Socially Assistive Robotics}{3}% 
-\contentsline {subsection}{\numberline {1.2.1}Socially Assistive Robots for Autism Therapy}{5}% 
-\contentsline {section}{\numberline {1.3}Music Therapy for ASD}{8}% 
-\contentsline {section}{\numberline {1.4}Thesis Contributions}{8}% 
-\contentsline {section}{\numberline {1.5}Orgizaition}{8}% 
-\contentsline {subsection}{\numberline {1.5.1}Types of Biometrics}{8}% 
-\contentsline {subsection}{\numberline {1.5.2}Biometric Market}{11}% 
-\contentsline {subsubsection}{Human Computer Interaction}{12}% 
-\contentsline {section}{\numberline {1.6}Proposed Face Modeling and Recognition System}{17}% 
-\contentsline {subsubsection}{3-D Face Recognition Using 3-D Ridge Images}{17}% 
-\contentsline {section}{\numberline {1.7}Dissertation Contributions}{19}% 
-\contentsline {section}{\numberline {1.8}Dissertation Outline}{21}% 
-\contentsline {chapter}{\numberline {2}Related Works}{22}% 
-\contentsline {section}{\numberline {2.1}Autism}{22}% 
-\contentsline {subsection}{\numberline {2.1.1}Turn-Taking}{24}% 
-\contentsline {subsection}{\numberline {2.1.2}Emotion EDA}{25}% 
-\contentsline {subsection}{\numberline {2.1.3}Motor control}{26}% 
-\contentsline {section}{\numberline {2.2}ADOS}{27}% 
-\contentsline {chapter}{\numberline {3}Xylo-Bot: An Interactive Music Teaching System}{29}% 
-\contentsline {section}{\numberline {3.1}NAO: A Humanoid Robot}{29}% 
-\contentsline {section}{\numberline {3.2}Accessories}{31}% 
-\contentsline {subsection}{\numberline {3.2.1}Xylophone: A Toy for Music Beginner}{31}% 
-\contentsline {subsection}{\numberline {3.2.2}Mallet Gripper Design}{31}% 
-\contentsline {subsection}{\numberline {3.2.3}Instrument Stand Design}{32}% 
-\contentsline {section}{\numberline {3.3}Module-Based Acoustic Music Interactive System Design}{32}% 
-\contentsline {subsection}{\numberline {3.3.1}Module 1: Eye-hand Self-Calibration Micro-Adjustment}{32}% 
-\contentsline {subsubsection}{A. Color-Based Object Tracking}{33}% 
-\contentsline {subsubsection}{B. Calibration of Kinematic Parameters}{33}% 
-\contentsline {subsection}{\numberline {3.3.2}Module 2: Joint Trajectory Generator}{34}% 
-\contentsline {subsection}{\numberline {3.3.3}Module 3: Real-Time Performance Scoring Feedback}{34}% 
-\contentsline {subsubsection}{A. Short Time Fourier Transform}{34}% 
-\contentsline {section}{\numberline {3.4}Summary}{35}% 
-\contentsline {chapter}{\numberline {4}X-Elophone: A New Instrument with New Experiment Design}{36}% 
-\contentsline {section}{\numberline {4.1}Xylophone Modification}{36}% 
-\contentsline {subsection}{\numberline {4.1.1}Components Selection}{36}% 
-\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{36}% 
-\contentsline {subparagraph}{B. Op-Amp: }{37}% 
-\contentsline {subparagraph}{C. Multiplexer: }{38}% 
-\contentsline {subparagraph}{D. Arduino UNO: }{40}% 
-\contentsline {subsection}{\numberline {4.1.2}Circuit Design}{41}% 
-\contentsline {section}{\numberline {4.2}Sound Design}{41}% 
-\contentsline {subsection}{\numberline {4.2.1}ChucK: A On-the-fly Audio Programming Language}{41}% 
+\contentsline {chapter}{\numberline {1}Xylo-Bot: An Interactive Music Teaching System}{1}% 
+\contentsline {section}{\numberline {1.1}NAO: A Humanoid Robot}{1}% 
+\contentsline {section}{\numberline {1.2}Accessories}{2}% 
+\contentsline {subsection}{\numberline {1.2.1}Xylophone: A Toy for Music Beginner}{2}% 
+\contentsline {subsection}{\numberline {1.2.2}Mallet Gripper Design}{2}% 
+\contentsline {subsection}{\numberline {1.2.3}Instrument Stand Design}{3}% 
+\contentsline {section}{\numberline {1.3}Module-Based Acoustic Music Interactive System Design}{3}% 
+\contentsline {subsection}{\numberline {1.3.1}Module 1: Eye-hand Self-Calibration Micro-Adjustment}{3}% 
+\contentsline {subsubsection}{A. Color-Based Object Tracking}{3}% 
+\contentsline {subsubsection}{B. Calibration of Kinematic Parameters}{4}% 
+\contentsline {subsection}{\numberline {1.3.2}Module 2: Joint Trajectory Generator}{4}% 
+\contentsline {subsection}{\numberline {1.3.3}Module 3: Real-Time Performance Scoring Feedback}{4}% 
+\contentsline {subsubsection}{A. Music Detection}{4}% 
+\contentsline {subsubsection}{B. Intelligent Scoring-Feedback System}{5}% 
+\contentsline {section}{\numberline {1.4}Summary}{5}% 
+\contentsline {chapter}{\numberline {2}Protocol 1: Acoustic Music Teaching Experiment Design Data Acquisition and Result}{6}% 
+\contentsline {section}{\numberline {2.1}Emotion}{6}% 
+\contentsline {subsection}{\numberline {2.1.1}Dialog System}{6}% 
+\contentsline {subsubsection}{Speech Recognition}{6}% 
+\contentsline {subsubsection}{Dynamic Oral Feedback}{6}% 
+\contentsline {chapter}{\numberline {3}X-Elophone: A New Instrument with New Experiment Design}{7}% 
+\contentsline {section}{\numberline {3.1}Xylophone Modification}{7}% 
+\contentsline {subsection}{\numberline {3.1.1}Components Selection}{7}% 
+\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{7}% 
+\contentsline {subparagraph}{B. Op-Amp: }{8}% 
+\contentsline {subparagraph}{C. Multiplexer: }{8}% 
+\contentsline {subparagraph}{D. Arduino UNO: }{9}% 
+\contentsline {subsection}{\numberline {3.1.2}Circuit Design}{10}% 
+\contentsline {section}{\numberline {3.2}Sound Design}{10}% 
+\contentsline {subsection}{\numberline {3.2.1}ChucK: A On-the-fly Audio Programming Language}{10}% 

@@ -15,19 +15,30 @@
 \contentsline {subsection}{\numberline {1.3.3}Module 3: Real-Time Performance Scoring Feedback}{4}% 
 \contentsline {subsubsection}{A. Music Detection}{4}% 
 \contentsline {subsubsection}{B. Intelligent Scoring-Feedback System}{5}% 
-\contentsline {section}{\numberline {1.4}Summary}{5}% 
-\contentsline {chapter}{\numberline {2}Protocol 1: Acoustic Music Teaching Experiment Design Data Acquisition and Result}{6}% 
-\contentsline {section}{\numberline {2.1}Emotion}{6}% 
-\contentsline {subsection}{\numberline {2.1.1}Dialog System}{6}% 
-\contentsline {subsubsection}{Speech Recognition}{6}% 
-\contentsline {subsubsection}{Dynamic Oral Feedback}{6}% 
-\contentsline {chapter}{\numberline {3}X-Elophone: A New Instrument with New Experiment Design}{7}% 
-\contentsline {section}{\numberline {3.1}Xylophone Modification}{7}% 
-\contentsline {subsection}{\numberline {3.1.1}Components Selection}{7}% 
-\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{7}% 
-\contentsline {subparagraph}{B. Op-Amp: }{8}% 
-\contentsline {subparagraph}{C. Multiplexer: }{8}% 
-\contentsline {subparagraph}{D. Arduino UNO: }{9}% 
-\contentsline {subsection}{\numberline {3.1.2}Circuit Design}{10}% 
-\contentsline {section}{\numberline {3.2}Sound Design}{10}% 
-\contentsline {subsection}{\numberline {3.2.1}ChucK: A On-the-fly Audio Programming Language}{10}% 
+\contentsline {section}{\numberline {1.4}Summary}{6}% 
+\contentsline {chapter}{\numberline {2}Protocol 1: Acoustic Music Teaching Experiment Design Data Acquisition and Result}{7}% 
+\contentsline {section}{\numberline {2.1}Room Setup and Participants}{8}% 
+\contentsline {section}{\numberline {2.2}Experiment Design}{8}% 
+\contentsline {subparagraph}{Baseline Session: }{8}% 
+\contentsline {subparagraph}{Intervention Sessions: }{8}% 
+\contentsline {subparagraph}{Exit Session: }{8}% 
+\contentsline {section}{\numberline {2.3}Methodology and Experiment Result}{9}% 
+\contentsline {subsection}{\numberline {2.3.1}Social Aspects Annotation and Coding Methods}{9}% 
+\contentsline {subparagraph}{Turn-Taking Coding}{9}% 
+\contentsline {subparagraph}{Joint Attention Coding}{9}% 
+\contentsline {subparagraph}{Eye-Gaze Attention Coding}{9}% 
+\contentsline {subsection}{\numberline {2.3.2}Motor Control Scoring System}{9}% 
+\contentsline {subsection}{\numberline {2.3.3}Emotion Detection}{9}% 
+\contentsline {subsection}{\numberline {2.3.4}Dialog System}{9}% 
+\contentsline {subsubsection}{Speech Recognition}{9}% 
+\contentsline {subsubsection}{Dynamic Oral Feedback}{10}% 
+\contentsline {chapter}{\numberline {3}X-Elophone: A New Instrument with New Experiment Design}{11}% 
+\contentsline {section}{\numberline {3.1}Xylophone Modification}{11}% 
+\contentsline {subsection}{\numberline {3.1.1}Components Selection}{11}% 
+\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{11}% 
+\contentsline {subparagraph}{B. Op-Amp: }{12}% 
+\contentsline {subparagraph}{C. Multiplexer: }{12}% 
+\contentsline {subparagraph}{D. Arduino UNO: }{13}% 
+\contentsline {subsection}{\numberline {3.1.2}Circuit Design}{14}% 
+\contentsline {section}{\numberline {3.2}Sound Design}{14}% 
+\contentsline {subsection}{\numberline {3.2.1}ChucK: A On-the-fly Audio Programming Language}{14}% 

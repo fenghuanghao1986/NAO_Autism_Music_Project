@@ -19,18 +19,21 @@ vision feature of the robot, that allows the robot be able to see the instrument
 from its lower camera and be able to do implement a eye-arm self-calibration 
 system which allows the robot to have real-time micro-adjustment of its 
 arm-joints in case of off positioning during music playing.\\
+% show whole nao pic here
 The robot arms have a length of approximately 31 cm. Each arm have five degrees 
 of freedom and is equipped with the sensors to measure the position of each 
 joint. To determine the pose of the instrument and the beaters' heads the robot 
 analyzes images from the lower monocular camera located in its head, which has a 
 diagonal field of view of 73 degree. These dimensions allows us to choose a 
 proper instrument presented in next section.\\
+% show nao's open arms pic here, use the pic from german group
 Four microphones embedded on toy or NAO's head locations see figure somewhere. 
 According the official Aldebaran documentation, these microphones has sensitivity 
 of 20mV/Pa +/-3dB at 1kHz, and the input frequency range of 150Hz - 12kHz, data 
 will be recorded as a 16 bits, 48000Hz, 4 channels wav file which meets the 
 requirements for designing the online feedback audio score system which will be 
 described below.\\
+% show nao's head with mic details here
 
 \section{Accessories}
 The purpose of this study is to have a toy size humanoid robot to play music,
@@ -59,14 +62,15 @@ in figure somewhere.\\
 \subsection{Instrument Stand Design}
 A wooden base has designed and laser cut to hold the instrument in a proper place 
 in order to have the robot be able to play music. All dimensions can be found in 
-figure somewhere below. (attach both actual and solidworks pics somewhere blow)\\
+figure somewhere below.\\
+% attach both actual and solidworks pics somewhere blow
 
 \section{Module-Based Acoustic Music Interactive System Design}
 In this section, a novelty module-based robot-music teaching system will be presented. 
 Three modules have built in this intelligent system including module 1: eye-hand 
 self-calibration micro-adjustment; module 2: joint trajectory generator; and 
-module 3: real time performance scoring feedback. (see a block diagram figure 
-somewhere presenting the whole system)
+module 3: real time performance scoring feedback. \\
+% show a block diagram figure somewhere presenting the whole system
 
 \subsection{Module 1: Eye-hand Self-Calibration Micro-Adjustment}
 Knowledge about the parameters of the robot's kinematic model is essential for 
@@ -88,7 +92,7 @@ camera image and compare them to actually observed contour. In this way, it is p
 to estimate the likelihood of the pose hypothesis. By using this method, it allows
 the robot to track the instrument with very low cost in real-time.\\
 %(see figure some where, need a sequence of screen shot to show hot it works, possibly
-to show a flow chart regarding how to implement in the code)
+%to show a flow chart regarding how to implement in the code
 
 \subsubsection{B. Calibration of Kinematic Parameters}
 (In progress, will not present in this version. The idea is to use both positions 
@@ -98,7 +102,7 @@ head can be placed on the surface of the sound bar at the desired angle. From
 this configuration, the control points of a predefined beating motion are updated.)\\ 
 
 \subsection{Module 2: Joint Trajectory Generator}
-Our system parses a list of numerical numbers (from 1 to 11) to obtain the sequence
+Our system parses a list of hex-decimal numbers (from 1 to b) to obtain the sequence
 of notes to play. It converts the notes into a joint trajectory using the beating
 configurations obtained from inverse kinematic as control points. The timestamps
 for the control points will be defined by user in order to meet the experiment requirement.
@@ -115,7 +119,7 @@ system, two core features have designed to complete the task: 1) music detection
 
 \subsubsection{A. Music Detection}
 Music, in the understanding of science and technology can be considered as a combination 
-of time and frequency. For robot to detect a sequence of frequencies, we adopt the 
+of time and frequency. In order to make robot detects a sequence of frequencies, we adopt the 
 short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
 be able to understands the music played by users and provide the proper feedback as
 a music teaching instructor.\\
@@ -131,34 +135,83 @@ be broken up into chunks or frames (which usually overlap each other, to reduce
 artifacts at the boundary). Each chunk is Fourier transformed, and the complex 
 result is added to a matrix, which records magnitude and phase for each point in 
 time and frequency. This can be expressed as:
+\\
 
 ${\displaystyle \mathbf {STFT} \{x[n]\}(m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty }x[n]w[n-m]e^{-j\omega n}}$
+\\
 
 likewise, with signal x[n] and window w[n]. In this case, m is discrete and $\omega$ 
 is continuous, but in most typical applications the STFT is performed on a computer 
 using the Fast Fourier Transform, so both variables are discrete and quantized.\\
 The magnitude squared of the STFT yields the spectrogram representation of the Power 
 Spectral Density of the function:
+\\
 
-${\displaystyle \operatorname {spectrogram} \{x(t)\}(\tau ,\omega )\equiv |X(\tau ,\omega )|^{2}}$
+${\displaystyle \operatorname {spectrogram} \{x(t)\}(\tau ,\omega )\equiv |X(\tau ,\omega )|^{2}}$\\
+
+After robot detect the notes from user input, a list of hex-decimal number will be
+returned, this list will be used in two purposes: 1) compared with target list
+for scoring and send feedback to user; 2) use this list as a new input to have
+robot playback in the game session which will be discussed in next chapter.\\
+% show a spectrugram here with different note frequency
 
 \subsubsection{B. Intelligent Scoring-Feedback System}
-By using the result detected by STFT, 
+In order to compare the detected notes and the target notes, we used an algorithm
+which normally used in information theory, linguistics called Levenshtein Distance.
+This algorithm is a string metric for measuring the difference between two sequences.\\
 
-
-The Levenshtein distance between two strings ${\displaystyle a,b}$ (of length ${\displaystyle |a|}$ 
-and ${\displaystyle |b|}$ respectively) is given by ${\displaystyle \operatorname {lev} _{a,b}(|a|,|b|)}$ where
+In our case, the Levenshtein distance between two string like hex-decimal numbers 
+${\displaystyle a,b}$ (of length ${\displaystyle |a|}$ and ${\displaystyle |b|}$ respectively) 
+is given by ${\displaystyle \operatorname {lev} _{a,b}(|a|,|b|)}$ where
+\\
 
 ${\displaystyle \qquad \operatorname {lev} _{a,b}(i,j)={\begin{cases}\max(i,j)&{\text{ if }}\min(i,j)=0,\\\min {\begin{cases}\operatorname {lev} _{a,b}(i-1,j)+1\\\operatorname {lev} _{a,b}(i,j-1)+1\\\operatorname {lev} _{a,b}(i-1,j-1)+1_{(a_{i}\neq b_{j})}\end{cases}}&{\text{ otherwise.}}\end{cases}}}$\\
-
+\\
 
 where ${\displaystyle 1_{(a_{i}\neq b_{j})}}$ is the indicator function equal to 0 when 
 ${\displaystyle a_{i}=b_{j}}$ and equal to 1 otherwise, and ${\displaystyle \operatorname {lev} _{a,b}(i,j)}$ 
 is the distance between the first ${\displaystyle i}$ characters of ${\displaystyle a}$ and the
- first ${\displaystyle j}$ characters of ${\displaystyle b}$.
+first ${\displaystyle j}$ characters of ${\displaystyle b}$.
 
-Note that the first element in the minimum corresponds to deletion (from ${\displaystyle a}$ to ${\displaystyle b}$), 
-the second to insertion and the third to match or mismatch, depending on whether the respective symbols are the same.
+Note that the first element in the minimum corresponds to deletion (from ${\displaystyle a}$ to 
+${\displaystyle b}$), the second to insertion and the third to match or mismatch, depending on 
+whether the respective symbols are the same.\\
+% add a table here to show how to get the distance from two strings
+
+Based on the real life situation, we define a likelihood margin for determine whether the result
+is good or bad: \\
+  
+${likelihood = \dfrac{len(target) - lev_{target,source}}{len(target)}}$\\
+
+where if the likelihood is greater than 66\% ~ 72\%, system will consider it as a good result.
+This result will be passed to the accuracy calculation system to have robot decide whether it
+need to add more dosage to the practice. More details will be discussed in the next chapters
+which related to experiment design.\\
 
 \section{Summary}
+In this chapter, based on the purpose of this research, we have discussed both hardware
+and software design for getting ready to design the experiment sessions.\\
+
+From Chapter One, we determined to have NAO as a music teaching instructor be able
+to teach children simple music and be able to deliver social content in the mean time.
+In order to have the system ready, first of all, we have to choose the proper agent which should be a
+kids friendly with social ability robot NAO. Second, based on the size of the robot, some necessary
+accessories have to purchased and handcrafted. A toy size color coded xylophone became the
+best option and based on the size and position, a wooden based xylophone stand was 
+customized and assembled. Due to the limitation of NAO's hand size, a pair of mallet gripers 
+have been 3-D printed and customized. Last, a intelligent module-based acoustic music 
+interactive system has designed from scratch. Three modules has designed to have the
+robot to play, listen and teach the music freely and can become a great companion for children
+in both music learning and social life. \\
+
+Module 1 provides a autonomous self awareness positioning system for robot to localize
+the instrument and make micro adjustment for arm joints in order to play the note bar properly.
+Module 2 allows robot to be able to play any customized song behave of user's requests. That
+means, any songs which can be translated to either C-Major or a-minor key, once a well trained
+person type in the hex-decimal playable score, robot should be play it in seconds. Module 3
+is designed for providing real life music teaching experience for system users. Two key features
+of this module are designed: music detection and smart scoring feedback. Short time Fourier transform
+and Levenshtein distance are adopted to fulfill the requirement which allows the robot understands
+music and providing proper dosage of practice and oral feedback to users.\\
+% show how the system runs here with a block diagram here
 

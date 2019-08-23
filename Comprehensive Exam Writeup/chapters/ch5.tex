@@ -10,7 +10,7 @@ play more customized song which kids love.
 \subsection{Components Selection}
 
 \subparagraph{A. Piezo Vibration Sensor: }
-The LDT0-028K is a flexible component comprising a 28 µm thick piezoelectric PVDF
+The LDT0-028K is a flexible component comprising a 28 $\mu$m thick piezoelectric PVDF
 polymer film with screen-printed Ag-ink electrodes, laminated to a 0.125 mm polyester 
 substrate, and fitted with two crimped contacts. As the piezo film is displaced from 
 the mechanical neutral axis, bending creates very high strain within the piezopolymer 
@@ -24,11 +24,7 @@ frequency and sensitivity of the sensor to suit specific applications. Multi-axi
 can be achieved by positioning the mass off center. The LDTM-028K is a vibration sensor 
 where the sensing element comprises a cantilever beam loaded by an additional mass to 
 offer high sensitivity at low frequencies. 
-%https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/LDT_Series.pdf
 
-Also have to show the circuit, how to design this and attach the figure from here
-https://www.sparkfun.com/datasheets/Sensors/Flex/MSI-techman.pdf
-page 39
 
 \subparagraph{B. Op-Amp: }
 An operational amplifier (often op-amp or opamp) is a DC-coupled high-gain electronic 
@@ -55,11 +51,6 @@ the instrumentation amplifier (usually built from three op-amps), the isolation 
 (similar to the instrumentation amplifier, but with tolerance to common-mode voltages 
 that would destroy an ordinary op-amp), and negative-feedback amplifier (usually built 
 from one or more op-amps and a resistive feedback network).
-https://en.wikipedia.org/wiki/Operational_amplifier\\
-
-https://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf\\
-
-
 
 \subparagraph{C. Multiplexer: }
 In electronics, a multiplexer (or mux) is a device that selects between several analog 
@@ -88,9 +79,6 @@ three digital select inputs (S0, S1 and S2), eight independent inputs/outputs (Y
 common input/output (Z) and a digital enable input (E). When E is HIGH, the switches are 
 turned off. Inputs include clamp diodes. This enables the use of current limiting resistors 
 to interface inputs to voltages in excess of VCC.
-https://en.wikipedia.org/wiki/Multiplexer
-https://cdn.sparkfun.com/assets/learn_tutorials/5/5/3/74HC_HCT4051.pdf\\
-
 
 \subparagraph{D. Arduino UNO: }
 The Arduino Uno is an open-source microcontroller board based on the Microchip ATmega328P 
@@ -113,7 +101,6 @@ that allows uploading new code to it without the use of an external hardware pro
 While the Uno communicates using the original STK500 protocol,[1] it differs from all 
 preceding boards in that it does not use the FTDI USB-to-serial driver chip. Instead, 
 it uses the Atmega16U2 (Atmega8U2 up to version R2) programmed as a USB-to-serial converter.[7]
-https://en.wikipedia.org/wiki/Arduino_Uno\\
 
 show block diagram of the code:
 
@@ -122,9 +109,6 @@ show block diagram of the code:
 \section{Sound Design}
 
 \subsection{ChucK: A On-the-fly Audio Programming Language}
-https://www.researchgate.net/profile/Ge_Wang9/publication/259326122_The_ChucK_Programming_Language_A_Strongly-Timed_On-the-fly_Environmentality/links/0c96052b02acb79c2c000000.pdf\\
-
-briefly describe the language, and show the block diagram of of this code as well. 
 The computer has long been considered an extremely attractive tool for creating,
 manipulating, and analyzing sound. Its precision, possibilities for new timbres, and
 potential for fantastical automation make it a compelling platform for expression
@@ -147,29 +131,4 @@ also described. In turn, this motivates the Audicle, a specialized graphical env
 designed to facilitate on-the-fly programming, to visualize and monitor ChucK
 programs in real-time, and to provide a platform for building highly customizable
 user interfaces.
-In addition to presenting the ChucK programming language, a history of music
-and programming is provided (Chapter 2), and the various aspects of the ChucK
-language are evaluated in the context of computer music research, performance,
-and pedagogy (Chapter 6). As part of an extensive case study, the thesis discusses
-ChucK as a primary teaching and development tool in the Princeton Laptop Orchestra 
-(PLOrk), which continues to be a powerful platform for deploying ChucK
-1) to teach topics ranging from programming to sound synthesis to music composition, 
-and 2) for crafting new instruments, compositions, and performances for
-computer-mediated ensembles. Additional applications are also described, including 
-classrooms, live coding arenas, compositions and performances, user studies,
-and integrations of ChucK into other software systems.
-The contributions of this work include the following. 1) A time-based programming 
-mechanism (both language and underlying implementation) for ultraprecise audio 
-synthesis, naturally extensible to real-time audio analysis. 2) A nonpreemptive, 
-time/event-based concurrent programming model that provides fundamental flexibility 
-and readability without incurring many of the difficulties of
-programming concurrency. 3) A ChucKian approach to writing code and designing audio 
-programs on-the-fly. This rapid prototyping mentality has potentially
-wide ramifications in the way we think about coding audio, in designing/testing
-software (particular for real-time audio), as well as new paradigms and practices
-in computer-mediated live performance. 4) The Audicle as a new type of audio
-programming environment that combines live development with visualizations. 5)
-Extended case studies of using, teaching, composing, and performing with ChucK,
-most prominently in the Laptop Orchestra. These show the power of teaching programming 
-via music, and vice versa - and how these two disciplines can reinforce
-each other.
+Show block diagram here.

@@ -12,14 +12,24 @@ NAO is 58 cm (23 inches) tall, with 25 degrees of freedom this robot
 can conduct most of the human behaviors. It also features an onboard multimedia 
 system including, four microphones for voice recognition, and sound localization, 
 two speakers for text-to-speech synthesis, and two HD cameras with maximum image 
-resolution 1280 x 960 for online observation. As shown in Figure somewhere, these 
+resolution 1280 x 960 for online observation. As shown in Figure \ref{nao_body}, these 
 utilities are located in the middle of the forehead and the mouth area. NAO’s 
 computer vision module includes facial and shape recognition units. By using the 
 vision feature of the robot, that allows the robot be able to see the instrument 
 from its lower camera and be able to do implement a eye-arm self-calibration 
 system which allows the robot to have real-time micro-adjustment of its 
 arm-joints in case of off positioning during music playing.\\
-% show whole nao pic here
+\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/naobody.eps, scale = .8}\label{nao_body} \\
+		\end{tabular}
+		\caption{A Humanoid Robot NAO: 25 Degrees of Freedom, 2 HD Cameras and 4 Microphones} \label{nao_body}
+	\end{center}
+\end{figure}
+
 The robot arms have a length of approximately 31 cm. Each arm have five degrees 
 of freedom and is equipped with the sensors to measure the position of each 
 joint. To determine the pose of the instrument and the beaters' heads the robot 
@@ -27,13 +37,30 @@ analyzes images from the lower monocular camera located in its head, which has a
 diagonal field of view of 73 degree. These dimensions allows us to choose a 
 proper instrument presented in next section.\\
 % show nao's open arms pic here, use the pic from german group
-Four microphones embedded on toy or NAO's head locations see figure somewhere. 
+%\begin{figure}[tbp]
+%	\begin{center}
+%		\begin{tabular}{c}
+%			\epsfig{figure=./chapters/fig/naobody.eps, scale = 0.45}\label{nao_open_arm} \\
+%		\end{tabular}
+%		\caption{NAO Open Arm with Playable Positions} \label{nao_open_arm}
+%	\end{center}
+%\end{figure}
+
+Four microphones embedded on toy or NAO's head locations see figure \ref{mic_loc}. 
 According the official Aldebaran documentation, these microphones has sensitivity 
 of 20mV/Pa +/-3dB at 1kHz, and the input frequency range of 150Hz - 12kHz, data 
 will be recorded as a 16 bits, 48000Hz, 4 channels wav file which meets the 
 requirements for designing the online feedback audio score system which will be 
 described below.\\
 % show nao's head with mic details here
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/mic.eps, scale = 1.2}\label{mic_loc} \\
+		\end{tabular}
+		\caption{Microphone locations on NAO's head} \label{mic_loc}
+	\end{center}
+\end{figure}
 
 \section{Accessories}
 The purpose of this study is to have a toy size humanoid robot to play music,
@@ -41,14 +68,23 @@ some necessary accessories need to be purchased and made before teach the robot
 to play music. All accessories will be discussed in the following sections.\\
 
 \subsection{Xylophone: A Toy for Music Beginner}
-In this system, according NAO's open arms' length, we choose a Sonor Toy Sound SM soprano-xylophone with 11 sound bars of 2 cm in width. The instrument has a size of 
+In this system, according NAO's open arms' length, we choose a Sonor Toy Sound SM 
+soprano-xylophone with 11 sound bars of 2 cm in width. The instrument has a size of 
 31 cm x 9.5 cm x 4 cm, including the resonateing body. The smallest sound bar is 
 playable in an area of 2.8 cm x 2 cm, the largest in an area of 4.8 cm x 2 cm. The 
 instrument is diatonically tuned in C-Major/a-minor. The beaters/mallets, we use 
 the pair which come with the xylophone with a modified 3D printed grips (details in next 
 subsection) to allow the robot's hands to hold them properly. The mallets 
-are approximately 21 cm in length include a head of 0.8 cm radius.\\ 
-%(see figure somewhere with real instrument)
+are approximately 21 cm in length include a head of 0.8 cm radius. See Figure \ref{xylo640}.\\ 
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/xylo640.eps, scale = .6}\label{xylo640} \\
+		\end{tabular}
+		\caption{Actual Xylophone and Mallets from NAO's Bottom Camera} \label{xylo640}
+	\end{center}
+\end{figure}
 11 bars represent 11 different notes (11 frequencies) which covers 
 approximate one and half octave scale starting from C6 to F7. \\
 %(see figures or a table with different frequencies somewhere)
@@ -69,8 +105,16 @@ figure somewhere below.\\
 In this section, a novelty module-based robot-music teaching system will be presented. 
 Three modules have built in this intelligent system including module 1: eye-hand 
 self-calibration micro-adjustment; module 2: joint trajectory generator; and 
-module 3: real time performance scoring feedback. \\
-% show a block diagram figure somewhere presenting the whole system
+module 3: real time performance scoring feedback. See Figure \ref{module}\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/module_blocks.eps, scale = .5}\label{module} \\
+		\end{tabular}
+		\caption{Block Diagram of Module-Based Acustic Music Interactive System} \label{module}
+	\end{center}
+\end{figure}
 
 \subsection{Module 1: Eye-hand Self-Calibration Micro-Adjustment}
 Knowledge about the parameters of the robot's kinematic model is essential for 
@@ -90,9 +134,21 @@ The main idea is, based on the RGB color of the center blue bar, given a hypothe
 about the instrument's pose, one can project the contour of the object's model into the 
 camera image and compare them to actually observed contour. In this way, it is possible 
 to estimate the likelihood of the pose hypothesis. By using this method, it allows
-the robot to track the instrument with very low cost in real-time.\\
-%(see figure some where, need a sequence of screen shot to show hot it works, possibly
-%to show a flow chart regarding how to implement in the code
+the robot to track the instrument with very low cost in real-time. See Figure \ref{color_detection}\\
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/blue.eps, scale = 0.3}\label{single_color_a} \\
+			(a)\\
+			\epsfig{figure=./chapters/fig/all_color.eps, scale = 0.3
+			} \label{all_color_b}\\
+			(b)\\
+			\epsfig{figure=./chapters/fig/color_detection.eps, scale = 0.6} \label{color_detection_c}\\
+			(c)
+			\end{tabular}
+			\caption{Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.} \label{color_detection}
+	\end{center}
+\end{figure}
 
 \subsubsection{B. Calibration of Kinematic Parameters}
 (In progress, will not present in this version. The idea is to use both positions 
@@ -153,7 +209,15 @@ After robot detect the notes from user input, a list of hex-decimal number will 
 returned, this list will be used in two purposes: 1) compared with target list
 for scoring and send feedback to user; 2) use this list as a new input to have
 robot playback in the game session which will be discussed in next chapter.\\
-% show a spectrugram here with different note frequency
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/stft.eps, scale = 1.5}\label{stft} \\
+		\end{tabular}
+		\caption{Melody Detection with Short Time Fourier Transform} \label{stft}
+	\end{center}
+\end{figure}
 
 \subsubsection{B. Intelligent Scoring-Feedback System}
 In order to compare the detected notes and the target notes, we used an algorithm
@@ -175,8 +239,17 @@ first ${\displaystyle j}$ characters of ${\displaystyle b}$.
 
 Note that the first element in the minimum corresponds to deletion (from ${\displaystyle a}$ to 
 ${\displaystyle b}$), the second to insertion and the third to match or mismatch, depending on 
-whether the respective symbols are the same.\\
-% add a table here to show how to get the distance from two strings
+whether the respective symbols are the same. Table \ref{LD} demonstrates how to apply this
+principle in finding the Levenshtein distance of two words "Sunday" and "Saturday".\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/example_LD.eps, scale = .6}\label{LD} \\
+		\end{tabular}
+		\caption{An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"} \label{LD}
+	\end{center}
+\end{figure}
 
 Based on the real life situation, we define a likelihood margin for determine whether the result
 is good or bad: \\
@@ -213,5 +286,5 @@ is designed for providing real life music teaching experience for system users. 
 of this module are designed: music detection and smart scoring feedback. Short time Fourier transform
 and Levenshtein distance are adopted to fulfill the requirement which allows the robot understands
 music and providing proper dosage of practice and oral feedback to users.\\
-% show how the system runs here with a block diagram here
+
 

@@ -78,7 +78,80 @@ time sequences. Various experiments are conducted on the annotated EDA signals t
 classify emotions using a support vector machine (SVM) classifier. The quantitative 
 results show that the emotion classification performance remarkably improves compared 
 to other methods when the proposed wavelet-based features are used.
-https://www.sciencedirect.com/science/article/pii/S0957417418303609
+
+Physiological responses have been identified as reliable indicators of human emotional 
+and cognitive states. This section is dedicated to review some existing methods used for 
+human emotion recognition based on various physiological responses, such as facial 
+expression and other types of bio-signals.    
+A wearable glass device was designed by (Kwon et al., 2016) to measure both electrodermal 
+activity (EDA) and photoplethysmogram data for emotion recognition purposes. A built-in 
+camera was also used in this device for capturing partial facial expression from the eye 
+and nose area. This approach obtains remarkable performance in facial expression 
+recognition in the subject-dependent cases. However, for subject-independent cases, 
+it results in different accuracies across different types of emotions, which is an 
+undesirable feature. 
+EDA has been used as an effective and reproducible electrophysiological method for 
+investigating sympathetic nervous system function (Kwon et al., 2016; Stagg et al., 
+2013; Shahani et al., 1984; Tarvainen et al., 2000). Note that the sympathetic nervous 
+burst changes the skin conductance, which can be traced by analyzing the EDA signals 
+(Kylliäinen et al., 2006; Lidberg, \& Wallin, 1981; Rehg et al., 2013). The Q-sensor 
+is a convenient wireless-based EDA device with no need for cables, boxes, or skin 
+preparation. This device can track three types of data including EDA, temperature, 
+and acceleration at the same time (Kappas et al., 2013). It is worth mentioning that 
+as of today, there has been no published work on emotion classification using the 
+EDA signals collected by this dataset collected at the Georgia Institute of 
+Technology (Rehg et al., 2013).
+Several emotion classification methods have been presented in the literature using 
+different bio-signals (Liu et al., 2014; Legiša et al., 2013; Schmidt, \& Walach, 
+2000; Xu et al., 2017). Due to the variety of the signals used in these methods, 
+different approaches have been designed to comply with their specific characteristics. 
+Analysis of variance (ANOVA) and linear regression (Schmidt, \& Walach, 2000) are the 
+commonly used methods to extract features from bio-signals and to recognize different 
+emotional states. These methods are based on the assumption of a linear relationship 
+between the recorded signals and emotional states. A fuzzy-based classification 
+method (Liu et al., 2014) has been used in to transform EDA and facial 
+electromyography (EMG) to valence and arousal states. These states were then used 
+to classify different emotions. 
+Artificial neural networks (ANN) have also been applied for emotion classification 
+tasks based on physiological responses. (Lin, 2007) developed a multilayer perceptron 
+network (MLP) architecture capable of recognizing five emotions using various features 
+from Electrocardiography (ECG) and EDA signals, and obtained very accurate classification 
+performance. (Nasoz et al., 2004) employed K-nearest neighborhood and discriminant 
+function analysis to perform the emotion classification task using different features 
+extracted from the EDA signals, body temperature and heart rate.
+Support Vector Machine (SVM) is a well-known supervised learning algorithm that has 
+extensively been used for pattern classification and regression (Cortes, \& Vapnik, 
+1995). The SVM classifier tends to separate dataset by drawing an optimal hyperplane 
+between classes such that the margin between them becomes maximum. The samples of 
+each class that are located within the margin are called support vectors and play the 
+main role in calculating the parameters of the hyperplanes between the corresponding 
+classes. Machine learning algorithms such as SVM, linear discriminant analysis (LDA), 
+and classification and regression tree (CART) have been employed for emotion 
+classification purposes. For instance, in several works including (Sano et al., 2011; 
+Jang et al., 2014), the authors combined various types of bio-signals such as ECG, 
+skin temperature (SKT), HR, and Photoplethysmogram (PPG) for  emotion classification 
+purposes. (Amershi et al., 2006) proposed unsupervised clustering methods for emotion 
+recognition. Their method benefited from several features obtained from different 
+body responses such as SC, HR, and EMG. They showed that only a few statistical 
+features such as the mean and standard deviation of the data can be relevant identifiers 
+for defining different clusters. 
+EDA signals are nonstationary and noisy; hence, wavelet-based analysis of EDA signals 
+has been considered in the literature (Swangnetr et al., 2013, Laparra-Hernández et al., 2009) 
+either as a pre-processing step or a feature extraction approach for emotion classification. 
+(Swangnetr et al., 2013) used a set of wavelet coefficients representing EDA features 
+together with heart rate signal to increase the percentage of correct classifications 
+of emotional states and provide clearer relationships among the physiological response 
+and arousal and valence. (Sharma et. al., 2016) used a feature space based on the 
+discrete wavelet transform (DWT) of the EDA signal to distinguish subjects suffering 
+social anxiety disorder (SAD) and a control group. Using MLP and DWT features, they 
+achieved a classification accuracy of ~85%.
+To the best of our knowledge there are a few works (Legiša, J. et al., 2013, 
+Oberman. L et al., 2009) that have studied and compared different automated 
+classification techniques for emotion recognition of children using EDA signals. 
+This motivated us to conduct this study using an existing dataset, which concentrates 
+on emotion classification of children based on the relationship between their facial 
+expressions and the collected EDA signals.
+
 
 \subsection{Motor control}
 Motor control is the systematic regulation of movement in organisms that possess 
@@ -107,7 +180,7 @@ depending on whether the focus is on physical and biological properties, or
 organizational and structural rules.[4] Areas of study related to motor control 
 are motor coordination, motor learning, signal processing, and perceptual control 
 theory.
-https://en.wikipedia.org/wiki/Motor_control
+%https://en.wikipedia.org/wiki/Motor_control
 
 
 \section{ADOS}

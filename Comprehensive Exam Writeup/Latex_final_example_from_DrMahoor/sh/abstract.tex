@@ -1,0 +1,76 @@
+\newpage
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{1}
+\begin{flushleft}
+\small {
+MAHOOR, MOHAMMAD HOSSEIN  \hfill (Ph.D., Electrical and Computer Engineering)\\
+\underline{A MULTI-MODAL APPROACH FOR FACE MODELING} \hfill (\mydate)\\
+\underline{AND RECOGNITION}}
+
+\vspace{0.25in}
+Abstract of a dissertation at the University of Miami.\\
+\vspace{0.25in}
+Dissertation supervised by Dr. Mohamed Abdel-Mottaleb.\\
+No. of pages in text \underline{\pageref{LastPage}}.
+\end{flushleft}
+\renewcommand{\baselinestretch}{2}
+\normalsize{This dissertation describes a new methodology for
+multi-modal (2-D + 3-D) face modeling and recognition. There are
+advantages in using each modality for face recognition. For example,
+the problems of pose variation and illumination condition, which
+cannot be resolved easily by using the 2-D data, can be handled by
+using the 3-D data. However, texture, which is provided by 2-D data,
+is an important cue that cannot be ignored. Therefore, we use both
+the 2-D and 3-D modalities for face recognition and fuse the results
+of face recognition by each modality to boost the overall
+performance of the system.
+
+In this dissertation, we consider two different cases for
+multi-modal face modeling and recognition. In the first case, the
+2-D and 3-D data are registered. In this case we develop a unified
+graph model called Attributed Relational Graph (ARG) for face
+modeling and recognition. Based on the ARG model, the 2-D and 3-D
+data are included in a single model. The developed ARG model
+consists of nodes, edges, and mutual relations. The nodes of the
+graph correspond to the landmark points that are extracted by an
+improved Active Shape Model (ASM) technique. In order to extract the
+facial landmarks robustly, we improve the Active Shape Model
+technique by using the color information. Then, at each node of the
+graph, we calculate the response of a set of log-Gabor filters when
+applied to the facial image texture and shape information (depth
+values); these features are used to model the local structure of the
+face at each node of the graph. The edges of the graph are defined
+based on Delaunay triangulation and a set of mutual relations
+between the sides of the triangles are defined. The mutual relations
+boost the final performance of the system. The results of face
+matching using the 2-D and 3-D attributes and the mutual relations
+are fused at the score level.
+
+In the second case, the 2-D and 3-D data are not registered. This
+lack of registration could be due to different reasons such as time
+lapse between the data acquisitions. Therefore, the 2-D and 3-D
+modalities are modeled independently. For the 3-D modality, we
+developed a fully automated system for 3-D face modeling and
+recognition based on ridge images. The problem with shape matching
+approaches such as Iterative Closest Points (ICP) or Hausdorff
+distance is the computational complexity. We model the face by 3-D
+binary ridge images and use them for matching. In order to match the
+ridge points (either using the ICP or the Hausdorff distance), we
+extract three facial landmark points: namely, the two inner corners
+of the eyes and the tip of the nose, on the face surface using the
+Gaussian curvature. These three points are used for initial
+alignment of the constructed ridge images. As a result of using
+ridge points, which are just a fraction of the total points on the
+surface of the face, the computational complexity of the matching is
+reduced by two orders of magnitude. For the 2-D modality, we model
+the face using an Attributed Relational Graph. The results of the
+2-D and 3-D matching are fused at the score level.
+
+There are various techniques to fuse the 2-D and 3-D modalities. In
+this dissertation, we fuse the matching results at the score level
+to enhance the overall performance of our face recognition system.
+We compare the Dempster-Shafer theory of evidence and the weighted
+sum rule for fusion. We evaluate the performance of the above
+techniques for multi-modal face recognition on various databases
+such as Gavab range database, FRGC (Face Recognition Grand
+Challenge) V2.0, and the University of Miami face database.}

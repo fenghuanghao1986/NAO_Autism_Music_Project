@@ -1,19 +1,19 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: ./sh/frontpage.aux
 A level-1 auxiliary file: ./sh/copyright.aux
-A level-1 auxiliary file: ./sh/ack.aux
 A level-1 auxiliary file: ./chapters/ch1.aux
+A level-1 auxiliary file: ./chapters/ch2.aux
 A level-1 auxiliary file: ./chapters/ch3.aux
 A level-1 auxiliary file: ./chapters/ch4.aux
 A level-1 auxiliary file: ./chapters/ch5.aux
 The style file: plain.bst
 Database file #1: ref.bib
-I was expecting a `,' or a `}'---line 1332 of file ref.bib
+I was expecting a `,' or a `}'---line 1624 of file ref.bib
  :   
  :   pages =        {634-660},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1361 of file ref.bib
+I was expecting a `,' or a `}'---line 1653 of file ref.bib
  :   
  :   pages =        {1835-1846},
 (Error may have been on previous line)
@@ -94,17 +94,339 @@ Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ri
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
 while executing---line 1049 of file plain.bst
+Name 1 in "Ramachandran, Vilayanur S., and Lindsay M. Oberman" has a comma at the end for entry BrokenMirror2006
+while executing---line 1049 of file plain.bst
+Name 1 in "Bartak, L., Rutter, M., and Cox, A" has a comma at the end for entry InfantileAutism1975
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Bartak, L., Rutter, M., and Cox, A" for entry InfantileAutism1975
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "C. Lord, M.Rutter S. Goode, J. Heemsbergen, H. Jordan, L. Mawhood and E. Schopler" for entry AutismDiagno1989
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "C. Lord, M.Rutter S. Goode, J. Heemsbergen, H. Jordan, L. Mawhood and E. Schopler" for entry AutismDiagno1989
+while executing---line 1049 of file plain.bst
+Name 1 in "Wolff, S., and Chess, S" has a comma at the end for entry BehaviorlaStudy1964
+while executing---line 1049 of file plain.bst
+Name 1 in "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" has a comma at the end for entry RoboticMovement
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1049 of file plain.bst
+Name 1 in "Kwon, J., Kim, D. H., Park, W., and Kim, L" has a comma at the end for entry WearableDevice2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1049 of file plain.bst
+Name 1 in "Stagg, S. D., Davis, R., and Heaton, P" has a comma at the end for entry AssociationBetween2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Stagg, S. D., Davis, R., and Heaton, P" for entry AssociationBetween2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" has a comma at the end for entry SympatheticSkin1984
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1049 of file plain.bst
+Name 1 in "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" has a comma at the end for entry PrincipalComponent2000
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1049 of file plain.bst
+Name 1 in "Kylli{\..a}inen, A., and Hietanen, J. K" has a comma at the end for entry SkinConduct2006
+while executing---line 1049 of file plain.bst
+Name 1 in "Lidberg, L., and Wallin, B. G." has a comma at the end for entry SympatheticSkin1981
+while executing---line 1049 of file plain.bst
+Name 1 in "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" has a comma at the end for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." has a comma at the end for entry Validation2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Liu, F., Liu, G., and Lai, X" has a comma at the end for entry EmotionInten2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Liu, F., Liu, G., and Lai, X" for entry EmotionInten2014
+while executing---line 1049 of file plain.bst
+Name 1 in "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" has a comma at the end for entry EmotionResp2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Schmidt, S., and Walach, H" has a comma at the end for entry ElectAct2000
+while executing---line 1049 of file plain.bst
+Name 1 in "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" has a comma at the end for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1049 of file plain.bst
+Name 1 in "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." has a comma at the end for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1049 of file plain.bst
+Name 1 in "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" has a comma at the end for entry EmotionRecog2004
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1049 of file plain.bst
+Name 1 in "Cortes, C., and Vapnik, V" has a comma at the end for entry SupportVector1995
+while executing---line 1049 of file plain.bst
+Name 1 in "Sano, A., and Picard, R. W." has a comma at the end for entry Taxonomy2011
+while executing---line 1049 of file plain.bst
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" has a comma at the end for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1049 of file plain.bst
+Name 1 in "Amershi, S., Conati, C., and McLaren, H." has a comma at the end for entry FeatureSelection2006
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Amershi, S., Conati, C., and McLaren, H." for entry FeatureSelection2006
+while executing---line 1049 of file plain.bst
+Name 1 in "Swangnetr, M., and Kaber, D. B." has a comma at the end for entry EmotionalState2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" has a comma at the end for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Name 1 in "Sharma, V., Prakash, N. R., and Kalra, P." has a comma at the end for entry EDA2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Sharma, V., Prakash, N. R., and Kalra, P." for entry EDA2016
+while executing---line 1049 of file plain.bst
+Name 1 in "Oberman, L. M., Winkielman P., and Ramachandran, V. S" has a comma at the end for entry SlowEcho2009
+while executing---line 1049 of file plain.bst
+Name 1 in "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." has a comma at the end for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1049 of file plain.bst
+Name 1 in "Vetterli, M., and Herley, C" has a comma at the end for entry WaveletFilter1992
+while executing---line 1049 of file plain.bst
+Name 1 in "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" has a comma at the end for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1049 of file plain.bst
+Name 1 in "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." has a comma at the end for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1049 of file plain.bst
+Name 1 in "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" has a comma at the end for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1049 of file plain.bst
+Name 1 in "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" has a comma at the end for entry ArousalValence2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1049 of file plain.bst
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." has a comma at the end for entry EmotionClass2012
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1049 of file plain.bst
+Name 1 in "Amershi, S., Conati, C., and McLaren, H." has a comma at the end for entry FeatureSelection2006
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Amershi, S., Conati, C., and McLaren, H." for entry FeatureSelection2006
+while executing---line 1090 of file plain.bst
 Warning--empty journal in DSMIV2000
 Name 1 in "B. Robins, K. Dautenhahn, and J. Dubowski" has a comma at the end for entry DoesMatter2006
 while executing---line 1090 of file plain.bst
+Name 1 in "Bartak, L., Rutter, M., and Cox, A" has a comma at the end for entry InfantileAutism1975
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Bartak, L., Rutter, M., and Cox, A" for entry InfantileAutism1975
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "C. Lord, M.Rutter S. Goode, J. Heemsbergen, H. Jordan, L. Mawhood and E. Schopler" for entry AutismDiagno1989
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "C. Lord, M.Rutter S. Goode, J. Heemsbergen, H. Jordan, L. Mawhood and E. Schopler" for entry AutismDiagno1989
+while executing---line 1090 of file plain.bst
 Name 1 in "Churchill, D. W., and Bryson, C. Q." has a comma at the end for entry LookApproach1972
+while executing---line 1090 of file plain.bst
+Name 1 in "Cortes, C., and Vapnik, V" has a comma at the end for entry SupportVector1995
 while executing---line 1090 of file plain.bst
 Name 1 in "D. Feil-Seifer., and M. J. Mataric" has a comma at the end for entry DefineSocial2005
 while executing---line 1090 of file plain.bst
 Warning--empty journal in DefineSocial2005
+Name 1 in "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" has a comma at the end for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 1090 of file plain.bst
+Name 1 in "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." has a comma at the end for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H." for entry MultKernel2016
+while executing---line 1090 of file plain.bst
+Name 1 in "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" has a comma at the end for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Golshan, H. M., Hebb, A. O., Hanrahan, S. J., Nedrud, J., and Mahoor, M. H" for entry FFTSync2017
+while executing---line 1090 of file plain.bst
+Name 1 in "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" has a comma at the end for entry ArousalValence2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 1090 of file plain.bst
 Name 1 in "Hutt, C., and Vaizey, M. J." has a comma at the end for entry DiffEffect1966
 while executing---line 1090 of file plain.bst
 Warning--empty journal in Fetch2002
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." has a comma at the end for entry EmotionClass2012
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 1090 of file plain.bst
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" has a comma at the end for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 1090 of file plain.bst
 Name 1 in "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" has a comma at the end for entry RobotPlaymate2002
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
@@ -117,7 +439,89 @@ Warning--empty journal in RobotPlaymate2002
 Name 1 in "K. Wada, T. Shibata, T. Saito, and K. Tanie" has a comma at the end for entry AnalysisFactor2002
 while executing---line 1090 of file plain.bst
 Warning--empty journal in AnalysisFactor2002
+Name 1 in "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." has a comma at the end for entry Validation2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 1090 of file plain.bst
+Name 1 in "Kwon, J., Kim, D. H., Park, W., and Kim, L" has a comma at the end for entry WearableDevice2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 1090 of file plain.bst
+Name 1 in "Kylli{\..a}inen, A., and Hietanen, J. K" has a comma at the end for entry SkinConduct2006
+while executing---line 1090 of file plain.bst
+Name 1 in "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" has a comma at the end for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1090 of file plain.bst
+Name 1 in "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" has a comma at the end for entry EmotionResp2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 1090 of file plain.bst
+Name 1 in "Lidberg, L., and Wallin, B. G." has a comma at the end for entry SympatheticSkin1981
+while executing---line 1090 of file plain.bst
+Name 1 in "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." has a comma at the end for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 1090 of file plain.bst
+Name 1 in "Liu, F., Liu, G., and Lai, X" has a comma at the end for entry EmotionInten2014
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Liu, F., Liu, G., and Lai, X" for entry EmotionInten2014
+while executing---line 1090 of file plain.bst
 Warning--empty journal in MobileRobotic2002
+Name 1 in "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." has a comma at the end for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 1090 of file plain.bst
+Name 1 in "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" has a comma at the end for entry EmotionRecog2004
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 1090 of file plain.bst
+Name 1 in "Oberman, L. M., Winkielman P., and Ramachandran, V. S" has a comma at the end for entry SlowEcho2009
+while executing---line 1090 of file plain.bst
 Warning--empty journal in ASIMO2011
 Name 1 in "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" has a comma at the end for entry RobotMovement
 while executing---line 1090 of file plain.bst
@@ -129,6 +533,54 @@ Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello
 while executing---line 1090 of file plain.bst
 Warning--empty journal in RobotMovement
 Warning--empty year in RobotMovement
+Name 1 in "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" has a comma at the end for entry RoboticMovement
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Pierno, A. C., Mari, M., Lusher, D., and Castiello, U" for entry RoboticMovement
+while executing---line 1090 of file plain.bst
+Warning--empty year in RoboticMovement
+Warning--empty journal in LogicScien1959
+Name 1 in "Ramachandran, Vilayanur S., and Lindsay M. Oberman" has a comma at the end for entry BrokenMirror2006
+while executing---line 1090 of file plain.bst
+Name 1 in "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" has a comma at the end for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 1090 of file plain.bst
+Name 1 in "Sano, A., and Picard, R. W." has a comma at the end for entry Taxonomy2011
+while executing---line 1090 of file plain.bst
+Name 1 in "Schmidt, S., and Walach, H" has a comma at the end for entry ElectAct2000
+while executing---line 1090 of file plain.bst
+Name 1 in "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" has a comma at the end for entry SympatheticSkin1984
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 1090 of file plain.bst
+Name 1 in "Sharma, V., Prakash, N. R., and Kalra, P." has a comma at the end for entry EDA2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Sharma, V., Prakash, N. R., and Kalra, P." for entry EDA2016
+while executing---line 1090 of file plain.bst
 Name 1 in "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." has a comma at the end for entry SysObserv1968
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
@@ -136,6 +588,12 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
+while executing---line 1090 of file plain.bst
+Name 1 in "Stagg, S. D., Davis, R., and Heaton, P" has a comma at the end for entry AssociationBetween2013
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Stagg, S. D., Davis, R., and Heaton, P" for entry AssociationBetween2013
+while executing---line 1090 of file plain.bst
+Name 1 in "Swangnetr, M., and Kaber, D. B." has a comma at the end for entry EmotionalState2013
 while executing---line 1090 of file plain.bst
 Name 1 in "T. Fong, I. Nourbakhsh, and K. Dautenhahn" has a comma at the end for entry SocialInteract2003
 while executing---line 1090 of file plain.bst
@@ -158,6 +616,14 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Tang, K., Diehl, J.J., Villano. M., Wier, K., Thomas, B., Shea, N., et al" for entry EnhanceEmpiri2011
 while executing---line 1090 of file plain.bst
 Warning--empty journal in EnhanceEmpiri2011
+Name 1 in "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" has a comma at the end for entry PrincipalComponent2000
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Vallano, M., Crowell, C. R., Wier, K., Tang, K., Thomas, B., Shea, N., et al." for entry DOMER2011
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Vallano, M., Crowell, C. R., Wier, K., Tang, K., Thomas, B., Shea, N., et al." for entry DOMER2011
@@ -179,7 +645,23 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Vallano, M., Crowell, C. R., Wier, K., Tang, K., Thomas, B., Shea, N., et al." for entry DOMER2011
 while executing---line 1090 of file plain.bst
 Warning--empty journal in DOMER2011
+Name 1 in "Vetterli, M., and Herley, C" has a comma at the end for entry WaveletFilter1992
+while executing---line 1090 of file plain.bst
 Name 1 in "Wolff, S., and Chess, S." has a comma at the end for entry Behavioral1964
 while executing---line 1090 of file plain.bst
 Warning--empty journal in Behavioral1964
-(There were 78 error messages)
+Name 1 in "Wolff, S., and Chess, S" has a comma at the end for entry BehaviorlaStudy1964
+while executing---line 1090 of file plain.bst
+Name 1 in "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" has a comma at the end for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 1090 of file plain.bst
+(There were 318 error messages)

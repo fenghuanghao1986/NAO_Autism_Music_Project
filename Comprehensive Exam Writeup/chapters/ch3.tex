@@ -1,22 +1,22 @@
 \chapter{Xylo-Bot: An Interactive Music Teaching System} 
-A novelty Interactive human-robot music teaching system design is presented in 
-this chapter. Two In order to make robot play xylophone properly, several things need 
-to be done before that. First is to find a proper xylophone with correct timber; 
-second, we have to make the xylophone in a proper position in front of the robot 
-that makes it to be seen properly and be reached to play; finally, design the 
+A novel interactive human-robot music teaching system design is presented in 
+this chapter. In order to make the robot play the xylophone properly, several things need 
+to be done. First is to find a proper xylophone with correct timber; 
+second, we have to arrange the xylophone in the proper position in front of the robot 
+to make it visible and be reachable to play; finally, design the 
 intelligent music system for NAO.\\
 
 \section{NAO: A Humanoid Robot}
 We used a humanoid  robot called NAO developed by Aldebaran Robotics in France. 
-NAO is 58 cm (23 inches) tall, with 25 degrees of freedom this robot 
-can conduct most of the human behaviors. It also features an onboard multimedia 
-system including, four microphones for voice recognition, and sound localization, 
+NAO is 58 cm (23 inches) tall, with 25 degrees of freedom. This robot 
+can conduct most human behaviors. It also features an onboard multimedia 
+system including four microphones for voice recognition and sound localization, 
 two speakers for text-to-speech synthesis, and two HD cameras with maximum image 
 resolution 1280 x 960 for online observation. As shown in Figure \ref{nao_body}, these 
 utilities are located in the middle of the forehead and the mouth area. NAO’s 
 computer vision module includes facial and shape recognition units. By using the 
-vision feature of the robot, that allows the robot be able to see the instrument 
-from its lower camera and be able to do implement a eye-arm self-calibration 
+vision feature of the robot, the robot can see the instrument 
+from its lower camera and be able to implement an eye-arm self-calibration 
 system which allows the robot to have real-time micro-adjustment of its 
 arm-joints in case of off positioning during music playing.\\
 \\
@@ -30,12 +30,12 @@ arm-joints in case of off positioning during music playing.\\
 	\end{center}
 \end{figure}
 
-The robot arms have a length of approximately 31 cm. Each arm have five degrees 
-of freedom and is equipped with the sensors to measure the position of each 
-joint. To determine the pose of the instrument and the beaters' heads the robot 
+The robot arms have a length of approximately 31 cm. Each arm has five degrees 
+of freedom and is equipped with sensors to measure the position of each 
+joint. To determine the pose of the instrument and the mallets' heads, the robot 
 analyzes images from the lower monocular camera located in its head, which has a 
-diagonal field of view of 73 degree. These dimensions allows us to choose a 
-proper instrument presented in next section.\\
+diagonal field of view of 73 degrees. These dimensions allow us to choose a 
+proper instrument presented in the next section.\\
 % show nao's open arms pic here, use the pic from german group
 %\begin{figure}[tbp]
 %	\begin{center}
@@ -46,12 +46,11 @@ proper instrument presented in next section.\\
 %	\end{center}
 %\end{figure}
 
-Four microphones embedded on toy or NAO's head locations see figure \ref{mic_loc}. 
-According the official Aldebaran documentation, these microphones has sensitivity 
-of 20mV/Pa +/-3dB at 1kHz, and the input frequency range of 150Hz - 12kHz, data 
-will be recorded as a 16 bits, 48000Hz, 4 channels wav file which meets the 
-requirements for designing the online feedback audio score system which will be 
-described below.\\
+The four microphone locations embedded on the toy or NAO's head can be seen in figure \ref{mic_loc}. 
+According to the official Aldebaran documentation, these microphones have sensitivity 
+of 20mV/Pa +/-3dB at 1kHz, and an input frequency range of 150Hz - 12kHz. Data 
+will be recorded as a 16 bit, 48000Hz, 4 channels wav file which meets the 
+requirements for designing the online feedback audio score system described below.\\
 % show nao's head with mic details here
 \begin{figure}[tbp]
 	\begin{center}
@@ -63,19 +62,19 @@ described below.\\
 \end{figure}
 
 \section{Accessories}
-The purpose of this study is to have a toy size humanoid robot to play music,
-some necessary accessories need to be purchased and made before teach the robot
-to play music. All accessories will be discussed in the following sections.\\
+The purpose of this study is to have a toy-size humanoid robot play music. Some necessary accessories 
+needed to be purchased and made before the robot was able to play music. 
+All accessories will be discussed in the following sections.\\
 
 \subsection{Xylophone: A Toy for Music Beginner}
-In this system, according NAO's open arms' length, we choose a Sonor Toy Sound SM 
+In this system, due to NAO's open arms' length, we choose a Sonor Toy Sound SM 
 soprano-xylophone with 11 sound bars of 2 cm in width. The instrument has a size of 
-31 cm x 9.5 cm x 4 cm, including the resonateing body. The smallest sound bar is 
+31 cm x 9.5 cm x 4 cm, including the resonating body. The smallest sound bar is 
 playable in an area of 2.8 cm x 2 cm, the largest in an area of 4.8 cm x 2 cm. The 
-instrument is diatonically tuned in C-Major/a-minor. The beaters/mallets, we use 
-the pair which come with the xylophone with a modified 3D printed grips (details in next 
+instrument is diatonically tuned in C-Major/a-minor. For the beaters/mallets, we used 
+the pair that came with the xylophone with a modified 3D printed grip (details in next 
 subsection) to allow the robot's hands to hold them properly. The mallets 
-are approximately 21 cm in length include a head of 0.8 cm radius. See Figure \ref{xylo640}.\\ 
+are approximately 21 cm in length and include a head of 0.8 cm radius. See Figure \ref{xylo640}.\\ 
 
 \begin{figure}[tbp]
 	\begin{center}
@@ -85,27 +84,51 @@ are approximately 21 cm in length include a head of 0.8 cm radius. See Figure \r
 		\caption{Actual Xylophone and Mallets from NAO's Bottom Camera} \label{xylo640}
 	\end{center}
 \end{figure}
-11 bars represent 11 different notes (11 frequencies) which covers 
-approximate one and half octave scale starting from C6 to F7. \\
+
+The 11 bars of the xylophone represent 11 different notes (11 frequencies) which covers 
+approximately a one and a half octave scale starting from C6 to F7. \\
 %(see figures or a table with different frequencies somewhere)
 
 \subsection{Mallet Gripper Design}
-According to NAO's hands size, we designed and 3D printed a pair of gripers to 
+According to the size of Nao's hands, we designed and 3D printed a pair of gripers to 
 have the robot be able to hold the mallets properly. All dimensions can be found 
-in figure somewhere.\\
-%(attach both solidworkds and actural pics somewhere)
+in Figure \ref{griper}.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/grip.eps, scale = 0.8}\label{griper} \\
+		\end{tabular}
+		\caption{Mallet Griper} \label{griper}
+	\end{center}
+\end{figure}
 
 \subsection{Instrument Stand Design}
-A wooden base has designed and laser cut to hold the instrument in a proper place 
-in order to have the robot be able to play music. All dimensions can be found in 
-figure somewhere below.\\
-% attach both actual and solidworks pics somewhere blow
+A wooden base was designed and laser cut to hold the instrument in the proper place 
+for the robot to be able to play music. All dimensions can be found in 
+Figure \ref{stand}.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/left_view.eps, scale = 0.3}\label{left} \\
+			(a)\\
+			\epsfig{figure=./chapters/fig/top_view.eps, scale = 0.3
+			} \label{top}\\
+			(b)\\
+			\epsfig{figure=./chapters/fig/front_view.eps, scale = 0.6} \label{front}\\
+			(c)
+		\end{tabular}
+		\caption{Instrument Stand: (a) Left View (b) Top View (c) Front View.} \label{stand}
+	\end{center}
+\end{figure}
+
 
 \section{Module-Based Acoustic Music Interactive System Design}
-In this section, a novelty module-based robot-music teaching system will be presented. 
-Three modules have built in this intelligent system including module 1: eye-hand 
+In this section, a novel module-based robot-music teaching system will be presented. 
+Three modules have been built in this intelligent system including module 1: eye-hand 
 self-calibration micro-adjustment; module 2: joint trajectory generator; and 
-module 3: real time performance scoring feedback. See Figure \ref{module}\\
+module 3: real time performance scoring feedback. See Figure \ref{module}.\\
 
 \begin{figure}[tbp]
 	\begin{center}
@@ -118,18 +141,18 @@ module 3: real time performance scoring feedback. See Figure \ref{module}\\
 
 \subsection{Module 1: Eye-hand Self-Calibration Micro-Adjustment}
 Knowledge about the parameters of the robot's kinematic model is essential for 
-tasks requiring high precision such as playing the xylophone. While the kinematic 
+tasks requiring high precision, such as playing the xylophone. While the kinematic 
 structure is known from the construction plan, errors can occur, e.g., due to the 
-imperfect manufacturing. After multiple times of test, the targeted angle chain 
-of arms never equals to the returned chain in reality. We therefore use a 
+imperfect manufacturing. After multiple rounds of testing, it was found the targeted angle chain 
+of arms never actually equals the returned chain. We therefore used a 
 calibration method to accurately eliminate these errors.\\
  
 
 \subsubsection{A. Color-Based Object Tracking}
 To play the xylophone, the robot has to be able to adjust its motions according to
-the estimated relative poses of the instrument and the heads of the beaters it is 
-holding. The approach to estimating these poses which adopted in this thesis, we 
-uses a color-based technique.\\
+the estimated relative position of the instrument and the heads of the beaters it is 
+holding. To estimate these poses, adopted in this thesis, we 
+used a color-based technique.\\
 The main idea is, based on the RGB color of the center blue bar, given a hypothesis 
 about the instrument's pose, one can project the contour of the object's model into the 
 camera image and compare them to actually observed contour. In this way, it is possible 
@@ -152,32 +175,32 @@ the robot to track the instrument with very low cost in real-time. See Figure \r
 
 \subsubsection{B. Calibration of Kinematic Parameters}
 (In progress, will not present in this version. The idea is to use both positions 
-of the instrument and beaters' heads to computes for each sound bar a suitable 
-beating configuration for arm kinematics chain. Suitable means that the beater's 
+of the instrument and beaters' heads to compute a suitable 
+beating configuration for arm kinematics chain for each sound bar. Suitable means that the beater's 
 head can be placed on the surface of the sound bar at the desired angle. From 
 this configuration, the control points of a predefined beating motion are updated.)\\ 
 
 \subsection{Module 2: Joint Trajectory Generator}
 Our system parses a list of hex-decimal numbers (from 1 to b) to obtain the sequence
 of notes to play. It converts the notes into a joint trajectory using the beating
-configurations obtained from inverse kinematic as control points. The timestamps
-for the control points will be defined by user in order to meet the experiment requirement.
+configurations obtained from inverse kinematics as control points. The timestamps
+for the control points will be defined by the user in order to meet the experiment requirement.
 The trajectory is then computed using Bezier interpolation in joint space by the
-manufacturer-provided API and send to the robot controller for execution. In this
+manufacturer-provided API and then sent to the robot controller for execution. In this
 way, the robot plays in-time with the song.\\
 
 \subsection{Module 3: Real-Time Performance Scoring Feedback}
 The purpose of this system is to provide a real-life interaction experience using 
 music therapy to teach kids social skills and music knowledge.  In this scoring 
-system, two core features have designed to complete the task: 1) music detection;
+system, two core features were designed to complete the task: 1) music detection;
 2) intelligent scoring-feedback system.\\
 
 
 \subsubsection{A. Music Detection}
-Music, in the understanding of science and technology can be considered as a combination 
-of time and frequency. In order to make robot detects a sequence of frequencies, we adopt the 
+Music, in the understanding of science and technology, can be considered as a combination 
+of time and frequency. In order to make the robot detect a sequence of frequencies, we adopted the 
 short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
-be able to understands the music played by users and provide the proper feedback as
+be able to understand the music played by users and provide the proper feedback as
 a music teaching instructor.\\
 
 The short-time Fourier transform (STFT) , is a Fourier-related transform used to 
@@ -186,7 +209,7 @@ as it changes over time. In practice, the procedure for computing STFTs is to di
 a longer time signal into shorter segments of equal length and then compute the 
 Fourier transform separately on each shorter segment. This reveals the Fourier 
 spectrum on each shorter segment. One then usually plots the changing spectra as 
-a function of time.In the discrete time case, the data to be transformed could 
+a function of time. In the discrete time case, the data to be transformed could 
 be broken up into chunks or frames (which usually overlap each other, to reduce 
 artifacts at the boundary). Each chunk is Fourier transformed, and the complex 
 result is added to a matrix, which records magnitude and phase for each point in 
@@ -197,7 +220,7 @@ ${\displaystyle \mathbf {STFT} \{x[n]\}(m,\omega )\equiv X(m,\omega )=\sum _{n=-
 \\
 
 likewise, with signal x[n] and window w[n]. In this case, m is discrete and $\omega$ 
-is continuous, but in most typical applications the STFT is performed on a computer 
+is continuous, but in most typical applications, the STFT is performed on a computer 
 using the Fast Fourier Transform, so both variables are discrete and quantized.\\
 The magnitude squared of the STFT yields the spectrogram representation of the Power 
 Spectral Density of the function:
@@ -205,10 +228,10 @@ Spectral Density of the function:
 
 ${\displaystyle \operatorname {spectrogram} \{x(t)\}(\tau ,\omega )\equiv |X(\tau ,\omega )|^{2}}$\\
 
-After robot detect the notes from user input, a list of hex-decimal number will be
-returned, this list will be used in two purposes: 1) compared with target list
-for scoring and send feedback to user; 2) use this list as a new input to have
-robot playback in the game session which will be discussed in next chapter.\\
+After the robot detects the notes from user input, a list of hex-decimal number will be
+returned. This list will be used in two purposes: 1) to compare with the target list
+for scoring and sending feedback to user; 2) used as a new input to have
+robot playback in the game session as discussed in the next chapter.\\
 
 \begin{figure}[tbp]
 	\begin{center}
@@ -221,10 +244,10 @@ robot playback in the game session which will be discussed in next chapter.\\
 
 \subsubsection{B. Intelligent Scoring-Feedback System}
 In order to compare the detected notes and the target notes, we used an algorithm
-which normally used in information theory, linguistics called Levenshtein Distance.
+which is normally used in information theory linguistics called Levenshtein Distance.
 This algorithm is a string metric for measuring the difference between two sequences.\\
 
-In our case, the Levenshtein distance between two string like hex-decimal numbers 
+In our case, the Levenshtein distance between two string-like hex-decimal numbers 
 ${\displaystyle a,b}$ (of length ${\displaystyle |a|}$ and ${\displaystyle |b|}$ respectively) 
 is given by ${\displaystyle \operatorname {lev} _{a,b}(|a|,|b|)}$ where
 \\
@@ -251,40 +274,40 @@ principle in finding the Levenshtein distance of two words "Sunday" and "Saturda
 	\end{center}
 \end{figure}
 
-Based on the real life situation, we define a likelihood margin for determine whether the result
+Based on the real life situation, we defined a likelihood margin for determining whether the result
 is good or bad: \\
   
 ${likelihood = \dfrac{len(target) - lev_{target,source}}{len(target)}}$\\
 
-where if the likelihood is greater than 66\% ~ 72\%, system will consider it as a good result.
-This result will be passed to the accuracy calculation system to have robot decide whether it
-need to add more dosage to the practice. More details will be discussed in the next chapters
-which related to experiment design.\\
+where if the likelihood is greater than 66\% ~ 72\%, the system will consider it as a good result.
+This result will be passed to the accuracy calculation system to have the robot decide whether it
+needs to add more dosage to the practice. More details will be discussed in the next chapters
+as it relates to the experiment design.\\
 
 \section{Summary}
 In this chapter, based on the purpose of this research, we have discussed both hardware
-and software design for getting ready to design the experiment sessions.\\
+and software design for the experiment sessions.\\
 
 From Chapter One, we determined to have NAO as a music teaching instructor be able
-to teach children simple music and be able to deliver social content in the mean time.
-In order to have the system ready, first of all, we have to choose the proper agent which should be a
-kids friendly with social ability robot NAO. Second, based on the size of the robot, some necessary
-accessories have to purchased and handcrafted. A toy size color coded xylophone became the
+to both teach children simple music and deliver social content simultaneously.
+In order to have the system ready, we first chose the proper agent, a robot named NAO, which is
+kid-friendly and has complex social abilities. Second, based on the size of the robot, some necessary
+accessories were purchased and handcrafted. A toy-sized color coded xylophone became the
 best option and based on the size and position, a wooden based xylophone stand was 
 customized and assembled. Due to the limitation of NAO's hand size, a pair of mallet gripers 
-have been 3-D printed and customized. Last, a intelligent module-based acoustic music 
-interactive system has designed from scratch. Three modules has designed to have the
-robot to play, listen and teach the music freely and can become a great companion for children
-in both music learning and social life. \\
+were 3-D printed and customized. Last, an intelligent module-based acoustic music 
+interactive system was designed fully from scratch. With this haradware and software, 
+three modules were designed to have the robot play, listen and teach the music freely. This allows
+NAO to become a great companion for children in both music learning and social life. \\
 
-Module 1 provides a autonomous self awareness positioning system for robot to localize
+Module 1 provides an autonomous self awareness positioning system for the robot to localize
 the instrument and make micro adjustment for arm joints in order to play the note bar properly.
-Module 2 allows robot to be able to play any customized song behave of user's requests. That
-means, any songs which can be translated to either C-Major or a-minor key, once a well trained
-person type in the hex-decimal playable score, robot should be play it in seconds. Module 3
+Module 2 allows the robot to be able to play any customized song of the user's request. This
+means that any songs which can be translated to either C-Major or a-minor key can have a well-trained
+person type in the hex-decimal playable score and allow the robot to be able to play it in seconds. Module 3
 is designed for providing real life music teaching experience for system users. Two key features
 of this module are designed: music detection and smart scoring feedback. Short time Fourier transform
-and Levenshtein distance are adopted to fulfill the requirement which allows the robot understands
-music and providing proper dosage of practice and oral feedback to users.\\
+and Levenshtein distance are adopted to fulfill the requirement which allows the robot to understand
+music and provide proper dosage of practice and oral feedback to users.\\
 
 

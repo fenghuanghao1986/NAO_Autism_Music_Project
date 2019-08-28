@@ -4,13 +4,15 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces \textit {A Humanoid Robot NAO: 25 Degrees of Freedom, 2 HD Cameras and 4 Microphones}}}{18}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Microphone locations on NAO's head}}}{19}% 
 \contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Actual Xylophone and Mallets from NAO's Bottom Camera}}}{20}% 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Block Diagram of Module-Based Acustic Music Interactive System}}}{22}% 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.}}}{24}% 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Melody Detection with Short Time Fourier Transform}}}{27}% 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"}}}{28}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Mallet Griper}}}{21}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Instrument Stand: (a) Left View (b) Top View (c) Front View.}}}{22}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Block Diagram of Module-Based Acustic Music Interactive System}}}{23}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.}}}{25}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces \textit {Melody Detection with Short Time Fourier Transform}}}{28}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"}}}{29}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {Schematic robot based therapy session and video capturing setting}}}{32}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other hand, the detailed structures of the signal are better extracted when the scaling factor decreases. }}}{38}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {The wavelet-based feature extraction. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.}}}{39}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.}}}{40}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {Schematic robot-based therapy session and video capturing setting}}}{33}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other hand, the detailed structures of the signal are better extracted when the scaling factor decreases. }}}{39}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {The wavelet-based feature extraction. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.}}}{40}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.}}}{41}% 
 \addvspace {10\p@ }

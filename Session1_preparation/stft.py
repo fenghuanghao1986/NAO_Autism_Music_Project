@@ -92,8 +92,8 @@ def findNotes(stftData, fsRange):
         maxAmp.append([maxima,index])
             
     
-#    plt.plot(maxAmp)
-#    plt.show()
+    plt.plot(maxAmp)
+    plt.show()
     for i in range(x):
         if (i == 0):
             if (maxAmp[i][0] >= maxAmp[i+1][0]):
@@ -198,12 +198,12 @@ if __name__ == '__main__':
     assert (len(f) == s.shape[1])
 # 
 #    try:
-    import pylab as plt
-    plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
-    plt.xlabel('frequency (Hertz)')
-    plt.ylabel('time (seconds (start of chunk))')
-    plt.title('STFT with chirp example')
-    plt.grid()
-    plt.show()
+#    import pylab as plt
+#    plt.imshow(s, aspect="auto", extent=[f[0], f[-1], t[-1], t[0]])
+#    plt.xlabel('frequency (Hertz)')
+#    plt.ylabel('time (seconds (start of chunk))')
+#    plt.title('STFT with chirp example')
+#    plt.grid()
+#    plt.show()
 #    except ModuleNotFoundError:
 #        pass

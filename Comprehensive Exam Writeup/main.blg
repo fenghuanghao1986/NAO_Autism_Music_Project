@@ -1,6 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: ./sh/frontpage.aux
 A level-1 auxiliary file: ./sh/copyright.aux
+A level-1 auxiliary file: ./sh/signaturepage.aux
+A level-1 auxiliary file: ./sh/abstract.aux
+A level-1 auxiliary file: ./sh/to.aux
+A level-1 auxiliary file: ./sh/ack.aux
 A level-1 auxiliary file: ./chapters/ch1.aux
 A level-1 auxiliary file: ./chapters/ch2.aux
 A level-1 auxiliary file: ./chapters/ch3.aux
@@ -174,6 +178,24 @@ Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
 while executing---line 1049 of file plain.bst
+Name 1 in "Swangnetr, M., and Kaber, D. B." has a comma at the end for entry EmotionalState2013
+while executing---line 1049 of file plain.bst
+Name 1 in "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" has a comma at the end for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 1049 of file plain.bst
+Name 1 in "Sharma, V., Prakash, N. R., and Kalra, P." has a comma at the end for entry EDA2016
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Sharma, V., Prakash, N. R., and Kalra, P." for entry EDA2016
+while executing---line 1049 of file plain.bst
 Name 1 in "Liu, F., Liu, G., and Lai, X" has a comma at the end for entry EmotionInten2014
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Liu, F., Liu, G., and Lai, X" for entry EmotionInten2014
@@ -243,24 +265,6 @@ while executing---line 1049 of file plain.bst
 Name 1 in "Amershi, S., Conati, C., and McLaren, H." has a comma at the end for entry FeatureSelection2006
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Amershi, S., Conati, C., and McLaren, H." for entry FeatureSelection2006
-while executing---line 1049 of file plain.bst
-Name 1 in "Swangnetr, M., and Kaber, D. B." has a comma at the end for entry EmotionalState2013
-while executing---line 1049 of file plain.bst
-Name 1 in "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" has a comma at the end for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
-while executing---line 1049 of file plain.bst
-Name 1 in "Sharma, V., Prakash, N. R., and Kalra, P." has a comma at the end for entry EDA2016
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Sharma, V., Prakash, N. R., and Kalra, P." for entry EDA2016
 while executing---line 1049 of file plain.bst
 Name 1 in "Oberman, L. M., Winkielman P., and Ramachandran, V. S" has a comma at the end for entry SlowEcho2009
 while executing---line 1049 of file plain.bst

@@ -10,8 +10,10 @@
 \contentsline {chapter}{\numberline {2}Related Works}{11}% 
 \contentsline {section}{\numberline {2.1}Autism}{11}% 
 \contentsline {subsection}{\numberline {2.1.1}Turn-Taking}{13}% 
-\contentsline {subsection}{\numberline {2.1.2}Emotion EDA}{14}% 
-\contentsline {subsection}{\numberline {2.1.3}Motor control}{18}% 
+\contentsline {subsection}{\numberline {2.1.2}Motor control}{14}% 
+\contentsline {section}{\numberline {2.2}Emotion Classification}{15}% 
+\contentsline {subsection}{\numberline {2.2.1}Electrodermal activity (EDA)}{15}% 
+\contentsline {subsection}{\numberline {2.2.2}Classification Applications}{17}% 
 \contentsline {chapter}{\numberline {3}Xylo-Bot: An Interactive Music Teaching System}{20}% 
 \contentsline {section}{\numberline {3.1}NAO: A Humanoid Robot}{20}% 
 \contentsline {section}{\numberline {3.2}Accessories}{23}% 
@@ -27,26 +29,28 @@
 \contentsline {subsubsection}{A. Music Detection}{31}% 
 \contentsline {subsubsection}{B. Intelligent Scoring-Feedback System}{32}% 
 \contentsline {section}{\numberline {3.4}Summary}{35}% 
-\contentsline {chapter}{\numberline {4}Acoustic Music Teaching Experiment Design Data Acquisition and Result}{37}% 
-\contentsline {section}{\numberline {4.1}Room Setup and Participants}{38}% 
-\contentsline {section}{\numberline {4.2}Experiment Design}{38}% 
-\contentsline {subparagraph}{Baseline Session: }{39}% 
-\contentsline {subparagraph}{Intervention Sessions: }{39}% 
-\contentsline {subparagraph}{Exit Session: }{40}% 
-\contentsline {section}{\numberline {4.3}Methodology and Experiment Result}{40}% 
-\contentsline {subsection}{\numberline {4.3.1}Social Aspects Annotation and Coding Methods}{40}% 
-\contentsline {subsection}{\numberline {4.3.2}Motor Control Scoring System}{41}% 
-\contentsline {subsection}{\numberline {4.3.3}Emotion Classification}{41}% 
-\contentsline {subparagraph}{A. Continuous Wavelet Transform}{42}% 
-\contentsline {subparagraph}{B. Wavelet-Based Feature Extraction}{44}% 
-\contentsline {subparagraph}{C. Support Vector Machine}{45}% 
-\contentsline {chapter}{\numberline {5}X-Elophone: A New Instrument with New Experiment Design}{50}% 
-\contentsline {section}{\numberline {5.1}Xylophone Modification}{50}% 
-\contentsline {subsection}{\numberline {5.1.1}Components Selection}{50}% 
-\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{50}% 
-\contentsline {subparagraph}{B. Op-Amp: }{51}% 
-\contentsline {subparagraph}{C. Multiplexer: }{54}% 
-\contentsline {subparagraph}{D. Arduino UNO: }{57}% 
-\contentsline {subsection}{\numberline {5.1.2}Circuit Design}{59}% 
-\contentsline {section}{\numberline {5.2}Sound Design}{59}% 
-\contentsline {subsection}{\numberline {5.2.1}ChucK: A On-the-fly Audio Programming Language}{59}% 
+\contentsline {chapter}{\numberline {4}A Wavelet-based Approach to Emotion Classification using EDA Signals}{37}% 
+\contentsline {section}{\numberline {4.1}Continuous Wavelet Transform}{37}% 
+\contentsline {section}{\numberline {4.2}Wavelet-Based Feature Extraction}{39}% 
+\contentsline {section}{\numberline {4.3}Support Vector Machine}{42}% 
+\contentsline {section}{\numberline {4.4}Experimental Result}{45}% 
+\contentsline {chapter}{\numberline {5}Acoustic Music Teaching Experiment Design Data Acquisition and Result}{47}% 
+\contentsline {section}{\numberline {5.1}Room Setup and Participants}{48}% 
+\contentsline {section}{\numberline {5.2}Experiment Design}{48}% 
+\contentsline {subparagraph}{Baseline Session: }{49}% 
+\contentsline {subparagraph}{Intervention Sessions: }{49}% 
+\contentsline {subparagraph}{Exit Session: }{50}% 
+\contentsline {section}{\numberline {5.3}Methodology and Experiment Result}{51}% 
+\contentsline {subsection}{\numberline {5.3.1}Social Aspects Annotation and Coding Methods}{51}% 
+\contentsline {subsection}{\numberline {5.3.2}Motor Control Scoring System}{51}% 
+\contentsline {subsection}{\numberline {5.3.3}Emotion Classification}{52}% 
+\contentsline {chapter}{\numberline {6}X-Elophone: A New Instrument with New Experiment Design}{53}% 
+\contentsline {section}{\numberline {6.1}Xylophone Modification}{53}% 
+\contentsline {subsection}{\numberline {6.1.1}Components Selection}{53}% 
+\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{53}% 
+\contentsline {subparagraph}{B. Op-Amp: }{54}% 
+\contentsline {subparagraph}{C. Multiplexer: }{57}% 
+\contentsline {subparagraph}{D. Arduino UNO: }{60}% 
+\contentsline {subsection}{\numberline {6.1.2}Circuit Design}{62}% 
+\contentsline {section}{\numberline {6.2}Sound Design}{62}% 
+\contentsline {subsection}{\numberline {6.2.1}ChucK: A On-the-fly Audio Programming Language}{62}% 

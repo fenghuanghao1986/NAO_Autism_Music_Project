@@ -1,136 +1,6 @@
-\chapter{Acoustic Music Teaching Experiment Design Data Acquisition and Result}
-A few questions will be answered in terms of social skills in this chapter:
-1) Turn Taking: How well kids with autism behave during the teaching and learning
-process as compared to the TD group, e.g., kid listens to the instruction or demonstration 
-from the robot before he/she plays the instrument;
-2) Joint Attention and Eye-Gaze Attention: How well kids with ASD follow instructions 
-and adapt hints as compared to TD kids, e.g., kid follows hitting positions demonstrated 
-by the robot or follows the change of eye colors;
-3) Motor Control: How well ASD kids play the xylophone in terms of volume, pitch and
-accuracy compared to the TD group, e.g., a good multiple strikes should be recognized by 
-STFT as a sequence of frequencies (design in previous chapter);
-4) Engagement and Event Based Emotion: How kids engage with different music teaching
-events and what emotions are displayed during these events, e.g., using EDA signal to
-find out the emotions regarding different situations such as having a hard time
-memorizing a sequence of notes;
-5) Facial Expression and Emotions Correlation: (will not be presented in this version);
-6) Music Emotions and Feelings: How kids perceive emotions in small pieces of music 
-within different melodies, e.g., music in different keys.\\
+\chapter{A Wavelet-based Approach to Emotion Classification using EDA Signals}
 
-\section{Room Setup and Participants}
-Figure \ref{room} shows the experiment 
-\begin{figure}[tbp]
-	\begin{center}
-		\begin{tabular}{c}
-			\epsfig{figure=./chapters/fig/room.eps, scale = .6}\label{room} \\
-		\end{tabular}
-		\caption{Schematic robot-based therapy session and video capturing setting} \label{room}
-	\end{center}
-\end{figure}
-% describe and show the room orgnization and describer subjects' detail here
-
-\section{Experiment Design}
-In order to collect all the data for answering the questions above, a set of
-intervention sessions were designed using music therapy concepts. 6 - 7 sessions
-were created for the ASD group and 2 sessions for the TD group. For the ASD group, entire
-sessions were divided into 3 parts: baseline session, intervention sessions
-and exit session. Similar to the ASD group, the TD group only includes a baseline session
-and an exit session for comparison purposes. In addition, a social music
-game play was also included in each session for system testing and entertainment
-purposes.\\
-
-\subparagraph{Baseline Session: }Participants were asked to follow all the 
-instructions contained in all the practices from the following intervention session 
-including single bar strike, multiple bars strike, half song play and the whole
-song play. We choose a very popular kid's song "Twinkle Twinkle Little Star" 
-for this specific session due to how well-known this song is in almost 
-everyone's childhood.\\
-
-\subparagraph{Intervention Sessions: }These sessions are assigned to ASD group
-particularly and include single strike with color hints, multiple strikes with
-colors hint, half-song practice and whole song practice. In this part, a special
-participant-selected song will be used through the rest of the sessions. In the second
-half of this intervention session set, single/multiple strikes were also covered
-before the half/full song practice in order to have participants use the
-color matching technique during the high level music play due to a lack of professional
-music background knowledge. In addition, starting from session 2, a single strike
-warm up practice was added before the formal music practice starts. This particular
-practice was designed to have better motor control for ASD group, so that
-the robot is able to recognize notes properly and deliver the concept in telling the
-difference between "making a sound" and "playing a musical note". \\
-
-\subparagraph{Exit Session: }Both groups were assigned to go through the same steps
-as the baseline session in choice of their own songs. We would like to see the 
-difference between two groups in learning a beloved song by their own.\\
-
-Due to the difficulty of user selected songs and different performance scores of
-participants, the total session numbers can be various: 6 visits will be the minimum
-requirement for ASD group with the total number of visits not going beyond 8 times. More detailed 
-experiment design is shown in the table below:\\
-
-% still working on this table design
-% show all experiment setup table here
-%\begin{table}
-%	\begin{center}
-%		\caption{Performance Comparison Between the Two Methods and the
-%			Manually Labeled Features Based on the Average MSE (pixels) Over All
-%			70 Subjects.}
-%		\begin{tabular}{|c|c|c|c|}
-%			\hline
-%			Method&Ave.MSE &Ave. MSE&\% of cases\\
-%			&for 49 subjects&for 21 subjects&which have\\
-%			&out of 70&out of 70&minimum error\\
-%			\hline
-%			Standard&&&\\
-%			ASM & 70.3 (pixels)& 23.3 (pixels)& 30.0\% \\
-%			\hline
-%			Enhanced&&&\\
-%			ASM & 40.0 (pixels)& 31.9 (pixels)& 70.0\% \\
-%			\hline
-%		\end{tabular}
-%		\\
-%		\label{table_2}
-%	\end{center}
-%\end{table}
-
-\section{Methodology and Experiment Result}
-
-\subsection{Social Aspects Annotation and Coding Methods}
-This part is to describe how to do video coding in these social features.
-Basically just post process by watching the front face videos and by listen to the
-audio to code how the social behaviors been performed. Have to copy some of the stuff
-from previous studies.
-%\subparagraph{Turn-Taking Coding}
-%\subparagraph{Joint Attention Coding}
-
-\subsection{Motor Control Scoring System}
-This is related to hitting practice and play practice in real time during the session.
-Need to have connections with the module 2 real time performance scoring feedback system.
-Describe the how the flow goes during the session and how to have small add on dosage
-if the accuracy not good. \\
-
-Also have to make up a story when it goes to the half/whole song, how to manage that
-if the kid cannot play well, just cut the whole chunk into small continuous pieces
-and use the same methods and scoring system to deliver the idea. \\
-
-
-\begin{tabular}{ | c | c | c | c | c |  }
-	\hline
-	& Baseline & Exit & Inter 2 & Inter 3 \\ \hline
-	TD001 & $~20\%$ & $~40\%$ & N/A & N/A \\ \hline
-	TD002 & $~30\%$ & $~70\%$ & N/A & N/A \\ \hline
-	TD004 & $~30\%$ & $~60\%$ & N/A & N/A \\ \hline
-	ASD101 & $~20\%$ & N/A & $~80\%$ & $~90\%$ \\ \hline
-\end{tabular}\newline
-
-\subsection{Emotion Classification}
-Since we developed our emotion classification method based on the time-frequency analysis of the
-EDA signals, the main properties of the continuous wavelet transform assuming complex Morlet
-wavelet is first presented here. Then, the pre-processing steps, as well as the wavelet-based
-feature extraction scheme, are discussed. Finally, we briefly review the characteristics of the
-support vector machine as the classifier used with our approach.\\
-
-\subparagraph{A. Continuous Wavelet Transform}
+\section{Continuous Wavelet Transform}
 The EDA data recorded using the SC sensors are categorized as non-stationery signals\cite{AmbulatorySys2003, EmotionalState2013}. Hence, multiresolution analysis 
 techniques are essentially suitable to study the qualitative components of these 
 kinds of bio-signals \cite{AmbulatorySys2003}.  Note that continuous wavelet transform 
@@ -149,7 +19,8 @@ spectrogram of the raw signal). In addition, as opposed to many related studies
 that utilize real-valued wavelet functions for feature extraction purposes, we have 
 employed the complex Morlet (C-Morlet) function with the proposed approach, as it 
 takes into account both the real and imaginary components of the raw signal, leading 
-to a more detailed feature extraction.
+to a more detailed feature extraction.\\
+
 The wavelet transform of a 1-D signal provides a decomposition of the time-domain 
 sequence at different scales, which are inversely related to their frequency contents\cite{SignalDecomp1989, ContinuWavelet2009} . This requires the time-domain signal under 
 investigation to be convolved with a time-domain function known as “mother wavelet”. 
@@ -157,7 +28,8 @@ The CWT applies the wavelet function at different scales with continuous time-sh
 of the mother wavelet over the input signal. As a consequence, it helps represent 
 the EDA signals at different levels of resolution. For instance, it results in large 
 coefficients in the transform domain when the wavelet function matches the input 
-signal, providing a multiscale representation of the EDA signal.
+signal, providing a multiscale representation of the EDA signal.\\
+
 Using a finite energy function $\Psi$(t) concentrated in the time domain, the CWT of 
 a signal x(t) is given by X($\alpha$,b) as follows \cite{WaveletFilter1992}:
 
@@ -166,7 +38,8 @@ $X(a,b) = \int_{-\infty}^{+\infty}x(t)\frac{1}{\sqrt{a}} \Psi (\frac{t-b}{a}) dt
 where, $\alpha$, is the scale factor and represents dilation or contraction of the wavelet 
 function and b is the translation parameter that slides this function on the 
 time-domain sequence under analysis. Therefore, $\Psi$($\alpha$,b) is the scaled and translated 
-version of the corresponding mother wavelet. “*” is the conjugation operator.
+version of the corresponding mother wavelet. “*” is the conjugation operator.\\
+
 Note that the wavelet coefficients obtained from Eq. (1) essentially evaluate the 
 correlation between the signal x(t) and the wavelet function used at different 
 translations and scales. This implies that the wavelet coefficients calculated 
@@ -175,13 +48,14 @@ signal as follows:
 
 $x(t) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} X(a,b) \Psi (\frac{t-b}{a}) dadb$\newline
 
-\subparagraph{B. Wavelet-Based Feature Extraction}
+\section{Wavelet-Based Feature Extraction}
 The time-frequency analysis of various bio-signals has been addressed in numerous 
 related literature \cite{MultKernel2016, FFTSync2017}(Zhang et al., 2009). 
 It has been shown that the wavelet-domain feature space can improve the recognition 
 performance of different human activities using the signals emanated from the body 
 responses. Therefore, it essentially enhances the classification performance due to 
-the more distinctive feature space provided. 
+the more distinctive feature space provided. \\
+
 In this paper, we focus on the time-frequency analysis of the EDA signal to provide 
 a new feature space based on which an emotion classification task can be done. As 
 opposed to some related studies that employ the raw time-domain signals for 
@@ -192,7 +66,8 @@ wavelet transform probes the given signal at different scales, extracting more
 information for other post-processing steps. In addition, the localized support 
 of the wavelet functions enables CWT-based analysis to match to the local variations 
 of the input time sequence \cite{WaveletFilter1992}. As a result, a more detailed 
-representation of the signal is provided in comparison with the raw time-domain signal.
+representation of the signal is provided in comparison with the raw time-domain signal.\\
+
 
 Figure \ref{cwt_eda} shows the amplitude of the CWT of a sample EDA signal at different scales 
 using a complex Morlet (C-Morlet) wavelet function. Different scales of the wavelet functions are convolved with the original 
@@ -200,12 +75,14 @@ EDA signal to highlight different features of the raw data. As can be seen insid
 when the scaling parameter of the wavelet function increases, the larger features of 
 the input signal are augmented. As can be seen, due to the localization 
 property of the CWT, different structures of the input signal are extracted at each level 
-of decomposition, providing useful information for analyzing the recorded EDA signals.
+of decomposition, providing useful information for analyzing the recorded EDA signals.\\
+
 In this work, we have employed the C-Morlet wavelet function to process the acquired EDA 
 signals, as it has been well used for time-frequency analysis of different bio-signals 
 and classification \cite{MultKernel2016}. Figure \ref{feature} shows the wavelet-based 
-feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.
- On the other hand, the detailed structures of the 
+feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.\\
+
+On the other hand, the detailed structures of the 
 signal are better extracted when the scaling factor decreases.. Note that the impact 
 of different families of the wavelet functions 
 (e.g., Symlets, Daubechies, Coiflets) on the emotion classification will be evaluated 
@@ -232,7 +109,7 @@ $\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
 	\end{center}
 \end{figure}
 
-\subparagraph{C. Support Vector Machine}
+\section{Support Vector Machine}
 The SVM classifier tends to separate data \\
 ${D = \{x_i, y_i\}^{N}_{i=1}, x_i\in^{d}, y_i\in\{-1,+1\}}$
 by drawing an optimal hyperplane <w,x>+b=0 between classes such that the margin between 
@@ -258,7 +135,8 @@ $\min \frac{1}{2}||w||^2 s.t. y_i(<w, x_i> + b) \ge 1$\newline
 \end{figure}
 
 where, w and b are the parameters of the hyperplane and <.,.> is the notation of 
-the inner product.
+the inner product.\\
+
 However, different classes are seldom separable by a hyperplane since their samples 
 are overlapped in the feature space. In such cases, a slack variable ${\xi_i\geq}$ 0 and a 
 penalty parameter C $\geq$ 0 are used with the optimization step to obtain the best feasible 
@@ -276,7 +154,8 @@ symmetric kernel defined in the closed interval ${t_1\leq t\leq t_2}$, the kerne
 into series ${\Sigma_(n=1)^\infty = \lambda_n\varphi_n(x_i)\varphi_n(x_j)}$, where 
 ${\lambda_n > 0}$ are called eigenvalues and functions $\varphi$n are called eigenvectors in the expansion. 
 The fact that all the eigenvalues are nonnegative means that the kernel is positive 
-semidefinite \cite{SupportVector1995}. 
+semidefinite \cite{SupportVector1995}. \\
+
 To maximize the margin, H1 and H2 are pushed apart until they reach the support vectors 
 on which the solution depends. To solve this optimization problem, the Lagrangian dual 
 of Eq. (5) is used as follows:
@@ -291,16 +170,34 @@ of the test sample ${(y_z)}$ is given by:
 $y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
 
 
+\section{Experimental Result}
+The dataset used in this paper constitutes a set of multimodal recordings of social and 
+communicative behavior of 100 children younger than 30 months old provided by the Georgia 
+Institute of Technology. All data was collected in the Child Study Lab (CSL) at Georgia Tech, 
+under a university-approved IRB protocol. The laboratory was 300-square feet space, and the 
+temperature/humidity of the room for all sessions was kept the same.\\
+
+According to the dataset description, each session lasted 3-5 minutes during which the EDA 
+signals (the sampling rate is 32Hz) were collected using two Q-sensors attached to left and 
+right wrists, and the entire experiment was video-recorded. A set of semi-structured play 
+interactions with adults, known as Multimodal Dyadic Behavior (MMDB), was designed for the 
+experimental sessions to stimulate different emotions; event 1: “greeting”, event 2: “playing 
+with a ball”, event 3: “looking at a book and turning its pages”, event 4: “using the book 
+as a hat”, and event 5: “tickling”.  These experiments are aimed at analyzing and decoding 
+the children’s social communicative behavior at early ages and are consistent with the 
+Rapid-ABC play protocol.\\
+
 Figure \ref{edaresult} shows the classification results given by different wavelet functions. 
 For the sake of brevity, only the results of the “db1”, “coif1”, “sym2”, and “C-Morlet”wavelets 
-and all three ker- nels with the SVM classifier are shown. As can be seen, the time- frequency 
+and all three kernels with the SVM classifier are shown. As can be seen, the time- frequency 
 features calculated by the C-Morlet leads to a higher classification performance, likely due to 
-the more distinctive fea- ture space provided by this wavelet function. Fig. 6 shows the 
+the more distinctive feature space provided by this wavelet function. Fig. 6 shows the 
 difference between the aformentioned wavelet functions. Note that the C-Morlet wavelet has 
 successfully been applied on different types of bio-signals (e.g., EEG, LFP brain signals) 
-and led to promis- ing results , specifically for feature extraction purposes. One of the main 
+and led to promising results , specifically for feature extraction purposes. One of the main 
 characteristics of this wavelet function is its complex nature that essentially tends to 
-extract more features from the input time sequence.
+extract more features from the input time sequence.\\
+
 
 
 \begin{figure}[tbp]
@@ -311,11 +208,3 @@ extract more features from the input time sequence.
 		\caption{Comparison of emotion classification performance\%} \label{edaresult}
 	\end{center}
 \end{figure}
-
-%\subsection{Dialog System}
-%
-%\subsubsection{Speech Recognition}
-%http://doc.aldebaran.com/2-1/naoqi/audio/alspeechrecognition.html
-%
-%\subsubsection{Dynamic Oral Feedback}
-%reason to design the dynamic feedback. 

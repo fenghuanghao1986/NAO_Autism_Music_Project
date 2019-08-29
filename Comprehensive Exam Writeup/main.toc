@@ -27,9 +27,9 @@
 \contentsline {subsubsection}{A. Music Detection}{31}% 
 \contentsline {subsubsection}{B. Intelligent Scoring-Feedback System}{32}% 
 \contentsline {section}{\numberline {3.4}Summary}{35}% 
-\contentsline {chapter}{\numberline {4}Protocol 1: Acoustic Music Teaching Experiment Design Data Acquisition and Result}{37}% 
+\contentsline {chapter}{\numberline {4}Acoustic Music Teaching Experiment Design Data Acquisition and Result}{37}% 
 \contentsline {section}{\numberline {4.1}Room Setup and Participants}{38}% 
-\contentsline {section}{\numberline {4.2}Experiment Design}{39}% 
+\contentsline {section}{\numberline {4.2}Experiment Design}{38}% 
 \contentsline {subparagraph}{Baseline Session: }{39}% 
 \contentsline {subparagraph}{Intervention Sessions: }{39}% 
 \contentsline {subparagraph}{Exit Session: }{40}% 
@@ -40,13 +40,13 @@
 \contentsline {subparagraph}{A. Continuous Wavelet Transform}{42}% 
 \contentsline {subparagraph}{B. Wavelet-Based Feature Extraction}{44}% 
 \contentsline {subparagraph}{C. Support Vector Machine}{45}% 
-\contentsline {chapter}{\numberline {5}X-Elophone: A New Instrument with New Experiment Design}{49}% 
-\contentsline {section}{\numberline {5.1}Xylophone Modification}{49}% 
-\contentsline {subsection}{\numberline {5.1.1}Components Selection}{49}% 
-\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{49}% 
-\contentsline {subparagraph}{B. Op-Amp: }{50}% 
-\contentsline {subparagraph}{C. Multiplexer: }{53}% 
-\contentsline {subparagraph}{D. Arduino UNO: }{56}% 
-\contentsline {subsection}{\numberline {5.1.2}Circuit Design}{58}% 
-\contentsline {section}{\numberline {5.2}Sound Design}{58}% 
-\contentsline {subsection}{\numberline {5.2.1}ChucK: A On-the-fly Audio Programming Language}{58}% 
+\contentsline {chapter}{\numberline {5}X-Elophone: A New Instrument with New Experiment Design}{50}% 
+\contentsline {section}{\numberline {5.1}Xylophone Modification}{50}% 
+\contentsline {subsection}{\numberline {5.1.1}Components Selection}{50}% 
+\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{50}% 
+\contentsline {subparagraph}{B. Op-Amp: }{51}% 
+\contentsline {subparagraph}{C. Multiplexer: }{54}% 
+\contentsline {subparagraph}{D. Arduino UNO: }{57}% 
+\contentsline {subsection}{\numberline {5.1.2}Circuit Design}{59}% 
+\contentsline {section}{\numberline {5.2}Sound Design}{59}% 
+\contentsline {subsection}{\numberline {5.2.1}ChucK: A On-the-fly Audio Programming Language}{59}% 

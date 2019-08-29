@@ -1,4 +1,4 @@
-\chapter{Protocol 1: Acoustic Music Teaching Experiment Design Data Acquisition and Result}
+\chapter{Acoustic Music Teaching Experiment Design Data Acquisition and Result}
 A few questions will be answered in terms of social skills in this chapter:
 1) Turn Taking: How well kids with autism behave during the teaching and learning
 process as compared to the TD group, e.g., kid listens to the instruction or demonstration 
@@ -289,6 +289,28 @@ non-zero. These non-zero values are corresponding to the support vectors determi
 the parameters of the hyperplane ${w = \Sigma_(i=1)^N\alpha_iy_ix_i }$. Therefore, the label 
 of the test sample ${(y_z)}$ is given by:
 $y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
+
+
+Figure \ref{edaresult} shows the classification results given by different wavelet functions. 
+For the sake of brevity, only the results of the “db1”, “coif1”, “sym2”, and “C-Morlet”wavelets 
+and all three ker- nels with the SVM classifier are shown. As can be seen, the time- frequency 
+features calculated by the C-Morlet leads to a higher classification performance, likely due to 
+the more distinctive fea- ture space provided by this wavelet function. Fig. 6 shows the 
+difference between the aformentioned wavelet functions. Note that the C-Morlet wavelet has 
+successfully been applied on different types of bio-signals (e.g., EEG, LFP brain signals) 
+and led to promis- ing results , specifically for feature extraction purposes. One of the main 
+characteristics of this wavelet function is its complex nature that essentially tends to 
+extract more features from the input time sequence.
+
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/edaresult.eps, scale = .5}\label{edaresult} \\
+		\end{tabular}
+		\caption{Comparison of emotion classification performance\%} \label{edaresult}
+	\end{center}
+\end{figure}
 
 %\subsection{Dialog System}
 %

@@ -1,0 +1,18 @@
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Figures\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss vi\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Tables\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xv\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }Mathematical Notation\penalty \@M \hfil \penalty \@M \hbox to1.55em{\hss xvii\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\contentsline {chapter}{\numberline {1}3-D Face Recognition Based on Ridge Images}{1}% 
+\contentsline {section}{\numberline {1.1}3-D Face Matching Based on Ridge Images}{2}% 
+\contentsline {section}{\numberline {1.2}Ridge Image}{4}% 
+\contentsline {subsection}{\numberline {1.2.1}Ridge Matching Using Robust Hausdorff Distance}{5}% 
+\contentsline {subsection}{\numberline {1.2.2}Ridge Matching Using Iterative Closest Points}{10}% 
+\contentsline {subsection}{\numberline {1.2.3}Computational Complexity of Ridge Matching}{11}% 
+\contentsline {section}{\numberline {1.3}Experiments and Results}{12}% 
+\contentsline {subsection}{\numberline {1.3.1}Experiments on Gavab Database}{12}% 
+\contentsline {subsection}{\numberline {1.3.2}Experiments on FRGC V2.0 Face Database}{18}% 
+\contentsline {subsection}{\numberline {1.3.3}Comparison Between Recognition Using the Ridge Points, Random set of Points, and Entire Face Surface}{20}% 
+\contentsline {subsection}{\numberline {1.3.4}More Results on FRGC V2.0}{22}% 
+\contentsline {section}{\numberline {1.4}Summary}{25}% 
+\contentsline {chapter}{\numberline {2}Conclusion and Future Research Direction}{26}% 
+\contentsline {section}{\numberline {2.1}Summary and Contributions}{26}% 
+\contentsline {section}{\numberline {2.2}Future Work}{29}% 

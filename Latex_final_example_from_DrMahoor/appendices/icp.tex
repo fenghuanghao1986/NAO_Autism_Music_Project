@@ -1,0 +1,61 @@
+\chapter{The Iterative Closest Point algorithm} \label{apx_icp}
+
+The Iterative Closest Point (ICP) algorithm has become the dominant
+method for aligning three-dimensional models based purely on the
+geometry, and sometimes color, of the meshes. The algorithm is
+widely used for registering the outputs of 3D scanners, which
+typically only scan an object from one direction at a time. ICP
+starts with two meshes and an initial guess for their relative
+rigid-body transform, and iteratively refines the transform by
+repeatedly generating pairs of corresponding points on the meshes
+and minimizing an error metric. The general framework of the
+algorithm is represented in Table \ref{tab_icp}. Generating the
+initial alignment may be done by a variety of methods, such as
+tracking scanner position, identification and indexing of surface
+features \cite{Faugeras86,Stein92}, ``spin-image'' surface
+signatures \cite{Johnson97, Huber01}, computing principal axes of
+scans \cite{Dorai97}, exhaustive search for corresponding points
+\cite{Chen99}, or user input.
+\begin{table}[tbp]
+\begin{tabular}{|l|}
+\hline
+\\
+ begin $E' \leftarrow + \infty$; \\
+(Rot,Trans) $\leftarrow$ In Initialize-Alignment(Scene,Model);\\
+~~~repeat\\
+~~~~~~ $E \leftarrow E'$;\\
+~~~~~~ Aligned-Scene $\leftarrow$
+Apply-Alignment(Scene,Rot,Trans);\\
+~~~~~~ Pairs $\leftarrow$ Return-Closest-Pairs(Aligned-Scene,Model);\\
+~~~~~~ (Rot,Trans,$E'$) $\leftarrow$
+Update-Alignment(Scene,Model,Pairs,Rot,Trans); \\
+~~~ Until $|E'- E| < Threshold$ \\
+~~~ return (Rot,Trans); \\
+end\\
+\hline
+\end{tabular}
+\caption{The iterative closest point algorithm.}\label{tab_icp}
+\end{table}
+
+Since the introduction of ICP by Chen and Medioni \cite{Chen91} and
+Besl and McKay \cite{besl92}, many variants have been introduced on
+the basic ICP concept. According to \cite{Rusinkiewicz_01}, these
+variants affect one of six stages of the algorithm:
+
+\begin{enumerate}
+\item Selection of some set of points in one or both meshes.
+\item Matching these points to samples in the other mesh.
+\item Weighting the corresponding pairs appropriately.
+\item Rejecting certain pairs based on looking at each pair
+individually or considering the entire set of pairs.
+\item Assigning an error metric based on the point pairs.
+\item Minimizing the error metric.
+\end{enumerate}
+
+Rusinkiewicz \cite{Rusinkiewicz_thesis} has constructed a high-speed
+ICP algorithm with consideration of the accuracy of the final answer
+by combining some of the variants of the algorithm. The
+implementation (C++ code) of this algorithm is available on the web
+(http://www.cs.princeton.edu/gfx/proj/trimesh2/). We wrote a wrapper
+to use this implementation of ICP in Matlab environment for 3D
+facial image registration.

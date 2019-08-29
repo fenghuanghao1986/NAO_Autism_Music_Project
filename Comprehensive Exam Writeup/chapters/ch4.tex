@@ -100,17 +100,28 @@ This part is to describe how to do video coding in these social features.
 Basically just post process by watching the front face videos and by listen to the
 audio to code how the social behaviors been performed. Have to copy some of the stuff
 from previous studies.
-\subparagraph{Turn-Taking Coding}
-\subparagraph{Joint Attention Coding}
+%\subparagraph{Turn-Taking Coding}
+%\subparagraph{Joint Attention Coding}
 
 \subsection{Motor Control Scoring System}
 This is related to hitting practice and play practice in real time during the session.
 Need to have connections with the module 2 real time performance scoring feedback system.
 Describe the how the flow goes during the session and how to have small add on dosage
-if the accuracy not good. 
+if the accuracy not good. \\
+
 Also have to make up a story when it goes to the half/whole song, how to manage that
 if the kid cannot play well, just cut the whole chunk into small continuous pieces
-and use the same methods and scoring system to deliver the idea.
+and use the same methods and scoring system to deliver the idea. \\
+
+
+\begin{tabular}{ | c | c | c | c | c |  }
+	\hline
+	& Baseline & Exit & Inter 2 & Inter 3 \\ \hline
+	TD001 & $~20\%$ & $~40\%$ & N/A & N/A \\ \hline
+	TD002 & $~30\%$ & $~70\%$ & N/A & N/A \\ \hline
+	TD004 & $~30\%$ & $~60\%$ & N/A & N/A \\ \hline
+	ASD101 & $~20\%$ & N/A & $~80\%$ & $~90\%$ \\ \hline
+\end{tabular}\newline
 
 \subsection{Emotion Classification}
 Since we developed our emotion classification method based on the time-frequency analysis of the
@@ -184,13 +195,19 @@ of the input time sequence \cite{WaveletFilter1992}. As a result, a more detaile
 representation of the signal is provided in comparison with the raw time-domain signal.
 
 Figure \ref{cwt_eda} shows the amplitude of the CWT of a sample EDA signal at different scales 
-using a complex Morlet (C-Morlet) wavelet function. As can be seen, due to the localization 
+using a complex Morlet (C-Morlet) wavelet function. Different scales of the wavelet functions are convolved with the original 
+EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, 
+when the scaling parameter of the wavelet function increases, the larger features of 
+the input signal are augmented. As can be seen, due to the localization 
 property of the CWT, different structures of the input signal are extracted at each level 
 of decomposition, providing useful information for analyzing the recorded EDA signals.
 In this work, we have employed the C-Morlet wavelet function to process the acquired EDA 
 signals, as it has been well used for time-frequency analysis of different bio-signals 
 and classification \cite{MultKernel2016}. Figure \ref{feature} shows the wavelet-based 
-feature extraction. Note that the impact of different families of the wavelet functions 
+feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.
+ On the other hand, the detailed structures of the 
+signal are better extracted when the scaling factor decreases.. Note that the impact 
+of different families of the wavelet functions 
 (e.g., Symlets, Daubechies, Coiflets) on the emotion classification will be evaluated 
 in the next subsection. The equation of the C-Morlet mother wavelet with fc as its central 
 frequency and fb as the bandwidth parameter is given as follows:
@@ -202,7 +219,7 @@ $\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
 		\begin{tabular}{c}
 			\epsfig{figure=./chapters/fig/cwt_eda.eps, scale = .7}\label{cwt_eda} \\
 		\end{tabular}
-		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other hand, the detailed structures of the signal are better extracted when the scaling factor decreases. } \label{cwt_eda}
+		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet.  } \label{cwt_eda}
 	\end{center}
 \end{figure}
 
@@ -211,7 +228,7 @@ $\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
 		\begin{tabular}{c}
 			\epsfig{figure=./chapters/fig/wavelet_feature.eps, scale = .8}\label{feature} \\
 		\end{tabular}
-		\caption{The wavelet-based feature extraction. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.} \label{feature}
+		\caption{The wavelet-based feature extraction. } \label{feature}
 	\end{center}
 \end{figure}
 
@@ -219,7 +236,9 @@ $\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
 The SVM classifier tends to separate data \\
 ${D = \{x_i, y_i\}^{N}_{i=1}, x_i\in^{d}, y_i\in\{-1,+1\}}$
 by drawing an optimal hyperplane <w,x>+b=0 between classes such that the margin between 
-them becomes maximum \cite{SupportVector1995}. With reference to Figure \ref{svm}, H1 and H2 are 
+them becomes maximum \cite{SupportVector1995}. With reference to Figure \ref{svm}, 
+The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support 
+vectors that are circled inside the figure. H1 and H2 are 
 the supporting planes and the optimal hyperplane (OH) splits this margin such that it 
 stands at the same distance from each supporting hyperplane. This implies that the 
 margin between H1 and H2 is equal to 2 / $\parallel$w$\parallel$.
@@ -234,7 +253,7 @@ $\min \frac{1}{2}||w||^2 s.t. y_i(<w, x_i> + b) \ge 1$\newline
 		\begin{tabular}{c}
 			\epsfig{figure=./chapters/fig/svm.eps, scale = 1}\label{svm} \\
 		\end{tabular}
-		\caption{Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.} \label{svm}
+		\caption{Canonical SVM for classifying two linearly separable classes. } \label{svm}
 	\end{center}
 \end{figure}
 
@@ -271,12 +290,10 @@ the parameters of the hyperplane ${w = \Sigma_(i=1)^N\alpha_iy_ix_i }$. Therefor
 of the test sample ${(y_z)}$ is given by:
 $y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
 
-\subsection{Dialog System}
-
-\subsubsection{Speech Recognition}
-http://doc.aldebaran.com/2-1/naoqi/audio/alspeechrecognition.html
-
-\subsubsection{Dynamic Oral Feedback}
-reason to design the dynamic feedback. 
-
-\
+%\subsection{Dialog System}
+%
+%\subsubsection{Speech Recognition}
+%http://doc.aldebaran.com/2-1/naoqi/audio/alspeechrecognition.html
+%
+%\subsubsection{Dynamic Oral Feedback}
+%reason to design the dynamic feedback. 

@@ -8,7 +8,7 @@ Created on Sun May 26 17:32:07 2019
 from naoqi import *
 import time
 
-ROBOT_IP = '192.168.0.2'
+ROBOT_IP = '192.168.0.3'
 #ROBOT_IP = 'marvel.local'
 
 class SpeechRecoModule(ALModule):

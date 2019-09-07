@@ -62,43 +62,44 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = [5,6,8,8,8,8,8,8,
-                5,6,8,8,8,8,8,8,
-                5,6,8,8,8,8,8,8,7,
-                1,2,4,4,4,4,4,4,
-                1,2,4,4,4,4,4,4,
                 1,2,4,4,4,4,4,4,3,
-                8,9,11,11,11,11,11,11,
-                8,9,11,11,11,11,11,11,
-                8,9,11,11,11,11,11,11,10]
-    comfList = [5,6,8,8,8,8,8,8,
-                5,6,8,8,8,8,8,8,
-                5,6,8,8,8,8,8,8,7,
-                1,2,4,4,4,4,4,4,
-                1,2,4,4,4,4,4,4,
-                1,2,4,4,4,4,4,4,3,
-                8,9,11,11,11,11,11,11,
-                8,9,11,11,11,11,11,11,
-                8,9,11,11,11,11,11,11,10]
+    uncfList = ['5','6','8','8','8',
+                '5','6','8','8','8',
+                '5','6','8','8','8','7',
+                '1','2','4','4','4',
+                '1','2','4','4','4',
+                '1','2','4','4','4','3',
+                '8','9','b','b','b',
+                '8','9','b','b','b',
+                '8','9','b','b','b','a']
+    comfList = ['5','6','8','8','8',
+                '5','6','8','8','8',
+                '5','6','8','8','8','7',
+                '1','2','4','4','4',
+                '1','2','4','4','4',
+                '1','2','4','4','4','3',
+                '8','9','b','b','b',
+                '8','9','b','b','b',
+                '8','9','b','b','b','a']
 
     mode = ['u', 'c']
     x_list = [5,6,7,8]
     u_cList = random.choice(mode)
 
     if u_cList == 'u':
-        x = random.choice(x_list)
-        print('number of notes selected:\n')
-        print(x)
-        print('\n')
-        for i in range(x):
-            play_note.append(random.randint(0, len(uncfList)-x))
+        len_x = random.choice(x_list)
+        start_index = random.randint(0, len(uncfList)-len_x)
+        for i in range(start_index, len_x):
+            play_note.append(uncfList[i])
     else:
-        x = random.choice(x_list)
-        print('number of notes selected:\n')
-        print(x)
-        print('\n')
-        for i in range(x):
-            play_note.append(random.randint(0, len(comfList)-x))
+        len_x = random.choice(x_list)
+        start_index = random.randint(0, len(comfList)-len_x)
+        for i in range(start_index, len_x):
+            play_note.append(comfList[i])
+            
+    print('number of notes selected:\n')
+    print(len_x)
+    print('practice notes:\n')
     print(play_note)
     
     for j in play_note:

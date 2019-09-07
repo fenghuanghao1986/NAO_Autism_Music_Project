@@ -48,7 +48,7 @@ year = str(now.year)
 username = "nao"
 pw = "nao"
 
-fileName = subject + '_' + session  + '_' + 'single_note_practice_' + mon + '_' + day + '_' + year + '.csv'
+fileName = subject + '_' + session  + '_' + 'multi_notes_practice_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:

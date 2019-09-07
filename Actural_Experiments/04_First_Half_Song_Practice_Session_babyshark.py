@@ -62,7 +62,6 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-                1,2,4,4,4,4,4,4,3,
     uncfList = ['5','6','8','8','8',
                 '5','6','8','8','8',
                 '5','6','8','8','8','7',

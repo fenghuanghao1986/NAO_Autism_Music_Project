@@ -223,7 +223,7 @@ def main(robotIP, PORT=9559):
     while(True):
         
         help_count = 100
-        demo = [0, 0, 0, 1]   
+        demo = [0, 0, 1]   
         dst, play_note = createMisc(robotIP, username, pw)
         print('creat music done!')
         tts.say("Here is what I want you to play now, listen and look at my eye color carefully!")
@@ -252,7 +252,7 @@ def main(robotIP, PORT=9559):
         tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         
-        recordplay.record(robotIP, PORT, t=5)
+        recordplay.record(robotIP, PORT, t=8)
         
         print("record done!")
         

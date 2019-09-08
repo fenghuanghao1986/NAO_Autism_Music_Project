@@ -82,22 +82,24 @@ def createMisc(robotIP, username, pw):
                 '8','9','b','b','b','a']
 
     mode = ['u', 'c']
-    x_list = [5,6,7,8]
+    x_list = [6,7,8]
     u_cList = random.choice(mode)
 
     if u_cList == 'u':
         len_x = random.choice(x_list)
         start_index = random.randint(0, len(uncfList)-len_x)
-        for i in range(start_index, len_x):
+        for i in range(start_index, start_index+len_x):
             play_note.append(uncfList[i])
     else:
         len_x = random.choice(x_list)
         start_index = random.randint(0, len(comfList)-len_x)
-        for i in range(start_index, len_x):
+        for i in range(start_index, start_index+len_x):
             play_note.append(comfList[i])
             
     print('number of notes selected:\n')
     print(len_x)
+    print('start index:\n')
+    print(start_index)
     print('practice notes:\n')
     print(play_note)
     
@@ -223,8 +225,8 @@ def main(robotIP, PORT=9559):
     
     tts.say("Hello") # figure out how to say name in tts
     tts.say(kid_name)
-    tts.say("Welcome to the mix and match challenge!")
-    tts.say("In this challenge, I will ask you to play two to three notes along with different colors.")
+    tts.say("Welcome to the song play challenge!")
+    tts.say("In this challenge, I will ask you to play 6 to 8 notes along with different colors.")
     tts.say("And I want you to follow my instruction carefully. And try to find the correct colors!")
     tts.say("You will play those notes after my eye flashs, every time!")
     tts.say("And I will tell you how well you played!")
@@ -248,7 +250,7 @@ def main(robotIP, PORT=9559):
     while(True):
         
         help_count = 100
-        demo = [0, 0, 0, 1]   
+        demo = [0, 0, 1]   
         dst, play_note = createMisc(robotIP, username, pw)
         print('creat music done!')
         tts.say("Here is what I want you to play now, listen and look at my eye color carefully!")
@@ -277,7 +279,7 @@ def main(robotIP, PORT=9559):
         tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         
-        recordplay.record(robotIP, PORT, t=5)
+        recordplay.record(robotIP, PORT, t=10)
         
         print("record done!")
         
@@ -313,7 +315,7 @@ def main(robotIP, PORT=9559):
         print("difference calculated done! Here is the result: ")
         print(result)             
     
-        if result > 1:
+        if result > 3:
                 # call help function
             count += 1     
                 

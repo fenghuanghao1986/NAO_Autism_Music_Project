@@ -470,7 +470,7 @@ def main(robotIP, PORT=9559):
             
         elif taskNumber == 18:
             
-            keys = [6,6,6,6,6,6,6,6,6,6,6,6]
+            keys = [0, 1,2,3,4,5,4,3,2,1]
             dt1 = 0.6
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)

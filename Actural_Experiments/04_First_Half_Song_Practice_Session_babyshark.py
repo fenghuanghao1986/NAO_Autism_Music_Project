@@ -209,7 +209,7 @@ def createColor(play_note):
             colorList.append(0X00800080)
         
     for j in range(len(play_note)):
-        timeList.append(j + 0.5)
+        timeList.append(j + 0.25)
         
     return colorList, colorNameList, timeList
     
@@ -257,7 +257,7 @@ def main(robotIP, PORT=9559):
         recordplay.playBack(robotIP, PORT, dst)
         colorList, colorNameList, timeList = createColor(play_note)
         ledProxy.fadeListRGB('FaceLeds', colorList, timeList)
-        time.sleep(3)
+#        time.sleep(3)
         print('playback ok!')
         # throw the dice and there will be 25% of chance robot will do the demo hit
         demo_on = random.choice(demo)
@@ -265,6 +265,8 @@ def main(robotIP, PORT=9559):
         if demo_on == 1:
             keys = convertKeys(play_note) 
             print(keys)
+            tts.say(kid_name)
+            tts.say("Let me show you how to play, watch carefully!")
             sampleHit(motionProxy, postureProxy, ledProxy, tts, keys) 
 
         tts.say("So I just played")
@@ -275,7 +277,7 @@ def main(robotIP, PORT=9559):
         tts.say("Look at my eyes again and remember the colors")
         for x in range(len(colorList)):
             tts.say(colorNameList[x]) 
-            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.5)
+            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.25)
         tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         

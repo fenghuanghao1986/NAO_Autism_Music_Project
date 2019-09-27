@@ -1,0 +1,174 @@
+\documentstyle[11pt]{article}
+
+\begin{document}
+
+\title{Research Statement}
+\author{Huanghao Feng}
+\maketitle
+
+\section{Introduction}
+Santosh Vempala uses a variety of tools and tricks to invent and analyze
+efficient algorithms.  Together, I believe we can apply one of his tools of
+expertise, random walks (rapidly mixing Markov chains), to problems in
+computational learning theory.  We have already started our collaboration,
+using random walks to create the first polynomial-time algorithm for Cover's
+Universal Portfolios \cite{KV}, and we are in the process of exciting research
+on other problems in learning theory.
+
+The goal of a learning algorithm is to predict data.  In learning theory,
+simple but powerful ideas, such as V.C. dimension \cite{VC}, can determine
+which problems can be learned from a small amount of data.  However, for a
+large number of these learnable problems, all known methods for prediction
+require a prohibitively large amount of computing on the data.  We believe
+that random walks are especially well suited for creating computationally
+efficient solutions to these problems.
+
+In typical applications of random walks to algorithms, a sample is chosen from
+a set by beginning at some point in that set and taking a random walk.  Saying
+that the underlying Markov chain is ``rapidly mixing'' means that a small
+number of steps in the walk gives a distribution over samples that is close to
+the stationary distribution of the walk.  This has proven successful for
+problems such as estimating the volume of convex sets \cite{KLS}.
+
+For many problems in learning theory, it can be shown that a carefully-chosen
+weighted average of learners (predictors) performs well.  The average is taken
+over all predictors in a large class, and higher weight is given to those that
+have predicted well on past data.  This is true for the popular techniques of
+Weighted Majority \cite{LW} and Boosting \cite{Schapire}.  Since it is often
+prohibitively slow to compute the average in a straightforward manner, we
+believe that random walks may be used for a sampling approximation to the
+weighted average.
+
+\section{An Example}
+As an example, Thomas Cover has proven that his Universal Portfolio investment
+strategy ``learns'' to perform almost as well as the best of a class of
+investment strategies called constant rebalanced portfolios (CRPs) \cite{Cover}.  A CRP
+keeps the same distribution of wealth among a group of stocks every day.  For
+example, one CRP rebalances each day so that it has $1/4$ of its value in
+stock A and $3/4$ in stock B.  If there are $n$ stocks, the set of CRPs is an
+$n$-dimensional simplex where the $i$th component represents the proportion of
+value in the $i$th stock.  Typically, in hindsight, some of the CRPs perform
+very well, and therefore the Universal Portfolio also performs well.
+Universal Portfolios are especially interesting because they can be used for
+data compression and language models, where the guarantees are more striking.
+
+The Universal Portfolio each day rebalances according to an average (integral)
+over the set of CRPs, where the weights are proportional to the performance of
+each constituent CRP.  However, evaluating this integral in a straightforward
+way or by uniform sampling requires time $O(t^{n-1})$ where $t$ is the number
+of days and $n$ is the number of stocks.  Since this is exponential in the
+number of stocks, previous experiments have been limited to two stocks
+\cite{Cover, BK, Helmbold}.
+
+Using an idea of Frieze and Kannan \cite{FK}, we have shown how one can
+efficiently sample CRPs to compute this integral.  The idea is to start at an
+arbitrary CRP and take a random walk that is biased towards high-performing
+CRPs.  The stationary distribution of this walk is exactly the distribution of
+the Universal Portfolio, and the underlying Markov chain is rapidly mixing.
+As a result, we can approximate the components of the Universal Portfolio with
+a total amount of computation polynomial in both $t$, the number of days, and
+$n$, the number of stocks \cite{KV}.
+
+
+\section{Target Problems}
+Since many learning problems can be solved by such weighted averages of
+learners, there are many problems for which a random walk may give a
+computationally efficient solution.  Unfortunately, for each problem, one
+needs to define a new random walk and prove that it is rapidly mixing, which
+is often difficult.  One interesting direction is to try and provide tools for
+showing that classes of learning problems have walks that are rapidly mixing. 
+
+However, we also have in mind several specific problems for which we would
+like efficient algorithms.  One such problem is that of learning decision
+lists.  Decision lists are a simple and natural class of boolean functions.
+The input is a set of items which each have say $n$ boolean properties.  This
+may be most easily demonstrated with an example decision list:
+\begin{verbatim}
+If (Property 6=True) then True,
+else If (Property 4=True) then False,
+else If (Property 8=False) then False,
+else False.
+\end{verbatim}
+		
+Decision lists may learned from a relatively small amount of data.  If the
+list has length $l$ and there are $n$ properties, a straightforward algorithm
+efficiently learns with $O(ln)$ examples of data.  However, there is an
+algorithm that learns from $O(l \log n)$ examples of data, but is not
+computationally efficient.  Since the goal of learning is to predict, we must
+describe how to predict the value of the function on new data, from previous
+examples of input-output pairs of the function.  In several models of
+learning, it can be shown that if you predict the value of the function
+according to a majority vote over all decision lists consistent with the past
+data, then you will learn from $O(l \log n)$ examples of data. 
+
+Unfortunately, there are $(2n)^l$ decision lists of length $l$, so there may
+be too many consistent decision lists to enumerate.  Instead, we would like
+to take a random walk on the set of consistent decision lists to efficiently
+estimate the average prediction on a particular input.  In the case where the
+decision lists are almost evenly split on their prediction, it is acceptable
+if we do not agree with the majority vote.
+
+There are also potential application of random walks to adaptive data
+structures.  These data structures adapt to a sequence of accesses and
+therefore, in a sense, learn.  It would be remarkable to have optimal data
+structure that updates itself by taking random walks, and we believe this may
+be possible for binary search trees, for which there are no known dynamically
+optimal data structures.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{BK}
+\newblock A.~Blum and A.~Kalai.
+\newblock Universal Portfolios with and without Transaction Costs.
+\newblock {\em Machine Learning}, 35:3, 1999.
+
+\bibitem{Cover}
+\newblock T.~Cover.
+\newblock Universal portfolios.
+\newblock {\em Math. Finance}, 1(1):1-29, January 1991.
+
+\bibitem{FK}
+\newblock A. Frieze and R. Kannan.
+\newblock Log-Sobolev inequalities and sampling from log-concave distributions.
+\newblock Annals of Applied Probability 9, 14-26.
+
+\bibitem{Helmbold}
+\newblock D.~Helmbold, R.~Schapire, Y.~Singer, and M.~Warmuth.
+\newblock On-line portfolio selection using multiplicative updates. 
+\newblock {\em Machine Learning: Proceedings of the Thirteenth 
+International Conference}, 1996.
+
+\bibitem{KV}
+\newblock A.~Kalai and S.~Vempala.
+\newblock Efficient Algorithms for Universal Portfolios.
+\newblock To appear in {\em Proceedings of the 41st Annual Symposium on the
+Foundations of Computer Science (FOCS '00)}, Redondo Beach, 2000. 
+
+\bibitem{KLS}
+\newblock R. Kannan, L. Lovasz and M. Simonovits.
+\newblock Random walks and an $O^*(n^5)$ volume algorithm for convex bodies.
+\newblock Random Structures and Algorithms 11, 1-50.
+
+\bibitem{LW}
+\newblock N.~Littlestone and M.~Warmuth.  
+\newblock The weighted majority algorithm.
+\newblock {\em Information and Computation} 108(2):212-261, 1994.
+
+\bibitem{Schapire}
+\newblock R.~Schapire.  
+\newblock The strength of weak learnability.  
+\newblock {\em Machine Learning},
+5(2):197-227, 1990. 
+
+\bibitem{VC}
+\newblock V.~Vapnick and A.~Chervonekis.  On the uniform convergence of
+relative frequencies of events to their probabilities.  {\em Theory of
+Probability and its Applications}, 16(2):264-280, 1971.
+
+
+\end{thebibliography}
+
+\end{document}
+
+

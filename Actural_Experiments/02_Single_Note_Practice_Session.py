@@ -31,7 +31,7 @@ import copy
 import speechrecognition
 
 # before run this, make sure the IP is currect
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule; pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
 print "Enter subject Name:\n"
@@ -275,7 +275,7 @@ def main(robotIP, PORT=9559):
                             "Sorry, I didn't get that one.",
                             "I think you might missed it.",
                             "That was not a perfect one, but it is OK.",
-                            "I believe you find some of the colors! But not all of them!",
+                            "I believe you find the color! But didn't play it very well!",
                             "The color looks fine, but I couldn't recognize the notes by listening."]
             response = random.choice(responseList)
             tts.say(response)
@@ -359,7 +359,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.3",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.3", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -195,7 +195,7 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
 def game2(robotIP, PORT, username, pw, origin, local, motionProxy, postureProxy, ledProxy, tts):
     tts.say("In this mode, you will have five seconds to play what ever you want.")
     tts.say("When times up, I will try to mimic what I heard from you.")
-    tts.say("After you see my eyes flash, you may start to play! Try to hit harder!")
+    tts.say("After you see my eyes flash, you may start to play! Try to play nicely!")
     ledProxy.randomEyes(1.0)
     recordplay.record(robotIP, PORT, t=5)
 #        recordplay.playBack(robotIP, PORT)
@@ -417,7 +417,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="192.168.0.3",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

@@ -121,7 +121,8 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is your favority song Baby shark!")
+            tts.say("Yes, it is your favority!")
+            tts.say(song)
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")

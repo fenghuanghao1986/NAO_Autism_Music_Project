@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.5", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -417,7 +417,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="192.168.0.5",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

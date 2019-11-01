@@ -48,7 +48,7 @@ year = str(now.year)
 username = "nao"
 pw = "nao"
 
-fileName = subject + '_' + session  + '_' + 'song_practice_1_' + mon + '_' + day + '_' + year + '.csv'
+fileName = subject + '_' + session  + '_' + 'song_practice_2_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
@@ -62,12 +62,12 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['1','1','5','5','6','6','5',
-                '4','4','3','3','2','2','1',
-                '5','5','4','4','3','3','2']
-    comfList = ['1','1','5','5','6','6','5',
-                '4','4','3','3','2','2','1',
-                '5','5','4','4','3','3','2']
+    uncfList = ['5','5','4','4','3','3','2',
+                '1','1','5','5','6','6','5',
+                '4','4','3','3','2','2','1']
+    comfList = ['5','5','4','4','3','3','2',
+                '1','1','5','5','6','6','5',
+                '4','4','3','3','2','2','1']
 
     mode = ['u', 'c']
     x_list = [6,7,8]
@@ -389,11 +389,11 @@ def main(robotIP, PORT=9559):
             elif total < 15 and accuracy < 0.6:
                 total += 1
                 continue
-            elif total < 15 and accuracy >= 0.7:
-                tts.say("Congratulations! You just completed the first half song challenge!")
+            elif total < 15 and accuracy <= 0.7:
+                tts.say("Congratulations! You just completed the second half song challenge!")
                 break
             else:
-                tts.say("Congratulations! You just completed the first half song challenge!")
+                tts.say("Congratulations! You just completed the second half song challenge!")
                 break
         
 # =============================================================================

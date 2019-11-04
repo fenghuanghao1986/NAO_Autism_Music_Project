@@ -29,7 +29,7 @@ import copy
 #import audio_generator
 import speechrecognition
 
-global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.5", 9559)
+global broker; broker = ALBroker("pythonBroker","0.0.0.0", 0, "192.168.0.2", 9559)
 global pythonSpeechModule;
 pythonSpeechModule = speechrecognition.SpeechRecoModule('pythonSpeechModule')
 
@@ -81,9 +81,14 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                           7,7,7,0,7,7,7,0,7,9,5,6,7,0,
                           8,8,8,8,8,7,7,7,7,6,6,7,6,0,9,0,
                           7,7,7,0,7,7,7,0,7,9,5,6,7,0,
-                          8,8,8,8,8,7,7,7,9,9,8,6,5]}
+                          8,8,8,8,8,7,7,7,9,9,8,6,5],
+                          
+            "Lamb": [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
+                    3,2,1,2,3,3,3,1,0,2,2,3,2,1,0,8,0,
+                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
+                    7,6,5,6,7,7,7,7,0,6,6,7,6,5,0,9,0]}
 
-song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1", "JingleBell"]
+song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1", "JingleBell", "Lamb"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -417,7 +422,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.5",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
     parser.add_argument("--port", type=int, default=9559,
                         help="Robot port number")

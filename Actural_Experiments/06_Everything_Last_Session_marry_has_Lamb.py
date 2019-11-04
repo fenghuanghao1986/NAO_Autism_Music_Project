@@ -103,9 +103,10 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #           Play twinkle twinkle
             dt = 0.6
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
+                    3,2,1,2,3,3,3,1,2,2,3,2,1,0,8,0,
+                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
+                    7,6,5,6,7,7,7,7,6,6,7,6,5,0,9,0]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -117,7 +118,7 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is the the most popular Twinkle Twinkle Little Star!")
+            tts.say("Yes, it is Marry had a little lamb!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
@@ -210,7 +211,7 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         elif taskNumber == 3:
                 
-            keys = [0,0,1,5,6]
+            keys = [0,0,3,2,1]
             dt1 = 1
             name = 'FaceLeds'
 #            colorNames = ['red', 'green', 'blue']
@@ -228,7 +229,7 @@ def main(robotIP, PORT=9559):
             motionProxy.rest()
             tts.say("I just played three notes, can you repeat them for me? \
                     make sure you followed by the proper color order\
-                    for example green, gray, blue.")
+                    for example red, brown, green.")
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
             try:
@@ -244,7 +245,7 @@ def main(robotIP, PORT=9559):
 #       first half song
         elif taskNumber == 4:
             
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1]
+            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0]
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -276,7 +277,7 @@ def main(robotIP, PORT=9559):
 #       second half song 
         elif taskNumber == 5:
             
-            keys = [0,0,5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0]
+            keys = [0,0,7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0]
             dt1 = 1
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
@@ -308,9 +309,10 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #       task 6: play the whole song
         elif taskNumber == 6:
-            keys = [0,0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
-                    5,5,4,4,3,3,2,0,5,5,4,4,3,3,2,0,
-                    1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0]
+            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
+                    3,2,1,2,3,3,3,1,2,2,3,2,1,0,8,0,
+                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
+                    7,6,5,6,7,7,7,7,6,6,7,6,5,0,9,0]
             dt=0.6
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
@@ -435,10 +437,10 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 15:
             
 
-            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,0,
-                    3,2,1,2,3,3,3,0,1,2,2,0,3,2,1,0,8,0,0,
-                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,0,
-                    7,6,5,6,7,7,7,0,7,6,6,0,7,6,5]
+            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
+                    3,2,1,2,3,3,3,1,2,2,3,2,1,0,8,0,
+                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
+                    7,6,5,6,7,7,7,7,6,6,7,6,5,0,9,0]
             
             dt = 0.53
 
@@ -487,7 +489,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.5",
+    parser.add_argument("--ip", type=str, default="192.168.0.2",
                         help="Robot ip address")
 #    parser.add_argument("--ip", type=str, default="127.0.0.1",
 #                        help="Robot ip address")

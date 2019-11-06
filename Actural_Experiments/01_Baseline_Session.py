@@ -486,7 +486,7 @@ def main(robotIP, PORT=9559):
 # Calling the main
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="192.168.0.2",
+    parser.add_argument("--ip", type=str, default="192.168.0.3",
                         help="Robot ip address")
 #    parser.add_argument("--ip", type=str, default="127.0.0.1",
 #                        help="Robot ip address")

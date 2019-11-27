@@ -131,24 +131,24 @@ def findNotes(stftData, fsRange):
 #    return res
 
 def LevDist2(s, t):
-    slen = len(s)
-    tlen = len(t)
+    slen = len(s) + 1
+    tlen = len(t) + 1
     
     if slen == 0:
         return tlen
     elif tlen == 0:
         return slen
     
-    result = [[0 for i in range(len(s))] for j in range(len(t))]
+    result = [[0 for i in range(slen)] for j in range(tlen)]
     cost = 0
 
     for i in range(tlen):
         result[i][0] = i
     for j in range(slen):
         result[0][j] = j
-
-    for i in range(tlen):
-        for j in range(slen):
+        
+    for i in range(1,tlen):
+        for j in range(1,slen):
             if s[j-1] == t[i-1]:
                 cost = 0
             else:
@@ -157,6 +157,7 @@ def LevDist2(s, t):
             result[i][j] = min([result[i-1][j]+1,
                                 result[i][j-1]+1,
                                 result[i-1][j-1]+cost])
+#    print(result)
     return result[tlen-1][slen-1]
 
 #if __name__ == '__main__':

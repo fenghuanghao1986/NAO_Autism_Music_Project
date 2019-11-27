@@ -86,9 +86,15 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
             "Lamb": [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
                     3,2,1,2,3,3,3,1,0,2,2,3,2,1,0,8,0,
                     7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
-                    7,6,5,6,7,7,7,7,0,6,6,7,6,5,0,9,0]}
+                    7,6,5,6,7,7,7,7,0,6,6,7,6,5,0,9,0],
+                     
+            "Fatastic": [0,0,9,0,8,0,5,0,0,0,6,7,
+                         8,7,6,5,4,5,6,4,5,0,7,0,2,0,6,7,
+                         8,7,6,5,6,6,7,8,9,0,7,0,7,0,8,9,
+                         10,0,8,0,8,0,7,6,5,0,7,0,5,0,0,0,
+                         7,0,5,0,0,0,7,0,5]}
 
-song_names = ["Twinkle", "Promise", "Sunshine", "BabySharkv1", "JingleBell", "Lamb"]
+song_names = ["Fatastic", "Twinkle", "Promise", "Sunshine", "BabySharkv1", "JingleBell", "Lamb"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -186,11 +192,11 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
                     "Sorry, I couldn't recognize it. Please try harder!",
                     "Sorry, I didn't get that one. You may want to try it next time.",
                     "I think you might missed some of the notes. Let's just move on.",
-                    "That was not a perfect one, but it is OK. I belive you have tried your best.",
+                    "That was not a perfect one, but it is OK. I believe you have tried your best.",
                     "I believe you find some of the colors! But not all of them!",
                     "The color looks fine, but I couldn't recognize some notes by listening.",
                     "Are you sure that's what you just played? I don't quite understand.",
-                    "I believe you really tried, however, not good enough, try it next time."]
+                    "I believe you really tried, however, try it next time."]
     response = random.choice(responseList)
     tts.say(response)
     tts.say("Which mode you want to play next? You may also say exit to quit play with me!")
@@ -347,7 +353,7 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
 #           Play demo
-            dt = 0.53
+            dt = 0.5
             keys = songBank[random.choice(song_names)]
 #            keys = songBank["BabySharkv1"]
 

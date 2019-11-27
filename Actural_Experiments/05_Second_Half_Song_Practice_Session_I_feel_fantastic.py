@@ -307,9 +307,48 @@ def main(robotIP, PORT=9559):
         if len(realPeaks) == 0:
             realPeaks.append('0')
 #           keys = convertKeys(realPeaks) 
-
+            
+        target_note = []
+        for i in range(len(play_note)):
+            
+            if play_note[i] == '0':
+                continue
+            elif play_note[i] == '1':
+                target_note.append('1')
+                continue
+            elif play_note[i] == '2':
+                target_note.append('2')
+                continue
+            elif play_note[i] == '3':
+                target_note.append('3')
+                continue
+            elif play_note[i] == '4':
+                target_note.append('4')
+                continue
+            elif play_note[i] == '5':
+                target_note.append('5')
+                continue
+            elif play_note[i] == '6':
+                target_note.append('6')
+                continue
+            elif play_note[i] == '7':
+                target_note.append('7')
+                continue
+            elif play_note[i] == '8':
+                target_note.append('8')
+                continue
+            elif play_note[i] == '9':
+                target_note.append('9')
+                continue
+            elif play_note[i] == 'a':
+                target_note.append('a')
+                continue
+            else:
+                target_note.append('b')
+                continue
         
-        result = stft.LevDist2(realPeaks, play_note)
+        
+        result = stft.LevDist2(realPeaks, target_note)
         print("difference calculated done! Here is the result: ")
         print(result)             
     

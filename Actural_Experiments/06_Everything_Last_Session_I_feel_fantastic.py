@@ -102,7 +102,7 @@ def main(robotIP, PORT=9559):
             time.sleep(0.5)   
 # =============================================================================
 #           Play twinkle twinkle
-            dt = 0.5
+            dt = 0.55
             keys = [0,0,9,0,8,0,5,0,0,0,6,7,
                     8,7,6,5,4,5,6,4,5,0,7,0,2,0,6,7,
                     8,7,6,5,6,6,7,8,9,0,7,0,7,0,8,9,
@@ -119,7 +119,7 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is I feel fantastic!")
+            tts.say("It is I feel fantastic, I hope I played it well!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
@@ -317,7 +317,7 @@ def main(robotIP, PORT=9559):
                     8,7,6,5,6,6,7,8,9,0,7,0,7,0,8,9,
                     10,0,8,0,8,0,7,6,5,0,7,0,5,0,0,0,
                     7,0,5,0,0,0,7,0,5]
-            dt=0.5
+            dt=0.45
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -441,12 +441,13 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 15:
             
 
-            keys = [0,0,3,2,1,2,3,3,3,0,2,2,2,0,3,5,5,0,
-                    3,2,1,2,3,3,3,1,2,2,3,2,1,0,8,0,
-                    7,6,5,6,7,7,7,0,6,6,6,0,7,9,9,0,
-                    7,6,5,6,7,7,7,7,6,6,7,6,5,0,9,0]
+            keys = [0,0,9,0,8,0,5,0,0,0,6,7,
+                    8,7,6,5,4,5,6,4,5,0,7,0,2,0,6,7,
+                    8,7,6,5,6,6,7,8,9,0,7,0,7,0,8,9,
+                    10,0,8,0,8,0,7,6,5,0,7,0,5,0,0,0,
+                    7,0,5,0,0,0,7,0,5]
             
-            dt = 0.5
+            dt = 0.55
 
             tts.say("Looks like you just unlucked a hidden challenge! \
                     Listen and watch carefully.")

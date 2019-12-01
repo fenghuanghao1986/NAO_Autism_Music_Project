@@ -188,14 +188,14 @@ def game1(robotIP, PORT, username, pw, motionProxy, postureProxy, ledProxy, tts)
     motionProxy.rest()
     time.sleep(10)
     tts.say("Times up!")
-    responseList = ["Looks like you didn't play it very well. You may not good at it.",
+    responseList = [
                     "Sorry, I couldn't recognize it. Please try harder!",
                     "Sorry, I didn't get that one. You may want to try it next time.",
                     "I think you might missed some of the notes. Let's just move on.",
                     "That was not a perfect one, but it is OK. I believe you have tried your best.",
                     "I believe you find some of the colors! But not all of them!",
                     "The color looks fine, but I couldn't recognize some notes by listening.",
-                    "Are you sure that's what you just played? I don't quite understand.",
+                    
                     "I believe you really tried, however, try it next time."]
     response = random.choice(responseList)
     tts.say(response)

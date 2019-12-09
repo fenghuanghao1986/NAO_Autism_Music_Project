@@ -199,7 +199,7 @@ def createColor(play_note):
             colorList.append(0X00800080)
         
     for j in range(len(play_note)):
-        timeList.append(j + 0.25)
+        timeList.append(0.7)
         
     return colorList, colorNameList, timeList
     

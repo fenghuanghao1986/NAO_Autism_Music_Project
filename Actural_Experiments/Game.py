@@ -95,7 +95,9 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         6,0,4,0,2,0,1,0,8,5,6,7,6,5,4,0,
                         6,0,4,0,2,0,1,0,7,8,9,10,5,11,11,0,
                         6,0,4,0,2,0,1,0,7,8,9,10,11,8,10,8,
-                        11,8,10,8,11,8,10,8,11,8,10,8,11,8,10,8],
+                        11,8,10,8,11,8,10,8,11,8,10,8,11,8,10,8,
+                        11,0,11,11,0,11,11,0,11,11,0,11,
+                        4,0],
                        
             "Sleeping": [0,1,0,2,0,3,0,1,0,1,0,2,0,3,0,1,0,
                         3,0,4,0,5,0,0,3,0,4,0,5,0,0,
@@ -110,6 +112,7 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
 
 song_names = ["Fatastic", "Twinkle", "CanCan", "Sleeping", "Promise", 
               "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds"]
+#song_names = ["CanCan"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -368,13 +371,13 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
 #           Play demo
-            dt = 0.5
+            dt = 0.4
             keys = songBank[random.choice(song_names)]
 #            keys = songBank["BabySharkv1"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)

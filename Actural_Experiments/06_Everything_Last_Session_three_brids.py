@@ -102,7 +102,7 @@ def main(robotIP, PORT=9559):
             time.sleep(0.5)   
 # =============================================================================
 #           Play twinkle twinkle
-            dt = 0.5
+            dt = 0.4
             keys = [0,3,0,0,3,0,4,0,3,0,3,0,2,0,2,0,0,
                     6,0,6,5,0,0,0,6,6,0,5,0,6,0,4,0,
                     6,8,0,6,0,5,0,0,3,3,4,5,0,5,0,4,
@@ -252,7 +252,7 @@ def main(robotIP, PORT=9559):
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
-            dt1 = 1
+            dt1 = 0.8
             tts.say("Here comes the ultimate challenge!")
             tts.say("This is the first half of the song! \
                     Listen and watch carefully.")
@@ -282,7 +282,7 @@ def main(robotIP, PORT=9559):
             keys = [0,6,8,0,6,0,5,0,0,3,3,4,5,0,5,0,4,
                     2,0,2,0,0,3,5,0,1,0,1,0,2,0,1,0,
                     3,0,2,0,1]
-            dt1 = 1
+            dt1 = 0.8
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -318,7 +318,7 @@ def main(robotIP, PORT=9559):
                     6,8,0,6,0,5,0,0,3,3,4,5,0,5,0,4,
                     2,0,2,0,0,3,5,0,1,0,1,0,2,0,1,0,
                     3,0,2,0,1]
-            dt=0.5
+            dt=0.4
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -448,7 +448,7 @@ def main(robotIP, PORT=9559):
                     2,0,2,0,0,3,5,0,1,0,1,0,2,0,1,0,
                     3,0,2,0,1]
             
-            dt = 0.5
+            dt = 0.4
 
             tts.say("Looks like you just unlucked a hidden challenge! \
                     Listen and watch carefully.")

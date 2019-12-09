@@ -62,17 +62,17 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['1','0','2','0','3','0','1','0',
-                '1','0','2','0','3','0','1','0',
-                '3','0','4','0','5','0','0','3',
-                '0','4','0','5']
-    comfList = ['1','0','2','0','3','0','1','0',
-                '1','0','2','0','3','0','1','0',
-                '3','0','4','0','5','0','0','3',
-                '0','4','0','5']
+    uncfList = ['1','2','3','1','0',
+                '1','2','3','1','0',
+                '3','4','5','0',
+                '3','4','5','0']
+    comfList = ['1','2','3','1','0',
+                '1','2','3','1','0',
+                '3','4','5','0',
+                '3','4','5','0']
 
     mode = ['u', 'c']
-    x_list = [8,9,10]
+    x_list = [7,8,9]
     u_cList = random.choice(mode)
 
     if u_cList == 'u':
@@ -204,7 +204,7 @@ def createColor(play_note):
             colorList.append(0X00000000)
         
     for j in range(len(play_note)):
-        timeList.append(j + 0.15)
+        timeList.append(0.7)
         
     return colorList, colorNameList, timeList
     

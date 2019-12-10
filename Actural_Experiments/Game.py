@@ -57,12 +57,6 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                          0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
                          0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
                          0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0],
-                         
-#            "BlueSky":  [0,0,5,5,5,5,5,10,6,
-#                         10,5,10,6,10,9,8,
-#                         6,1,9,10,6,8,9,
-#                         7,9,7,10,10,9,10,8,
-#                         1,2,3,2,3,2,3,4,3,2],
             
             "BabySharkv1":[0,5,6,8,8,8,8,8,8,
                            0,5,6,8,8,8,8,8,8,
@@ -92,9 +86,33 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                          8,7,6,5,4,5,6,4,5,0,7,0,2,0,6,7,
                          8,7,6,5,6,6,7,8,9,0,7,0,7,0,8,9,
                          10,0,8,0,8,0,7,6,5,0,7,0,5,0,0,0,
-                         7,0,5,0,0,0,7,0,5]}
+                         7,0,5,0,0,0,7,0,5],
+                         
+            "CanCan": [0,1,5,5,6,5,4,4,6,7,9,11,9,9,8,8,0,
+                        9,3,3,9,8,4,4,6,6,5,6,5,6,5,6,5,
+                        1,5,5,6,5,4,4,6,7,9,11,9,9,8,8,0,
+                        9,3,3,9,8,4,4,6,6,5,6,5,5,4,4,0,
+                        6,0,4,0,2,0,1,0,8,5,6,7,6,5,4,0,
+                        6,0,4,0,2,0,1,0,7,8,9,10,5,11,11,0,
+                        6,0,4,0,2,0,1,0,7,8,9,10,11,8,10,8,
+                        11,8,10,8,11,8,10,8,11,8,10,8,11,8,10,8,
+                        11,0,11,11,0,11,11,0,11,11,0,11,
+                        4,0],
+                       
+            "Sleeping": [0,1,0,2,0,3,0,1,0,1,0,2,0,3,0,1,0,
+                        3,0,4,0,5,0,0,3,0,4,0,5,0,0,
+                        5,6,5,4,3,0,1,0,5,6,5,4,3,0,1,0,
+                        2,0,5,0,1,0,0,2,0,5,0,1,0],
+                         
+            "Birds": [0,3,0,0,3,0,4,0,3,0,3,0,2,0,2,0,0,
+                        6,0,6,5,0,0,0,6,6,0,5,0,6,0,4,0,
+                        6,8,0,6,0,5,0,0,3,3,4,5,0,5,0,4,
+                        2,0,2,0,0,3,5,0,1,0,1,0,2,0,1,0,
+                        3,0,2,0,1]}
 
-song_names = ["Fatastic", "Twinkle", "Promise", "Sunshine", "BabySharkv1", "JingleBell", "Lamb"]
+song_names = ["Fatastic", "Twinkle", "CanCan", "Sleeping", "Promise", 
+              "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds"]
+#song_names = ["CanCan"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()
@@ -353,13 +371,13 @@ def main(robotIP, PORT=9559):
 
 # =============================================================================
 #           Play demo
-            dt = 0.5
+            dt = 0.4
             keys = songBank[random.choice(song_names)]
 #            keys = songBank["BabySharkv1"]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
-            Positions.playXylo(motionProxy, keys, dt)
+            Positions.playXyloOne(motionProxy, keys, dt)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy, postureProxy)
             ledProxy.randomEyes(2.0)

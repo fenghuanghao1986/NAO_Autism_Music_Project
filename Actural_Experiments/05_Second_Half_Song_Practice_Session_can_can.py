@@ -62,15 +62,21 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['5','5','4','4','3','3','2',
-                '1','1','5','5','6','6','5',
-                '4','4','3','3','2','2','1']
-    comfList = ['5','5','4','4','3','3','2',
-                '1','1','5','5','6','6','5',
-                '4','4','3','3','2','2','1']
+    uncfList = ['6','0','4','0','2','0','1','0',
+                '8','5','6','7','6','5','4','0',
+                '6','0','4','0','2','0','1','0',
+                '7','8','9','a','5','b','b','0',
+                '6','0','4','0','2','0','1','0',
+                '7','8','9','a','b','8','b','8']
+    comfList = ['6','0','4','0','2','0','1','0',
+                '8','5','6','7','6','5','4','0',
+                '6','0','4','0','2','0','1','0',
+                '7','8','9','a','5','b','b','0',
+                '6','0','4','0','2','0','1','0',
+                '7','8','9','a','b','8','b','8']
 
     mode = ['u', 'c']
-    x_list = [6,7,8]
+    x_list = [8,9,10]
     u_cList = random.choice(mode)
 
     if u_cList == 'u':
@@ -129,7 +135,10 @@ def convertKeys(keys):
     trueKeys.append(0)
     
     for i in range(len(keys)):
-        if keys[i] == '1':
+        if keys[i] == '0':
+            trueKeys.append(0)
+            continue
+        elif keys[i] == '1':
             trueKeys.append(1)
             continue
         elif keys[i] == '2':
@@ -192,12 +201,15 @@ def createColor(play_note):
         elif play_note[i] == '6':
             colorNameList.append('blue')
             colorList.append(0X000000FF)
-        else:
+        elif play_note[i] == '7':
             colorNameList.append('pink')
-            colorList.append(0X00800080)
+            colorList.append(0x00800080)
+        else:
+            colorNameList.append(' ')
+            colorList.append(0X00000000)
         
     for j in range(len(play_note)):
-        timeList.append(0.7)
+        timeList.append(0.75)
         
     return colorList, colorNameList, timeList
     
@@ -265,7 +277,7 @@ def main(robotIP, PORT=9559):
         tts.say("Look at my eyes again and remember the colors")
         for x in range(len(colorList)):
             tts.say(colorNameList[x]) 
-            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.25)
+            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.2)
         tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         
@@ -299,9 +311,48 @@ def main(robotIP, PORT=9559):
         if len(realPeaks) == 0:
             realPeaks.append('0')
 #           keys = convertKeys(realPeaks) 
-
+            
+        target_note = []
+        for i in range(len(play_note)):
+            
+            if play_note[i] == '0':
+                continue
+            elif play_note[i] == '1':
+                target_note.append('1')
+                continue
+            elif play_note[i] == '2':
+                target_note.append('2')
+                continue
+            elif play_note[i] == '3':
+                target_note.append('3')
+                continue
+            elif play_note[i] == '4':
+                target_note.append('4')
+                continue
+            elif play_note[i] == '5':
+                target_note.append('5')
+                continue
+            elif play_note[i] == '6':
+                target_note.append('6')
+                continue
+            elif play_note[i] == '7':
+                target_note.append('7')
+                continue
+            elif play_note[i] == '8':
+                target_note.append('8')
+                continue
+            elif play_note[i] == '9':
+                target_note.append('9')
+                continue
+            elif play_note[i] == 'a':
+                target_note.append('a')
+                continue
+            else:
+                target_note.append('b')
+                continue
         
-        result = stft.LevDist2(realPeaks, play_note)
+        
+        result = stft.LevDist2(realPeaks, target_note)
         print("difference calculated done! Here is the result: ")
         print(result)             
     
@@ -390,10 +441,10 @@ def main(robotIP, PORT=9559):
                 total += 1
                 continue
             elif total < 15 and accuracy <= 0.7:
-                tts.say("Congratulations! You just completed the second half song challenge!")
+                tts.say("Congratulations! You just completed the song play challenge!")
                 break
             else:
-                tts.say("Congratulations! You just completed the second half song challenge!")
+                tts.say("Congratulations! You just completed the song play challenge!")
                 break
         
 # =============================================================================

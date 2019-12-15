@@ -48,7 +48,7 @@ year = str(now.year)
 username = "nao"
 pw = "nao"
 
-fileName = subject + '_' + session  + '_' + 'song_practice_2_' + mon + '_' + day + '_' + year + '.csv'
+fileName = subject + '_' + session  + '_' + 'song_practice_1_' + mon + '_' + day + '_' + year + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
@@ -62,17 +62,15 @@ def createMisc(robotIP, username, pw):
     
     play_note = []
     newData = []
-    uncfList = ['0','5','6','5','4','3','0','1',
-                '0','5','6','5','4','3','0','1',
-                '0','2','0','5','0','1','0','0',
-                '2','0','5','0','1']
-    comfList = ['0','5','6','5','4','3','0','1',
-                '0','5','6','5','4','3','0','1',
-                '0','2','0','5','0','1','0','0',
-                '2','0','5','0','1']
+    uncfList = ['5','6','5','3','1','3',
+                '5','6','5','3','0',
+                '8','0','8','0','8','0','8','0']
+    comfList = ['5','6','5','3','1','3',
+                '5','6','5','3','0',
+                '8','0','8','0','8','0','8','0']
 
     mode = ['u', 'c']
-    x_list = [7,8,9]
+    x_list = [6,7,8]
     u_cList = random.choice(mode)
 
     if u_cList == 'u':
@@ -273,7 +271,7 @@ def main(robotIP, PORT=9559):
         tts.say("Look at my eyes again and remember the colors")
         for x in range(len(colorList)):
             tts.say(colorNameList[x]) 
-            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.25)
+            ledProxy.fadeRGB('FaceLeds', colorList[x], 0.2)
         tts.say("Now, you shall play right after my eye flashes!")
         ledProxy.randomEyes(1.0)
         
@@ -307,6 +305,7 @@ def main(robotIP, PORT=9559):
         if len(realPeaks) == 0:
             realPeaks.append('0')
 #           keys = convertKeys(realPeaks) 
+            
         target_note = []
         for i in range(len(play_note)):
             
@@ -345,7 +344,7 @@ def main(robotIP, PORT=9559):
             else:
                 target_note.append('b')
                 continue
-
+        
         
         result = stft.LevDist2(realPeaks, target_note)
         print("difference calculated done! Here is the result: ")
@@ -436,10 +435,10 @@ def main(robotIP, PORT=9559):
                 total += 1
                 continue
             elif total < 15 and accuracy <= 0.7:
-                tts.say("Congratulations! You just completed the second half song challenge!")
+                tts.say("Congratulations! You just completed the song play challenge!")
                 break
             else:
-                tts.say("Congratulations! You just completed the second half song challenge!")
+                tts.say("Congratulations! You just completed the song play challenge!")
                 break
         
 # =============================================================================

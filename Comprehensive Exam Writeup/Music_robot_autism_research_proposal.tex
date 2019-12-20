@@ -73,49 +73,155 @@ on the autism spectrum.\\
 This proposal presents the hypothesis and potential methodology of a study that aimed to design a
 entertaining humanoid-robot music therapy/teaching-like sessions for capturing, modeling and 
 enhancing the social skills of children with Autism. In particular we mainly focus on: gaze 
-direction; joint attention; turn-taking; motor control; stress handling; music pitch recognition;
+direction; joint attention; turn-taking; motor control; music pitch recognition;
 and music emotion understanding, investigate how the ASD and Typically Developing (TD) children employ 
 their knowledge for interacting with the robot using music language.\\
 
-\section*{Research question} Now state explicitly the hypothesis you aim to
-test. Make references to the items listed in the Reference section
-that back up your arguments for why this is a reasonable
-hypothesis to test, for example the work of Knuth~\cite{knuth}.
-Explain what you expect will be accomplished by undertaking this
-particular project.  Moreover, is it likely to have any other
-applications?\\
-Music play and practice requires 
+\section*{Research Questions}
+It is obvious that multiple physical and mental activities are involved during music
+play and practice. That makes it perfect to have music activity in human-robot interaction for
+children with autism due to the deficits they are suffering from. \\
+
+Eye gaze attention and joint attention are required significant amount during music instrument practice
+and play. Participants will be required to not only have eye contact with the music
+agent but also have joint attention with the music instrument at the same time. This will be one of
+the main activity among the entire experimental sessions, and will be evaluated at the end.
+Music teaching scenario creates a meaningful back and forth communication experience. This allows
+participants to have better understanding of turn-taking skill and be able to adapt this 
+in their daily life.\\
+
+A good thing about using a percussion instrument is that requires the player to have better
+motor control in order to deliver a perfect clear note with a proper strike. The strike motion
+need some practice that would allow the participants be able to adopt motor control technique
+in other activities of their life.\\
+
+Listen to someone's favorite music can be cheerful and relax. However, learning instrument 
+play can be stressful, and repetitive practice could be tedious especially in early age. This 
+type of intra-personal feeling changes could be detectable by using affective computing. 
+Emotion recognition and representation can be difficult for children with ASD, that makes 
+it more eager to find out how do they feel inside during music activities. Music is also
+a great 'language' of representing emotions, it would also be interesting to see if children
+with ASD would be able to recognize the emotion behind certain piece of melody.
 
  
-\section*{Method}
-In this section you should outline how you intend to go
-about accomplishing the aims you have set in the previous
-section. Try to break your grand aims down into small,
-achievable tasks. Try to estimate how long you will
-spend on each task, and draw up a timetable for each
-sub-task.
+\section*{Experimental Session Deign}
+A novel interactive human-robot music teaching system design will be designed in 
+the next 2 years. In order to make the robot play the xylophone properly, several things need 
+to be done. First is to find a proper xylophone with correct timber; 
+second, we have to arrange the xylophone in the proper position in front of the robot 
+to make it visible and be reachable to play; third, finalize what are the activities 
+should be included in experimental sessions; finally, design the intelligent music system for NAO.\\
 
-\section*{Software and Hardware Requirements}
-Outline what your specific requirements will be with regard
-to software and hardware, but note that any special requests
-might need to be approved by your supervisor and the Head of
-Department.
+\paragraph{Session Design Concept:}
+Intervention sessions will be designed to accomplish the target questions. Due to children
+concentration time, total activity time in each session should be well controlled between 
+30 to 40 minutes, and the total length of each session will be under one hour including rest
+time by participants request. In order to make music practice more entertaining which can 
+keep participants attracted and focused, all tasks will be represented as a 'challenge' format.
+Different levels/difficulties of activities will be designed to fulfill the music teaching
+concept after all. \\
+\subparagraph{Baseline Session: }Participants will be asked to follow all the 
+instructions contained in all the practices from the following intervention session 
+including single bar strike, multiple bars strike, half song play and the whole
+song play. We decided to choose a very popular kid's song "Twinkle Twinkle Little Star" 
+for this specific session due to how well-known this song is in almost 
+everyone's childhood.\\
 
-Overall, you should aim to produce roughly a two page document
-(and certainly no more than four pages)
-outlining your plan for the year.
+\subparagraph{Intervention Sessions: }These sessions will be assigned to ASD group
+particularly and include single strike with color hints, multiple strikes with
+colors hint, half-song practice and whole song practice. In this part, a customized 
+song will be used through the rest of the sessions by the request of individual. In the second
+half of this intervention session set, single/multiple strikes were also covered
+before the half/full song practice in order to have participants use the
+color matching technique during the high level music play due to a lack of professional
+music background knowledge. In addition, starting from session 2, a single strike
+warm up practice was added before the formal music practice starts. This particular
+practice was designed to have better motor control for ASD group, so that
+the robot is able to recognize notes properly and deliver the concept in telling the
+difference between "making a sound" and "playing a musical note". \\
 
-\begin{thebibliography}{9}
-\bibitem{knuth} D. E. Knuth. {\em The \TeX~book.}\/ Addison-Wesley,
-Reading, Massachusetts, 1984.
-\bibitem{lamport} L. Lamport. {\em \LaTeX~: A Document Preparation
-System}.\/ Addison-Wesley, Reading, Massachusetts, 1986.
-\bibitem{ken} Ken Wessen, Preparing a thesis using \LaTeX~, private
-communication, 1994.
-\bibitem{lamport2} L. Lamport. Document Production: Visual
-or Logical, {\em Notices of the Amer. Maths. Soc.},\/ Vol. 34,
-1987, pp. 621-624.
-\end{thebibliography}
+\subparagraph{Exit Session: }Both groups were assigned to go through the same steps
+as the baseline session in choice of their own songs. We would like to see the 
+difference between two groups in learning a beloved song by their own.\\
+
+\section*{Hardware and Software Requirements}
+\subparagraph{NAO: A Humanoid Robot}We used a humanoid  robot called NAO developed by Aldebaran Robotics in France. 
+NAO is 58 cm (23 inches) tall, with 25 degrees of freedom. This robot 
+can conduct most human behaviors. It also features an onboard multimedia 
+system including four microphones for voice recognition and sound localization, 
+two speakers for text-to-speech synthesis, and two HD cameras with maximum image 
+resolution 1280 x 960 for online observation. As shown in Figure \ref{nao_body}, these 
+utilities are located in the middle of the forehead and the mouth area. NAO’s 
+computer vision module includes facial and shape recognition units. By using the 
+vision feature of the robot, the robot can see the instrument 
+from its lower camera and be able to implement an eye-arm self-calibration 
+system which allows the robot to have real-time micro-adjustment of its 
+arm-joints in case of off positioning during music playing.\\
+
+\subparagraph{Module Based Robot Music Teaching Platform:}A novel module-based robot-music 
+teaching system will be designed in order to accomplish the mission. 
+Three modules will be built in this intelligent system including module 1: eye-hand 
+self-calibration micro-adjustment; module 2: joint trajectory generator; and 
+module 3: real time performance scoring feedback.\\
+
+\subparagraph{Module 1: Eye-hand Self-Calibration Micro-Adjustment}
+Knowledge about the parameters of the robot's kinematic model is essential for 
+tasks requiring high precision, such as playing the xylophone. While the kinematic 
+structure is known from the construction plan, errors can occur, e.g., due to the 
+imperfect manufacturing. After multiple rounds of testing, it was found the targeted angle chain 
+of arms never actually equals the returned chain. We therefore are going to use a 
+calibration method to accurately eliminate these errors.\\
+
+\subparagraph{A. Color-Based Object Tracking}
+To play the xylophone, the robot has to be able to adjust its motions according to
+the estimated relative position of the instrument and the heads of the beaters it is 
+holding. To estimate these poses, adopted in this thesis, we used a color-based technique.\\
+
+The main idea is, based on the RGB color of the center blue bar, given a hypothesis 
+about the instrument's pose, one can project the contour of the object's model into the 
+camera image and compare them to actually observed contour. In this way, it is possible 
+to estimate the likelihood of the pose hypothesis. By using this method, it allows
+the robot to track the instrument with very low cost in real-time. \\
+
+\subparagraph{Module 2: Joint Trajectory Generator}
+Our system parses a list of hex-decimal numbers (from 1 to b) to obtain the sequence
+of notes to play. It converts the notes into a joint trajectory using the beating
+configurations obtained from inverse kinematics as control points. The timestamps
+for the control points will be defined by the user in order to meet the experiment requirement.
+The trajectory is then computed using Bezier interpolation in joint space by the
+manufacturer-provided API and then sent to the robot controller for execution. In this
+way, the robot plays in-time with the song.\\
+
+\subparagraph{Module 3: Real-Time Performance Scoring Feedback}
+The purpose of this system is to provide a real-life interaction experience using 
+music therapy to teach kids social skills and music knowledge.  In this scoring 
+system, two core features were designed to complete the task: 1) music detection;
+2) intelligent scoring-feedback system.\\
+
+\subparagraph{A. Music Detection}
+Music, in the understanding of science and technology, can be considered as a combination 
+of time and frequency. In order to make the robot detect a sequence of frequencies, we adopted the 
+short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
+be able to understand the music played by users and provide the proper feedback as
+a music teaching instructor.\\
+
+\subparagraph{B. Intelligent Scoring-Feedback System}
+In order to compare the detected notes and the target notes, we used an algorithm
+which is normally used in information theory linguistics called Levenshtein Distance.
+This algorithm is a string metric for measuring the difference between two sequences.\\
+
+Based on the real life situation, we defined a likelihood margin for determining whether the result
+is good or bad and where if the likelihood is greater than 66\% ~ 72\%, the system will consider it 
+as a good result. This result will be passed to the accuracy calculation system to have the robot 
+decide whether it needs to add more dosage to the practice.\\
+
+\appendix
+
+\baselineskip 0.21in
+\bibliographystyle{plain}
+\bibliography{ref}
+\baselineskip 0.33in
+
 
 
 \end{document}

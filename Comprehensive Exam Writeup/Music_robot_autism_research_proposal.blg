@@ -1,4 +1,42 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Music_robot_autism_research_proposal.aux
-I found no \bibdata command---while reading file Music_robot_autism_research_proposal.aux
-I found no \bibstyle command---while reading file Music_robot_autism_research_proposal.aux
-(There were 2 error messages)
+The style file: plain.bst
+Database file #1: ref.bib
+I was expecting a `,' or a `}'---line 1624 of file ref.bib
+ :   
+ :   pages =        {634-660},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1653 of file ref.bib
+ :   
+ :   pages =        {1835-1846},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Name 1 in "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" has a comma at the end for entry RobotPlaymate2002
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1049 of file plain.bst
+Name 1 in "Wolff, S., and Chess, S." has a comma at the end for entry Behavioral1964
+while executing---line 1049 of file plain.bst
+Name 1 in "T. Fong, I. Nourbakhsh, and K. Dautenhahn" has a comma at the end for entry SocialInteract2003
+while executing---line 1049 of file plain.bst
+Warning--empty journal in Fetch2002
+Name 1 in "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" has a comma at the end for entry RobotPlaymate2002
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 1090 of file plain.bst
+Warning--empty journal in RobotPlaymate2002
+Warning--empty journal in MobileRobotic2002
+Name 1 in "T. Fong, I. Nourbakhsh, and K. Dautenhahn" has a comma at the end for entry SocialInteract2003
+while executing---line 1090 of file plain.bst
+Name 1 in "Wolff, S., and Chess, S." has a comma at the end for entry Behavioral1964
+while executing---line 1090 of file plain.bst
+Warning--empty journal in Behavioral1964
+(There were 14 error messages)

@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt]{report}
 \setlength{\oddsidemargin}{0.5cm}
 \setlength{\evensidemargin}{0.5cm}
 \setlength{\topmargin}{-1.6cm}
@@ -47,7 +47,7 @@ repetitive and stereotyped behaviors. Currently one in every 88 children in the 
 States are diagnosed with ASD and government statistics suggest the prevalence rate of
 ASD is increasing 10-17 percent annually \cite{Fetch2002}. Children with ASD experience deficits in
 appropriate verbal and nonverbal communication skills including motor control, emotional
-facial expressions, turn-taking and eye gaze attention \cite{RobotPlaymate2002}. Currently, clinical work such as Applied
+facial expressions, turn-taking, and eye gaze attention \cite{RobotPlaymate2002}. Currently, clinical work such as Applied
 Behavior Analysis (ABA) \cite{RollingRobot2002, MobileRobotic2002} has focused on teaching individuals with ASD
 appropriate social skills in an effort to make them more successful in social situations \cite{Behavioral1964}.
 With the concern of the growing number of children diagnosed with ASD, there is a high
@@ -72,7 +72,7 @@ on the autism spectrum.\\
 
 This proposal presents the hypothesis and potential methodology of a study that aimed to design a
 entertaining humanoid-robot music therapy/teaching-like sessions for capturing, modeling and 
-enhancing the social skills of children with Autism. In particular we mainly focus on: gaze 
+enhancing the social skills of children with Autism. In particular, we mainly focus on gaze 
 direction; joint attention; turn-taking; motor control; music pitch recognition;
 and music emotion understanding, investigate how the ASD and Typically Developing (TD) children employ 
 their knowledge for interacting with the robot using music language.\\
@@ -82,7 +82,7 @@ It is obvious that multiple physical and mental activities are involved during m
 play and practice. That makes it perfect to have music activity in human-robot interaction for
 children with autism due to the deficits they are suffering from. \\
 
-Eye gaze attention and joint attention are required significant amount during music instrument practice
+Eye gaze and joint attention are required a significant amount during music instrument practice
 and play. Participants will be required to not only have eye contact with the music
 agent but also have joint attention with the music instrument at the same time. This will be one of
 the main activity among the entire experimental sessions, and will be evaluated at the end.
@@ -104,7 +104,7 @@ a great 'language' of representing emotions, it would also be interesting to see
 with ASD would be able to recognize the emotion behind certain piece of melody.
 
  
-\section*{Experimental Session Deign}
+\section*{Experimental Session Design}
 A novel interactive human-robot music teaching system design will be designed in 
 the next 2 years. In order to make the robot play the xylophone properly, several things need 
 to be done. First is to find a proper xylophone with correct timber; 
@@ -115,7 +115,7 @@ should be included in experimental sessions; finally, design the intelligent mus
 \paragraph{Session Design Concept:}
 Intervention sessions will be designed to accomplish the target questions. Due to children
 concentration time, total activity time in each session should be well controlled between 
-30 to 40 minutes, and the total length of each session will be under one hour including rest
+30 to 40 minutes and the total length of each session will be under one hour including rest
 time by participants request. In order to make music practice more entertaining which can 
 keep participants attracted and focused, all tasks will be represented as a 'challenge' format.
 Different levels/difficulties of activities will be designed to fulfill the music teaching
@@ -128,32 +128,31 @@ for this specific session due to how well-known this song is in almost
 everyone's childhood.\\
 
 \subparagraph{Intervention Sessions: }These sessions will be assigned to ASD group
-particularly and include single strike with color hints, multiple strikes with
+particularly and include a single strike with color hints, multiple strikes with
 colors hint, half-song practice and whole song practice. In this part, a customized 
-song will be used through the rest of the sessions by the request of individual. In the second
+song will be used through the rest of the sessions by the request of the individual. In the second
 half of this intervention session set, single/multiple strikes were also covered
 before the half/full song practice in order to have participants use the
 color matching technique during the high level music play due to a lack of professional
 music background knowledge. In addition, starting from session 2, a single strike
 warm up practice was added before the formal music practice starts. This particular
-practice was designed to have better motor control for ASD group, so that
+practice was designed to have better motor control for ASD group so that
 the robot is able to recognize notes properly and deliver the concept in telling the
 difference between "making a sound" and "playing a musical note". \\
 
 \subparagraph{Exit Session: }Both groups were assigned to go through the same steps
 as the baseline session in choice of their own songs. We would like to see the 
-difference between two groups in learning a beloved song by their own.\\
+difference between the two groups in learning a beloved song by their own.\\
 
 \section*{Hardware and Software Requirements}
-\subparagraph{NAO: A Humanoid Robot}We used a humanoid  robot called NAO developed by Aldebaran Robotics in France. 
-NAO is 58 cm (23 inches) tall, with 25 degrees of freedom. This robot 
-can conduct most human behaviors. It also features an onboard multimedia 
+\subparagraph{NAO: A Humanoid Robot}
+We are going to use a humanoid  robot called NAO which developed by Aldebaran Robotics in France. 
+This robot can conduct most human behaviors. It also features an onboard multimedia 
 system including four microphones for voice recognition and sound localization, 
 two speakers for text-to-speech synthesis, and two HD cameras with maximum image 
-resolution 1280 x 960 for online observation. As shown in Figure \ref{nao_body}, these 
-utilities are located in the middle of the forehead and the mouth area. NAO’s 
-computer vision module includes facial and shape recognition units. By using the 
-vision feature of the robot, the robot can see the instrument 
+resolution 1280 x 960 for online observation. NAO’s computer vision module includes 
+facial and shape recognition units. By using the 
+vision feature of the robot, it can see the instrument 
 from its lower camera and be able to implement an eye-arm self-calibration 
 system which allows the robot to have real-time micro-adjustment of its 
 arm-joints in case of off positioning during music playing.\\
@@ -172,7 +171,6 @@ imperfect manufacturing. After multiple rounds of testing, it was found the targ
 of arms never actually equals the returned chain. We therefore are going to use a 
 calibration method to accurately eliminate these errors.\\
 
-\subparagraph{A. Color-Based Object Tracking}
 To play the xylophone, the robot has to be able to adjust its motions according to
 the estimated relative position of the instrument and the heads of the beaters it is 
 holding. To estimate these poses, adopted in this thesis, we used a color-based technique.\\
@@ -198,15 +196,13 @@ music therapy to teach kids social skills and music knowledge.  In this scoring
 system, two core features were designed to complete the task: 1) music detection;
 2) intelligent scoring-feedback system.\\
 
-\subparagraph{A. Music Detection}
 Music, in the understanding of science and technology, can be considered as a combination 
 of time and frequency. In order to make the robot detect a sequence of frequencies, we adopted the 
 short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
 be able to understand the music played by users and provide the proper feedback as
 a music teaching instructor.\\
 
-\subparagraph{B. Intelligent Scoring-Feedback System}
-In order to compare the detected notes and the target notes, we used an algorithm
+In order to compare the detected notes and the target notes, we adopted an algorithm
 which is normally used in information theory linguistics called Levenshtein Distance.
 This algorithm is a string metric for measuring the difference between two sequences.\\
 
@@ -214,6 +210,23 @@ Based on the real life situation, we defined a likelihood margin for determining
 is good or bad and where if the likelihood is greater than 66\% ~ 72\%, the system will consider it 
 as a good result. This result will be passed to the accuracy calculation system to have the robot 
 decide whether it needs to add more dosage to the practice.\\
+
+
+\subparagraph{Electrodermal activity (EDA) Based Emotion Classification Approach} 
+EDA has been used as an effective and reproducible electrophysiological method for 
+investigating sympathetic nervous system function \cite{WearableDevice2016, AssociationBetween2013, SympatheticSkin1984, PrincipalComponent2000}. Note that the sympathetic nervous 
+burst changes the skin conductance, which can be traced by analyzing the EDA signals\cite{SkinConduct2006, SympatheticSkin1981, DecodeChild2013}. The Q-sensor 
+is a convenient wireless-based EDA device with no need for cables, boxes, or skin 
+preparation. This device can track three types of data including EDA, temperature, 
+and acceleration at the same time \cite{Validation2013}. It is worth mentioning that 
+as of today, there has been no published work on emotion classification using the 
+EDA signals collected by this dataset collected at the Georgia Institute of 
+Technology \cite{DecodeChild2013}.\\
+
+In this research, we will employ the C-Morlet wavelet function to process the acquired EDA 
+signals, as it has been well used for time-frequency analysis of different bio-signals 
+and classification \cite{MultKernel2016}. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space. More details can be found in \cite{hFeng18}.\\
+
 
 \appendix
 

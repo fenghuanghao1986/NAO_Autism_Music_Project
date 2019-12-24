@@ -1,25 +1,27 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.12.19)  20 DEC 2019 02:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.12.19)  20 DEC 2019 12:28
 entering extended mode
 **./Music_robot_autism_research_proposal.tex
 (Music_robot_autism_research_proposal.tex
 LaTeX2e <2018-12-01>
-("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
-Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+("D:\Program Files\MiKTeX 2.9\tex/latex/base\report.cls"
+Document Class: report 2018/09/03 v1.4i Standard LaTeX document class
+("D:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
 File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (Music_robot_autism_research_proposal.aux)
+)
+(Music_robot_autism_research_proposal.aux)
 \openout1 = `Music_robot_autism_research_proposal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -38,7 +40,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 29.
+ [1
 
+{C:/Users/CV_LAB_Howard/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 44--58
 
  []
@@ -48,14 +52,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--72
 
  []
 
-[1
 
-{C:/Users/fengh/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 73--79
 
  []
 
-
+[1]
 Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
@@ -75,12 +77,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 116--123
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 123--129
 
  []
@@ -95,83 +97,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--146
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--159
+
+ []
+
 [3]
-
-LaTeX Warning: Reference `nao_body' on page 4 undefined on input line 153.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--160
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--166
+Underfull \hbox (badness 10000) in paragraph at lines 167--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--174
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 178--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+Underfull \hbox (badness 10000) in paragraph at lines 199--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--200
+Underfull \hbox (badness 10000) in paragraph at lines 205--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--207
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
+Underfull \hbox (badness 10000) in paragraph at lines 216--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--217
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
 
  []
 
-(Music_robot_autism_research_proposal.bbl [5]) [6]
-(Music_robot_autism_research_proposal.aux)
+(Music_robot_autism_research_proposal.bbl [5] [6
 
-LaTeX Warning: There were undefined references.
-
- ) 
+]) [7]
+(Music_robot_autism_research_proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 232 strings out of 492895
- 3261 string characters out of 3123734
- 64847 words of memory out of 3000000
- 4226 multiletter control sequences out of 15000+200000
- 6410 words of font info for 23 fonts, out of 3000000 for 9000
+ 263 strings out of 492895
+ 3572 string characters out of 3133454
+ 65105 words of memory out of 3000000
+ 4257 multiletter control sequences out of 15000+200000
+ 7016 words of font info for 25 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 22i,6n,19p,194b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/fengh/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Music_robot_autism_research_proposal.pdf (6 pages, 74386 byte
+ 22i,6n,19p,415b,209s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mti12.pfb>
+Output written on Music_robot_autism_research_proposal.pdf (8 pages, 85406 byte
 s).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul  5 12:55:17 2019
+Created on Tue Mar  5 16:53:15 2019
 
-06_Everything_Last_Session
+This is the baseline session for both TD and ASD kids
+each practice will be judged by researcher
+This session is a test session for demostrating basic sense
+of how this experiment will look like
 
 @author: CV_LAB_Howard
 """
@@ -25,22 +28,18 @@ import csv
 import datetime
 #import audio_generator
 
+print "Enter kid name:\n"
+kid_name = raw_input()
 print "Enter subject number:\n"
 subject = raw_input()
 print "Enter session number:\n"
 session = raw_input()
-print "Enter kid's name:\n"
-kid_name = raw_input()
-#print "Enter kid requied song name:\n"
-#song = raw_input()
-
 now = datetime.datetime.now()
 day = str(now.day)
 mon = str(now.month)
 year = str(now.year)
 task = 0
-
-fileName = subject + '_' + session  + '_' + year + '_' + mon + '_' + day + '.csv'
+fileName = subject + '_' + session  + '_exit_' + year + '_' + mon + '_' + day + '.csv'
 
 try:
     with open(fileName, 'wb') as csvfile:
@@ -92,7 +91,7 @@ def main(robotIP, PORT=9559):
 # =============================================================================
         if taskNumber == 0:
 #           Intro to entire session
-            tts.say("Hello!")
+            tts.say("Hello")
             tts.say(kid_name)
             time.sleep(0.5)
             tts.say("Welcome to NAO music party!")
@@ -102,12 +101,19 @@ def main(robotIP, PORT=9559):
             tts.say("Let me show you how to play!")
             time.sleep(0.5)   
 # =============================================================================
-#           Play custom song
-            dt = 0.6
-            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
-                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
+#           Play twinkle twinkle
+            dt = 0.45
+            keys = [0,5,6,5,3,1,3,5,6,5,3,0,
+                          8,0,8,0,8,0,8,0,
+                          8,8,9,8,6,4,6,8,9,8,6,0,
+                          5,5,6,5,3,1,3,5,6,5,3,0,
+                          1,0,1,0,1,0,1,0,
+                          8,8,9,8,6,4,6,8,9,8,0,
+                          8,0,8,0,8,0,8,0,
+                          8,0,6,0,5,0,3,0,
+                          8,0,6,0,5,0,3,0,
+                          5,0,6,0,0,0,7,0,8,0,0,
+                          1,2,3,2,0,3,1,0,5,1,0]
 
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
@@ -119,7 +125,7 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is you are my sunshine!")
+            tts.say("Yes, it is your favorite Spongebob Squarepants!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
@@ -139,12 +145,12 @@ def main(robotIP, PORT=9559):
 #       task 1: Start single note play without color
         elif taskNumber == 1:
             
-            keys = [0,0,8]
-            dt = 0.8
+            keys = [0,0,1]
+            dt = 0.6
             name = 'FaceLeds'
             colorName1 = 'green'
-            duration = 0.3
-            tts.say("Welcome to the strike challenge!")
+            duration = 0.5
+            tts.say("Welcome to single strike challenge!")
 
             ledProxy.fadeRGB(name, colorName1, duration)
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -169,7 +175,7 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 2: 
             
             keys = [0,0,6]
-            dt = 0.8
+            dt = 0.6
 
             name = 'FaceLeds'
             colorName2 = 'blue'
@@ -212,13 +218,13 @@ def main(robotIP, PORT=9559):
 #       task 3: Start multiple notes play along with color
         elif taskNumber == 3:
                 
-            keys = [0,0,5,1,2,3,0,3]
+            keys = [0,0,1,5,6]
             dt1 = 1
             name = 'FaceLeds'
 #            colorNames = ['red', 'green', 'blue']
             duration = 0.5
             
-            tts.say("Welcome to the mix and match challenge!")
+            tts.say("Welcome to the triple blend challenge!")
             ledProxy.randomEyes(2.0)
         
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -228,9 +234,9 @@ def main(robotIP, PORT=9559):
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.userInitPosture(motionProxy,postureProxy)
             motionProxy.rest()
-            tts.say("I just played few notes, can you repeat them for me? \
+            tts.say("I just played three notes, can you repeat them for me? \
                     make sure you followed by the proper color order\
-                    for example gray, green, brown, red, red.")
+                    for example green, gray, blue.")
 #            tts.say("Now, if you can sing the color while hitting the note \
 #                    that would be even better!")
             try:
@@ -246,14 +252,15 @@ def main(robotIP, PORT=9559):
 #       first half song
         elif taskNumber == 4:
             
-            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0]
+            keys = [0,5,6,5,3,1,3,5,6,5,3,0,
+                          8,0,8,0,8,0,8,0]
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
             dt1 = 1
             tts.say("Here comes the ultimate challenge!")
-            tts.say("This is the first part of the song! \
+            tts.say("This is the first half of the song! \
                     Listen and watch carefully.")
             tts.say("I will use slower speed to play.")
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -278,7 +285,9 @@ def main(robotIP, PORT=9559):
 #       second half song 
         elif taskNumber == 5:
             
-            keys = [0,0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0]
+            keys = [0,8,8,9,8,6,4,6,8,9,8,6,0,
+                          5,5,6,5,3,1,3,5,6,5,3,0,
+                          1,0,1,0,1,0,1,0]
             dt1 = 1
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
@@ -286,7 +295,7 @@ def main(robotIP, PORT=9559):
             duration = 0.5
 
             tts.say("Here comes the ultimate challenge! \
-                    This is second part of the song\
+                    This is second half of the song\
                     Listen and watch carefully.")
             tts.say("I will use slower speed to play.")
             Positions.userInitPosture(motionProxy, postureProxy)
@@ -310,11 +319,18 @@ def main(robotIP, PORT=9559):
 # =============================================================================
 #       task 6: play the whole song
         elif taskNumber == 6:
-            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
-                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
-            dt=0.4
+            keys = [0,5,6,5,3,1,3,5,6,5,3,0,
+                          8,0,8,0,8,0,8,0,
+                          8,8,9,8,6,4,6,8,9,8,6,0,
+                          5,5,6,5,3,1,3,5,6,5,3,0,
+                          1,0,1,0,1,0,1,0,
+                          8,8,9,8,6,4,6,8,9,8,0,
+                          8,0,8,0,8,0,8,0,
+                          8,0,6,0,5,0,3,0,
+                          8,0,6,0,5,0,3,0,
+                          5,0,6,0,0,0,7,0,8,0,0,
+                          1,2,3,2,0,3,1,0,5,1,0]
+            dt=0.45
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
@@ -349,7 +365,16 @@ def main(robotIP, PORT=9559):
             tts.say("Do you want to take a break?")
             tts.say(" If yes, You will have 180 seconds \
                     for a short break!")
-
+#            tts.say("Starting now!")
+#            ledProxy.randomEyes(3.0)
+#            time.sleep(57)
+#            tts.say("You have 120 seconds left.")
+#            ledProxy.randomEyes(3.0)
+#            time.sleep(57)
+#            tts.say("You have one minunt left.")
+#            ledProxy.randomEyes(3.0)
+#            time.sleep(57)
+#            tts.say("Shall we start the next task?")  
             try:
                 with open(fileName, 'a') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',', 
@@ -429,12 +454,19 @@ def main(robotIP, PORT=9559):
         elif taskNumber == 15:
             
 
-            keys = [0,0,5,1,2,3,0,3,0,0,3,2,3,1,0,1,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,0,0,
-                    0,8,9,10,11,0,6,0,0,6,5,4,3,0,1,0,
-                    0,0,5,1,2,3,0,0,4,2,0,2,3,1,0,0,0]
+            keys = [0,5,6,5,3,1,3,5,6,5,3,0,
+                          8,0,8,0,8,0,8,0,
+                          8,8,9,8,6,4,6,8,9,8,6,0,
+                          5,5,6,5,3,1,3,5,6,5,3,0,
+                          1,0,1,0,1,0,1,0,
+                          8,8,9,8,6,4,6,8,9,8,0,
+                          8,0,8,0,8,0,8,0,
+                          8,0,6,0,5,0,3,0,
+                          8,0,6,0,5,0,3,0,
+                          5,0,6,0,0,0,7,0,8,0,0,
+                          1,2,3,2,0,3,1,0,5,1,0]
             
-            dt = 0.53
+            dt = 0.45
 
             tts.say("Looks like you just unlucked a hidden challenge! \
                     Listen and watch carefully.")
@@ -465,8 +497,8 @@ def main(robotIP, PORT=9559):
             
         elif taskNumber == 18:
             
-            keys = [0, 0, 1, 1, 3, 3, 5, 5]
-            dt1 = 0.8
+            keys = [0,1,2,3,4,5,6,7,8,9,10,11]
+            dt1 = 0.6
             Positions.userInitPosture(motionProxy, postureProxy)
             Positions.userReadyToPlay(motionProxy, postureProxy)
             Positions.playXyloOne(motionProxy, keys, dt1)

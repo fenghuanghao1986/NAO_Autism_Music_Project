@@ -1,0 +1,45 @@
+{
+  "api_info": {
+    "server": "http://api.affectiva.com",
+    "port": "80",
+    "stack": "affdex_x2-0.1",
+    "api_endpoint": "experiment",
+    "data_endpoint": "dataRepo",
+    "qaas_access": true,
+    "force_authentication":false
+  },
+  "analysis_list": {
+    "peak": {
+      "message": "qPeak",
+      "analysis": "peak",
+      "name": "Peak Detection"
+    },
+    "morphology": {
+      "message": "qFilter",
+      "analysis": "filter",
+      "name": "Morphological Filter"
+    },
+    "lability": {
+      "message": "qLability",
+      "analysis": "lability",
+      "name": "Lability Detection"
+    },
+    "qscore": {
+      "message": "qScore",
+      "analysis": "qscore",
+      "name": "Q Score"
+    }
+  },
+  "capabilities": {
+    "upload": "upload_eda",
+    "download": "get_data_file",
+    "status": "get_q_pipeline_status",
+    "analysis_list": "get_q_analysis_list",
+    "filter": "send_pipeline_message",
+    "destroy_input_data": "delete_data_item",
+    "destroy_processed_data": "delete_deep_path",
+    "authenticate": "get_q_analysis_permitted"
+  },
+  "study_id": "q_analysis_0001",
+  "studyName": "q_analysis_0001"
+}

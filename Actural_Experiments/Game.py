@@ -120,10 +120,16 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                           8,0,6,0,5,0,3,0,
                           8,0,6,0,5,0,3,0,
                           5,0,6,0,0,0,7,0,8,0,0,
-                          1,2,3,2,0,3,1,0,5,1,0]}
+                          1,2,3,2,0,3,1,0,5,1,0],
+                          
+              "Shake": [0,0,6,8,9,9,9,10,8,0,6,0,5,0,3,0,2,1,1,1,
+                        9,9,9,10,8,0,6,0,5,0,3,0,2,1,1,1,
+                        9,9,9,10,8,0,6,0,5,0,3,0,2,1,0,
+                        8,9,10,8,0,0,8,9,10,8,0,5,6,0,8]}
 
 song_names = ["Fatastic", "Twinkle", "CanCan", "Sleeping", "Promise", 
-              "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds"]
+              "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds",
+              "Shake"]
 #song_names = ["CanCan"]
 
 print "Enter subject name:\n"

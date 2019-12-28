@@ -26,10 +26,17 @@ for fileNum = 1: numel(fileNames)
     znormFilter{fileNum} = medfilt1(znormQ.', 1);
     
     znormCWT = abs(cwt(znormFilter{fileNum}, scaleRange, 'cmor1.5-2'));
-    znormCWTSpect{fileNum, fileNum} = imresize(znormCWT, [100, 32], 'bicubic');
+    znormCWTSpect = imresize(znormCWT, [100, 32], 'bicubic');
     
     BEpoch = 1: 10;
-    BaseMat = (znormCWTSpect{fileNum, fileNum}(:, BEpoch))';
-    BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTSpect))
+    BaseMat = (znormCWTSpect(:, BEpoch))';
+    BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTSpect));
+    BaseStd = repmat(std(BaseMat)', 1, size(znormCWTSpect),2);
+    znormCWTSpect = (znormCWTSpect - BaseMean) ./ BaseStd;
+    
+    saveFolder = sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\EDA\\');
+    saveName = sprintf('file_%d', fileNum);
+    
+
     
 end

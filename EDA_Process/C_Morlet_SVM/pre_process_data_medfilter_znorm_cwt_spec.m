@@ -28,24 +28,31 @@ scaleRange = 1:100;
 % start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
     
+    % save all numerical data in second col
     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
     fprintf('Reading CSV data number %d ...\n', fileNum);
+    % read 6th col which has all eda from the 2nd col of data
     dataQ = data{fileNum, 2}(:, 6);
     
+    % do the znorm for all eda data and save in znorm, mu, and sigma
     [znormQ, muQ, sigmaQ] = zscore(dataQ);
     fprintf('Znorm done for file %d... \n', fileNum);
     
+    % after znorm, do med filter to it, and save in znormFilter
     znormFilter{fileNum} = medfilt1(znormQ.', 1);
     
+    % do the cwt using cmor1.5-2
     znormCWT = abs(cwt(znormFilter{fileNum}, scaleRange, 'cmor1.5-2'));
+    % resize all data as spectrum in [100, 32]
     znormCWTSpect{fileNum} = imresize(znormCWT, [100, 32], 'bicubic');
-    
+    % more process to the spectrum
     BEpoch = 1: 10;
     BaseMat = (znormCWTSpect{fileNum}(:, BEpoch))';
     BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTSpect{fileNum},2));
     BaseStd = repmat(std(BaseMat)', 1, size(znormCWTSpect{fileNum}, 2));
     znormCWTSpect{fileNum} = (znormCWTSpect{fileNum} - BaseMean) ./ BaseStd;
     
+    % save all the mat files
     saveFolder = ...
         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\EDA\\');
     saveName = ...

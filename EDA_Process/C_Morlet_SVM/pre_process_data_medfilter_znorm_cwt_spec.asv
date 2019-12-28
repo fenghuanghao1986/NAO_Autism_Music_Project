@@ -12,20 +12,14 @@ dd = dir(fullfile(dataPath, fileType));
 % get all names from dd.name
 fileNames = {dd.name};
 % get all file numbers for later loop times in order to go through all
-% files by go through all names
+% files
 num = numel(fileNames);
 
-% create an empty num by 2 size cell
 data = cell(num, 2);
-% first col save all names
 data(:,1) = regexprep(fileNames, '.csv', '');
-% create an empty num by 1 size cell for save all normalized and filtered
-% data
 znormFilter = cell(num, 1);
-% create a scale range for resizing and create spectrum mrtx
 scaleRange = 1:100;
 
-% start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
     
     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));

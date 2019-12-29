@@ -56,7 +56,7 @@ for fileNum = 1: num
     saveFolder = ...
         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\EDA\\');
     saveName = ...
-        sprintf('%s.mat', fileNames{fileNum});
+        sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect{fileNum};
     
     save(fullfile(saveFolder, saveName), 'saveClip')

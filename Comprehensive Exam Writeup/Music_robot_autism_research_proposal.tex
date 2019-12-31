@@ -105,8 +105,9 @@ with ASD would be able to recognize the emotion behind certain piece of melody.
 
  
 \section*{Experimental Session Design}
-A novel interactive human-robot music teaching system design will be designed in 
-the next 2 years. In order to make the robot play the xylophone properly, several things need 
+A novel interactive human-robot music teaching platform will be designed in 
+the next 2 - 3 years including data collection and analysis. In order to make 
+the robot play the xylophone properly, several things need 
 to be done. First is to find a proper xylophone with correct timber; 
 second, we have to arrange the xylophone in the proper position in front of the robot 
 to make it visible and be reachable to play; third, finalize what are the activities 
@@ -173,8 +174,7 @@ calibration method to accurately eliminate these errors.\\
 
 To play the xylophone, the robot has to be able to adjust its motions according to
 the estimated relative position of the instrument and the heads of the beaters it is 
-holding. To estimate these poses, adopted in this thesis, we used a color-based technique.\\
-
+holding. To estimate these poses, adopted in this proposal, we used a color-based technique.
 The main idea is, based on the RGB color of the center blue bar, given a hypothesis 
 about the instrument's pose, one can project the contour of the object's model into the 
 camera image and compare them to actually observed contour. In this way, it is possible 
@@ -183,7 +183,7 @@ the robot to track the instrument with very low cost in real-time. \\
 
 \subparagraph{Module 2: Joint Trajectory Generator}
 Our system parses a list of hex-decimal numbers (from 1 to b) to obtain the sequence
-of notes to play. It converts the notes into a joint trajectory using the beating
+of notes to play. It will convert the notes into a joint trajectory using the beating
 configurations obtained from inverse kinematics as control points. The timestamps
 for the control points will be defined by the user in order to meet the experiment requirement.
 The trajectory is then computed using Bezier interpolation in joint space by the
@@ -193,20 +193,17 @@ way, the robot plays in-time with the song.\\
 \subparagraph{Module 3: Real-Time Performance Scoring Feedback}
 The purpose of this system is to provide a real-life interaction experience using 
 music therapy to teach kids social skills and music knowledge.  In this scoring 
-system, two core features were designed to complete the task: 1) music detection;
+system, two core features will be designed to complete the task: 1) music detection;
 2) intelligent scoring-feedback system.\\
 
 Music, in the understanding of science and technology, can be considered as a combination 
-of time and frequency. In order to make the robot detect a sequence of frequencies, we adopted the 
-short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
+of time and frequency. In order to make the robot detect a sequence of frequencies, the 
+short-time Fourier transform (STFT) can be a good fit for this audio feedback system. This allows the robot to 
 be able to understand the music played by users and provide the proper feedback as
-a music teaching instructor.\\
+a music teaching instructor. In order to compare the detected notes and the target notes, an algorithm
+which is normally used in information theory linguistics called Levenshtein Distance will be adopted.\\
 
-In order to compare the detected notes and the target notes, we adopted an algorithm
-which is normally used in information theory linguistics called Levenshtein Distance.
-This algorithm is a string metric for measuring the difference between two sequences.\\
-
-Based on the real life situation, we defined a likelihood margin for determining whether the result
+Based on the real life situation, we will define a likelihood margin for determining whether the result
 is good or bad and where if the likelihood is greater than 66\% ~ 72\%, the system will consider it 
 as a good result. This result will be passed to the accuracy calculation system to have the robot 
 decide whether it needs to add more dosage to the practice.\\
@@ -223,7 +220,7 @@ as of today, there has been no published work on emotion classification using th
 EDA signals collected by this dataset collected at the Georgia Institute of 
 Technology \cite{DecodeChild2013}.\\
 
-In this research, we will employ the C-Morlet wavelet function to process the acquired EDA 
+In this proposed research, we will employ the C-Morlet wavelet function to process the acquired EDA 
 signals, as it has been well used for time-frequency analysis of different bio-signals 
 and classification \cite{MultKernel2016}. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space. More details can be found in \cite{hFeng18}.\\
 

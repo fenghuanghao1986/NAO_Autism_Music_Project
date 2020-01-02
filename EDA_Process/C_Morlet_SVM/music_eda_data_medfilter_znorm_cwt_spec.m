@@ -30,6 +30,9 @@ for fileNum = 1: num
     
     % save all numerical data in second col
     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
+%     a = fopen(fullfile(dataPath, filenames{fileNum}));
+%     b = textscan(a, '%s %s %s %s %s %s %s %s', 'delimiter', ',', 'CollectOutput',true);
+%     c = b{fileNum}(:, 7);
     fprintf('Reading CSV data number %d ...\n', fileNum);
     % read 6th col which has all eda from the 2nd col of data
     dataQ = data{fileNum, 2}(:, 6);

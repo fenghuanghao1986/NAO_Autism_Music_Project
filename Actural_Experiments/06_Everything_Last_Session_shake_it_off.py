@@ -122,7 +122,7 @@ def main(robotIP, PORT=9559):
             ledProxy.randomEyes(2.0)
             tts.say("Do you recognize this song from somewhere?")
             time.sleep(3.0)
-            tts.say("Yes, it is your favorite Shake it off by Taylor Swifft!")
+            tts.say("Yes, it is your favorite Shake it off by Taylor Swift!")
             time.sleep(3.0)
 #           may use speech recognition instead of this
             tts.say("Do you like it?")
@@ -258,7 +258,7 @@ def main(robotIP, PORT=9559):
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']
             duration = 0.5
-            dt1 = 1
+            dt1 = 0.8
             tts.say("Here comes the ultimate challenge!")
             tts.say("This is the first half of the song! \
                     Listen and watch carefully.")
@@ -289,7 +289,7 @@ def main(robotIP, PORT=9559):
                         5,0,3,0,2,1,1,0,
                         9,10,8,0,0,9,10,
                         8,0,8,0,8,0]
-            dt1 = 1
+            dt1 = 0.8
             name = 'FaceLeds'
 #            colorRGB = ['0x00FF0000', '0x0000FF00', '0x000000FF',
 #                        '0x00FF00FF', '0x00C0C0C0', '0x00A16400']

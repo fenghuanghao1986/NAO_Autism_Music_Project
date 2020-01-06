@@ -8,9 +8,9 @@ dataPath = ...
     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
-timePath = ...
+timeFilePath = ...
     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
-timeFileName = 'warm_up_time.csv'
+timeFileName = 'warm_up_time.csv';
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
@@ -31,9 +31,9 @@ znormFilter = cell(num, 1);
 scaleRange = 1:100;
 
 % open the warmup timestemp file and select start and end in the main loop
-timeFileOpen = fopen(fullfile(timePath, timeFileName));
-timeMtx = textscan(timeFileOpen, '%s %s %s', 'delimiter', ',', 'CollectOutput', true);
-% timeCell = cell(size(timeMtx));
+timeFileOpen = fopen(fullfile(timeFilePath, timeFileName));
+timeMtx = textscan(timeFileOpen, '%s%s%s', 'delimiter', ',', 'CollectOutput', true);
+t = timeMtx{1};
 
 % start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
@@ -42,7 +42,7 @@ for fileNum = 1: num
     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
     
 %     tempOpen = fopen(fullfile(dataPath, filenames{fileNum}));
-%     tempMtx = textscan(tempOpen, '%s %s %s %s %s %s %s %s', 'delimiter', ',', 'CollectOutput',true);
+%     tempMtx = textscan(tempOpen, '%s%s%s%s%s%s%s%s', 'delimiter', ',', 'CollectOutput',true);
 %     tempCol = tempMtx{fileNum}(:, 7);
 %     col = cell(size(tempCol));
 %     

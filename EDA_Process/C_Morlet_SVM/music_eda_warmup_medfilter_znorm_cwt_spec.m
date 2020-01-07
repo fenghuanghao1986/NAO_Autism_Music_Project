@@ -4,12 +4,20 @@ warning off
 
 % Pre-process data location 
 % remember to change folder if change machine
+% Ailienware path
+% dataPath = ...
+%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
+% fileType = ...
+%     '*.csv';
+% timeFilePath = ...
+%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+% Lab path
 dataPath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
+    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 timeFileName = 'warm_up_time.csv';
 
 % create a data structure called dd by using dir()
@@ -35,16 +43,21 @@ timeFileOpen = fopen(fullfile(timeFilePath, timeFileName));
 timeMtx = textscan(timeFileOpen, '%s%s%s', 'delimiter', ',', 'CollectOutput', true);
 t = timeMtx{1};
 
+startTime = '0:0.0';
+endTime = '0:0.0';
+
 % start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
     
     % save all numerical data in second col
-    data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
+%     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
+    startTime = char(t(num, 2));
+    endTime = char(t(num, 3));
     
-%     tempOpen = fopen(fullfile(dataPath, filenames{fileNum}));
-%     tempMtx = textscan(tempOpen, '%s%s%s%s%s%s%s%s', 'delimiter', ',', 'CollectOutput',true);
-%     tempCol = tempMtx{fileNum}(:, 7);
-%     col = cell(size(tempCol));
+    tempOpen = fopen(fullfile(dataPath, fileNames{fileNum}));
+    tempMtx = textscan(tempOpen, '%s%s%s%s%s%s%s%s', 'delimiter', ',', 'CollectOutput',true);
+    tempCol = tempMtx{fileNum}(:, 7);
+    col = cell(size(tempCol));
 %     
 %     for i = 1: size(tempCol)
 %         

@@ -57,6 +57,7 @@ for fileNum = 1: num
     tempOpen = fopen(fullfile(dataPath, fileNames{fileNum}));
     tempMtx = textscan(tempOpen, '%s%s%s%s%s%s%s%s', 'delimiter', ',', 'CollectOutput',true);
     tempCol = tempMtx{fileNum}(:, 7);
+     
     col = cell(size(tempCol));
 %     
 %     for i = 1: size(tempCol)

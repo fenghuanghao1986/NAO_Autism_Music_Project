@@ -5,19 +5,20 @@ warning off
 % Pre-process data location 
 % remember to change folder if change machine
 % Ailienware path
-% dataPath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
-% fileType = ...
-%     '*.csv';
-% timeFilePath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
-% Lab path
 dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+% Lab path
+% dataPath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+% fileType = ...
+%     '*.csv';
+% timeFilePath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+
 timeFileName = 'warm_up_time.csv';
 
 % create a data structure called dd by using dir()

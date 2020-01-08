@@ -5,19 +5,19 @@ warning off
 % Pre-process data location 
 % remember to change folder if change machine
 % Ailienware path
-% dataPath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
-% fileType = ...
-%     '*.csv';
-% timeFilePath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
-% Lab path
 dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+% Lab path
+% dataPath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+% fileType = ...
+%     '*.csv';
+% timeFilePath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 
 timeFileName = 'warm_up_time.csv';
 
@@ -77,15 +77,15 @@ for fileNum = 1: num
         end
     end
     
-    for j = startIdx: endIdx
+    for j = 1: (endIdx - startIdx)
         
-        warmUpData(j, 1) = str2double(char(tempMtx(j, 2)));
+        warmData(j, 1) = str2double(char(tempMtx(j, 2)));
         
     end    
     
     fprintf('Reading CSV data number %d ...\n', fileNum);
     % do the znorm for all eda data and save in znorm, mu, and sigma
-    [znormQ, muQ, sigmaQ] = zscore(warmUpData);
+    [znormQ, muQ, sigmaQ] = zscore(warmData);
     fprintf('Znorm done for file %d... \n', fileNum);
     
     % after znorm, do med filter to it, and save in znormFilter
@@ -103,11 +103,11 @@ for fileNum = 1: num
     
     % save all the mat files
     % Lab path
-    saveFolder = ...
-        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
-    % Alienware path
 %     saveFolder = ...
-%         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\EDA\\');
+%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+%     Alienware path
+    saveFolder = ...
+        sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect{fileNum};
@@ -131,13 +131,16 @@ for fileNum = 1: num
     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
     close all;
     
+    znormQ = [];
     znormCWT = [];
+    znormFilter = [];
+    znormCWTSpect = [];
     saveClip = [];
     tempCell = [];
     tempCellMtx = [];
-    r = 0;
-    c = 0;
     tempMtx = [];
     warmUpData = [];
+    r = 0;
+    c = 0;
     
 end

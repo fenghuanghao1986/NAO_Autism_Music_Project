@@ -13,11 +13,11 @@ warning off
 %     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
 % Lab path
 dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+    'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+    'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
 
 timeFileName = 'warm_up_time.csv';
 
@@ -121,11 +121,14 @@ for fileNum = 1: num
     
     % save all the mat files
     % Lab path
-    saveFolder = ...
-        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+%     saveFolder = ...
+%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
 %     Alienware path
 %     saveFolder = ...
 %         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+    % Surface path
+    saveFolder = ...
+        sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect;

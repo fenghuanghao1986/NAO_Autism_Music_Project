@@ -6,20 +6,20 @@ warning off
 % remember to change folder if change machine
 % Ailienware path
 % dataPath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
+%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
 % fileType = ...
 %     '*.csv';
 % timeFilePath = ...
 %     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
 % Lab path
 dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention';
+    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 
-timeFileName = 'intervention_time.csv';
+timeFileName = 'warm_up_time.csv';
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
@@ -49,24 +49,6 @@ for fileNum = 1: num
     
     startTime = '0:0.0';
     endTime = '0:0.0';
-    znormQ = [];
-    znormCWT = [];
-    znormFilter = [];
-    znormCWTSpect = [];
-    muQ = [];
-    sigmaQ = [];
-    saveClip = [];
-    tempCell = [];
-    tempCellMtx = [];
-    tempMtx = [];
-    interData = [];
-    r = 0;
-    c = 0;
-    BEpoch = [];
-    BaseMat = [];
-    BaseMean = [];
-    BaseStd = [];
-    
     % save all numerical data in second col
 %     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
     startTime = char(t(fileNum, 2));
@@ -97,38 +79,38 @@ for fileNum = 1: num
     
     for j = 1: (endIdx - startIdx)
         
-        interData(j, 1) = str2double(char(tempMtx(j, 2)));
+        warmData(j, 1) = str2double(char(tempMtx(j, 2)));
         
     end    
     
     fprintf('Reading CSV data number %d ...\n', fileNum);
     % do the znorm for all eda data and save in znorm, mu, and sigma
-    [znormQ, muQ, sigmaQ] = zscore(interData);
+    [znormQ, muQ, sigmaQ] = zscore(warmData);
     fprintf('Znorm done for file %d... \n', fileNum);
     
     % after znorm, do med filter to it, and save in znormFilter
-    znormFilter= medfilt1(znormQ.', 1);
+    znormFilter{fileNum} = medfilt1(znormQ.', 1);
     % do the cwt using cmor1.5-2
-    znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
+    znormCWT = abs(cwt(znormFilter{fileNum}, scaleRange, 'cmor1.5-2'));
     % resize all data as spectrum in 100* 32
-    znormCWTCubic = imresize(znormCWT, [2800, 320], 'bicubic');
+    znormCWTSpect{fileNum} = imresize(znormCWT, [100, 32], 'bicubic');
     % more process to the spectrum
     BEpoch = 1: 10;
-    BaseMat = (znormCWTCubic(:, BEpoch))';
-    BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTCubic,2));
-    BaseStd = repmat(std(BaseMat)', 1, size(znormCWTCubic, 2));
-    znormCWTSpect = (znormCWTCubic - BaseMean) ./ BaseStd;
+    BaseMat = (znormCWTSpect{fileNum}(:, BEpoch))';
+    BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTSpect{fileNum},2));
+    BaseStd = repmat(std(BaseMat)', 1, size(znormCWTSpect{fileNum}, 2));
+    znormCWTSpect{fileNum} = (znormCWTSpect{fileNum} - BaseMean) ./ BaseStd;
     
     % save all the mat files
     % Lab path
     saveFolder = ...
-        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
 %     Alienware path
 %     saveFolder = ...
-%         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+%         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
-    saveClip = znormCWTSpect;
+    saveClip = znormCWTSpect{fileNum};
     
     save(fullfile(saveFolder, saveName), 'saveClip')
     
@@ -137,10 +119,10 @@ for fileNum = 1: num
     grid on
     
     subplot(2,1,1);
-    plot(znormFilter, 'r');
+    plot(znormFilter{fileNum}, 'r');
     title(sprintf('File #%d, znorm filtered data plot', fileNum));
     subplot(2,1,2);
-    imagesc(znormCWTSpect);
+    imagesc(znormCWTSpect{fileNum});
     title(sprintf('File #%d, data spectrogram', fileNum));
     xlabel('frame(1/32)s');
     ylabel('EDA(us)');
@@ -148,5 +130,17 @@ for fileNum = 1: num
     saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
     close all;
+    
+    znormQ = [];
+    znormCWT = [];
+    znormFilter = [];
+    znormCWTSpect = [];
+    saveClip = [];
+    tempCell = [];
+    tempCellMtx = [];
+    tempMtx = [];
+    warmUpData = [];
+    r = 0;
+    c = 0;
     
 end

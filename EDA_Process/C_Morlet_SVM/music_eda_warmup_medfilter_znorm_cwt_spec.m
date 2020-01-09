@@ -97,7 +97,7 @@ for fileNum = 1: num
     
     for j = 1: (endIdx - startIdx)
         
-        warmData(j, 1) = str2double(char(tempMtx(j, 2)));
+        warmData(j, 1) = str2double(char(tempMtx(startIdx + j, 2)));
         
     end    
     
@@ -111,7 +111,7 @@ for fileNum = 1: num
     % do the cwt using cmor1.5-2
     znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
     % resize all data as spectrum in 100* 32
-    znormCWTCubic = imresize(znormCWT, [1000, 320], 'bicubic');
+    znormCWTCubic = imresize(znormCWT, [100, 32], 'bicubic');
     % more process to the spectrum
     BEpoch = 1: 10;
     BaseMat = (znormCWTCubic(:, BEpoch))';
@@ -135,21 +135,21 @@ for fileNum = 1: num
     
     save(fullfile(saveFolder, saveName), 'saveClip')
     
-    id = figure;
-    hold on 
-    grid on
-    
-    subplot(2,1,1);
-    plot(znormFilter, 'r');
-    title(sprintf('File #%d, znorm filtered data plot', fileNum));
-    subplot(2,1,2);
-    imagesc(znormCWTSpect);
-    title(sprintf('File #%d, data spectrogram', fileNum));
-    xlabel('frame(1/32)s');
-    ylabel('EDA(us)');
-    
-    saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
-    saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
-    close all;
+%     id = figure;
+%     hold on 
+%     grid on
+%     
+%     subplot(2,1,1);
+%     plot(znormFilter, 'r');
+%     title(sprintf('File #%d, znorm filtered data plot', fileNum));
+%     subplot(2,1,2);
+%     imagesc(znormCWTSpect);
+%     title(sprintf('File #%d, data spectrogram', fileNum));
+%     xlabel('frame(1/32)s');
+%     ylabel('EDA(us)');
+%     
+%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
+%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
+%     close all;
     
 end

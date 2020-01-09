@@ -7,7 +7,19 @@
 % fw = DesiredFrequency/2;
 % scales = Fs ./ fw
 
+% if use [1000, 320] as spect size, I get this:
+% SVMAccuracy : 75.7576
+% SVMConfusionMatrix
+% 73  27
+% 21  79
+% if use [100, 32] as spect size, I get this:
+% SVMAccuracy : 68.1818
+% SVMConfusionMatrix
+% 70  30
+% 33  67
 
+
+%% Clean
 clc;
 clear all;
 close all;
@@ -15,7 +27,7 @@ close all;
 %% Make Dataset
 
 disp('Loading Data ...')
-downSamp = 1000;
+downSamp = 100;
 
 % C = 0.1; % for 2 different tasks
 

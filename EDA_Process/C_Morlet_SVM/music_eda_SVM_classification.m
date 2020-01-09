@@ -106,7 +106,7 @@ for k = 1 : SampNumb
     
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     
      SVMLabels_M(:,k) = SVMLabels(:);

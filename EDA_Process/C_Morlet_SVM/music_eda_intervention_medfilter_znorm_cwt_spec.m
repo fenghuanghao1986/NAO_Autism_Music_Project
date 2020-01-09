@@ -5,19 +5,19 @@ warning off
 % Pre-process data location 
 % remember to change folder if change machine
 % Ailienware path
-dataPath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
-fileType = ...
-    '*.csv';
-timeFilePath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
-% Lab path
 % dataPath = ...
-%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention';
+%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
 % fileType = ...
 %     '*.csv';
 % timeFilePath = ...
-%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+% Lab path
+dataPath = ...
+    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention';
+fileType = ...
+    '*.csv';
+timeFilePath = ...
+    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 
 timeFileName = 'intervention_time.csv';
 
@@ -121,32 +121,32 @@ for fileNum = 1: num
     
     % save all the mat files
     % Lab path
-%     saveFolder = ...
-%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\intervention\\');
-%     Alienware path
     saveFolder = ...
-        sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+%     Alienware path
+%     saveFolder = ...
+%         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\intervention\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect;
     
     save(fullfile(saveFolder, saveName), 'saveClip')
     
-%     id = figure;
-%     hold on 
-%     grid on
-%     
-%     subplot(2,1,1);
-%     plot(znormFilter, 'r');
-%     title(sprintf('File #%d, znorm filtered data plot', fileNum));
-%     subplot(2,1,2);
-%     imagesc(znormCWTSpect);
-%     title(sprintf('File #%d, data spectrogram', fileNum));
-%     xlabel('frame(1/32)s');
-%     ylabel('EDA(us)');
-%     
-%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
-%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
-%     close all;
+    id = figure;
+    hold on 
+    grid on
+    
+    subplot(2,1,1);
+    plot(znormFilter, 'r');
+    title(sprintf('File #%d, znorm filtered data plot', fileNum));
+    subplot(2,1,2);
+    imagesc(znormCWTSpect);
+    title(sprintf('File #%d, data spectrogram', fileNum));
+    xlabel('frame(1/32)s');
+    ylabel('EDA(us)');
+    
+    saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
+    saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
+    close all;
     
 end

@@ -6,10 +6,13 @@ cnt = 0;
 for i = 1: 33
     
     % lab path
-    address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
+%     address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
     % alienware path
 %     address = ['D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
-    
+    % surface path
+    address = ['C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
+
+
     if exist(address, 'file')
         load(address);
         cnt = cnt + 1
@@ -26,8 +29,10 @@ for i = 1: 33
 end
 
 % lab path
-save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\vec_inter', 'output');
+% save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\vec_inter', 'output');
 % alienware path
 % save('D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\vec_inter', 'output');
+% surface path
+save('C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\vec_inter', 'output');
 
 

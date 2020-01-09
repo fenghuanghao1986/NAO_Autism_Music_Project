@@ -15,7 +15,7 @@ close all;
 %% Make Dataset
 
 disp('Loading Data ...')
-downSamp = 1000;
+downSamp = 100;
 
 % C = 0.1; % for 2 different tasks
 
@@ -23,20 +23,12 @@ task_1 = load('vec_warm');
 task_1 = task_1.output;
 task_2 = load('vec_inter');
 task_2 = task_2.output;
-% task_3 = load('vec_game');
-% task_3 = task_3.output;
 
-% 2 tasks
-DataSet = { downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)'};
-% 3 tasks
-% DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_3', downSamp)', ...
-%             downsample(task_2', downSamp)'};
+DataSet = {downsample(task_1', downSamp)', ...
+           downsample(task_2', downSamp)'};
        
 SampNumb = 33;
 TaskNumb = 2;
-% TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 
@@ -94,7 +86,7 @@ for k = 1 : SampNumb
     
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     
      SVMLabels_M(:,k) = SVMLabels(:);
@@ -130,4 +122,3 @@ ConfMat_SVM = round(100*(ConfMat_SVM1/SampNumb)/(numel(TeLa)/TaskNumb));
 disp(['SVMAccuracy : ', num2str(SVMAcc)])
 disp('SVMConfusionMatrix')
 disp(num2str(ConfMat_SVM))
-

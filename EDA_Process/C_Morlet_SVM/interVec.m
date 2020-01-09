@@ -5,8 +5,9 @@ cnt = 0;
 
 for i = 1: 33
     
-    address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
-    
+    % lab path
+%     address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
+    address = ['D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention\', num2str(i), '.mat'];
     if exist(address, 'file')
         load(address);
         cnt = cnt + 1
@@ -22,7 +23,9 @@ for i = 1: 33
     
 end
 
-save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\vec_inter', 'output');
-
+% lab path
+% save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention\vec_inter', 'output');
+% alienware path
+save('D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\vec_inter', 'output');
 
 

@@ -3,9 +3,13 @@ function warmUpVec()
 output = [];
 cnt = 0;
 
-for i = 1: 41
+for i = 1: 33
     
-    address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup\', num2str(i), '.mat'];
+    % lab path
+%     address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup\', num2str(i), '.mat'];
+    % alienware path
+    address = ['D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup\', num2str(i), '.mat'];
+
     
     if exist(address, 'file')
         load(address);
@@ -22,7 +26,9 @@ for i = 1: 41
     
 end
 
-save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup\vec_warm', 'output');
-
+% lab path
+% save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup\vec_warm', 'output');
+% alienware path
+save('D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\vec_warm', 'output');
 
 

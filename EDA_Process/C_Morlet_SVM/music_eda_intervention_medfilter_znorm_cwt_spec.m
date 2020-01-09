@@ -5,19 +5,19 @@ warning off
 % Pre-process data location 
 % remember to change folder if change machine
 % Ailienware path
-% dataPath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
-% fileType = ...
-%     '*.csv';
-% timeFilePath = ...
-%     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
-% Lab path
 dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
 fileType = ...
     '*.csv';
 timeFilePath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
+% Lab path
+% dataPath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\intervention';
+% fileType = ...
+%     '*.csv';
+% timeFilePath = ...
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 
 timeFileName = 'intervention_time.csv';
 
@@ -111,7 +111,7 @@ for fileNum = 1: num
     % do the cwt using cmor1.5-2
     znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
     % resize all data as spectrum in 100* 32
-    znormCWTCubic = imresize(znormCWT, [2800, 320], 'bicubic');
+    znormCWTCubic = imresize(znormCWT, [1000, 320], 'bicubic');
     % more process to the spectrum
     BEpoch = 1: 10;
     BaseMat = (znormCWTCubic(:, BEpoch))';
@@ -121,11 +121,11 @@ for fileNum = 1: num
     
     % save all the mat files
     % Lab path
-    saveFolder = ...
-        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\intervention\\');
-%     Alienware path
 %     saveFolder = ...
-%         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\intervention\\');
+%     Alienware path
+    saveFolder = ...
+        sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\intervention\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect;

@@ -7,16 +7,18 @@
 % fw = DesiredFrequency/2;
 % scales = Fs ./ fw
 
-% if use [1000, 320] as spect size, I get this:
-% SVMAccuracy : 75.7576
-% SVMConfusionMatrix
-% 73  27
-% 21  79
-% if use [100, 32] as spect size, I get this:
+% 2 class
 % SVMAccuracy : 68.1818
 % SVMConfusionMatrix
 % 70  30
 % 33  67
+
+% 3 class
+% SVMAccuracy : 63.6364
+% SVMConfusionMatrix
+% 33  18  48
+% 12  85   3
+% 18   9  73
 
 
 %% Clean
@@ -35,20 +37,20 @@ task_1 = load('vec_warm');
 task_1 = task_1.output;
 task_2 = load('vec_inter');
 task_2 = task_2.output;
-% task_3 = load('vec_game');
-% task_3 = task_3.output;
+task_3 = load('vec_game');
+task_3 = task_3.output;
 
 % 2 tasks
-DataSet = { downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)'};
-% 3 tasks
 % DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_3', downSamp)', ...
 %             downsample(task_2', downSamp)'};
+% 3 tasks
+DataSet = { downsample(task_1', downSamp)', ...
+            downsample(task_3', downSamp)', ...
+            downsample(task_2', downSamp)'};
        
 SampNumb = 33;
-TaskNumb = 2;
-% TaskNumb = 3;
+% TaskNumb = 2;
+TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 

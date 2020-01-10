@@ -7,51 +7,42 @@
 % fw = DesiredFrequency/2;
 % scales = Fs ./ fw
 
-% use 41 warm samples and 33 for inter and game samples
-% 2 class 1&2
-% SVMAccuracy : 68.1818
-% SVMConfusionMatrix
-% 70  30
-% 33  67
-% 2 class 2&3
-% SVMAccuracy : 43.9394
-% SVMConfusionMatrix
-% 52  48
-% 64  36
-% 2 class 1&3
+% all 33 same files results after time correction, since the video recoding
+% system not sync the time properly, so move 1 min up than before, q sensor
+% always sync the real time
+% the following results are from Surface computer
+
+% 1vs2
 % SVMAccuracy : 51.5152
 % SVMConfusionMatrix
-% 70  30
-% 67  33
-% 3 class
-% SVMAccuracy : 37.3737
-% SVMConfusionMatrix
-% 61  21  18
-% 42  21  36
-% 36  33  30
+% 52  48
+% 48  52
 
-% all 33 same files results
-% 1vs2
+% 1vs3
 % SVMAccuracy : 53.0303
 % SVMConfusionMatrix
 % 55  45
 % 48  52
-% 1vs3
-% SVMAccuracy : 56.0606
-% SVMConfusionMatrix
-% 70  30
-% 58  42
+
 % 2vs3
-% SVMAccuracy : 43.9394
+% SVMAccuracy : 57.5758
 % SVMConfusionMatrix
-% 52  48
-% 64  36
-% 1vs2vs3
-% SVMAccuracy : 37.3737
+% 76  24
+% 61  39
+
+% 1vs2vs3 c = 0.1
+% SVMAccuracy : 36.3636
 % SVMConfusionMatrix
-% 45  21  33
-% 24  42  33
-% 42  33  24
+% 48  33  18
+% 45  33  21
+% 33  39  27
+
+% 1vs2vs3 c = 10
+% SVMAccuracy : 30.303
+% SVMConfusionMatrix
+% 39  27  33
+% 45  18  36
+% 27  39  33
 
 
 %% Clean
@@ -144,7 +135,7 @@ for k = 1 : SampNumb
      TeFeCo = TeFeLe; 
      % C = 0.1 for 2 tasks
 %      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
-     % C = 10 for 3 tasks
+     % C = 10 for 3 tasks C = 0.1 gives better result
      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 10 -t 0 ');
 
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);

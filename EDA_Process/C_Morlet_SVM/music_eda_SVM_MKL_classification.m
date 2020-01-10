@@ -8,59 +8,6 @@
 % scales = Fs ./ fw
 
 %% SVM - Linear Kernal
-% all 33 same files results after time correction, since the video recoding
-% system not sync the time properly, so move 1 min up than before, q sensor
-% always sync the real time
-% the following results are from Surface computer
-
-% 1vs2
-% SVMAccuracy : 51.5152
-% SVMConfusionMatrix
-% 52  48
-% 48  52
-% for c = 10
-% SVMAccuracy : 66.6667
-% SVMConfusionMatrix
-% 64  36
-% 30  70
-
-% 1vs3
-% SVMAccuracy : 53.0303
-% SVMConfusionMatrix
-% 55  45
-% 48  52
-% for c = 1
-% SVMAccuracy : 54.5455
-% SVMConfusionMatrix
-% 58  42
-% 48  52
-
-% 2vs3
-% SVMAccuracy : 57.5758
-% SVMConfusionMatrix
-% 76  24
-% 61  39
-% for c = 1
-% SVMAccuracy : 59.0909
-% SVMConfusionMatrix
-% 73  27
-% 55  45
-
-% 1vs2vs3 c = 0.1
-% SVMAccuracy : 36.3636
-% SVMConfusionMatrix
-% 48  33  18
-% 45  33  21
-% 33  39  27
-
-% 1vs2vs3 c = 10
-% SVMAccuracy : 30.303
-% SVMConfusionMatrix
-% 39  27  33
-% 45  18  36
-% 27  39  33
-
-%% SVM - Linear Kernal
 % the following results are from Lab computer
 
 % 1vs2
@@ -109,56 +56,89 @@
 
 % c = 0.1 1vs2
 % SVMAccuracy : 57.5758
+% MKLAccuracy : 43.9394
 % SVMConfusionMatrix
 % 21  79
 %  6  94
+% MKLConfusionMatrix
+% 36  64
+% 48  52
 
 % c = 100 1vs3
 % SVMAccuracy : 60.6061
+% MKLAccuracy : 50
 % SVMConfusionMatrix
 % 58  42
 % 36  64
+% MKLConfusionMatrix
+% 45  55
+% 45  55
 
 % c = 1 2vs3
 % SVMAccuracy : 60.6061
+% MKLAccuracy : 57.5758
 % SVMConfusionMatrix
 % 94   6
 % 73  27
+% MKLConfusionMatrix
+% 67  33
+% 52  48
 
 % c = 1 1vs2vs3
 % SVMAccuracy : 40.404
+% MKLAccuracy : 42.4242
 % SVMConfusionMatrix
 % 12  76  12
 % 12  85   3
 %  9  67  24
+% MKLConfusionMatrix
+% 24  55  21
+% 21  58  21
+%  9  45  45
 
 %% SVM - RBF Kernal
 
 % c = 0.1 1vs2
 % SVMAccuracy : 53.0303
+% MKLAccuracy : 43.9394
 % SVMConfusionMatrix
 % 39  61
 % 33  67
+% MKLConfusionMatrix
+% 36  64
+% 48  52
 
 % c = 100 1vs3
 % SVMAccuracy : 56.0606
+% MKLAccuracy : 50
 % SVMConfusionMatrix
 % 55  45
 % 42  58
+% MKLConfusionMatrix
+% 45  55
+% 45  55
 
 % c = 0.1 2vs3
 % SVMAccuracy : 60.6061
+% MKLAccuracy : 57.5758
 % SVMConfusionMatrix
 % 61  39
 % 39  61
+% MKLConfusionMatrix
+% 67  33
+% 52  48
 
 % c = 1000 1vs2vs3
 % SVMAccuracy : 39.3939
+% MKLAccuracy : 42.4242
 % SVMConfusionMatrix
 % 33  42  24
 % 39  39  21
 % 36  18  45
-
+% MKLConfusionMatrix
+% 24  55  21
+% 21  58  21
+%  9  45  45
 
 %% Clean
 clc;
@@ -181,16 +161,16 @@ task_3 = load('vec_game');
 task_3 = task_3.output;
 
 % 2 tasks
-% DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_2', downSamp)'};
-% 3 tasks
 DataSet = { downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)', ...
-            downsample(task_3', downSamp)'};
+            downsample(task_2', downSamp)'};
+% 3 tasks
+% DataSet = { downsample(task_1', downSamp)', ...
+%             downsample(task_2', downSamp)', ...
+%             downsample(task_3', downSamp)'};
        
 SampNumb = 33;
-% TaskNumb = 2;
-TaskNumb = 3;
+TaskNumb = 2; 
+% TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 
@@ -199,7 +179,11 @@ disp('Kfold & PCA & Classification ...')
 SVMAccuracy = zeros(1, SampNumb);
 SVMConf = cell(1,SampNumb); 
 
+MKLAccuracy = zeros(1, SampNumb);
+MKLConf = cell(1,SampNumb);
+
 SVMLabels_M = zeros(TaskNumb,SampNumb);
+MKLLabels_M = zeros(TaskNumb,SampNumb);
 
 for k = 1 : SampNumb         
     
@@ -248,10 +232,17 @@ for k = 1 : SampNumb
     
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
+%    "-t kernel_type : set type of kernel function (default 2)\n"
+% 	"	0 -- linear: u'*v\n"
+% 	"	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
+% 	"	2 -- radial basis function: exp(-gamma*|u-v|^2)\n"
+% 	"	3 -- sigmoid: tanh(gamma*u'*v + coef0)\n"
+% 	"	4 -- precomputed kernel (kernel values in training_set_file)\n"
+%   "-c cost : set the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
      % C = 0.1 for 2 tasks in general 1 gives better results from surface
-%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 1 -t 0 ');
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 2 ');
      % C = 10 for 3 tasks C = 0.1 gives better result from surface
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
+%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
 
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     
@@ -269,23 +260,55 @@ for k = 1 : SampNumb
     
      SVMAccuracy(k) = accuracy(1);
      SVMConf{k} = SVMCoMa;
+     
+%% MKL
+% ask Hosein about this part, since I don't have the second qsensor, how
+% should I create this MKL model, I am feeding the same dataset twice here
+     if numel(DataSet) == 2
+         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeLe, TrLa, TeFeLe, TeFeLe, 10, TaskNumb, 2); 
+     else
+         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeLe, TrLa, TeFeLe, TeFeLe, 10, TaskNumb, 2);
+     end
+         
+     MKLLabels_M(:,k) = MKLLabels(:);
+    
+     MKLCoMa = zeros(TaskNumb, TaskNumb);  
+     for i = 1 : TaskNumb  
+         for j = 1 : TaskNumb
+        
+             MKLCoMa(i,j) = numel(find(MKLLabels...
+                (1 + (i - 1)*size(TeLa,1)/TaskNumb : i*size(TeLa,1)/TaskNumb) == j));
+        
+         end    
+     end
+              
+     MKLAccuracy(k) = 100*numel(find((MKLLabels - TeLa) == 0))/numel(TeLa);
+     MKLConf{k} = MKLCoMa;
     
 end
 
 %% Quantitative Assessments
 
 SVMAcc = sum(SVMAccuracy(:))/SampNumb;
+MKLAcc = sum(MKLAccuracy(:))/SampNumb;
+
 ConfMat_SVM1 = 0;
+ConfMat_MKL1 = 0;
     
 for w = 1 : SampNumb
     
      ConfMat_SVM1 = ConfMat_SVM1 + SVMConf{w};
+     ConfMat_MKL1 = ConfMat_MKL1 + MKLConf{w};
 
 end
 
 ConfMat_SVM = round(100*(ConfMat_SVM1/SampNumb)/(numel(TeLa)/TaskNumb));
+ConfMat_MKL = round(100*(ConfMat_MKL1/SampNumb)/(numel(TeLa)/TaskNumb));
 
 disp(['SVMAccuracy : ', num2str(SVMAcc)])
+disp(['MKLAccuracy : ', num2str(MKLAcc)])
 disp('SVMConfusionMatrix')
 disp(num2str(ConfMat_SVM))
+disp('MKLConfusionMatrix')
+disp(num2str(ConfMat_MKL))
 

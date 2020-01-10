@@ -6,27 +6,27 @@ warning off
 % remember to change folder if change machine
 % Ailienware path
 dataPath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\game1';
 fileType = ...
     '*.csv';
 timeFilePath = ...
     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
 % Lab path
 % dataPath = ...
-%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\game';
 % fileType = ...
 %     '*.csv';
 % timeFilePath = ...
 %     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 % Surface path
 % dataPath = ...
-%     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\warmup';
+%     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\game';
 % fileType = ...
 %     '*.csv';
 % timeFilePath = ...
 %     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
 
-timeFileName = 'warm_up_time.csv';
+timeFileName = 'game.csv';
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
@@ -56,25 +56,6 @@ for fileNum = 1: num
     
     startTime = '0:0.0';
     endTime = '0:0.0';
-    znormQ = [];
-    znormCWT = [];
-    znormFilter = [];
-    znormCWTSpect = [];
-    muQ = [];
-    sigmaQ = [];
-    saveClip = [];
-    tempCell = [];
-    tempCellMtx = [];
-    tempMtx = [];
-    warmData = [];
-    r = 0;
-    c = 0;
-    BEpoch = [];
-    BaseMat = [];
-    BaseMean = [];
-    BaseStd = [];
-    tempOpen = [];
-    warmData = [];
     
     % save all numerical data in second col
 %     data{fileNum, 2} = dlmread(fullfile(dataPath, fileNames{fileNum}));
@@ -106,13 +87,13 @@ for fileNum = 1: num
     
     for j = 1: (endIdx - startIdx)
         
-        warmData(j, 1) = str2double(char(tempMtx(startIdx + j, 2)));
+        gameData(j, 1) = str2double(char(tempMtx(startIdx + j, 2)));
         
     end    
     
     fprintf('Reading CSV data number %d ...\n', fileNum);
     % do the znorm for all eda data and save in znorm, mu, and sigma
-    [znormQ, muQ, sigmaQ] = zscore(warmData);
+    [znormQ, muQ, sigmaQ] = zscore(gameData);
     fprintf('Znorm done for file %d... \n', fileNum);
     
     % after znorm, do med filter to it, and save in znormFilter
@@ -131,13 +112,13 @@ for fileNum = 1: num
     % save all the mat files
     % Lab path
 %     saveFolder = ...
-%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\game\\');
 %     Alienware path
     saveFolder = ...
-        sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+        sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\game1\\');
     % Surface path
 %     saveFolder = ...
-%         sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+%         sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\game\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect;
@@ -160,5 +141,23 @@ for fileNum = 1: num
     saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
     close all;
+    
+    znormQ = [];
+    znormCWT = [];
+    znormFilter = [];
+    znormCWTSpect = [];
+    muQ = [];
+    sigmaQ = [];
+    saveClip = [];
+    tempCell = [];
+    tempCellMtx = [];
+    tempMtx = [];
+    warmData = [];
+    r = 0;
+    c = 0;
+    BEpoch = [];
+    BaseMat = [];
+    BaseMean = [];
+    BaseStd = [];
     
 end

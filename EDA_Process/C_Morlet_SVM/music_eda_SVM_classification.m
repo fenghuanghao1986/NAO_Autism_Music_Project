@@ -7,18 +7,51 @@
 % fw = DesiredFrequency/2;
 % scales = Fs ./ fw
 
-% 2 class
+% use 41 warm samples and 33 for inter and game samples
+% 2 class 1&2
 % SVMAccuracy : 68.1818
 % SVMConfusionMatrix
 % 70  30
 % 33  67
-
-% 3 class
-% SVMAccuracy : 63.6364
+% 2 class 2&3
+% SVMAccuracy : 43.9394
 % SVMConfusionMatrix
-% 33  18  48
-% 12  85   3
-% 18   9  73
+% 52  48
+% 64  36
+% 2 class 1&3
+% SVMAccuracy : 51.5152
+% SVMConfusionMatrix
+% 70  30
+% 67  33
+% 3 class
+% SVMAccuracy : 37.3737
+% SVMConfusionMatrix
+% 61  21  18
+% 42  21  36
+% 36  33  30
+
+% all 33 same files results
+% 1vs2
+% SVMAccuracy : 53.0303
+% SVMConfusionMatrix
+% 55  45
+% 48  52
+% 1vs3
+% SVMAccuracy : 56.0606
+% SVMConfusionMatrix
+% 70  30
+% 58  42
+% 2vs3
+% SVMAccuracy : 43.9394
+% SVMConfusionMatrix
+% 52  48
+% 64  36
+% 1vs2vs3
+% SVMAccuracy : 37.3737
+% SVMConfusionMatrix
+% 45  21  33
+% 24  42  33
+% 42  33  24
 
 
 %% Clean
@@ -32,6 +65,7 @@ disp('Loading Data ...')
 downSamp = 100;
 
 % C = 0.1; % for 2 different tasks
+% C = 10; % for 3 different tasks
 
 task_1 = load('vec_warm');
 task_1 = task_1.output;
@@ -41,12 +75,12 @@ task_3 = load('vec_game');
 task_3 = task_3.output;
 
 % 2 tasks
-% DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_2', downSamp)'};
+% DataSet = { downsample(task_2', downSamp)', ...
+%             downsample(task_3', downSamp)'};
 % 3 tasks
 DataSet = { downsample(task_1', downSamp)', ...
-            downsample(task_3', downSamp)', ...
-            downsample(task_2', downSamp)'};
+            downsample(task_2', downSamp)', ...
+            downsample(task_3', downSamp)'};
        
 SampNumb = 33;
 % TaskNumb = 2;
@@ -108,7 +142,11 @@ for k = 1 : SampNumb
     
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
+     % C = 0.1 for 2 tasks
+%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
+     % C = 10 for 3 tasks
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 10 -t 0 ');
+
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     
      SVMLabels_M(:,k) = SVMLabels(:);

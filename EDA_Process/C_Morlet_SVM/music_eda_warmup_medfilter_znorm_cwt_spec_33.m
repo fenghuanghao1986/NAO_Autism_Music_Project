@@ -26,7 +26,7 @@ timeFilePath = ...
 % timeFilePath = ...
 %     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
 
-timeFileName = 'warm_up_time.csv';
+timeFileName = 'warm_up_time_33.csv';
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));

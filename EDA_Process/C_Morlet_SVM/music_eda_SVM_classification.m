@@ -17,11 +17,21 @@
 % SVMConfusionMatrix
 % 52  48
 % 48  52
+% for c = 10
+% SVMAccuracy : 66.6667
+% SVMConfusionMatrix
+% 64  36
+% 30  70
 
 % 1vs3
 % SVMAccuracy : 53.0303
 % SVMConfusionMatrix
 % 55  45
+% 48  52
+% for c = 1
+% SVMAccuracy : 54.5455
+% SVMConfusionMatrix
+% 58  42
 % 48  52
 
 % 2vs3
@@ -29,6 +39,11 @@
 % SVMConfusionMatrix
 % 76  24
 % 61  39
+% for c = 1
+% SVMAccuracy : 59.0909
+% SVMConfusionMatrix
+% 73  27
+% 55  45
 
 % 1vs2vs3 c = 0.1
 % SVMAccuracy : 36.3636
@@ -110,16 +125,16 @@ task_3 = load('vec_game');
 task_3 = task_3.output;
 
 % 2 tasks
-DataSet = { downsample(task_2', downSamp)', ...
-            downsample(task_3', downSamp)'};
-% 3 tasks
 % DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_2', downSamp)', ...
-%             downsample(task_3', downSamp)'};
+%             downsample(task_2', downSamp)'};
+% 3 tasks
+DataSet = { downsample(task_1', downSamp)', ...
+            downsample(task_2', downSamp)', ...
+            downsample(task_3', downSamp)'};
        
 SampNumb = 33;
-TaskNumb = 2;
-% TaskNumb = 3;
+% TaskNumb = 2;
+TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 
@@ -177,10 +192,10 @@ for k = 1 : SampNumb
     
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
-     % C = 0.1 for 2 tasks
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 1000 -t 0 ');
-     % C = 10 for 3 tasks C = 0.1 gives better result
-%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 10 -t 0 ');
+     % C = 0.1 for 2 tasks in general 1 gives better results from surface
+%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 1 -t 0 ');
+     % C = 10 for 3 tasks C = 0.1 gives better result from surface
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
 
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     

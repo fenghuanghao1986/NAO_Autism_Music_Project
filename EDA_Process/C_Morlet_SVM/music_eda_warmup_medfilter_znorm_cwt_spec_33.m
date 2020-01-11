@@ -12,19 +12,19 @@ warning off
 % timeFilePath = ...
 %     'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM';
 % Lab path
-dataPath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
-fileType = ...
-    '*.csv';
-timeFilePath = ...
-    'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
-% Surface path
 % dataPath = ...
-%     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\warmup';
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\warmup';
 % fileType = ...
 %     '*.csv';
 % timeFilePath = ...
-%     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
+%     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
+% Surface path
+dataPath = ...
+    'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\warmup';
+fileType = ...
+    '*.csv';
+timeFilePath = ...
+    'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
 
 timeFileName = 'warm_up_time_33.csv';
 
@@ -44,7 +44,7 @@ data(:,1) = regexprep(fileNames, '.csv', '');
 % data
 znormFilter = cell(num, 1);
 % create a scale range for resizing and create spectrum mrtx
-scaleRange = 1:100;
+scaleRange = 1:1000;
 
 % open the warmup timestemp file and select start and end in the main loop
 timeFileOpen = fopen(fullfile(timeFilePath, timeFileName));
@@ -120,9 +120,9 @@ for fileNum = 1: num
     % do the cwt using cmor1.5-2
     znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
     % resize all data as spectrum in 100* 32
-    znormCWTCubic = imresize(znormCWT, [100, 32], 'bicubic');
+    znormCWTCubic = imresize(znormCWT, [1000, 320], 'bicubic');
     % more process to the spectrum
-    BEpoch = 1: 10;
+    BEpoch = 1: 100;
     BaseMat = (znormCWTCubic(:, BEpoch))';
     BaseMean = repmat(mean(BaseMat)', 1, size(znormCWTCubic,2));
     BaseStd = repmat(std(BaseMat)', 1, size(znormCWTCubic, 2));
@@ -130,35 +130,35 @@ for fileNum = 1: num
     
     % save all the mat files
     % Lab path
-    saveFolder = ...
-        sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+%     saveFolder = ...
+%         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
 %     Alienware path
 %     saveFolder = ...
 %         sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     % Surface path
-%     saveFolder = ...
-%         sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
+    saveFolder = ...
+        sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     saveName = ...
         sprintf('%d.mat', fileNum);
     saveClip = znormCWTSpect;
     
     save(fullfile(saveFolder, saveName), 'saveClip')
     
-    id = figure;
-    hold on 
-    grid on
-    
-    subplot(2,1,1);
-    plot(znormFilter, 'r');
-    title(sprintf('File #%d, znorm filtered data plot', fileNum));
-    subplot(2,1,2);
-    imagesc(znormCWTSpect);
-    title(sprintf('File #%d, data spectrogram', fileNum));
-    xlabel('frame(1/32)s');
-    ylabel('EDA(us)');
-    
-    saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
-    saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
-    close all;
+%     id = figure;
+%     hold on 
+%     grid on
+%     
+%     subplot(2,1,1);
+%     plot(znormFilter, 'r');
+%     title(sprintf('File #%d, znorm filtered data plot', fileNum));
+%     subplot(2,1,2);
+%     imagesc(znormCWTSpect);
+%     title(sprintf('File #%d, data spectrogram', fileNum));
+%     xlabel('frame(1/32)s');
+%     ylabel('EDA(us)');
+%     
+%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.fig', fileNum)));
+%     saveas(id, strcat(saveFolder, sprintf('File #%d figure.tif', fileNum)))
+%     close all;
     
 end

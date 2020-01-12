@@ -153,24 +153,35 @@ downSamp = 100;
 % C = 0.1; % for 2 different tasks
 % C = 10; % for 3 different tasks
 
-task_1 = load('vec_warm');
+task_1 = load('vec_warm0');
 task_1 = task_1.output;
-task_2 = load('vec_inter');
+task_2 = load('vec_inter0');
 task_2 = task_2.output;
-task_3 = load('vec_game');
+task_3 = load('vec_game0');
 task_3 = task_3.output;
 
-% 2 tasks
-DataSet = { downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)'};
-% 3 tasks
-% DataSet = { downsample(task_1', downSamp)', ...
-%             downsample(task_2', downSamp)', ...
-%             downsample(task_3', downSamp)'};
+DataSet0 = { 
+            downsample(task_1', downSamp)', ...
+            downsample(task_2', downSamp)', ...
+            downsample(task_3', downSamp)', ...
+            };
+         
+task_1 = load('vec_warm1');
+task_1 = task_1.output;
+task_2 = load('vec_inter1');
+task_2 = task_2.output;
+task_3 = load('vec_game1');
+task_3 = task_3.output;
+
+DataSet1 = { 
+            downsample(task_1', downSamp)', ...
+            downsample(task_2', downSamp)', ...
+            downsample(task_3', downSamp)', ...
+            };
        
-SampNumb = 33;
-TaskNumb = 2; 
-% TaskNumb = 3;
+SampNumb = 17;
+% TaskNumb = 2; 
+TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 
@@ -189,19 +200,25 @@ for k = 1 : SampNumb
     
      TrSaLe = [];
      TeSaLe = [];
+     TrSaRi = [];
+     TeSaRi = [];
     
-     for i = 1 : numel(DataSet)
+     for i = 1 : numel(DataSet0)
     
-         TempMemLe = DataSet{i};
+         TempMemLe = DataSet0{i};
+         TempMemRi = DataSet1{i};
         
          if isempty(TempMemLe)
              continue
          else
             
-            [TrainLe, TestLe] = Kfold(TempMemLe, SampNumb, SampNumb, k);            
+            [TrainLe, TestLe] = Kfold(TempMemLe, SampNumb, SampNumb, k); 
+            [TrainRi, TestRi] = Kfold(TempMemRi, SampNumb, SampNumb, k); 
     
             TrSaLe = [TrSaLe; TrainLe];
             TeSaLe = [TeSaLe; TestLe]; 
+            TrSaRi = [TrSaRi; TrainRi];
+            TeSaRi = [TeSaRi; TestRi];
             
          end
           
@@ -227,11 +244,21 @@ for k = 1 : SampNumb
      TeSaLe = (TeSaLe - minLe)/(maxLe - minLe); 
      PCAratio = 0.05;
      [TrFeLe, TeFeLe] = CorrectPCA(TrSaLe, TeSaLe, PCAratio);
+     
+     % Normalize the Dataset (Right) and PCA
+     minRi = min(TrSaRi(:));
+     maxRi = max(TrSaRi(:));
+     
+     TrSaRi = (TrSaRi - minRi)/(maxRi - minRi);
+     TeSaRi = (TeSaRi - minRi)/(maxRi - minRi); 
+     PCAratio = 0.05;
+     [TrFeRi, TeFeRi] = CorrectPCA(TrSaRi, TeSaRi, PCAratio);
     
 %%  SVM
     
-     TrFeCo = TrFeLe;    
-     TeFeCo = TeFeLe; 
+     TrFeCo = cat(2,TrFeLe, TrFeRi);    
+     TeFeCo = cat(2,TeFeLe, TeFeRi);
+     
 %    "-t kernel_type : set type of kernel function (default 2)\n"
 % 	"	0 -- linear: u'*v\n"
 % 	"	1 -- polynomial: (gamma*u'*v + coef0)^degree\n"
@@ -240,9 +267,12 @@ for k = 1 : SampNumb
 % 	"	4 -- precomputed kernel (kernel values in training_set_file)\n"
 %   "-c cost : set the parameter C of C-SVC, epsilon-SVR, and nu-SVR (default 1)\n"
      % C = 0.1 for 2 tasks in general 1 gives better results from surface
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 2 ');
-     % C = 10 for 3 tasks C = 0.1 gives better result from surface
-%      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
+     
+     if numel(DataSet1) == 2
+         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.01 -t 0 ');
+     else
+         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.01 -t 0 ');
+     end
 
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);
     
@@ -262,12 +292,14 @@ for k = 1 : SampNumb
      SVMConf{k} = SVMCoMa;
      
 %% MKL
-% ask Hosein about this part, since I don't have the second qsensor, how
-% should I create this MKL model, I am feeding the same dataset twice here
-     if numel(DataSet) == 2
-         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeLe, TrLa, TeFeLe, TeFeLe, 10, TaskNumb, 2); 
+% I am using half of the sample (17 samples out of 33 total samples) as 
+% left and another half for right, then use them as trainng set and test 
+% set, we will see what will happen
+
+     if numel(DataSet1) == 2
+         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeRi, TrLa, TeFeLe, TeFeRi, 10, TaskNumb, 2); 
      else
-         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeLe, TrLa, TeFeLe, TeFeLe, 10, TaskNumb, 2);
+         [MKLLabels,~,~] = LpMKL_MW_2f(TrFeLe, TrFeRi, TrLa, TeFeLe, TeFeRi, 10, TaskNumb, 2);
      end
          
      MKLLabels_M(:,k) = MKLLabels(:);

@@ -3,12 +3,12 @@ function interVec()
 output = [];
 cnt = 0;
 
-for i = 1: 33
+for i = 17: 33
     
     % lab path
-%     address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\game\', num2str(i), '.mat'];
+    address = ['D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\game_14_33\', num2str(i), '.mat'];
     % alienware path
-    address = ['D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\game\', num2str(i), '.mat'];
+%     address = ['D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\game\', num2str(i), '.mat'];
     % surface path
 %     address = ['C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\game\', num2str(i), '.mat'];
 
@@ -28,9 +28,9 @@ for i = 1: 33
 end
 
 % lab path
-% save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\vec_game', 'output');
+save('D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM\vec_game1', 'output');
 % alienware path
-save('D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\vec_game', 'output');
+% save('D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\vec_game', 'output');
 % surface path
 % save('C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM\vec_game', 'output');
 

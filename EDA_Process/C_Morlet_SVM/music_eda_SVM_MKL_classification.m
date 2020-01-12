@@ -148,7 +148,7 @@ close all;
 %% Make Dataset
 
 disp('Loading Data ...')
-downSamp = 100;
+downSamp = 1000;
 
 % C = 0.1; % for 2 different tasks
 % C = 10; % for 3 different tasks
@@ -269,9 +269,9 @@ for k = 1 : SampNumb
      % C = 0.1 for 2 tasks in general 1 gives better results from surface
      
      if numel(DataSet1) == 2
-         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.01 -t 0 ');
+         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
      else
-         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.01 -t 0 ');
+         [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 0 ');
      end
 
      [SVMLabels, accuracy, DecEst] = svmpredict(TeLa, TeFeCo, model);

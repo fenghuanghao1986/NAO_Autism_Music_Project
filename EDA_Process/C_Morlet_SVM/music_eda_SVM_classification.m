@@ -168,7 +168,7 @@ close all;
 %% Make Dataset
 
 disp('Loading Data ...')
-downSamp = 100;
+downSamp = 1000;
 
 % C = 0.1; % for 2 different tasks
 % C = 10; % for 3 different tasks

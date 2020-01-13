@@ -1,7 +1,12 @@
+%% All type data precossing template
+% This template provides the ability to process all type of data with out
+% time stemp selection, only big chunck of data or whole length will be
+% proecssed in here
+
 clc;
 clear;
 warning off
-
+%% set file location
 % Pre-process data location 
 % remember to change folder if change machine
 % Ailienware path
@@ -19,6 +24,7 @@ timeFilePath = ...
 % timeFilePath = ...
 %     'D:\Howard_Feng\NAO_Music_Autism_Project\EDA_Process\C_Morlet_SVM';
 
+%% create date set in matlab
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
 % get all names from dd.name
@@ -37,6 +43,7 @@ znormFilter = cell(num, 1);
 % create a scale range for resizing and create spectrum mrtx
 scaleRange = 1:1000;
 
+%% select target data, save as .mat file and plot for view
 % start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
         

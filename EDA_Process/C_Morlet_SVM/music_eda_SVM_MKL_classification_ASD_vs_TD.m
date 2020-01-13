@@ -17,35 +17,28 @@ close all;
 disp('Loading Data ...')
 downSamp = 1000;
 
-task_1 = load('vec_warm0');
-task_1 = task_1.output;
-task_2 = load('vec_inter0');
-task_2 = task_2.output;
-task_3 = load('vec_game0');
-task_3 = task_3.output;
+ASD0 = load('vec_ASD0');
+ASD0 = ASD0.output;
+TD0 = load('vec_TD0');
+TD0 = TD0.output;
 
 DataSet0 = { 
-%             downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)', ...
-            downsample(task_3', downSamp)', ...
+            downsample(ASD0', downSamp)', ...
+            downsample(TD0', downSamp)', ...
             };
          
-task_1 = load('vec_warm1');
-task_1 = task_1.output;
-task_2 = load('vec_inter1');
-task_2 = task_2.output;
-task_3 = load('vec_game1');
-task_3 = task_3.output;
+ASD1 = load('vec_ASD1');
+ASD1 = ASD1.output;
+TD1 = load('vec_TD1');
+TD1 = TD1.output;
 
 DataSet1 = { 
-%             downsample(task_1', downSamp)', ...
-            downsample(task_2', downSamp)', ...
-            downsample(task_3', downSamp)', ...
+            downsample(ASD1', downSamp)', ...
+            downsample(TD1', downSamp)', ...
             };
        
-SampNumb = 17;
+SampNumb = 8;
 TaskNumb = 2; 
-% TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 

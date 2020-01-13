@@ -173,11 +173,11 @@ downSamp = 1000;
 % C = 0.1; % for 2 different tasks
 % C = 10; % for 3 different tasks
 
-task_1 = load('vec_warm');
+task_1 = load('vec_warm_1000');
 task_1 = task_1.output;
-task_2 = load('vec_inter');
+task_2 = load('vec_inter_1000');
 task_2 = task_2.output;
-task_3 = load('vec_game');
+task_3 = load('vec_game_1000');
 task_3 = task_3.output;
 
 % 2 tasks
@@ -249,7 +249,7 @@ for k = 1 : SampNumb
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
      % C = 0.1 for 2 tasks in general 1 gives better results from surface
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.01 -t 0 ');
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 3 ');
      % C = 10 for 3 tasks C = 0.1 gives better result from surface
 %      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
 

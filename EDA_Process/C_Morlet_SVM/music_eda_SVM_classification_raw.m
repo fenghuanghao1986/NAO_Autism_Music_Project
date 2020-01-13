@@ -28,8 +28,8 @@ task_3 = load('vec_game_raw');
 task_3 = task_3.output;
 
 % 2 tasks
-% DataSet = { downsample(task_2', downSamp)', ...
-%             downsample(task_3', downSamp)'};
+% DataSet = { downsample(task_1', downSamp)', ...
+%             downsample(task_2', downSamp)'};
 % 3 tasks
 DataSet = { downsample(task_1', downSamp)', ...
             downsample(task_2', downSamp)', ...
@@ -96,7 +96,7 @@ for k = 1 : SampNumb
      TrFeCo = TrFeLe;    
      TeFeCo = TeFeLe; 
      % C = 0.1 for 2 tasks in general 1 gives better results from surface
-     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 10 -t 0 ');
+     [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c 0.1 -t 3 ');
      % C = 10 for 3 tasks C = 0.1 gives better result from surface
 %      [model] = svmtrain(TrLa, TrFeCo, '-s 0 -c .1 -t 0 ');
 

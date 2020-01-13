@@ -1,4 +1,4 @@
-% Music EDA classification (SVM, MKL, single sensor)
+% Music EDA classification (SVM, MKL, single sensor, half vs half)
 
 % Fs = 32;
 % scales = [1:100];
@@ -6,139 +6,6 @@
 % 
 % fw = DesiredFrequency/2;
 % scales = Fs ./ fw
-
-%% SVM - Linear Kernal
-% the following results are from Lab computer
-
-% 1vs2
-% SVMAccuracy : 51.5152
-% SVMConfusionMatrix
-% 27  73
-% 24  76
-% for c = 100
-% SVMAccuracy : 60.6061
-% SVMConfusionMatrix
-% 52  48
-% 30  70
-
-% 1vs3
-% SVMAccuracy : 46.9697
-% SVMConfusionMatrix
-% 58  42
-% 64  36
-
-% 2vs3
-% SVMAccuracy : 56.0606
-% SVMConfusionMatrix
-% 79  21
-% 67  33
-% for c = 1000
-% SVMAccuracy : 71.2121
-% SVMConfusionMatrix
-% 79  21
-% 36  64
-
-% 1vs2vs3 c = 0.1
-% SVMAccuracy : 36.3636
-% SVMConfusionMatrix
-% 12  67  21
-% 18  64  18
-%  9  58  33
-
-% 1vs2vs3 c = 10
-% SVMAccuracy : 37.3737
-% SVMConfusionMatrix
-% 42  36  21
-% 39  42  18
-% 39  33  27
-
-%% SVM - Polynomial Kernal
-
-% c = 0.1 1vs2
-% SVMAccuracy : 57.5758
-% MKLAccuracy : 43.9394
-% SVMConfusionMatrix
-% 21  79
-%  6  94
-% MKLConfusionMatrix
-% 36  64
-% 48  52
-
-% c = 100 1vs3
-% SVMAccuracy : 60.6061
-% MKLAccuracy : 50
-% SVMConfusionMatrix
-% 58  42
-% 36  64
-% MKLConfusionMatrix
-% 45  55
-% 45  55
-
-% c = 1 2vs3
-% SVMAccuracy : 60.6061
-% MKLAccuracy : 57.5758
-% SVMConfusionMatrix
-% 94   6
-% 73  27
-% MKLConfusionMatrix
-% 67  33
-% 52  48
-
-% c = 1 1vs2vs3
-% SVMAccuracy : 40.404
-% MKLAccuracy : 42.4242
-% SVMConfusionMatrix
-% 12  76  12
-% 12  85   3
-%  9  67  24
-% MKLConfusionMatrix
-% 24  55  21
-% 21  58  21
-%  9  45  45
-
-%% SVM - RBF Kernal
-
-% c = 0.1 1vs2
-% SVMAccuracy : 53.0303
-% MKLAccuracy : 43.9394
-% SVMConfusionMatrix
-% 39  61
-% 33  67
-% MKLConfusionMatrix
-% 36  64
-% 48  52
-
-% c = 100 1vs3
-% SVMAccuracy : 56.0606
-% MKLAccuracy : 50
-% SVMConfusionMatrix
-% 55  45
-% 42  58
-% MKLConfusionMatrix
-% 45  55
-% 45  55
-
-% c = 0.1 2vs3
-% SVMAccuracy : 60.6061
-% MKLAccuracy : 57.5758
-% SVMConfusionMatrix
-% 61  39
-% 39  61
-% MKLConfusionMatrix
-% 67  33
-% 52  48
-
-% c = 1000 1vs2vs3
-% SVMAccuracy : 39.3939
-% MKLAccuracy : 42.4242
-% SVMConfusionMatrix
-% 33  42  24
-% 39  39  21
-% 36  18  45
-% MKLConfusionMatrix
-% 24  55  21
-% 21  58  21
-%  9  45  45
 
 %% Clean
 clc;
@@ -150,9 +17,6 @@ close all;
 disp('Loading Data ...')
 downSamp = 1000;
 
-% C = 0.1; % for 2 different tasks
-% C = 10; % for 3 different tasks
-
 task_1 = load('vec_warm0');
 task_1 = task_1.output;
 task_2 = load('vec_inter0');
@@ -161,7 +25,7 @@ task_3 = load('vec_game0');
 task_3 = task_3.output;
 
 DataSet0 = { 
-            downsample(task_1', downSamp)', ...
+%             downsample(task_1', downSamp)', ...
             downsample(task_2', downSamp)', ...
             downsample(task_3', downSamp)', ...
             };
@@ -174,14 +38,14 @@ task_3 = load('vec_game1');
 task_3 = task_3.output;
 
 DataSet1 = { 
-            downsample(task_1', downSamp)', ...
+%             downsample(task_1', downSamp)', ...
             downsample(task_2', downSamp)', ...
             downsample(task_3', downSamp)', ...
             };
        
 SampNumb = 17;
-% TaskNumb = 2; 
-TaskNumb = 3;
+TaskNumb = 2; 
+% TaskNumb = 3;
 
 %% Kfold & PCA & Classification
 

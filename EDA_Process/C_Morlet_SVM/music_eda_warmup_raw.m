@@ -6,7 +6,7 @@ warning off
 % remember to change folder if change machine
 % Ailienware path
 dataPath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\game';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
 fileType = ...
     '*.csv';
 timeFilePath = ...
@@ -27,7 +27,7 @@ timeFilePath = ...
 %     'C:\Users\fengh\pythonProject\NAO_Autism_Music_Project\EDA_Process\C_Morlet_SVM';
 
 % timeFileName = 'warm_up_time_33.csv';
-timeFileName = 'game_time.csv'
+timeFileName = 'intervention_time.csv'
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
@@ -151,7 +151,7 @@ for fileNum = 1: num
     %         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     %     Alienware path
         saveFolder = ...
-            sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\Raw_data\\game_seg\\');
+            sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\Raw_data\\inter_seg\\');
         % Surface path
     %     saveFolder = ...
     %         sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');

@@ -6,7 +6,7 @@ warning off
 % remember to change folder if change machine
 % Ailienware path
 dataPath = ...
-    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\intervention';
+    'D:\LabWork\ThesisProject\Music_Autism_Robot\EDA_Process\C_Morlet_SVM\warmup';
 fileType = ...
     '*.csv';
 timeFilePath = ...
@@ -28,6 +28,7 @@ timeFilePath = ...
 
 % timeFileName = 'warm_up_time_33.csv';
 timeFileName = 'intervention_time.csv'
+% timeFileName = 'game_time.csv';
 
 % create a data structure called dd by using dir()
 dd = dir(fullfile(dataPath, fileType));
@@ -51,7 +52,7 @@ scaleRange = 1:10;
 timeFileOpen = fopen(fullfile(timeFilePath, timeFileName));
 timeMtx = textscan(timeFileOpen, '%s%s%s', 'delimiter', ',', 'CollectOutput', true);
 t = timeMtx{1};
-
+ignore = 0;
 % start the loop for saving all mat files and ready for vetorization
 for fileNum = 1: num
     
@@ -117,6 +118,7 @@ for fileNum = 1: num
         znormQ = [];
         znormCWT = [];
         znormFilter = [];
+        znormCWTVubic = [];
         znormCWTSpect = [];
         muQ = [];
         sigmaQ = [];
@@ -126,18 +128,37 @@ for fileNum = 1: num
         tempMtx = [];
         r = 0;
         c = 0;
+        target = warmData(k:(k+320));
         
+        var(target)
+        
+        if k + 320 > j - 320
+            break
+        end
+        
+        if var(target) < 4e-05
+            ignore = ignore + 1
+            continue
+        end
         fprintf('Reading CSV data number %d ...\n', round(k/320));
         % do the znorm for all eda data and save in znorm, mu, and sigma
-        [znormQ, muQ, sigmaQ] = zscore(warmData(k:(k+320)));
+        [znormQ, muQ, sigmaQ] = zscore(target);
         fprintf('Znorm done for file %d... \n', round(k/320));
 
         % after znorm, do med filter to it, and save in znormFilter
         znormFilter = medfilt1(znormQ.', 1);
+
+        % filter the straight lines or sudden spike
+        
+%         if median(znormFilter) == 0
+%             ignore = ignore + 1
+%             continue
+%         end
+        
         % do the cwt using cmor1.5-2
-    %     znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
+        znormCWT = abs(cwt(znormFilter, scaleRange, 'cmor1.5-2'));
         % resize all data as spectrum in 100* 32
-        znormCWTCubic = imresize(znormFilter, [100, 32], 'bicubic');
+        znormCWTCubic = imresize(znormCWT, [100, 32], 'bicubic');
         % more process to the spectrum
         BEpoch = 1: 10;
         BaseMat = (znormCWTCubic(:, BEpoch))';
@@ -151,7 +172,7 @@ for fileNum = 1: num
     %         sprintf('D:\\Howard_Feng\\NAO_Music_Autism_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
     %     Alienware path
         saveFolder = ...
-            sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\Raw_data\\inter_seg\\');
+            sprintf('D:\\LabWork\\ThesisProject\\Music_Autism_Robot\\EDA_Process\\C_Morlet_SVM\\segData\\inter_seg\\');
         % Surface path
     %     saveFolder = ...
     %         sprintf('C:\\Users\\fengh\\pythonProject\\NAO_Autism_Music_Project\\EDA_Process\\C_Morlet_SVM\\warmup\\');
@@ -179,9 +200,8 @@ for fileNum = 1: num
         saveas(id, strcat(saveFolder, sprintf('File #%d segment #%d, figure.tif', fileNum, round(k/320))))
         close all;
         k
-        if k + 320 > j - 320
-            break
-        end
+        ignore
+        
         
     end
         

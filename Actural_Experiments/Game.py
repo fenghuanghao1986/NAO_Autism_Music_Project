@@ -131,10 +131,10 @@ songBank = {"Twinkle": [0,1,1,5,5,6,6,5,0,4,4,3,3,2,2,1,0,
                         9,10,8,0,0,9,10,
                         8,0,8,0,8,0]}
 
-song_names = ["Fatastic", "Twinkle", "CanCan", "Sleeping", "Promise", 
-              "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds",
-              "Shake"]
-#song_names = ["CanCan"]
+#song_names = ["Fatastic", "Twinkle", "CanCan", "Sleeping", "Promise", 
+#              "Sunshine", "BabySharkv1", "JingleBell", "Lamb", "Birds",
+#              "Shake"]
+song_names = ["JingleBell"]
 
 print "Enter subject name:\n"
 kid_name = raw_input()

@@ -532,9 +532,9 @@ There are three different perspectives dealing with affect in multimedia,
 namely, expressed emotions, felt emotions and expected emotions, 
 Electrodemal activity (EDA) signals which is considered as a periphery 
 
-\hfill mds
+\hfill Feng
  
-\hfill August 26, 2020
+\hfill March 30, 2020
 
 
 
@@ -636,7 +636,49 @@ Electrodemal activity (EDA) signals which is considered as a periphery
 
 
 \section{Background}
-\subsection{Continuous Emotion Classification}
+%\subsection{Continuous Emotion Classification}
+\subsection{Autism}
+Individuals with autism spectrum disorder experience verbal and nonverbal
+communication impairments, including motor control, emotional facial expressions, and
+eye gaze attention. Oftentimes, individuals with high-functioning autism have deficits in
+different areas, such as (1) language delay, (2) difficulty in having empathy with their peer
+and understanding others emotions (i.e. facial expressions recognition.), and more
+remarkably (3) joint attention (i.e. eye contact and eye gaze attention). Autism is a disorder
+that appears in infancy \cite{Epidemiology1966}. Although there is no single accepted intervention, treatment,
+or known cure for ASDs, these individual will have more successful treatment if ASD is
+diagnosed in early stages. At the first glance at the individual with autism, you may not
+notice anything odd, however after trying to talk to her/him, you will understand something
+is definitely not right \cite{BrokenMirror2006}. S/He may not make eye contact with you and avoid your gaze
+and fidget, rock her/his body and bang her/his head against the wall \cite{BrokenMirror2006}.
+In early 1990s, researchers in the University of California at San Diego aimed to
+find out the connections between autism and nervous system (i.e. mirror neurons). Mirror
+neuron \cite{BrokenMirror2006} is a neuron that is activated either when a human acts an action or observes the
+same action performed by others. As these neurons are involved with the abilities such as
+empathy and perception of other individual’s intentions or emotions, they came up with 
+malfunctioning of mirror neuron in individuals with ASD \cite{BrokenMirror2006}. There are several studies
+that focus on the neurological deficits of individuals with autism and studying on their
+brain activities. Figure 2-1 demonstrates the areas in the brain that causes the reduce mirror
+neuron activities in individuals with autism.\\
+
+Individuals with autism might also have several other unusual social developmental
+behaviors that may appear in infancy or childhood. For instance children with autism show
+less attention to social stimuli (e.g. facial expressions, joint attention), and respond less
+when calling their names. Compared with typically developing children, older children or
+adults with autism can read facial expressions less effectively and recognize emotions
+behind specific facial expressions or the tone of voice with difficulties \cite{LogicScien1959}. In contrast to
+TD individuals, children with autism (i.e. high-functioning, Asperger syndrome) may be
+overwhelmed with social signals such as facial behaviors and expression and complexity
+of them and they suffer from interacting with other individuals, therefore they would prefer
+to be alone. That is why it would be difficult for individuals with autism to maintain social
+interaction with others \cite{InfantileAutism1975}.\\
+
+In order to diagnose and asses the aspects and score the social skill level of an individual
+with autism, several protocols are available. One of the commercially available protocols
+is called Autism Diagnostic Observation Schedule (ADOS) \cite{AutismDiagno1989} that consists of four
+modules and several structured tasks that are used to measure the social interaction levels
+of the subject and examiner. We are inspired by ADOS in designing our intervention
+protocols later described in Chapter 4. Hence, we briefly review ADOS in the next section.\\
+
 \subsection{Human-Robot Interaction (HRI)}
 
 \section{Experiment Setup and Data Collection}
@@ -649,6 +691,176 @@ Electrodemal activity (EDA) signals which is considered as a periphery
 --Nikola Tesla\\
 \subsection{EDA Signals}
 \subsection{Complex-Morlet (C-Morlet) Wavelet Transform}
+\subsubsection{Continuous Wavelet Transform}
+The EDA data recorded using the SC sensors are categorized as non-stationery signals\cite{AmbulatorySys2003, EmotionalState2013}. Hence, multiresolution analysis 
+techniques are essentially suitable to study the qualitative components of these 
+kinds of bio-signals \cite{AmbulatorySys2003}.  Note that continuous wavelet transform 
+(CWT) is one of the strongest and most widely used analytical tools for multiresolution 
+analysis. CWT has received considerable attention in processing signals with 
+non-stationary spectra \cite{WaveletFilter1992, SignalDecomp1989}; therefore, it is 
+utilized here to perform the time-frequency analysis of the EDA signals. In contrast 
+to many existing methods that utilize the wavelet coefficients of the raw signal to 
+extract features, our proposed method is essentially based on the spectrogram of the 
+original data in a specific range of frequency (0.5, 50)Hz, which provides more 
+information for other post-processing steps (i.e., feature extraction and classification).
+We apply the wavelet transform at various scales corresponding to the 
+aforementioned frequency range to calculate the spectrogram of the raw signal 
+(i.e., Short Time Fourier Transform (STFT), can also be used to calculate the 
+spectrogram of the raw signal). In addition, as opposed to many related studies 
+that utilize real-valued wavelet functions for feature extraction purposes, we have 
+employed the complex Morlet (C-Morlet) function with the proposed approach, as it 
+takes into account both the real and imaginary components of the raw signal, leading 
+to a more detailed feature extraction.\\
+
+The wavelet transform of a 1-D signal provides a decomposition of the time-domain 
+sequence at different scales, which are inversely related to their frequency contents\cite{SignalDecomp1989, ContinuWavelet2009} . This requires the time-domain signal under 
+investigation to be convolved with a time-domain function known as “mother wavelet”. 
+The CWT applies the wavelet function at different scales with continuous time-shift 
+of the mother wavelet over the input signal. As a consequence, it helps represent 
+the EDA signals at different levels of resolution. For instance, it results in large 
+coefficients in the transform domain when the wavelet function matches the input 
+signal, providing a multiscale representation of the EDA signal.\\
+
+Using a finite energy function $\Psi$(t) concentrated in the time domain, the CWT of 
+a signal x(t) is given by X($\alpha$,b) as follows \cite{WaveletFilter1992}:
+
+$X(a,b) = \int_{-\infty}^{+\infty}x(t)\frac{1}{\sqrt{a}} \Psi (\frac{t-b}{a}) dt$\newline
+
+where, $\alpha$, is the scale factor and represents dilation or contraction of the wavelet 
+function and b is the translation parameter that slides this function on the 
+time-domain sequence under analysis. Therefore, $\Psi$($\alpha$,b) is the scaled and translated 
+version of the corresponding mother wavelet. “*” is the conjugation operator.\\
+
+Note that the wavelet coefficients obtained from Eq. (1) essentially evaluate the 
+correlation between the signal x(t) and the wavelet function used at different 
+translations and scales. This implies that the wavelet coefficients calculated 
+over a range of scales and translations can be combined to reconstruct the original 
+signal as follows:
+
+$x(t) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} X(a,b) \Psi (\frac{t-b}{a}) dadb$\newline
+
+\subsubsection{Wavelet-Based Feature Extraction}
+The time-frequency analysis of various bio-signals has been addressed in numerous 
+related literature \cite{MultKernel2016, FFTSync2017}(Zhang et al., 2009). 
+It has been shown that the wavelet-domain feature space can improve the recognition 
+performance of different human activities using the signals emanated from the body 
+responses. Therefore, it essentially enhances the classification performance due to 
+the more distinctive feature space provided. \\
+
+In this paper, we focus on the time-frequency analysis of the EDA signal to provide 
+a new feature space based on which an emotion classification task can be done. As 
+opposed to some related studies that employ the raw time-domain signals for 
+classification purposes \cite{ArousalValence2017, EmotionClass2012}, we use the 
+amplitude of the CWT of the EDA signals to generate the features and drive the 
+classifier. Working in the wavelet-domain is essentially advantageous since the 
+wavelet transform probes the given signal at different scales, extracting more 
+information for other post-processing steps. In addition, the localized support 
+of the wavelet functions enables CWT-based analysis to match to the local variations 
+of the input time sequence \cite{WaveletFilter1992}. As a result, a more detailed 
+representation of the signal is provided in comparison with the raw time-domain signal.\\
+
+
+Figure \ref{cwt_eda} shows the amplitude of the CWT of a sample EDA signal at different scales 
+using a complex Morlet (C-Morlet) wavelet function. Different scales of the wavelet functions are convolved with the original 
+EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, 
+when the scaling parameter of the wavelet function increases, the larger features of 
+the input signal are augmented. As can be seen, due to the localization 
+property of the CWT, different structures of the input signal are extracted at each level 
+of decomposition, providing useful information for analyzing the recorded EDA signals.\\
+
+In this work, we have employed the C-Morlet wavelet function to process the acquired EDA 
+signals, as it has been well used for time-frequency analysis of different bio-signals 
+and classification \cite{MultKernel2016}. Figure \ref{feature} shows the wavelet-based 
+feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.\\
+
+On the other hand, the detailed structures of the 
+signal are better extracted when the scaling factor decreases.. Note that the impact 
+of different families of the wavelet functions 
+(e.g., Symlets, Daubechies, Coiflets) on the emotion classification will be evaluated 
+in the next subsection. The equation of the C-Morlet mother wavelet with fc as its central 
+frequency and fb as the bandwidth parameter is given as follows:
+
+$\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
+
+%\begin{figure}[tbp]
+%	\begin{center}
+%		\begin{tabular}{c}
+%			\epsfig{figure=./chapters/fig/cwt_eda.eps, scale = .7}\label{cwt_eda} \\
+%		\end{tabular}
+%		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet.  } \label{cwt_eda}
+%	\end{center}
+%\end{figure}
+%
+%\begin{figure}[tbp]
+%	\begin{center}
+%		\begin{tabular}{c}
+%			\epsfig{figure=./chapters/fig/wavelet_feature.eps, scale = .8}\label{feature} \\
+%		\end{tabular}
+%		\caption{The wavelet-based feature extraction. } \label{feature}
+%	\end{center}
+%\end{figure}
+
+\subsubsection{Support Vector Machine}
+The SVM classifier tends to separate data \\
+${D = \{x_i, y_i\}^{N}_{i=1}, x_i\in^{d}, y_i\in\{-1,+1\}}$
+by drawing an optimal hyperplane <w,x>+b=0 between classes such that the margin between 
+them becomes maximum \cite{SupportVector1995}. With reference to Figure \ref{svm}, 
+The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support 
+vectors that are circled inside the figure. H1 and H2 are 
+the supporting planes and the optimal hyperplane (OH) splits this margin such that it 
+stands at the same distance from each supporting hyperplane. This implies that the 
+margin between H1 and H2 is equal to 2 / $\parallel$w$\parallel$.
+In terms of linearly separable classes, the classifier is obtained by maximizing the 
+margin 2 / $\parallel$w$\parallel$, which is equivalent to minimizing $\parallel$w$\parallel$ / 2 
+with a constraint in convex quadratic programming (QP) as follows:
+
+$\min \frac{1}{2}||w||^2 s.t. y_i(<w, x_i> + b) \ge 1$\newline
+
+%\begin{figure}[tbp]
+%	\begin{center}
+%		\begin{tabular}{c}
+%			\epsfig{figure=./chapters/fig/svm.eps, scale = 1}\label{svm} \\
+%		\end{tabular}
+%		\caption{Canonical SVM for classifying two linearly separable classes. } \label{svm}
+%	\end{center}
+%\end{figure}
+
+where, w and b are the parameters of the hyperplane and <.,.> is the notation of 
+the inner product.\\
+
+However, different classes are seldom separable by a hyperplane since their samples 
+are overlapped in the feature space. In such cases, a slack variable ${\xi_i\geq}$ 0 and a 
+penalty parameter C $\geq$ 0 are used with the optimization step to obtain the best feasible 
+decision boundary. It is given as:
+
+$\min \frac{1}{2}||w||^2 + C(\Sigma_{i=1}^{N} \xi_i) s.t. y_i(<w, x_i> + b) \ge 1 - \xi_i$\newline
+
+Usually, various kernel functions are used to deal with the nonlinearly separable data. 
+As a result, the original data xi is mapped onto another feature space through a 
+projection function ${\varphi(\cdot)}$. It is not necessary to exactly know the equation of the 
+projection ${\varphi(\cdot)}$, but one can use a kernel function ${k(x_i,x_j)=<\varphi(x_i),\varphi(x_j)>}$. 
+This function is symmetric and satisfies the Mercer’s conditions. The Mercer’s conditions determine 
+if a candidate kernel is actually an inner-product kernel. Let ${k(x_i,x_j)}$ be a continuous 
+symmetric kernel defined in the closed interval ${t_1\leq t\leq t_2}$, the kernel can be expanded 
+into series ${\Sigma_(n=1)^\infty = \lambda_n\varphi_n(x_i)\varphi_n(x_j)}$, where 
+${\lambda_n > 0}$ are called eigenvalues and functions $\varphi$n are called eigenvectors in the expansion. 
+The fact that all the eigenvalues are nonnegative means that the kernel is positive 
+semidefinite \cite{SupportVector1995}. \\
+
+To maximize the margin, H1 and H2 are pushed apart until they reach the support vectors 
+on which the solution depends. To solve this optimization problem, the Lagrangian dual 
+of Eq. (5) is used as follows:
+
+$\max_\alpha \Sigma_{i=1}^{N} \alpha_i - \frac{1}{2} \Sigma_{i=1}^{N} \Sigma_{j=1}^{N} y_i y_j \alpha_i \alpha_j k(x_i, x_j)$\newline
+$s.t. 0 \le \alpha_i \le C, \Sigma_{i=1}^{N} \alpha_i y_i = 0, i = 1, ..., N$\newline
+
+where, ${\alpha_i}$s are the Lagrangian multipliers in which just a few number of them are 
+non-zero. These non-zero values are corresponding to the support vectors determining 
+the parameters of the hyperplane ${w = \Sigma_(i=1)^N\alpha_iy_ix_i }$. Therefore, the label 
+of the test sample ${(y_z)}$ is given by:
+$y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
+
+
 \subsection{Support Vector Machine (SVM)}
 
 \section{Experiment Results}

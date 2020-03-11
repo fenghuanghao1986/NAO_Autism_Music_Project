@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.1.31)  31 JAN 2020 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.3.10)  11 MAR 2020 01:22
 entering extended mode
 **./Transactions_on_Affective_Computing.tex
 (Transactions_on_Affective_Computing.tex
@@ -169,9 +169,73 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 512.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 631.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 640.
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--642
+
+LaTeX Warning: Citation `Epidemiology1966' on page 1 undefined on input line 64
+7.
+
+
+LaTeX Warning: Citation `BrokenMirror2006' on page 1 undefined on input line 65
+1.
+
+
+LaTeX Warning: Citation `BrokenMirror2006' on page 1 undefined on input line 65
+2.
+
+
+LaTeX Warning: Citation `BrokenMirror2006' on page 1 undefined on input line 65
+5.
+
+
+LaTeX Warning: Citation `BrokenMirror2006' on page 1 undefined on input line 65
+8.
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 641--662
+\OT1/ppl/m/n/9.53561 Individuals with autism spec-trum dis-or-der ex-pe-ri-ence
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--662
+\OT1/ppl/m/n/9.53561 ver-bal and non-ver-bal com-mu-ni-ca-tion im-pair-ments,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--662
+
+ []
+
+
+LaTeX Warning: Citation `LogicScien1959' on page 1 undefined on input line 668.
+
+
+
+LaTeX Warning: Citation `InfantileAutism1975' on page 1 undefined on input line
+ 673.
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 663--674
+\OT1/ppl/m/n/9.53561 joint at-ten-tion), and re-spond less when call-ing their
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--674
+
+ []
+
+
+LaTeX Warning: Citation `AutismDiagno1989' on page 1 undefined on input line 67
+7.
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 675--681
+\OT1/ppl/m/n/9.53561 struc-tured tasks that are used to mea-sure the so-cial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--681
 
  []
 
@@ -179,29 +243,267 @@ Underfull \hbox (badness 10000) in paragraph at lines 640--642
 
 
 ]
-(Transactions_on_Affective_Computing.aux) ) 
-Here is how much of TeX's memory you used:
- 1259 strings out of 492895
- 23425 string characters out of 3123735
- 87128 words of memory out of 3000000
- 5217 multiletter control sequences out of 15000+200000
- 45957 words of font info for 95 fonts, out of 3000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 29i,8n,31p,233b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/fengh/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/fengh/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/fengh/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/fengh/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/f
-engh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:
-/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.
-pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/
-uplri8a.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/z
-apfding/uzdr.pfb>
-Output written on Transactions_on_Affective_Computing.pdf (1 page, 78159 bytes)
+Underfull \hbox (badness 10000) in paragraph at lines 690--692
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 694.
+
+LaTeX Warning: Citation `AmbulatorySys2003' on page 2 undefined on input line 6
+95.
+
+
+LaTeX Warning: Citation `EmotionalState2013' on page 2 undefined on input line 
+695.
+
+
+LaTeX Warning: Citation `AmbulatorySys2003' on page 2 undefined on input line 6
+97.
+
+
+LaTeX Warning: Citation `WaveletFilter1992' on page 2 undefined on input line 7
+00.
+
+
+LaTeX Warning: Citation `SignalDecomp1989' on page 2 undefined on input line 70
+0.
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 695--714
+\OT1/ppl/m/n/9.53561 qual-i-ta-tive com-po-nents of these kinds of bio-signals
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 695--714
+\OT1/ppl/m/n/9.53561 tools for mul-tires-o-lu-tion anal-y-sis. CWT has re-ceive
+d
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 695--714
+\OT1/ppl/m/n/9.53561 to per-form the time-frequency anal-y-sis of the EDA
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 695--714
+\OT1/ppl/m/n/9.53561 the wavelet co-ef-fi-cients of the raw sig-nal to ex-tract
+
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 695--714
+\OT1/ppl/m/n/9.53561 scales cor-re-spond-ing to the afore-men-tioned fre-quency
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--714
+
+ []
+
+
+LaTeX Warning: Citation `SignalDecomp1989' on page 2 undefined on input line 71
+6.
+
+
+LaTeX Warning: Citation `ContinuWavelet2009' on page 2 undefined on input line 
+716.
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 715--723
+\OT1/ppl/m/n/9.53561 scales, which are in-versely re-lated to their fre-quency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--723
+
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 724
 .
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.53561> on input line 724.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6.6749> on input line 724.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.7678> on input line 724.
+
+LaTeX Warning: Citation `WaveletFilter1992' on page 2 undefined on input line 7
+25.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 727--728
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+
+LaTeX Warning: Citation `MultKernel2016' on page 2 undefined on input line 744.
+
+
+
+LaTeX Warning: Citation `FFTSync2017' on page 2 undefined on input line 744.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--749
+
+ []
+
+
+LaTeX Warning: Citation `ArousalValence2017' on page 2 undefined on input line 
+753.
+
+
+LaTeX Warning: Citation `EmotionClass2012' on page 2 undefined on input line 75
+3.
+
+
+LaTeX Warning: Citation `WaveletFilter1992' on page 2 undefined on input line 7
+59.
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 750--761
+\OT1/ppl/m/n/9.53561 raw time-domain sig-nals for clas-si-fi-ca-tion pur-poses
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--761
+
+ []
+
+
+LaTeX Warning: Reference `cwt_eda' on page 2 undefined on input line 763.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--770
+
+ []
+
+[2]
+
+LaTeX Warning: Citation `MultKernel2016' on page 3 undefined on input line 773.
+
+
+
+LaTeX Warning: Reference `feature' on page 3 undefined on input line 773.
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 771--775
+\OT1/ppl/m/n/9.53561 wavelet-based fea-ture ex-trac-tion, Us-ing the C-Morlet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
+
+ []
+
+
+LaTeX Warning: Citation `SupportVector1995' on page 3 undefined on input line 8
+07.
+
+
+LaTeX Warning: Reference `svm' on page 3 undefined on input line 807.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 828--830
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--837
+
+ []
+
+
+LaTeX Warning: Citation `SupportVector1995' on page 3 undefined on input line 8
+48.
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 838--849
+\OT1/ppl/m/n/9.53561 is ac-tu-ally an inner-product ker-nel. Let $[]$ be
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 838--849
+\OT1/ppl/m/n/9.53561 a con-tin-u-ous sym-met-ric ker-nel de-fined in the closed
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 838--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 854--856
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 857--862
+
+ []
+
+[3] [4
+
+] (Transactions_on_Affective_Computing.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1294 strings out of 492895
+ 24012 string characters out of 3123735
+ 91128 words of memory out of 3000000
+ 5250 multiletter control sequences out of 15000+200000
+ 48452 words of font info for 98 fonts, out of 3000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 29i,8n,31p,331b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmex10.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/fengh/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/fengh/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/fengh/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/U
+sers/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+7.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/fengh/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/fengh/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/fengh/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/feng
+h/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Use
+rs/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
+<C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr
+i8a.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/zapfd
+ing/uzdr.pfb>
+Output written on Transactions_on_Affective_Computing.pdf (4 pages, 196843 byte
+s).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

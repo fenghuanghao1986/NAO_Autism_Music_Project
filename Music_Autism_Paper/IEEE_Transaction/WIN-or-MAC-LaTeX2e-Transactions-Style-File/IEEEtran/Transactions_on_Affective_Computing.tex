@@ -1,4 +1,5 @@
 
+
 %% bare_jrnl_compsoc.tex
 %% V1.4b
 %% 2015/08/26
@@ -51,6 +52,8 @@
 
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
+\usepackage{epsfig}
+\usepackage{graphicx}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
@@ -375,7 +378,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{NO Answer from Face?\\Continuous Emotion Detection Using EDA Signals}
+\title{NO Answer from Face?\\Continuous Emotion Detection In EDA Signals}
 %
 %
 % author names and IEEE memberships
@@ -692,8 +695,8 @@ protocols later described in Chapter 4. Hence, we briefly review ADOS in the nex
 \subsection{EDA Signals}
 \subsection{Complex-Morlet (C-Morlet) Wavelet Transform}
 \subsubsection{Continuous Wavelet Transform}
-The EDA data recorded using the SC sensors are categorized as non-stationery signals\cite{AmbulatorySys2003, EmotionalState2013}. Hence, multiresolution analysis 
-techniques are essentially suitable to study the qualitative components of these 
+The EDA data recorded using the SC sensors are categorized as non-stationery signals\cite{AmbulatorySys2003, EmotionalState2013}. 
+Hence, multiresolution analysis techniques are essentially suitable to study the qualitative components of these 
 kinds of bio-signals \cite{AmbulatorySys2003}.  Note that continuous wavelet transform 
 (CWT) is one of the strongest and most widely used analytical tools for multiresolution 
 analysis. CWT has received considerable attention in processing signals with 
@@ -713,8 +716,8 @@ takes into account both the real and imaginary components of the raw signal, lea
 to a more detailed feature extraction.\\
 
 The wavelet transform of a 1-D signal provides a decomposition of the time-domain 
-sequence at different scales, which are inversely related to their frequency contents\cite{SignalDecomp1989, ContinuWavelet2009} . This requires the time-domain signal under 
-investigation to be convolved with a time-domain function known as “mother wavelet”. 
+sequence at different scales, which are inversely related to their frequency contents\cite{SignalDecomp1989, ContinuWavelet2009} . 
+This requires the time-domain signal under investigation to be convolved with a time-domain function known as “mother wavelet”. 
 The CWT applies the wavelet function at different scales with continuous time-shift 
 of the mother wavelet over the input signal. As a consequence, it helps represent 
 the EDA signals at different levels of resolution. For instance, it results in large 
@@ -722,7 +725,7 @@ coefficients in the transform domain when the wavelet function matches the input
 signal, providing a multiscale representation of the EDA signal.\\
 
 Using a finite energy function $\Psi$(t) concentrated in the time domain, the CWT of 
-a signal x(t) is given by X($\alpha$,b) as follows \cite{WaveletFilter1992}:
+a signal x(t) is given by X($\alpha$,b) as follows \cite{WaveletFilter1992}:\newline
 
 $X(a,b) = \int_{-\infty}^{+\infty}x(t)\frac{1}{\sqrt{a}} \Psi (\frac{t-b}{a}) dt$\newline
 
@@ -735,31 +738,18 @@ Note that the wavelet coefficients obtained from Eq. (1) essentially evaluate th
 correlation between the signal x(t) and the wavelet function used at different 
 translations and scales. This implies that the wavelet coefficients calculated 
 over a range of scales and translations can be combined to reconstruct the original 
-signal as follows:
+signal as follows:\newline
 
 $x(t) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} X(a,b) \Psi (\frac{t-b}{a}) dadb$\newline
 
-\subsubsection{Wavelet-Based Feature Extraction}
-The time-frequency analysis of various bio-signals has been addressed in numerous 
-related literature \cite{MultKernel2016, FFTSync2017}(Zhang et al., 2009). 
+\subsubsection{Wavelet-Based Feature Extraction and SVM}
 It has been shown that the wavelet-domain feature space can improve the recognition 
 performance of different human activities using the signals emanated from the body 
-responses. Therefore, it essentially enhances the classification performance due to 
+responses\cite{mypaper2018}. Therefore, it essentially enhances the classification performance due to 
 the more distinctive feature space provided. \\
 
 In this paper, we focus on the time-frequency analysis of the EDA signal to provide 
-a new feature space based on which an emotion classification task can be done. As 
-opposed to some related studies that employ the raw time-domain signals for 
-classification purposes \cite{ArousalValence2017, EmotionClass2012}, we use the 
-amplitude of the CWT of the EDA signals to generate the features and drive the 
-classifier. Working in the wavelet-domain is essentially advantageous since the 
-wavelet transform probes the given signal at different scales, extracting more 
-information for other post-processing steps. In addition, the localized support 
-of the wavelet functions enables CWT-based analysis to match to the local variations 
-of the input time sequence \cite{WaveletFilter1992}. As a result, a more detailed 
-representation of the signal is provided in comparison with the raw time-domain signal.\\
-
-
+a new feature space based on which an emotion classification task can be done. 
 Figure \ref{cwt_eda} shows the amplitude of the CWT of a sample EDA signal at different scales 
 using a complex Morlet (C-Morlet) wavelet function. Different scales of the wavelet functions are convolved with the original 
 EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, 
@@ -771,36 +761,37 @@ of decomposition, providing useful information for analyzing the recorded EDA si
 In this work, we have employed the C-Morlet wavelet function to process the acquired EDA 
 signals, as it has been well used for time-frequency analysis of different bio-signals 
 and classification \cite{MultKernel2016}. Figure \ref{feature} shows the wavelet-based 
-feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then, the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.\\
+feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet 
+coefficients are calculated at different scales. Then, the amplitude of these coefficients is 
+calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.\\
 
 On the other hand, the detailed structures of the 
 signal are better extracted when the scaling factor decreases.. Note that the impact 
 of different families of the wavelet functions 
 (e.g., Symlets, Daubechies, Coiflets) on the emotion classification will be evaluated 
 in the next subsection. The equation of the C-Morlet mother wavelet with fc as its central 
-frequency and fb as the bandwidth parameter is given as follows:
+frequency and fb as the bandwidth parameter is given as follows:\newline
 
 $\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
 
-%\begin{figure}[tbp]
+\begin{figure}[!htb]
 %	\begin{center}
-%		\begin{tabular}{c}
-%			\epsfig{figure=./chapters/fig/cwt_eda.eps, scale = .7}\label{cwt_eda} \\
-%		\end{tabular}
-%		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet.  } \label{cwt_eda}
+		\begin{tabular}{c}
+			\epsfig{figure=./fig/cwt_eda.eps, scale = .6}\label{cwt_eda} \\
+		\end{tabular}
+		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet.  } \label{cwt_eda}
 %	\end{center}
-%\end{figure}
-%
-%\begin{figure}[tbp]
-%	\begin{center}
-%		\begin{tabular}{c}
-%			\epsfig{figure=./chapters/fig/wavelet_feature.eps, scale = .8}\label{feature} \\
-%		\end{tabular}
-%		\caption{The wavelet-based feature extraction. } \label{feature}
-%	\end{center}
-%\end{figure}
+\end{figure}
 
-\subsubsection{Support Vector Machine}
+\begin{figure}[h]
+%	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./fig/wavelet_feature.eps, scale = .8}\label{feature} \\
+		\end{tabular}
+		\caption{The wavelet-based feature extraction. } \label{feature}
+%	\end{center}
+\end{figure}
+
 The SVM classifier tends to separate data \\
 ${D = \{x_i, y_i\}^{N}_{i=1}, x_i\in^{d}, y_i\in\{-1,+1\}}$
 by drawing an optimal hyperplane <w,x>+b=0 between classes such that the margin between 
@@ -812,18 +803,18 @@ stands at the same distance from each supporting hyperplane. This implies that t
 margin between H1 and H2 is equal to 2 / $\parallel$w$\parallel$.
 In terms of linearly separable classes, the classifier is obtained by maximizing the 
 margin 2 / $\parallel$w$\parallel$, which is equivalent to minimizing $\parallel$w$\parallel$ / 2 
-with a constraint in convex quadratic programming (QP) as follows:
+with a constraint in convex quadratic programming (QP) as follows:\newline
 
 $\min \frac{1}{2}||w||^2 s.t. y_i(<w, x_i> + b) \ge 1$\newline
 
-%\begin{figure}[tbp]
-%	\begin{center}
-%		\begin{tabular}{c}
-%			\epsfig{figure=./chapters/fig/svm.eps, scale = 1}\label{svm} \\
-%		\end{tabular}
-%		\caption{Canonical SVM for classifying two linearly separable classes. } \label{svm}
-%	\end{center}
-%\end{figure}
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./fig/svm.eps, scale = .6}\label{svm} \\
+		\end{tabular}
+		\caption{Canonical SVM for classifying two linearly separable classes. } \label{svm}
+	\end{center}
+\end{figure}
 
 where, w and b are the parameters of the hyperplane and <.,.> is the notation of 
 the inner product.\\
@@ -831,7 +822,7 @@ the inner product.\\
 However, different classes are seldom separable by a hyperplane since their samples 
 are overlapped in the feature space. In such cases, a slack variable ${\xi_i\geq}$ 0 and a 
 penalty parameter C $\geq$ 0 are used with the optimization step to obtain the best feasible 
-decision boundary. It is given as:
+decision boundary. It is given as:\newline
 
 $\min \frac{1}{2}||w||^2 + C(\Sigma_{i=1}^{N} \xi_i) s.t. y_i(<w, x_i> + b) \ge 1 - \xi_i$\newline
 
@@ -849,7 +840,7 @@ semidefinite \cite{SupportVector1995}. \\
 
 To maximize the margin, H1 and H2 are pushed apart until they reach the support vectors 
 on which the solution depends. To solve this optimization problem, the Lagrangian dual 
-of Eq. (5) is used as follows:
+of Eq. (5) is used as follows:\newline
 
 $\max_\alpha \Sigma_{i=1}^{N} \alpha_i - \frac{1}{2} \Sigma_{i=1}^{N} \Sigma_{j=1}^{N} y_i y_j \alpha_i \alpha_j k(x_i, x_j)$\newline
 $s.t. 0 \le \alpha_i \le C, \Sigma_{i=1}^{N} \alpha_i y_i = 0, i = 1, ..., N$\newline
@@ -857,13 +848,13 @@ $s.t. 0 \le \alpha_i \le C, \Sigma_{i=1}^{N} \alpha_i y_i = 0, i = 1, ..., N$\ne
 where, ${\alpha_i}$s are the Lagrangian multipliers in which just a few number of them are 
 non-zero. These non-zero values are corresponding to the support vectors determining 
 the parameters of the hyperplane ${w = \Sigma_(i=1)^N\alpha_iy_ix_i }$. Therefore, the label 
-of the test sample ${(y_z)}$ is given by:
+of the test sample ${(y_z)}$ is given by:\newline
+
 $y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
 
 
-\subsection{Support Vector Machine (SVM)}
-
 \section{Experiment Results}
+
 
 \section{Conclusion}
 

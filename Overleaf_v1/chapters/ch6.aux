@@ -1,0 +1,101 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}X-Elophone, A New Instrument}{106}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Xylophone Modification}{107}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Components Selection}{107}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{107}\protected@file@percent }
+\newlabel{sensor_s}{{6.1.1}{108}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces \textit  {Piezo Sensor Schematic}}}{108}\protected@file@percent }
+\newlabel{sensor_s}{{6.1}{108}}
+\@writefile{toc}{\contentsline {subparagraph}{B. Op-Amp: }{108}\protected@file@percent }
+\newlabel{sensor}{{6.1.1}{109}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit  {Piezo Sensor VS A Quarter}}}{109}\protected@file@percent }
+\newlabel{sensor}{{6.2}{109}}
+\newlabel{opAmp}{{6.1.1}{110}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit  {Schematic of Op-Amp MCP 6002}}}{110}\protected@file@percent }
+\newlabel{opAmp}{{6.3}{110}}
+\@writefile{toc}{\contentsline {subparagraph}{C. Multiplexer: }{111}\protected@file@percent }
+\newlabel{sensor_op}{{6.1.1}{112}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces \textit  {Schematic of Piezo Sensor Application as A Switch}}}{112}\protected@file@percent }
+\newlabel{sensor_op}{{6.4}{112}}
+\newlabel{mux}{{6.1.1}{113}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces \textit  {SparkFun Multiplexer Breakout 8 Channel (74HC4051) }}}{113}\protected@file@percent }
+\newlabel{mux}{{6.5}{113}}
+\@writefile{toc}{\contentsline {subparagraph}{D. Arduino UNO:}{113}\protected@file@percent }
+\newlabel{arduino}{{6.1.1}{114}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces \textit  {Arduino Uno Microprocessor }}}{114}\protected@file@percent }
+\newlabel{arduino}{{6.6}{114}}
+\citation{wang2003chuck}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}ChucK: An On-the-fly Audio Programming Language Based on C++}{115}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Hardware and Software Design}{116}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Circuit Design}{116}\protected@file@percent }
+\newlabel{schematic}{{6.2.1}{117}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces \textit  {The schematic design for the circuit.}}}{117}\protected@file@percent }
+\newlabel{schematic}{{6.7}{117}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Software Design}{117}\protected@file@percent }
+\newlabel{real}{{6.2.1}{118}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces \textit  {Circuit board in real size.}}}{118}\protected@file@percent }
+\newlabel{real}{{6.8}{118}}
+\newlabel{oscil}{{6.2.1}{119}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces \textit  {A sample input and output: green channel comes from the output of the mux, yellow channel comes from the output of the Op-Amp.}}}{119}\protected@file@percent }
+\newlabel{oscil}{{6.9}{119}}
+\newlabel{pin}{{6.2.2}{120}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces \textit  {Arduino code for pin assignment of mutiplexers. }}}{120}\protected@file@percent }
+\newlabel{pin}{{6.10}{120}}
+\newlabel{11pin}{{6.2.2}{121}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces \textit  {Loop in checking all pins for getting signals from the instrument. }}}{121}\protected@file@percent }
+\newlabel{11pin}{{6.11}{121}}
+\newlabel{pinselect}{{6.2.2}{122}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces \textit  {Selecting proper mux by decoding the signals. }}}{122}\protected@file@percent }
+\newlabel{pinselect}{{6.12}{122}}
+\newlabel{input}{{6.2.2}{123}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces \textit  {Control the input level in order to filter out small viberation noise to make sure getting meaningful input. }}}{123}\protected@file@percent }
+\newlabel{input}{{6.13}{123}}
+\newlabel{chuckflow}{{6.2.2}{124}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces \textit  {A Flow Chart of Using ChucK in Designing Sound Control System to X-Elophone }}}{124}\protected@file@percent }
+\newlabel{chuckflow}{{6.14}{124}}
+\newlabel{serial}{{6.2.2}{125}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces \textit  {ChucK Code Part I: Allows ChucK program to accept text information as strings via a serial interface specifically for Arduino board at port 9600. Each time Arduino sends a new string, events will be triggered, allowing following code get the string and process. }}}{125}\protected@file@percent }
+\newlabel{serial}{{6.15}{125}}
+\newlabel{sound}{{6.2.2}{126}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces \textit  {ChucK Code Part II: Create 2 STK instrument Mandolin and BeeThree with 2 sets of scales. Different sound effect also been assigned to instrument. }}}{126}\protected@file@percent }
+\newlabel{sound}{{6.16}{126}}
+\newlabel{insel}{{6.2.2}{126}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.17}{\ignorespaces \textit  {ChucK Code Part III: Using 1 and 0 to change instrument sound for broadcasting. }}}{126}\protected@file@percent }
+\newlabel{insel}{{6.17}{126}}
+\newlabel{in1}{{6.2.2}{127}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.18}{\ignorespaces \textit  {ChucK Code Part IV: Once in instrument 1, when the 11th note gets hit, 'change' value starts to switch the sound to the other instrument. Each note will be played between .25 to .5 second. All play information will be displayed on computer. }}}{127}\protected@file@percent }
+\newlabel{in1}{{6.18}{127}}
+\@setckpt{./chapters/ch6}{
+\setcounter{page}{128}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{6}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{18}
+\setcounter{table}{0}
+\setcounter{subfigure}{0}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{lotdepth}{1}
+\setcounter{Rand@No}{0}
+\setcounter{Random@Left}{1}
+\setcounter{Random@Right}{1000}
+\setcounter{Random@No@max}{0}
+\setcounter{parentequation}{0}
+\setcounter{r@tfl@t}{7}
+\setcounter{NAT@ctr}{0}
+\setcounter{LT@tables}{1}
+\setcounter{LT@chunks}{3}
+}

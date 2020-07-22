@@ -1,3 +1,4 @@
+// connect to the serial port 
 SerialIO.list() @=> string list[];
 
 for(int i; i < list.cap(); i++)
@@ -28,14 +29,14 @@ if(!cereal.open(device, SerialIO.B9600, SerialIO.ASCII))
 // Set up the music generators
 // synchronize to period
 .3::second => dur T;
-
+//set up sound effect to synthesizer
 SinOsc s => NRev n => Echo e => dac;
-
+//
 .1 => n.mix;
 .2 => e.mix;
 
 0 => int cnt;
-
+//note assignment to xylo array
 [60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77] @=> int xylo[];
 <<<"start the loop">>>;
 
@@ -61,14 +62,11 @@ while(true)
         <<< "in the if" >>>;
         chout <= "read line: " <= line <= IO.newline();
         
-        //StringTokenizer tok;
-        //tok.set(line);
         Std.atoi(line) => int pos;
         chout <= "pos: " <= pos <= IO.newline();   
         Std.mtof(xylo[pos]) => float f;
         chout <= "Freq: " <= f <= IO.newline();
         s.freq(f); // Change sin wave frequency 
-        //.05 => s.gain;
         .3 => s.gain;
         0 => s.phase;
 

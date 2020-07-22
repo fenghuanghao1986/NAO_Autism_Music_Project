@@ -1,0 +1,549 @@
+\begin{thebibliography}{10}
+
+\bibitem{abdi2010principal}
+Herv{\'e} Abdi and Lynne~J Williams.
+\newblock Principal component analysis.
+\newblock {\em Wiley interdisciplinary reviews: computational statistics},
+  2(4):433--459, 2010.
+
+\bibitem{FeatureSelection2006}
+Conati~C. Amershi, S. and H.~McLaren.
+\newblock Using feature selection and unsupervised clustering to identify
+  affective expressions in educational games.
+\newblock In {\em In Workshop in Motivational and Affective Issues in ITS, 8th
+  International Conference on Intelligent Tutoring Systems}, 2006.
+
+\bibitem{DSMIV2000}
+American~Psychiatric Association.
+\newblock Diagnostic and statistical manual of mental disorders: Dsm-iv.
+\newblock 2000.
+
+\bibitem{DoesMatter2006}
+K.~Dautenhahn B.~Robins and J.~Dubowski.
+\newblock Does appearance matter in the interaction of children with autism
+  with a humanoid robot?
+\newblock {\em Interaction Studies}, 7(3), 2006.
+
+\bibitem{InfantileAutism1975}
+Rutter~M. Bartak, L. and A~Cox.
+\newblock A comparative study of infantile autism and specific developmental
+  receptive language disorder.
+\newblock {\em British Journal of Psychiatry}, 126, 1975.
+
+\bibitem{bhat2013review}
+Anjana~Narayan Bhat and Sudha Srinivasan.
+\newblock A review of “music and movement” therapies for children with
+  autism: embodied interventions for multisystem development.
+\newblock {\em Frontiers in integrative neuroscience}, 7:22, 2013.
+
+\bibitem{boso2007effect}
+Marianna Boso, Enzo Emanuele, Vera Minazzi, Marta Abbamonte, and Pierluigi
+  Politi.
+\newblock Effect of long-term interactive music therapy on behavior profile and
+  musical skills in young adults with severe autism.
+\newblock {\em The journal of alternative and complementary medicine},
+  13(7):709--712, 2007.
+
+\bibitem{bryson2003autism}
+Susan~E Bryson, Sally~J Rogers, and Eric Fombonne.
+\newblock Autism spectrum disorders: early detection, intervention, education,
+  and psychopharmacological management.
+\newblock {\em The Canadian Journal of Psychiatry}, 48(8):506--516, 2003.
+
+\bibitem{AutismDiagno1989}
+J.~Heemsbergen H. Jordan L.~Mawhood C.~Lord, M.Rutter S.~Goode and E.~Schopler.
+\newblock Autism diagnostic observation schedule: A standardized observation of
+  communicative and social behavior.
+\newblock {\em Journal of Autism and Developmental Disorders}, 9(2), 1989.
+
+\bibitem{chang2011libsvm}
+Chih-Chung Chang and Chih-Jen Lin.
+\newblock Libsvm: A library for support vector machines.
+\newblock {\em ACM transactions on intelligent systems and technology (TIST)},
+  2(3):1--27, 2011.
+
+\bibitem{LookApproach1972}
+D.~W. Churchill and C.~Q. Bryson.
+\newblock Looking and approach behavior of psychotic and normal children as a
+  function of adult attention and preoccupation.
+\newblock {\em Comparative Psychiatry}, 13, 1972.
+
+\bibitem{corbett2008brief}
+Blythe~A Corbett, Kathryn Shickman, and Emilio Ferrer.
+\newblock Brief report: the effects of tomatis sound therapy on language in
+  children with autism.
+\newblock {\em Journal of autism and developmental disorders}, 38(3):562--566,
+  2008.
+
+\bibitem{SupportVector1995}
+C.~Cortes and V~Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine learning}, 20(3), 1995.
+
+\bibitem{costa2013your}
+Sandra Costa, Hagen Lehmann, Ben Robins, Kerstin Dautenhahn, and Filomena
+  Soares.
+\newblock ” where is your nose?”: developing body awareness skills among
+  children with autism using a humanoid robot.
+\newblock 2013.
+
+\bibitem{ToInteract2004}
+K.~Dautenhahn and I.~Werry.
+\newblock Towards interactive robots in autism therapy: background, motivation
+  and challenges.
+\newblock {\em Pragmatics and Cognition}, 12(1), 2004.
+
+\bibitem{AnimalAssist2002}
+N.~Edwards and A.~Beck.
+\newblock Animal-assisted therapy and nutrition in alzheimer's disease.
+\newblock {\em Western Journal of Nursing Research}, 24(6), October 2002.
+
+\bibitem{DefineSocial2005}
+D.~Feil-Seifer. and M.~J. Mataric.
+\newblock Defining socially assistive robotics.
+\newblock 2005.
+
+\bibitem{feng2018wavelet}
+Huanghao Feng, Hosein~M Golshan, and Mohammad~H Mahoor.
+\newblock A wavelet-based approach to emotion classification using eda signals.
+\newblock {\em Expert Systems with Applications}, 112:77--86, 2018.
+
+\bibitem{feng2013can}
+Huanghao Feng, Anibal Gutierrez, Jun Zhang, and Mohammad~H Mahoor.
+\newblock Can nao robot improve eye-gaze attention of children with high
+  functioning autism?
+\newblock In {\em 2013 IEEE International Conference on Healthcare
+  Informatics}, pages 484--484. IEEE, 2013.
+
+\bibitem{gifford2011using}
+Timothy Gifford, Sudha Srinivasan, Maninderjit Kaur, Dobri Dotov, Christian
+  Wanamaker, Gregory Dressler, Kerry MARSH, and Anjana BHAT.
+\newblock Using robots to teach musical rhythms to typically developing
+  children and children with autism.
+\newblock {\em University of Connecticut}, 2011.
+
+\bibitem{ContinuWavelet2009}
+Conway R. Leonard M. Meagher~D. Godfrey, A. and G.~M {\'O}laighin.
+\newblock A continuous wavelet transform and classification method for delirium
+  motoric subtyping.
+\newblock {\em IEEE Transactions on Neural Systems and Rehabilitation
+  Engineering}, 17(3), 2009.
+
+\bibitem{golshan2016multiple}
+Hosein~M Golshan, Adam~O Hebb, Sara~J Hanrahan, Joshua Nedrud, and Mohammad~H
+  Mahoor.
+\newblock A multiple kernel learning approach for human behavioral task
+  classification using stn-lfp signal.
+\newblock In {\em 2016 38th Annual International Conference of the IEEE
+  Engineering in Medicine and Biology Society (EMBC)}, pages 1030--1033. IEEE,
+  2016.
+
+\bibitem{golshan2017fft}
+Hosein~M Golshan, Adam~O Hebb, Sara~J Hanrahan, Joshua Nedrud, and Mohammad~H
+  Mahoor.
+\newblock An fft-based synchronization approach to recognize human behaviors
+  using stn-lfp signal.
+\newblock In {\em 2017 IEEE International Conference on Acoustics, Speech and
+  Signal Processing (ICASSP)}, pages 979--983. IEEE, 2017.
+
+\bibitem{golshan2018hierarchical}
+Hosein~M Golshan, Adam~O Hebb, Sara~J Hanrahan, Joshua Nedrud, and Mohammad~H
+  Mahoor.
+\newblock A hierarchical structure for human behavior classification using stn
+  local field potentials.
+\newblock {\em Journal of neuroscience methods}, 293:254--263, 2018.
+
+\bibitem{ArousalValence2017}
+Valenza G. Citi~L. Greco, A. and E.~P Scilingo.
+\newblock Arousal and valence recognition of affective sounds based on
+  electrodermal activity.
+\newblock {\em IEEE Sensors Journal}, 17(3), 2017.
+
+\bibitem{DiffEffect1966}
+C.~Hutt and M.~J. Vaizey.
+\newblock Differential effects of group density on social behavior.
+\newblock {\em Nature (London)}, 209, 1966.
+
+\bibitem{Fetch2002}
+H.~Huttenrauch.
+\newblock Fetch-and-carry with cero: observations from a long-term user study
+  with a service robot.
+\newblock September 2002.
+
+\bibitem{EmotionClass2012}
+Park B. J. Kim S.~H. Jang, E.~H. and J.~H. Sohn.
+\newblock Emotion classification based on physiological signals induced by
+  negative emotions: Discriminantion of negative emotions by machine learning
+  algorithm.
+\newblock In {\em In Networking, Sensing and Control (ICNSC), 2012 9th IEEE
+  International Conference}, 2012.
+
+\bibitem{EmotionClassifi2014}
+Park B. J. Kim S. H. Chung M. A. Park M.~S. Jang, E.~H. and J.~H Sohn.
+\newblock Emotion classification based on bio-signals emotion recognition using
+  machine learning algorithms.
+\newblock In {\em In Information Science, Electronics and Electrical
+  Engineering (ISEEE), 2014 International Conference}, 2014.
+
+\bibitem{RobotPlaymate2002}
+Werry J. Rae P. Dickerson P.~Stribling K.~Dautenhahn, I and B.~Ogden.
+\newblock Robotic playmates: Analysing interactive competencies of children
+  with autism playing with a mobile robot.
+\newblock 2002.
+
+\bibitem{AnalysisFactor2002}
+T.~Saito K.~Wada, T.~Shibata and K.~Tanie.
+\newblock Analysis of factors that bring mental effects to elderly people in
+  robot assisted activity.
+\newblock October 2002.
+
+\bibitem{AutisticDist1943}
+L~Kanner.
+\newblock Autistic distrubances of affective contact.
+\newblock {\em Nervous Child}, 2, 1943.
+
+\bibitem{Validation2013}
+K{\"u}ster D. Basedow~C. Kappas, A. and P.~Dente.
+\newblock A validation study of the affective q-sensor in different social
+  laboratory situations.
+\newblock In {\em In 53rd Annual Meeting of the Society for Psychophysiological
+  Research}, 2013.
+
+\bibitem{kim2008effects}
+Jinah Kim, Tony Wigram, and Christian Gold.
+\newblock The effects of improvisational music therapy on joint attention
+  behaviors in autistic children: a randomized controlled study.
+\newblock {\em Journal of autism and developmental disorders}, 38(9):1758,
+  2008.
+
+\bibitem{WearableDevice2016}
+Kim D. H. Park~W. Kwon, J. and L~Kim.
+\newblock A wearable device for emotional recognition using facial expression
+  and physiological response.
+\newblock In {\em In Engineering in Medicine and Biology Society (EMBC), 2016
+  IEEE 38th Annual International Conference}, August 2016.
+
+\bibitem{SkinConduct2006}
+A.~Kylli{\..a}inen and J.~K Hietanen.
+\newblock Skin conductance responses to another person's gaze in children with
+  autism.
+\newblock {\em Journal of autism and developmental disorders}, 36(4), 2006.
+
+\bibitem{EMGGSR2009}
+Belda-Lois J. M. Medina E. Campos~N. Laparra-Hern{\'a}ndez, J. and R~Poveda.
+\newblock Emg and gsr signals for evaluating user's perception of different
+  types of ceramic flooring.
+\newblock {\em International Journal of Industrial Ergonomics}, 39(2), 2009.
+
+\bibitem{EmotionResp2013}
+Messinger D. S. Kermol~E. Legisa, J. and L~Marlier.
+\newblock Emotional responses to odors in children with high-functioning
+  autism: autonomic arousal, facial behavior and self-report.
+\newblock {\em Journal of autism and developmental disorders}, 43(4), 2013.
+
+\bibitem{li2008prior}
+Jie Li, Liqing Zhang, Dacheng Tao, Han Sun, and Qibin Zhao.
+\newblock A prior neurophysiologic knowledge free tensor-based scheme for
+  single trial eeg classification.
+\newblock {\em IEEE Transactions on Neural Systems and Rehabilitation
+  Engineering}, 17(2):107--115, 2008.
+
+\bibitem{SympatheticSkin1981}
+L.~Lidberg and B.~G. Wallin.
+\newblock Sympathetic skin nerve discharges in relation to amplitude of skin
+  resistance responses.
+\newblock {\em Psychophysiology}, 18(3), 1981.
+
+\bibitem{lim2011effects}
+Hayoung~A Lim and Ellary Draper.
+\newblock The effects of music therapy incorporated with applied behavior
+  analysis verbal behavior approach for children with autism spectrum
+  disorders.
+\newblock {\em Journal of music therapy}, 48(4):532--550, 2011.
+
+\bibitem{MultPercep2007}
+Wang C. H. Wu T. L. Jeng S.~K. Lin, Y.~P. and J.~H. Chen.
+\newblock Multilayer perceptron for eeg signal classification during listening
+  to emotional music.
+\newblock In {\em In TENCON 2007-2007 IEEE Region 10 Conference}, 2007.
+
+\bibitem{EmotionInten2014}
+Liu~G. Liu, F. and X~Lai.
+\newblock Emotional intensity evaluation method based on galvanic skin response
+  signal.
+\newblock In {\em In Computational Intelligence and Design (ISCID), 2014
+  Seventh International Symposium}, 2014.
+
+\bibitem{liu2016human}
+Mingyang Liu, Di~Fan, Xiaohan Zhang, and Xiaopeng Gong.
+\newblock Human emotion recognition based on galvanic skin response signal
+  feature selection and svm.
+\newblock In {\em 2016 International Conference on Smart City and Systems
+  Engineering (ICSCSE)}, pages 157--160. IEEE, 2016.
+
+\bibitem{Epidemiology1966}
+V~Lotter.
+\newblock Epidemiology of autistic conditions in young children.
+\newblock {\em Social Psychiatry}, 20, 1966.
+
+\bibitem{SignalDecomp1989}
+S.~G. Mallat.
+\newblock A theory for multiresolution signal decomposition: the wavelet
+  representation.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  11(7), 1989.
+
+\bibitem{mavadati2014comparing}
+S~Mohammad Mavadati, Huanghao Feng, Anibal Gutierrez, and Mohammad~H Mahoor.
+\newblock Comparing the gaze responses of children with autism and typically
+  developed individuals in human-robot interaction.
+\newblock In {\em 2014 IEEE-RAS International Conference on Humanoid Robots},
+  pages 1128--1133. IEEE, 2014.
+
+\bibitem{mera2004emotion}
+Kazuya Mera and Takumi Ichimura.
+\newblock Emotion analyzing method using physiological state.
+\newblock In {\em International Conference on Knowledge-Based and Intelligent
+  Information and Engineering Systems}, pages 195--201. Springer, 2004.
+
+\bibitem{RollingRobot2002}
+F.~Michaud and S.~Caron. Roball.
+\newblock The rolling robot.
+\newblock {\em Autonomous Robots}, 12(2), March 2002.
+
+\bibitem{MobileRobotic2002}
+F.~Michaud and C.~Thberge-Turmel.
+\newblock Mobile robotic toys and autism.
+\newblock 2002.
+
+\bibitem{mihalache2020perceiving}
+Diana Mihalache, Huanghao Feng, Farzaneh Askari, Peter Sokol-Hessner, Eric~J
+  Moody, Mohammad~H Mahoor, and Timothy~D Sweeny.
+\newblock Perceiving gaze from head and eye rotations: An integrative challenge
+  for children and adults.
+\newblock {\em Developmental Science}, 23(2):e12886, 2020.
+
+\bibitem{molnar2012music}
+Istvan Molnar-Szakacs and Pamela Heaton.
+\newblock Music: a unique window into the world of autism.
+\newblock {\em Annals of the New York Academy of Sciences}, 1252(1):318--324,
+  2012.
+
+\bibitem{AmbulatorySys2003}
+Aminian K. Paraschiv-Ionescu A. Loew F. Bula C.~J. Najafi, B. and P.~Robert.
+\newblock Ambulatory system for human motion analysis using a kinematic sensor:
+  monitoring of daily physical activity in the elderly.
+\newblock {\em IEEE Transactions on biomedical Engineering}, 50(6), 2003.
+
+\bibitem{EmotionRecog2004}
+Alvarez K. Lisetti-C.~L. Nasoz, F. and N~Finkelstein.
+\newblock Emotion recognition from physiological signals using wireless sensors
+  for presence technologies.
+\newblock {\em Cognition, Technology and Work}, 6(1), 2004.
+
+\bibitem{SlowEcho2009}
+Winkielman~P. Oberman, L.~M. and V.~S Ramachandran.
+\newblock Slow echo: Facial emg evidence for the delay of spontaneous, but not
+  voluntary, emotional mimicry in children with autism spectrum disorders.
+\newblock {\em Developmental Science}, 12(4), 2009.
+
+\bibitem{ASIMO2011}
+L.~Ann Obringer and S.~Jonathan.
+\newblock Honda asimo robot.
+\newblock July 2011.
+
+\bibitem{ousley2012rapid}
+OY~Ousley, R~Arriaga, GD~Abowd, and M~Morrier.
+\newblock Rapid assessment of social-communicative abilities in infants at risk
+  for autism.
+\newblock {\em Technical Report, Georgia Tech}, 2012.
+
+\bibitem{peng2014using}
+Ying-Hua Peng, Cheng-Wei Lin, N~Michael Mayer, and Min-Liang Wang.
+\newblock Using a humanoid robot for music therapy with autistic children.
+\newblock In {\em 2014 CACS International Automatic Control Conference (CACS
+  2014)}, pages 156--160. IEEE, 2014.
+
+\bibitem{RobotMovement}
+Mari M.-Lusher~D. Pierno, A.~C. and U~Castiello.
+\newblock Robotic movement elicits visuomotor priming in children with autism.
+
+\bibitem{RoboticMovement}
+Mari M.-Lusher~D. Pierno, A.~C. and U~Castiello.
+\newblock Robotic movement elicits visuomotor priming in children with autism.
+\newblock {\em Neuropsychologia}, 46.
+
+\bibitem{LogicScien1959}
+K.~Popper.
+\newblock The logic of scientific discovery.
+\newblock 1959.
+
+\bibitem{BrokenMirror2006}
+Vilayanur~S. Ramachandran and Lindsay~M. Oberman.
+\newblock Broken mirrors: A theory of autism.
+\newblock {\em Scientific American}, 295(5), 2006.
+
+\bibitem{rapin2008autism}
+Isabelle Rapin and Roberto~F Tuchman.
+\newblock Autism: definition, neurobiology, screening, diagnosis.
+\newblock {\em Pediatric Clinics of North America}, 55(5):1129--1146, 2008.
+
+\bibitem{DecodeChild2013}
+Abowd G. Rozga-A. Romero M. Clements M. Sclaroff~S. Rehg, J. and H~Rao.
+\newblock Decoding children's social behavior.
+\newblock In {\em In Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, 2013.
+
+\bibitem{rehg2013decoding}
+James Rehg, Gregory Abowd, Agata Rozga, Mario Romero, Mark Clements, Stan
+  Sclaroff, Irfan Essa, O~Ousley, Yin Li, Chanho Kim, et~al.
+\newblock Decoding children's social behavior.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3414--3421, 2013.
+
+\bibitem{robins2012embodiment}
+Ben Robins, Kerstin Dautenhahn, and Paul Dickerson.
+\newblock Embodiment and cognitive learning--can a humanoid robot help children
+  with autism to learn about tactile social behaviour?
+\newblock In {\em International Conference on Social Robotics}, pages 66--75.
+  Springer, 2012.
+
+\bibitem{roper2003melodic}
+Nicole Roper.
+\newblock Melodic intonation therapy with young children with apraxia.
+\newblock {\em Bridges}, 1(8):1--7, 2003.
+
+\bibitem{Taxonomy2011}
+A.~Sano and R.~W. Picard.
+\newblock Toward a taxonomy of autonomic sleep patterns with electrodermal
+  activity.
+\newblock In {\em In Engineering in Medicine and Biology Society, EMBC, 2011
+  Annual International Conference of the IEEE}, 2011.
+
+\bibitem{ElectAct2000}
+S.~Schmidt and H~Walach.
+\newblock Electrodermal activity (eda)-state-of-the-art measurement and
+  techniques for parapsychological purposes.
+\newblock {\em the Journal of Parapsychology}, 64(2), 2000.
+
+\bibitem{SympatheticSkin1984}
+Halperin J. J. Boulu P.~H. Shahani, B.~T. and J~Cohen.
+\newblock Sympathetic skin response--a method of assessing unmyelinated axon
+  dysfunction in peripheral neuropathies.
+\newblock {\em Journal of Neurology, Neurosurgery and Psychiatry}, 47(5), 1984.
+
+\bibitem{EDA2016}
+Prakash N.~R. Sharma, V. and P.~Kalra.
+\newblock Eda wavelet features as social anxiety disorder (sad) estimator in
+  adolescent females.
+\newblock In {\em In Advances in Computing, Communications and Informatics
+  (ICACCI), 2016 International Conference}, 2016.
+
+\bibitem{SysObserv1968}
+Omitz E. M. Brown N.~B. Sorosky, A.~D. and E.~R. Ritvo.
+\newblock Systematic observations of autistic behavior.
+\newblock {\em Archives of General Psychiatry}, 18, 1968.
+
+\bibitem{AssociationBetween2013}
+Davis~R. Stagg, S.~D. and P~Heaton.
+\newblock Associations between language development and skin conductance
+  responses to faces and eye gaze in children with autism spectrum disorder.
+\newblock {\em Journal of autism and developmental disorders}, 43(10), 2013.
+
+\bibitem{stephens2008spontaneous}
+Carolyn~E Stephens.
+\newblock Spontaneous imitation by children with autism during a repetitive
+  musical play routine.
+\newblock {\em Autism}, 12(6):645--671, 2008.
+
+\bibitem{EmotionalState2013}
+M.~Swangnetr and D.~B. Kaber.
+\newblock Emotional state classification in patient-robot interaction using
+  wavelet analysis and statistics-based feature selection.
+\newblock {\em IEEE Transactions on Human-Machine Systems}, 43(1), 2013.
+
+\bibitem{swangnetr2012emotional}
+Manida Swangnetr and David~B Kaber.
+\newblock Emotional state classification in patient--robot interaction using
+  wavelet analysis and statistics-based feature selection.
+\newblock {\em IEEE Transactions on Human-Machine Systems}, 43(1):63--75, 2012.
+
+\bibitem{SocialInteract2003}
+I.~Nourbakhsh T.~Fong and K.~Dautenhahn.
+\newblock A survey of socially interactive robots.
+\newblock {\em Robotics and Autonomous Systems}, 42(3-4), 2003.
+
+\bibitem{taheri2015impact}
+Alireza Taheri, Minoo Alemi, Ali Meghdari, Hamidreza Pouretemad, Nasim~Mahboub
+  Basiri, and Pegah Poorgoldooz.
+\newblock Impact of humanoid social robots on treatment of a pair of iranian
+  autistic twins.
+\newblock In {\em International Conference on Social Robotics}, pages 623--632.
+  Springer, 2015.
+
+\bibitem{taheri2016social}
+Alireza Taheri, Ali Meghdari, Minoo Alemi, Hamidreza Pouretemad, Pegah
+  Poorgoldooz, and Maryam Roohbakhsh.
+\newblock Social robots and teaching music to autistic children: Myth or
+  reality?
+\newblock In {\em International Conference on Social Robotics}, pages 541--550.
+  Springer, 2016.
+
+\bibitem{EnhanceEmpiri2011}
+Diehl J.J. Villano. M. Wier K. Thomas B. Shea N. et~al Tang, K.
+\newblock Enhancing empirically-supported treatments for autism spectrum
+  disorders: A case study using an interactive robot.
+\newblock 2011.
+
+\bibitem{PrincipalComponent2000}
+Karjalainen P. A. Koistinen A.~S. Tarvainen, M.~P. and M.~V Valkonen-Korhonen.
+\newblock Principal component analysis of galvanic skin responses.
+\newblock In {\em In Engineering in Medicine and Biology Society, Proceedings
+  of the 22nd Annual International Conference of the IEEE}, 2000.
+
+\bibitem{DOMER2011}
+Crowell C. R. Wier K. Tang K. Thomas B. Shea N. et~al. Vallano, M.
+\newblock Domer: A wizard of oz interface for using interactive robots to
+  scaffold social skills for children with autism spectrum disorders.
+\newblock 2011.
+
+\bibitem{WaveletFilter1992}
+M.~Vetterli and C~Herley.
+\newblock Wavelets and filter banks: Theory and design.
+\newblock {\em IEEE transactions on signal processing}, 40(9), 1992.
+
+\bibitem{wainer2010collaborating}
+Joshua Wainer, Kerstin Dautenhahn, Ben Robins, and Farshid Amirabdollahian.
+\newblock Collaborating with kaspar: Using an autonomous humanoid robot to
+  foster cooperative dyadic play among children with autism.
+\newblock In {\em 2010 10th IEEE-RAS International Conference on Humanoid
+  Robots}, pages 631--638. IEEE, 2010.
+
+\bibitem{warwick1991music}
+Auriel Warwick and Juliette Alvin.
+\newblock {\em Music therapy for the autistic child}.
+\newblock Oxford University Press, 1991.
+
+\bibitem{Behavioral1964}
+S.~Wolff and S.~Chess.
+\newblock A behavioral study of schizophrenic children.
+\newblock 1964.
+
+\bibitem{BehaviorlaStudy1964}
+S.~Wolff and S~Chess.
+\newblock A behavioral study of schizophrenic children.
+\newblock {\em Acta Psychiatrica of Child Psychology and Psychiatry}, 40, 1964.
+
+\bibitem{HeteroKnow2016}
+Fu~Y. Jiang Y. G. Li~B. Xu, B. and L~Sigal.
+\newblock Heterogeneous knowledge transfer in video emotion recognition,
+  attribution and summarization.
+\newblock {\em IEEE Transactions on Affective Computing}, 2016.
+
+\bibitem{young2007toward}
+Susan Young and Julia Gillen.
+\newblock Toward a revised understanding of young children's musical
+  activities: Reflections from the" day in the life" project.
+\newblock 2007.
+
+\end{thebibliography}

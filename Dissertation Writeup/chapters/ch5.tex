@@ -1,0 +1,252 @@
+\chapter{Experimental Result}
+Several questions will be answered in terms of social skills in this chapter:
+1) Turn-taking: How well kids with autism hehave during the music activities;\\
+2) Motor control: How well ASD kids play the xylophone in terms of volume, pitch and accuracy
+after intervention sessions. e.g., a good multiple strikes should be recognized by 
+STFT as a sequence of frequencies;\\
+3) Social Engagement: How kids engage with different level of music teaching events;\\
+4) Emotion Fluctuation: How emotion change among activities? How emotion change in 
+single event? What is the different target and control groups?\\
+
+\section{Social Behavior Result}
+9 ASD and 7 TD participants finished this study in 8 months, all ASD subjects completed 
+6 sessions including intervention sessions and TDs for 2 sessions with only baseline/exit session. By using Wizard of Oz control
+style, a well trained researcher were conducting the baseline and exit sessions for better observation
+and evaluation quality of performance. With well designed fully automated intervention sessions, NAO were
+able to initiate music teaching activities with participants. 
+
+Since the music detection method was sensitive to the audio input, that requires clear and long lasting 
+sound from xylophone. From Figure \ref{warmup}, it is obvious that majority of subjects were able 
+to strike or play xylophone in proper way after one or two sessions. Notice that subject 101 and 
+102 had significant improvement curve during intervention sessions. Some of the subjects started 
+at a higher accuracy rate, and kept this rate above 80\%, which can be considered as consistent 
+motor control performance even with up and downs. Two subjects (103 \& 107) were having difficult 
+time with playing xylophone and following turn-taking cues with agent robot. This fact affected 
+the performance in following activities for both subjects.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/warm.eps, scale = 0.9}\label{warmup} \\
+		\end{tabular}
+		\caption{Motor Control Accuracy Result} \label{warmup}
+	\end{center}
+\end{figure}
+
+Figure \ref{song} shows the accuracy result of main music teaching activity for intervention sessions
+across all participants. Learning how to play one's favorite song can be considered as a motivation for ASD
+kids understanding and learning turn-taking skill. As described in previous section, the difficulty 
+level of this activity were designed uprising. By this fact, accuracy of the performance from participants 
+were expected to decrease. This activity requires participants able to concentrate and using joint attention skills
+in robot teaching stage and also respond properly afterwards. Enough waiting time were given after robot
+says: 'Now, you shall play right after my eye flashes', participants were also received an eye color change
+cue from the robot in order to complete a desired music-based social interaction. Different from warm
+up section, notes played in correct sequence of order can be considered as a good-count strike.
+From Figure \ref{song}, most of the participants were able to complete single/multiple notes practice with an
+average 77.36\%/69.38\% accuracy rate, although even with color hints, notes' pitch difference still can be a core 
+challenge for them. Due to the difficulty of session 4 and 5, worse performance comparing to previous 
+two sessions were accepted. However, more than half of the participants showed a consistent high performance
+accuracy or even better result than previous sessions. Combining the report from video annotators, 6 out 
+of 9 subjects showed strong engaging behavior in playing music, especially after first few sessions. Better 
+learn-play turn-taking rotation were performed over time, and significant increase of performance by 3 subjects, 
+reveal turn-taking skills were picked up from this activity.
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/song.eps, scale = 0.9}\label{song} \\
+		\end{tabular}
+		\caption{Main Music Teaching Performance Accuracy} \label{song}
+	\end{center}
+\end{figure}
+
+\section{Music Emotion Classification Result}
+Since we developed our emotion classification method based on the time-frequency analysis of the
+EDA signals, the main properties of the continuous wavelet transform assuming complex Morlet
+wavelet is first presented here. Then, the pre-processing steps, as well as the wavelet-based
+feature extraction scheme, are discussed. Finally, we briefly review the characteristics of the
+support vector machine as the classifier used with our approach.\\
+
+EDA signal was also collected in this study. By using the annotation and analysis method from 
+pre-study \cite{feng2018wavelet}, a music-event-based emotion classification result will 
+be presented below. In order to find out the emotion secret of ASD group, multiple comparison
+were made after annotate the videos. Different activities may cause emotion arousal change. 
+As presented above, warm up section and single activity practice section have same activity in 
+different level of intensities, and game play has the lowest difficulty and more relax. 
+
+In the first part of analysis, EDA signals were segmented into small event-based pieces according to 
+the number of "conversations" in each section. One "conversation" was defined with 3 movements:
+a) robot/participant demonstrates the note(s) to play; b) participant/robot repeat the note(s); 
+c) robot/participant presents the result, and each segmentation last about 45 seconds. The 
+continuous wavelet transform (CWT) of the data assuming complex Morlet (C-Morlet) wavelet function
+was used inside a frequency range of (0.5, 50)Hz, a SVM classifier was then employed to classify
+"conversation" segmentation among 3 sections using the wavelet-based features. Table \ref{tab1}
+shows the classification accuracy for the SVM classifier with different kernel functions. 
+As can be seen, emotion arousal change between S1 and S2, S2 and S3 can be classified using wavelet-
+based feature extraction SVM classifier with average accuracy of 76\% and 70\%. With highest 64\% of accuracy
+for S1 and S3, that may indicates less emotion changes between warm up and game sections. \\
+%please add a figure regarding the segmentation
+
+\begin{table*}[tbp]
+	\label{tab1}
+	\begin{center}
+		\begin{tabular}{llllll}
+			& Kernels                     & Accuracy & AUC & Precision & Recall \\
+			\hline
+			S1 vs S2       & \multirow{4}{*}{\textbf{Linear}}     & 75       & 78  & 76        & 72     \\
+			S1 vs S3       &                             & 57       & 59  & 56        & 69     \\
+			S2 vs S3       &                             & 69       & 72  & 64        & 86     \\
+			S1 vs S2 vs S3 &                             & \multicolumn{4}{l}{52}              \\
+			\hline
+			S1 vs S2       & \multirow{4}{*}{\textbf{Polynomial}} & 66       & 70  & 70        & 54     \\
+			S1 vs S3       &                             & 64       & 66  & 62        & 68     \\
+			S2 vs S3       &                             & 65       & 68  & 62        & 79     \\
+			S1 vs S2 vs S3 &                             & \multicolumn{4}{l}{50}              \\
+			\hline
+			S1 vs S2       & \multirow{4}{*}{\textbf{RBF}}        & 76       & 81  & 76        & 75     \\
+			S1 vs S3       &                             & 57       & 62  & 57        & 69     \\
+			S2 vs S3       &                             & 70       & 76  & 66        & 83     \\
+			S1 vs S2 vs S3 &                             & \multicolumn{4}{l}{53}              \\
+			\hline
+		\end{tabular}
+		\caption{Emotion change in different events using wavelet-based feature extraction under SVM classifier. }\label{tab1}
+	\end{center}
+\end{table*}
+
+In order to discover the emotion fluctuation inside of one task, each "conversation" section
+has been carefully divided into 3 segments as described above. Each segment last about 10 - 20 seconds.
+Table \ref{tab2} shows the full result of
+emotion fluctuation in warm up (S1) and music practice (S2) sections from intervention session. Notice that
+all of the segments cannot be classified properly using existing method. Both SVM and KNN show
+the stable results. This may suggests that ASD group may have less emotion fluctuation or arousal
+change once task starts even with various activities in it. Stable emotion arousal in single task
+could also benefit from the proper activity content, including robot agent play music and language
+usage during conversation. Friendly voice feedback was based on the performance delivered by participants
+were well written and stored in memory, both positive award while receive correct input and encouragement
+while play incorrect. Since emotion fluctuation can affect learning progress, less arousal change 
+indicates the design of intervention session were robust. 
+
+\begin{sidewaystable}[tbp]
+	\label{tab2}
+	\begin{center}
+		\resizebox{\columnwidth}{!}{
+		\begin{tabular}{ccccccccc}
+			\multicolumn{1}{l}{\multirow{3}{*}{}} & \multicolumn{5}{c}{Segmentation Comparison in Single Task}                                                                                                       \\
+			\hline
+			\multicolumn{1}{l}{}                  & \multicolumn{4}{c}{Warm up Section}                                                   & \multicolumn{4}{c}{Song Practice Section}                                                  \\
+			\hline
+			\multicolumn{1}{l}{}                  & Kernels                     & Accuracy & K value                & Accuracy & Kernels                     & Accuracy & K value                & Accuracy \\
+			\hline
+			learn vs play                                   & \multirow{4}{*}{Linar}      & 52.62    & \multirow{4}{*}{K = 1} & 54       & \multirow{4}{*}{Linar}      & 53.79    & \multirow{4}{*}{K = 1} & 52.41    \\
+			learn vs feedback                                   &                             & 53.38    &                        & 50.13    &                             & 53.1     &                        & 51.72    \\
+			play vs feedback                                   &                             & 47.5     &                        & 50.38    &                             & 54.31    &                        & 50.86    \\
+			learn vs play vs feedback                                 &                             & 35.08    &                        & 36.25    &                             & 35.52    &                        & 36.55    \\
+			\hline
+			learn vs play                                   & \multirow{4}{*}{Polynomial} & 49       & \multirow{4}{*}{K = 3} & 50.25    & \multirow{4}{*}{Polynomial} & 53.79    & \multirow{4}{*}{K = 3} & 50.69    \\
+			learn vs feedback                                 &                             & 50.75    &                        & 50.13    &                             & 50.86    &                        & 50.34    \\
+			play vs feedback                                   &                             & 49.87    &                        & 49.5     &                             & 49.14    &                        & 52.07    \\
+			learn vs play vs feedback                                 &                             & 33.92    &                        & 35.83    &                             & 34.71    &                        & 35.29    \\
+			\hline
+			learn vs play                                   & \multirow{4}{*}{RBF}        & 54.38    & \multirow{4}{*}{K = 5} & 48.37    & \multirow{4}{*}{RBF}        & 50.86    & \multirow{4}{*}{K = 5} & 50.17    \\
+			learn vs feedback                                   &                             & 55.75    &                        & 52.75    &                             & 53.97    &                        & 50.17    \\
+			play vs feedback                                   &                             & 51.12    &                        & 50       &                             & 53.79    &                        & 52.93    \\
+			learn vs play vs feedback                                 &                             & 36.83    &                        & 34.17    &                             & 34.83    &                        & 33.1    \\
+			\hline
+		\end{tabular}
+
+	}
+		\caption{Emotion change classification performance in single event with segmentations using both SVM and KNN classifier. }\label{tab2}
+	\end{center}
+\end{sidewaystable}
+
+Cross sections comparison also presented blow. Since each "conversation" contains 3 segments, it is 
+necessary to have specific segments from one task to compare with the other task corresponded to. 
+Table \ref{tab3} shows the classification rate in robot demo, kids play and robot feedback across
+warm up (S1) and music practice (S2) sections. By using RBF kernel, wavelet-based SVM classification rate has
+~80\% of accuracy for all 3 comparisons. This result also matches the result from Table \ref{tab1}. 
+
+\begin{table*}[tbp]
+	
+	\begin{center}
+		\label{tab3}
+		\begin{tabular}{lcccccc}
+			\multicolumn{1}{c}{\multirow{2}{*}{}} & \multicolumn{3}{c}{Accuracy of SVM} & \multicolumn{3}{c}{Accuracy of KNN} \\
+			\hline
+			\multicolumn{1}{c}{}                  & Linear   & Polynomial    & RBF    & K = 1   & K = 3     & K = 5     \\
+			\hline
+			learn 1 vs learn 2                                 & 73.45    & 69.31   & 80.86  & 73.28   & 71.03   & 65      \\
+			\hline
+			play 1 vs play 2                                 & 75.34    & 68.79   & 80     & 74.48   & 69.14   & 64.31   \\
+			\hline
+			feedback 1 vs feedback 2                                 & 76.38    & 69.48   & 80.34  & 74.14   & 69.14   & 66.9   
+		\end{tabular}
+		\caption{classification rate in robot demo, kids play and robot feedback across
+			warm up (S1) and music practice (S2) sections} 
+		\label{tab3}
+	\end{center}
+\end{table*}
+
+
+The types of activities and process of the session between baseline session for both group were 
+exactly the same. By using the "conversation" concept above, each of them has been segmented.
+Comparing with target and control groups using same classifier, 80\% of accuracy for detecting
+different groups. See Table \ref{tab3}. Video annotators also reported "unclear" in reading 
+facial expressions from ASD group. These combined messages suggests that, even with same activities
+different bio-reaction were completely opposite between TD and ASD groups. It has 
+also been reported that, significant improvement of music performance were shown in ASD group, 
+although both groups have similar performance at their baseline sessions. Further more, TD group 
+were shown more willing to try to make their performance as better as possible while they made
+mistakes.\\
+
+\begin{table*}[tbp]
+	\label{tab4}
+	
+	\begin{center}
+		\begin{tabular}{llllll}
+			& \textbf{Linear} & \textbf{Polynomial} & \textbf{RBF} \\
+			\hline
+			
+			\textbf{Accuracy}                          & 75              & 62.5                & 80           \\
+			\hline
+			\multirow{2}{*}{\textbf{Confusion Matrix}} & 63  37          & 50  50              & 81  19       \\
+			& 12  88          & 25  75              & 25  75       \\
+			\hline
+		\end{tabular}
+		\caption{TD vs ASD Emotion Changes from Baseline and Exit Sessions}\label{tab4}
+	\end{center}
+\end{table*}
+
+\section{Each Participant Has A Story}
+In this section I will list all details which need to be mentioned during the session for all asd kids.
+still working on it, not sure if it is a good idea?
+\subsection{Subject 101}
+\subsection{Subject 102}
+\subsection{Subject 103}
+\subsection{Subject 104}
+\subsection{Subject 105}
+\subsection{Subject 106}
+\subsection{Subject 107}
+\subsection{Subject 108}
+\subsection{Subject 109}
+
+\section{Summary}
+All the experimental results are presented in this chapter, some of the answers can be found out
+of them. According the report from annotators, most of the kids (both ASD and TD groups) shown 
+well turn-taking communication behavior among all sessions. However, difference can also be found
+comparing both groups. All TD participants could initiate the activities from the beginning of the
+session, while some of the ASD kids may need some help although after several visits of intervention
+sessions, most of them can perform well turn-taking skills as well as TD group. In terms of motor 
+control skill, as can be seen from Figure \ref{warmup}, most of the ASD participants
+can master this skill after first few visits. For the ones who may not play xylophone properly, a improvement
+also can be found in this figure. Based on the recorded videos and Figure \ref{song}, 
+more than half of the ASD kids shown well engagement during the intervention sessions. 
+Few of them need help from the researcher to complete tasks at first
+one or two sessions. Since the music was chosen by each individual, this could somehow motivate them
+more engage even with repetitive activites. From Chapter 4 we learned that emotion classification 
+using EDA signal can be possible, and a wavelet-based feature extraction method was developed and 
+applied in such research with younger age of children. In this chapter we adopted proposed approach 
+in order to decode the emotion fluctuation with music social activites for children with autism.
+Multiple experiment has been established in this chapter, emotion changes were compared across different
+events, within one activites and between target and control group. Detailed information has shown
+in tables from previous sections, and more detailed discussion and conclusion can be found in next
+chapter.

@@ -1,0 +1,83 @@
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Figures\nobreak \hfil \nobreak \hbox to1.55em{\hss vi\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }List of Tables\nobreak \hfil \nobreak \hbox to1.55em{\hss xv\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\penalty -\@highpenalty \relax \vskip 1.0em plus\p@ \@tempdima 1.5em\relax \begingroup \parindent \z@ \rightskip 1.55em\parfillskip -1.55em\unhbox \voidb@x \bfseries \advance \leftskip \@tempdima \hskip -\leftskip \hbox to\@tempdima {$\bullet $\hfil }Mathematical Notation\nobreak \hfil \nobreak \hbox to1.55em{\hss xvii\kern -\p@ \kern \p@ }\par \penalty \@highpenalty \endgroup \vskip -.15in
+\contentsline {chapter}{\numberline {1}Introduction}{1}%
+\contentsline {section}{\numberline {1.1}Autism Spectrum Disorders (ASD)}{1}%
+\contentsline {section}{\numberline {1.2}Socially Assistive Robotics}{3}%
+\contentsline {subsection}{\numberline {1.2.1}Socially Assistive Robots for Autism Therapy}{5}%
+\contentsline {section}{\numberline {1.3}Music Therapy for ASD}{8}%
+\contentsline {section}{\numberline {1.4}Contributions}{10}%
+\contentsline {section}{\numberline {1.5}Orgizaition}{12}%
+\contentsline {chapter}{\numberline {2}Related Works}{13}%
+\contentsline {section}{\numberline {2.1}Autism}{13}%
+\contentsline {subsection}{\numberline {2.1.1}Turn-Taking}{15}%
+\contentsline {subsection}{\numberline {2.1.2}Motor control}{16}%
+\contentsline {section}{\numberline {2.2}Human Robot Interaction in Autism}{17}%
+\contentsline {subsection}{\numberline {2.2.1}Interactive and Therapeutic Robots Designs for Autism}{18}%
+\contentsline {subsubsection}{Non-Humanoid Robots}{19}%
+\contentsline {subsubsection}{Humanoid Robots}{20}%
+\contentsline {subsection}{\numberline {2.2.2}Different Therapeutic approaches for Individuals with ASD}{21}%
+\contentsline {subsubsection}{Self-Initiated Interactions}{22}%
+\contentsline {subsubsection}{Turn-Taking Activities}{23}%
+\contentsline {subsubsection}{Expression/Emotion Recognition and Imitation}{24}%
+\contentsline {subsubsection}{Joint/ Eye-gaze Attention}{26}%
+\contentsline {subsection}{\numberline {2.2.3}Using NAO in Autism}{28}%
+\contentsline {section}{\numberline {2.3}Emotion Classification}{30}%
+\contentsline {subsection}{\numberline {2.3.1}Electrodermal activity (EDA)}{30}%
+\contentsline {subsection}{\numberline {2.3.2}Classification Applications}{32}%
+\contentsline {section}{\numberline {2.4}Music Therapy}{34}%
+\contentsline {chapter}{\numberline {3}Xylo-Bot: An Interactive Music Teaching System}{37}%
+\contentsline {section}{\numberline {3.1}Hardware Selection and Design}{38}%
+\contentsline {subsection}{\numberline {3.1.1}NAO: A Humanoid Robot}{38}%
+\contentsline {subsection}{\numberline {3.1.2}Accessories}{40}%
+\contentsline {subsubsection}{Xylophone: A Toy for Music Beginner}{41}%
+\contentsline {subsubsection}{Mallet Gripper Design}{42}%
+\contentsline {subsubsection}{Instrument Stand Design}{43}%
+\contentsline {section}{\numberline {3.2}Experimental Sessions Design}{43}%
+\contentsline {subsection}{\numberline {3.2.1}Experiment Room}{43}%
+\contentsline {subsection}{\numberline {3.2.2}Participant Selection}{45}%
+\contentsline {subsection}{\numberline {3.2.3}Session Detail}{47}%
+\contentsline {section}{\numberline {3.3}Module-Based Acoustic Music Interactive System Design}{49}%
+\contentsline {subsection}{\numberline {3.3.1}Module 1: Eye-hand Self-Calibration Micro-Adjustment}{51}%
+\contentsline {subsubsection}{Color-Based Object Tracking}{52}%
+\contentsline {subsection}{\numberline {3.3.2}Module 2: Joint Trajectory Generator}{52}%
+\contentsline {subsection}{\numberline {3.3.3}Module 3: Real-Time Performance Scoring Feedback}{54}%
+\contentsline {subsubsection}{A. Music Detection}{54}%
+\contentsline {subsubsection}{B. Intelligent Scoring-Feedback System}{55}%
+\contentsline {section}{\numberline {3.4}Summary}{58}%
+\contentsline {chapter}{\numberline {4}Pre-Study: A Wavelet-based Approach for Emotion Classification}{61}%
+\contentsline {section}{\numberline {4.1}Data Acquisition}{62}%
+\contentsline {section}{\numberline {4.2}Classification Method}{64}%
+\contentsline {subsection}{\numberline {4.2.1}Continuous Wavelet Transform}{64}%
+\contentsline {subsection}{\numberline {4.2.2}Wavelet-Based Feature Extraction}{67}%
+\contentsline {subsection}{\numberline {4.2.3}Support Vector Machine}{68}%
+\contentsline {section}{\numberline {4.3}Experimental Result}{74}%
+\contentsline {subsection}{\numberline {4.3.1}Determination of Mother Wavelet}{74}%
+\contentsline {subsection}{\numberline {4.3.2}Classification Result}{75}%
+\contentsline {section}{\numberline {4.4}Summary}{81}%
+\contentsline {chapter}{\numberline {5}Experimental Result}{82}%
+\contentsline {section}{\numberline {5.1}Social Behavior Result}{82}%
+\contentsline {section}{\numberline {5.2}Music Emotion Classification Result}{85}%
+\contentsline {section}{\numberline {5.3}Each Participant Has A Story}{90}%
+\contentsline {subsection}{\numberline {5.3.1}Subject 101}{90}%
+\contentsline {subsection}{\numberline {5.3.2}Subject 102}{90}%
+\contentsline {subsection}{\numberline {5.3.3}Subject 103}{90}%
+\contentsline {subsection}{\numberline {5.3.4}Subject 104}{90}%
+\contentsline {subsection}{\numberline {5.3.5}Subject 105}{90}%
+\contentsline {subsection}{\numberline {5.3.6}Subject 106}{90}%
+\contentsline {subsection}{\numberline {5.3.7}Subject 107}{90}%
+\contentsline {subsection}{\numberline {5.3.8}Subject 108}{90}%
+\contentsline {subsection}{\numberline {5.3.9}Subject 109}{90}%
+\contentsline {section}{\numberline {5.4}Summary}{90}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusion}{92}%
+\contentsline {chapter}{\numberline {7}Link The Future: X-Elophone, A New Instrument Experiment Design Concept}{96}%
+\contentsline {section}{\numberline {7.1}Xylophone Modification}{97}%
+\contentsline {subsection}{\numberline {7.1.1}Components Selection}{97}%
+\contentsline {subparagraph}{A. Piezo Vibration Sensor: }{97}%
+\contentsline {subparagraph}{B. Op-Amp: }{98}%
+\contentsline {subparagraph}{C. Multiplexer: }{101}%
+\contentsline {subparagraph}{D. Arduino UNO: }{104}%
+\contentsline {subsection}{\numberline {7.1.2}Circuit Design}{105}%
+\contentsline {section}{\numberline {7.2}Sound Design}{105}%
+\contentsline {subsection}{\numberline {7.2.1}ChucK: A On-the-fly Audio Programming Language}{105}%
+\contentsline {section}{\numberline {7.3}New Style Session Proposal}{106}%

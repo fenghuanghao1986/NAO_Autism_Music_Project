@@ -1,0 +1,56 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \textit {Chronological age-matched, ASD and Mental age-matched brain activities in forward speech \cite {redcay2008deviant}.}}}{18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \textit {Two samples of the annotation process, left shows some video frames associated with event 5 "tickling" and the right one shows the video frames of event "using the book as a hat". The corresponding EDA signals are shown under each case. While for the event 5 the EDA signal contains meaningful information, the EDA signal of event 4 does not contain useful information, likely due to the disengagement of the subject.}}}{47}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {The distribution of the emotions across all subjects and events. The abbreviations "ACC", "BOR", and "JOY" respectively correspond to the emotions "Acceptance", "Boredom", and "Joy".}}}{47}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other, the detailed structures of the signal are better extracted when the scaling decreases.}}}{53}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {The wavelet-based feature extraction. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.}}}{54}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.}}}{55}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Different mother wavelets used for feature extraction in this paper. The "db1", "coif1" and "sys2" wavelets are real-valued functions, while the "C-Morlet" function is complex-valued. The corresponding imaginary part of this wavelet function is highlighted in red inside the figure.}}}{59}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {A Humanoid Robot NAO: 25 Degrees of Freedom, 2 HD Cameras and 4 Microphones}}}{69}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {Microphone locations on NAO's head}}}{70}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {Actual Xylophone and Mallets from NAO's Bottom Camera}}}{71}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {Mallet Griper}}}{72}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \textit {Instrument Stand: (a) Left View (b) Top View (c) Front View.}}}{73}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \textit {Schematic robot-based therapy session and video capturing setting}}}{74}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \textit {Experiment Room}}}{75}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \textit {Block Diagram of Module-Based Acoustic Music Interactive System}}}{82}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \textit {Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.}}}{84}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \textit {Melody Detection with Short Time Fourier Transform}}}{87}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \textit {An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"}}}{88}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Motor Control Accuracy Result}}}{94}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \textit {Main Music Teaching Performance Accuracy}}}{95}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \textit {Normalized Turn-taking behavior result for all subjects during intervention sessions. }}}{97}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \textit {The distribution of the targeted emotions across all subjects and events. }}}{99}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \textit {Piezo Sensor Schematic}}}{108}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Piezo Sensor VS A Quarter}}}{109}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Schematic of Op-Amp MCP 6002}}}{110}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \textit {Schematic of Piezo Sensor Application as A Switch}}}{112}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \textit {SparkFun Multiplexer Breakout 8 Channel (74HC4051) }}}{113}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \textit {Arduino Uno Microprocessor }}}{114}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \textit {The schematic design for the circuit.}}}{117}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces \textit {Circuit board in real size.}}}{118}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces \textit {A sample input and output: green channel comes from the output of the mux, yellow channel comes from the output of the Op-Amp.}}}{119}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces \textit {Arduino code for pin assignment of mutiplexers. }}}{120}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces \textit {Loop in checking all pins for getting signals from the instrument. }}}{121}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces \textit {Selecting proper mux by decoding the signals. }}}{122}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces \textit {Control the input level in order to filter out small viberation noise to make sure getting meaningful input. }}}{123}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces \textit {A Flow Chart of Using ChucK in Designing Sound Control System to X-Elophone }}}{124}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces \textit {ChucK Code Part I: Allows ChucK program to accept text information as strings via a serial interface specifically for Arduino board at port 9600. Each time Arduino sends a new string, events will be triggered, allowing following code get the string and process. }}}{125}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces \textit {ChucK Code Part II: Create 2 STK instrument Mandolin and BeeThree with 2 sets of scales. Different sound effect also been assigned to instrument. }}}{126}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces \textit {ChucK Code Part III: Using 1 and 0 to change instrument sound for broadcasting. }}}{126}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces \textit {ChucK Code Part IV: Once in instrument 1, when the 11th note gets hit, 'change' value starts to switch the sound to the other instrument. Each note will be played between .25 to .5 second. All play information will be displayed on computer. }}}{127}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \textit {Subject 101}}}{130}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \textit {Subject 102}}}{131}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \textit {Subject 103}}}{133}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \textit {Subject 104}}}{134}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \textit {Subject 105}}}{135}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \textit {Subject 106}}}{137}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \textit {Subject 107}}}{139}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \textit {Subject 108}}}{140}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces \textit {Subject 109}}}{142}%

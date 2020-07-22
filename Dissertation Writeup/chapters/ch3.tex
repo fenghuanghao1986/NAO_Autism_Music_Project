@@ -1,0 +1,454 @@
+\chapter{Xylo-Bot: An Interactive Music Teaching System} 
+As mentioned above, music can be considered as a effective method
+for emotion and non-verbal communication. Individuals with ASD are interested in 
+interacting with social robot. Therefore, implement music therapy like intervention
+sessions using humanoid social robot become possible. A novel interactive human-robot 
+music teaching system design is presented in this chapter. Hardware and software
+design will be discussed in following sections including experiment room setup, robot 
+selection, instrument accessories and platform design.\\
+In order to make the robot play the xylophone properly and be able to conduct a
+music-based social interaction scenario, several things needed to be done. 
+First is to find a proper xylophone with correct timber; second, we 
+have to arrange the xylophone in the proper position in front of the robot 
+to make it visible and be reachable to play; after that, a set of challenge based 
+experimental sessions require to be constructed including baseline session, intervention
+sessions and exit session with various level of activities; finally, the
+module based interactive music teaching system will be designed and programmed 
+which can be implemented into the experimental sessions.\\
+
+\section{Hardware Selection and Design}
+
+\subsection{NAO: A Humanoid Robot}
+NAO, a humanoid robot were selected in the current research which sailed by SoftBank company. 
+NAO is 58 cm (23 inches) tall, with 25 degrees of freedom. Most of the human body
+movement can be performed by this robot. It also features an onboard multimedia 
+system including four microphones for voice recognition and sound localization, 
+two speakers for text-to-speech synthesis, and two HD cameras with maximum image 
+resolution 1280 x 960 for online observation. As shown in Figure \ref{nao_body}, these 
+utilities are located in the middle of forehead and mouth area. NAO’s 
+computer vision module includes facial and shape recognition units. By using the 
+vision feature of the robot, it can see the instrument from its lower camera 
+and be able to implement an eye-arm self-calibration system which allows the 
+robot to have real-time micro-adjustment of its arm joints in case of off 
+positioning before music play.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/naobody.eps, scale = .8}\label{nao_body} \\
+		\end{tabular}
+		\caption{A Humanoid Robot NAO: 25 Degrees of Freedom, 2 HD Cameras and 4 Microphones} \label{nao_body}
+	\end{center}
+\end{figure}
+
+The robot arms have a length of approximately 31 cm. Position feedback sensors
+are equipped in each joint of the robot in order to have real time localization
+information from them which could provide well protection for robot safety. Each arm
+has five degrees of freedom and is equipped with those sensors to measure the position  
+of joint movement. To determine the pose of the instrument and the mallets' heads, the robot 
+analyzes images from the lower monocular camera located in its head, which has a 
+diagonal field of view of 73 degrees. By using these dimensions, proper size instrument
+can be selected and more accessories can be built which will be presented in the follow
+sections.\\
+
+The four microphone locations embedded on the toy or NAO's head can be seen in figure \ref{mic_loc}. 
+According to the official Aldebaran documentation, these microphones have sensitivity 
+of 20mV/Pa +/-3dB at 1kHz, and an input frequency range of 150Hz - 12kHz. Data 
+will be recorded as a 16 bit, 48000Hz, 4 channels wave file which meets the 
+requirements for designing the online feedback audio score system will be described
+in later section.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/mic.eps, scale = 1.2}\label{mic_loc} \\
+		\end{tabular}
+		\caption{Microphone locations on NAO's head} \label{mic_loc}
+	\end{center}
+\end{figure}
+
+\subsection{Accessories}
+The purpose of this study is to have a toy-size humanoid robot to play and 
+teach music for children with autism. Some necessary accessories 
+needed to be purchased and made before the robot able to complete this task. 
+All accessories will be discussed in the following paragraphs.\\
+
+\subsubsection{Xylophone: A Toy for Music Beginner}
+In this system, due to NAO's open arms' length, a Sonor Toy Sound SM soprano-xylophone 
+with 11 sound bars of 2 cm in width were selected and purchased. The instrument has a size of 
+31 cm x 9.5 cm x 4 cm, including the resonating body. The smallest sound bar is 
+playable in an area of 2.8 cm x 2 cm, the largest in an area of 4.8 cm x 2 cm. The 
+instrument is diatonically tuned in C-Major/a-minor. See Figure \ref{xylo640}.
+The 11 bars of the xylophone represent 11 different notes (11 frequencies) which covers 
+one and half octave scale starting from C6 to F7. \\ 
+In order to provide music teaching enviorment system for children with autism, xylophone
+is one of the best choice for such study. Xylophone, as well known as marimba, has 
+categorized as a percussion instrument which consisting of a set of metal/wooden bars
+struck with mallets to produce fine musical tones. Other than keyboar or drum, for playing 
+xylophone properly, a unique techique need to be applied. A proper strike movement is
+required in order to produce a beautiful note coming out of xylophone. This action
+is perfect for practice motor control and the melody which played by user could also 
+support the music emotion learning. \\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/xylo640.eps, scale = .6}\label{xylo640} \\
+		\end{tabular}
+		\caption{Actual Xylophone and Mallets from NAO's Bottom Camera} \label{xylo640}
+	\end{center}
+\end{figure}
+
+\subsubsection{Mallet Gripper Design}
+For the mallets, we used the pair that came with the xylophone with a modified 
+3D printed griper which allows the robot hands to hold them properly. The mallets 
+are approximately 21 cm in length and include a head of 0.8 cm radius. Comparing 
+to other design, this mallet gripper prides nature hoding position for robot, and
+set up a proper modal for participants in holding the mallet stick in a good way. 
+See Figure \ref{griper}.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/grip.eps, scale = 0.5}\label{griper} \\
+		\end{tabular}
+		\caption{Mallet Griper} \label{griper}
+	\end{center}
+\end{figure}
+
+\subsubsection{Instrument Stand Design}
+By carefully measured dimentions, a wooden base was designed and laser cut to hold 
+the xylophone in a proper height for robot crouching position. Using this fine adjusted position,
+robot can easily fixed in a location and somehow have the same height level with the 
+participants which makes it more nature in teaching activities for the entire time.
+See Figure \ref{stand}.\\
+%insert a pic with session on going
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/left_view.eps, scale = 0.3}\label{left} \\
+			(a)\\
+			\epsfig{figure=./chapters/fig/top_view.eps, scale = 0.3
+			} \label{top}\\
+			(b)\\
+			\epsfig{figure=./chapters/fig/front_view.eps, scale = 0.6} \label{front}\\
+			(c)
+		\end{tabular}
+		\caption{Instrument Stand: (a) Left View (b) Top View (c) Front View.} \label{stand}
+	\end{center}
+\end{figure}
+
+\section{Experimental Sessions Design}
+
+\subsection{Experiment Room}
+All the sessions were held in a 11ft x 9.5ft x 10ft room located in the Ritchie School of Engineering Room 248, University of Denver.
+6 HD surveillance cameras installed at corners, side wall and ceiling of the experimental room see Figure \ref{room}. 
+One mini hidden microphone attached at the ceiling camera for sending real-time audio to the observation room in order to let the care
+giver to listen to. An external hand-held audio recorder were set in front of the participant during
+sessions for collecting high quality audios for future process.
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/room.eps, scale = .6}\label{room} \\
+		\end{tabular}
+		\caption{Schematic robot-based therapy session and video capturing setting} \label{room}
+	\end{center}
+\end{figure}
+
+\begin{sidewaysfigure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/room_pana.eps, scale = .35}\label{room_pana} \\
+		\end{tabular}
+		\caption{Experiment Room} \label{room_pana}
+	\end{center}
+\end{sidewaysfigure}
+
+As shown in Figure \ref{room_pana}, the observation room is located at the back of the one-way
+mirror facing at the rear side of participants in order to avoid distraction while sessions on going.
+Real-time video and audio were broadcasting to the observation room during sessions, which
+allowed researchers to observe and to record in the meantime. Parents behind the mirror may also 
+call off the session in case of emergency.\\
+
+\subsection{Participant Selection}
+Nine ASD kids (average age: 11.73, std: 3.11) and 7 TD kids (average age: 10.22, std: 2.06) were recruited in this
+study. All participants were selected from the potential subject pool with help from Psychology department. 
+For each participant in ASD group, 6 sessions were delivered including baseline session,
+intervention sessions and exit session. As for TD control group, only baseline and exit sessions 
+were required for each participant. Every session lasts for 30-60 minutes total depends on the difficulty
+of each session and the performance of individuals. Typically, baseline and exit sessions length 
+can be compariable for same subject. As for intervention sessions, duration should gradually increase
+one after another due to the challenge level uprising.\\
+
+\subsection{Session Detail}
+Baseline and exit session contains 2 activities which are 1) music practice and 2) music game play.
+Participants were asked to complete a challenge like full song play, starting from single note strike
+with color hint. Multiple notes, half song play and full song play were coming one by one as long as 
+participants aced the previous task. After practice part done, a freshly designed music game will be 
+presented to participants which contains three novel entertaining game modes in it, participants
+were allowed to communicate with robot regarding which mode to play with. Mode 1): robot will randomly
+pick a song from its song bank and play for kids, after each play, a music feeling will be request from 
+participants in order to find out whether music emotion can be recognized from early age of children; 
+Mode 2): a sequence of melody will be randomly generated by robot with consonance (happy or confortable feeling) 
+or dissonance (sad or unfortable feeling) style, an oral emotion feeling from participants will be requested 
+and physical playback afterwards; Mode 3): allows participants to have a 5 seconds of free play and challenge the robot to
+imitate from the participants what just played by them, after robot complete playing, performance will be rated by
+the participants which provide a teaching experience for all subjects. Note that, there was no limitation 
+for how many trails or modes each individual who wants to play for each visit, but at least play each mode 
+once in single session. The only difference between baseline and exit session was the song which used in them, 
+in baseline session, "Twinkle Twinkle Little Star" was used as a standard entry level song for all 
+participants, and a customized song were chosen by each individual for exit session in order to 
+motivate participants for better learning music, which makes it more difficult from the baseline session. 
+By using the Module-Based Acoustic Music Interactive System, inputing multiple songs become possible and
+less time consuming. More than 10 songs are collected in the song bank, such as "Can Can" by Offenbach, 
+"Shake if off" by Talor Swift, "Spongebob Square Pants" from Spongebob cartoon and "You are my Sunshaine"
+by Johnny Cash etc. Music styles are not only kid's song like "Twinkle Twinkle" but also across clasic, 
+pop, ACG, folk and more can be played by using such platform. Because of the variate music style NAO
+can play, learning motivation can be successfully delivered among all sessions.\\
+
+Each intervention session has divided into three parts: S1) warm up; S2) single activity practice (with color hint); 
+and S3) music game play. Starting from intervention sessions, a motivated customized song were used in the following 
+sessions and have them more engage to multiple repetitive activities. 
+The purpose of having warm up section is to have the motor control skill been practiced 
+and meanwhile to help participants implement the motor skills in following activities. Single activity was 
+based on music practice from baseline/exit session, other then those sessions, single activity will
+only have one type of music practice each individual session, for instance, single note play were 
+delivered in the first intervention session, then the next time this practice will become multiple notes 
+play and the level of difficulty for music play were gradually increased session after session. This was in
+order to make a challenge based engagement activity for ASD group for better motivation and emotion stimuli. 
+As for music game play were remain the same as baseline/exit session. See details in Table \ref{session_detail}\\
+
+\begin{sidewaystable}[tbp]
+	\begin{center}
+		\resizebox{\columnwidth}{!}{
+\begin{tabular}{cccll}
+	{\color[HTML]{666666} Session \#}          & {\color[HTML]{666666} Session Type}                              & {\color[HTML]{666666} Outline}                                                                                                                        & \multicolumn{1}{c}{{\color[HTML]{666666} Session Details}}                                                                                                                           & \multicolumn{1}{c}{{\color[HTML]{666666} Session Purpose}}                                                                                                             \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 1. Computer music listing, the participant will   be asked to listen to few music pieces composed by professional;}                                            & {\color[HTML]{666666} Have better understanding of how ASD group   perceive emotions from music.Compare EDA signals between ASD and TD groups,   find out similarity.} \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 2. Participant should   describe the feeling based on what they just listened, make selection on   computer or tell researcher/therapist;}                     & {\color[HTML]{666666} Compare EDA signals between ASD and TD groups,   find out similarity.}                                                                           \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{\multirow{-3}{*}{{\color[HTML]{666666} Full   activities with "Twinkle Twinkle Little Star" whole song play,   human assessment}}} & {\color[HTML]{666666} 3. Participant free play the   music pieces (2 mins), computer/researcher record to see which music which   played /liked the most from Step 1.}               &                                                                                                                                                                        \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 1. NAO plays the   the music piece select by participant;}                                                                                                     & {\color[HTML]{666666} Getting social   baseline from both groups in different tasks for future usage;}                                                                 \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 2. Teach music piece from   Step 1 gradually, form single strike, color strike, rhythm strike, multiple   strike the entire music piece.}                      & {\color[HTML]{666666} Compare difference between both groups.}                                                                                                         \\
+	\multirow{-6}{*}{{\color[HTML]{666666} 1}} & \multirow{-6}{*}{{\color[HTML]{666666} Baseline   Session}}      & \multirow{-3}{*}{{\color[HTML]{666666} Music Game}}                                                                                                   & {\color[HTML]{666666} 3. Participant free play   xylophone (2 mins), NAO record how kids played for post process.}                                                                   &                                                                                                                                                                        \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 1. Participant   should hit an arbitrary bar after each robot’s struck;}                                                                                       & {\color[HTML]{666666} Improve in Joint   Attention skills;}                                                                                                            \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 2. Repeat Step 1, while the   participant should use both hands in order;}                                                                                     & {\color[HTML]{666666} Colors Recognition.}                                                                                                                             \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 3. NAO strikes single bar   associate with a random color, and participant should select the proper color   on a computer screen;}                             &                                                                                                                                                                        \\
+	\multirow{-4}{*}{{\color[HTML]{666666} 2}} & {\color[HTML]{666666} }                                          & \multirow{-4}{*}{{\color[HTML]{666666} Signal note practice with color hints, robot assessment}}                                                      & {\color[HTML]{666666} 4. NAO show Red, Green, Blue,   Pink on its eyes, participant strike the matching color on xylophone.}                                                         &                                                                                                                                                                        \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 1. Review Step 4 from Session 2;}                                                                                                                              & {\color[HTML]{666666} Improve Verbal short-term Memory;}                                                                                                               \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 2. NAO demonstrates hitting   one or two bars in order and verbally repeats “one-two” with the movement;}                                                      & {\color[HTML]{666666} Improve the perception of numbers and counting.}                                                                                                 \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 3. Participant verbally says   “one-two” along with robot hitting movement;}                                                                                   &                                                                                                                                                                        \\
+	\multirow{-4}{*}{{\color[HTML]{666666} 3}} & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{\multirow{-4}{*}{{\color[HTML]{666666} Multiple notes practice with color hints, robot assessment}}}                               & {\color[HTML]{666666} 4. Repeat Step 2, use “color   names” instead of “one-two”, kid should imitate the strikes along with oral   response.}                                        &                                                                                                                                                                        \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 1. Review Step 4   from Session 3;}                                                                                                                            & {\color[HTML]{666666} Improve auditory   imitation skill;}                                                                                                             \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 2. Imitation from the robot   while striking 3 or 4 notes in order considering the time interval between   each notes with saying “colors”;}                   & {\color[HTML]{666666} Good cooperation between eye and hands   movements;}                                                                                             \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 3. Repeat Step 2 without oral   response.}                                                                                                                     & {\color[HTML]{666666} Improve the Visual pursuit;}                                                                                                                     \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & {\color[HTML]{666666} }                                                                                                                               & {\color[HTML]{666666} 4. Participant play 3 or 4   notes on a virtual xylophone on tablet/computer, NAO imitate what has been   played on real xylophone.}                           & {\color[HTML]{666666} Sharing attention between different tasks;}                                                                                                      \\
+	\multirow{-5}{*}{{\color[HTML]{666666} 4}} & {\color[HTML]{666666} }                                          & \multirow{-5}{*}{{\color[HTML]{666666} First half song practice with color hints}}                                                                    &                                                                                                                                                                                      & {\color[HTML]{666666} Improve in playing turn-taking and group games   in robot-child interactions.}                                                                   \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 1. Review Step 3 from Session 4;}                                                                                                                              & {\color[HTML]{666666} Working memory of children with autism, Dual   task performance;}                                                                                \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 2. NAO demonstrates striking   2 or 3 notes with saying “note names from A to G”, participant verbally   repeats the notes name while robot hitting the bars;} & {\color[HTML]{666666} Improve in joint attention skill;}                                                                                                               \\
+	{\color[HTML]{666666} }                    & {\color[HTML]{666666} }                                          & \multicolumn{1}{l}{{\color[HTML]{666666} }}                                                                                                           & {\color[HTML]{666666} 3. Imitation from the robot   while striking 3 or 4 notes in order considering the time interval between   each notes with saying “note names/colors”;}        & {\color[HTML]{666666} Improve in shifting attention skill;}                                                                                                            \\
+	\multirow{-4}{*}{{\color[HTML]{666666} 5}} & \multirow{-17}{*}{{\color[HTML]{666666} Intervention   Session}} & \multicolumn{1}{l}{\multirow{-4}{*}{{\color[HTML]{666666} Second half song practice with color hints, robot assessment}}}                             &                                                                                                                                                                                      & {\color[HTML]{666666} Improve in auditory memory of children.}                                                                                                         \\
+	{\color[HTML]{666666} 6}                   & {\color[HTML]{666666} Exit Session}                              & \multicolumn{1}{l}{{\color[HTML]{666666} Full Activities   with customized whole song play, human assessment}}                                        & {\color[HTML]{666666} 1. Repeat   Pre-Session}                                                                                                                                       & {\color[HTML]{666666} Compare results   between ASD vs TD, Pre-Session vs Post-Session.}                                                                              
+\end{tabular}
+}
+\label{session_detail}
+\end{center}
+\end{sidewaystable}
+
+\section{Module-Based Acoustic Music Interactive System Design}
+In this section, a novel module-based robot-music teaching system will be presented. 
+Several missions need to be accomplished here: a) make robot play sequence of notes or melody
+fluently; b) have robot play note accurately; c) be able to adopt multiple songs easily;
+d) be able to have social communication between robot and participants; e) be able to 
+deliver learning and teaching experience for participants; f) fast response and accurate
+decision making. In order to fulfill these tasks, a module-based acoustic music interactive system
+were designed in this wokr. Three modules have been built in this intelligent system including Module 1: eye-hand 
+self-calibration micro-adjustment; Module 2: joint trajectory generator; and 
+Module 3: real time performance scoring feedback. See Figure \ref{module}.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/module_blocks.eps, scale = .5}\label{module} \\
+		\end{tabular}
+		\caption{Block Diagram of Module-Based Acustic Music Interactive System} \label{module}
+	\end{center}
+\end{figure}
+
+\subsection{Module 1: Eye-hand Self-Calibration Micro-Adjustment}
+Knowledge about the parameters of the robot's kinematic model is essential for 
+tasks requiring high precision, such as playing the xylophone. While the kinematic 
+structure is known from the construction plan, errors can occur, e.g., due to the 
+imperfect manufacturing. After multiple rounds of testing, it was found the targeted angle chain 
+of arms never actually equals the returned chain. We therefore used a 
+calibration method to accurately eliminate these errors.\\
+ 
+
+\subsubsection{Color-Based Object Tracking}
+To play the xylophone, the robot has to be able to adjust its motions according to
+the estimated relative position of the instrument and the heads of the beaters it is 
+holding. To estimate these poses, adopted in this thesis, we 
+used a color-based technique.\\
+The main idea is, based on the RGB color of the center blue bar, given a hypothesis 
+about the instrument's pose, one can project the contour of the object's model into the 
+camera image and compare them to actually observed contour. In this way, it is possible 
+to estimate the likelihood of the pose hypothesis. By using this method, it allows
+the robot to track the instrument with very low cost in real-time. See Figure \ref{color_detection}\\
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/blue.eps, scale = 0.3}\label{single_color_a} \\
+			(a)\\
+			\epsfig{figure=./chapters/fig/all_color.eps, scale = 0.3
+			} \label{all_color_b}\\
+			(b)\\
+			\epsfig{figure=./chapters/fig/color_detection.eps, scale = 0.6} \label{color_detection_c}\\
+			(c)
+			\end{tabular}
+			\caption{Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.} \label{color_detection}
+	\end{center}
+\end{figure}
+
+\subsection{Module 2: Joint Trajectory Generator}
+Our system parses a list of hex-decimal numbers (from 1 to b) to obtain the sequence
+of notes to play. It converts the notes into a joint trajectory using the beating
+configurations obtained from inverse kinematics as control points. The timestamps
+for the control points will be defined by the user in order to meet the experiment requirement.
+The trajectory is then computed using Bezier interpolation in joint space by the
+manufacturer-provided API and then sent to the robot controller for execution. In this
+way, the robot plays in-time with the song.\\
+
+\subsection{Module 3: Real-Time Performance Scoring Feedback}
+The purpose of this system is to provide a real-life interaction experience using 
+music therapy to teach kids social skills and music knowledge.  In this scoring 
+system, two core features were designed to complete the task: 1) music detection;
+2) intelligent scoring-feedback system.\\
+
+
+\subsubsection{A. Music Detection}
+Music, in the understanding of science and technology, can be considered as a combination 
+of time and frequency. In order to make the robot detect a sequence of frequencies, we adopted the 
+short-time Fourier transform (STFT) to this audio feedback system. This allows the robot to 
+be able to understand the music played by users and provide the proper feedback as
+a music teaching instructor.\\
+
+The short-time Fourier transform (STFT) , is a Fourier-related transform used to 
+determine the sinusoidal frequency and phase content of local sections of a signal 
+as it changes over time. In practice, the procedure for computing STFTs is to divide 
+a longer time signal into shorter segments of equal length and then compute the 
+Fourier transform separately on each shorter segment. This reveals the Fourier 
+spectrum on each shorter segment. One then usually plots the changing spectra as 
+a function of time. In the discrete time case, the data to be transformed could 
+be broken up into chunks or frames (which usually overlap each other, to reduce 
+artifacts at the boundary). Each chunk is Fourier transformed, and the complex 
+result is added to a matrix, which records magnitude and phase for each point in 
+time and frequency. This can be expressed as:
+\\
+
+${\displaystyle \mathbf {STFT} \{x[n]\}(m,\omega )\equiv X(m,\omega )=\sum _{n=-\infty }^{\infty }x[n]w[n-m]e^{-j\omega n}}$
+\\
+
+likewise, with signal x[n] and window w[n]. In this case, m is discrete and $\omega$ 
+is continuous, but in most typical applications, the STFT is performed on a computer 
+using the Fast Fourier Transform, so both variables are discrete and quantized.\\
+The magnitude squared of the STFT yields the spectrogram representation of the Power 
+Spectral Density of the function:
+\\
+
+${\displaystyle \operatorname {spectrogram} \{x(t)\}(\tau ,\omega )\equiv |X(\tau ,\omega )|^{2}}$\\
+
+After the robot detects the notes from user input, a list of hex-decimal number will be
+returned. This list will be used in two purposes: 1) to compare with the target list
+for scoring and sending feedback to user; 2) used as a new input to have
+robot playback in the game session as discussed in the next chapter.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/stft.eps, scale = 1.5}\label{stft} \\
+		\end{tabular}
+		\caption{Melody Detection with Short Time Fourier Transform} \label{stft}
+	\end{center}
+\end{figure}
+
+\subsubsection{B. Intelligent Scoring-Feedback System}
+In order to compare the detected notes and the target notes, we used an algorithm
+which is normally used in information theory linguistics called Levenshtein Distance.
+This algorithm is a string metric for measuring the difference between two sequences.\\
+
+In our case, the Levenshtein distance between two string-like hex-decimal numbers 
+${\displaystyle a,b}$ (of length ${\displaystyle |a|}$ and ${\displaystyle |b|}$ respectively) 
+is given by ${\displaystyle \operatorname {lev} _{a,b}(|a|,|b|)}$ where
+\\
+
+${\displaystyle \qquad \operatorname {lev} _{a,b}(i,j)={\begin{cases}\max(i,j)&{\text{ if }}\min(i,j)=0,\\\min {\begin{cases}\operatorname {lev} _{a,b}(i-1,j)+1\\\operatorname {lev} _{a,b}(i,j-1)+1\\\operatorname {lev} _{a,b}(i-1,j-1)+1_{(a_{i}\neq b_{j})}\end{cases}}&{\text{ otherwise.}}\end{cases}}}$\\
+\\
+
+where ${\displaystyle 1_{(a_{i}\neq b_{j})}}$ is the indicator function equal to 0 when 
+${\displaystyle a_{i}=b_{j}}$ and equal to 1 otherwise, and ${\displaystyle \operatorname {lev} _{a,b}(i,j)}$ 
+is the distance between the first ${\displaystyle i}$ characters of ${\displaystyle a}$ and the
+first ${\displaystyle j}$ characters of ${\displaystyle b}$.
+
+Note that the first element in the minimum corresponds to deletion (from ${\displaystyle a}$ to 
+${\displaystyle b}$), the second to insertion and the third to match or mismatch, depending on 
+whether the respective symbols are the same. Table \ref{LD} demonstrates how to apply this
+principle in finding the Levenshtein distance of two words "Sunday" and "Saturday".\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/example_LD.eps, scale = .6}\label{LD} \\
+		\end{tabular}
+		\caption{An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"} \label{LD}
+	\end{center}
+\end{figure}
+
+Based on the real life situation, we defined a likelihood margin for determining whether the result
+is good or bad: \\
+  
+${likelihood = \dfrac{len(target) - lev_{target,source}}{len(target)}}$\\
+
+where if the likelihood is greater than 66\% - 72\%, the system will consider it as a good result.
+This result will be passed to the accuracy calculation system to have the robot decide whether it
+needs to add more dosage to the practice. More details will be discussed in the next chapters
+as it relates to the experiment design.\\
+
+\section{Summary}
+In this chapter, we have discussed both hardware and software design for the experiment sessions
+by using humanoid social assistive robot NAO in music teaching and playing.\\
+
+From Chapter One, we determined to have NAO as a music teaching instructor be able
+to both teach children simple music and deliver social content simultaneously.
+In order to have the system ready, we first chose the proper agent, a robot named NAO, which is
+kid-friendly and has complex social abilities. Second, based on the size of the robot, some necessary
+accessories were purchased and handcrafted. A toy-sized color coded xylophone became the
+best option and based on the size and position, a wooden based xylophone stand was 
+customized and assembled. Due to the limitation of NAO hands size, a pair of mallet gripers 
+were 3-D printed and customized. At last, an intelligent module-based acoustic music 
+interactive system was designed fully from scratch in order to complete the well designed experiment 
+sessions. With all preparation, three modules were able to have the robot 
+play, listen and teach the music freely. This allows NAO to become a great companion for 
+children in both music learning and social communication. \\
+
+Experiment session contains 3 types: baseline session, intervention sessions and exit session.
+A set of difficulty gradually increased music teaching activities were well designed among all sessions
+in order to deliver better music content for participants. Both ASD and TD group kids were
+experiencing a game like music challenge from playing single note to the whole song. Music
+game were designed to keep the session less tedious comparing to the learning part, it also
+provides a oppertunity for us to learn more about the difference in learning and teaching 
+music from our participants.\\
+
+Module-based acoustic music interactive system design were challenging. Several problems needed
+to be solved. In order to imporve the robot strike xylophone accuracy, Module 1 provides an autonomous 
+self awareness positioning system for the robot to localize the instrument and make micro adjustment 
+for arm joints that helps NAO plays the note bar properly. Multiple songs were required be able to 
+played by NAO, program each song with specific arm movements sounds ridiculous. A easy music score
+inputing method need to be completed before session starts. Module 2 allows the robot to be able 
+to play any customized song of the user's request. This means that any songs which can be translated 
+to either C-Major or a-minor key can have a well-trained person type in the hex-decimal playable 
+score and allow the robot to be able to play it in seconds. Music teaching requests real-time feedback,
+Module 3 was designed for providing real life music teaching experience for system users. Two key features
+of this module are designed: music detection and smart scoring feedback. Short time Fourier transform
+and Levenshtein distance are adopted to fulfill the requirement which allows the robot to understand
+music and provide proper dosage of practice and oral feedback to users.\\
+

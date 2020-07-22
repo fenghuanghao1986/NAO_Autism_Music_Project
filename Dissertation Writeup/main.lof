@@ -1,0 +1,34 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \textit {A Humanoid Robot NAO: 25 Degrees of Freedom, 2 HD Cameras and 4 Microphones}}}{39}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Microphone locations on NAO's head}}}{41}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Actual Xylophone and Mallets from NAO's Bottom Camera}}}{42}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Mallet Griper}}}{43}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Instrument Stand: (a) Left View (b) Top View (c) Front View.}}}{44}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Schematic robot-based therapy session and video capturing setting}}}{45}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {Experiment Room}}}{46}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces \textit {Block Diagram of Module-Based Acustic Music Interactive System}}}{51}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Color Detection From NAO's Bottom Camera: (a) Single Blue Color Detection (b) Full Instrument Color Detection (c) Color Based Edge Detection.}}}{53}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \textit {Melody Detection with Short Time Fourier Transform}}}{56}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces \textit {An Example of Compute Levenshtein Distance for "Sunday" and "Saturday"}}}{57}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {Two samples of the annotation process, left shows some video frames associated with event 5 "tickling" and the right one shows the video frames of event "using the book as a hat". The corresponding EDA signals are shown under each case. While for the event 5 the EDA signal contains meaningful information, the EDA signal of event 4 does not contain useful information, likely due to the disengagement of the subject.}}}{63}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {The distribution of the emotions across all subjects and events. The abbreviations "ACC", "BOR", and "JOY" respectively correspond to the emotions "Acceptance", "Boredom", and "Joy".}}}{64}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other, the detailed structures of the signal are better extracted when the scaling decreases.}}}{69}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {The wavelet-based feature extraction. Uisng the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.}}}{70}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \textit {Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.}}}{72}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \textit {Different mother wavelets used for feature extraction in this paper. The "db1", "coif1" and "sys2" wavelets are real-valued functions, while the "C-Morlet" function is complex-valued. The corresponding imaginary part of this wavelet function si highlighted in red insid the figure.}}}{75}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Motor Control Accuracy Result}}}{83}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \textit {Main Music Teaching Performance Accuracy}}}{85}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \textit {Piezo Sensor Schematic}}}{98}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \textit {Piezo Sensor VS A Quarter}}}{99}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \textit {Schematic of Op-Amp MCP 6002}}}{100}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \textit {Schematic of Piezo Sensor Application as A Switch}}}{102}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \textit {SparkFun Multiplexer Breakout 8 Channel (74HC4051) }}}{103}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \textit {Arduino Uno Microprocessor }}}{104}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces \textit {The complete design of the new xylophone circuit. }}}{106}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces \textit {ChucK Flowchart }}}{107}%

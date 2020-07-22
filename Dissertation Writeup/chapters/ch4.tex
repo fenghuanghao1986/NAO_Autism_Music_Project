@@ -1,0 +1,440 @@
+\chapter{Pre-Study: A Wavelet-based Approach for Emotion Classification}
+In this chapter we are going to discuss the emotion classification method which will be
+used in the music teaching platform. The purpose of this pre-study is to have better
+understanding of emotion changes with young children and discover an automated method
+for emotion classification in children using Electrodermal activity signals (EDA). 
+The purpose of this pre-study is to find a possible method for comparing the difference 
+between non-autistic and autistic groups regarding the emotion changes in music social stimuli.\\
+
+\section{Data Acquisition}
+The dataset utilized in this pre-study constitutes a collection of multimodal recordings of social and 
+communicative behavior of a hundred kids whose younger than thirty months provided by the Georgia 
+Institute of Technology \cite{rehg2013decoding}. All data was collected within the Child Study 
+Lab (CSL) at Georgia school, under a university-approved IRB protocol. The laboratory was 
+300-square feet area, and also the temperature/humidity of the area for all sessions was 
+kept an equivalent. Based on the dataset description, every session lasted 3–5 minutes and the 
+EDA signals (the frequency rate is 32 Hz) were collected from two Q-sensors attached to 
+left and right wrists, and also the entire experiment was video-recorded. A collection of semi-structured 
+play interactions with adults, called Multi-modal Dyadic Behavior (MMDB), was designed 
+for the experimental sessions to stimulate different emotions: event 1: “greeting”, 
+event 2: “playing with a ball”, event 3: “looking at a book and turning its pages”,
+event 4: “using the book as a hat”, and event 5: “tickling”. These experiments are aimed 
+at analyzing and decipherment the children’s social communicative behavior at early ages 
+and are in keeping with the Rapid-ABC play protocol \cite{ousley2012rapid}.\\
+The annotation was administrated supported the temporal relation between the video frames and 
+the recorded EDA sequences of every subject. In different words, the annotators went through 
+the entire video file of every event frame by frame, and designated the frames regarding 
+the initiation finish of an emotion. Meanwhile, the corresponding sequences of 
+the EDA signals were hold on to come up with the dataset for every perceived emotion. During 
+the annotation, 2 dominant emotions were recognizable; events two (with average 
+duration of forty five seconds) and 5 (average period of thirty five seconds) stimulate the “Joy” feeling 
+and event three (with a mean period of sixty seconds) stimulates “Boredom”. With respect 
+to event 1, “greeting”, it had been tough to assign a selected feeling to it; but, 
+the annotators most frequently used “Acceptance” for this event. Additionally, we tend to excluded 
+event 4 from our experiments since the length of this event (on average nine seconds) 
+was terribly short compared with different events (on average fifty seconds for other events), 
+and the annotators weren't ready to determine any specific feeling triggered by this event. 
+Figure\ref{kid_eda} shows the above-described procedure diagrammatically. Besides, the distribution 
+of different emotions across all subjects and events is given in Figure \ref{emotions}.
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/fig1.eps, scale = .7}\label{kid_eda} \\
+		\end{tabular}
+		\caption{Two samples of the annotation process, left shows some video frames associated with event 5 "tickling"
+		and the right one shows the video frames of event "using the book as a hat". The corresponding EDA signals are
+		shown under each case. While for the event 5 the EDA signal contains meaningful information, the EDA signal of 
+		event 4 does not contain useful information, likely due to the disengagement of the subject.} 
+	\end{center}
+\end{figure}
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/fig2.eps, scale = 1}\label{emotions} \\
+		\end{tabular}
+		\caption{The distribution of the emotions across all subjects and events. The abbreviations "ACC", "BOR", and 
+		"JOY" respectively correspond to the emotions "Acceptance", "Boredom", and "Joy".} 
+	\end{center}
+\end{figure}
+
+
+\section{Classification Method}
+Since we have a tendency to developed our emotion classification methodology supported the time-frequency analysis 
+of the EDA signals, the most properties of the continuous wavelet transform assumptive 
+complex Morlet wavelet is first given here. Then, the pre-processing steps, as well 
+as the wavelet-based feature extraction stage, are mentioned. Finally, we shortly review 
+the characteristics of the support vector machine as the classifier used with our approach.
+
+\subsection{Continuous Wavelet Transform}
+The EDA data recorded using the SC sensors are categorized as non-stationery signals\cite{AmbulatorySys2003, EmotionalState2013}. Hence, multiresolution analysis 
+techniques are essentially suitable to study the qualitative components of these 
+kinds of bio-signals \cite{AmbulatorySys2003}. Note that continuous wavelet transform 
+(CWT) is one of the strongest and most widely used analytical tools for multiresolution 
+analysis. CWT has received considerable attention in processing signals with 
+non-stationary spectra \cite{WaveletFilter1992, SignalDecomp1989}; therefore, it is 
+utilized here to perform the time-frequency analysis of the EDA signals. In contrast 
+to many existing methods that utilize the wavelet coefficients of the raw signal to 
+extract features, our proposed method is essentially based on the spectrogram of the 
+original data in a specific range of frequency (0.5, 50)Hz, which provides more 
+information for other post-processing steps (i.e., feature extraction and classification).
+We apply the wavelet transform at various scales corresponding to the 
+aforementioned frequency range to calculate the spectrogram of the raw signal 
+(i.e., Short Time Fourier Transform (STFT), can also be used to calculate the 
+spectrogram of the raw signal). In addition, as opposed to many related studies 
+that utilize real-valued wavelet functions for feature extraction purposes, we have 
+employed the complex Morlet (C-Morlet) function with the proposed approach, as it  
+takes into account both the real and imaginary components of the raw signal, leading 
+to a more detailed feature extraction.\\
+
+The wavelet transform of a 1-D signal provides a decomposition of the time-domain 
+sequence at different scales, which are inversely related to their frequency contents\cite{SignalDecomp1989, ContinuWavelet2009} . 
+This requires the time-domain signal under 
+investigation to be convolved with a time-domain function known as “mother wavelet”. 
+The CWT applies the wavelet function at different scales with continuous time-shift 
+of the mother wavelet over the input signal. As a consequence, it helps represent 
+the EDA signals at different levels of resolution. For instance, it results in large 
+coefficients in the transform domain when the wavelet function matches the input 
+signal, providing a multiscale representation of the EDA signal.\\
+
+Using a finite energy function $\Psi$(t) concentrated in the time domain, the CWT of 
+a signal x(t) is given by X($\alpha$,b) as follows \cite{WaveletFilter1992}:\\
+
+$X(a,b) = \int_{-\infty}^{+\infty}x(t)\frac{1}{\sqrt{a}} \Psi (\frac{t-b}{a}) dt$\newline
+
+where, $\alpha$, is the scale factor and represents dilation or contraction of the wavelet 
+function and b is the translation parameter that slides this function on the 
+time-domain sequence under analysis. Therefore, $\Psi$($\alpha$,b) is the scaled and translated 
+version of the corresponding mother wavelet. “*” is the conjugation operator.\\
+
+Note that the wavelet coefficients obtained from Eq. (1) essentially evaluate the 
+correlation between the signal x(t) and the wavelet function used at different 
+translations and scales. This implies that the wavelet coefficients calculated 
+over a range of scales and translations can be combined to reconstruct the original 
+signal as follows:\\
+
+$x(t) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} X(a,b) \Psi (\frac{t-b}{a}) dadb$\newline
+
+\subsection{Wavelet-Based Feature Extraction}
+The time-frequency analysis of varied bio-signals has been addressed in many 
+related literature \cite{golshan2016multiple, golshan2017fft, golshan2018hierarchical, li2008prior}. 
+It has been shown that the wavelet-domain feature area will improve the classification 
+performance of various human activities using the signals emanated from the body 
+responses. Therefore, it primarily enhances the classification performance because of 
+the additional eminence area provided.\\
+In this pre-study, we tend to specialise in the time-frequency analysis of the EDA signal to produce 
+a new feature area supported that emotion classification task is done. As 
+opposed to some connected studies that use the raw time-domain signals for 
+classification purposes \cite{ArousalValence2017, EmotionClass2012}, we use the 
+amplitude of the CWT of the EDA signals to get the options and drive the 
+classifier. Operating within the wavelet-domain is actually advantageous since the 
+wavelet remodel probes the given signal at completely different scales, extracting a lot of 
+information for alternative post-processing steps. Additionally, the localized support 
+of the wavelet functions permits CWT-based analysis to match to the native variations 
+of the input time sequence \cite{WaveletFilter1992}. As a result, a lot of elaborate 
+representation of the signal is provided as compared with the raw time-domain signal.\\
+Figure \ref{cwt_eda} shows the amplitude of the CWT of a sample EDA signal at different scales 
+using a complex Morlet (C-Morlet) wavelet function. Different scales of the wavelet functions are convolved with the first 
+EDA signal to spotlight completely different options of the data. As may be seen, thanks to the localization 
+property of the CWT, completely different structures of the signal are extracted at every level 
+of decomposition, providing helpful info for analyzing the recorded EDA signals.\\
+This work has employed the C-Morlet wavelet function to process the acquired EDA 
+signals, as it has been well used for time-frequency analysis of different bio-signals 
+and classification \cite{golshan2016multiple}. Figure \ref{feature} shows the wavelet-based 
+feature extraction, Using the C-Morlet mother wavelet, the real and imaginary wavelet 
+coefficients are calculated at different scales. Then, the amplitude of these coefficients 
+is calculated to provide the corresponding spectrogram. This spectrogram is then used as 
+the feature space.\\
+
+On the other hand, the detailed structures of the 
+signal are better extracted when the scaling factor decreases. Note that the impact 
+of different families of the wavelet functions 
+(e.g., Symlets, Daubechies, Coiflets) on the emotion classification will be evaluated 
+in the next subsection. The equation of the C-Morlet mother wavelet with fc as its central 
+frequency and fb as the bandwidth parameter is given as follows:\\
+
+$\Psi (t) = \frac{\exp(-t^2/f_b)}{\sqrt(\pi f_b)} \exp (j2\pi f_c t)$\newline
+
+\begin{sidewaysfigure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/cwt_eda.eps, scale = 1}\label{cwt_eda} \\
+		\end{tabular}
+		\caption{The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are
+				convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside
+				the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input
+				signal are augmented. On the other, the detailed structures of the signal are better extracted when the scaling 
+				 decreases.} \label{cwt_eda}
+	\end{center}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/wavelet_feature.eps, scale = 1.3}\label{feature} \\
+		\end{tabular}
+		\caption{The wavelet-based feature extraction. Uisng the C-Morlet mother wavelet, the real and imaginary wavelet
+				coefficients are calculated at different scales. Then the amplitude of these coefficients is calculated to provide
+				the corresponding spectrogram. This spectrogram is then used as the feature space.} \label{feature}
+	\end{center}
+\end{sidewaysfigure}
+
+\subsection{Support Vector Machine}
+The SVM classifier tends to separate data \\
+
+${D = \{x_i, y_i\}^{N}_{i=1}, x_i\in^{d}, y_i\in\{-1,+1\}}$\\
+
+by drawing an optimal hyperplane <w,x>+b=0 between classes such that the margin between 
+them becomes maximum \cite{SupportVector1995}. With reference to Figure \ref{svm}, 
+The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support 
+vectors that are circled inside the figure. H1 and H2 are 
+the supporting planes and the optimal hyperplane (OH) splits this margin such that it 
+stands at the same distance from each supporting hyperplane. This implies that the 
+margin between H1 and H2 is equal to 2 / $\parallel$w$\parallel$.
+In terms of linearly separable classes, the classifier is obtained by maximizing the 
+margin 2 / $\parallel$w$\parallel$, which is equivalent to minimizing $\parallel$w$\parallel$ / 2 
+with a constraint in convex quadratic programming (QP) as follows:\\
+
+$\min \frac{1}{2}||w||^2 s.t. y_i(<w, x_i> + b) \ge 1$\newline
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/svm.eps, scale = 1}\label{svm} \\
+		\end{tabular}
+		\caption{Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH.
+				Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.} \label{svm}
+	\end{center}
+\end{figure}
+
+where, w and b are the parameters of the hyperplane and <.,.> is the notation of 
+the inner product.\\
+
+However, different classes are seldom separable by a hyperplane since their samples 
+are overlapped in the feature space. In such cases, a slack variable ${\xi_i\geq}$ 0 and a 
+penalty parameter C $\geq$ 0 are used with the optimization step to obtain the best feasible 
+decision boundary. It is given as:\\
+
+$\min \frac{1}{2}||w||^2 + C(\Sigma_{i=1}^{N} \xi_i) s.t. y_i(<w, x_i> + b) \ge 1 - \xi_i$\newline
+
+Usually, various kernel functions are used to deal with the nonlinearly separable data. 
+As a result, the original data xi is mapped onto another feature space through a 
+projection function ${\varphi(\cdot)}$. It is not necessary to exactly know the equation of the 
+projection ${\varphi(\cdot)}$, but one can use a kernel function ${k(x_i,x_j)=<\varphi(x_i),\varphi(x_j)>}$. 
+This function is symmetric and satisfies the Mercer’s conditions. The Mercer’s conditions determine 
+if a candidate kernel is actually an inner-product kernel. Let ${k(x_i,x_j)}$ be a continuous 
+symmetric kernel defined in the closed interval ${t_1\leq t\leq t_2}$, the kernel can be expanded 
+into series ${\Sigma_(n=1)^\infty = \lambda_n\varphi_n(x_i)\varphi_n(x_j)}$, where 
+${\lambda_n > 0}$ are called eigenvalues and functions $\varphi$n are called eigenvectors in the expansion. 
+The fact that all the eigenvalues are nonnegative means that the kernel is positive 
+semidefinite \cite{SupportVector1995}. \\
+
+To maximize the margin, H1 and H2 are pushed apart until they reach the support vectors 
+on which the solution depends. To solve this optimization problem, the Lagrangian dual 
+of equation is used as follows:\\
+
+$\max_\alpha \Sigma_{i=1}^{N} \alpha_i - \frac{1}{2} \Sigma_{i=1}^{N} \Sigma_{j=1}^{N} y_i y_j \alpha_i \alpha_j k(x_i, x_j)$\newline
+$s.t. 0 \le \alpha_i \le C, \Sigma_{i=1}^{N} \alpha_i y_i = 0, i = 1, ..., N$\newline
+
+where, ${\alpha_i}$s are the Lagrangian multipliers in which just a few number of them are 
+non-zero. These non-zero values are corresponding to the support vectors determining 
+the parameters of the hyperplane ${w = \Sigma_(i=1)^N\alpha_iy_ix_i }$. Therefore, the label 
+of the test sample ${(y_z)}$ is given by:\\
+
+$y_z = sgn(\Sigma_{i=1}^{N} \alpha_i y_i k(x_i, z)) + b$\newline
+
+
+\section{Experimental Result}
+This work has employ the EDA signals of 64 aubjects annotated based on the facial expressions from participants
+in order to evaluate the accuracy of the proposed wavelet-based feature extraction method on the emotion classification
+performance. The EDA dataset is classified based on different emotions perceived in the annotation step, which includes 
+Joy, Boredom, and Acceptance emotions. The SVM classifier is applied on the dataset using three different kernel 
+functions including the Linear function k ( x, y ) = x T y + c, Polynomial function k ( x, y ) = ( x T y + c) d , 
+and Radial Basis Function (RBF) k ( x, y ) = exp ( $\gamma$|| x –y || 2 ), where x and y are two feature vectors, 
+and $\gamma$, c, and d are constant values. \\
+
+First thing need to be done before we proceed with such quantitative performance of the emotion classification
+method, which is to test the impact of various families of wavelet functions on the feature extraction stage
+as well as emotion classification ability.\\
+
+\subsection{Determination of Mother Wavelet}
+Table \ref{edaresult} shows the classification results given by different wavelet functions.
+For the sake of brevity, exclusively the results of the “db1”, “coif1”, “sym2”, and “C-Morlet” wavelets 
+and all three kernels with the SVM classifier are shown. As can be typically seen, the time-frequency 
+features calculated by the C-Morlet ends up in following classification performance, in all probability thanks to 
+the distinctive feature space provided by this classification perform. Figure \ref{mother_wave} shows the 
+difference between the mentioned wavelet functions. Note that the C-Morlet wavelet has 
+successfully been applied on different types of bio-signals (e.g., EEG, LFP brain signals) 
+and lead to promising results, specifically for feature extraction functions. One in every of the foremost 
+characteristics of this wavelet function is its sophisticated nature that primarily tends to 
+extract various features from the input time sequence.\\
+
+\begin{figure}[tbp]
+	\begin{center}
+		\begin{tabular}{c}
+			\epsfig{figure=./chapters/fig/mother.eps, scale = .75}\label{mother_wave} \\
+		\end{tabular}
+		\caption{Different mother wavelets used for feature extraction in this paper. The "db1", "coif1" and "sys2"
+			wavelets are real-valued functions, while the "C-Morlet" function is complex-valued. The corresponding 
+			imaginary part of this wavelet function si highlighted in red insid the figure.} \label{mother_wave}
+	\end{center}
+\end{figure}
+
+\begin{table}[tbp]
+	\begin{center}
+	\label{edaresult}
+	\begin{tabular}{llllll}
+		\hline
+		& Kernels                     & bd1 & coif1 & sym2 & C-Morlet \\ \hline
+		ACC-BOR     & \multirow{4}{*}{Linear}     & 61  & 56    & 61   & 75       \\
+		ACC-JOY     &                             & 50  & 46    & 50   & 69       \\
+		BOR-JOY     &                             & 51  & 69    & 57   & 90       \\
+		BOR-JOY-ACC &                             & 51  & 35    & 39   & 66       \\ \hline
+		ACC-BOR     & \multirow{4}{*}{Polynomial} & 51  & 56    & 58   & 64       \\
+		ACC-JOY     &                             & 54  & 54    & 57   & 81       \\
+		BOR-JOY     &                             & 55  & 64    & 69   & 86       \\
+		BOR-JOY-ACC &                             & 43  & 46    & 50   & 61       \\ \hline
+		ACC-BOR     & \multirow{4}{*}{RBF}        & 59  & 60    & 58   & 74       \\
+		ACC-JOY     &                             & 55  & 44    & 57   & 84       \\
+		BOR-JOY     &                             & 68  & 51    & 69   & 89       \\
+		BOR-JOY-ACC &                             & 45  & 35    & 50   & 69       \\ \hline
+	\end{tabular}
+\caption{Comparison of different wavelet functions on the feature extraction and emotion classification performance (\%) of 
+		2 and 3 classes using SVM classifier with different kernels. The abbreviations "Acc", "Bor", and "Joy"
+		respectively stand for the emotions "Acceptance", "Boredom", and "Joy".} \label{edaresult}
+\end{center}
+\end{table}
+
+\subsection{Classification Result}
+The pre-processing stages performed to the raw EDA dataset are explained at the beginning in this section.
+After wards, the recognition results with various modalities under SVM and KNN classifiers are presented. 
+Classification performance of the suggested wavelet-based feature extraction method with the raw EDA signal
+are compared here. Plus, statistical feature extraction methods \cite{liu2016human, mera2004emotion} 
+used for EDA signal performance are also compared with proposed feature extraction method. Note that the extracted 
+features with this method are mainly based on the statistical moments of the acquired EDA time sequence such as 
+“the means of the raw signals”, “the standard deviations of the raw signals”, “the means of the absolute values 
+of the first differences of the raw signals”, “the means of the absolute values of the first differences of 
+the normalized signals”, “the means of the absolute values of the second differences of the raw signals”, 
+and “the means of the absolute values of the second differences of the normalized signals”.\\
+
+A median filter of size 10 are applied to the segments of the EDA signals which obtained from the annotation step
+in order to smooth the signal, eliminating some existing implusive noise that may happens due to the sudden move
+of the subjects during the experiments which conducted by other group. Then, the amplitude of the wavelet 
+coefficients are calculated for the frequency range of (0.5, 50)Hz. The reason to use such wide frequency
+range was to secure all detailed components of the EDA signal are takien into account (See Figure \ref{cwt_eda}).\\
+
+Principal component analysis (PCA) \cite{abdi2010principal} is then applied on the extracted wavelet-based 
+features to decrease the dimensionality of the data, and, therefore, reduce the compu- tational burden. 
+PCA is a well-known dimensionality reduction approach which is extensively used for data analysis before 
+classification. Therefore, it can decrease the chance of overfitting, which may happen beacuse of  enormous
+size of the faeture vectors. Note that, in our experiments, 95\% of the eigen-values corresponding to the 
+maximum variance directions are kept. Since the spectrogram of the raw EDA data (see Figure \ref{feature}) is calculated 
+for 100 scales (e.g., Frequency range (0.5, 50)Hz with a resolution of 0.5 Hz), for a fair comparison, we 
+first down-sample the spectrogram by a factor of 100 to make the length of the wavelet-based features equal 
+to the length of the raw data. Then, PCA is applied on it. As a result, on average, the length of the 
+wavelet-based feature vector before and after PCA is respectively ~1000 and ~35 samples, while these lengths 
+are ~1000 and ~15 samples for the raw data.\\
+
+In order to generate the training and test sets for the classification step, leave-one-out cross validation (LOOCV)
+approach has adopted. To achieve the best accuracy of classification on the validation set, the parameters of the 
+hyperplan are fixed in terms of the SVM classifier (LibSVM library \cite{chang2011libsvm}). 
+The following parameters are used for each kernel function: 1. Linear kernel C = 0.01, 2. RBF kernel C = 0.01, $\gamma$= 0.001, 
+and 3. Polynomial kernel C = 0.01, d = 2. These values are experimentally set so as to obtain the best classification performance.\\
+
+Classification accuracy for SVM and KNN classifier applied with different kernel functions is shown in Table \ref{svmknn},
+and the dataset acquired from 64 annotated subjects. In terms of the binary classification cases (i.e., “Acceptance vs 
+Boredom”, “Acceptance vs Joy”, and “Boredom vs Joy”), besidesthe classification accuracy, the quantitative measures 
+precision (true positive / (true positive + false positive)), recall (true positive / (true positive + false negative)), 
+and AUC (area under the receiver operating characteristic curve), which are also given in this table. In order to 
+calculate the precision and recall, first of all, a positive class is choosen from one of the emotions and then the 
+precision and recall values will be calcuated. After that, order will be changed and the other emotion is used as
+the positive class and calculate the precision and recall values. Then the final step is to calculate the average value
+of all precision and recall which is given in the table. It is obvious be seen, compare to other feature extraction
+methods, the proposed wavelet-based features lead to a higher classification performance among almost all cases (both
+SVM and KNN classifier). In SVM classifier, for example, with the linear kernel SVM and raw EDA signal, the classification
+rate of 3-class case is about 38\%. However, the introduced feature space reaches an accuracy of 68\%. From Table \ref{svmknn}, 
+note that competitive classification performance for polynomial kernel shown in the raw EDA data and the combination of 
+the raw data and the statistical features, while the proposed wavelet-based features lead to a stable performance among
+all kernel functions. Looking at the KNN classifier, 3 different valuses for K = 1, 3, 5 are used in this study.
+As can be seen, the proposed method outperforms in most of the cases. The results obtained by the combination of the 
+raw data and the statistical features surpass the proposed method for some classification tasks. For instrance,
+in K = 1 and "Acceptance vs Boredom" task, it obtains a accuracy of 73\% compare to the proposed method which reaches
+70\% for the same task. However, the proposed method shows better classification performance in most of the other
+cases. For 3-class classification, proposed method achieves ~64\% of accuracy for all K values on average, while other
+two feature extraction approaches reslut in ~57\% and ~44\% respectively. This result indicates the superiority of the 
+proposed method for the complex classification missions. Note that one major problem when analyzing physiological signals 
+is noise interference. In particular, the EDA signal is nonstationary and may include random artifacts, which makes it 
+unsuitable to use the raw time sequence for practical signal process- ing approaches. Prior studies have represented 
+stochastic physio- logical signals using statistical features to classify emotional states \cite{mera2004emotion}. 
+Unfortunately, information can be lost with such features as simplifying assumptions are made, including knowledge 
+of the probability density function of the data. Furthermore, there may be signal features that have the potential 
+to improve emotion classification accuracy, but are not yet identified \cite{swangnetr2012emotional}.\\
+
+\begin{sidewaystable}[]
+	\centering
+	\label{svmknn}
+	\resizebox{\columnwidth}{!}	{
+	\begin{tabular}{llllllllllllll}
+		
+		\hline
+		& SVM                            & \multicolumn{4}{l|}{Wavelet-based}   & \multicolumn{4}{l|}{Statistics-based feature + Raw data} & \multicolumn{4}{l}{Raw data}        \\ \cline{3-14} 
+		& Kernels                     & Accuracy & AUC & Precision & Recall & Accuracy      & AUC      & Precision      & Recall      & Accuracy & AUC & Precision & Recall \\ \hline
+		ACC-BOR     & \multirow{4}{*}{Linear}     & 75       & 75  & 81        & 71     & 56            & 55       & 57             & 56          & 56       & 55  & 58        & 43     \\
+		ACC-JOY     &                             & 69       & 84  & 75        & 79     & 47            & 56       & 47             & 47          & 49       & 57  & 49        & 39     \\
+		BOR-JOY     &                             & 90       & 87  & 82        & 88     & 55            & 55       & 54             & 55          & 53       & 54  & 52        & 67     \\
+		ACC-JOY-BOR &                             & 66       &     &           &        & 35            &          &                &             & 36       &     &           &        \\
+		ACC-BOR     & \multirow{4}{*}{Polynomial} & 64       & 68  & 70        & 64     & 74            & 82       & 83             & 74          & 70       & 78  & 79        & 70     \\
+		ACC-JOY     &                             & 81       & 83  & 78        & 81     & 77            & 90       & 84             & 77          & 60       & 68  & 72        & 60     \\
+		BOR-JOY     &                             & 86       & 87  & 85        & 86     & 60            & 66       & 59             & 60          & 57       & 62  & 57        & 57     \\
+		ACC-JOY-BOR &                             & 61       &     &           &        & 55            &          &                &             & 46       &     &           &        \\
+		ACC-BOR     & \multirow{4}{*}{RBF}        & 74       & 79  & 84        & 74     & 53            & 58       & 54             & 53          & 57       & 59  & 60        & 57     \\
+		ACC-JOY     &                             & 84       & 89  & 85        & 84     & 42            & 61       & 37             & 42          & 42       & 65  & 30        & 42     \\
+		BOR-JOY     &                             & 89       & 90  & 85        & 89     & 51            & 54       & 51             & 51          & 50       & 55  & 50        & 50     \\
+		ACC-JOY-BOR &                             & 69       &     &           &        & 34            &          &                &             & 34       &     &           &        \\ \hline
+		            & KNN                            \\ 
+		& K values               & Accuracy & AUC & Precision & Recall & Accuracy       & AUC      & Precision      & Recall      & Accuracy & AUC & Precision & Recall \\ \hline
+		ACC-BOR     & \multirow{4}{*}{K = 1} & 70       & 50  & 70        & 70     & 73             & 53       & 72             & 73          & 68       & 52  & 68        & 68     \\
+		ACC-JOY     &                        & 76       & 58  & 76        & 76     & 76             & 63       & 77             & 76          & 62       & 60  & 62        & 62     \\
+		BOR-JOY     &                        & 80       & 64  & 76        & 80     & 57             & 66       & 57             & 57          & 56       & 68  & 56        & 56     \\
+		ACC-JOY-BOR &                        & 60       &     &           &        & 56             &          &                &             & 43       &     &           &        \\
+		ACC-BOR     & \multirow{4}{*}{K = 3} & 70       & 63  & 71        & 70     & 81             & 77       & 79             & 81          & 71       & 68  & 75        & 71     \\
+		ACC-JOY     &                        & 82       & 81  & 80        & 82     & 82             & 82       & 81             & 82          & 61       & 50  & 61        & 61     \\
+		BOR-JOY     &                        & 85       & 84  & 78        & 85     & 60             & 53       & 61             & 60          & 55       & 56  & 55        & 55     \\
+		ACC-JOY-BOR &                        & 65       &     &           &        & 56             &          &                &             & 46       &     &           &        \\
+		ACC-BOR     & \multirow{4}{*}{K = 5} & 64       & 64  & 67        & 64     & 75             & 78       & 74             & 75          & 71       & 67  & 75        & 71     \\
+		ACC-JOY     &                        & 77       & 84  & 73        & 77     & 77             & 82       & 77             & 77          & 57       & 50  & 58        & 57     \\
+		BOR-JOY     &                        & 85       & 86  & 77        & 85     & 61             & 58       & 63             & 61          & 46       & 57  & 46        & 46     \\
+		ACC-JOY-BOR &                        & 66       &     &           &        & 58             &          &                &             & 43       &     &           &        \\ \hline
+	\end{tabular}
+}
+\caption{First half of the table is the comparison of classification accuracy (\%) of SVM classifier with different kernel 
+		functions using the presented wavelet-based feature extraction, the raw EDA data, and the raw EDA data + statistical 
+		features. The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, 
+		“JOY”, and “BOR”respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted 
+		in each case.
+		Bottom half of the table is the comparison of classification accuracy (\%) of KNN classifier with different K values 
+		using the presented wavelet-based feature extraction, the raw EDA data,	and the raw EDA data + statistical features. 
+		The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, “JOY”, and 
+		“BOR” respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted in each case.}
+\label{svmknn}
+\end{sidewaystable}
+
+\section{Summary}
+Three basic emotions were recognized within the annotation step as well as Acceptance, Joy, 
+and Bordom. Numerous experiments were dole out on the dataset mistreatment either the raw 
+segmented EDA signal or its corresponding time-frequency illustration as options. 
+The quantitative results show that the emotion classification performance is remarkably 
+improved once the planned wavelet-based options are used with the SVM classifier. 
+Apart from the “C-Morlet”, we've got additionally evaluated the impact of various wavelet functions such 
+as “Symlets”, “Daubechies”, and “Coiflets” on the feature extraction stage, and thus, 
+the classification performance. The experimental results confirmed the prevalence of 
+the “C-Morlet” wavelet function. Developing an automatic system capable of real-time operation 
+of the info will be a remarkable extension to the current work. This permits us to observe emotions 
+and give feedback to the participants throughout the experimental sessions. Moreover, due to the 
+limitation of obtainable datasets, making a more comprehensive dataset would be necessary 
+for the longer term analysis. The quantitative results show that the emotion classification 
+performance remarkably improves compared to other methods when the proposed wavelet-based features 
+are used. This pre-study also provided a possibility of using C-Morlet wavelet function as feature 
+extraction method for emotion recognition in music social interaction for children with autism.\\
+ 

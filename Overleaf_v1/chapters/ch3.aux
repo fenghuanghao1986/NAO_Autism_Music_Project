@@ -1,0 +1,108 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Pre-Study: A Wavelet-based Approach for Emotion Classification}{40}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\citation{WearableDevice2016,AssociationBetween2013,SympatheticSkin1984,PrincipalComponent2000}
+\citation{SkinConduct2006,SympatheticSkin1981,DecodeChild2013}
+\citation{Validation2013}
+\citation{DecodeChild2013}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Related Work}{41}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Electrodermal activity (EDA)}{41}\protected@file@percent }
+\citation{EmotionalState2013,EMGGSR2009}
+\citation{EmotionalState2013}
+\citation{EDA2016}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Classification Applications}{42}\protected@file@percent }
+\citation{WearableDevice2016}
+\citation{EmotionInten2014,EmotionResp2013,ElectAct2000,HeteroKnow2016}
+\citation{ElectAct2000}
+\citation{EmotionInten2014}
+\citation{MultPercep2007}
+\citation{EmotionRecog2004}
+\citation{SupportVector1995}
+\citation{Taxonomy2011,EmotionClassifi2014}
+\citation{FeatureSelection2006}
+\citation{EmotionResp2013,SlowEcho2009}
+\citation{rehg2013decoding}
+\citation{ousley2012rapid}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Data Acquisition}{45}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Proposed Classification Method}{46}\protected@file@percent }
+\newlabel{kid_eda}{{3.2}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces \textit  {Two samples of the annotation process, left shows some video frames associated with event 5 "tickling" and the right one shows the video frames of event "using the book as a hat". The corresponding EDA signals are shown under each case. While for the event 5 the EDA signal contains meaningful information, the EDA signal of event 4 does not contain useful information, likely due to the disengagement of the subject.}}}{47}\protected@file@percent }
+\newlabel{emotions}{{3.2}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces \textit  {The distribution of the emotions across all subjects and events. The abbreviations "ACC", "BOR", and "JOY" respectively correspond to the emotions "Acceptance", "Boredom", and "Joy".}}}{47}\protected@file@percent }
+\citation{AmbulatorySys2003,EmotionalState2013}
+\citation{AmbulatorySys2003}
+\citation{WaveletFilter1992,SignalDecomp1989}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Continuous Wavelet Transform}{48}\protected@file@percent }
+\citation{SignalDecomp1989,ContinuWavelet2009}
+\citation{WaveletFilter1992}
+\citation{golshan2016multiple,golshan2017fft,golshan2018hierarchical,li2008prior}
+\citation{ArousalValence2017,EmotionClass2012}
+\citation{WaveletFilter1992}
+\citation{golshan2016multiple}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Wavelet-Based Feature Extraction}{50}\protected@file@percent }
+\citation{SupportVector1995}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Support Vector Machine}{52}\protected@file@percent }
+\newlabel{RF1}{53}
+\newlabel{cwt_eda}{{3.3.2}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit  {The CWT of a typical EDA signal using the C-Morlet mother wavelet. Different scales of the wavelet functions are convolved with the original EDA signal to highlight different features of the raw data. As can be seen inside the bottom box, when the scaling parameter of the wavelet function increases, the larger features of the input signal are augmented. On the other, the detailed structures of the signal are better extracted when the scaling decreases.}}}{53}\protected@file@percent }
+\newlabel{cwt_eda}{{3.3}{53}}
+\newlabel{RF2}{54}
+\newlabel{feature}{{3.3.2}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \textit  {The wavelet-based feature extraction. Using the C-Morlet mother wavelet, the real and imaginary wavelet coefficients are calculated at different scales. Then the amplitude of these coefficients is calculated to provide the corresponding spectrogram. This spectrogram is then used as the feature space.}}}{54}\protected@file@percent }
+\newlabel{feature}{{3.4}{54}}
+\newlabel{svm}{{3.3.3}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit  {Canonical SVM for classifying two linearly separable classes. The decision boundary is shown by OH. Two hyperplanes H1 and H2 pass the support vectors that are circled inside the figure.}}}{55}\protected@file@percent }
+\newlabel{svm}{{3.5}{55}}
+\citation{SupportVector1995}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Experimental Result}{57}\protected@file@percent }
+\citation{liu2016human,mera2004emotion}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Determination of Mother Wavelet}{58}\protected@file@percent }
+\newlabel{mother_wave}{{3.4.1}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit  {Different mother wavelets used for feature extraction in this paper. The "db1", "coif1" and "sys2" wavelets are real-valued functions, while the "C-Morlet" function is complex-valued. The corresponding imaginary part of this wavelet function is highlighted in red inside the figure.}}}{59}\protected@file@percent }
+\newlabel{mother_wave}{{3.6}{59}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \textit  {Comparison of different wavelet functions on the feature extraction and emotion classification performance (\%) of 2 and 3 classes using SVM classifier with different kernels. The abbreviations "Acc", "Bor", and "Joy" respectively stand for the emotions "Acceptance", "Boredom", and "Joy".}}}{59}\protected@file@percent }
+\newlabel{edaresult}{{3.1}{59}}
+\newlabel{edaresult}{{3.1}{59}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Classification Result}{60}\protected@file@percent }
+\citation{abdi2010principal}
+\citation{chang2011libsvm}
+\citation{mera2004emotion}
+\citation{swangnetr2012emotional}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Summary}{63}\protected@file@percent }
+\newlabel{RF3}{64}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces \textit  {First half of the table is the comparison of classification accuracy (\%) of SVM classifier with different kernel functions using the presented wavelet-based feature extraction, the raw EDA data, and the raw EDA data + statistical features. The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, “JOY”, and “BOR”respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted in each case. Bottom half of the table is the comparison of classification accuracy (\%) of KNN classifier with different K values using the presented wavelet-based feature extraction, the raw EDA data, and the raw EDA data + statistical features. The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, “JOY”, and “BOR” respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted in each case.}}}{64}\protected@file@percent }
+\newlabel{svmknn}{{3.2}{64}}
+\newlabel{svmknn}{{3.2}{64}}
+\@setckpt{./chapters/ch3}{
+\setcounter{page}{66}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{6}
+\setcounter{table}{2}
+\setcounter{subfigure}{0}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{lotdepth}{1}
+\setcounter{Rand@No}{0}
+\setcounter{Random@Left}{1}
+\setcounter{Random@Right}{1000}
+\setcounter{Random@No@max}{0}
+\setcounter{parentequation}{0}
+\setcounter{r@tfl@t}{3}
+\setcounter{NAT@ctr}{0}
+\setcounter{LT@tables}{1}
+\setcounter{LT@chunks}{3}
+}

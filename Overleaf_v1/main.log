@@ -1,0 +1,3483 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.7.3)  13 JUL 2020 12:21
+entering extended mode
+**./main.tex
+(main.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-03> (preamble.tex
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\epsfig.st
+y"
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 105.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\dvips
+.def"
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+\epsfxsize=\dimen137
+\epsfysize=\dimen138
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
+"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: dvips.def on input line 147.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\dvipsnam.
+def"
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epic\epic.sty"
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count176
+\d@lta=\count177
+\@delta=\dimen139
+\@@delta=\dimen140
+\@gridcnt=\count178
+\@joinkind=\count179
+\@dotgap=\dimen141
+\@ddotgap=\dimen142
+\@x@diff=\count180
+\@y@diff=\count181
+\x@diff=\dimen143
+\y@diff=\dimen144
+\@dotbox=\box45
+\num@segments=\count182
+\num@segmentsi=\count183
+\@datafile=\read2
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfigure\subfigur
+e.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen145
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen146
+\subfiglabelskip=\skip52
+\c@subfigure=\count184
+\c@lofdepth=\count185
+\c@subtable=\count186
+\c@lotdepth=\count187
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfigure\subfigur
+e.cfg")
+\subfig@top=\skip53
+\subfig@bottom=\skip54
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pstricks\pst-all.s
+ty"
+Package: pst-all 2008/01/01 the main pstricks tools
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pstricks\pstricks.
+sty"
+Package: pstricks 2018/12/21 v0.69 LaTeX wrapper for `PSTricks' (RN,HV)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.sty
+"
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\pst-xkey
+.tex"
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
+y"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
+tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
+.tex"
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+)
+\XKV@depth=\count188
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks\pstrick
+s.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks\pst-fp.
+tex" `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count189
+\pstFP@xia=\count190
+\pstFP@xib=\count191
+\pstFP@xfa=\count192
+\pstFP@xfb=\count193
+\pstFP@rega=\count194
+\pstFP@regb=\count195
+\pstFP@regs=\count196
+\pstFP@times=\count197
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common.tex"
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen147
+\pgfutil@tempdimb=\dimen148
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common-lists.tex"))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex"
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks21
+))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+ffor.code.tex"
+Loading pgffor.code.tex
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+.code.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+calc.code.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+util.code.tex"
+\pgf@x=\dimen149
+\pgf@xa=\dimen150
+\pgf@xb=\dimen151
+\pgf@xc=\dimen152
+\pgf@y=\dimen153
+\pgf@ya=\dimen154
+\pgf@yb=\dimen155
+\pgf@yc=\dimen156
+\c@pgf@counta=\count198
+\c@pgf@countb=\count199
+\c@pgf@countc=\count266
+\c@pgf@countd=\count267
+\pgfutil@tempcnta=\count268
+\pgfutil@tempcntb=\count269
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+parser.code.tex"
+\pgfmath@dimen=\dimen157
+\pgfmath@count=\count270
+\pgfmath@box=\box46
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.code.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.basic.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.trigonometric.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.random.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.comparison.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.base.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.round.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.misc.code.tex")
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.integerarithmetics.code.tex")))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+float.code.tex"
+\c@pgfmathroundto@lastzeros=\count271
+))
+\pgffor@iter=\dimen158
+\pgffor@skip=\dimen159
+\pgffor@stack=\toks25
+\pgffor@toks=\toks26
+)
+\psLoopIndex=\count272
+
+`PSTricks' v2.97  <2019/05/11> (tvz,hv)
+\pst@dima=\dimen160
+\pst@dimb=\dimen161
+\pst@dimc=\dimen162
+\pst@dimd=\dimen163
+\pst@dimg=\dimen164
+\pst@dimh=\dimen165
+\pst@dimm=\dimen166
+\pst@dimn=\dimen167
+\pst@dimo=\dimen168
+\pst@dimp=\dimen169
+\pst@hbox=\box47
+\pst@ibox=\box48
+\pst@boxg=\box49
+\pst@cnta=\count273
+\pst@cntb=\count274
+\pst@cntc=\count275
+\pst@cntd=\count276
+\pst@cntg=\count277
+\pst@cnth=\count278
+\pst@cntm=\count279
+\pst@cntn=\count280
+\pst@cnto=\count281
+\pst@cntp=\count282
+\@zero=\count283
+\pst@toks=\toks27
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks\pstrick
+s.con")
+\psunit=\dimen170
+\psxunit=\dimen171
+\psyunit=\dimen172
+\pst@C@@rType=\count284
+\pslinewidth=\dimen173
+\psk@startLW=\dimen174
+\psk@endLW=\dimen175
+\pst@customdefs=\toks28
+\pslinearc=\dimen176
+\pst@symbolStep=\dimen177
+\pst@symbolWidth=\dimen178
+\pst@symbolLinewidth=\dimen179
+\everypsbox=\toks29
+\psframesep=\dimen180
+\pslabelsep=\dimen181
+\sh@wgridXunit=\dimen182
+\sh@wgridYunit=\dimen183
+\pst@shift=\dimen184
+)
+File: pstricks.tex 2019/05/11 v2.97 `PSTricks' (tvz,hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks\pst-fp.
+tex")
+File: pst-fp.tex 2019/05/11 v2.97 `PST-fp' (hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-plot\pst-plot.
+sty"
+Package: pst-plot 2011/06/05 v1.00 LaTeX wrapper for `pst-plot' (HV)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\pst-xkey.s
+ty"
+Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multido\multido.st
+y"
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/multido\multido.
+tex"  v1.42, 2010/05/14 <tvz>
+\multido@count=\count285
+\multidocount=\count286
+\multido@stuff=\toks30
+)
+File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
+)
+Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-plot\pst-plo
+t.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-tools\pst-to
+ols.tex" `PST-tools' v0.10, 2020/03/24 (hv)
+\randomi=\count287
+\ranval=\count288
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks-add\pst
+ricks-add.tex"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-node\pst-nod
+e.tex"  v1.42a, 2020/04/01
+\psrow=\count289
+\pscol=\count290
+\psmatrixcnt=\count291
+\psrowsep=\skip55
+\pscolsep=\skip56
+\pst@args=\count292
+\num@pts=\count293
+\pst@argcnt=\count294
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-arrow\pst-ar
+row.tex" `pst-arrow' v0.01, 2016/09/01 (dr,hv)
+\pshooklength=\dimen185
+\pshookwidth=\dimen186
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-3d\pst-3d.te
+x" `PST-3d' v1.11, 2010/02/14 (tvz))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-math\pst-mat
+h.tex" `pst-math' v0.64 , (CJ,hv)) `pstricks-add' v3.89a, 2020/02/12 (dr,hv)
+\psparallelogramsep=\dimen187
+\pst@cntC=\count295
+\pst@stepcount=\count296
+\chart@ColorIndex=\dimen188
+\chart@ColorStep=\dimen189
+\pst@chartHeight=\dimen190
+\pst@chartStackDepth=\dimen191
+\pst@chartStackWidth=\dimen192
+\chart@Toggle=\count297
+\psVectorCtr=\count298
+)
+ v1.92, 2019/05/16 (tvz,hv)
+\pstRadUnit=\dimen193
+\pstRadUnitInv=\dimen194
+\pst@linecnt=\count299
+\RCD@file=\read3
+\psxlabelsep=\dimen195
+\psylabelsep=\dimen196
+\psk@subticksize=\dimen197
+\pst@xticksizeA=\dimen198
+\pst@xticksizeB=\dimen199
+\pst@xticksizeC=\dimen256
+\pst@yticksizeA=\dimen257
+\pst@yticksizeB=\dimen258
+\pst@yticksizeC=\dimen259
+\@digitcounter=\count300
+\psk@llx=\dimen260
+\psk@lly=\dimen261
+\psk@urx=\dimen262
+\psk@ury=\dimen263
+\pst@xunit=\dimen264
+\pst@yunit=\dimen265
+)
+File: pst-plot.tex 2019/05/16 1.92 `pst-plot' (tvz,hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-node\pst-node.
+sty"
+Package: pst-node 2012/09/18 v1.01 LaTeX wrapper for `pst-node' (HV)
+Package: pst-node 2010/04/22 package wrapper for pst-node.tex
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-node\pst-nod
+e.tex")
+File: pst-node.tex 2019/05/16 1.92 `pst-node' (tvz,hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-tree\pst-tree.
+sty"
+Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-tree\pst-tre
+e.tex"  v1.13, 2017/02/18(tvz,dg,hv)
+\pstree@rootbox=\box50
+\pstree@box=\box51
+\psnodecnt=\count301
+\pstreelevel=\count302
+\pstreecnt=\count303
+\pstree@cnt=\count304
+\pstree@stop=\count305
+)
+File: pst-tree.tex 2017/02/18 1.13 `pst-tree' (tvz,hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-grad\pst-grad.
+sty"
+Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-grad\pst-gra
+d.tex" `pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
+File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-coil\pst-coil.
+sty"
+Package: pst-coil 2010/02/01 package wrapper for pst-coil.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-coil\pst-coi
+l.tex"  v1.06, 2006/11/27
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-node\pst-nod
+e.tex"))
+File: pst-coil.tex 2015/05/13 v1.07 `PST-coil' (tvz,hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-text\pst-text.
+sty"
+Package: pst-text 2018/12/28 package wrapper for pst-text.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-text\pst-tex
+t.tex"  v1.01, 2018/12/22(tvz,hv))
+File: pst-text.tex 2018/12/22 1.01 `pst-text' (tvz)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-3d\pst-3d.sty"
+Package: pst-3d 2009/07/28 package wrapper for pst-3d.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-3d\pst-3d.te
+x")
+File: pst-3d.tex 2018/12/22 v1.01 `PST-3d' (hv)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-eps\pst-eps.st
+y"
+Package: pst-eps 2005/05/20 package wrapper for pst-eps.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-eps\pst-eps.
+tex"  v1.00, 2006/11/04
+\pst@epsout=\write3
+\pst@tempout=\write4
+)
+File: pst-eps.tex 2006/11/04 1.00 `pst-eps' (tvz)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-fill\pst-fill.
+sty"
+Package: pst-fill 2005/09/13 package wrapper for pst-fill.tex (hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-fill\pst-fil
+l.tex" `PST-Fill' v1.01, 2007/03/10 (tvz,dg,hv)
+\pst@fillbox=\box52
+)
+File: pst-fill.tex 2007/03/10 v1.01 `PST-fill' (tvz,dg)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pstricks-add\pstri
+cks-add.sty"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-math\pst-math.
+sty"
+Package: pst-math 2018/12/16 v 0.65 package wrapper for PSTricks pst-math.tex
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pst-calculate\pst-
+calculate.sty"
+Package: pst-calculate 2019/01/24 v. 0.02(Herbert Voss) Support for caculations
+ with floating point numbers.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\
+xparse.sty"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty
+"
+Package: expl3 2020-06-03 L3 programming layer (loader) 
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
+d-pdfmode.def"
+File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count306
+\l__pdf_internal_box=\box53
+))
+Package: xparse 2020-05-15 L3 Experimental document command parser
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\
+xparse-generic.tex"
+\l__xparse_current_arg_int=\count307
+\g__xparse_grabber_int=\count308
+\l__xparse_m_args_int=\count309
+\l__xparse_v_nesting_int=\count310
+))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/siunitx\siunitx.st
+y"
+Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks31
+\ex@=\dimen266
+)) ("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
+"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen267
+\ar@mcellbox=\box54
+\extrarowheight=\dimen268
+\NC@list=\toks32
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box55
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3keys2
+e\l3keys2e.sty"
+Package: l3keys2e 2020-05-15 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box56
+\l__siunitx_tmp_dim=\dimen269
+\l__siunitx_tmp_int=\count311
+\l__siunitx_number_mantissa_length_int=\count312
+\l__siunitx_number_uncert_length_int=\count313
+\l__siunitx_round_int=\count314
+\l__siunitx_process_decimal_int=\count315
+\l__siunitx_process_uncertainty_int=\count316
+\l__siunitx_process_fixed_int=\count317
+\l__siunitx_process_integer_min_int=\count318
+\l__siunitx_process_precision_int=\count319
+\l__siunitx_group_min_int=\count320
+\l__siunitx_angle_marker_box=\box57
+\l__siunitx_angle_unit_box=\box58
+\l__siunitx_angle_marker_dim=\dimen270
+\l__siunitx_angle_unit_dim=\dimen271
+\l__siunitx_unit_int=\count321
+\l__siunitx_unit_denominator_int=\count322
+\l__siunitx_unit_numerator_int=\count323
+\l__siunitx_unit_prefix_int=\count324
+\l__siunitx_unit_prefix_base_int=\count325
+\l__siunitx_unit_prefix_gram_int=\count326
+\l__siunitx_number_product_int=\count327
+\c__siunitx_one_fill_skip=\skip59
+\l__siunitx_table_unit_align_skip=\skip60
+\l__siunitx_table_exponent_dim=\dimen272
+\l__siunitx_table_integer_dim=\dimen273
+\l__siunitx_table_mantissa_dim=\dimen274
+\l__siunitx_table_marker_dim=\dimen275
+\l__siunitx_table_result_dim=\dimen276
+\l__siunitx_table_uncert_dim=\dimen277
+\l__siunitx_table_fill_pre_dim=\dimen278
+\l__siunitx_table_fill_post_dim=\dimen279
+\l__siunitx_table_fill_mid_dim=\dimen280
+\l__siunitx_table_pre_box=\box59
+\l__siunitx_table_post_box=\box60
+\l__siunitx_table_mantissa_box=\box61
+\l__siunitx_table_result_box=\box62
+\l__siunitx_table_number_align_skip=\skip61
+\l__siunitx_table_text_align_skip=\skip62
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
+tor.sty"
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+)))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifluatex.s
+ty"
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xstring\xstring.st
+y"
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xstring\xstring.
+tex"
+\integerpart=\count328
+\decimalpart=\count329
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pst-math\pst-mat
+h.tex")
+File: pst-math.tex 2007/03/10 v1.01 `PST-math' (hv)
+\c@Rand@No=\count330
+\c@Random@Left=\count331
+\c@Random@Right=\count332
+\c@Random@No@max=\count333
+)
+Package: pstricks-add 2018/02/04 v. 0.16 package wrapper for pstricks-add.tex (
+hv)
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pstricks-add\pst
+ricks-add.tex")
+File: pstricks-add.tex 2007/03/10 v1.01 `PSTricks-add' (hv)
+))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
+ty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
+sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip63
+
+For additional information on amsmath, use the `?' option.
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen281
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count334
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count335
+\leftroot@=\count336
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count337
+\DOTSCASE@=\count338
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box63
+\strutbox@=\box64
+\big@size=\dimen282
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count339
+\c@MaxMatrixCols=\count340
+\dotsspace@=\muskip16
+\c@parentequation=\count341
+\dspbrk@lvl=\count342
+\tag@help=\toks33
+\row@=\count343
+\column@=\count344
+\maxfields@=\count345
+\andhelp@=\toks34
+\eqnshift@=\dimen283
+\alignsep@=\dimen284
+\tagshift@=\dimen285
+\tagwidth@=\dimen286
+\totwidth@=\dimen287
+\lineht@=\dimen288
+\@envbody=\toks35
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\mathrsfs.
+sty"
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.
+sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.
+sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip66
+\multirow@cntb=\count346
+\multirow@dima=\skip67
+\bigstrutjot=\dimen289
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortbl.
+sty"
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks37
+\minrowclearance=\skip68
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\rotating.
+sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count347
+\rotFPtop=\skip69
+\rotFPbot=\skip70
+\rot@float@box=\box65
+\rot@mess@toks=\toks38
+) ("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\natbib.st
+y"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip71
+\bibsep=\skip72
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count348
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
+sty"
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip73
+\f@nch@O@elh=\skip74
+\f@nch@O@erh=\skip75
+\f@nch@O@olh=\skip76
+\f@nch@O@orh=\skip77
+\f@nch@O@elf=\skip78
+\f@nch@O@erf=\skip79
+\f@nch@O@olf=\skip80
+\f@nch@O@orf=\skip81
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty
+"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count349
+\Gm@cntv=\count350
+\c@Gm@tempcnt=\count351
+\Gm@bindingoffset=\dimen290
+\Gm@wd@mp=\dimen291
+\Gm@odd@mp=\dimen292
+\Gm@even@mp=\dimen293
+\Gm@layoutwidth=\dimen294
+\Gm@layoutheight=\dimen295
+\Gm@layouthoffset=\dimen296
+\Gm@layoutvoffset=\dimen297
+\Gm@dimlist=\toks39
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg"))) (macro.tex)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
+y"
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip82
+\LTright=\skip83
+\LTpre=\skip84
+\LTpost=\skip85
+\LTchunksize=\count352
+\LTcapwidth=\dimen298
+\LT@head=\box66
+\LT@firsthead=\box67
+\LT@foot=\box68
+\LT@lastfoot=\box69
+\LT@cols=\count353
+\LT@rows=\count354
+\c@LT@tables=\count355
+\c@LT@chunks=\count356
+\LT@p@ftn=\toks40
+) (main.aux (sh/frontpage.aux) (sh/copyright.aux) (sh/signaturepage.aux)
+(sh/abstract.aux) (sh/to.aux) (sh/ack.aux) (sh/notation.aux) (chapters/ch1.aux)
+(chapters/ch2.aux
+
+LaTeX Warning: Label `brains' multiply defined.
+
+) (chapters/ch3.aux
+
+LaTeX Warning: Label `cwt_eda' multiply defined.
+
+
+LaTeX Warning: Label `feature' multiply defined.
+
+
+LaTeX Warning: Label `svm' multiply defined.
+
+
+LaTeX Warning: Label `mother_wave' multiply defined.
+
+
+LaTeX Warning: Label `edaresult' multiply defined.
+
+
+LaTeX Warning: Label `svmknn' multiply defined.
+
+) (chapters/ch4.aux
+
+LaTeX Warning: Label `nao_body' multiply defined.
+
+
+LaTeX Warning: Label `mic_loc' multiply defined.
+
+
+LaTeX Warning: Label `xylo640' multiply defined.
+
+
+LaTeX Warning: Label `griper' multiply defined.
+
+
+LaTeX Warning: Label `room' multiply defined.
+
+
+LaTeX Warning: Label `room_pana' multiply defined.
+
+
+LaTeX Warning: Label `session_detail' multiply defined.
+
+
+LaTeX Warning: Label `module' multiply defined.
+
+
+LaTeX Warning: Label `stft' multiply defined.
+
+
+LaTeX Warning: Label `LD' multiply defined.
+
+) (chapters/ch5.aux
+
+LaTeX Warning: Label `warmup' multiply defined.
+
+
+LaTeX Warning: Label `song' multiply defined.
+
+
+LaTeX Warning: Label `turn' multiply defined.
+
+
+LaTeX Warning: Label `tab1' multiply defined.
+
+
+LaTeX Warning: Label `tab2' multiply defined.
+
+
+LaTeX Warning: Label `tab3' multiply defined.
+
+
+LaTeX Warning: Label `tab4' multiply defined.
+
+) (chapters/ch6.aux
+
+LaTeX Warning: Label `sensor_s' multiply defined.
+
+
+LaTeX Warning: Label `sensor' multiply defined.
+
+
+LaTeX Warning: Label `opAmp' multiply defined.
+
+
+LaTeX Warning: Label `sensor_op' multiply defined.
+
+
+LaTeX Warning: Label `mux' multiply defined.
+
+
+LaTeX Warning: Label `arduino' multiply defined.
+
+
+LaTeX Warning: Label `schematic' multiply defined.
+
+
+LaTeX Warning: Label `real' multiply defined.
+
+
+LaTeX Warning: Label `oscil' multiply defined.
+
+
+LaTeX Warning: Label `pin' multiply defined.
+
+
+LaTeX Warning: Label `11pin' multiply defined.
+
+
+LaTeX Warning: Label `pinselect' multiply defined.
+
+
+LaTeX Warning: Label `input' multiply defined.
+
+
+LaTeX Warning: Label `chuckflow' multiply defined.
+
+
+LaTeX Warning: Label `chuckflow' multiply defined.
+
+
+LaTeX Warning: Label `serial' multiply defined.
+
+
+LaTeX Warning: Label `sound' multiply defined.
+
+
+LaTeX Warning: Label `insel' multiply defined.
+
+
+LaTeX Warning: Label `in1' multiply defined.
+
+) (chapters/ch7.aux
+
+LaTeX Warning: Label `101' multiply defined.
+
+
+LaTeX Warning: Label `102' multiply defined.
+
+
+LaTeX Warning: Label `103' multiply defined.
+
+
+LaTeX Warning: Label `104' multiply defined.
+
+
+LaTeX Warning: Label `105' multiply defined.
+
+
+LaTeX Warning: Label `106' multiply defined.
+
+
+LaTeX Warning: Label `107' multiply defined.
+
+
+LaTeX Warning: Label `108' multiply defined.
+
+
+LaTeX Warning: Label `109' multiply defined.
+
+) (sh/vita.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
+df.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count357
+\scratchdimen=\dimen299
+\scratchbox=\box70
+\nofMPsegments=\count358
+\nofMParguments=\count359
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count360
+\MPscratchDim=\dimen300
+\MPnumerator=\count361
+\makeMPintoPDFobject=\count362
+\everyMPtoPDFconversion=\toks42
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
+pdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
+tor-basic-dictionary-English.dict"
+Dictionary: translator-basic-dictionary, Language: English 
+)
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/siunitx\siunitx-ab
+breviations.cfg"
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 433.62pt, 72.27pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43pt, 72.27pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62pt
+* \textheight=650.43pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+1.
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+1.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+11.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+11.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
+.
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+11.
+ ("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmss.fd"
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+11.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+\openout2 = `./sh/frontpage.aux'.
+
+
+(sh/frontpage.tex) [1
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=pst-node.pro
+Non-PDF special ignored!
+<special> header=pst-3d.pro
+Non-PDF special ignored!
+<special> header=pst-math.pro
+Non-PDF special ignored!
+<special> header=pstricks-add.pro
+Non-PDF special ignored!
+<special> header=pst-grad.pro
+Non-PDF special ignored!
+<special> header=pst-coil.pro
+Non-PDF special ignored!
+<special> header=pst-text.pro
+Non-PDF special ignored!
+<special> papersize=614.295pt,794.96999pt
+
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> !userdict begin /bop-hook{gsave 510 770 translate -45 rotate 0.70...
+
+{C:/Users/fengh/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+\openout2 = `./sh/copyright.aux'.
+
+
+(sh/copyright.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+.
+
+("C:\Users\fengh\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+[2
+
+
+]
+\openout2 = `./sh/signaturepage.aux'.
+
+ (sh/signaturepage.tex) [3
+
+
+]
+\openout2 = `./sh/abstract.aux'.
+
+ (sh/abstract.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 7.
+ [4
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+[5]) [6]
+\openout2 = `./sh/to.aux'.
+
+ (sh/to.tex) [3
+
+
+]
+\openout2 = `./sh/ack.aux'.
+
+ (sh/ack.tex [4
+
+
+]) [5] (main.toc [6
+
+
+] [7] [8])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [9]
+(main.lof [10
+
+]
+Overfull \hbox (9.33508pt too wide) in paragraph at lines 8--8
+ [][] []\T1/lmr/m/it/12 The wavelet-based fea-ture ex-trac-tion. Us-ing the C-M
+orlet mother wavelet, 
+ []
+
+[11] [12] [13])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [14] (main.lot [15
+
+] [16])
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [17]
+\openout2 = `./sh/notation.aux'.
+
+ (sh/notation.tex [18
+
+] [19])
+[20]
+\openout2 = `./chapters/ch1.aux'.
+
+ (chapters/ch1.tex
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--24
+
+ []
+
+[1
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 25--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--57
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 58--71
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 72--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--99
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 100--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--126
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 127--140
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 141--159
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 161--174
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 175--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--194
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 195--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--221
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 222--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--249
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 250--270
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 275--288
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 290--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--303
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 306--313
+
+ []
+
+) [15]
+\openout2 = `./chapters/ch2.aux'.
+
+ (chapters/ch2.tex
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--30
+
+ []
+
+[16
+
+
+
+]
+Package epstopdf Info: Source file: <./chapters/fig/brains.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 21498877 bytes
+(epstopdf)             Output file: <./chapters/fig/brains-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2020-07-06 13:11:19
+(epstopdf)                    size: 373998 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/brains-eps-c
+onverted-to.pdf ./chapters/fig/brains.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/brains-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/brains-eps-converted-to.pdf, id=134, 1687.30376pt x 2111.89pt>
+File: ./chapters/fig/brains-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/brains-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/brains-eps-converted-to.pdf  used on in
+put line 34.
+(pdftex.def)             Requested size: 421.8249pt x 527.9712pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--51
+
+ []
+
+[17] [18 <./chapters/fig/brains-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 53--67
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 68--87
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 88--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--126
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 127--141
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 142--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--175
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 177--189
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 190--211
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 213--218
+
+ []
+
+[26]
+Overfull \hbox (1.35834pt too wide) in paragraph at lines 232--232
+[]\T1/lmr/bx/n/14.4 Interactive and Ther-a-peu-tic Robots De-signs for Autism 
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 241--257
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 259--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--290
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 292--296
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 298--320
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 322--329
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 330--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--357
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 358--385
+
+ []
+
+[34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 387--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--419
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 420--426
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+) [39]
+\openout2 = `./chapters/ch3.aux'.
+
+ (chapters/ch3.tex
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--28
+
+ []
+
+[40
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 29--41
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 59--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--86
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 87--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--110
+
+ []
+
+[44] [45]
+Package epstopdf Info: Source file: <./chapters/fig/fig1.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 4150516 bytes
+(epstopdf)             Output file: <./chapters/fig/fig1-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 145536 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/fig1-eps-con
+verted-to.pdf ./chapters/fig/fig1.eps>
+(epstopdf)             \includegraphics on input line 145.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/fig1-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/fig1-eps-converted-to.pdf, id=230, 559.08875pt x 190.7125pt>
+File: ./chapters/fig/fig1-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/fig1-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/fig1-eps-converted-to.pdf  used on inpu
+t line 145.
+(pdftex.def)             Requested size: 391.35945pt x 133.49782pt.
+Package epstopdf Info: Source file: <./chapters/fig/fig2.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 2118137 bytes
+(epstopdf)             Output file: <./chapters/fig/fig2-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 14299 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/fig2-eps-con
+verted-to.pdf ./chapters/fig/fig2.eps>
+(epstopdf)             \includegraphics on input line 157.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/fig2-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/fig2-eps-converted-to.pdf, id=231, 304.13625pt x 178.6675pt>
+File: ./chapters/fig/fig2-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/fig2-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/fig2-eps-converted-to.pdf  used on inpu
+t line 157.
+(pdftex.def)             Requested size: 304.1355pt x 178.66705pt.
+[46] [47 <./chapters/fig/fig1-eps-converted-to.pdf> <./chapters/fig/fig2-eps-co
+nverted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 173--192
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 193--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 213--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--251
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 252--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+[51]
+Package epstopdf Info: Source file: <./chapters/fig/cwt_eda.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 6878249 bytes
+(epstopdf)             Output file: <./chapters/fig/cwt_eda-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 135975 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/cwt_eda-eps-
+converted-to.pdf ./chapters/fig/cwt_eda.eps>
+(epstopdf)             \includegraphics on input line 264.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/cwt_eda-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/cwt_eda-eps-converted-to.pdf, id=263, 587.19376pt x 297.11pt>
+File: ./chapters/fig/cwt_eda-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/cwt_eda-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/cwt_eda-eps-converted-to.pdf  used on i
+nput line 264.
+(pdftex.def)             Requested size: 587.19232pt x 297.10927pt.
+Package epstopdf Info: Source file: <./chapters/fig/wavelet_feature.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 4538121 bytes
+(epstopdf)             Output file: <./chapters/fig/wavelet_feature-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 58255 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/wavelet_feat
+ure-eps-converted-to.pdf ./chapters/fig/wavelet_feature.eps>
+(epstopdf)             \includegraphics on input line 277.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/wavelet_feature-eps-converted
+-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+<./chapters/fig/wavelet_feature-eps-converted-to.pdf, id=264, 467.7475pt x 245.
+91875pt>
+File: ./chapters/fig/wavelet_feature-eps-converted-to.pdf Graphic file (type pd
+f)
+<use ./chapters/fig/wavelet_feature-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/wavelet_feature-eps-converted-to.pdf  u
+sed on input line 277.
+(pdftex.def)             Requested size: 608.07166pt x 319.69432pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/svm.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 3256828 bytes
+(epstopdf)             Output file: <./chapters/fig/svm-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 36962 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/svm-eps-conv
+erted-to.pdf ./chapters/fig/svm.eps>
+(epstopdf)             \includegraphics on input line 306.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/svm-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/svm-eps-converted-to.pdf, id=265, 336.25626pt x 244.915pt>
+File: ./chapters/fig/svm-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/svm-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/svm-eps-converted-to.pdf  used on input
+ line 306.
+(pdftex.def)             Requested size: 336.25543pt x 244.91438pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--315
+
+ []
+
+[52] [53 <./chapters/fig/cwt_eda-eps-converted-to.pdf>] [54 <./chapters/fig/wav
+elet_feature-eps-converted-to.pdf>] [55 <./chapters/fig/svm-eps-converted-to.pd
+f>]
+Underfull \hbox (badness 10000) in paragraph at lines 316--320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--338
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--358
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--374
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/mother.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 2654108 bytes
+(epstopdf)             Output file: <./chapters/fig/mother-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 79027 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/mother-eps-c
+onverted-to.pdf ./chapters/fig/mother.eps>
+(epstopdf)             \includegraphics on input line 378.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/mother-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/mother-eps-converted-to.pdf, id=296, 570.13pt x 119.44624pt>
+File: ./chapters/fig/mother-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/mother-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/mother-eps-converted-to.pdf  used on in
+put line 378.
+(pdftex.def)             Requested size: 427.59645pt x 89.58444pt.
+
+Overfull \hbox (5.97646pt too wide) in paragraph at lines 377--382
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--424
+
+ []
+
+[58] [59 <./chapters/fig/mother-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 425--430
+
+ []
+
+[60]
+Overfull \hbox (0.65884pt too wide) in paragraph at lines 431--442
+[]\T1/lmr/m/n/12 Principal com-po-nent anal-y-sis (PCA) [[]] is then ap-plied o
+n the ex-tracted wavelet-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 449--477
+
+ []
+
+[61] [62]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 478.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--546
+
+ []
+
+[63] [64]) [65]
+\openout2 = `./chapters/ch4.aux'.
+
+ (chapters/ch4.tex
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--18
+
+ []
+
+[66
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 22--34
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/naobody.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 1573504 bytes
+(epstopdf)             Output file: <./chapters/fig/naobody-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 37386 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/naobody-eps-
+converted-to.pdf ./chapters/fig/naobody.eps>
+(epstopdf)             \includegraphics on input line 38.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/naobody-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/naobody-eps-converted-to.pdf, id=328, 524.96124pt x 488.82625pt
+>
+File: ./chapters/fig/naobody-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/naobody-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/naobody-eps-converted-to.pdf  used on i
+nput line 38.
+(pdftex.def)             Requested size: 419.96956pt x 391.06152pt.
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 44--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/mic.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 1091679 bytes
+(epstopdf)             Output file: <./chapters/fig/mic-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 22446 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/mic-eps-conv
+erted-to.pdf ./chapters/fig/mic.eps>
+(epstopdf)             \includegraphics on input line 64.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/mic-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/mic-eps-converted-to.pdf, id=333, 220.825pt x 124.465pt>
+File: ./chapters/fig/mic-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/mic-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/mic-eps-converted-to.pdf  used on input
+ line 64.
+(pdftex.def)             Requested size: 264.98866pt x 149.35724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--75
+
+ []
+
+[68] [69 <./chapters/fig/naobody-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 77--92
+
+ []
+
+[70 <./chapters/fig/mic-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/xylo640.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 1896584 bytes
+(epstopdf)             Output file: <./chapters/fig/xylo640-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 27119 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/xylo640-eps-
+converted-to.pdf ./chapters/fig/xylo640.eps>
+(epstopdf)             \includegraphics on input line 96.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/xylo640-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/xylo640-eps-converted-to.pdf, id=349, 642.4pt x 481.8pt>
+File: ./chapters/fig/xylo640-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/xylo640-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/xylo640-eps-converted-to.pdf  used on i
+nput line 96.
+(pdftex.def)             Requested size: 385.44298pt x 289.08221pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+
+ []
+
+[71 <./chapters/fig/xylo640-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/grip.eps>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 1069495 bytes
+(epstopdf)             Output file: <./chapters/fig/grip-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 12905 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/grip-eps-con
+verted-to.pdf ./chapters/fig/grip.eps>
+(epstopdf)             \includegraphics on input line 113.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/grip-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/grip-eps-converted-to.pdf, id=356, 481.8pt x 361.35pt>
+File: ./chapters/fig/grip-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/grip-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/grip-eps-converted-to.pdf  used on inpu
+t line 113.
+(pdftex.def)             Requested size: 240.8994pt x 180.67456pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--126
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/left_view.eps>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 1896576 bytes
+(epstopdf)             Output file: <./chapters/fig/left_view-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 22231 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/left_view-ep
+s-converted-to.pdf ./chapters/fig/left_view.eps>
+(epstopdf)             \includegraphics on input line 130.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/left_view-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/left_view-eps-converted-to.pdf, id=357, 481.8pt x 642.4pt>
+File: ./chapters/fig/left_view-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/left_view-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/left_view-eps-converted-to.pdf  used on
+ input line 130.
+(pdftex.def)             Requested size: 144.5411pt x 192.72148pt.
+Package epstopdf Info: Source file: <./chapters/fig/top_view.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 1069499 bytes
+(epstopdf)             Output file: <./chapters/fig/top_view-eps-converted-to.p
+df>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 18082 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/top_view-eps
+-converted-to.pdf ./chapters/fig/top_view.eps>
+(epstopdf)             \includegraphics on input line 133.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/top_view-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/top_view-eps-converted-to.pdf, id=358, 481.8pt x 361.35pt>
+File: ./chapters/fig/top_view-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/top_view-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/top_view-eps-converted-to.pdf  used on 
+input line 133.
+(pdftex.def)             Requested size: 144.5411pt x 108.40584pt.
+Package epstopdf Info: Source file: <./chapters/fig/front_view.eps>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 1069501 bytes
+(epstopdf)             Output file: <./chapters/fig/front_view-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:45
+(epstopdf)                    size: 16843 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/front_view-e
+ps-converted-to.pdf ./chapters/fig/front_view.eps>
+(epstopdf)             \includegraphics on input line 135.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/front_view-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/front_view-eps-converted-to.pdf, id=359, 481.8pt x 361.35pt>
+File: ./chapters/fig/front_view-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/front_view-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/front_view-eps-converted-to.pdf  used o
+n input line 135.
+(pdftex.def)             Requested size: 289.08221pt x 216.81168pt.
+[72 <./chapters/fig/grip-eps-converted-to.pdf>] [73 <./chapters/fig/left_view-e
+ps-converted-to.pdf> <./chapters/fig/top_view-eps-converted-to.pdf> <./chapters
+/fig/front_view-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/room.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 1004571 bytes
+(epstopdf)             Output file: <./chapters/fig/room-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 22300 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/room-eps-con
+verted-to.pdf ./chapters/fig/room.eps>
+(epstopdf)             \includegraphics on input line 154.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/room-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/room-eps-converted-to.pdf, id=379, 552.0625pt x 296.10625pt>
+File: ./chapters/fig/room-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/room-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/room-eps-converted-to.pdf  used on inpu
+t line 154.
+(pdftex.def)             Requested size: 331.24005pt x 177.66512pt.
+Package epstopdf Info: Source file: <./chapters/fig/room_pana.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 6265013 bytes
+(epstopdf)             Output file: <./chapters/fig/room_pana-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 54123 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/room_pana-ep
+s-converted-to.pdf ./chapters/fig/room_pana.eps>
+(epstopdf)             \includegraphics on input line 163.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/room_pana-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/room_pana-eps-converted-to.pdf, id=380, 1926.19624pt x 531.9875
+pt>
+File: ./chapters/fig/room_pana-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/room_pana-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/room_pana-eps-converted-to.pdf  used on
+ input line 163.
+(pdftex.def)             Requested size: 674.17879pt x 186.19841pt.
+
+Overfull \hbox (35.7488pt too wide) in paragraph at lines 162--165
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
+
+ []
+
+[74 <./chapters/fig/room-eps-converted-to.pdf>] [75 <./chapters/fig/room_pana-e
+ps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 184--192
+
+ []
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 194--218
+
+ []
+
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 219--230
+
+ []
+
+[78]
+Overfull \vbox (14.49998pt too high) detected at line 249
+ []
+
+
+Overfull \vbox (14.49998pt too high) detected at line 255
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--306
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/module_blocks.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 2061658 bytes
+(epstopdf)             Output file: <./chapters/fig/module_blocks-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 33151 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/module_block
+s-eps-converted-to.pdf ./chapters/fig/module_blocks.eps>
+(epstopdf)             \includegraphics on input line 310.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/module_blocks-eps-converted-t
+o.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
+ed
+<./chapters/fig/module_blocks-eps-converted-to.pdf, id=402, 777.90625pt x 432.6
+1626pt>
+File: ./chapters/fig/module_blocks-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./chapters/fig/module_blocks-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/module_blocks-eps-converted-to.pdf  use
+d on input line 310.
+(pdftex.def)             Requested size: 388.95216pt x 216.3076pt.
+
+Overfull \hbox (7.34627pt too wide) in paragraph at lines 316--316
+[]\T1/lmr/bx/n/14.4 Module 1: Eye-hand Self-Calibration Micro-Adjustment 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--323
+
+ []
+
+[79] [80] [81]
+Package epstopdf Info: Source file: <./chapters/fig/blue.eps>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 1896568 bytes
+(epstopdf)             Output file: <./chapters/fig/blue-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 9306 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/blue-eps-con
+verted-to.pdf ./chapters/fig/blue.eps>
+(epstopdf)             \includegraphics on input line 338.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/blue-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/blue-eps-converted-to.pdf, id=413, 642.4pt x 481.8pt>
+File: ./chapters/fig/blue-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/blue-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/blue-eps-converted-to.pdf  used on inpu
+t line 338.
+(pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
+Package epstopdf Info: Source file: <./chapters/fig/all_color.eps>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 1896574 bytes
+(epstopdf)             Output file: <./chapters/fig/all_color-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 21646 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/all_color-ep
+s-converted-to.pdf ./chapters/fig/all_color.eps>
+(epstopdf)             \includegraphics on input line 341.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/all_color-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/all_color-eps-converted-to.pdf, id=414, 642.4pt x 481.8pt>
+File: ./chapters/fig/all_color-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/all_color-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/all_color-eps-converted-to.pdf  used on
+ input line 341.
+(pdftex.def)             Requested size: 192.72148pt x 144.5411pt.
+Package epstopdf Info: Source file: <./chapters/fig/color_detection.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 753666 bytes
+(epstopdf)             Output file: <./chapters/fig/color_detection-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 17317 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/color_detect
+ion-eps-converted-to.pdf ./chapters/fig/color_detection.eps>
+(epstopdf)             \includegraphics on input line 343.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/color_detection-eps-converted
+-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+<./chapters/fig/color_detection-eps-converted-to.pdf, id=415, 638.385pt x 191.7
+1625pt>
+File: ./chapters/fig/color_detection-eps-converted-to.pdf Graphic file (type pd
+f)
+<use ./chapters/fig/color_detection-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/color_detection-eps-converted-to.pdf  u
+sed on input line 343.
+(pdftex.def)             Requested size: 383.03394pt x 115.03062pt.
+[82 <./chapters/fig/module_blocks-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 351--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--365
+
+ []
+
+[83] [84 <./chapters/fig/blue-eps-converted-to.pdf> <./chapters/fig/all_color-e
+ps-converted-to.pdf> <./chapters/fig/color_detection-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 368--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
+
+ []
+
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 390--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--403
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/stft.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 1888707 bytes
+(epstopdf)             Output file: <./chapters/fig/stft-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 29334 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/stft-eps-con
+verted-to.pdf ./chapters/fig/stft.eps>
+(epstopdf)             \includegraphics on input line 407.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/stft-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/stft-eps-converted-to.pdf, id=441, 252.945pt x 188.705pt>
+File: ./chapters/fig/stft-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/stft-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/stft-eps-converted-to.pdf  used on inpu
+t line 407.
+(pdftex.def)             Requested size: 379.41656pt x 283.0568pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--422
+
+ []
+
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 423--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--435
+
+ []
+
+[87 <./chapters/fig/stft-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/example_LD.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 2278885 bytes
+(epstopdf)             Output file: <./chapters/fig/example_LD-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 37241 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/example_LD-e
+ps-converted-to.pdf ./chapters/fig/example_LD.eps>
+(epstopdf)             \includegraphics on input line 439.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/example_LD-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/example_LD-eps-converted-to.pdf, id=452, 872.25874pt x 426.5937
+5pt>
+File: ./chapters/fig/example_LD-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/example_LD-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/example_LD-eps-converted-to.pdf  used o
+n input line 439.
+(pdftex.def)             Requested size: 436.1283pt x 213.29634pt.
+
+Overfull \hbox (14.5083pt too wide) in paragraph at lines 438--441
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--454
+
+ []
+
+[88 <./chapters/fig/example_LD-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 459--471
+
+ []
+
+[89]
+Underfull \hbox (badness 10000) in paragraph at lines 472--479
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--493
+
+ []
+
+[90]) [91]
+\openout2 = `./chapters/ch5.aux'.
+
+ (chapters/ch5.tex
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--10
+
+ []
+
+[92
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 19--27
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/warm.eps>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 3917375 bytes
+(epstopdf)             Output file: <./chapters/fig/warm-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:48
+(epstopdf)                    size: 45766 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/warm-eps-con
+verted-to.pdf ./chapters/fig/warm.eps>
+(epstopdf)             \includegraphics on input line 31.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/warm-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/warm-eps-converted-to.pdf, id=472, 491.8375pt x 204.765pt>
+File: ./chapters/fig/warm-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/warm-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/warm-eps-converted-to.pdf  used on inpu
+t line 31.
+(pdftex.def)             Requested size: 442.64964pt x 184.28677pt.
+
+Overfull \hbox (21.02965pt too wide) in paragraph at lines 30--33
+ [] 
+ []
+
+[93] [94 <./chapters/fig/warm-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/song.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 3706875 bytes
+(epstopdf)             Output file: <./chapters/fig/song-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 46755 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/song-eps-con
+verted-to.pdf ./chapters/fig/song.eps>
+(epstopdf)             \includegraphics on input line 57.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/song-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/song-eps-converted-to.pdf, id=482, 465.74pt x 204.765pt>
+File: ./chapters/fig/song-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/song-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/song-eps-converted-to.pdf  used on inpu
+t line 57.
+(pdftex.def)             Requested size: 419.16212pt x 184.28677pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--79
+
+ []
+
+[95 <./chapters/fig/song-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/turn.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 2315054 bytes
+(epstopdf)             Output file: <./chapters/fig/turn-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:11:24
+(epstopdf)                    size: 21114 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/turn-eps-con
+verted-to.pdf ./chapters/fig/turn.eps>
+(epstopdf)             \includegraphics on input line 83.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/turn-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/turn-eps-converted-to.pdf, id=489, 352.31625pt x 168.63pt>
+File: ./chapters/fig/turn-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/turn-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/turn-eps-converted-to.pdf  used on inpu
+t line 83.
+(pdftex.def)             Requested size: 528.47307pt x 252.94437pt.
+
+Overfull \hbox (106.85307pt too wide) in paragraph at lines 82--86
+ [] 
+ []
+
+
+Overfull \hbox (4.26349pt too wide) in paragraph at lines 91--96
+\T1/lmr/m/n/12 Since we have de-vel-oped our emo-tion clas-si-fi-ca-tion method
+ based on the time-frequency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+[96] [97 <./chapters/fig/turn-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 104--123
+
+ []
+
+[98]
+Package epstopdf Info: Source file: <./chapters/fig/eda_anno.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 1380399 bytes
+(epstopdf)             Output file: <./chapters/fig/eda_anno-eps-converted-to.p
+df>
+(epstopdf)                    date: 2020-07-06 13:11:27
+(epstopdf)                    size: 17577 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/eda_anno-eps
+-converted-to.pdf ./chapters/fig/eda_anno.eps>
+(epstopdf)             \includegraphics on input line 127.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/eda_anno-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/eda_anno-eps-converted-to.pdf, id=503, 243.91125pt x 144.54pt>
+File: ./chapters/fig/eda_anno-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/eda_anno-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/eda_anno-eps-converted-to.pdf  used on 
+input line 127.
+(pdftex.def)             Requested size: 390.25851pt x 231.26428pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--140
+
+ []
+
+[99 <./chapters/fig/eda_anno-eps-converted-to.pdf>]
+Overfull \hbox (6.50233pt too wide) in paragraph at lines 169--185
+\T1/lmr/m/n/12 strates the note(s) to play; b) par-tic-i-pant/robot re-peat the
+ note(s); c) robot/participant
+ []
+
+[100]
+Underfull \hbox (badness 10000) in paragraph at lines 251--261
+
+ []
+
+[101] [102]) [103] [104] [105]
+\openout2 = `./chapters/ch6.aux'.
+
+ (chapters/ch6.tex
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--30
+
+ []
+
+[106
+
+
+
+]
+Package epstopdf Info: Source file: <./chapters/fig/peizoSensorPic.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 2136950 bytes
+(epstopdf)             Output file: <./chapters/fig/peizoSensorPic-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:11:30
+(epstopdf)                    size: 107073 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/peizoSensorP
+ic-eps-converted-to.pdf ./chapters/fig/peizoSensorPic.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/peizoSensorPic-eps-converted-
+to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
+wed
+<./chapters/fig/peizoSensorPic-eps-converted-to.pdf, id=532, 1215.54124pt x 859
+.21pt>
+File: ./chapters/fig/peizoSensorPic-eps-converted-to.pdf Graphic file (type pdf
+)
+<use ./chapters/fig/peizoSensorPic-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/peizoSensorPic-eps-converted-to.pdf  us
+ed on input line 34.
+(pdftex.def)             Requested size: 364.66519pt x 257.76498pt.
+Package epstopdf Info: Source file: <./chapters/fig/sensor.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 1330259 bytes
+(epstopdf)             Output file: <./chapters/fig/sensor-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 26824 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/sensor-eps-c
+onverted-to.pdf ./chapters/fig/sensor.eps>
+(epstopdf)             \includegraphics on input line 43.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/sensor-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/sensor-eps-converted-to.pdf, id=533, 544.0325pt x 398.48875pt>
+File: ./chapters/fig/sensor-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/sensor-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/sensor-eps-converted-to.pdf  used on in
+put line 43.
+(pdftex.def)             Requested size: 435.2266pt x 318.79143pt.
+
+Overfull \hbox (13.6066pt too wide) in paragraph at lines 42--45
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--57
+
+ []
+
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+
+ []
+
+[108 <./chapters/fig/peizoSensorPic-eps-converted-to.pdf>] [109 <./chapters/fig
+/sensor-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--70
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/opAmpPic.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 1491443 bytes
+(epstopdf)             Output file: <./chapters/fig/opAmpPic-eps-converted-to.p
+df>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 29483 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/opAmpPic-eps
+-converted-to.pdf ./chapters/fig/opAmpPic.eps>
+(epstopdf)             \includegraphics on input line 74.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/opAmpPic-eps-converted-to.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/opAmpPic-eps-converted-to.pdf, id=550, 528.97626pt x 459.7175pt
+>
+File: ./chapters/fig/opAmpPic-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/opAmpPic-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/opAmpPic-eps-converted-to.pdf  used on 
+input line 74.
+(pdftex.def)             Requested size: 211.58675pt x 183.88373pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--86
+
+ []
+
+[110 <./chapters/fig/opAmpPic-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/sensorUseagePic.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 786434 bytes
+(epstopdf)             Output file: <./chapters/fig/sensorUseagePic-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 27522 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/sensorUseage
+Pic-eps-converted-to.pdf ./chapters/fig/sensorUseagePic.eps>
+(epstopdf)             \includegraphics on input line 90.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/sensorUseagePic-eps-converted
+-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+<./chapters/fig/sensorUseagePic-eps-converted-to.pdf, id=557, 494.84875pt x 772
+.8875pt>
+File: ./chapters/fig/sensorUseagePic-eps-converted-to.pdf Graphic file (type pd
+f)
+<use ./chapters/fig/sensorUseagePic-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/sensorUseagePic-eps-converted-to.pdf  u
+sed on input line 90.
+(pdftex.def)             Requested size: 296.91154pt x 463.73607pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--127
+
+ []
+
+[111] [112 <./chapters/fig/sensorUseagePic-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/mux.eps>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 1561642 bytes
+(epstopdf)             Output file: <./chapters/fig/mux-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:09:46
+(epstopdf)                    size: 25325 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/mux-eps-conv
+erted-to.pdf ./chapters/fig/mux.eps>
+(epstopdf)             \includegraphics on input line 131.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/mux-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/mux-eps-converted-to.pdf, id=567, 560.0925pt x 454.69875pt>
+File: ./chapters/fig/mux-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/mux-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/mux-eps-converted-to.pdf  used on input
+ line 131.
+(pdftex.def)             Requested size: 224.03302pt x 181.87627pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--149
+
+ []
+
+[113 <./chapters/fig/mux-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/arduino.eps>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 1607712 bytes
+(epstopdf)             Output file: <./chapters/fig/arduino-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2020-07-06 13:09:43
+(epstopdf)                    size: 28405 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/arduino-eps-
+converted-to.pdf ./chapters/fig/arduino.eps>
+(epstopdf)             \includegraphics on input line 153.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/arduino-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/arduino-eps-converted-to.pdf, id=574, 574.145pt x 456.70625pt>
+File: ./chapters/fig/arduino-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/arduino-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/arduino-eps-converted-to.pdf  used on i
+nput line 153.
+(pdftex.def)             Requested size: 229.65393pt x 182.67926pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
+
+ []
+
+[114 <./chapters/fig/arduino-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--186
+
+ []
+
+[115]
+Underfull \hbox (badness 10000) in paragraph at lines 188--205
+
+ []
+
+[116]
+Package epstopdf Info: Source file: <./chapters/fig/schematic.eps>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 1116530 bytes
+(epstopdf)             Output file: <./chapters/fig/schematic-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-07-06 13:09:47
+(epstopdf)                    size: 31961 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/schematic-ep
+s-converted-to.pdf ./chapters/fig/schematic.eps>
+(epstopdf)             \includegraphics on input line 209.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/schematic-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/schematic-eps-converted-to.pdf, id=588, 928.46875pt x 586.19pt>
+
+File: ./chapters/fig/schematic-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/schematic-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/schematic-eps-converted-to.pdf  used on
+ input line 209.
+(pdftex.def)             Requested size: 371.38092pt x 234.47185pt.
+Package epstopdf Info: Source file: <./chapters/fig/real.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 10204891 bytes
+(epstopdf)             Output file: <./chapters/fig/real-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:11:45
+(epstopdf)                    size: 629403 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/real-eps-con
+verted-to.pdf ./chapters/fig/real.eps>
+(epstopdf)             \includegraphics on input line 218.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/real-eps-converted-to.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/real-eps-converted-to.pdf, id=589, 1084.05pt x 1559.8275pt>
+File: ./chapters/fig/real-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/real-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/real-eps-converted-to.pdf  used on inpu
+t line 218.
+(pdftex.def)             Requested size: 433.61232pt x 623.91995pt.
+
+Overfull \hbox (11.99232pt too wide) in paragraph at lines 217--220
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 26.92331pt on input line 222.
+
+Package epstopdf Info: Source file: <./chapters/fig/oscil.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 9456700 bytes
+(epstopdf)             Output file: <./chapters/fig/oscil-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2020-07-06 13:11:59
+(epstopdf)                    size: 293727 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/oscil-eps-co
+nverted-to.pdf ./chapters/fig/oscil.eps>
+(epstopdf)             \includegraphics on input line 227.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/oscil-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/oscil-eps-converted-to.pdf, id=590, 1445.4pt x 1084.05pt>
+File: ./chapters/fig/oscil-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/oscil-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/oscil-eps-converted-to.pdf  used on inp
+ut line 227.
+(pdftex.def)             Requested size: 404.70924pt x 303.53194pt.
+[117 <./chapters/fig/schematic-eps-converted-to.pdf>] [118 <./chapters/fig/real
+-eps-converted-to.pdf>] [119 <./chapters/fig/oscil-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./chapters/fig/pin.eps>
+(epstopdf)                    date: 2020-07-07 21:28:50
+(epstopdf)                    size: 965003 bytes
+(epstopdf)             Output file: <./chapters/fig/pin-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-07 22:29:13
+(epstopdf)                    size: 19219 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/pin-eps-conv
+erted-to.pdf ./chapters/fig/pin.eps>
+(epstopdf)             \includegraphics on input line 242.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/pin-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/pin-eps-converted-to.pdf, id=609, 172.645pt x 143.53625pt>
+File: ./chapters/fig/pin-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/pin-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/pin-eps-converted-to.pdf  used on input
+ line 242.
+(pdftex.def)             Requested size: 345.28912pt x 287.07178pt.
+Package epstopdf Info: Source file: <./chapters/fig/11pin.eps>
+(epstopdf)                    date: 2020-07-07 21:28:50
+(epstopdf)                    size: 1193217 bytes
+(epstopdf)             Output file: <./chapters/fig/11pin-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2020-07-07 22:29:16
+(epstopdf)                    size: 21506 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/11pin-eps-co
+nverted-to.pdf ./chapters/fig/11pin.eps>
+(epstopdf)             \includegraphics on input line 252.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/11pin-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/11pin-eps-converted-to.pdf, id=610, 166.6225pt x 182.6825pt>
+File: ./chapters/fig/11pin-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/11pin-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/11pin-eps-converted-to.pdf  used on inp
+ut line 252.
+(pdftex.def)             Requested size: 333.24417pt x 365.36407pt.
+Package epstopdf Info: Source file: <./chapters/fig/muxpinselect.eps>
+(epstopdf)                    date: 2020-07-07 21:28:50
+(epstopdf)                    size: 1007415 bytes
+(epstopdf)             Output file: <./chapters/fig/muxpinselect-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2020-07-07 22:29:19
+(epstopdf)                    size: 18949 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/muxpinselect
+-eps-converted-to.pdf ./chapters/fig/muxpinselect.eps>
+(epstopdf)             \includegraphics on input line 262.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/muxpinselect-eps-converted-to
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<./chapters/fig/muxpinselect-eps-converted-to.pdf, id=611, 162.6075pt x 158.592
+5pt>
+File: ./chapters/fig/muxpinselect-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/muxpinselect-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/muxpinselect-eps-converted-to.pdf  used
+ on input line 262.
+(pdftex.def)             Requested size: 325.2142pt x 317.18417pt.
+Package epstopdf Info: Source file: <./chapters/fig/inputcontrol.eps>
+(epstopdf)                    date: 2020-07-07 21:28:55
+(epstopdf)                    size: 704183 bytes
+(epstopdf)             Output file: <./chapters/fig/inputcontrol-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2020-07-07 22:29:21
+(epstopdf)                    size: 10477 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/inputcontrol
+-eps-converted-to.pdf ./chapters/fig/inputcontrol.eps>
+(epstopdf)             \includegraphics on input line 272.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/inputcontrol-eps-converted-to
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<./chapters/fig/inputcontrol-eps-converted-to.pdf, id=612, 120.45pt x 149.55875
+pt>
+File: ./chapters/fig/inputcontrol-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/inputcontrol-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/inputcontrol-eps-converted-to.pdf  used
+ on input line 272.
+(pdftex.def)             Requested size: 240.89938pt x 299.11676pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--285
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/chuckflow.eps>
+(epstopdf)                    date: 2020-07-06 13:09:44
+(epstopdf)                    size: 4798644 bytes
+(epstopdf)             Output file: <./chapters/fig/chuckflow-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-07-06 13:12:06
+(epstopdf)                    size: 113808 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/chuckflow-ep
+s-converted-to.pdf ./chapters/fig/chuckflow.eps>
+(epstopdf)             \includegraphics on input line 289.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/chuckflow-eps-converted-to.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/chuckflow-eps-converted-to.pdf, id=613, 881.2925pt x 890.32625p
+t>
+File: ./chapters/fig/chuckflow-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/chuckflow-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/chuckflow-eps-converted-to.pdf  used on
+ input line 289.
+(pdftex.def)             Requested size: 440.64517pt x 445.16203pt.
+
+Overfull \hbox (19.02518pt too wide) in paragraph at lines 288--292
+ [] 
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/serial.eps>
+(epstopdf)                    date: 2020-07-07 21:29:01
+(epstopdf)                    size: 1273657 bytes
+(epstopdf)             Output file: <./chapters/fig/serial-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2020-07-07 22:29:24
+(epstopdf)                    size: 21927 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/serial-eps-c
+onverted-to.pdf ./chapters/fig/serial.eps>
+(epstopdf)             \includegraphics on input line 299.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/serial-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/serial-eps-converted-to.pdf, id=614, 233.87375pt x 139.52126pt>
+
+File: ./chapters/fig/serial-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/serial-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/serial-eps-converted-to.pdf  used on in
+put line 299.
+(pdftex.def)             Requested size: 467.7463pt x 279.04181pt.
+
+Overfull \hbox (46.12631pt too wide) in paragraph at lines 298--303
+ [] 
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/sound.eps>
+(epstopdf)                    date: 2020-07-07 21:29:01
+(epstopdf)                    size: 1001089 bytes
+(epstopdf)             Output file: <./chapters/fig/sound-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2020-07-07 22:29:26
+(epstopdf)                    size: 19430 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/sound-eps-co
+nverted-to.pdf ./chapters/fig/sound.eps>
+(epstopdf)             \includegraphics on input line 310.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/sound-eps-converted-to.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/sound-eps-converted-to.pdf, id=615, 203.76125pt x 125.46875pt>
+File: ./chapters/fig/sound-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/sound-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/sound-eps-converted-to.pdf  used on inp
+ut line 310.
+(pdftex.def)             Requested size: 407.52148pt x 250.93686pt.
+Package epstopdf Info: Source file: <./chapters/fig/instrument.eps>
+(epstopdf)                    date: 2020-07-07 21:29:01
+(epstopdf)                    size: 470127 bytes
+(epstopdf)             Output file: <./chapters/fig/instrument-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2020-07-07 22:29:28
+(epstopdf)                    size: 10616 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/instrument-e
+ps-converted-to.pdf ./chapters/fig/instrument.eps>
+(epstopdf)             \includegraphics on input line 321.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/instrument-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/instrument-eps-converted-to.pdf, id=616, 125.46875pt x 95.35625
+pt>
+File: ./chapters/fig/instrument-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/instrument-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/instrument-eps-converted-to.pdf  used o
+n input line 321.
+(pdftex.def)             Requested size: 250.93686pt x 190.712pt.
+Package epstopdf Info: Source file: <./chapters/fig/in2.eps>
+(epstopdf)                    date: 2020-07-07 21:28:55
+(epstopdf)                    size: 1877564 bytes
+(epstopdf)             Output file: <./chapters/fig/in2-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-11 17:56:12
+(epstopdf)                    size: 30841 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/in2-eps-conv
+erted-to.pdf ./chapters/fig/in2.eps>
+(epstopdf)             \includegraphics on input line 331.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/in2-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/in2-eps-converted-to.pdf, id=617, 217.81375pt x 220.825pt>
+File: ./chapters/fig/in2-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/in2-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/in2-eps-converted-to.pdf  used on input
+ line 331.
+(pdftex.def)             Requested size: 435.6264pt x 441.6489pt.
+
+Overfull \hbox (14.00641pt too wide) in paragraph at lines 330--336
+ [] 
+ []
+
+) [120 <./chapters/fig/pin-eps-converted-to.pdf>] [121 <./chapters/fig/11pin-ep
+s-converted-to.pdf>] [122 <./chapters/fig/muxpinselect-eps-converted-to.pdf>]
+[123 <./chapters/fig/inputcontrol-eps-converted-to.pdf>] [124 <./chapters/fig/c
+huckflow-eps-converted-to.pdf>] [125 <./chapters/fig/serial-eps-converted-to.pd
+f>] [126 <./chapters/fig/sound-eps-converted-to.pdf> <./chapters/fig/instrument
+-eps-converted-to.pdf>] [127 <./chapters/fig/in2-eps-converted-to.pdf>]
+\openout2 = `./chapters/ch7.aux'.
+
+
+(chapters/ch7.tex
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--17
+
+ []
+
+[128
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 18--24
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/101.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1884625 bytes
+(epstopdf)             Output file: <./chapters/fig/101-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:09
+(epstopdf)                    size: 29349 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/101-eps-conv
+erted-to.pdf ./chapters/fig/101.eps>
+(epstopdf)             \includegraphics on input line 28.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/101-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/101-eps-converted-to.pdf, id=674, 282.05376pt x 170.6375pt>
+File: ./chapters/fig/101-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/101-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/101-eps-converted-to.pdf  used on input
+ line 28.
+(pdftex.def)             Requested size: 423.07957pt x 255.9556pt.
+
+Overfull \hbox (1.45958pt too wide) in paragraph at lines 27--30
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--41
+
+ []
+
+[129] [130 <./chapters/fig/101-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/102.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1889857 bytes
+(epstopdf)             Output file: <./chapters/fig/102-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:13
+(epstopdf)                    size: 28928 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/102-eps-conv
+erted-to.pdf ./chapters/fig/102.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/102-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/102-eps-converted-to.pdf, id=684, 278.03876pt x 174.6525pt>
+File: ./chapters/fig/102-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/102-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/102-eps-converted-to.pdf  used on input
+ line 52.
+(pdftex.def)             Requested size: 417.0571pt x 261.9781pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--65
+
+ []
+
+[131 <./chapters/fig/102-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 66--72
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/103.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1906519 bytes
+(epstopdf)             Output file: <./chapters/fig/103-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:16
+(epstopdf)                    size: 26549 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/103-eps-conv
+erted-to.pdf ./chapters/fig/103.eps>
+(epstopdf)             \includegraphics on input line 76.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/103-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/103-eps-converted-to.pdf, id=691, 284.06125pt x 171.64125pt>
+File: ./chapters/fig/103-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/103-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/103-eps-converted-to.pdf  used on input
+ line 76.
+(pdftex.def)             Requested size: 426.09079pt x 257.46121pt.
+
+Overfull \hbox (4.4708pt too wide) in paragraph at lines 75--78
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/104.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1856841 bytes
+(epstopdf)             Output file: <./chapters/fig/104-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:20
+(epstopdf)                    size: 28747 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/104-eps-conv
+erted-to.pdf ./chapters/fig/104.eps>
+(epstopdf)             \includegraphics on input line 88.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/104-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/104-eps-converted-to.pdf, id=692, 281.05pt x 169.63374pt>
+File: ./chapters/fig/104-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/104-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/104-eps-converted-to.pdf  used on input
+ line 88.
+(pdftex.def)             Requested size: 421.57394pt x 254.44997pt.
+[132]
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
+
+ []
+
+[133 <./chapters/fig/103-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--107
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/105.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 1849926 bytes
+(epstopdf)             Output file: <./chapters/fig/105-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:23
+(epstopdf)                    size: 31007 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/105-eps-conv
+erted-to.pdf ./chapters/fig/105.eps>
+(epstopdf)             \includegraphics on input line 111.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/105-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/105-eps-converted-to.pdf, id=703, 280.04625pt x 169.63374pt>
+File: ./chapters/fig/105-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/105-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/105-eps-converted-to.pdf  used on input
+ line 111.
+(pdftex.def)             Requested size: 420.06831pt x 254.44997pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--133
+
+ []
+
+[134 <./chapters/fig/104-eps-converted-to.pdf>] [135 <./chapters/fig/105-eps-co
+nverted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 134--143
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/106.eps>
+(epstopdf)                    date: 2020-07-06 13:09:50
+(epstopdf)                    size: 1849926 bytes
+(epstopdf)             Output file: <./chapters/fig/106-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:26
+(epstopdf)                    size: 29190 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/106-eps-conv
+erted-to.pdf ./chapters/fig/106.eps>
+(epstopdf)             \includegraphics on input line 147.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/106-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/106-eps-converted-to.pdf, id=716, 280.04625pt x 169.63374pt>
+File: ./chapters/fig/106-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/106-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/106-eps-converted-to.pdf  used on input
+ line 147.
+(pdftex.def)             Requested size: 420.06831pt x 254.44997pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--162
+
+ []
+
+[136] [137 <./chapters/fig/106-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 163--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--179
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/107.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1843020 bytes
+(epstopdf)             Output file: <./chapters/fig/107-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:30
+(epstopdf)                    size: 26315 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/107-eps-conv
+erted-to.pdf ./chapters/fig/107.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/107-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/107-eps-converted-to.pdf, id=726, 280.04625pt x 168.63pt>
+File: ./chapters/fig/107-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/107-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/107-eps-converted-to.pdf  used on input
+ line 183.
+(pdftex.def)             Requested size: 420.06831pt x 252.94437pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--201
+
+ []
+
+[138] [139 <./chapters/fig/107-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 202--207
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/108.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1892513 bytes
+(epstopdf)             Output file: <./chapters/fig/108-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:33
+(epstopdf)                    size: 31248 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/108-eps-conv
+erted-to.pdf ./chapters/fig/108.eps>
+(epstopdf)             \includegraphics on input line 211.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/108-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/108-eps-converted-to.pdf, id=737, 285.065pt x 169.63374pt>
+File: ./chapters/fig/108-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/108-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/108-eps-converted-to.pdf  used on input
+ line 211.
+(pdftex.def)             Requested size: 427.59645pt x 254.44997pt.
+
+Overfull \hbox (5.97646pt too wide) in paragraph at lines 210--213
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--226
+
+ []
+
+[140 <./chapters/fig/108-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 227--235
+
+ []
+
+Package epstopdf Info: Source file: <./chapters/fig/109.eps>
+(epstopdf)                    date: 2020-07-06 13:09:49
+(epstopdf)                    size: 1894281 bytes
+(epstopdf)             Output file: <./chapters/fig/109-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-07-06 13:12:37
+(epstopdf)                    size: 26645 bytes
+(epstopdf)             Command: <epstopdf --outfile=./chapters/fig/109-eps-conv
+erted-to.pdf ./chapters/fig/109.eps>
+(epstopdf)             \includegraphics on input line 239.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./chapters/fig/109-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./chapters/fig/109-eps-converted-to.pdf, id=744, 285.065pt x 170.6375pt>
+File: ./chapters/fig/109-eps-converted-to.pdf Graphic file (type pdf)
+<use ./chapters/fig/109-eps-converted-to.pdf>
+Package pdftex.def Info: ./chapters/fig/109-eps-converted-to.pdf  used on input
+ line 239.
+(pdftex.def)             Requested size: 427.59645pt x 255.9556pt.
+
+Overfull \hbox (5.97646pt too wide) in paragraph at lines 238--241
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--255
+
+ []
+
+[141] [142 <./chapters/fig/109-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--283
+
+ []
+
+[143]
+Underfull \hbox (badness 10000) in paragraph at lines 284--297
+
+ []
+
+[144])
+Underfull \hbox (badness 10000) in paragraph at lines 299--45
+
+ []
+
+[145] [146] (main.bbl [147
+
+] [148] [149] [150] [151] [152] [153] [154] [155]
+[156]
+Underfull \hbox (badness 3568) in paragraph at lines 801--807
+[]\T1/lmr/m/n/12 Alireza Taheri, Mi-noo Alemi, Ali Megh-dari, Hamidreza Pourete
+mad,
+ []
+
+[157] [158] [159] [160]) [161]
+\openout2 = `./sh/vita.aux'.
+
+ (sh/vita.tex) [162
+
+] (main.aux (sh/frontpage.aux) (sh/copyright.aux) (sh/signaturepage.aux) (sh/ab
+stract.aux) (sh/to.aux)
+(sh/ack.aux) (sh/notation.aux) (chapters/ch1.aux) (chapters/ch2.aux)
+(chapters/ch3.aux) (chapters/ch4.aux) (chapters/ch5.aux) (chapters/ch6.aux)
+(chapters/ch7.aux) (sh/vita.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 18494 strings out of 480797
+ 362481 string characters out of 2895576
+ 657326 words of memory out of 3000000
+ 33958 multiletter control sequences out of 15000+200000
+ 611956 words of font info for 76 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 71i,20n,71p,1391b,868s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+c}{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-m
+athsy.enc}{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-mathex.enc}{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-ec.enc}{C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-ts1.enc}<C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmbx12.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmex10.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmmi12.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmmi6.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmmi8.pfb><C:/Users/fengh/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/fengh/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/fengh/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/fengh/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/fengh/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/fengh/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/fengh/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main.pdf (186 pages, 3492247 bytes).
+PDF statistics:
+ 870 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+

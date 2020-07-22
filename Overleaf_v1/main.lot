@@ -1,0 +1,15 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces \textit {Comparison of different wavelet functions on the feature extraction and emotion classification performance (\%) of 2 and 3 classes using SVM classifier with different kernels. The abbreviations "Acc", "Bor", and "Joy" respectively stand for the emotions "Acceptance", "Boredom", and "Joy".}}}{59}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces \textit {First half of the table is the comparison of classification accuracy (\%) of SVM classifier with different kernel functions using the presented wavelet-based feature extraction, the raw EDA data, and the raw EDA data + statistical features. The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, “JOY”, and “BOR”respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted in each case. Bottom half of the table is the comparison of classification accuracy (\%) of KNN classifier with different K values using the presented wavelet-based feature extraction, the raw EDA data, and the raw EDA data + statistical features. The results of 64 subjects and 2 and 3-class classification cases are reported. The abbreviations “ACC”, “JOY”, and “BOR” respectively stand for the emotions “Acceptance”, “Joy”, and “Boredom”. The best value is highlighted in each case.}}}{64}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces \textit {Session Details: Baseline session, Intervention sessions, and Exit session. Different activities also included in this table.}}}{80}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces \textit {Continued Table for Session Details.}}}{81}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces \textit {Emotion change in different events using wavelet-based feature extraction under SVM classifier. }}}{100}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces \textit {Emotion change classification performance in single event with segmentation using both SVM and KNN classifier. }}}{102}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces \textit {classification rate in robot demo, kids play and robot feedback across warm up (S1) and music practice (S2) sections.}}}{103}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces \textit {TD vs ASD Emotion Changes from Baseline and Exit Sessions.}}}{103}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,309 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./sh/frontpage.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./sh/copyright.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: ./sh/signaturepage.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: ./sh/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+A level-1 auxiliary file: ./sh/to.aux
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+A level-1 auxiliary file: ./sh/ack.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: ./sh/notation.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch1.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch2.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch3.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch4.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch5.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch6.aux
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+A level-1 auxiliary file: ./chapters/ch7.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: ./sh/vita.aux
+Database file #1: ref.bib
+Name 1 in "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" has a comma at the end for entry RobotPlaymate2002
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "K. Dautenhahn, I, Werry, J. Rae, P. Dickerson, P. Stribling, and B. Ogden" for entry RobotPlaymate2002
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in RobotPlaymate2002
+Warning--empty journal in cooper2007applied
+Warning--empty journal in MobileRobotic2002
+Name 1 in "K. Wada, T. Shibata, T. Saito, and K. Tanie" has a comma at the end for entry AnalysisFactor2002
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in AnalysisFactor2002
+Warning--empty journal in Fetch2002
+Warning--empty journal in ASIMO2011
+Warning--empty journal in DSMIV2000
+Name 1 in "B. Robins, K. Dautenhahn, and J. Dubowski" has a comma at the end for entry DoesMatter2006
+while executing---line 944 of file unsrt.bst
+Name 1 in "Churchill, D. W., and Bryson, C. Q." has a comma at the end for entry LookApproach1972
+while executing---line 944 of file unsrt.bst
+Name 1 in "Hutt, C., and Vaizey, M. J." has a comma at the end for entry DiffEffect1966
+while executing---line 944 of file unsrt.bst
+Name 1 in "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." has a comma at the end for entry SysObserv1968
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Sorosky, A. D., Omitz, E. M., Brown, N. B., and Ritvo, E. R." for entry SysObserv1968
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in costa2013your
+Warning--empty journal in brazelton1974origins
+Warning--empty journal in reddy1991playing
+Name 1 in "Kwon, J., Kim, D. H., Park, W., and Kim, L" has a comma at the end for entry WearableDevice2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kwon, J., Kim, D. H., Park, W., and Kim, L" for entry WearableDevice2016
+while executing---line 944 of file unsrt.bst
+Name 1 in "Stagg, S. D., Davis, R., and Heaton, P" has a comma at the end for entry AssociationBetween2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Stagg, S. D., Davis, R., and Heaton, P" for entry AssociationBetween2013
+while executing---line 944 of file unsrt.bst
+Name 1 in "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" has a comma at the end for entry SympatheticSkin1984
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Shahani, B. T., Halperin, J. J., Boulu, P. H., and Cohen, J" for entry SympatheticSkin1984
+while executing---line 944 of file unsrt.bst
+Name 1 in "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" has a comma at the end for entry PrincipalComponent2000
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Tarvainen, M. P., Karjalainen, P. A., Koistinen, A. S., and Valkonen-Korhonen, M. V" for entry PrincipalComponent2000
+while executing---line 944 of file unsrt.bst
+Name 1 in "Kylli{\..a}inen, A., and Hietanen, J. K" has a comma at the end for entry SkinConduct2006
+while executing---line 944 of file unsrt.bst
+Name 1 in "Lidberg, L., and Wallin, B. G." has a comma at the end for entry SympatheticSkin1981
+while executing---line 944 of file unsrt.bst
+Name 1 in "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" has a comma at the end for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Rehg, J., Abowd, G., Rozga, A., Romero, M., Clements, M., Sclaroff, S., and Rao, H" for entry DecodeChild2013
+while executing---line 944 of file unsrt.bst
+Name 1 in "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." has a comma at the end for entry Validation2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Kappas, A., K{\"u}ster, D., Basedow, C., and Dente, P." for entry Validation2013
+while executing---line 944 of file unsrt.bst
+Name 1 in "Swangnetr, M., and Kaber, D. B." has a comma at the end for entry EmotionalState2013
+while executing---line 944 of file unsrt.bst
+Name 1 in "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" has a comma at the end for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Laparra-Hern{\'a}ndez, J., Belda-Lois, J. M., Medina, E., Campos, N., and Poveda, R" for entry EMGGSR2009
+while executing---line 944 of file unsrt.bst
+Name 1 in "Sharma, V., Prakash, N. R., and Kalra, P." has a comma at the end for entry EDA2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Sharma, V., Prakash, N. R., and Kalra, P." for entry EDA2016
+while executing---line 944 of file unsrt.bst
+Name 1 in "Liu, F., Liu, G., and Lai, X" has a comma at the end for entry EmotionInten2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Liu, F., Liu, G., and Lai, X" for entry EmotionInten2014
+while executing---line 944 of file unsrt.bst
+Name 1 in "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" has a comma at the end for entry EmotionResp2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Legisa, J., Messinger, D. S., Kermol, E., and Marlier, L" for entry EmotionResp2013
+while executing---line 944 of file unsrt.bst
+Name 1 in "Schmidt, S., and Walach, H" has a comma at the end for entry ElectAct2000
+while executing---line 944 of file unsrt.bst
+Name 1 in "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" has a comma at the end for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Xu, B., Fu, Y., Jiang, Y. G., Li, B., and Sigal, L" for entry HeteroKnow2016
+while executing---line 944 of file unsrt.bst
+Name 1 in "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." has a comma at the end for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Lin, Y. P., Wang, C. H., Wu, T. L., Jeng, S. K., and Chen, J. H." for entry MultPercep2007
+while executing---line 944 of file unsrt.bst
+Name 1 in "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" has a comma at the end for entry EmotionRecog2004
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Nasoz, F., Alvarez, K., Lisetti, C. L., and Finkelstein, N" for entry EmotionRecog2004
+while executing---line 944 of file unsrt.bst
+Name 1 in "Cortes, C., and Vapnik, V" has a comma at the end for entry SupportVector1995
+while executing---line 944 of file unsrt.bst
+Name 1 in "Sano, A., and Picard, R. W." has a comma at the end for entry Taxonomy2011
+while executing---line 944 of file unsrt.bst
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" has a comma at the end for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., Chung, M. A., Park, M. S., and Sohn, J. H" for entry EmotionClassifi2014
+while executing---line 944 of file unsrt.bst
+Name 1 in "Amershi, S., Conati, C., and McLaren, H." has a comma at the end for entry FeatureSelection2006
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Amershi, S., Conati, C., and McLaren, H." for entry FeatureSelection2006
+while executing---line 944 of file unsrt.bst
+Name 1 in "Oberman, L. M., Winkielman P., and Ramachandran, V. S" has a comma at the end for entry SlowEcho2009
+while executing---line 944 of file unsrt.bst
+Name 1 in "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." has a comma at the end for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Najafi, B., Aminian, K., Paraschiv-Ionescu, A., Loew, F., Bula, C. J., and Robert, P." for entry AmbulatorySys2003
+while executing---line 944 of file unsrt.bst
+Name 1 in "Vetterli, M., and Herley, C" has a comma at the end for entry WaveletFilter1992
+while executing---line 944 of file unsrt.bst
+Name 1 in "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" has a comma at the end for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Godfrey, A., Conway, R., Leonard, M., Meagher, D., and {\'O}laighin, G. M" for entry ContinuWavelet2009
+while executing---line 944 of file unsrt.bst
+Name 1 in "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" has a comma at the end for entry ArousalValence2017
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Greco, A., Valenza, G., Citi, L., and Scilingo, E. P" for entry ArousalValence2017
+while executing---line 944 of file unsrt.bst
+Name 1 in "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." has a comma at the end for entry EmotionClass2012
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Jang, E. H., Park, B. J., Kim, S. H., and Sohn, J. H." for entry EmotionClass2012
+while executing---line 944 of file unsrt.bst
+You've used 172 entries,
+            1791 wiz_defined-function locations,
+            1383 strings with 38741 characters,
+and the built_in function-call counts, 40088 in all, are:
+= -- 3578
+> -- 1857
+< -- 27
++ -- 685
+- -- 513
+* -- 2653
+:= -- 6322
+add.period$ -- 536
+call.type$ -- 172
+change.case$ -- 160
+chr.to.int$ -- 0
+cite$ -- 182
+duplicate$ -- 1856
+empty$ -- 3910
+format.name$ -- 513
+if$ -- 8971
+int.to.chr$ -- 0
+int.to.str$ -- 172
+missing$ -- 182
+newline$ -- 863
+num.names$ -- 172
+pop$ -- 507
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 894
+stack$ -- 0
+substring$ -- 2477
+swap$ -- 427
+text.length$ -- 27
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 387
+width$ -- 175
+write$ -- 1859
+(There were 110 error messages)
